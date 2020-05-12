@@ -181,27 +181,27 @@ myColl:=New collection("A";"B";1;2;Current time)
 myColl[3]  // コレクションの4番目の要素にアクセスします (0起点)
 ```
 
-## Classes
+## クラス
 
-The 4D language supports object classes. Add a `myClass.4dm` file in the Project/Sources/Classes folder of a project to create a class named "myClass".
+4D ランゲージではオブジェクトクラスがサポートされています。 "myClass" という名称のクラスを作成するには、プロジェクトの Project/Sources/Classes フォルダーに `myClass.4dm` ファイルを追加します。
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. You can pass parameters.
+あるメソッドにおいて、クラスのオブジェクトをインスタンス化するには、*クラスストア* (`cs`) よりユーザークラスを呼び出して、`new()` メンバー関数を使います。 引数を渡すこともできます。
 
 ```4d
-// in a 4D method
+// 4D メソッド内
 $o:=cs.myClass.new() 
 ```
 
-In the `myClass` class method, use the `Function <methodName>` statement to define the *methodName* class member method. A class member method can receive and return parameters like any method, and use `This` as the object instance.
+`myClass` クラスメソッド内では、*methodName* クラスメンバーメソッドを宣言するのに `Function <methodName>` ステートメントを使います。 ほかのメソッドのように、クラスメンバーメソッドは引数を受け取ったり、値を返すことができ、オブジェクトインスタンスとして `This` を使えます。
 
 ```4d
-//in the myClass.4dm file
+// myClass.4dm ファイル内
 Function hello
   C_TEXT($0)
   $0:="Hello "+This.who
 ```
 
-To execute a class member method, just use the `()` operator on the member method of the object instance.
+クラスメンバーメソッドを実行するには、オブジェクトインスタンスのメンバーメソッドに `()` 演算子を使います。
 
 ```4d
 $o:=cs.myClass.new()
@@ -210,10 +210,10 @@ $message:=$o.myClass.hello()
 //$message: "Hello World"
 ```
 
-Optionally, use the `Class constructor` keyword to declare properties of the object.
+`Class constructor` キーワードを使用してオブジェクトのプロパティを宣言することもできます (任意)。
 
 ```4d
-//in the Rectangle.4dm file
+// Rectangle.4dm ファイル内
 Class constructor
 C_LONGINT($1;$2)
 This.height:=$1
@@ -221,17 +221,17 @@ This.width:=$2
 This.name:="Rectangle"
 ```
 
-A class can inherit from another class by using `Class inherits <ClassName>`. Superclasses can be called using the `Super` command. たとえば:
+クラスはほかのクラスから継承することもできます: `Class extends <ClassName>`。 また、`Super` コマンドを使って、スーパークラスを呼び出すことができます。 たとえば:
 
 ```4d
-//in the Square.4dm file
-Class extends rectangle
+// Square.4dm ファイル内
+Class extends Rectangle
 
 Class constructor
 C_LONGINT($1)
 
-  // It calls the parent class's constructor with lengths   
-  // provided for the Rectangle's width and height
+  // 親クラスのコンストラクターを呼び出します
+  // 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
 Super($1;$1)
 
 This.name:="Square"
@@ -256,11 +256,9 @@ This.name:="Square"
 | データタイプ | 演算子      | 例題                                                        |
 | ------ | -------- | --------------------------------------------------------- |
 | 数値     | 加算 (足し算) | 1 + 2 は数値を加算し、結果は 3 です。                                   |
-| String | 連結 (結合)  | "みなさん" + "こんにちは" は文字を連結 (結合) し、結果は "みなさんこんにちは" です。        |
+| 文字列    | 連結 (結合)  | "みなさん" + "こんにちは" は文字を連結 (結合) し、結果は "みなさんこんにちは" です。        |
 | 日付と数値  | 日付の加算    | !2006/12/4! + 20 は、2006年12月4日に 20日を加算し、結果は 2006年12月24日です。 |
 
-
-演算子についての詳細は演算子の章を参照してください。
 
 ## 式
 
@@ -282,10 +280,10 @@ This.name:="Square"
 
 | 式                           | 型           | 説明                                                                              |
 | --------------------------- | ----------- | ------------------------------------------------------------------------------- |
-| "こんにちは"                     | String      | これは文字列定数 "こんにちは" です。 文字列定数であることを表すために二重引用符が必要です。                                |
-| "みなさん" + "こんにちは"            | String      | 2つの文字列 "みなさん" と "こんにちは" が + 演算子により結合され、 "みなさんこんにちは" を返します。                      |
-| [People]Name + "様"          | String      | 2つの文字列の結合です。 [People]Name フィールドと文字列 "様" が結合されます。 フィールドの値が "小林" の場合、"小林様" を返します。 |
-| Uppercase ("smith")         | String      | この式は `Uppercase` コマンドを使用して、文字列 "smith" を英大文字に変換します。 そして "SMITH" を返します。          |
+| "こんにちは"                     | 文字列         | これは文字列定数 "こんにちは" です。 文字列定数であることを表すために二重引用符が必要です。                                |
+| "みなさん" + "こんにちは"            | 文字列         | 2つの文字列 "みなさん" と "こんにちは" が + 演算子により結合され、 "みなさんこんにちは" を返します。                      |
+| [People]Name + "様"          | 文字列         | 2つの文字列の結合です。 [People]Name フィールドと文字列 "様" が結合されます。 フィールドの値が "小林" の場合、"小林様" を返します。 |
+| Uppercase ("smith")         | 文字列         | この式は `Uppercase` コマンドを使用して、文字列 "smith" を英大文字に変換します。 そして "SMITH" を返します。          |
 | 4                           | 数値          | これは数値定数 4です。                                                                    |
 | 4 * 2                       | 数値          | 2つの数値、4 と 2 の乗算です。乗算演算子の (*) を使用しています。 数値の 8を返します。                              |
 | myButton                    | 数値          | これはボタンに紐づけられた変数です。 ボタンの現在の値を返します: クリックされた場合に 1、それ以外は 0 を返します。                   |

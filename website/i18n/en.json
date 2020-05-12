@@ -291,11 +291,17 @@
       "FormEditor/stylesheets": {
         "title": "Style sheets"
       },
+      "FormEditor/formEditor": {
+        "title": "Form Editor"
+      },
       "FormEditor/forms": {
         "title": "About 4D Forms"
       },
       "FormEditor/objectLibrary": {
         "title": "Object libraries"
+      },
+      "FormEditor/pictures": {
+        "title": "Pictures"
       },
       "FormEditor/action": {
         "title": "Action"
@@ -657,9 +663,16 @@
       },
       "Users/overview": {
         "title": "Overview"
+      },
+      "WebServer/webServerObject": {
+        "title": "Web Server object"
       }
     },
-    "links": {},
+    "links": {
+      "v18 R3 BETA": "v18 R3 BETA",
+      "v18 R2": "v18 R2",
+      "v18": "v18"
+    },
     "categories": {
       "4D Language Concepts": "4D Language Concepts",
       "Project Databases": "Project Databases",
@@ -672,7 +685,8 @@
       "MSC": "MSC",
       "Backup and Restore": "Backup and Restore",
       "Users and Groups": "Users and Groups",
-      "REST Server ": "REST Server "
+      "Web Server": "Web Server",
+      "REST Server": "REST Server"
     }
   },
   "pages-strings": {
