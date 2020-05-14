@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: About ORDA
 ---
 
 ## What is ORDA?  
@@ -8,7 +8,7 @@ ORDA stands for **Object Relational Data Access**. It is an enhanced technology 
 
 Relations are transparently included in the concept, in combination with lazy loading, to remove all the typical hassles of data selection or transfer from the developer.
 
-With ORDA, data is accessed through an abstraction layer, the **datastore**. A datastore is an object that provides an interface to the database model and data through objects. For example, a table is mapped to a dataclass object, a field is an attribute of a dataclass, and records are entities. 
+With ORDA, data is accessed through an abstraction layer, the [datastore](datastores.md). A datastore is an object that provides an interface to the database model and data through objects. For example, a table is mapped to a [dataclass](dataclasses.md) object, a field is an attribute of a dataclass, and records are entities. 
 
 
 ## Why use ORDA?  
@@ -41,7 +41,7 @@ Since ORDA objects rely on the 4D database structure, you need to make sure all 
 
 - Tables without a primary key or with a composite primary key are not exposed in the datastore.
 - BLOB type fields are not managed.
-- Table, field, and relation names must be compliant with standard [object naming conventions](Concepts/identifier.md).
+- Table, field, and relation names must be compliant with standard [object naming conventions](Concepts/identifiers.md).
 - Any modifications applied at the level of the database structure require that you restart the 4D database so that the ORDA model layer is reloaded and updated accordingly. These modifications include:
 	- adding or removing a table, a field, or a relation
 renaming of a table, a field, or a relation

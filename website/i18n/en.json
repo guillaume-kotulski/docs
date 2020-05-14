@@ -328,8 +328,20 @@
         "title": "Verify Page",
         "sidebar_label": "Verify Page"
       },
+      "Orda/dataclasses": {
+        "title": "Dataclasses"
+      },
+      "Orda/datastores": {
+        "title": "Datastores"
+      },
+      "Orda/entities": {
+        "title": "Entities"
+      },
+      "Orda/glossary": {
+        "title": "Glossary"
+      },
       "Orda/overview": {
-        "title": "Overview"
+        "title": "About ORDA"
       },
       "Orda/quickTour": {
         "title": "A Quick Tour in ORDA"
@@ -361,6 +373,7 @@
     },
     "categories": {
       "4D Language Concepts": "4D Language Concepts",
+      "Object-Oriented Programming in 4D": "Object-Oriented Programming in 4D",
       "Project Databases": "Project Databases",
       "Form Editor": "Form Editor",
       "Form Objects": "Form Objects",

@@ -1,6 +1,6 @@
 {
   "docs": {
-    "4D Language Concepts":
+	"4D Language Concepts":
 	["Concepts/about","Concepts/quick-tour",
       {
         "type": "subcategory",
@@ -20,6 +20,7 @@
       },
 	"Concepts/error-handling","Concepts/interpreted-compiled","Concepts/components","Concepts/plug-ins","Concepts/identifiers"
 	],
+	"Object-Oriented Programming in 4D": ["Orda/overview","Orda/quickTour","Orda/glossary","Orda/datastores","Orda/dataclasses","Orda/entities"],
 	"Project Databases":["Project/overview","Project/creating","Project/architecture","Project/developing","Project/building"],
 	"Form Editor":["FormEditor/objectLibrary","FormEditor/stylesheets"],
   "Form Objects":["FormObjects/formObjectsOverview",

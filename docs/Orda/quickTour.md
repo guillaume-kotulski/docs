@@ -49,7 +49,7 @@ ds.Company.hires //returns the list of employees
 But don't go too fast. Let's see now how to record data in ORDA dataclasses. 
 
 
-##Adding data
+## Adding data
 
 In ORDA, you can add a record to a dataclass using the `new()` command. 
 
