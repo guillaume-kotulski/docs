@@ -337,6 +337,12 @@
       "Orda/entities": {
         "title": "Entities"
       },
+      "Orda/entityLocking": {
+        "title": "Entity locking"
+      },
+      "Orda/entitySelections": {
+        "title": "Entity selections"
+      },
       "Orda/glossary": {
         "title": "Glossary"
       },

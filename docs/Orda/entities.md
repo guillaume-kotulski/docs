@@ -63,7 +63,7 @@ This is illustrated by the following graphic:
 
 ![](assets/en/Orda/entityRef2.png)
 
-Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see Entity locking).
+Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](entityLocking.md)).
 
 In fact, $e1 and $e2 is not the entity itself, but a reference to the entity. It means that you can pass it directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. For example:
 
@@ -90,9 +90,9 @@ You can handle entities like any other object in 4D and pass their references di
 
 ## Using entity attributes  
 
-Entity attributes store data and map corresponding fields in the corresponding table. Entity attributes of the storage kind can be set or get as simple properties of the entity object, while entity of the relatedEntity or relatedEntities kind will return an entity or an entity selection.
+Entity attributes store data and map corresponding fields in the corresponding table. Entity attributes of the storage kind can be set or get as simple properties of the entity object, while entity of the **relatedEntity** or **relatedEntities** kind will return an entity or an entity selection.
 
->For more information on the attribute kind, please refer to the Storage attributes and Relation attributes paragraph.
+>For more information on the attribute kind, please refer to the [Storage attributes and Relation attributes](dataclasses.md#storage-attributes-and-relation-attributes) paragraph.
 
 For example, to set a storage attribute:
 
@@ -115,7 +115,7 @@ You can access data through the related object(s):
  $EntitySel:=ds.Company.all().first().companyProjects //get the selection of projects for the company
 ```
 
-Note that both theClient and companyProjects in the above example are primary relation attributes and represent a direct relationship between the two dataclasses. However, relation attributes can also be built upon paths through relationships at several levels, including circular references. For example, consider the following structure:
+Note that both *theClient* and *companyProjects* in the above example are primary relation attributes and represent a direct relationship between the two dataclasses. However, relation attributes can also be built upon paths through relationships at several levels, including circular references. For example, consider the following structure:
 
 ![](assets/en/Orda/entityAttributes2.png)
 
@@ -130,8 +130,8 @@ Each employee can be a manager and can have a manager. To get the manager of the
 
 In the ORDA architecture, relation attributes directly contain data related to entities:
 
-*	An N->1 type relation attribute (relatedEntity kind) contains an entity
-*	A 1->N type relation attribute (relatedEntities kind) contains an entity selection
+*	An N->1 type relation attribute (**relatedEntity** kind) contains an entity
+*	A 1->N type relation attribute (**relatedEntities** kind) contains an entity selection
 
 Let's look at the following (simplified) structure:
 
