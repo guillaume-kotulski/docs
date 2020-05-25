@@ -272,7 +272,7 @@
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"ageAverage"</span>;<span class="hljs-function">Average</span>([Employee]age))
 </code></pre>
 <p><code>POST /rest/Employee/getAverage</code></p>
-<p>Result:</p>
+<p>結果:</p>
 <pre><code class="hljs">{
     &quot;result&quot;: {
         &quot;ageAverage&quot;: 44.125
@@ -289,7 +289,7 @@
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"fullName"</span>;[Employee]firstname+<span class="hljs-string">" "</span>+[Employee]lastname)
 </code></pre>
 <p><code>POST /rest/Employee(3)/getFullName</code></p>
-<p>Result:</p>
+<p>結果:</p>
 <pre><code class="hljs">{
     &quot;result&quot;: {
         &quot;fullName&quot;: &quot;John Smith&quot;
@@ -318,7 +318,7 @@ End while</span>
 </code></pre>
 <p><code>POST /rest/Employee/updateSalary/?$filter=&quot;salary&lt;1500&quot;</code></p>
 <p>POST data (in the request body): [1.5]</p>
-<p>Result:</p>
+<p>結果:</p>
 <pre><code class="hljs">{
     &quot;result&quot;: {
         &quot;updated&quot;: 42
