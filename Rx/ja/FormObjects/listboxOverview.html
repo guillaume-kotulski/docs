@@ -880,22 +880,22 @@
 <tr><td>requiredListReference</td><td>4D リスト参照 (&quot;saveAs&quot;の値による)</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
 <tr><td>requiredListName</td><td>4D リスト名 (&quot;saveAs&quot;の値による)</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
 <tr><td>saveAs</td><td>&quot;reference&quot; または &quot;value&quot;</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>choiceListReference</td><td>4D list ref, display combo box</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>choiceListName</td><td>4D list name, display combo box</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>unitList</td><td>array of X elements</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>unitReference</td><td>index of selected element</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>unitsListReference</td><td>4D list ref for units</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>unitsListName</td><td>4D list name for units</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
-<tr><td>alternateButton</td><td>add an alternate button</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td></td></tr>
+<tr><td>choiceListReference</td><td>4D リスト参照、コンボボックスを表示</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>choiceListName</td><td>4D リスト名、コンボボックスを表示</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>unitList</td><td>X要素の配列</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>unitReference</td><td>選択された要素のインデックス</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>unitsListReference</td><td>単位の4D リスト参照</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>unitsListName</td><td>単位の4D リスト名</td><td>○</td><td>○</td><td>○</td><td></td><td></td><td></td></tr>
+<tr><td>alternateButton</td><td>切り替えボタンを追加</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="value"></a><a href="#value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>value</h4>
-<p>Cell values are stored in the &quot;value&quot; attribute. This attribute is used for input as well as output. It can also be used to define default values when using lists (see below).</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">//column array</span>
+<p>セルの値は &quot;value&quot; 属性に保存されています。 この属性は入力と出力に使用されるほか、 リストを使用する際のデフォルト値を定義するのにも使用できます (以下参照)。</p>
+<pre><code class="hljs css language-4d"> <span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
  <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob1</span>)
  <span class="hljs-variable">$entry</span>:=<span class="hljs-string">"Hello world!"</span>
  <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// if the user enters a new value, $entry will contain the edited value</span>
+ <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は$entry に格納されます</span>
  <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob2</span>)
  <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"real"</span>)
  <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>/<span class="hljs-number">3</span>)
@@ -911,9 +911,9 @@
 <blockquote>
 <p>null 値はサポートされており、空のセルとして表示されます。</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="min-and-max"></a><a href="#min-and-max" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>min and max</h4>
-<p>When the &quot;valueType&quot; is &quot;real&quot; or &quot;integer&quot;, the object also accepts min and max attributes with appropriate values (values must be of the same type as the valueType).</p>
-<p>These attributes can be used to control the range of input values. When a cell is validated (when it loses the focus), if the input value is lower than the min value or greater than the max value, then it is rejected. In this case, the previous value is maintained and a tip displays an explanation.</p>
+<h4><a class="anchor" aria-hidden="true" id="min-と-max"></a><a href="#min-と-max" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>min と max</h4>
+<p>&quot;valueType&quot; が&quot;real&quot; または &quot;integer&quot; であるとき、min と max 属性もオブジェクトに設定できます (値は適切な範囲で、かつ、valueType と同じ型である必要があります)。</p>
+<p>これらの属性を使用すると入力値の範囲を管理することができます。 セルが評価されたとき (フォーカスを失ったとき)、入力された値が min の値より低い場合、または max の値より大きい場合には、その値は拒否されます。 この場合、入力をする前の値が保持され、tip として説明が表示されます。</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
  <span class="hljs-variable">$entry3</span>:=<span class="hljs-number">2015</span>
  <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
@@ -923,7 +923,7 @@
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_minMax.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="behavior"></a><a href="#behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>behavior</h4>
-<p>The behavior attribute provides variations to the regular representation of values. In 4D v15, a single variation is proposed:</p>
+<p>behavior 属性は、値の通常の表示とは異なる表示方法を提供します。 In 4D v15, a single variation is proposed:</p>
 <table>
 <thead>
 <tr><th>Attribute</th><th>Available value(s)</th><th>valueType(s)</th><th>説明</th></tr>
