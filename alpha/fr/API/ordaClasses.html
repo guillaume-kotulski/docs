@@ -71,21 +71,21 @@
 <p>For example, you could create a <code>getNextWithHigherSalary()</code> function in the <code>EmployeeEntity</code> class, returning employees with a salary just higher than the selected one, that would be as simple to call as:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$nextHigh</span>:=ds.<span class="hljs-function">Employee</span>(<span class="hljs-number">1</span>).<span class="hljs-function">getNextWithHigherSalary</span>()
 </code></pre>
-<p>Developers can use these functions in local datastores, but also in client/server as well as remote architectures:</p>
+<p>Developers can use these functions in local datastores, but also in client/server as well as remote architectures (see the full example <a href="#example-with-remote-datastore">below</a>):</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-comment">//$cityManager is the reference of a remote datastore</span>
 Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class="hljs-function">getCityName</span>(Form.comp.zipcode)
 </code></pre>
-<p>(see the full example <a href="#example-with-remote-datastore">below</a>)</p>
 <p>Thanks to this feature, the whole business logic of your 4D application can be stored as a independent layer, so that it can be easily maintained, or reused:</p>
 <ul>
 <li>it allows to &quot;hide&quot; the overall complexity of the underlying physical structure and to only expose understandable and ready-to-use functions.</li>
 <li>if the physical structure evolves, you just have to adapt function code but client applications will continue to call them transparently.</li>
 </ul>
 <p><img src="/docs/alpha/assets/en/API/api.png" alt=""></p>
-<h2><a class="anchor" aria-hidden="true" id="orda-class-architecture"></a><a href="#orda-class-architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ORDA Class Architecture</h2>
+<h2><a class="anchor" aria-hidden="true" id="architecture"></a><a href="#architecture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Architecture</h2>
 <p>ORDA provides <strong>generic classes</strong> exposed through the <strong><code>4D</code></strong> <a href="/docs/alpha/fr/Concepts/classes.html#class-stores">class store</a>, as well as <strong>user classes</strong>, extending generic classes, exposed in the <strong><code>cs</code></strong> <a href="/docs/alpha/fr/Concepts/classes.html#class-stores">class store</a>:</p>
 <p><img src="/docs/alpha/assets/en/API/ClassDiagramImage.png" alt=""></p>
-<h3><a class="anchor" aria-hidden="true" id="4d-class-store"></a><a href="#4d-class-store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D Class Store</h3>
+<h3><a class="anchor" aria-hidden="true" id="class-stores"></a><a href="#class-stores" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Stores</h3>
+<h4><a class="anchor" aria-hidden="true" id="4d-class-store"></a><a href="#4d-class-store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D Class Store</h4>
 <p>Object instances from generic classes have specific properties and functions, documented in the <em>4D Language Reference</em>:</p>
 <ul>
 <li><a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-DataStore.201-4900375.en.html">datastore</a></li>
@@ -93,8 +93,9 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <li><a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-EntitySelection.201-4900360.en.html">entity selection</a></li>
 <li><a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">entity</a></li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="user-class-store"></a><a href="#user-class-store" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Class Store</h3>
-<p>Object instances from user classes benefit from their parent's properties and functions. Moreover, the 4D developer can add custom functions to create a business-oriented API exposing only necessary features.</p>
+<h4><a class="anchor" aria-hidden="true" id="user-class-store-cs"></a><a href="#user-class-store-cs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Class Store (cs)</h4>
+<p>Object instances from ORDA user classes benefit from their parent's properties and functions. For example, an entity class object can call functions from the <a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">ORDA's Entity generic class</a>.</p>
+<p>In addition, the 4D developer can add custom functions to create a business-oriented API exposing only necessary features.</p>
 <p>All ORDA classes are exposed as properties of the <strong><code>cs</code></strong> class store. The following ORDA class objects are available:</p>
 <table>
 <thead>
@@ -108,6 +109,9 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 </tbody>
 </table>
 <p>(*)dbName is the .4DProject file name.</p>
+<blockquote>
+<p>ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project <a href="#support-in-4d-projects">(see below)</a>.</p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="inheritance"></a><a href="#inheritance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inheritance</h3>
 <p>Given a database named EmpComp containing Employee and Company tables, the following examples show inheritance rules:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds;<span class="hljs-number">4</span>D.DataStore) <span class="hljs-comment">//True</span>
@@ -127,18 +131,20 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <span class="hljs-variable">$class</span>:=<span class="hljs-function">OB Class</span>(ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">first</span>()) <span class="hljs-comment">//$class=cs.EmployeeEntity </span>
 
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="datastore-class"></a><a href="#datastore-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataStore Class</h2>
+<h2><a class="anchor" aria-hidden="true" id="apis"></a><a href="#apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APIs</h2>
+<h3><a class="anchor" aria-hidden="true" id="datastore-class"></a><a href="#datastore-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataStore Class</h3>
 <p>A 4D database exposes its own DataStore class in the <code>cs</code> class store.</p>
 <ul>
-<li><strong>Inherit from</strong>: 4D.DataStore</li>
+<li><strong>Extends</strong>: 4D.DataStore</li>
 <li><strong>Exposed name</strong>: <em>dbName</em>DataStore (where <em>dbName</em> is the .4DProject file name)</li>
+<li><strong>Class file name</strong>: <em>dbName</em>DataStore.4dm</li>
 </ul>
 <table>
 <thead>
-<tr><th>Database file name</th><th>DataStore class name</th></tr>
+<tr><th>Database file name</th><th>DataStore class name</th><th>Class file name</th></tr>
 </thead>
 <tbody>
-<tr><td>Employee.4DProject</td><td>cs.EmployeeDataStore</td></tr>
+<tr><td>Employee.4DProject</td><td>cs.EmployeeDataStore</td><td>EmployeeDataStore.4dm</td></tr>
 </tbody>
 </table>
 <p>You can create functions in the <em>dbName</em>DataStore class, that will be available through the <code>ds</code> object.</p>
@@ -153,20 +159,24 @@ Function getDesc
 <p>This function can then be called:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$desc</span>:=ds.<span class="hljs-function">getDesc</span>() <span class="hljs-comment">//"Database exposing..."</span>
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="dataclass-class"></a><a href="#dataclass-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataClass Class</h2>
+<h3><a class="anchor" aria-hidden="true" id="dataclass-class"></a><a href="#dataclass-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataClass Class</h3>
 <p>Each table exposed with ORDA offers a DataClass class in the <code>cs</code> class store.</p>
 <ul>
-<li><strong>Inherit from</strong>: 4D.DataClass</li>
-<li><strong>Exposed name</strong>: <em>DataClassName</em> (where <em>DataClassName</em> is the table name).</li>
+<li><strong>Extends</strong>: 4D.DataClass</li>
+<li><strong>Exposed name</strong>: <em>DataClassName</em> (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Class file name</strong>: <em>DataClassName</em>.4dm</li>
 </ul>
 <table>
 <thead>
-<tr><th>Table name</th><th>DataClass class name</th></tr>
+<tr><th>Table name</th><th>DataClass class name</th><th>Class file name</th></tr>
 </thead>
 <tbody>
-<tr><td>Employee</td><td>cs.Employee</td></tr>
+<tr><td>Employee</td><td>cs.Employee</td><td>Employee.4dm</td></tr>
 </tbody>
 </table>
+<blockquote>
+<p>If a DataClass class name enters in conflict with a <a href="/docs/alpha/fr/Concepts/classes.html#class-names">user class name</a>, the constructor of the user class becomes unusable (a warning is returned by the compiler).</p>
+</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="exemple-1"></a><a href="#exemple-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <pre><code class="hljs css language-4D"><span class="hljs-comment">// cs.Company class</span>
 
@@ -212,18 +222,19 @@ Class extends DataClass
 <pre><code class="hljs css language-4d">Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class="hljs-function">getCityName</span>(Form.comp.zipcode)
 
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="entityselection-class"></a><a href="#entityselection-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EntitySelection Class</h2>
+<h3><a class="anchor" aria-hidden="true" id="entityselection-class"></a><a href="#entityselection-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EntitySelection Class</h3>
 <p>Each table exposed with ORDA offers an EntitySelection class in the <code>cs</code> class store.</p>
 <ul>
-<li><strong>Inherit from</strong>: 4D.EntitySelection</li>
-<li><strong>Exposed name</strong>: <em>DataClassName</em>Selection (where <em>DataClassName</em> is the table name).</li>
+<li><strong>Extends</strong>: 4D.EntitySelection</li>
+<li><strong>Exposed name</strong>: <em>DataClassName</em>Selection (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Class file name</strong>: <em>DataClassName</em>Selection.4dm</li>
 </ul>
 <table>
 <thead>
-<tr><th>Table name</th><th>EntitySelection class name</th></tr>
+<tr><th>Table name</th><th>EntitySelection class name</th><th>Class file name</th></tr>
 </thead>
 <tbody>
-<tr><td>Employee</td><td>cs.EmployeeSelection</td></tr>
+<tr><td>Employee</td><td>cs.EmployeeSelection</td><td>EmployeeSelection.4dm</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="exemple-2"></a><a href="#exemple-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
@@ -242,18 +253,19 @@ Function withSalaryGreaterThanAverage
 <p>Then, you can get employees with a salary greater than the average in any entity selection by executing:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$moreThanAvg</span>:=ds.Company.<span class="hljs-function">all</span>().employees.<span class="hljs-function">withSalaryGreaterThanAverage</span>()
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="entity-class"></a><a href="#entity-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entity Class</h2>
+<h3><a class="anchor" aria-hidden="true" id="entity-class"></a><a href="#entity-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entity Class</h3>
 <p>Each table exposed with ORDA offers an Entity class in the <code>cs</code> class store.</p>
 <ul>
-<li><strong>Inherit from</strong>: 4D.Entity</li>
-<li><strong>Exposed name</strong>: <em>DataClassName</em>Entity (where <em>DataClassName</em> is the table name).</li>
+<li><strong>Extends</strong>: 4D.Entity</li>
+<li><strong>Exposed name</strong>: <em>DataClassName</em>Entity (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Class file name</strong>: <em>DataClassName</em>Entity.4dm</li>
 </ul>
 <table>
 <thead>
-<tr><th>Table name</th><th>Entity class name</th></tr>
+<tr><th>Table name</th><th>Entity class name</th><th>Class file name</th></tr>
 </thead>
 <tbody>
-<tr><td>City</td><td>cs.CityEntity</td></tr>
+<tr><td>City</td><td>cs.CityEntity</td><td>CityEntity.4dm</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="exemple-3"></a><a href="#exemple-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
@@ -272,7 +284,30 @@ Class extends Entity
 <blockquote>
 <p><strong>Warning</strong>: Keep in mind that ORDA functions are always executed on the server, thus calling a function do generate a request to the server.</p>
 </blockquote>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/Project/building.html"><span class="arrow-prev">← </span><span>Générer un package projet</span></a><a class="docs-next button" href="/docs/alpha/fr/FormEditor/forms.html"><span>A propos des formulaires 4D</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a></li><li><a href="#orda-class-architecture">ORDA Class Architecture</a><ul class="toc-headings"><li><a href="#4d-class-store">4D Class Store</a></li><li><a href="#user-class-store">User Class Store</a></li><li><a href="#inheritance">Inheritance</a></li></ul></li><li><a href="#datastore-class">DataStore Class</a></li><li><a href="#dataclass-class">DataClass Class</a></li><li><a href="#entityselection-class">EntitySelection Class</a></li><li><a href="#entity-class">Entity Class</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<h2><a class="anchor" aria-hidden="true" id="support-in-4d-projects"></a><a href="#support-in-4d-projects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support in 4D projects</h2>
+<p>ORDA user class files must be stored at the <a href="/docs/alpha/fr/Concepts/classes.html#class-files">same location as regular class files</a>, i.e. in the <code>/Sources/Classes</code> folder of the project folder.</p>
+<h3><a class="anchor" aria-hidden="true" id="creating-classes"></a><a href="#creating-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating classes</h3>
+<p>You create an ORDA user class by adding a corresponding file in the Classes folder. For example, to create an entity class for the <code>Utilities</code> dataclass, you need to create a <code>UtilitiesEntity.4dm</code> file.</p>
+<p>A class file can be created by a simple double-click in the Classes theme of the Explorer.</p>
+<blockquote>
+<p>By default, empty ORDA classes are not displayed in the Explorer. You need to show them by selecting <strong>Show all data classes</strong> from the Explorer's options menu: <img src="/docs/alpha/assets/en/API/showClass.png" alt=""></p>
+</blockquote>
+<p>ORDA user classes have a different icon from regular classes. Empty classes are dimmed:</p>
+<p><img src="/docs/alpha/assets/en/API/classORDA2.png" alt=""></p>
+<p>Double-click on a class name. 4D creates the ORDA class file and add the <code>extends</code> code, for example for an Entity class:</p>
+<pre><code class="hljs">Class extends entity
+</code></pre>
+<p>Once a class is defined, its name is no longer dimmed in the Explorer:</p>
+<p><img src="/docs/alpha/assets/en/API/classORDA3.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="editing-classes"></a><a href="#editing-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing classes</h3>
+<p>To open a defined ORDA class in the 4D method editor, double-click on an ORDA class name or select an ORDA class name and select <strong>Edit...</strong> from the contextual menu/options menu of the Explorer window (like for any class):</p>
+<p><img src="/docs/alpha/assets/en/API/classORDA4.png" alt=""></p>
+<p>For ORDA classes based upon the local datastore (ds), you can directly access the class code from the 4D Structure window:</p>
+<p><img src="/docs/alpha/assets/en/API/classORDA5.png" alt=""></p>
+<h3><a class="anchor" aria-hidden="true" id="éditeur-de-méthode"></a><a href="#éditeur-de-méthode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Éditeur de méthode</h3>
+<p>In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:</p>
+<p><img src="/docs/alpha/assets/en/API/AutoCompletionEntity.png" alt=""></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/Project/building.html"><span class="arrow-prev">← </span><span>Générer un package projet</span></a><a class="docs-next button" href="/docs/alpha/fr/FormEditor/forms.html"><span>A propos des formulaires 4D</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a></li><li><a href="#architecture">Architecture</a><ul class="toc-headings"><li><a href="#class-stores">Class Stores</a></li><li><a href="#inheritance">Inheritance</a></li></ul></li><li><a href="#apis">APIs</a><ul class="toc-headings"><li><a href="#datastore-class">DataStore Class</a></li><li><a href="#dataclass-class">DataClass Class</a></li><li><a href="#entityselection-class">EntitySelection Class</a></li><li><a href="#entity-class">Entity Class</a></li></ul></li><li><a href="#support-in-4d-projects">Support in 4D projects</a><ul class="toc-headings"><li><a href="#creating-classes">Creating classes</a></li><li><a href="#editing-classes">Editing classes</a></li><li><a href="#éditeur-de-méthode">Éditeur de méthode</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
