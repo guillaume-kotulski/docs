@@ -664,8 +664,32 @@
       "Users/overview": {
         "title": "Overview"
       },
+      "WebServer/webServer": {
+        "title": "About 4D Web Server"
+      },
+      "WebServer/webServerConfig": {
+        "title": "Configuration"
+      },
+      "WebServer/webServerConnect": {
+        "title": "Connection Management"
+      },
+      "WebServer/webServerConnectMethods": {
+        "title": "Connection Methods"
+      },
+      "WebServer/webServerConnectSecurity": {
+        "title": "Connection Security"
+      },
+      "WebServer/webServerMgmt": {
+        "title": "Server Management"
+      },
       "WebServer/webServerObject": {
         "title": "Web Server object"
+      },
+      "WebServer/webServerSecurity": {
+        "title": "Server Security"
+      },
+      "WebServer/webServerSessions": {
+        "title": "Session Management"
       }
     },
     "links": {
@@ -685,7 +709,7 @@
       "MSC": "MSC",
       "Backup and Restore": "Backup and Restore",
       "Users and Groups": "Users and Groups",
-      "Web Server": "Web Server",
+      "4D Web Server": "4D Web Server",
       "REST Server": "REST Server"
     }
   },
