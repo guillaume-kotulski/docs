@@ -76,13 +76,13 @@
 <tr><td><a href="#dataClass"><strong>{dataClass}</strong></a></td><td><code>/Employee</code></td><td>Returns all the data (by default the first 100 entities) for the dataclass</td></tr>
 <tr><td><a href="#dataclasskey"><strong>{dataClass}({key})</strong></a></td><td><code>/Employee(22)</code></td><td>Returns the data for the specific entity defined by the dataclass's primary key</td></tr>
 <tr><td><a href="#dataclassattributevalue"><strong>{dataClass}:{attribute}(value)</strong></a></td><td><code>/Employee:firstName(John)</code></td><td>Returns the data for one entity in which the attribute's value is defined</td></tr>
-<tr><td><a href="classFunctions.md#function-calls"><strong>{dataClass}/{dataClassClassFunction}</strong></a></td><td><code>/City/getCity</code></td><td>Executes a dataclass class function</td></tr>
-<tr><td><a href="classFunctions.md#function-calls"><strong>{dataClass}({EntitySelectionClassFunction}</strong></a></td><td><code>/City/getPopulation/?$filter=&quot;ID&lt;3&quot;</code></td><td>Executes an entity selection class function</td></tr>
-<tr><td><a href="classFunctions.md#function-calls"><strong>{dataClass}({key})/{EntityClassFunction}</strong></a></td><td><code>City(2)/getPopulation</code></td><td>Executes an entity class function</td></tr>
+<tr><td><a href="/docs/alpha/en/REST/classFunctions.html#function-calls"><strong>{dataClass}/{dataClassClassFunction}</strong></a></td><td><code>/City/getCity</code></td><td>Executes a dataclass class function</td></tr>
+<tr><td><a href="/docs/alpha/en/REST/classFunctions.html#function-calls"><strong>{dataClass}({EntitySelectionClassFunction}</strong></a></td><td><code>/City/getPopulation/?$filter=&quot;ID&lt;3&quot;</code></td><td>Executes an entity selection class function</td></tr>
+<tr><td><a href="/docs/alpha/en/REST/classFunctions.html#function-calls"><strong>{dataClass}({key})/{EntityClassFunction}</strong></a></td><td><code>City(2)/getPopulation</code></td><td>Executes an entity class function</td></tr>
 </tbody>
 </table>
 <blockquote>
-<p>Function calls are detailed in the <a href="classFunctions.md">Calling ORDA class functions</a> section.</p>
+<p>Function calls are detailed in the <a href="/docs/alpha/en/REST/classFunctions.html">Calling ORDA class functions</a> section.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="dataclass"></a><a href="#dataclass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>{dataClass}</h2>
 <p>Returns all the data (by default the first 100 entities) for a specific dataclass (<em>e.g.</em>, <code>Company</code>)</p>
