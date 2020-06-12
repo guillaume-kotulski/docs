@@ -94,7 +94,7 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <li><a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">entity</a></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="user-class-store-cs"></a><a href="#user-class-store-cs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User Class Store (cs)</h4>
-<p>Object instances from ORDA user classes benefit from their parent's properties and functions. For example, an entity class object can call functions from the <a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">ORDA's Entity generic class</a>.</p>
+<p>Object instances from ORDA data model user classes benefit from their parent's properties and functions. For example, an entity class object can call functions from the <a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">ORDA's Entity generic class</a>.</p>
 <p>In addition, the 4D developer can add custom functions to create a business-oriented API exposing only necessary features.</p>
 <p>All ORDA classes are exposed as properties of the <strong><code>cs</code></strong> class store. The following ORDA class objects are available:</p>
 <table>
@@ -102,21 +102,20 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <tr><th>ORDA object</th><th>Class</th><th>Instanciated by</th></tr>
 </thead>
 <tbody>
-<tr><td>datastore</td><td>cs.<em>dbName</em>DataStore(*)</td><td><code>ds</code> command</td></tr>
+<tr><td>datastore</td><td>cs.DataStore</td><td><code>ds</code> command</td></tr>
 <tr><td>dataClassName</td><td>cs.<em>DataClassName</em></td><td><code>dataStore.DataClassName</code>, <code>dataStore[DataClassName]</code></td></tr>
 <tr><td>entity from DataClassName</td><td>cs.<em>DataClassName</em>Entity</td><td><code>dataClass.get()</code>, <code>dataClass.new()</code>, <code>entitySelection.first()</code>, <code>entitySelection.last()</code>, <code>entity.previous()</code>, <code>entity.next()</code>, <code>entity.first()</code>, <code>entity.last()</code>, <code>entity.clone()</code></td></tr>
-<tr><td>entitySelection from dataClassName</td><td>cs.<em>dataClassName</em>Selection</td><td><code>dataClass.query()</code>, <code>entitySelection.query()</code>, <code>dataClass.all()</code>, <code>dataClass.fromCollection()</code>, <code>dataClass.newSelection()</code>, <code>entitySelection.drop()</code>, <code>entity.getSelection()</code>, <code>entitySelection.and()</code>, <code>entitySelection.minus()</code>, <code>entitySelection.or()</code>, <code>entitySelection.orderBy()</code>, <code>entitySelection.orderByFormula()</code>, <code>entitySelection.slice()</code>, <code>Create entity selection</code></td></tr>
+<tr><td>entitySelection from dataClassName</td><td>cs.<em>DataClassName</em>Selection</td><td><code>dataClass.query()</code>, <code>entitySelection.query()</code>, <code>dataClass.all()</code>, <code>dataClass.fromCollection()</code>, <code>dataClass.newSelection()</code>, <code>entitySelection.drop()</code>, <code>entity.getSelection()</code>, <code>entitySelection.and()</code>, <code>entitySelection.minus()</code>, <code>entitySelection.or()</code>, <code>entitySelection.orderBy()</code>, <code>entitySelection.orderByFormula()</code>, <code>entitySelection.slice()</code>, <code>Create entity selection</code></td></tr>
 </tbody>
 </table>
-<p>(*)dbName is the .4DProject file name.</p>
 <blockquote>
 <p>ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project <a href="#support-in-4d-projects">(see below)</a>.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="inheritance"></a><a href="#inheritance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inheritance</h3>
-<p>Given a database named EmpComp containing Employee and Company tables, the following examples show inheritance rules:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds;<span class="hljs-number">4</span>D.DataStore) <span class="hljs-comment">//True</span>
-<span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds;cs.EmpCompDataStore) <span class="hljs-comment">//True  </span>
-<span class="hljs-variable">$class</span>:=<span class="hljs-function">OB Class</span>(ds) <span class="hljs-comment">//$class=cs.EmpCompDataStore  </span>
+<p>Given a project containing Employee and Company tables, the following examples show inheritance rules:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds;<span class="hljs-number">4</span>D.DataStoreImplementation) <span class="hljs-comment">//True</span>
+<span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds;cs.DataStore) <span class="hljs-comment">//True  </span>
+<span class="hljs-variable">$class</span>:=<span class="hljs-function">OB Class</span>(ds) <span class="hljs-comment">//$class=cs.DataStore  </span>
 
 <span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds.Employee;<span class="hljs-number">4</span>D.DataClass) <span class="hljs-comment">//True</span>
 <span class="hljs-variable">$i</span>:=<span class="hljs-function">OB Instance of</span>(ds.Employee;cs.Employee) <span class="hljs-comment">//True  </span>
@@ -132,26 +131,29 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="apis"></a><a href="#apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>APIs</h2>
+<blockquote>
+<p><strong>Warning</strong>: Keep in mind that ORDA functions are always executed on the server, thus calling a function do generate a request to the server.</p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="datastore-class"></a><a href="#datastore-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataStore Class</h3>
 <p>A 4D database exposes its own DataStore class in the <code>cs</code> class store.</p>
 <ul>
-<li><strong>Extends</strong>: 4D.DataStore</li>
-<li><strong>Exposed name</strong>: <em>dbName</em>DataStore (where <em>dbName</em> is the .4DProject file name)</li>
-<li><strong>Class file name</strong>: <em>dbName</em>DataStore.4dm</li>
+<li><strong>Extends</strong>: 4D.DataStoreImplementation</li>
+<li><strong>Exposed name</strong>: DataStore</li>
+<li><strong>Class file name</strong>: DataStore.4dm</li>
 </ul>
 <table>
 <thead>
 <tr><th>Database file name</th><th>DataStore class name</th><th>Class file name</th></tr>
 </thead>
 <tbody>
-<tr><td>Employee.4DProject</td><td>cs.EmployeeDataStore</td><td>EmployeeDataStore.4dm</td></tr>
+<tr><td>Employee.4DProject</td><td>cs.DataStore</td><td>DataStore.4dm</td></tr>
 </tbody>
 </table>
-<p>You can create functions in the <em>dbName</em>DataStore class, that will be available through the <code>ds</code> object.</p>
+<p>You can create functions in the DataStore class, that will be available through the <code>ds</code> object.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.EmployeeDataStore class</span>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.DataStore class</span>
 
-Class extends DataStore
+Class extends DataStoreImplementation
 
 Function getDesc
   <span class="hljs-variable">$0</span>:=<span class="hljs-string">"Database exposing employees and their companies"</span>
@@ -281,24 +283,20 @@ Class extends Entity
 <p>Then, you can run this kind of query:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$cities</span>:=ds.City.<span class="hljs-function">query</span>(<span class="hljs-function">Formula</span>(<span class="hljs-literal">This</span>.<span class="hljs-function">getPopulation</span>() &gt; <span class="hljs-number">500000</span>))
 </code></pre>
-<blockquote>
-<p><strong>Warning</strong>: Keep in mind that ORDA functions are always executed on the server, thus calling a function do generate a request to the server.</p>
-</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="support-in-4d-projects"></a><a href="#support-in-4d-projects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support in 4D projects</h2>
-<p>ORDA user class files must be stored at the <a href="/docs/alpha/de/Concepts/classes.html#class-files">same location as regular class files</a>, i.e. in the <code>/Sources/Classes</code> folder of the project folder.</p>
+<p>ORDA data model user class files must be stored at the <a href="/docs/alpha/de/Concepts/classes.html#class-files">same location as regular class files</a>, i.e. in the <code>/Sources/Classes</code> folder of the project folder.</p>
 <h3><a class="anchor" aria-hidden="true" id="creating-classes"></a><a href="#creating-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating classes</h3>
 <p>You create an ORDA user class by adding a corresponding file in the Classes folder. For example, to create an entity class for the <code>Utilities</code> dataclass, you need to create a <code>UtilitiesEntity.4dm</code> file.</p>
-<p>A class file can be created by a simple double-click in the Classes theme of the Explorer.</p>
-<blockquote>
-<p>By default, empty ORDA classes are not displayed in the Explorer. You need to show them by selecting <strong>Show all data classes</strong> from the Explorer's options menu: <img src="/docs/alpha/assets/en/API/showClass.png" alt=""></p>
-</blockquote>
-<p>ORDA user classes have a different icon from regular classes. Empty classes are dimmed:</p>
+<p>A class file can be created by a simple double-click in the Classes theme of the 4D Explorer. ORDA user classes have a different icon from regular classes. Empty classes are dimmed:</p>
 <p><img src="/docs/alpha/assets/en/API/classORDA2.png" alt=""></p>
 <p>Double-click on a class name. 4D creates the ORDA class file and add the <code>extends</code> code, for example for an Entity class:</p>
 <pre><code class="hljs">Class extends entity
 </code></pre>
 <p>Once a class is defined, its name is no longer dimmed in the Explorer:</p>
 <p><img src="/docs/alpha/assets/en/API/classORDA3.png" alt=""></p>
+<blockquote>
+<p>By default, empty ORDA classes are not displayed in the Explorer. You need to show them by selecting <strong>Show all data classes</strong> from the Explorer's options menu: <img src="/docs/alpha/assets/en/API/showClass.png" alt=""></p>
+</blockquote>
 <h3><a class="anchor" aria-hidden="true" id="editing-classes"></a><a href="#editing-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing classes</h3>
 <p>To open a defined ORDA class in the 4D method editor, double-click on an ORDA class name or select an ORDA class name and select <strong>Edit...</strong> from the contextual menu/options menu of the Explorer window (like for any class):</p>
 <p><img src="/docs/alpha/assets/en/API/classORDA4.png" alt=""></p>
