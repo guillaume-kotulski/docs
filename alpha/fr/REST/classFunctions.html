@@ -108,6 +108,7 @@ The function is searched in the entity selection class first. If not found, it i
 <h3><a class="anchor" aria-hidden="true" id="scalar-value-parameter"></a><a href="#scalar-value-parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scalar value parameter</h3>
 <p>Parameter(s) must simply be enclosed in a collection defined in the body. For example, with a dataclass function <code>getCities()</code> receiving text parameters: <code>/rest/City/getCities</code></p>
 <p><strong>Parameters in body:</strong> [&quot;Aguada&quot;,&quot;Paris&quot;]</p>
+<p>All JSON data types are supported in parameters, including JSON pointers. Dates can be passed as strings in ISO 8601 date format (e.g. &quot;2020-08-22T22:00:000Z&quot;).</p>
 <h3><a class="anchor" aria-hidden="true" id="entity-parameter"></a><a href="#entity-parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entity parameter</h3>
 <p>Entities passed in parameters are referenced on the server through their key (<em>i.e.</em> __KEY property). If the key parameter is omitted in a request, a new entity is loaded in memory the server. You can also pass values for any attributes of the entity. These values will automatically be used for the entity handled on the server.</p>
 <blockquote>
@@ -282,23 +283,30 @@ Function getLastSummary
     &quot;result&quot;: &quot;Wilbert - Bull is ... 21&quot; 
 }
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="creating-an-entity"></a><a href="#creating-an-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an entity</h3>
-<p>The Dataclass class <code>Students</code> has the function <code>applyData()</code> receiving an entity and saving it.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-an-entity-to-be-created-on-the-server"></a><a href="#using-an-entity-to-be-created-on-the-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using an entity to be created on the server</h3>
+<p>The Dataclass class <code>Students</code> has the function <code>pushData()</code> receiving an entity containing data from the client. The <code>checkData()</code> method runs some controls. If they are OK, the entity is saved and returned.</p>
 <pre><code class="hljs">// Students Class
 
 Class extends DataClass
 
-Function applyData
-    C_OBJECT($1;$entity;$status;$0)
+Function pushData
+    var $1, $entity, $status, $0 : Object
 
     $entity:=$1
 
-    $entity.lastname:=Uppercase($entity.lastname)
-    $status:=$entity.save()
+    $status:=checkData($entity) // $status is an object with a success boolean property
+
     $0:=$status
+
+    If ($status.success)
+        $status:=$entity.save()
+       If ($status.success)
+           $0:=$entity
+      End if 
+    End if
 </code></pre>
 <p>You run this request:</p>
-<p><strong>POST</strong> <code>http://127.0.0.1:8044/rest/Students/applyData</code></p>
+<p><strong>POST</strong> <code>http://127.0.0.1:8044/rest/Students/pushData</code></p>
 <p>Body of the request:</p>
 <pre><code class="hljs">[{
 &quot;__DATACLASS&quot;:&quot;Students&quot;,
@@ -307,15 +315,22 @@ Function applyData
 &quot;lastname&quot;:&quot;Brown&quot; 
 }]
 </code></pre>
-<p>Since no <code>__KEY</code> is given, a new Students entity is created with the given attributes.</p>
+<p>Since no <code>__KEY</code> is given, a new Students entity is loaded on the server <strong>with the attributes received from the client</strong>. Because the <code>pushData()</code> function runs a <code>save()</code> action, the new entity is created.</p>
 <h4><a class="anchor" aria-hidden="true" id="result-6"></a><a href="#result-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result</h4>
 <pre><code class="hljs">{
-    &quot;result&quot;: {
-        &quot;success&quot;: true
-    }
+    &quot;__entityModel&quot;: &quot;Students&quot;,
+    &quot;__DATACLASS&quot;: &quot;Students&quot;,
+    &quot;__KEY&quot;: &quot;55&quot;,
+    &quot;__TIMESTAMP&quot;: &quot;2020-06-16T10:54:41.805Z&quot;,
+    &quot;__STAMP&quot;: 1,
+    &quot;ID&quot;: 55,
+    &quot;firstname&quot;: &quot;Ann&quot;,
+    &quot;lastname&quot;: &quot;BROWN&quot;,
+    &quot;schoolID&quot;: null,
+    &quot;school&quot;: null
 }
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="updating-an-entity"></a><a href="#updating-an-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Updating an entity</h3>
+<h3><a class="anchor" aria-hidden="true" id="using-an-entity-to-be-updated-on-the-server"></a><a href="#using-an-entity-to-be-updated-on-the-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using an entity to be updated on the server</h3>
 <p>Same as above but with a __KEY attribute</p>
 <p>You run this request:</p>
 <p><strong>POST:</strong><code>http://127.0.0.1:8044/rest/Students/applyData</code></p>
@@ -324,15 +339,22 @@ Function applyData
 &quot;__DATACLASS&quot;:&quot;Students&quot;,
 &quot;__ENTITY&quot;:true,
 &quot;lastname&quot;:&quot;Brownie&quot;,
-&quot;__KEY&quot;:1
+&quot;__KEY&quot;:55
 }]
 </code></pre>
-<p>Since <code>__KEY</code> is given, the Students entity with primary key 1 is loaded with the lastname value received. Because the function runs a <code>save()</code>, the entity is updated.</p>
+<p>Since <code>__KEY</code> is given, the Students entity with primary key 55 is loaded <strong>with the lastname value received from the client</strong>. Because the function runs a <code>save()</code> action, the entity is updated.</p>
 <h4><a class="anchor" aria-hidden="true" id="result-7"></a><a href="#result-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result</h4>
 <pre><code class="hljs">{
-    &quot;result&quot;: {
-        &quot;success&quot;: true
-    }
+    &quot;__entityModel&quot;: &quot;Students&quot;,
+    &quot;__DATACLASS&quot;: &quot;Students&quot;,
+    &quot;__KEY&quot;: &quot;55&quot;,
+    &quot;__TIMESTAMP&quot;: &quot;2020-06-16T11:10:21.679Z&quot;,
+    &quot;__STAMP&quot;: 3,
+    &quot;ID&quot;: 55,
+    &quot;firstname&quot;: &quot;Ann&quot;,
+    &quot;lastname&quot;: &quot;BROWNIE&quot;,
+    &quot;schoolID&quot;: null,
+    &quot;school&quot;: null 
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="creating-an-entity-with-a-related-entity"></a><a href="#creating-an-entity-with-a-related-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an entity with a related entity</h3>
@@ -362,7 +384,7 @@ Function applyData
 Class extends Entity
 
 Function putToSchool()
-    C_OBJECT($1;$school;$0;$status)
+    var $1, $school , $0, $status : Object
 
         //$1 is a Schools entity
     $school:=$1
@@ -388,17 +410,17 @@ Function putToSchool()
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="receiving-an-entity-selection-as-parameter"></a><a href="#receiving-an-entity-selection-as-parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Receiving an entity selection as parameter</h3>
-<p>In the <code>Students</code> Dataclass class, a function updates a received entity selection ($1). It actually updates the <em>finalExam</em> attribute with the received value ($2).</p>
+<p>In the <code>Students</code> Dataclass class, the <code>setFinalExam()</code> function updates a received entity selection ($1). It actually updates the <em>finalExam</em> attribute with the received value ($2). It returns the primary keys of the updated entities.</p>
 <pre><code class="hljs">// Students class
 
 Class extends DataClass
 
 Function setFinalExam()
 
-    C_OBJECT($1;$es;$student;$status)
-    C_TEXT($2;$examResult)
+    var $1, $es, $student, $status : Object
+    var $2, $examResult : Text
 
-    C_COLLECTION($keys;$0)
+    var $keys, $0 : Collection
 
       //Entity selection
     $es:=$1
@@ -432,13 +454,32 @@ Function setFinalExam()
 ]
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="result-10"></a><a href="#result-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result</h4>
+<p>The entities with primary keys 1 and 2 have been updated.</p>
 <pre><code class="hljs">{
     &quot;result&quot;: [
         1,
         2
     ]
-}</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/REST/manData.html"><span class="arrow-prev">← </span><span>Manipulation des données</span></a><a class="docs-next button" href="/docs/alpha/fr/REST/REST_requests.html"><span>A propos des requêtes REST</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a></li><li><a href="#function-calls">Function calls</a></li><li><a href="#paramètres">Paramètres</a><ul class="toc-headings"><li><a href="#scalar-value-parameter">Scalar value parameter</a></li><li><a href="#entity-parameter">Entity parameter</a></li><li><a href="#entity-selection-parameter">Entity selection parameter</a></li></ul></li><li><a href="#request-examples">Request examples</a><ul class="toc-headings"><li><a href="#using-a-datastore-class-function">Using a datastore class function</a></li><li><a href="#using-a-dataclass-class-function">Using a dataclass class function</a></li><li><a href="#using-an-entity-class-function">Using an entity class function</a></li><li><a href="#using-an-entityselection-class-function">Using an entitySelection class function</a></li><li><a href="#using-an-entityselection-class-function-and-an-entityset">Using an entitySelection class function and an entitySet</a></li><li><a href="#using-an-entityselection-class-function-and-an-orderby">Using an entitySelection class function and an orderBy</a></li><li><a href="#creating-an-entity">Creating an entity</a></li><li><a href="#updating-an-entity">Updating an entity</a></li><li><a href="#creating-an-entity-with-a-related-entity">Creating an entity with a related entity</a></li><li><a href="#updating-an-entity-with-a-related-entity">Updating an entity with a related entity</a></li><li><a href="#receiving-an-entity-selection-as-parameter">Receiving an entity selection as parameter</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-an-entity-selection-updated-on-the-client"></a><a href="#using-an-entity-selection-updated-on-the-client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using an entity selection updated on the client</h3>
+<p>Using the <code>getAgeAverage()</code> function <a href="#using-an-entityselection-class-function-and-an-entityset">defined above</a>.</p>
+<pre><code class="hljs css language-4d">var <span class="hljs-variable">$remoteDS</span>, <span class="hljs-variable">$newStudent</span>, <span class="hljs-variable">$students</span> : Object
+var <span class="hljs-variable">$ageAverage</span> : Integer
+
+<span class="hljs-variable">$remoteDS</span>:=<span class="hljs-function">Open datastore</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"hostname"</span>;<span class="hljs-string">"127.0.0.1:8044"</span>);<span class="hljs-string">"students"</span>)
+
+<span class="hljs-comment">// $newStudent is a student entity to procees</span>
+<span class="hljs-variable">$newStudent</span>:=...
+<span class="hljs-variable">$students</span>:=<span class="hljs-variable">$remoteDS</span>.Students.<span class="hljs-function">query</span>(<span class="hljs-string">"school.name = :1"</span>;<span class="hljs-string">"Math school"</span>)
+<span class="hljs-comment">// We add an entity to the $students entity selection on the client</span>
+<span class="hljs-variable">$students</span>.<span class="hljs-function">add</span>(<span class="hljs-variable">$newStudent</span>) 
+
+<span class="hljs-comment">// We call a function on the StudentsSelection class returning the age average of the students in the entity selection</span>
+<span class="hljs-comment">// The function is executed on the server on the updated $students entity selection which included the student added from the client</span>
+<span class="hljs-variable">$ageAverage</span>:=<span class="hljs-variable">$students</span>.<span class="hljs-function">getAgeAverage</span>()
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/REST/manData.html"><span class="arrow-prev">← </span><span>Manipulation des données</span></a><a class="docs-next button" href="/docs/alpha/fr/REST/REST_requests.html"><span>A propos des requêtes REST</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a></li><li><a href="#function-calls">Function calls</a></li><li><a href="#paramètres">Paramètres</a><ul class="toc-headings"><li><a href="#scalar-value-parameter">Scalar value parameter</a></li><li><a href="#entity-parameter">Entity parameter</a></li><li><a href="#entity-selection-parameter">Entity selection parameter</a></li></ul></li><li><a href="#request-examples">Request examples</a><ul class="toc-headings"><li><a href="#using-a-datastore-class-function">Using a datastore class function</a></li><li><a href="#using-a-dataclass-class-function">Using a dataclass class function</a></li><li><a href="#using-an-entity-class-function">Using an entity class function</a></li><li><a href="#using-an-entityselection-class-function">Using an entitySelection class function</a></li><li><a href="#using-an-entityselection-class-function-and-an-entityset">Using an entitySelection class function and an entitySet</a></li><li><a href="#using-an-entityselection-class-function-and-an-orderby">Using an entitySelection class function and an orderBy</a></li><li><a href="#using-an-entity-to-be-created-on-the-server">Using an entity to be created on the server</a></li><li><a href="#using-an-entity-to-be-updated-on-the-server">Using an entity to be updated on the server</a></li><li><a href="#creating-an-entity-with-a-related-entity">Creating an entity with a related entity</a></li><li><a href="#updating-an-entity-with-a-related-entity">Updating an entity with a related entity</a></li><li><a href="#receiving-an-entity-selection-as-parameter">Receiving an entity selection as parameter</a></li><li><a href="#using-an-entity-selection-updated-on-the-client">Using an entity selection updated on the client</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
