@@ -8,7 +8,7 @@ title: Klassen
 
 Die 4D Programmiersprache unterstützt das Konzept **Klassen**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
 
-Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz der dazugehörigen Klasse. Eine Klasse kann eine andere Klasse `erweitern` und erbt dann von deren Funktionen.
+Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse `erweitern` und erbt dann von deren Funktionen.
 
 Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf einer Kette von Prototypen.
 
@@ -16,22 +16,22 @@ Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf ei
 
 Die Klasse ist selbst ein Objekt vom Typ "Klasse". Ein Objekt Klasse hat folgende Eigenschaften und Methoden:
 
-- `name`, der die Regeln von ECMAScript einhalten muss
+- `name` (konform mit den Regeln von ECMAScript)
 - Objekt `superclass` (optional, null, wenn nicht vorhanden)
 - Methode `new()`, um Instanzen der Objekte in einer Klasse zu setzen.
 
 In addition, a class object can reference:
 
-- a `constructor` object (optional)
+- Ein Objekt `constructor` (optional)
 - a `prototype` object, containing named function objects (optional).
 
-A class object is a shared object and can therefore be accessed from different 4D processes simultaneously.
+Ein Objekt Klasse ist ein shared Object, d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
 
-### Property lookup and prototype
+### Eigenschaft lookup und prototype
 
-All objects in 4D are internally linked to a class object. When 4D does not find a property in an object, it searches in the prototype object of its class; if not found, 4D continues searching in the prototype object of its superclass, and so on until there is no more superclass.
+Alle Objekte in 4D sind intern an ein Objekt Klasse gebunden. When 4D does not find a property in an object, it searches in the prototype object of its class; if not found, 4D continues searching in the prototype object of its superclass, and so on until there is no more superclass.
 
-All objects inherit from the class "Object" as their inheritance tree top class.
+Alle Objekte erben von der Klasse "Object" als ihrer obersten Klasse im Vererbungsbaum.
 
 ```4d
   //Class: Polygon
@@ -49,7 +49,7 @@ $instance:=OB Instance of($poly;4D.Object)
  // true 
 ```
 
-When enumerating properties of an object, its class prototype is not enumerated. As a consequence, `For each` statement and `JSON Stringify` command do not return properties of the class prototype object. The prototype object property of a class is an internal hidden property.
+Beim Aufzählen der Eigenschaften eines Objekts wird der Prototyp seiner Klasse nicht mitgezählt. Demzufolge geben die Anweisung `For each` und der Befehl `JSON Stringify` nicht Eigenschaften des Objekts prototype der Klasse zurück. The prototype object property of a class is an internal hidden property.
 
 ### Class definition
 
