@@ -78,7 +78,9 @@ Hérité de : [Document](Document.md)
 
 #### Description
 
-La méthode file.create( ) crée un fichier sur disque en fonction des propriétés de l'objet fichier.<!-- END REF -->
+La méthode file.create( ) <!-- REF File.create.Summary --> crée un fichier sur disque en fonction des propriétés de l'objet fichier. 
+
+<!-- END REF -->
 
 Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés fichier.platformPath ou fichier.path. Si le fichier existe déjà sur disque, la fonction ne fait rien (aucune erreur n'est générée) et retourne faux.
 
