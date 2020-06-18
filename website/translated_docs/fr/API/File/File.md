@@ -3,13 +3,13 @@ id: file
 title: File
 ---
 
-inherit from : [Document](Document.md)
+Hérité de : [Document](Document.md)
 
-## Properties
+## Propriétés
 
 <!-- INCLUDE document.properties -->
 
-## Methods summary
+## Méthodes
 
 
 
@@ -37,7 +37,7 @@ inherit from : [Document](Document.md)
 
 
 
-| name                                    | description                               |
+| Nom                                     | Description                               |
 | --------------------------------------- | ----------------------------------------- |
 | [create()](#create)                     | <!-- INCLUDE File.create.Summary -->      |
 |                                         | <!--INCLUDE File.create.Syntax -->        |
@@ -63,13 +63,13 @@ inherit from : [Document](Document.md)
 
 <!--REF File.create.Syntax -->
 
-**create** &rarr; boolean<!-- END REF -->
+**create** &rarr; booléen<!-- END REF -->
 
 <!--REF File.create.Parameters -->
 
-| Paramètres | Type    | Description                                                |
-| ---------- | ------- | ---------------------------------------------------------- |
-| Result     | Booléen | True if the file was created successfully, false otherwise |
+| Paramètres | Type    | Description                                           |
+| ---------- | ------- | ----------------------------------------------------- |
+| Résultat   | Booléen | Vrai si le fichier a été créé avec succès, sinon Faux |
 
 
 <!-- END REF -->
@@ -78,19 +78,19 @@ inherit from : [Document](Document.md)
 
 #### Description
 
-The file.create( ) method <!-- REF File.create.Summary -->creates a file on disk according to the properties of the file object.
+La méthode file.create( ) <!-- REF File.create.Summary --> crée un fichier sur disque en fonction des propriétés de l'objet fichier. 
 
 <!-- END REF -->
 
-If necessary, the function creates the folder hierachy as described in the file.platformPath or file.path properties. If the file already exists on disk, the function does nothing (no error is thrown) and returns false.
+Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés fichier.platformPath ou fichier.path. Si le fichier existe déjà sur disque, la fonction ne fait rien (aucune erreur n'est générée) et retourne faux.
 
-Returned value
+Valeur retournée
 
-true if the file is created successfully; false if a file with the same name already exists or if an error occured.
+vrai si le fichier est créé avec succès; faux si un fichier portant le même nom existe déjà ou en cas d'erreur.
 
 #### Exemple
 
-Creation of a preferences file in the database folder:
+Création d'un fichier de préférenes dans le dossier de la base de donées :
 
  ```4d
  C_BOOLEAN($created)
@@ -103,16 +103,16 @@ Creation of a preferences file in the database folder:
 
 <!--REF File.createAlias.Syntax -->
 
-**file.createAlias** (*destinationFolder* ; *aliasName* {; *aliasType*} ) &rarr; Result<!-- END REF -->
+**file.createAlias** (*destinationFolder* ; *aliasName* {; *aliasType*} ) &rarr; Résultat<!-- END REF -->
 
 <!--REF File.createAlias.Parameters -->
 
-| Paramètres        | Type        | Description                                  |
-| ----------------- | ----------- | -------------------------------------------- |
-| destinationFolder | Objet       | Destination folder for the alias or shortcut |
-| aliasName         | Texte       | Name of the alias or shortcut                |
-| aliasType         | Entier long | Type of the alias link                       |
-| Result            | Objet       | Alias or shortcut file reference             |
+| Paramètres        | Type        | Description                                       |
+| ----------------- | ----------- | ------------------------------------------------- |
+| destinationFolder | Objet       | Dossier de destination de l'alias ou du raccourci |
+| aliasName         | Texte       | Nom de l'alias ou du raccourci                    |
+| aliasType         | Entier long | Type du lien de l'alias                           |
+| Résultat          | Objet       | Référence du dossier de l'alias ou du raccourci   |
 
 
 <!-- END REF -->
@@ -121,25 +121,23 @@ Creation of a preferences file in the database folder:
 
 #### Description
 
-The file.createAlias( ) method <!-- REF File.createAlias.Summary -->creates an alias (macOS) or a shortcut (Windows) to the file with the specified aliasName name in the folder designated by the destinationFolder object
+La méthode folder.createAlias( ) crée un alias (macOS) ou un raccourci (Windows) au dossier avec le nom nomAlias spécifié dans le dossier désigné par l'objet dossierDestination.
 
-<!-- END REF -->.
+Passez le nom de l'alias ou du raccourci à créer dans le paramètre nomAlias.
 
-Pass the name of the alias or shortcut to create in the aliasName parameter.
+Par défaut sur macOS, la méthode crée un alias standard. Vous pouvez également créer un lien symbolique à l'aide du paramètre typeAlias. Les constantes suivantes sont disponibles : 
 
-By default on macOS, the method creates a standard alias. You can also create a symbolic link by using the aliasType parameter. The following constants are available: 
-
-| Constant         | Valeur | Commentaire                      |
-| ---------------- | ------ | -------------------------------- |
-| fk alias link    | 0      | Alias link (macOS only)(default) |
-| fk symbolic link | 1      | Symbolic link (macOS only)       |
+| Constante        | Valeur | Commentaire                               |
+| ---------------- | ------ | ----------------------------------------- |
+| fk alias link    | 0      | Lien alias (macOS uniquement)(par défaut) |
+| fk symbolic link | 1      | Lien symbolique (macOS uniquement)        |
 
 
-On Windows, a shortcut (.lnk file) is always created (the aliasType parameter is ignored).
+Sur Windows, un raccourci (fichier .lnk) est toujours créé (le paramètre typeAlias est ignoré).
 
-Returned object
+Objet retourné
 
-The file.createAlias( ) method returns a File object with the file.isAlias property set to true.
+La méthode folder.createAlias( ) retourne un objet Folder avec la propriété dossier.isAlias mise à Vrai.
 
 #### Exemple
 
@@ -204,7 +202,7 @@ The destinationFolder must exist on disk, otherwise an error is generated.
 
 By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the newName parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
-Returned object
+Objet retourné
 
 The method returns the moved File object.
 
