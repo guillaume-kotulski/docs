@@ -34,7 +34,7 @@ blabla
 
 | name | description |
 | ---- | ----------- |
-<!-- REF document.methods -->
+|<!-- REF document.methods -->|
 |[getContent()](#getcontent) |<!-- INCLUDE Document.getContent.Summary -->|
 ||<!--INCLUDE Document.getContent.Syntax -->|
 |[copyTo()](#copyto) |<!-- INCLUDE Document.copyTo.Summary -->|
