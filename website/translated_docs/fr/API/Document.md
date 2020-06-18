@@ -7,7 +7,7 @@ title: Document
 
 blabla
 
-## Properties
+## Propriétés
 
 <!-- REF document.properties -->
 
@@ -77,28 +77,28 @@ blabla
 
 
 
-| name                                                                                                                                     | description                                                                                                                                                                          |
+| Nom                                                                                                                                      | Description                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <!-- REF document.creationDate -->
 
-[creationDate]() <!-- END REF -->                                                                    | <!-- REF document.creationDateDesc --> returns the creation date of the file. 
+[creationDate]() <!-- END REF -->                                                                    | <!-- REF document.creationDateDesc --> retourne la date de création du fichier. 
 
-<!-- END REF -->                                                                                     |
+<!-- END REF -->                                                                                   |
 | <!-- REF document.creationTime -->
 
-[creationTime]() <!-- END REF -->                                                                    | <!-- REF document.creationTimeDesc --> returns the creation time of the file (expressed as a number of seconds beginning at 00:00). 
+[creationTime]() <!-- END REF -->                                                                    | <!-- REF document.creationTimeDesc --> retourne l'heure de création du fichier (exprimée en secondes sous forme d'un nombre, commençant à 00:00). 
 
-<!-- END REF -->                               |
+<!-- END REF -->                 |
 | <!-- REF document.exists -->
 
-[exists]()<!-- END REF -->                                                                                 | <!-- REF document.existsDesc --> returns true if the file exists on disk, and false otherwise. 
+[exists]()<!-- END REF -->                                                                                 | <!-- REF document.existsDesc --> retourne vrai si le fichier existe sur le disque, sinon elle retourne faux. 
 
-<!-- END REF -->                                                                    |
+<!-- END REF -->                                                      |
 | <!-- REF document.extension -->
 
-[extension]()<!-- END REF -->                                                                           | <!-- REF document.extensionDesc -->returns the creation date of the file. 
+[extension]()<!-- END REF -->                                                                           | <!-- REF document.extensionDesc -->retourne l'extension du nom de fichier. 
 
-<!-- END REF -->                                                                                         |
+<!-- END REF -->                                                                                        |
 | <!-- REF document.fullName -->
 
 [fullName]() <!-- END REF -->                                                                            | <!-- REF document.fullNameDesc --> returns the full name of the file, including its extension (if any).
