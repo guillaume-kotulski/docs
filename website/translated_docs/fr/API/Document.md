@@ -101,9 +101,9 @@ blabla
 <!-- END REF -->                                                                                        |
 | <!-- REF document.fullName -->
 
-[fullName]() <!-- END REF -->                                                                            | <!-- REF document.fullNameDesc --> returns the full name of the file, including its extension (if any).
+[fullName]() <!-- END REF -->                                                                            | <!-- REF document.fullNameDesc --> retourne le nom complet du fichier, extension comprise (le cas échéant).
 
-<!-- END REF -->                                                            |
+<!-- END REF -->                                                        |
 | <!-- REF document.hidden -->
 
 [hidden]() <!-- END REF -->                                                                                | <!-- REF document.hiddenDesc --> returns true if the file is set as "hidden" at the system level, and false otherwise. 
@@ -170,9 +170,9 @@ blabla
 
 ## Méthodes
 
-| name | description |
-| ---- | ----------- |
-|      |             |
+| Nom | Description |
+| --- | ----------- |
+|     |             |
 
 
 <!-- REF document.methods --> |
