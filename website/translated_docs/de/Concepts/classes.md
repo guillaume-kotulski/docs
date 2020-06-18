@@ -1,14 +1,14 @@
 ---
 id: classes
-title: Classes
+title: Klassen
 ---
 
 
 ## Overview
 
-The 4D language supports the concept of **classes**. In a programming language, using a class allows you to define an object behaviour with associated properties and functions.
+Die 4D Programmiersprache unterstützt das Konzept **Klassen**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
 
-Once a class is defined, you can **instantiate** objects of this class anywhere in your code. Each object is an instance of its class. A class can `extend` another class, and then inherits from its functions.
+Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz der dazugehörigen Klasse. A class can `extend` another class, and then inherits from its functions.
 
 The class model in 4D is similar to classes in JavaScript, and based on a chain of prototypes.
 
@@ -108,7 +108,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 - Database folder 
     + Project 
         * Sources 
-            - Classes 
+            - Klassen 
                 + Polygon.4dm
 
 ### Class names
