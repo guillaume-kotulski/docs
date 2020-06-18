@@ -9,24 +9,23 @@ inherit from : [Document](Document.md)
 <!-- INCLUDE document.properties -->
 
 ## Methods summary
-
-| name | description|
+| name | description |
 | ---- | -------- |
-|<!-- INCLUDE document.methods -->|
-|[create()](#create)|<!-- INCLUDE File.create.Summary -->|
-|| <!--INCLUDE File.create.Syntax -->|
-|[createAlias()](#createalias)|<!-- INCLUDE File.createAlias.Summary -->|
-||<!--INCLUDE File.createAlias.Syntax -->|
-|[delete()](#delete) |<!-- INCLUDE File.delete.Summary -->|
-||<!-- INCLUDE File.delete.Syntax -->|
-|[moveTo()](#moveto) |<!-- INCLUDE File.moveTo.Summary -->|
+|[create()](#create) |<!-- INCLUDE File.create.Summary -->|
+| | <!--INCLUDE File.create.Syntax -->|
+|[createAlias()](#createalias) | <!-- INCLUDE File.createAlias.Summary -->|
+|| <!--INCLUDE File.createAlias.Syntax -->|
+|[delete()](#delete) | <!-- INCLUDE File.delete.Summary -->|
+|| <!-- INCLUDE File.delete.Syntax --> |
+|[moveTo()](#moveto) | <!-- INCLUDE File.moveTo.Summary -->|
 ||<!-- INCLUDE File.moveTo.Syntax -->|
 |[rename()](#rename) |<!-- INCLUDE File.rename.Summary -->|
-||<!-- INCLUDE File.rename.Syntax -->|
-|[setContent()](#setcontent)|<!-- INCLUDE File.setContent.Summary -->||<!-- INCLUDE File.setContent.Syntax -->|
-|[setText()](#settext) |<!-- INCLUDE File.setText.Summary -->|
+| | <!-- INCLUDE File.rename.Syntax -->|
+|[setContent()](#setcontent) | <!-- INCLUDE File.setContent.Summary -->|
+|<!-- INCLUDE File.setContent.Syntax -->|
+|[setText()](#settext) | <!-- INCLUDE File.setText.Summary -->|
 ||<!-- INCLUDE File.setText.Syntax -->|
-
+<!-- INCLUDE document.methods -->
 
 <!-- INCLUDE document.methods.Desc -->
 ## create()
@@ -96,10 +95,10 @@ You want to create an alias to a file in your database folder:
  $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt")
  $aliasFile:=$myFile.createAlias(File("/PACKAGE");"ReadMe")
  ```
- <!-- END REF -->
+<!-- END REF -->
 
 ## delete()
-<!-- REF File.delete.Syntax -->
+<!--REF File.delete.Syntax -->
 file.delete ()<!-- END REF -->
 
 <!-- REF File.delete.Desc -->
