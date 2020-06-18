@@ -7,7 +7,7 @@ title: Document
 
 blabla
 
-## Propriétés
+## Properties
 
 <!-- REF document.properties -->
 
@@ -77,7 +77,7 @@ blabla
 
 
 
-| Nom                                                                                                                                      | Description                                                                                                                                                                          |
+| name                                                                                                                                     | description                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <!-- REF document.creationDate -->
 
@@ -96,9 +96,9 @@ blabla
 <!-- END REF -->                                                      |
 | <!-- REF document.extension -->
 
-[extension]()<!-- END REF -->                                                                           | <!-- REF document.extensionDesc -->retourne l'extension du nom de fichier. 
+[extension]()<!-- END REF -->                                                                           | <!-- REF document.extensionDesc -->retourne la date de création du fichier. 
 
-<!-- END REF -->                                                                                        |
+<!-- END REF -->                                                                                       |
 | <!-- REF document.fullName -->
 
 [fullName]() <!-- END REF -->                                                                            | <!-- REF document.fullNameDesc --> retourne le nom complet du fichier, extension comprise (le cas échéant).
@@ -170,9 +170,9 @@ blabla
 
 ## Méthodes
 
-| Nom | Description |
-| --- | ----------- |
-|     |             |
+| name | description |
+| ---- | ----------- |
+|      |             |
 
 
 <!-- REF document.methods --> |
@@ -220,7 +220,7 @@ The file.getContent( ) method returns <!-- REF Document.getContent.Summary -->a 
 
 <!-- END REF -->
 
-*Returned value*
+*Valeur retournée*
 
 The file.getContent( ) method returns a BLOB.
 
@@ -261,7 +261,7 @@ The file.getContent( ) method returns <!-- REF Document.copyTo.Summary -->a BLOB
 
 <!-- END REF -->
 
-*Returned value*
+*Valeur retournée*
 
 The file.getContent( ) method returns a BLOB.
 
@@ -302,7 +302,7 @@ The file.getContent( ) method returns <!-- REF Document.getText.Summary -->a BLO
 
 <!-- END REF -->
 
-*Returned value*
+*Valeur retournée*
 
 The file.getContent( ) method returns a BLOB.
 
@@ -343,7 +343,7 @@ The file.getContent( ) method returns <!-- REF Document.getIcone.Summary -->a BL
 
 <!-- END REF -->
 
-*Returned value*
+*Valeur retournée*
 
 The file.getContent( ) method returns a BLOB.
 
