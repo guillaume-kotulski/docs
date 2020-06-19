@@ -7,7 +7,7 @@ title: Document
 
 blabla
 
-## Properties
+## Propriétés
 
 <!-- REF document.properties -->
 

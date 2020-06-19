@@ -5,7 +5,7 @@ title: File
 
 Hérité de : [Document](Document.md)
 
-## Properties
+## Propriétés
 
 <!-- INCLUDE document.properties -->
 
@@ -37,7 +37,7 @@ Hérité de : [Document](Document.md)
 
 
 
-| name                                    | description                               |
+| Nom                                     | Description                               |
 | --------------------------------------- | ----------------------------------------- |
 | [create()](#create)                     | <!-- INCLUDE File.create.Summary -->      |
 |                                         | <!--INCLUDE File.create.Syntax -->        |
@@ -127,7 +127,7 @@ Passez le nom de l'alias ou du raccourci à créer dans le paramètre nomAlias.
 
 Par défaut sur macOS, la méthode crée un alias standard. Vous pouvez également créer un lien symbolique à l'aide du paramètre typeAlias. Les constantes suivantes sont disponibles : 
 
-| Constant         | Valeur | Commentaire                               |
+| Constante        | Valeur | Commentaire                               |
 | ---------------- | ------ | ----------------------------------------- |
 | fk alias link    | 0      | Lien alias (macOS uniquement)(par défaut) |
 | fk symbolic link | 1      | Lien symbolique (macOS uniquement)        |
