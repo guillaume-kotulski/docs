@@ -218,10 +218,10 @@ You want to create an alias to a file in your database folder: ```4d $myFile:=Fo
  **rename** ( newName ) &rarr; Result<!-- END REF -->
 
 <!--REF File.rename.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|newName | Text |New full name for the file |
-|Result | Object |Renamed file|
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|newName|Text|New full name for the file|
+|Result|Object|Renamed file|
 <!-- END REF -->
 
 <!-- REF File.rename.Desc -->
@@ -280,11 +280,11 @@ The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the e
  **setText** ( text {; charSet {;breakMode}}) &rarr; blob<!-- END REF -->
 
 <!--REF File.setText.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|text | Text |Text to store in the file |
-|charSet | Text, Longint |Name or number of character set|
-|breakMode | Longint |Processing mode for line breaks|<!-- END REF -->
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|text|Text|Text to store in the file|
+|charSet|Text, Longint|Name or number of character set|
+|breakMode|Longint|Processing mode for line breaks|<!-- END REF -->
 
 <!-- REF File.setText.Desc -->
 #### Description
@@ -298,13 +298,13 @@ In charSet, pass the character set to be used for writing the contents. You can 
 
 In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
 
-| Constant | Type | Value | Comment|
-| ---- | ----------- |----------- |----------- |
-|Document unchanged | Longint |0| No processing |
-|Document with native format | Longint |1| (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-|Document with CRLF | Longint |2| Line breaks are converted to Windows format: CRLF (carriage return + line feed) |
-|Document with CR | Longint |3| Line breaks are converted to OS X format: CR (carriage return) |
-|Document with LF | Longint |4| Line breaks are converted to Unix format: LF (line feed) |
+|Constant|Type|Value|Comment|
+|----|-----------|-----------|-----------|
+|Document unchanged|Longint|0|No processing|
+|Document with native format|Longint|1| (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows|
+|Document with CRLF|Longint|2|Line breaks are converted to Windows format: CRLF (carriage return + line feed)|
+|Document with CR|Longint|3|Line breaks are converted to OS X format: CR (carriage return)|
+|Document with LF|Longint|4|Line breaks are converted to Unix format: LF (line feed)|
 
 #### Example
 ```4d
