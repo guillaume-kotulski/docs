@@ -262,6 +262,7 @@ End if</span>
 <p>You want to create an alias to a file in your database folder: ```4d $myFile:=Folder(fk documents folder).file(&quot;Archives/ReadMe.txt&quot;) $aliasFile:=$myFile.createAlias(File(&quot;/PACKAGE&quot;);&quot;ReadMe&quot;)</p>
 <pre><code class="hljs">
 ## <span class="hljs-keyword">delete</span>()
+
 <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delete</span> ()
 #### Description
 
@@ -273,7 +274,9 @@ If the <span class="hljs-keyword">file</span> does not exist <span class="hljs-k
 WARNING: <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delete</span>( ) can <span class="hljs-keyword">delete</span> any <span class="hljs-keyword">file</span> <span class="hljs-keyword">on</span> <span class="hljs-keyword">a</span> disk. This includes documents created with other applications, <span class="hljs-keyword">as</span> well <span class="hljs-keyword">as</span> the applications themselves. <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delete</span>( ) should <span class="hljs-keyword">be</span> used with extreme caution. Deleting <span class="hljs-keyword">a</span> <span class="hljs-keyword">file</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">a</span> permanent operation <span class="hljs-built_in">and</span> cannot <span class="hljs-keyword">be</span> undone.
 
 #### Example
+
 You want <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">a</span> specific <span class="hljs-keyword">file</span> in the database folder:
+
 ```<span class="hljs-number">4</span>d
  $tempo:=File(<span class="hljs-string">"/PACKAGE/SpecialPrefs/"</span>+Current user+<span class="hljs-string">".prefs"</span>)
 If($tempo.<span class="hljs-built_in">exists</span>)
