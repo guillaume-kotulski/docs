@@ -77,7 +77,7 @@ blabla
 
 
 
-| name                                                                                                                                     | description                                                                                                                                                                          |
+| Nom                                                                                                                                      | Description                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <!-- REF document.creationDate -->
 
@@ -170,7 +170,7 @@ blabla
 
 ## Méthodes
 
-|<!-- REF document.methods -->| 
+<!-- REF document.methods -->
 
 
 
@@ -186,7 +186,7 @@ blabla
 
 
 
-| name                        | description                                  |
+| Nom                         | Description                                  |
 | --------------------------- | -------------------------------------------- |
 | [getContent()](#getcontent) | <!-- INCLUDE Document.getContent.Summary --> |
 |                             | <!--INCLUDE Document.getContent.Syntax -->   |
