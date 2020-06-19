@@ -33,8 +33,8 @@ inherit from : [Document](Document.md)
 **create** &rarr; boolean<!-- END REF -->
 
 <!--REF File.create.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
+|Parameter|Type| Description|
+|----|-----------|-----------|
 |Result | Boolean |True if the file was created successfully, false otherwise|
 <!-- END REF -->
 
@@ -63,12 +63,12 @@ Creation of a preferences file in the database folder:
  **file.createAlias** (*destinationFolder* ; *aliasName* {; *aliasType*} ) &rarr; Result<!-- END REF -->
 
  <!--REF File.createAlias.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|destinationFolder | Object |Destination folder for the alias or shortcut|
-|aliasName | Text |Name of the alias or shortcut|
-|aliasType | Longint |Type of the alias link|
-|Result | Object |Alias or shortcut file reference|
+|Parameter|Type|Description|
+| ----|-----------|-----------|
+|destinationFolder|Object|Destination folder for the alias or shortcut|
+|aliasName|Text|Name of the alias or shortcut|
+|aliasType|Longint |Type of the alias link|
+|Result|Object|Alias or shortcut file reference|
 <!-- END REF -->
 
 <!-- REF File.createAlias.Desc -->
@@ -78,10 +78,10 @@ The file.createAlias( ) method <!-- REF File.createAlias.Summary -->creates an a
 Pass the name of the alias or shortcut to create in the aliasName parameter.
 
 By default on macOS, the method creates a standard alias. You can also create a symbolic link by using the aliasType parameter. The following constants are available:
-| Constant | Value | Comment |
-| ---- | ----------- |----------- |
-|fk alias link | 0 |Alias link (macOS only)(default)
-|fk symbolic link| 1 |Symbolic link (macOS only)
+|Constant|Value|Comment|
+|----|-----------|-----------|
+|fk alias link|0|Alias link (macOS only)(default)|
+|fk symbolic link|1|Symbolic link (macOS only)|
 
 On Windows, a shortcut (.lnk file) is always created (the aliasType parameter is ignored).
 
@@ -128,11 +128,11 @@ You want to delete a specific file in the database folder:
  **moveTo** ( *destinationFolder* {; *newName*})  &rarr; Result<!-- END REF -->
 
 <!--REF File.moveTo.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|destinationFolder | Object |Destination folder |
-|newName | Text |Full name for the moved file|
-|Result | Object |Moved file|
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|destinationFolder|Object|Destination folder|
+|newName|Text|Full name for the moved file|
+|Result|Object|Moved file|
 <!-- END REF -->
 
 <!-- REF File.moveTo.Desc -->
@@ -160,10 +160,10 @@ You want to create an alias to a file in your database folder:
  **rename** ( newName ) &rarr; Result<!-- END REF -->
 
 <!--REF File.rename.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|newName | Text |New full name for the file |
-|Result | Object |Renamed file|
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|newName|Text|New full name for the file|
+|Result|Object|Renamed file|
 <!-- END REF -->
 
 <!-- REF File.rename.Desc -->
@@ -191,9 +191,9 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
  **file.setContent (content)** <!-- END REF -->
 
 <!--REF File.setContent.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|content | BLOB |New contents for the file |
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|content|BLOB|New contents for the file|
 <!-- END REF -->
 
 <!-- REF File.setContent.Desc -->
@@ -213,11 +213,11 @@ The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the e
  **setText** ( text {; charSet {;breakMode}}) &rarr; blob<!-- END REF -->
 
 <!--REF File.setText.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|text | Text |Text to store in the file |
-|charSet | Text, Longint |Name or number of character set|
-|breakMode | Longint |Processing mode for line breaks|<!-- END REF -->
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|text|Text|Text to store in the file|
+|charSet|Text, Longint|Name or number of character set|
+|breakMode|Longint|Processing mode for line breaks|<!-- END REF -->
 
 <!-- REF File.setText.Desc -->
 #### Description
@@ -231,13 +231,13 @@ In charSet, pass the character set to be used for writing the contents. You can 
 
 In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
 
-| Constant | Type | Value | Comment|
-| ---- | ----------- |----------- |----------- |
-|Document unchanged | Longint |0| No processing |
-|Document with native format | Longint |1| (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-|Document with CRLF | Longint |2| Line breaks are converted to Windows format: CRLF (carriage return + line feed) |
-|Document with CR | Longint |3| Line breaks are converted to OS X format: CR (carriage return) |
-|Document with LF | Longint |4| Line breaks are converted to Unix format: LF (line feed) |
+|Constant|Type|Value|Comment|
+|----|-----------|-----------|-----------|
+|Document unchanged|Longint|0|No processing|
+|Document with native format|Longint|1| (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows|
+|Document with CRLF|Longint|2|Line breaks are converted to Windows format: CRLF (carriage return + line feed)|
+|Document with CR|Longint|3|Line breaks are converted to OS X format: CR (carriage return)|
+|Document with LF|Longint|4|Line breaks are converted to Unix format: LF (line feed)|
 
 #### Example
 ```4d
@@ -245,4 +245,3 @@ In breakMode, you can pass a longint indicating the processing to apply to end-o
  $myFile.setText("Hello world")
  ```
 <!-- END REF -->
-

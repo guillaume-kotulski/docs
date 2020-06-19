@@ -31,10 +31,9 @@ blabla
 <!-- END REF -->
 
 ## Methods
-
+|<!-- REF document.methods -->|
 | name | description |
 | ---- | ----------- |
-|<!-- REF document.methods -->|
 |[getContent()](#getcontent) |<!-- INCLUDE Document.getContent.Summary -->|
 ||<!--INCLUDE Document.getContent.Syntax -->|
 |[copyTo()](#copyto) |<!-- INCLUDE Document.copyTo.Summary -->|
