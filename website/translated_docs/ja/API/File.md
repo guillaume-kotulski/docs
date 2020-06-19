@@ -149,6 +149,7 @@ You want to create an alias to a file in your database folder: ```4d $myFile:=Fo
 <!-- END REF -->
 
 ## delete()
+
 <!--REF File.delete.Syntax -->
 file.delete ()<!-- END REF -->
 
@@ -164,7 +165,9 @@ If the file does not exist on disk, the method does nothing (no error is generat
 WARNING: file.delete( ) can delete any file on a disk. This includes documents created with other applications, as well as the applications themselves. file.delete( ) should be used with extreme caution. Deleting a file is a permanent operation and cannot be undone.
 
 #### Example
+
 You want to delete a specific file in the database folder:
+
  ```4d
   $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
