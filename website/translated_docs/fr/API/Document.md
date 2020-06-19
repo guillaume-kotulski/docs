@@ -170,28 +170,33 @@ blabla
 
 ## Méthodes
 
-| name | description |
-| ---- | ----------- |
-|      |             |
+|<!-- REF document.methods -->| 
 
 
-<!-- REF document.methods --> |
 
-[getContent()](#getcontent) |<!-- INCLUDE Document.getContent.Summary -->| ||
 
-<!--INCLUDE Document.getContent.Syntax -->| |
 
-[copyTo()](#copyto) |<!-- INCLUDE Document.copyTo.Summary -->| ||
 
-<!--INCLUDE Document.copyTo.Syntax -->| |
 
-[getText()](#gettext) |<!-- INCLUDE Document.getText.Summary -->| ||
 
-<!--INCLUDE Document.getText.Syntax -->| |
 
-[getIcone()](#geticone) |<!-- INCLUDE Document.getIcone.Summary -->| ||
 
-<!--INCLUDE Document.getIcone.Syntax -->| 
+
+
+
+
+
+| name                        | description                                  |
+| --------------------------- | -------------------------------------------- |
+| [getContent()](#getcontent) | <!-- INCLUDE Document.getContent.Summary --> |
+|                             | <!--INCLUDE Document.getContent.Syntax -->   |
+| [copyTo()](#copyto)         | <!-- INCLUDE Document.copyTo.Summary -->     |
+|                             | <!--INCLUDE Document.copyTo.Syntax -->       |
+| [getText()](#gettext)       | <!-- INCLUDE Document.getText.Summary -->    |
+|                             | <!--INCLUDE Document.getText.Syntax -->      |
+| [getIcone()](#geticone)     | <!-- INCLUDE Document.getIcone.Summary -->   |
+|                             | <!--INCLUDE Document.getIcone.Syntax -->     |
+
 
 <!-- END REF -->
 
