@@ -141,9 +141,9 @@ To save a document contents in a BLOB field:
 **getIcone** &rarr; Result<!-- END REF -->
 
 <!-- REF Document.getIcone.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|Result | BLOB |File content|
+|Parameter|Type|Description|
+|----|-----------|-----------|
+|Result|BLOB|File content|
 <!-- END REF -->
 
 <!-- REF Document.getIcone.Desc -->
