@@ -208,37 +208,52 @@ The method returns the moved File object.
 
 #### Exemple
 
-You want to create an alias to a file in your database folder: ```4d $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt") $aliasFile:=$myFile.createAlias(File("/PACKAGE");"ReadMe")
+You want to create an alias to a file in your database folder:
 
+ ```4d
+ $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt")
+ $aliasFile:=$myFile.createAlias(File("/PACKAGE");"ReadMe")
  ```
+
 <!-- END REF -->
 
 ## rename()
+
 <!--REF File.rename.Syntax -->
- **rename** ( newName ) &rarr; Result<!-- END REF -->
+
+**rename** ( newName ) &rarr; Result<!-- END REF -->
 
 <!--REF File.rename.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|newName | Text |New full name for the file |
-|Result | Object |Renamed file|
+
+| Paramètres | Type  | Description                |
+| ---------- | ----- | -------------------------- |
+| newName    | Texte | New full name for the file |
+| Result     | Objet | Renamed file               |
+
+
 <!-- END REF -->
 
 <!-- REF File.rename.Desc -->
+
 #### Description
-The file.rename( ) method <!-- REF File.rename.Summary -->enames the file with the name you passed in newName and returns the renamed File object.<!-- END REF -->
+
+The file.rename( ) method <!-- REF File.rename.Summary -->enames the file with the name you passed in newName and returns the renamed File object.
+
+<!-- END REF -->
 
 The newName parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.
 
 Note that the method modifies the full name of the file, i.e. if you do not pass an extension in newName, the file will have a name without an extension.
 
-Returned object
+Objet retourné
 
 The method returns the renamed File object.
 
-#### Example
+#### Exemple
+
 You want to rename "ReadMe.txt" in "ReadMe_new.txt":
-```4d
+
+ ```4d
  $toRename:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
  $newName:=$toRename.rename($toRename.name+"_new"+$toRename.extension)
  ```
@@ -270,44 +285,56 @@ The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the e
 
 #### Exemple
 
-```4d $myFile:=Folder(fk documents folder).file("Archives/data.txt") $myFile.setContent([aTable]aBlobField)
-
+ ```4d
+ $myFile:=Folder(fk documents folder).file("Archives/data.txt")
+ $myFile.setContent([aTable]aBlobField)
  ```
+
 <!-- END REF -->
 
 ## setText()
+
 <!--REF File.setText.Syntax -->
- **setText** ( text {; charSet {;breakMode}}) &rarr; blob<!-- END REF -->
+
+**setText** ( text {; charSet {;breakMode}}) &rarr; blob<!-- END REF -->
 
 <!--REF File.setText.Parameters -->
-| Parameter | Type | Description |
-| ---- | ----------- |----------- |
-|text | Text |Text to store in the file |
-|charSet | Text, Longint |Name or number of character set|
-|breakMode | Longint |Processing mode for line breaks|<!-- END REF -->
+
+| Paramètres | Type          | Description                                      |
+| ---------- | ------------- | ------------------------------------------------ |
+| Texte      | Texte         | Text to store in the file                        |
+| charSet    | Text, Longint | Name or number of character set                  |
+| breakMode  | Entier long   | Processing mode for line breaks|<!-- END REF --> |
+
 
 <!-- REF File.setText.Desc -->
+
 #### Description
-The file.setText( ) method <!-- REF File.setText.Summary -->writes text as the new contents of the file.<!-- END REF -->
+
+The file.setText( ) method <!-- REF File.setText.Summary -->writes text as the new contents of the file.
+
+<!-- END REF -->
 
 If the file referenced in the File object does not exist on the disk, it is created by the method. When the file already exists on the disk, its prior contents are erased, except if it is already open, in which case, its contents are locked and an error is generated.
 
 In text, pass the text to write to the file. It can be a literal ("my text"), or a 4D text field or variable.
 
-In charSet, pass the character set to be used for writing the contents. You can pass a string containing the standard character set name (for example “ISO-8859-1” or “UTF-8”) or its MIBEnum ID (longint). For more information about the list of character sets supported by 4D, refer to the description of the CONVERT FROM TEXT command.  If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file. If you do not specify a character set, by default 4D uses the "UTF-8" character set and a BOM. 
+In charSet, pass the character set to be used for writing the contents. You can pass a string containing the standard character set name (for example “ISO-8859-1” or “UTF-8”) or its MIBEnum ID (longint). For more information about the list of character sets supported by 4D, refer to the description of the CONVERT FROM TEXT command. If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file. If you do not specify a character set, by default 4D uses the "UTF-8" character set and a BOM.
 
 In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
 
-| Constant | Type | Value | Comment|
-| ---- | ----------- |----------- |----------- |
-|Document unchanged | Longint |0| No processing |
-|Document with native format | Longint |1| (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-|Document with CRLF | Longint |2| Line breaks are converted to Windows format: CRLF (carriage return + line feed) |
-|Document with CR | Longint |3| Line breaks are converted to OS X format: CR (carriage return) |
-|Document with LF | Longint |4| Line breaks are converted to Unix format: LF (line feed) |
+| Constant                    | Type        | Valeur | Commentaire                                                                                                                                                         |
+| --------------------------- | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Document unchanged          | Entier long | 0      | No processing                                                                                                                                                       |
+| Document with native format | Entier long | 1      | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
+| Document with CRLF          | Entier long | 2      | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
+| Document with CR            | Entier long | 3      | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
+| Document with LF            | Entier long | 4      | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
 
-#### Example
-```4d
+
+#### Exemple
+
+ ```4d
   $myFile:=File("C:\\Documents\\Hello.txt";fk platform path)
  $myFile.setText("Hello world")
  ```
