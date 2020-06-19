@@ -9,8 +9,8 @@ blabla
 ## Properties
 
 <!-- REF document.properties -->
-| name | description |
-| ---- | ----------- |
+|name|description|
+|----|-----------|
 | <!-- REF document.creationDate -->[creationDate]() <!-- END REF -->|<!-- REF document.creationDateDesc --> returns the creation date of the file. <!-- END REF -->|
 | <!-- REF document.creationTime -->[creationTime]() <!-- END REF -->| <!-- REF document.creationTimeDesc --> returns the creation time of the file (expressed as a number of seconds beginning at 00:00). <!-- END REF -->|
 | <!-- REF document.exists -->[exists]()<!-- END REF -->| <!-- REF document.existsDesc --> returns true if the file exists on disk, and false otherwise. <!-- END REF --> |
