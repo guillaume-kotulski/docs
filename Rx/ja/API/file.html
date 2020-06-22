@@ -75,34 +75,10 @@
 <tr><th>name</th><th>description</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#create">create()</a></td><td>creates a file on disk according to the properties of the file object.</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><a href="#getcontent">getContent()</a></td><td>a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</td></tr>
 </tbody>
 </table>
-<pre><code class="hljs">  |
-</code></pre>
-<p>|                                         |
-<strong>create</strong> → boolean        |
-| <a href="#createalias">createAlias()</a>           | creates an alias (macOS) or a shortcut (Windows) to the file with the specified aliasName name in the folder designated by the destinationFolder object</p>
-<p>|
-|                                         |
-<strong>file.createAlias</strong> (<em>destinationFolder</em> ; <em>aliasName</em> {; <em>aliasType</em>} ) → Result   |
-| <a href="#delete">delete()</a>                     | deletes the file.      |
-|                                         | file.delete ()       |
-| <a href="#moveto">moveTo()</a>                     | moves or renames the File object into the specified destinationFolder.</p>
-<pre><code class="hljs">  |
-</code></pre>
-<p>|                                         |
-<strong>moveTo</strong> ( <em>destinationFolder</em> {; <em>newName</em>}) → Result       |
-| <a href="#rename">rename()</a>                     | enames the file with the name you passed in newName and returns the renamed File object.      |
-|                                         |  <strong>rename</strong> ( newName ) → Result       |
-| <a href="#setcontent">setContent()</a>             | rewrites the entire content of the file using the data stored in the content BLOB. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<p>|
-|
-<strong>file.setContent (content)</strong>  |                                           |
-| <a href="#settext">setText()</a>                   | writes text as the new contents of the file.     |
-|                                         |  <strong>setText</strong> ( text {; charSet {;breakMode}}) → blob      |</p>
-<p>|                                              |
-| <a href="#getcontent">getContent()</a>   | a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
 <p>|
 |                               |
 <strong>getContent</strong> → Result   |
@@ -120,6 +96,31 @@
 <p>|
 |                               |
 <strong>getIcone</strong> → Result     |</p>
+<p>|                                           |
+| <a href="#create">create()</a>               | creates a file on disk according to the properties of the file object.</p>
+<pre><code class="hljs">  |
+</code></pre>
+<p>|                                   |
+<strong>create</strong> → boolean        |
+| <a href="#createalias">createAlias()</a>     | creates an alias (macOS) or a shortcut (Windows) to the file with the specified aliasName name in the folder designated by the destinationFolder object</p>
+<p>|
+|                                   |
+<strong>file.createAlias</strong> (<em>destinationFolder</em> ; <em>aliasName</em> {; <em>aliasType</em>} ) → Result   |
+| <a href="#delete">delete()</a>               | deletes the file.      |
+|                                   | file.delete ()       |
+| <a href="#moveto">moveTo()</a>               | moves or renames the File object into the specified destinationFolder.</p>
+<pre><code class="hljs">  |
+</code></pre>
+<p>|                                   |
+<strong>moveTo</strong> ( <em>destinationFolder</em> {; <em>newName</em>}) → Result       |
+| <a href="#rename">rename()</a>               | enames the file with the name you passed in newName and returns the renamed File object.      |
+|                                   |  <strong>rename</strong> ( newName ) → Result       |
+| <a href="#setcontent">setContent()</a>       | rewrites the entire content of the file using the data stored in the content BLOB. For information on BLOBs, please refer to the BLOB Commands section.</p>
+<p>|
+|                                   |
+<strong>file.setContent (content)</strong>    |
+| <a href="#settext">setText()</a>             | writes text as the new contents of the file.     |
+|                                   |  <strong>setText</strong> ( text {; charSet {;breakMode}}) → blob      |</p>
 <h2><a class="anchor" aria-hidden="true" id="getcontent"></a><a href="#getcontent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getContent()</h2>
 <p><strong>getContent</strong> → Result</p>
 <table>
@@ -265,7 +266,6 @@ End if</span>
 
 <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delete</span> ()
 #### Description
-
 The <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delete</span>( ) method deletes the <span class="hljs-keyword">file</span>.
 If the <span class="hljs-keyword">file</span> <span class="hljs-keyword">is</span> currently <span class="hljs-keyword">open</span>, <span class="hljs-keyword">an</span> error <span class="hljs-keyword">is</span> generated.
 
@@ -276,7 +276,6 @@ WARNING: <span class="hljs-keyword">file</span>.<span class="hljs-keyword">delet
 #### Example
 
 You want <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">a</span> specific <span class="hljs-keyword">file</span> in the database folder:
-
 ```<span class="hljs-number">4</span>d
  $tempo:=File(<span class="hljs-string">"/PACKAGE/SpecialPrefs/"</span>+Current user+<span class="hljs-string">".prefs"</span>)
 If($tempo.<span class="hljs-built_in">exists</span>)
