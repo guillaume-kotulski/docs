@@ -37,25 +37,26 @@ inherit from : [Document](Document.md)
 
 
 
-| name                                    | description                               |
-| --------------------------------------- | ----------------------------------------- |
-| [create()](#create)                     | <!-- INCLUDE File.create.Summary -->      |
-|                                         | <!--INCLUDE File.create.Syntax -->        |
-| [createAlias()](#createalias)           | <!-- INCLUDE File.createAlias.Summary --> |
-|                                         | <!--INCLUDE File.createAlias.Syntax -->   |
-| [delete()](#delete)                     | <!-- INCLUDE File.delete.Summary -->      |
-|                                         | <!-- INCLUDE File.delete.Syntax -->       |
-| [moveTo()](#moveto)                     | <!-- INCLUDE File.moveTo.Summary -->      |
-|                                         | <!-- INCLUDE File.moveTo.Syntax -->       |
-| [rename()](#rename)                     | <!-- INCLUDE File.rename.Summary -->      |
-|                                         | <!-- INCLUDE File.rename.Syntax -->       |
-| [setContent()](#setcontent)             | <!-- INCLUDE File.setContent.Summary -->  |
-| <!-- INCLUDE File.setContent.Syntax --> |                                           |
-| [setText()](#settext)                   | <!-- INCLUDE File.setText.Summary -->     |
-|                                         | <!-- INCLUDE File.setText.Syntax -->      |
 
 
-<!-- INCLUDE document.methods -->
+| name                              | description                               |
+| --------------------------------- | ----------------------------------------- |
+| <!-- INCLUDE document.methods --> |                                           |
+| [create()](#create)               | <!-- INCLUDE File.create.Summary -->      |
+|                                   | <!--INCLUDE File.create.Syntax -->        |
+| [createAlias()](#createalias)     | <!-- INCLUDE File.createAlias.Summary --> |
+|                                   | <!--INCLUDE File.createAlias.Syntax -->   |
+| [delete()](#delete)               | <!-- INCLUDE File.delete.Summary -->      |
+|                                   | <!-- INCLUDE File.delete.Syntax -->       |
+| [moveTo()](#moveto)               | <!-- INCLUDE File.moveTo.Summary -->      |
+|                                   | <!-- INCLUDE File.moveTo.Syntax -->       |
+| [rename()](#rename)               | <!-- INCLUDE File.rename.Summary -->      |
+|                                   | <!-- INCLUDE File.rename.Syntax -->       |
+| [setContent()](#setcontent)       | <!-- INCLUDE File.setContent.Summary -->  |
+|                                   | <!-- INCLUDE File.setContent.Syntax -->   |
+| [setText()](#settext)             | <!-- INCLUDE File.setText.Summary -->     |
+|                                   | <!-- INCLUDE File.setText.Syntax -->      |
+
 
 <!-- INCLUDE document.methods.Desc -->
 
@@ -146,7 +147,7 @@ The file.createAlias( ) method returns a File object with the file.isAlias prope
 You want to create an alias to a file in your database folder: ```4d $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt") $aliasFile:=$myFile.createAlias(File("/PACKAGE");"ReadMe")
 
  ```
-<!-- END REF -->
+ <!-- END REF -->
 
 ## delete()
 
@@ -155,8 +156,7 @@ file.delete ()<!-- END REF -->
 
 <!-- REF File.delete.Desc -->
 #### Description
-
- The file.delete( ) method <!-- REF File.delete.Summary -->deletes the file.<!-- END REF -->
+The file.delete( ) method <!-- REF File.delete.Summary -->deletes the file.<!-- END REF -->
 
 If the file is currently open, an error is generated.
 
@@ -167,7 +167,6 @@ WARNING: file.delete( ) can delete any file on a disk. This includes documents c
 #### Example
 
 You want to delete a specific file in the database folder:
-
  ```4d
   $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
