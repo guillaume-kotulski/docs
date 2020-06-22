@@ -31,18 +31,19 @@ blabla
 <!-- END REF -->
 
 ## Methods
+
+|name|description|
+|----|-----------|
 |<!-- REF document.methods -->|
-| name | description |
-| ---- | ----------- |
-|[getContent()](#getcontent) |<!-- INCLUDE Document.getContent.Summary -->|
+|[getContent()](#getcontent)|<!-- INCLUDE Document.getContent.Summary -->|
 ||<!--INCLUDE Document.getContent.Syntax -->|
-|[copyTo()](#copyto) |<!-- INCLUDE Document.copyTo.Summary -->|
+|[copyTo()](#copyto)|<!-- INCLUDE Document.copyTo.Summary -->|
 ||<!--INCLUDE Document.copyTo.Syntax -->|
-|[getText()](#gettext) |<!-- INCLUDE Document.getText.Summary -->|
+|[getText()](#gettext)|<!-- INCLUDE Document.getText.Summary -->|
 ||<!--INCLUDE Document.getText.Syntax -->|
-|[getIcone()](#geticone) |<!-- INCLUDE Document.getIcone.Summary -->|
+|[getIcone()](#geticone)|<!-- INCLUDE Document.getIcone.Summary -->|
 ||<!--INCLUDE Document.getIcone.Syntax -->|
- <!-- END REF -->
+<!-- END REF -->
  
 <!-- REF document.methods.Desc -->
 ## getContent()
