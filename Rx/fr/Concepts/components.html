@@ -112,7 +112,7 @@
 <pre><code class="hljs css language-4d"> <span class="hljs-function">C_TEXT</span>(myvariable)
  <span class="hljs-function">component_method1</span>(-&gt;myvariable)
  <span class="hljs-function">C_POINTER</span>(<span class="hljs-variable">$p</span>)
- <span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+ <span class="hljs-variable">$p</span><span class="hljs-function">:=component_method2</span>(...)
 </code></pre>
 <p>L’utilisation de pointeurs pour faire communiquer les composants et la base hôte nécessite de prendre en compte les spécificités suivantes :</p>
 <ul>
@@ -200,7 +200,7 @@
 <li>lecture de données depuis la base de données externe.</li>
 </ul>
 <p>Création de la base de données externe :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">&lt;&gt;MyDatabase</span>:=Get <span class="hljs-number">4</span>D folder+<span class="hljs-string">"\MyDB"</span> <span class="hljs-comment">// (Windows) stocke les données dans un répertoire autorisé</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-variable">&lt;&gt;MyDatabase</span><span class="hljs-function">:=Get 4D folder+"\MyDB" // </span>(Windows) stocke les données dans un répertoire autorisé<span class="hljs-keyword">
  Begin SQL</span>
         CREATE DATABASE IF NOT EXISTS DATAFILE :[<span class="hljs-variable">&lt;&gt;MyDatabase</span>];
         USE DATABASE DATAFILE :[<span class="hljs-variable">&lt;&gt;MyDatabase</span>];
@@ -213,7 +213,7 @@
         sort_order INT32
         );
 
-        CREATE UNIQUE INDEX id_index ON KEEPIT (ID);
+        <span class="hljs-function">CREATE UNIQUE INDEX id_index ON KEEPIT </span>(ID);
 
         USE DATABASE SQL_INTERNAL;<span class="hljs-keyword">
 

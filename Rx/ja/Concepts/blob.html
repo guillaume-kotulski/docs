@@ -82,11 +82,11 @@
  <span class="hljs-function">SET BLOB SIZE</span>(anyBlobVar;<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>)
 
 <span class="hljs-comment">// プラグインに BLOB を引数として渡します</span>
- <span class="hljs-variable">$errCode</span>:=<span class="hljs-function">Do Something With This BLOB</span>(anyBlobVar)
+ <span class="hljs-variable">$errCode</span><span class="hljs-function">:=Do Something With This BLOB</span>(anyBlobVar)
 
 <span class="hljs-comment">// BLOB を引数として渡し、戻り値をBLOBで受け取ります</span>
  <span class="hljs-function">C_BLOB</span>(retrieveBlob)
- retrieveBlob:=<span class="hljs-function">Fill_Blob</span>(anyBlobVar)
+ <span class="hljs-function">retrieveBlob:=Fill_Blob</span>(anyBlobVar)
 
 <span class="hljs-comment">// BLOB のポインターをメソッドに渡します</span>
  <span class="hljs-function">COMPUTE BLOB</span>(-&gt;anyBlobVar)
@@ -110,7 +110,7 @@
 <span class="hljs-comment">// BLOB のサイズを 256バイトに設定します</span>
  <span class="hljs-function">SET BLOB SIZE</span>(vBlob;<span class="hljs-number">256</span>)
 <span class="hljs-comment">// 次のループは、BLOB の 256バイトをゼロに初期化します</span><span class="hljs-keyword">
- For</span>(vByte;<span class="hljs-number">0</span>;<span class="hljs-function">BLOB size</span>(vBlob)<span class="hljs-number">-1</span>)
+ For</span><span class="hljs-function">(vByte;0;BLOB size</span>(vBlob)<span class="hljs-number">-1</span>)
     vBlob{vByte}:=<span class="hljs-number">0</span><span class="hljs-keyword">
  End for</span>
 </code></pre>

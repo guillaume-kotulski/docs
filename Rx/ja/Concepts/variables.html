@@ -115,7 +115,7 @@
 <p>ローカル変数の名前は必ずドル記号 ($) で始め、この記号を除く31文字までの文字を指定できます。 これより長い名前を指定すると、4D は余分の32文字以降を切り捨てます。</p>
 <p>多くのメソッドや変数を持つデータベースで作業する場合、現在作業しているメソッドの範囲内で一時的に変数が必要となる場合がよくあります。 この場合、同じ変数名が他で使用されていないかどうかを気にすることなくローカル変数を作成することができます。</p>
 <p>データベースではしばしば、ユーザーによる少量のデータ入力を必要とする場合があります。 <code>Request</code> コマンドを使って、この情報を取得することができます。 このコマンドはデータ入力を求めるダイアログボックスを表示し、 ユーザーがデータを入力すると、その情報を戻り値として返します。 このようなデータは通常、メソッド内で長期間維持する必要はありません。 これは、ローカル変数を使用する典型的な例といえます。 次に例を示します:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"ID を入力してください:"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span><span class="hljs-function">:=Request</span>(<span class="hljs-string">"ID を入力してください:"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-function">QUERY</span>([People];[People]ID =<span class="hljs-variable">$vsID</span>)<span class="hljs-keyword">
  End if</span>
