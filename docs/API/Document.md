@@ -11,23 +11,23 @@ blabla
 <!-- REF document.properties -->
 |name|description|
 |----|-----------|
-| <!-- REF document.creationDate -->[creationDate]() <!-- END REF -->|<!-- REF document.creationDateDesc --> returns the creation date of the file. <!-- END REF -->|
-| <!-- REF document.creationTime -->[creationTime]() <!-- END REF -->| <!-- REF document.creationTimeDesc --> returns the creation time of the file (expressed as a number of seconds beginning at 00:00). <!-- END REF -->|
-| <!-- REF document.exists -->[exists]()<!-- END REF -->| <!-- REF document.existsDesc --> returns true if the file exists on disk, and false otherwise. <!-- END REF --> |
-| <!-- REF document.extension -->[extension]()<!-- END REF -->| <!-- REF document.extensionDesc -->returns the creation date of the file. <!-- END REF -->| 
-| <!-- REF document.fullName -->[fullName]() <!-- END REF -->| <!-- REF document.fullNameDesc --> returns the full name of the file, including its extension (if any).<!-- END REF -->|
-| <!-- REF document.hidden -->[hidden]() <!-- END REF -->|<!-- REF document.hiddenDesc -->  returns true if the file is set as "hidden" at the system level, and false otherwise. <!-- END REF -->|
-| <!-- REF document.isAlias -->[isAlias]()<!-- END REF --> |  <!-- REF document.isAliasDesc -->returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.<!-- END REF -->  |
-| <!-- REF document.isFile -->[isFile]() <!-- END REF -->|  <!-- REF document.isFileDesc -->always returns true for a file.<!-- END REF -->|
-| <!-- REF document.isFolder -->[isFolder]() <!-- END REF -->| <!-- REF document.isFolderDesc -->returns always false for a file.<!-- END REF -->| 
-| <!-- REF document.isWritable -->[isWritable]() <!-- END REF -->|<!-- REF document.isWritableDesc -->returns true if the file exists on disk and is writable.<!-- END REF --> | 
-| <!-- REF document.modificationDate -->[modificationDate]()<!-- END REF -->| <!-- REF document.modificationDateDesc --> returns the date of the file's last modification.<!-- END REF -->| 
-| <!-- REF document.modificationTime -->[modificationTime]() <!-- END REF -->| <!-- REF document.modificationTimeDesc -->returns the time of the file's last modification (expressed as a number of seconds beginning at 00:00).<!-- END REF -->|
-| <!-- REF document.name -->[name]() <!-- END REF -->|  <!-- REF document.nameDesc --> returns the name of the file, without extension (if any). <!-- END REF -->|
-| <!-- REF document.original -->[orignial]() <!-- END REF -->| <!-- REF document.originalDesc --> returns the target element for an alias, a shortcut, or a symbolic link file. <!-- END REF -->|
-| <!-- REF document.parent -->[parent]() <!-- END REF -->| <!-- REF document.parentDesc --> returns the parent folder object of the file. If the path represents a system path (e.g., "/DATA/"), the system path is returned.<!-- END REF -->|
-| <!-- REF document.path -->[path]() <!-- END REF -->|<!-- REF document.pathDesc --> returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
-| <!-- REF document.platformPath -->[platformPath](https://doc.4d.com/4Dv18/4D/18/fileplatformPath.303-4506073.en.html) <!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
+|<!-- REF document.creationDate -->[creationDate]() <!-- END REF -->|<!-- REF document.creationDateDesc --> returns the creation date of the file. <!-- END REF -->|
+|<!-- REF document.creationTime -->[creationTime]() <!-- END REF -->| <!-- REF document.creationTimeDesc --> returns the creation time of the file (expressed as a number of seconds beginning at 00:00). <!-- END REF -->|
+|<!-- REF document.exists -->[exists]()<!-- END REF -->| <!-- REF document.existsDesc --> returns true if the file exists on disk, and false otherwise. <!-- END REF --> |
+|<!-- REF document.extension -->[extension]()<!-- END REF -->| <!-- REF document.extensionDesc -->returns the creation date of the file. <!-- END REF -->| 
+|<!-- REF document.fullName -->[fullName]() <!-- END REF -->| <!-- REF document.fullNameDesc --> returns the full name of the file, including its extension (if any).<!-- END REF -->|
+|<!-- REF document.hidden -->[hidden]() <!-- END REF -->|<!-- REF document.hiddenDesc -->  returns true if the file is set as "hidden" at the system level, and false otherwise. <!-- END REF -->|
+|<!-- REF document.isAlias -->[isAlias]()<!-- END REF --> |  <!-- REF document.isAliasDesc -->returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.<!-- END REF -->|
+|<!-- REF document.isFile -->[isFile]() <!-- END REF -->|  <!-- REF document.isFileDesc -->always returns true for a file.<!-- END REF -->|
+|<!-- REF document.isFolder -->[isFolder]() <!-- END REF -->| <!-- REF document.isFolderDesc -->returns always false for a file.<!-- END REF -->| 
+|<!-- REF document.isWritable -->[isWritable]() <!-- END REF -->|<!-- REF document.isWritableDesc -->returns true if the file exists on disk and is writable.<!-- END REF --> | 
+|<!-- REF document.modificationDate -->[modificationDate]()<!-- END REF -->| <!-- REF document.modificationDateDesc --> returns the date of the file's last modification.<!-- END REF -->| 
+|<!-- REF document.modificationTime -->[modificationTime]() <!-- END REF -->| <!-- REF document.modificationTimeDesc -->returns the time of the file's last modification (expressed as a number of seconds beginning at 00:00).<!-- END REF -->|
+|<!-- REF document.name -->[name]() <!-- END REF -->|  <!-- REF document.nameDesc --> returns the name of the file, without extension (if any). <!-- END REF -->|
+|<!-- REF document.original -->[orignial]() <!-- END REF -->| <!-- REF document.originalDesc --> returns the target element for an alias, a shortcut, or a symbolic link file. <!-- END REF -->|
+|<!-- REF document.parent -->[parent]() <!-- END REF -->| <!-- REF document.parentDesc --> returns the parent folder object of the file. If the path represents a system path (e.g., "/DATA/"), the system path is returned.<!-- END REF -->|
+|<!-- REF document.path -->[path]() <!-- END REF -->|<!-- REF document.pathDesc --> returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
+|<!-- REF document.platformPath -->[platformPath](https://doc.4d.com/4Dv18/4D/18/fileplatformPath.303-4506073.en.html) <!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
 <!-- END REF -->
 
 ## Methods

@@ -80,7 +80,7 @@ Pass the name of the alias or shortcut to create in the aliasName parameter.
 
 By default on macOS, the method creates a standard alias. You can also create a symbolic link by using the aliasType parameter. The following constants are available:
 |Constant|Value|Comment|
-|----|-----------|-----------|
+|--------|-----|-------|
 |fk alias link|0|Alias link (macOS only)(default)|
 |fk symbolic link|1|Symbolic link (macOS only)|
 
@@ -99,9 +99,8 @@ You want to create an alias to a file in your database folder:
  <!-- END REF -->
 
 ## delete()
-
 <!--REF File.delete.Syntax -->
-file.delete ()<!-- END REF -->
+**file.delete()**<!-- END REF -->
 
 <!-- REF File.delete.Desc -->
 #### Description
@@ -114,7 +113,6 @@ If the file does not exist on disk, the method does nothing (no error is generat
 WARNING: file.delete( ) can delete any file on a disk. This includes documents created with other applications, as well as the applications themselves. file.delete( ) should be used with extreme caution. Deleting a file is a permanent operation and cannot be undone.
 
 #### Example
-
 You want to delete a specific file in the database folder:
  ```4d
   $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
@@ -123,8 +121,8 @@ You want to delete a specific file in the database folder:
     ALERT("User preference file deleted.")
  End if
  ``` 
- 
-<!-- END REF -->
+ <!-- END REF -->
+
 ## moveTo()
 <!--REF File.moveTo.Syntax -->
  **moveTo** ( *destinationFolder* {; *newName*})  &rarr; Result<!-- END REF -->
