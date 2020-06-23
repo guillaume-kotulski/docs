@@ -18,75 +18,25 @@
 <tr><th>name</th><th>description</th></tr>
 </thead>
 <tbody>
-<tr><td></td></tr>
 <tr><td><a href="">creationDate</a></td><td>returns the creation date of the file.</td></tr>
+<tr><td><a href="">creationTime</a></td><td>returns the creation time of the file (expressed as a number of seconds beginning at 00:00).</td></tr>
+<tr><td><a href="">exists</a></td><td>returns true if the file exists on disk, and false otherwise.</td></tr>
+<tr><td><a href="">extension</a></td><td>returns the creation date of the file.</td></tr>
+<tr><td><a href="">fullName</a></td><td>returns the full name of the file, including its extension (if any).</td></tr>
+<tr><td><a href="">hidden</a></td><td>returns true if the file is set as &quot;hidden&quot; at the system level, and false otherwise.</td></tr>
+<tr><td><a href="">isAlias</a></td><td>returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.</td></tr>
+<tr><td><a href="">isFile</a></td><td>always returns true for a file.</td></tr>
+<tr><td><a href="">isFolder</a></td><td>returns always false for a file.</td></tr>
+<tr><td><a href="">isWritable</a></td><td>returns true if the file exists on disk and is writable.</td></tr>
+<tr><td><a href="">modificationDate</a></td><td>returns the date of the file's last modification.</td></tr>
+<tr><td><a href="">modificationTime</a></td><td>returns the time of the file's last modification (expressed as a number of seconds beginning at 00:00).</td></tr>
+<tr><td><a href="">name</a></td><td>returns the name of the file, without extension (if any).</td></tr>
+<tr><td><a href="">orignial</a></td><td>returns the target element for an alias, a shortcut, or a symbolic link file.</td></tr>
+<tr><td><a href="">parent</a></td><td>returns the parent folder object of the file. If the path represents a system path (e.g., &quot;/DATA/&quot;), the system path is returned.</td></tr>
+<tr><td><a href="">path</a></td><td>returns the POSIX path of the file. If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</td></tr>
+<tr><td><a href="https://doc.4d.com/4Dv18/4D/18/fileplatformPath.303-4506073.en.html">platformPath</a></td><td>returns the path of the file expressed with the current platform syntax.</td></tr>
 </tbody>
 </table>
-<pre><code class="hljs">                                                                                 |
-</code></pre>
-<p>|
-<a href="">creationTime</a>                                                                     |  returns the creation time of the file (expressed as a number of seconds beginning at 00:00).</p>
-<pre><code class="hljs">                           |
-</code></pre>
-<p>|
-<a href="">exists</a>                                                                                 |  returns true if the file exists on disk, and false otherwise.</p>
-<pre><code class="hljs">                                                                |
-</code></pre>
-<p>|
-<a href="">extension</a>                                                                           | returns the creation date of the file.</p>
-<pre><code class="hljs">                                                                                     |
-</code></pre>
-<p>|
-<a href="">fullName</a>                                                                             |  returns the full name of the file, including its extension (if any).</p>
-<pre><code class="hljs">                                                        |
-</code></pre>
-<p>|
-<a href="">hidden</a>                                                                                 |  returns true if the file is set as &quot;hidden&quot; at the system level, and false otherwise.</p>
-<pre><code class="hljs">                                        |
-</code></pre>
-<p>|
-<a href="">isAlias</a>                                                                               | returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.</p>
-<pre><code class="hljs">                                    |
-</code></pre>
-<p>|
-<a href="">isFile</a>                                                                                 | always returns true for a file.</p>
-<pre><code class="hljs">                                                                                                |
-</code></pre>
-<p>|
-<a href="">isFolder</a>                                                                             | returns always false for a file.</p>
-<pre><code class="hljs">                                                                                             |
-</code></pre>
-<p>|
-<a href="">isWritable</a>                                                                         | returns true if the file exists on disk and is writable.</p>
-<pre><code class="hljs">                                                                   |
-</code></pre>
-<p>|
-<a href="">modificationDate</a>                                                             |  returns the date of the file's last modification.</p>
-<pre><code class="hljs">                                                                   |
-</code></pre>
-<p>|
-<a href="">modificationTime</a>                                                             | returns the time of the file's last modification (expressed as a number of seconds beginning at 00:00).</p>
-<pre><code class="hljs">              |
-</code></pre>
-<p>|
-<a href="">name</a>                                                                                     |  returns the name of the file, without extension (if any).</p>
-<pre><code class="hljs">                                                                      |
-</code></pre>
-<p>|
-<a href="">orignial</a>                                                                             |  returns the target element for an alias, a shortcut, or a symbolic link file.</p>
-<pre><code class="hljs">                                              |
-</code></pre>
-<p>|
-<a href="">parent</a>                                                                                 |  returns the parent folder object of the file. If the path represents a system path (e.g., &quot;/DATA/&quot;), the system path is returned.</p>
-<p>|
-|
-<a href="">path</a>                                                                                     |  returns the POSIX path of the file. If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</p>
-<pre><code class="hljs">           |
-</code></pre>
-<p>|
-<a href="https://doc.4d.com/4Dv18/4D/18/fileplatformPath.303-4506073.en.html">platformPath</a>  | returns the path of the file expressed with the current platform syntax.</p>
-<pre><code class="hljs">                                                |
-</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
 <table>
 <thead>
@@ -99,21 +49,19 @@
 </table>
 <p>|
 |                               |
-<strong>getContent</strong> → Result   |
-| <a href="#copyto">copyTo()</a>           | a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<pre><code class="hljs"> |
-</code></pre>
-<p>|                               |
-<strong>copyTo</strong> (<em>destinationFolder</em>{;{<em>newName}</em>{;<em>overwrite</em>} ) → Result       |
-| <a href="#gettext">getText()</a>         | a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<pre><code class="hljs">|
-</code></pre>
-<p>|                               |
-<strong>getText</strong> → Result      |
-| <a href="#geticone">getIcone()</a>       | a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
+<strong>getContent</strong> → Result|
+| <a href="#copyto">copyTo()</a>           |a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
 <p>|
 |                               |
-<strong>getIcone</strong> → Result     |</p>
+<strong>copyTo</strong> (<em>destinationFolder</em>{;{<em>newName}</em>{;<em>overwrite</em>} ) → Result|
+| <a href="#gettext">getText()</a>         |a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
+<p>|
+|                               |
+<strong>getText</strong> → Result|
+| <a href="#geticone">getIcone()</a>       |a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
+<p>|
+|                               |
+<strong>getIcone</strong> → Result|</p>
 <h2><a class="anchor" aria-hidden="true" id="getcontent"></a><a href="#getcontent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>getContent()</h2>
 <p><strong>getContent</strong> → Result</p>
 <table>
@@ -125,8 +73,8 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<p><em>Returned value</em></p>
+<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.
+<em>Returned value</em></p>
 <p>The file.getContent( ) method returns a BLOB.</p>
 <h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>To save a document contents in a BLOB field:</p>
@@ -147,8 +95,8 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<p><em>Returned value</em></p>
+<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.
+<em>Returned value</em></p>
 <p>The file.getContent( ) method returns a BLOB.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>To save a document contents in a BLOB field:</p>
@@ -169,8 +117,8 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<p><em>Returned value</em></p>
+<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.
+<em>Returned value</em></p>
 <p>The file.getContent( ) method returns a BLOB.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>To save a document contents in a BLOB field:</p>
@@ -191,8 +139,8 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.</p>
-<p><em>Returned value</em></p>
+<p>The file.getContent( ) method returns a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.
+<em>Returned value</em></p>
 <p>The file.getContent( ) method returns a BLOB.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-3"></a><a href="#example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>To save a document contents in a BLOB field:</p>
