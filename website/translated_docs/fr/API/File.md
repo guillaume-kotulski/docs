@@ -70,7 +70,7 @@ Hérité de : [Document](Document.md)
 
 | Paramètres | Type    | Description                                           |
 | ---------- | ------- | ----------------------------------------------------- |
-| Result     | Booléen | Vrai si le fichier a été créé avec succès, sinon Faux |
+| Résultat   | Booléen | Vrai si le fichier a été créé avec succès, sinon Faux |
 
 
 <!-- END REF -->
@@ -113,7 +113,7 @@ Création d'un fichier de préférenes dans le dossier de la base de donées :
 | destinationFolder | Objet       | Dossier de destination de l'alias ou du raccourci |
 | aliasName         | Texte       | Nom de l'alias ou du raccourci                    |
 | aliasType         | Entier long | Type du lien de l'alias                           |
-| Result            | Objet       | Référence du dossier de l'alias ou du raccourci   |
+| Résultat          | Objet       | Référence du dossier de l'alias ou du raccourci   |
 
 
 <!-- END REF -->
@@ -187,7 +187,7 @@ You want to delete a specific file in the database folder:
 | ----------------- | ----- | ---------------------------- |
 | destinationFolder | Objet | Destination folder           |
 | newName           | Texte | Full name for the moved file |
-| Result            | Objet | Moved file                   |
+| Résultat          | Objet | Moved file                   |
 
 
 <!-- END REF -->
@@ -325,7 +325,7 @@ In charSet, pass the character set to be used for writing the contents. You can 
 
 In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
 
-| Constant                    | Type        | Valeur | Commentaire                                                                                                                                                         |
+| Constante                   | Type        | Valeur | Commentaire                                                                                                                                                         |
 | --------------------------- | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Document unchanged          | Entier long | 0      | No processing                                                                                                                                                       |
 | Document with native format | Entier long | 1      | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
