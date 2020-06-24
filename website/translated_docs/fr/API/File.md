@@ -5,7 +5,8 @@ title: File
 
 Hérité de : [Document](Document.md)
 
-## Propriétés
+## Properties
+
 <!-- INCLUDE document.properties -->
 
 ## Méthodes
@@ -38,7 +39,7 @@ Hérité de : [Document](Document.md)
 
 
 
-| Nom                               | Description                               |
+| name                              | description                               |
 | --------------------------------- | ----------------------------------------- |
 |<!-- INCLUDE document.methods -->|                                           |
 | [create()](#create)               |<!-- INCLUDE File.create.Summary -->|
