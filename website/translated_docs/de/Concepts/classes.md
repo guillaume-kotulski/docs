@@ -23,7 +23,7 @@ Die Klasse ist selbst ein Objekt vom Typ "Klasse". Ein Objekt Klasse hat folgend
 Zusätzlich kann ein Objekt Klasse verweisen auf:
 
 - Ein Objekt `constructor` (optional)
-- a `prototype` object, containing named function objects (optional).
+- Ein Objekt `prototype` mit Objekten "named function" (optional).
 
 Ein Objekt Klasse ist ein shared Object, d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
 
