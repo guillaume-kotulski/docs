@@ -51,9 +51,9 @@ $instance:=OB Instance of($poly;4D.Object)
 
 Beim Aufzählen der Eigenschaften eines Objekts wird der Prototyp seiner Klasse nicht mitgezählt. Demzufolge geben die Anweisung `For each` und der Befehl `JSON Stringify` nicht Eigenschaften des Objekts prototype der Klasse zurück. Die Eigenschaft des Objekts prototype einer Klasse ist eine interne ausgeblendete Eigenschaft.
 
-### Class definition
+### Definition einer Klasse
 
-A user class file defines a model of object that can be instantiated in the database code by calling the `new()` class member method. You will usually use specific [class keywords](#class-keywords) and [class commands](#class-commands) in the class file.
+Eine Datei Benutzerklasse definiert ein Objektmodell, auf das sich über die Class Member Method `new()` im Code der Anwendung eine Instanz setzen lässt. In der Datei Klasse verwenden Sie in der Regel spezifische [Class Keywords](#class-keywords) und [Class Befehle](#class-commands).
 
 Beispiel:
 
@@ -66,21 +66,21 @@ Class constructor
   This.lastName:=$2
 ```
 
-In a method, creating a "Person":
+In einer Methode erstellen Sie eine "Person":
 
     C_OBJECT($o)
     $o:=cs.Person.new("John";"Doe")  
     // $o: {firstName: "John";lastName: "Doe" }
     
 
-Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following `Empty.4dm` class file:
+Sie könnten auch eine leere Datei Klasse erstellen und Instanzen auf leere Objekte setzen. Legen Sie z.B. die Datei Klasse `Empty.4dm` wie folgt an:
 
 ```4d
 //Empty.4dm class file
 //Nothing
 ```
 
-You could write in a method:
+Können Sie in einer Methode wie folgt schreiben:
 
 ```4d
 $o:=cs.Empty.new()  
@@ -88,38 +88,38 @@ $o:=cs.Empty.new()
 $cName:=OB Class($o).name //"Empty"
 ```
 
-## Class stores
+## Class Stores
 
-Available classes are accessible from their class stores. The following class stores are available:
+Klassen sind über ihre Class Stores verfügbar. Es gibt folgende Class Stores:
 
-- a class store for built-in 4D classes. It is returned by the `4D` command.
-- a class store for each opened database or component. It is returned by the `cs` command. These are "user classes".
+- Ein Class Store für eingebaute 4D Klassen. Er wird über den Befehl `4D` zurückgegeben.
+- Ein Class Store pro geöffneter Anwendung oder Komponente. Er wird über den Befehl `cs` zurückgegeben. Das sind "Benutzerklassen".
 
-For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
+Sie können z.B. für ein Objekt von myClass mit der Anweisung `cs.myClass.new()` eine neue Instanz erstellen (`cs` bedeutet *classtore*).
 
-## Handling user classes
+## Benutzerklassen verwalten
 
-### Class files
+### Datei Klasse
 
-A user class in 4D is defined by a specific method file (.4dm), stored in the `/Project/Sources/Classes/` folder. The name of the file is the class name.
+Eine Benutzerklasse in 4D wird über eine spezifische Datei Methode (.4dm) definiert, die im Ordner `/Project/Sources/Classes/` gespeichert wird. Der Name der Datei ist der Klassenname.
 
-For example, if you want to define a class named "Polygon", you need to create the following file:
+Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Datei anlegen:
 
-- Database folder 
+- Ordner der Anwendung 
     + Project 
         * Sources 
             - Klassen 
                 + Polygon.4dm
 
-### Class names
+### Klassename
 
-When naming classes, you should keep in mind the following rules:
+Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
-- A class name must be ECMAScript compliant. 
-- Class names are case sensitive.
-- Giving the same name to a class and a database table is not recommended, in order to prevent any conflict. 
+- Der Klassenname muss mit den Regeln von ECMAScript konform sein. 
+- Bei den Namen wird zwischen Groß- und Kleinschreibung unterschieden.
+- Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle der Anwendung nicht denselben Namen verwenden. 
 
-### 4D Developer interface
+### 4D Entwickleroberfläche
 
 Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
 
