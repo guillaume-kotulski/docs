@@ -127,11 +127,11 @@
 </code></pre>
 <p>Then <code>myAlert</code> can be encapsulated in any object and called:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
-<span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"custom_Alert"</span>;<span class="hljs-function">Formula</span>(myAlert))
-<span class="hljs-variable">$o</span>.<span class="hljs-function">custom_Alert</span>() <span class="hljs-comment">//displays "Hello world!"</span>
+<span class="hljs-variable">$o</span><span class="hljs-function">:=New object("custom_Alert";Formula</span>(myAlert))
+<span class="hljs-variable">$o</span><span class="hljs-function">.custom_Alert</span>() <span class="hljs-comment">//displays "Hello world!"</span>
 </code></pre>
 <p>Syntax with brackets is also supported:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>[<span class="hljs-string">"custom_Alert"</span>]() <span class="hljs-comment">//displays "Hello world!"</span>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span><span class="hljs-function">["custom_Alert"]</span>() <span class="hljs-comment">//displays "Hello world!"</span>
 </code></pre>
 <p>You can also <a href="/docs/pt/Concepts/parameters.html">pass parameters</a> to your formula when you call it by using $1, $2… just like with 4D project methods:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//fullName method</span>
@@ -140,8 +140,8 @@
 </code></pre>
 <p>You can encapsulate <code>fullName</code> in an object:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
-<span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"full_name"</span>;<span class="hljs-function">Formula</span>(fullName))
-<span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">full_name</span>(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Smith"</span>) 
+<span class="hljs-variable">$o</span><span class="hljs-function">:=New object("full_name";Formula</span>(fullName))
+<span class="hljs-variable">$result</span><span class="hljs-function">:=$o.full_name</span>(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Smith"</span>) 
 <span class="hljs-comment">//$result = "John Smith"</span>
 <span class="hljs-comment">// equivalent to $result:=fullName("param1";"param2")</span>
 </code></pre>
@@ -152,10 +152,10 @@
 </code></pre>
 <p>Then the method acts like a new, calculated attribute that can be added to other attributes:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
-<span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"firstName"</span>;<span class="hljs-string">"Jim"</span>;<span class="hljs-string">"lastName"</span>;<span class="hljs-string">"Wesson"</span>)
-<span class="hljs-variable">$o</span>.fullName:=<span class="hljs-function">Formula</span>(fullName2) <span class="hljs-comment">//add the method  </span>
+<span class="hljs-variable">$o</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"firstName"</span>;<span class="hljs-string">"Jim"</span>;<span class="hljs-string">"lastName"</span>;<span class="hljs-string">"Wesson"</span>)
+<span class="hljs-variable">$o</span><span class="hljs-function">.fullName:=Formula</span>(fullName2) <span class="hljs-comment">//add the method  </span>
 
-<span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">fullName</span>() 
+<span class="hljs-variable">$result</span><span class="hljs-function">:=$o.fullName</span>() 
 <span class="hljs-comment">//$result = "Jim Wesson"</span>
 </code></pre>
 <p>Note that, even if it does not have parameters, an object method to be executed must be called with ( ) parenthesis. Calling only the object property will return a new reference to the formula (and will not execute it):</p>
@@ -186,14 +186,14 @@
 <ol>
 <li>You can build the sentence in this way:</li>
 </ol>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span><span class="hljs-function">:=Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-function">QUERY</span>([Friends and Relatives];[Friends and Relatives]Name=<span class="hljs-variable">$vsName</span>)<span class="hljs-keyword">
-    If</span>(<span class="hljs-function">Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
+    If</span><span class="hljs-function">(Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
        <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-string">"A friend of mine, "</span>+<span class="hljs-variable">$vsName</span><span class="hljs-keyword">
        Repeat</span>
           <span class="hljs-function">QUERY</span>([Friends and Relatives];[Friends and Relatives]ChildrensName=<span class="hljs-variable">$vsName</span>)
-          <span class="hljs-variable">$vlQueryResult</span>:=<span class="hljs-function">Records in selection</span>([Friends and Relatives])<span class="hljs-keyword">
+          <span class="hljs-variable">$vlQueryResult</span><span class="hljs-function">:=Records in selection</span>([Friends and Relatives])<span class="hljs-keyword">
           If</span>(<span class="hljs-variable">$vlQueryResult</span>&gt;<span class="hljs-number">0</span>)
              <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-variable">$vtTheWholeStory</span>+<span class="hljs-string">" who is the child of "</span>+[Friends and Relatives]Name
              <span class="hljs-variable">$vsName</span>:=[Friends and Relatives]Name<span class="hljs-keyword">
@@ -207,11 +207,11 @@
 <ol start="2">
 <li>You can also build it this way:</li>
 </ol>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span><span class="hljs-function">:=Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-function">QUERY</span>([Friends and Relatives];[Friends and Relatives]Name=<span class="hljs-variable">$vsName</span>)<span class="hljs-keyword">
-    If</span>(<span class="hljs-function">Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
-       <span class="hljs-function">ALERT</span>(<span class="hljs-string">"A friend of mine, "</span>+<span class="hljs-function">Genealogy of</span>(<span class="hljs-variable">$vsName</span>)+<span class="hljs-string">", does this for a living!"</span>)<span class="hljs-keyword">
+    If</span><span class="hljs-function">(Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
+       <span class="hljs-function">ALERT("A friend of mine, "+Genealogy of</span>(<span class="hljs-variable">$vsName</span>)+<span class="hljs-string">", does this for a living!"</span>)<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
@@ -222,8 +222,8 @@
 
  <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$1</span>
  <span class="hljs-function">QUERY</span>([Friends and Relatives];[Friends and Relatives]ChildrensName=<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
- If</span>(<span class="hljs-function">Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
-    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$0</span>+<span class="hljs-string">" who is the child of "</span>+<span class="hljs-function">Genealogy of</span>([Friends and Relatives]Name)<span class="hljs-keyword">
+ If</span><span class="hljs-function">(Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
+    <span class="hljs-variable">$0</span><span class="hljs-function">:=$0+" who is the child of "+Genealogy of</span>([Friends and Relatives]Name)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <p>Note the <code>Genealogy of</code> method which calls itself.</p>

@@ -136,7 +136,7 @@
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$TablePtr</span>:=-&gt;[anyTable]
 </code></pre>
 <p>あるいは、以下のように <code>Table</code> コマンドを使用してテーブルのポインターを得ることができます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$TablePtr</span>:=<span class="hljs-function">Table</span>(<span class="hljs-number">20</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$TablePtr</span><span class="hljs-function">:=Table</span>(<span class="hljs-number">20</span>)
 </code></pre>
 <p>取得したポインターは、以下のようにデリファレンスしてコマンドに渡すことができます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">DEFAULT TABLE</span>(<span class="hljs-variable">$TablePtr</span>-&gt;)
@@ -146,7 +146,7 @@
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$FieldPtr</span>:=-&gt;[aTable]<span class="hljs-literal">This</span>Field
 </code></pre>
 <p>あるいは、以下のように <code>Field</code> コマンドを使用してフィールドのポインターを得ることができます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$FieldPtr</span>:=<span class="hljs-function">Field</span>(<span class="hljs-number">1</span>;<span class="hljs-number">2</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$FieldPtr</span><span class="hljs-function">:=Field</span>(<span class="hljs-number">1</span>;<span class="hljs-number">2</span>)
 </code></pre>
 <p>取得したポインターは、以下のようにデリファレンスしてコマンドに渡すことができます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">OBJECT SET FONT</span>(<span class="hljs-variable">$FieldPtr</span>-&gt;;<span class="hljs-string">"Arial"</span>)
@@ -178,7 +178,7 @@
 <h3><a class="anchor" aria-hidden="true" id="配列要素へのポインター"></a><a href="#配列要素へのポインター" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配列要素へのポインター</h3>
 <p>配列要素に対するポインターを作成することができます。 以下の例は配列を作成し、配列の最初の要素を指し示すポインターを変数 $ElemPtr に割り当てます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY REAL</span>(<span class="hljs-variable">$anArray</span>;<span class="hljs-number">10</span>) <span class="hljs-comment">// 配列を作成</span>
-<span class="hljs-variable">$ElemPtr</span>:=-&gt;<span class="hljs-variable">$anArray</span>{<span class="hljs-number">1</span>} <span class="hljs-comment">// 配列要素へのポインターを作成</span>
+<span class="hljs-variable">$ElemPtr</span>:=-&gt;<span class="hljs-variable">$anArray{1}</span> <span class="hljs-comment">// 配列要素へのポインターを作成</span>
 </code></pre>
 <p>以下のように、ポインターの参照先である配列要素に値を代入することができます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$ElemPtr</span>-&gt;:=<span class="hljs-number">8</span>
@@ -199,8 +199,8 @@
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//takeTwo プロジェクトメソッド</span>
   <span class="hljs-comment">//$1 – 文字列フィールドまたは変数へのポインター。 これを大文字に変換します。</span>
   <span class="hljs-comment">//$2 – 文字列フィールドまたは変数へのポインター。 これを小文字に変換します。</span>
- <span class="hljs-variable">$1</span>-&gt;:=<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>-&gt;)
- <span class="hljs-variable">$2</span>-&gt;:=<span class="hljs-function">Lowercase</span>(<span class="hljs-variable">$2</span>-&gt;)
+ <span class="hljs-variable">$1</span><span class="hljs-function">-&gt;:=Uppercase</span>(<span class="hljs-variable">$1</span>-&gt;)
+ <span class="hljs-variable">$2</span><span class="hljs-function">-&gt;:=Lowercase</span>(<span class="hljs-variable">$2</span>-&gt;)
 </code></pre>
 <p>以下のステートメントではメソッド <code>takeTwo</code> を使用し、フィールドの値を大文字に、変数の値を小文字に変換します:</p>
 <pre><code class="hljs">takeTwo(-&gt;[myTable]myField;-&gt;$MyVar)
@@ -213,7 +213,7 @@
  <span class="hljs-variable">$PointerOne</span>:=-&gt;<span class="hljs-variable">$MyVar</span>
  <span class="hljs-variable">$PointerTwo</span>:=-&gt;<span class="hljs-variable">$PointerOne</span>
  (<span class="hljs-variable">$PointerTwo</span>-&gt;)-&gt;:=<span class="hljs-string">"Goodbye"</span>
- <span class="hljs-function">ALERT</span>((<span class="hljs-variable">$PointerTwo</span>-&gt;)-&gt;)
+ <span class="hljs-function">ALERT(</span>(<span class="hljs-variable">$PointerTwo</span>-&gt;)-&gt;)
 </code></pre>
 <p>この例はアラートボックスに &quot;Goodbye&quot; を表示します。</p>
 <p>各行について見ていきましょう:</p>

@@ -269,7 +269,7 @@
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//getAverage  </span>
 <span class="hljs-function">ALL RECORDS</span>([Employee])
-<span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"ageAverage"</span>;<span class="hljs-function">Average</span>([Employee]age))
+<span class="hljs-variable">$0</span><span class="hljs-function">:=New object("ageAverage";Average</span>([Employee]age))
 </code></pre>
 <p><code>POST /rest/Employee/getAverage</code></p>
 <p>結果:</p>
@@ -286,7 +286,7 @@
 <li>with <strong>Current record</strong> scope</li>
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//getFullName  </span>
-<span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"fullName"</span>;[Employee]firstname+<span class="hljs-string">" "</span>+[Employee]lastname)
+<span class="hljs-variable">$0</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"fullName"</span>;[Employee]firstname+<span class="hljs-string">" "</span>+[Employee]lastname)
 </code></pre>
 <p><code>POST /rest/Employee(3)/getFullName</code></p>
 <p>結果:</p>
@@ -307,14 +307,14 @@
 <span class="hljs-function">READ WRITE</span>([Employee])
 <span class="hljs-variable">$vCount</span>:=<span class="hljs-number">0</span>
 <span class="hljs-function">FIRST RECORD</span>([Employee])<span class="hljs-keyword">
-While</span> (<span class="hljs-function">Not</span>(<span class="hljs-function">End selection</span>([Employee]))  
+While</span> <span class="hljs-function">(Not(End selection</span>([Employee]))  
     [Employee]salary:=[Employee]salary * <span class="hljs-variable">$1</span>
     <span class="hljs-function">SAVE RECORD</span>([Employee])
     <span class="hljs-variable">$vCount</span>:=<span class="hljs-variable">$vCount</span>+<span class="hljs-number">1</span>
     <span class="hljs-function">NEXT RECORD</span>([Employee])<span class="hljs-keyword">
 End while</span> 
 <span class="hljs-function">UNLOAD RECORD</span>([Employee])
-<span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"updates"</span>;<span class="hljs-variable">$vCount</span>)
+<span class="hljs-variable">$0</span><span class="hljs-function">:=New object</span>(<span class="hljs-string">"updates"</span>;<span class="hljs-variable">$vCount</span>)
 </code></pre>
 <p><code>POST /rest/Employee/updateSalary/?$filter=&quot;salary&lt;1500&quot;</code></p>
 <p>POST data (in the request body): [1.5]</p>

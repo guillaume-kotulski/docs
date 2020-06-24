@@ -279,12 +279,12 @@ The <a href="https://doc.4d.com">documentation</a> of the command ....</p>
 <pre><code class="hljs css language-4d">&lt;!-- <span class="hljs-literal">This</span> method returns a different logo depending on the size parameter --&gt;
 
 
-GetLogo (size) -&gt; logo
+<span class="hljs-function">GetLogo </span>(size) -&gt; logo
 
 
 | Parameter | Type   | in/out | Description |
 | --------- | ------ | ------ | ----------- |
-| size      | Longint | in | Logo style selector (<span class="hljs-number">1</span> to <span class="hljs-number">5</span>)  |
+<span class="hljs-function">| size      | Longint | in | Logo style selector </span>(<span class="hljs-number">1</span> to <span class="hljs-number">5</span>)  |
 | logo      | Picture | out | Selected logo |
 
 
@@ -299,7 +299,7 @@ GetLogo (size) -&gt; logo
 <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$size</span>)
 
 <span class="hljs-comment">//Get the largest logo</span>
-<span class="hljs-variable">$logo</span>:=<span class="hljs-function">GetLogo</span>(<span class="hljs-number">5</span>)
+<span class="hljs-variable">$logo</span><span class="hljs-function">:=GetLogo</span>(<span class="hljs-number">5</span>)
 </code></pre>
 <ul>
 <li><p>Explorer view: <img src="assets/en/Project/explorer_Doc.png" alt=""></p></li>
