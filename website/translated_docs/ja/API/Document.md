@@ -4,7 +4,6 @@ title: Document
 ---
 
 ## 説明
-blabla
 
 ## Properties
 
