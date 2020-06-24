@@ -80,10 +80,10 @@
   <span class="hljs-comment">// Le BLOB est passé comme paramètre à une commande 4D</span>
  <span class="hljs-function">SET BLOB SIZE</span>(touteVarBLOB;<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>)
   <span class="hljs-comment">// Le BLOB est passé comme paramètre à une routine externe</span>
- <span class="hljs-variable">$CodeErr</span>:=<span class="hljs-function">Faites_Quelque_chose_avec_ce_BLOB</span>(touteVarBLOB)
+ <span class="hljs-variable">$CodeErr</span><span class="hljs-function">:=Faites_Quelque_chose_avec_ce_BLOB</span>(touteVarBLOB)
   <span class="hljs-comment">// Le BLOB est passé comme paramètre à une méthode qui retourne un BLOB</span>
  <span class="hljs-function">C_BLOB</span>(recupBlob)
- recupBlob:=<span class="hljs-function">Remplir_Blob</span>(touteVarBLOB)
+ <span class="hljs-function">recupBlob:=Remplir_Blob</span>(touteVarBLOB)
   <span class="hljs-comment">// Un pointeur vers le BLOB est passé comme paramètre à une de vos méthodes</span>
  <span class="hljs-function">COMPUTE BLOB</span>(-&gt;touteVarBLOB)
 </code></pre>
@@ -106,7 +106,7 @@
   <span class="hljs-comment">// Fixer la taille du BLOB à 256 octets</span>
  <span class="hljs-function">SET BLOB SIZE</span>(vBlob;<span class="hljs-number">256</span>)
   <span class="hljs-comment">// La boucle suivante initialise les 256 octets du BLOB à zéro</span>
- <span class="hljs-function">Boucle</span>(vOctet;<span class="hljs-number">0</span>;<span class="hljs-function">Taille BLOB</span>(vBlob)<span class="hljs-number">-1</span>)
+ <span class="hljs-function">Boucle(vOctet;0;Taille BLOB</span>(vBlob)<span class="hljs-number">-1</span>)
     vBlob{vOctet}:=<span class="hljs-number">0</span>
  Fin de boucle
 </code></pre>

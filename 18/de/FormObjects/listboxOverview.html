@@ -131,7 +131,7 @@
 <p>Each element of the collection or each entity is available as an object that can be accessed through the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/This.301-4310806.en.html">This</a> command. A column expression can be a project method, a variable, or any formula, accessing each entity or collection element object through <code>This</code>, for example <code>This.&lt;propertyPath&gt;</code> (or <code>This.value</code> in case of a collection of scalar values). You can use the <code>LISTBOX SET COLUMN FORMULA</code> and <code>LISTBOX INSERT COLUMN FORMULA</code> commands to modify columns programmatically.</p>
 <p>When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.</p>
 <p>When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the <em>Collections</em> theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Beispiel:</p>
-<pre><code class="hljs css language-4d">myCol:=myCol.<span class="hljs-function">push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">//display new value in list box</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function">myCol:=myCol.push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">//display new value in list box</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="supported-properties"></a><a href="#supported-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported Properties</h3>
 <p>Supported properties depend on the list box type.</p>
@@ -262,7 +262,7 @@
     :(Form event=On Before Data Entry) <span class="hljs-comment">// a cell gets the focus</span>
        <span class="hljs-function">LISTBOX GET CELL POSITION</span>(*;<span class="hljs-string">"lb"</span>;<span class="hljs-variable">$col</span>;<span class="hljs-variable">$row</span>)
   <span class="hljs-comment">// identification of cell</span><span class="hljs-keyword">
-       If</span>(arrDate{<span class="hljs-variable">$row</span>}&lt;Current date) <span class="hljs-comment">// if date is earlier than today</span>
+       If</span>(arrDate{<span class="hljs-variable">$row}</span>&lt;Current date) <span class="hljs-comment">// if date is earlier than today</span>
           <span class="hljs-variable">$0</span>:=<span class="hljs-number">-1</span> <span class="hljs-comment">// cell is NOT enterable</span><span class="hljs-keyword">
        Else</span>
   <span class="hljs-comment">// otherwise, cell is enterable</span><span class="hljs-keyword">
@@ -362,13 +362,13 @@
 <p>In the object method of the list box, you can write:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Form event=On Selection Change)
-       <span class="hljs-variable">$n</span>:=<span class="hljs-function">Size of array</span>(LB_Arrays)
+       <span class="hljs-variable">$n</span><span class="hljs-function">:=Size of array</span>(LB_Arrays)
        <span class="hljs-function">ARRAY LONGINT</span>(_ListboxBackground;<span class="hljs-variable">$n</span>) <span class="hljs-comment">// row background colors</span><span class="hljs-keyword">
        For</span>(<span class="hljs-variable">$i</span>;<span class="hljs-number">1</span>;<span class="hljs-variable">$n</span>)<span class="hljs-keyword">
-          If</span>(LB_Arrays{<span class="hljs-variable">$i</span>}=<span class="hljs-literal">True</span>) <span class="hljs-comment">// selected</span>
-             _ListboxBackground{<span class="hljs-variable">$i</span>}:=<span class="hljs-number">0</span>x0080C080 <span class="hljs-comment">// green background</span><span class="hljs-keyword">
+          If</span>(LB_Arrays{<span class="hljs-variable">$i}</span>=<span class="hljs-literal">True</span>) <span class="hljs-comment">// selected</span>
+             _ListboxBackground{<span class="hljs-variable">$i}</span>:=<span class="hljs-number">0x0080C080</span> <span class="hljs-comment">// green background</span><span class="hljs-keyword">
           Else</span> <span class="hljs-comment">// not selected</span>
-             _ListboxBackground{<span class="hljs-variable">$i</span>}:=lk inherited<span class="hljs-keyword">
+             _ListboxBackground{<span class="hljs-variable">$i}</span>:=lk inherited<span class="hljs-keyword">
           End if</span><span class="hljs-keyword">
        End for</span><span class="hljs-keyword">
  End case</span>
@@ -379,8 +379,8 @@
     &quot;rowFillSource&quot;: &quot;UI_SetColor&quot;,
 </code></pre>
 <p>You can write in the <em>UI_SetColor</em> method:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(<span class="hljs-function">Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
-    <span class="hljs-variable">$color</span>:=<span class="hljs-number">0</span>x0080C080 <span class="hljs-comment">// green background</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span><span class="hljs-function">(Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
+    <span class="hljs-variable">$color</span>:=<span class="hljs-number">0x0080C080</span> <span class="hljs-comment">// green background</span><span class="hljs-keyword">
  Else</span>
     <span class="hljs-variable">$color</span>:=lk inherited<span class="hljs-keyword">
  End if</span>
@@ -581,7 +581,7 @@
 <p><em>Non-hierarchical representation:</em> <img src="/docs/18/assets/en/FormObjects/hierarch12.png" alt=""></p>
 <p><em>Hierarchical representation:</em> <img src="/docs/18/assets/en/FormObjects/hierarch13.png" alt=""></p>
 <p>In hierarchical mode, break levels are not taken into account by the style modification arrays named <code>tStyle</code> and <code>tColors</code>. To modify the color or style of break levels, you must execute the following statements:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">OBJECT SET RGB COLORS</span>(T1;<span class="hljs-number">0</span>x0000FF;<span class="hljs-number">0</span>xB0B0B0)
+<pre><code class="hljs css language-4d"> <span class="hljs-function">OBJECT SET RGB COLORS</span>(T1;<span class="hljs-number">0x0000FF</span>;<span class="hljs-number">0xB0B0B0</span>)
  <span class="hljs-function">OBJECT SET FONT STYLE</span>(T2;Bold)
 </code></pre>
 <blockquote>
@@ -614,7 +614,7 @@
 <p>the value type (mandatory): text, color, event, etc. the value itself (optional): used for input/output. the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). For example, you can write &quot;Hello World!&quot; in an object column using this simple code:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">//column array</span>
  <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>) <span class="hljs-comment">//first element</span>
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>) <span class="hljs-comment">//defines the value type (mandatory)</span>
+ <span class="hljs-function">OB SET($ob;"valueType";"text") //defines the value type </span>(mandatory)
  <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Hello World!"</span>) <span class="hljs-comment">//defines the value</span>
  <span class="hljs-function">APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob</span>)  
 </code></pre>
@@ -879,7 +879,7 @@
 <li><p>If the value is a number, a colored rectangle is drawn inside the cell. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob4</span>)
 <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"color"</span>)
-<span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">0</span>x00FF0000)
+<span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">0x00FF0000</span>)
 </code></pre>
 <p><img src="/docs/18/assets/en/FormObjects/listbox_column_objectArray_colorValue.png" alt=""></p></li>
 <li><p>If the value is a text, then the text is displayed (<em>e.g.</em>: &quot;value&quot;;&quot;Automatic&quot;).</p></li>

@@ -82,7 +82,7 @@
 <pre><code class="hljs css language-4d"> [MyTable]MyField:=MyText
 </code></pre>
 <p>The following are some basic variable declarations:</p>
-<pre><code class="hljs css language-4d">&lt;br /&gt; <span class="hljs-function">C_BLOB</span>(vxMyBlob) <span class="hljs-comment">// The process variable vxMyBlob is declared as a variable of type BLOB</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function">&lt;br /&gt; C_BLOB</span>(vxMyBlob) <span class="hljs-comment">// The process variable vxMyBlob is declared as a variable of type BLOB</span>
  <span class="hljs-function">C_DATE</span>(<span class="hljs-variable">$vdCurDate</span>) <span class="hljs-comment">// The local variable $vdCurDate is declared as a variable of type Date</span>
  <span class="hljs-function">C_LONGINT</span>(vg1;vg2;vg3) <span class="hljs-comment">// The 3 process variables vg1, vg2 and vg3 are declared as variables of type longint  </span>
  <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$vObj</span>) <span class="hljs-comment">// The local variable $vObj is declared as a variable of type Object</span>
@@ -115,7 +115,7 @@
 <p>The name of a local variable always starts with a dollar sign ($) and can contain up to 31 additional characters. If you enter a longer name, 4D truncates it to the appropriate length.</p>
 <p>When you are working in a database with many methods and variables, you often find that you need to use a variable only within the method on which you are working. You can create and use a local variable in the method without worrying about whether you have used the same variable name somewhere else.</p>
 <p>Frequently, in a database, small pieces of information are needed from the user. The <code>Request</code> command can obtain this information. It displays a dialog box with a message prompting the user for a response. When the user enters the response, the command returns the information the user entered. You usually do not need to keep this information in your methods for very long. This is a typical way to use a local variable. Here is an example:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Please enter your ID:"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span><span class="hljs-function">:=Request</span>(<span class="hljs-string">"Please enter your ID:"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-function">QUERY</span>([People];[People]ID =<span class="hljs-variable">$vsID</span>)<span class="hljs-keyword">
  End if</span>

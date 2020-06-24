@@ -78,12 +78,12 @@
 <li><p>オブジェクトが表示される前に、値を配列要素に代入するコードを実行します。 たとえば:</p></li>
 </ul>
 <pre><code class="hljs css language-4d">  <span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$aCities</span>;<span class="hljs-number">6</span>)
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">1</span>}:=<span class="hljs-string">"Philadelphia"</span>
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">2</span>}:=<span class="hljs-string">"Pittsburg"</span>
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">3</span>}:=<span class="hljs-string">"Grand Blanc"</span>
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">4</span>}:=<span class="hljs-string">"Bad Axe"</span>
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">5</span>}:=<span class="hljs-string">"Frostbite Falls"</span>
-  <span class="hljs-variable">$aCities</span>{<span class="hljs-number">6</span>}:=<span class="hljs-string">"Green Bay"</span>
+  <span class="hljs-variable">$aCities{1}</span>:=<span class="hljs-string">"Philadelphia"</span>
+  <span class="hljs-variable">$aCities{2}</span>:=<span class="hljs-string">"Pittsburg"</span>
+  <span class="hljs-variable">$aCities{3}</span>:=<span class="hljs-string">"Grand Blanc"</span>
+  <span class="hljs-variable">$aCities{4}</span>:=<span class="hljs-string">"Bad Axe"</span>
+  <span class="hljs-variable">$aCities{5}</span>:=<span class="hljs-string">"Frostbite Falls"</span>
+  <span class="hljs-variable">$aCities{6}</span>:=<span class="hljs-string">"Green Bay"</span>
 </code></pre>
 <p>この場合、フォームのオブジェクトに関連付けた変数名は <em>aCities</em> でなければなりません。 このコードをフォームメソッド内に置き、<code>On Load</code> フォームイベント発生時に実行されるようにします。</p>
 <ul>
@@ -96,10 +96,10 @@
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">  Case of</span>
     :(Form event=On Load)
        <span class="hljs-function">LIST TO ARRAY</span>(<span class="hljs-string">"Cities"</span>;aCities)<span class="hljs-keyword">
-       If</span>(<span class="hljs-function">Record number</span>([People])&lt;<span class="hljs-number">0</span>) <span class="hljs-comment">// 新規レコードの場合</span>
+       If</span><span class="hljs-function">(Record number</span>([People])&lt;<span class="hljs-number">0</span>) <span class="hljs-comment">// 新規レコードの場合</span>
           aCities:=<span class="hljs-number">3</span> <span class="hljs-comment">// デフォルトの値を表示します</span><span class="hljs-keyword">
        Else</span> <span class="hljs-comment">// 既存レコードの場合には、保存された値を表示します</span>
-          aCities:=<span class="hljs-function">Find in array</span>(aCities;City)<span class="hljs-keyword">
+          <span class="hljs-function">aCities:=Find in array</span>(aCities;City)<span class="hljs-keyword">
        End if</span>
     :(Form event=On Clicked) <span class="hljs-comment">// ユーザーが選択を変更した場合</span>
        City:=aCities{aCities} <span class="hljs-comment">// フィールドに新しい値を代入</span>

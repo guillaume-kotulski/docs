@@ -112,7 +112,7 @@
 <pre><code class="hljs css language-4d"> <span class="hljs-function">C_TEXT</span>(myvariable)
  <span class="hljs-function">component_method1</span>(-&gt;myvariable)
  <span class="hljs-function">C_POINTER</span>(<span class="hljs-variable">$p</span>)
- <span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+ <span class="hljs-variable">$p</span><span class="hljs-function">:=component_method2</span>(...)
 </code></pre>
 <p>When you use pointers to allow components and the host database to communicate, you need to take the following specificities into account:</p>
 <ul>
@@ -201,7 +201,7 @@ Let’s illustrate this principle with the following example: given two componen
 <li>reads data from the external database.</li>
 </ul>
 <p>Creating the external database:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">&lt;&gt;MyDatabase</span>:=Get <span class="hljs-number">4</span>D folder+<span class="hljs-string">"\MyDB"</span> <span class="hljs-comment">// (Windows) stores the data in an authorized directory</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-variable">&lt;&gt;MyDatabase</span><span class="hljs-function">:=Get 4D folder+"\MyDB" // </span>(Windows) stores the data in an authorized directory<span class="hljs-keyword">
  Begin SQL</span>
         CREATE DATABASE IF NOT EXISTS DATAFILE :[<span class="hljs-variable">&lt;&gt;MyDatabase</span>];
         USE DATABASE DATAFILE :[<span class="hljs-variable">&lt;&gt;MyDatabase</span>];
@@ -214,7 +214,7 @@ Let’s illustrate this principle with the following example: given two componen
         sort_order INT32
         );
 
-        CREATE UNIQUE INDEX id_index ON KEEPIT (ID);
+        <span class="hljs-function">CREATE UNIQUE INDEX id_index ON KEEPIT </span>(ID);
 
         USE DATABASE SQL_INTERNAL;<span class="hljs-keyword">
 
