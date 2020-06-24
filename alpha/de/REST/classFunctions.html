@@ -333,7 +333,7 @@ Function pushData
 <h3><a class="anchor" aria-hidden="true" id="using-an-entity-to-be-updated-on-the-server"></a><a href="#using-an-entity-to-be-updated-on-the-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using an entity to be updated on the server</h3>
 <p>Same as above but with a __KEY attribute</p>
 <p>You run this request:</p>
-<p><strong>POST:</strong><code>http://127.0.0.1:8044/rest/Students/applyData</code></p>
+<p><strong>POST:</strong><code>http://127.0.0.1:8044/rest/Students/pushData</code></p>
 <p>Body of the request:</p>
 <pre><code class="hljs">[{
 &quot;__DATACLASS&quot;:&quot;Students&quot;,
@@ -360,7 +360,7 @@ Function pushData
 <h3><a class="anchor" aria-hidden="true" id="creating-an-entity-with-a-related-entity"></a><a href="#creating-an-entity-with-a-related-entity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an entity with a related entity</h3>
 <p>In this example, we create a new Students entity with the Schools entity having primary key 2.</p>
 <p>You run this request:</p>
-<p><strong>POST:</strong><code>http://127.0.0.1:8044/rest/Students/applyData</code></p>
+<p><strong>POST:</strong><code>http://127.0.0.1:8044/rest/Students/pushData</code></p>
 <p>Body of the request:</p>
 <pre><code class="hljs">[{
 &quot;__DATACLASS&quot;:&quot;Students&quot;,
@@ -372,8 +372,20 @@ Function pushData
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="result-8"></a><a href="#result-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Result</h4>
 <pre><code class="hljs">{
-    &quot;result&quot;: {
-        &quot;success&quot;: true
+    &quot;__entityModel&quot;: &quot;Students&quot;,
+    &quot;__DATACLASS&quot;: &quot;Students&quot;,
+    &quot;__KEY&quot;: &quot;56&quot;,
+    &quot;__TIMESTAMP&quot;: &quot;2020-06-16T11:16:47.601Z&quot;,
+    &quot;__STAMP&quot;: 1,
+    &quot;ID&quot;: 56,
+    &quot;firstname&quot;: &quot;John&quot;,
+    &quot;lastname&quot;: &quot;SMITH&quot;,
+    &quot;schoolID&quot;: 2,
+       &quot;school&quot;: {
+        &quot;__deferred&quot;: {
+            &quot;uri&quot;: &quot;/rest/Schools(2)&quot;,
+            &quot;__KEY&quot;: &quot;2&quot; 
+        }
     }
 }
 </code></pre>
