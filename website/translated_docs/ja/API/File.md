@@ -7,6 +7,7 @@ inherit from : [Document](Document.md)
 
 ## Properties
 
+
 <!-- INCLUDE document.properties -->
 
 ## Methods summary
