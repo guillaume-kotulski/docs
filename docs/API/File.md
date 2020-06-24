@@ -6,12 +6,13 @@ title: File
 inherit from : [Document](Document.md)
 
 ## Properties
+
 <!-- INCLUDE document.properties -->
 
 ## Methods summary
 
 |name|description|
-|----|--------|
+|----|-----------|
 |<!-- INCLUDE document.methods -->|
 |[create()](#create)|<!-- INCLUDE File.create.Summary -->|
 ||<!--INCLUDE File.create.Syntax -->|
@@ -34,9 +35,9 @@ inherit from : [Document](Document.md)
 **create** &rarr; boolean<!-- END REF -->
 
 <!--REF File.create.Parameters -->
-|Parameter|Type| Description|
-|----|-----------|-----------|
-|Result | Boolean |True if the file was created successfully, false otherwise|
+|Parameter|Type|Description|
+|---------|----|-----------|
+|Result|Boolean|True if the file was created successfully, false otherwise|
 <!-- END REF -->
 
 <!-- REF File.create.Desc -->
@@ -65,10 +66,10 @@ Creation of a preferences file in the database folder:
 
  <!--REF File.createAlias.Parameters -->
 |Parameter|Type|Description|
-| ----|-----------|-----------|
+|---------|----|-----------|
 |destinationFolder|Object|Destination folder for the alias or shortcut|
 |aliasName|Text|Name of the alias or shortcut|
-|aliasType|Longint |Type of the alias link|
+|aliasType|Longint|Type of the alias link|
 |Result|Object|Alias or shortcut file reference|
 <!-- END REF -->
 
@@ -129,7 +130,7 @@ You want to delete a specific file in the database folder:
 
 <!--REF File.moveTo.Parameters -->
 |Parameter|Type|Description|
-|----|-----------|-----------|
+|---------|----|-----------|
 |destinationFolder|Object|Destination folder|
 |newName|Text|Full name for the moved file|
 |Result|Object|Moved file|
@@ -195,7 +196,7 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 
 <!--REF File.setContent.Parameters -->
 |Parameter|Type|Description|
-|----|-----------|-----------|
+|---------|----|-----------|
 |content|BLOB|New contents for the file|
 <!-- END REF -->
 
@@ -219,7 +220,7 @@ The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the e
 
 <!--REF File.setText.Parameters -->
 |Parameter|Type|Description|
-|----|-----------|-----------|
+|---------|----|-----------|
 |text|Text|Text to store in the file|
 |charSet|Text, Longint|Name or number of character set|
 |breakMode|Longint|Processing mode for line breaks|<!-- END REF -->
@@ -237,7 +238,7 @@ In charSet, pass the character set to be used for writing the contents. You can 
 In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
 
 |Constant|Type|Value|Comment|
-|----|----|----|----|
+|--------|----|-----|-------|
 |Document unchanged|Longint|0|No processing|
 |Document with native format|Longint|1|(Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows|
 |Document with CRLF|Longint|2|Line breaks are converted to Windows format: CRLF (carriage return + line feed)|
