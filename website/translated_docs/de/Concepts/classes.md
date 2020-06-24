@@ -121,34 +121,34 @@ Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
 ### 4D Entwickleroberfläche
 
-Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
+Beim Erstellen auf der 4D Entwickleroberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü **Datei/Ablage** oder über den Explorer.
 
-#### File menu and toolbar
+#### Menü Datei/Ablage und Werkzeugleiste
 
-You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
+Sie erstellen eine Datei Klasse für das Projekt über den Eintrag **Neu > Klasse** im Menü **Datei/Ablage** oder das **Icon Neu** in der Werkzeugleiste.
 
-You can also use the **Ctrl+Shift+Alt+k** shortcut.
+Sie können auch die Tastenkombination **Strg+Shift+Alt+k** verwenden.
 
 #### Explorer
 
-In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
+Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen** gruppiert.
 
-To create a new class, you can:
+Um eine neue Klasse zu erstellen:
 
-- select the **Classes** category and click on the ![](assets/en/Users/PlussNew.png) button.
-- select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
-- select **New > Class...** from the contexual menu of the Explorer's Home page. 
+- wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche ![](assets/en/Users/PlussNew.png).
+- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Gruppe Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**. 
 
-#### Class code support
+#### Unterstützung von Code für Klassen
 
-In the various 4D Developer windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:
+In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode verwaltet mit einigen spezifischen Merkmalen:
 
-- In the code editor: 
-    - a class cannot be run
-    - a class function is a code block 
-    - **Goto definition** on an object member searches for class Function declarations; for example, "$o.f()" will find "Function f".
-    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
-- In the Runtime explorer and Debugger, class functions are displayed with the \<ClassName> constructor or \<ClassName>.\<FunctionName> format. 
+- Im Code-Editor gilt folgendes: 
+    - Es kann keine Klasse laufen
+    - Eine Klassenfunktion ist ein Code Block 
+    - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
+    - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Object Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
+- Im Runtime-Explorer und Debugger werden Class Functions mit dem Format<ClassName> Constructor oder \.\ angezeigt.<ClassName>.\<FunctionName> format. 
 
 ### Deleting a class
 
