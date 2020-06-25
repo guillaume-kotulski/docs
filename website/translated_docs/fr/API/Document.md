@@ -15,7 +15,7 @@ title: Document
 |<!-- REF document.exists -->[exists]()<!-- END REF -->|<!-- REF document.existsDesc --> retourne vrai si le fichier existe sur le disque, sinon elle retourne faux.<!-- END REF -->|
 |<!-- REF document.extension -->[extension]()<!-- END REF -->| <!-- REF document.extensionDesc -->retourne la date de création du fichier. <!-- END REF -->|
 |<!-- REF document.fullName -->[fullName]()<!-- END REF -->|<!-- REF document.fullNameDesc -->retourne le nom complet du fichier, extension comprise (le cas échéant).<!-- END REF -->|
-|<!-- REF document.hidden -->[hidden]() <!-- END REF -->|<!-- REF document.hiddenDesc -->  returns true if the file is set as "hidden" at the system level, and false otherwise. <!-- END REF -->|
+|<!-- REF document.hidden -->[hidden]() <!-- END REF -->|<!-- REF document.hiddenDesc -->  retourne vrai si le fichier est identifié comme "caché" au niveau du système, sinon elle retourne faux. <!-- END REF -->|
 |<!-- REF document.isAlias -->[isAlias]()<!-- END REF -->| <!-- REF document.isAliasDesc -->returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.<!-- END REF -->|
 |<!-- REF document.isFile -->[isFile]() <!-- END REF -->|<!-- REF document.isFileDesc -->always returns true for a file.<!-- END REF -->|
 |<!-- REF document.isFolder -->[isFolder]()<!-- END REF -->|<!-- REF document.isFolderDesc -->returns always false for a file.<!-- END REF -->|
