@@ -152,27 +152,27 @@ Vous souhaitez supprimer un fichier spécifique dans un dossier de base de donn�
 
 ## moveTo()
 <!--REF File.moveTo.Syntax -->
- **moveTo** ( *destinationFolder* {; *nouveauNom*})  &rarr; Résultat<!-- END REF -->
+ **moveTo** ( *dossierDestination * {; *nouveauNom*})  &rarr; Résultat<!-- END REF -->
 
 <!--REF File.moveTo.Parameters -->
-| Paramètres        | Type  | Description                  |
-| ----------------- | ----- | ---------------------------- |
-| destinationFolder | Objet | Destination folder           |
-| newName           | Texte | Full name for the moved file |
-| Result            | Objet | Moved file                   |
+| Paramètres         | Type  | Description                    |
+| ------------------ | ----- | ------------------------------ |
+| dossierDestination | Objet | Dossier de destination         |
+| nouveauNom         | Texte | Nom complet du fichier déplacé |
+| Résultat           | Objet | Fichier déplacé                |
 <!-- END REF -->
 
 <!-- REF File.moveTo.Desc -->
 #### Description
-The file.moveTo( ) method <!-- REF File.moveTo.Summary -->moves or renames the File object into the specified destinationFolder.<!-- END REF -->
+La méthode file.moveTo( ) <!-- REF File.moveTo.Summary -->déplace ou renomme l'objet File vers le dossierDestination spécifié.<!-- END REF -->
 
-The destinationFolder must exist on disk, otherwise an error is generated.
+Le dossierDestination doit exister sur disque, sinon une erreur est générée.
 
-By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the newName parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
+Par défaut, le fichier garde le même nom lorsqu'il est déplacé. Si vous souhaitez renommer le fichier déplacé, passez le nom complet dans le paramètre nouveauNom. Le nouveau nom doit être conforme aux règles de nommage (ex : il ne doit pas contenir de caractères tels que ":", "/", etc.), sinon une erreur est retournée.
 
 Objet retourné
 
-The method returns the moved File object.
+La méthode retourne l'objet File déplacé.
 
 #### Exemple
 Vous souhaitez créer un alias pour le fichier contenu dans votre dossier de base de données :
@@ -185,29 +185,29 @@ Vous souhaitez créer un alias pour le fichier contenu dans votre dossier de bas
 
 ## rename()
 <!--REF File.rename.Syntax -->
- **rename** ( newName ) &rarr; Result<!-- END REF -->
+ **rename** ( nouveauNom ) &rarr; Résultat<!-- END REF -->
 
 <!--REF File.rename.Parameters -->
-| Paramètres | Type  | Description                |
-| ---------- | ----- | -------------------------- |
-| newName    | Texte | New full name for the file |
-| Result     | Objet | Renamed file               |
+| Paramètres | Type  | Description                    |
+| ---------- | ----- | ------------------------------ |
+| nouveauNom | Texte | Nouveau nom complet du fichier |
+| Résultat   | Objet | Fichier renommé                |
 <!-- END REF -->
 
 <!-- REF File.rename.Desc -->
 #### Description
-The file.rename( ) method <!-- REF File.rename.Summary -->enames the file with the name you passed in newName and returns the renamed File object.<!-- END REF -->
+La méthode file.rename( ) <!-- REF File.rename.Summary -->renomme le fichier avec le nom que vous avez passé dans le paramètre nouveauNom et retourne l'objet File renommé.<!-- END REF -->
 
-The newName parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.
+Le paramètre nouveauNom doit être conforme aux règles de nommage (ex : il ne doit pas contenir des caractères tels que ":", "/", etc.), sinon une erreur est retournée. S'il existe déjà un fichier portant le même nom, une erreur est retournée.
 
-Note that the method modifies the full name of the file, i.e. if you do not pass an extension in newName, the file will have a name without an extension.
+A noter que la méthode modifie le nom complet du fichier, c'est-à-dire que si vous ne passez pas une extension dans le paramètre nouveauNom, le fichier aura un nom sans extension.
 
 Objet retourné
 
-The method returns the renamed File object.
+La méthode retourne l'objet File renommé.
 
 #### Exemple
-You want to rename "ReadMe.txt" in "ReadMe_new.txt":
+Vous souhaitez que "ReadMe.txt" soit renommé "ReadMe_new.txt" :
 
  ```4d
  $toRename:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
@@ -218,17 +218,17 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 ## setContent()
 
 <!--REF File.setContent.Syntax -->
-**file.setContent (content)** <!-- END REF -->
+**file.setContent (contenu)** <!-- END REF -->
 
 <!--REF File.setContent.Parameters -->
-| Paramètres | Type | Description               |
-| ---------- | ---- | ------------------------- |
-| content    | BLOB | New contents for the file |
+| Paramètres | Type | Description                |
+| ---------- | ---- | -------------------------- |
+| contenu    | BLOB | Nouveau contenu du fichier |
 <!-- END REF -->
 
 <!-- REF File.setContent.Desc -->
 #### Description
-The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the entire content of the file using the data stored in the content BLOB. For information on BLOBs, please refer to the BLOB Commands section.
+La méthode file.setContent( ) <!-- REF File.setContent.Summary -->réécrit le contenu intégral du fichier à l'aide des données stockées dans le BLOB contenu. Pour plus d'informations sur les BLOB, veuillez vous reporter à la section Commandes du thème BLOB.
 <!-- END REF -->
 
 #### Exemple
@@ -242,34 +242,34 @@ The file.setContent( ) method <!-- REF File.setContent.Summary -->rewrites the e
 ## setText()
 
 <!--REF File.setText.Syntax -->
- **setText** ( text {; charSet {;breakMode}}) &rarr; blob<!-- END REF -->
+ **setText** ( texte {; jeuCaractères {;modeRetour }}) &rarr; blob<!-- END REF -->
 
 <!--REF File.setText.Parameters -->
-| Paramètres | Type          | Description                                      |
-| ---------- | ------------- | ------------------------------------------------ |
-| Texte      | Texte         | Text to store in the file                        |
-| charSet    | Text, Longint | Name or number of character set                  |
-| breakMode  | Entier long   | Processing mode for line breaks|<!-- END REF -->
+| Paramètres    | Type               | Description                                               |
+| ------------- | ------------------ | --------------------------------------------------------- |
+| Texte         | Texte              | Texte à stocker dans le fichier                           |
+| jeuCaractères | Texte, Entier long | Nom ou Numéro de jeu de caractères                        |
+| modeRetour    | Entier long        | Mode de traitement des retours à la ligne<!-- END REF -->
 
 |<!-- REF File.setText.Desc -->
 #### Description
-The file.setText( ) method <!-- REF File.setText.Summary -->writes text as the new contents of the file.<!-- END REF -->
+La méthode file.setText( ) <!-- REF File.setText.Summary -->écrit texte comme nouveau contenu du fichier.<!-- END REF -->
 
-If the file referenced in the File object does not exist on the disk, it is created by the method. When the file already exists on the disk, its prior contents are erased, except if it is already open, in which case, its contents are locked and an error is generated.
+Si le fichier référencé dans l'objet File n'existe pas sur disque, il est créé par la méthode. Lorsque le fichier existe déjà sur disque, son contenu antérieur est supprimé, sauf s'il est déjà ouvert, auquel cas son contenu est verrouillé et une erreur est générée.
 
-In text, pass the text to write to the file. It can be a literal ("my text"), or a 4D text field or variable.
+Dans le paramètre texte, passez le texte à écrire dans le fichier. Il peut être littéral ("my text"), un champ texte ou une variable 4D.
 
-In charSet, pass the character set to be used for writing the contents. You can pass a string containing the standard character set name (for example “ISO-8859-1” or “UTF-8”) or its MIBEnum ID (longint). For more information about the list of character sets supported by 4D, refer to the description of the CONVERT FROM TEXT command.  If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file. If you do not specify a character set, by default 4D uses the "UTF-8" character set and a BOM.
+Dans le paramètre jeuCaractères, passez le jeu de caractères à utiliser pour l'écriture du contenu. Vous pouvez passer une chaîne contenant le nom standard du jeu (par exemple “ISO-8859-1” ou “UTF-8”) ou son identifiant MIBEnum (entier long). Pour plus d'informations sur la liste des jeux de caractères pris en charge par 4D, veuillez vous reporter à la description de la commande CONVERT FROM TEXT.   Si un BOM (Byte Order Mark) existe pour le jeu de caractères, 4D l'insère dans le fichier.  Si vous n'indiquez pas un jeu de caractères, 4D utilise par défaut le jeu de caractères "UTF-8" et un BOM.
 
-In breakMode, you can pass a longint indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the "System Documents" theme are available:
+Dans le paramètre modeRetour, vous pouvez passer un entier long indiquant le traitement à appliquer aux caractères de fin de ligne avant de les sauvegarder dans le fichier. Les constantes suivantes du thème "Documents système" sont disponibles :
 
-| Constant                    | Type        | Valeur | Commentaire                                                                                                                                                         |
-| --------------------------- | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Document unchanged          | Entier long | 0      | No processing                                                                                                                                                       |
-| Document with native format | Entier long | 1      | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-| Document with CRLF          | Entier long | 2      | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
-| Document with CR            | Entier long | 3      | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
-| Document with LF            | Entier long | 4      | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
+| Constante                   | Type        | Valeur | Commentaire                                                                                                                                                               |
+| --------------------------- | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Document unchanged          | Entier long | 0      | Aucun traitement                                                                                                                                                          |
+| Document with native format | Entier long | 1      | (Défaut) Les fins de ligne sont convertis au format natif de la plate-forme d’exécution : CR (carriage return) sous OS X, CRLF (carriage return + line feed) sous Windows |
+| Document with CRLF          | Entier long | 2      | Les fins de ligne sont convertis au format Windows : CRLF (carriage return + line feed)                                                                                   |
+| Document with CR            | Entier long | 3      | Les fins de ligne sont convertis au format OS X : CR (carriage return)                                                                                                    |
+| Document with LF            | Entier long | 4      | Les fins de ligne sont convertis au format Unix : LF (line feed)                                                                                                          |
 
 #### Exemple
 
