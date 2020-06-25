@@ -183,16 +183,16 @@ myColl[3]  //access to 4th element of the collection
 
 ## Klassen
 
-The 4D language supports object classes. Add a `myClass.4dm` file in the Project/Sources/Classes folder of a project to create a class named "myClass".
+Die 4D Programmiersprache unterstützt Objekt Klassen. Um eine Klasse mit Name "myClass" zu erstellen, fügen Sie im Ordner Project/Sources/Classes eines Projekts die Datei `myClass.4dm<code> hinzu.</p>
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. You can pass parameters.
+<p>Um eine Instanz auf ein Objekt der Klasse in einer Methode zu setzen, rufen Sie die Benutzerklasse aus dem <em>Store der Klassen</em> auf (<code>cs`) und verwenden die Member Function `new()`. Sie können Parameter übergeben.
 
 ```4d
 // in a 4D method
 $o:=cs.myClass.new() 
 ```
 
-In the `myClass` class method, use the `Function <methodName>` statement to define the *methodName* class member method. A class member method can receive and return parameters like any method, and use `This` as the object instance.
+In der Klassenmethode `myClass` definieren Sie mit der Anweisung `Function <methodName>` die Member Method *methodName* der Klasse. Sie kann wie jede andere Methode Parameter empfangen und zurückgeben, und `This` als Instanz des Objekts verwenden.
 
 ```4d
 //in the myClass.4dm file
@@ -201,7 +201,7 @@ Function hello
   $0:="Hello "+This.who
 ```
 
-To execute a class member method, just use the `()` operator on the member method of the object instance.
+Um eine Member Method der Klasse auszuführen, setzen Sie den Operator `()` für die Member Method der Instanz des Objekts.
 
 ```4d
 $o:=cs.myClass.new()
@@ -210,7 +210,7 @@ $message:=$o.myClass.hello()
 //$message: "Hello World"
 ```
 
-Optionally, use the `Class constructor` keyword to declare properties of the object.
+Optional können Sie das Schlüsselwort `Class constructor` zum Deklarieren von Eigenschaften des Objekts verwenden.
 
 ```4d
 //in the Rectangle.4dm file
@@ -221,7 +221,7 @@ This.width:=$2
 This.name:="Rectangle"
 ```
 
-A class can inherit from another class by using `Class inherits <ClassName>`. Superclasses can be called using the `Super` command. Beispiel:
+Eine Klasse kann über `Class inherits <ClassName>` von einer anderen Klasse erben. Superklassen lassen sich über den Befehl `Super` aufrufen. Beispiel:
 
 ```4d
 //in the Square.4dm file
