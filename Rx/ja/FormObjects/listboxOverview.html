@@ -131,7 +131,7 @@
 <p>コレクションの各要素、またはエンティティセレクションの各エンティティは、<a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html">This</a> コマンドを用いてオブジェクトとして取得します。 カラムの式にはプロジェクトメソッド、変数、あるいはフォーミュラが指定可能で、<code>This</code> を通して得た各エンティティあるいはコレクション要素オブジェクトが利用できます。例: <code>This.&lt;propertyPath&gt;</code> (あるいはスカラー値のコレクションの場合は <code>This.value</code>)。 カラムをプログラムで変更するには、<code>LISTBOX SET COLUMN FORMULA</code> および <code>LISTBOX INSERT COLUMN FORMULA</code> コマンドを使用します。</p>
 <p>データソースがエンティティセレクションの場合、リストボックス側に対しておこなった変更は自動的にデータベースに保存されます。 その一方で、データベース側に対しておこなった変更は、該当エンティティがリロードされてはじめてリストボックス側に反映されます。</p>
 <p>データソースがコレクションの場合、リストボックス内の値に変更をおこなった場合、その変更はコレクションにも反映されます。 その一方で、コレクションに対して、たとえば <em>コレクション</em> テーマの様々なメソッドを使用して変更をおこなった場合、コレクション変数を自らに再代入することで明示的に 4D に通知する必要があり、それによってリストボックスのコンテンツは更新されます。 たとえば:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function">myCol:=myCol.push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">// リストボックスに new value を表示</span>
+<pre><code class="hljs css language-4d">myCol:=myCol.<span class="hljs-function">push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">// リストボックスに new value を表示</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="プロパティ一覧"></a><a href="#プロパティ一覧" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロパティ一覧</h3>
 <p>提供されるプロパティはリストボックスのタイプに依存します。</p>
@@ -457,7 +457,7 @@
 <p><em>arrText</em> 列のメソッドは以下の通りです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(FORM event.code=On Before Data Entry) <span class="hljs-comment">// セルがフォーカスを得たとき</span>
-       <span class="hljs-function">LISTBOX GET CELL POSITION</span>(*;<span class="hljs-string">"lb"</span>;<span class="hljs-variable">$col</span>;<span class="hljs-variable">$row</span>)
+<span class="hljs-function">       LISTBOX GET CELL POSITION</span>(*;<span class="hljs-string">"lb"</span>;<span class="hljs-variable">$col</span>;<span class="hljs-variable">$row</span>)
   <span class="hljs-comment">// セルの特定</span><span class="hljs-keyword">
        If</span>(arrDate{<span class="hljs-variable">$row}</span>&lt;Current date) <span class="hljs-comment">// 過去の日付なら</span>
           <span class="hljs-variable">$0</span>:=<span class="hljs-number">-1</span> <span class="hljs-comment">// セルは入力不可</span><span class="hljs-keyword">
@@ -511,7 +511,7 @@
 </ul></li>
 <li><p><strong>配列リストボックス</strong>: <code>LISTBOX SELECT ROW</code> コマンドを使用して、プログラムからリストボックスの行を選択できます。 <a href="/docs/Rx/ja/FormObjects/propertiesObject.html#変数あるいは式">リストボックスオブジェクトにリンクされた変数</a> は、行選択の取得、設定、保存に使用します。 この変数はブール配列で、4Dが自動的に作成・管理します。 この配列のサイズは、リストボックスのサイズにより決定されます。つまり、各列に関連付けられた配列のうち、最も小さな配列と同じ数の要素を持ちます。 この配列の各要素には、対応する行が選択された場合には <code>True</code> が、それ以外の場合は <code>False</code> が設定されます。 4D は、ユーザーの動作に応じてこの配列の内容を更新します。 これとは逆に、この配列要素の値を変更して、リストボックス中の選択行を変更することができます。 他方、この配列への要素の挿入や削除はできず、行のタイプ変更もできません。 <code>Count in array</code> コマンドを使用して、選択された行の数を調べることができます。 たとえば、以下のメソッドは配列タイプのリストボックスで、最初の行の選択を切り替えます:</p></li>
 </ul>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">ARRAY BOOLEAN</span>(tBListBox;<span class="hljs-number">10</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY BOOLEAN</span>(tBListBox;<span class="hljs-number">10</span>)
   <span class="hljs-comment">// tBListBox はフォーム内にあるリストボックス変数の名前です</span><span class="hljs-keyword">
  If</span>(tBListBox{<span class="hljs-number">1</span>}=<span class="hljs-literal">True</span>)
     tBListBox{<span class="hljs-number">1</span>}:=<span class="hljs-literal">False</span><span class="hljs-keyword">
@@ -559,8 +559,8 @@
 <p>リストボックスのオブジェクトメソッドに次のように書けます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(FORM event.code=On Selection Change)
-       <span class="hljs-variable">$n</span><span class="hljs-function">:=Size of array</span>(LB_Arrays)
-       <span class="hljs-function">ARRAY LONGINT</span>(_ListboxBackground;<span class="hljs-variable">$n</span>) <span class="hljs-comment">// 行背景色配列</span><span class="hljs-keyword">
+       <span class="hljs-variable">$n</span>:=<span class="hljs-function">Size of array</span>(LB_Arrays)
+<span class="hljs-function">       ARRAY LONGINT</span>(_ListboxBackground;<span class="hljs-variable">$n</span>) <span class="hljs-comment">// 行背景色配列</span><span class="hljs-keyword">
        For</span>(<span class="hljs-variable">$i</span>;<span class="hljs-number">1</span>;<span class="hljs-variable">$n</span>)<span class="hljs-keyword">
           If</span>(LB_Arrays{<span class="hljs-variable">$i}</span>=<span class="hljs-literal">True</span>) <span class="hljs-comment">// selected</span>
              _ListboxBackground{<span class="hljs-variable">$i}</span>:=<span class="hljs-number">0x0080C080</span> <span class="hljs-comment">// 背景色を緑にします</span><span class="hljs-keyword">
@@ -576,7 +576,7 @@
     &quot;rowFillSource&quot;: &quot;UI_SetColor&quot;,
 </code></pre>
 <p><em>UI_SetColor</em> メソッドに次のように書けます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span><span class="hljs-function">(Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(<span class="hljs-function">Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
     <span class="hljs-variable">$color</span>:=<span class="hljs-number">0x0080C080</span> <span class="hljs-comment">// 背景色を緑にします</span><span class="hljs-keyword">
  Else</span>
     <span class="hljs-variable">$color</span>:=lk inherited<span class="hljs-keyword">
@@ -778,8 +778,8 @@
 <p><em>非階層表示:</em> <img src="/docs/Rx/assets/en/FormObjects/hierarch12.png" alt=""></p>
 <p><em>階層表示:</em> <img src="/docs/Rx/assets/en/FormObjects/hierarch13.png" alt=""></p>
 <p>階層モードでは <code>tStyle</code> や <code>tColors</code> 配列で変更されたスタイルは、ブレーク行に適用されません。 ブレークレベルでカラーやスタイルを変更するには、以下のステートメントを実行します:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">OBJECT SET RGB COLORS</span>(T1;<span class="hljs-number">0x0000FF</span>;<span class="hljs-number">0xB0B0B0</span>)
- <span class="hljs-function">OBJECT SET FONT STYLE</span>(T2;Bold)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> OBJECT SET RGB COLORS</span>(T1;<span class="hljs-number">0x0000FF</span>;<span class="hljs-number">0xB0B0B0</span>)
+<span class="hljs-function"> OBJECT SET FONT STYLE</span>(T2;Bold)
 </code></pre>
 <blockquote>
 <p>このコンテキストでは、配列に割り当てられたオブジェクトがないため、オブジェクトプロパティコマンドで動作するのは、配列変数を使用したシンタックスのみです。</p>
@@ -810,10 +810,10 @@
 <p>しかしながら、データソーステーマは、オブジェクト型のリストボックスカラムに対しては選択できません。 実際、カラムの各セルの中身は、それに対応するオブジェクト配列の要素の属性に基づいています。 配列の各オブジェクト要素には、以下を定義できます:</p>
 <p>値の型 (必須): テキスト、カラー、イベント、他 値そのもの (任意): 入力/出力に使用 セルの内容表示 (任意): ボタン、リスト、他 追加の設定 (任意): 値の型によります これらのプロパティを定義するには、適切な属性をオブジェクト内に設定する必要があります (使用可能な属性は以下に一覧としてまとめてあります)。 たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に &quot;Hello World!&quot; 書き込むことができます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>) <span class="hljs-comment">// 第一要素</span>
- <span class="hljs-function">OB SET($ob;"valueType";"text") // 値の型を定義 </span>(必須)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Hello World!"</span>) <span class="hljs-comment">// 値を定義</span>
- <span class="hljs-function">APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob</span>)  
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob</span>) <span class="hljs-comment">// 第一要素</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>) <span class="hljs-comment">// 値の型を定義 (必須)</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Hello World!"</span>) <span class="hljs-comment">// 値を定義</span>
+<span class="hljs-function"> APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob</span>)  
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld.png" alt=""></p>
 <blockquote>
@@ -891,21 +891,21 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="value"></a><a href="#value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>value</h4>
 <p>セルの値は &quot;value&quot; 属性に保存されています。 この属性は入力と出力に使用されるほか、 リストを使用する際のデフォルト値を定義するのにも使用できます (以下参照)。</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob1</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob1</span>)
  <span class="hljs-variable">$entry</span>:=<span class="hljs-string">"Hello world!"</span>
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は$entry に格納されます</span>
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob2</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"real"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>/<span class="hljs-number">3</span>)
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"boolean"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-literal">True</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は$entry に格納されます</span>
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob2</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"real"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>/<span class="hljs-number">3</span>)
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"boolean"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-literal">True</span>)
 
- <span class="hljs-function">APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob1</span>)
- <span class="hljs-function">APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob2</span>)
- <span class="hljs-function">APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob3</span>)
+<span class="hljs-function"> APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob1</span>)
+<span class="hljs-function"> APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob2</span>)
+<span class="hljs-function"> APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob3</span>)
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_value.png" alt=""></p>
 <blockquote>
@@ -914,12 +914,12 @@
 <h4><a class="anchor" aria-hidden="true" id="min-と-max"></a><a href="#min-と-max" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>min と max</h4>
 <p>&quot;valueType&quot; が&quot;real&quot; または &quot;integer&quot; であるとき、min と max 属性もオブジェクトに設定できます (値は適切な範囲で、かつ、valueType と同じ型である必要があります)。</p>
 <p>これらの属性を使用すると入力値の範囲を管理することができます。 セルが評価されたとき (フォーカスを失ったとき)、入力された値が min の値より低い場合、または max の値より大きい場合には、その値は拒否されます。 この場合、入力をする前の値が保持され、tip として説明が表示されます。</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
  <span class="hljs-variable">$entry3</span>:=<span class="hljs-number">2015</span>
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry3</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"min"</span>;<span class="hljs-number">2000</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"max"</span>;<span class="hljs-number">3000</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry3</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"min"</span>;<span class="hljs-number">2000</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"max"</span>;<span class="hljs-number">3000</span>)
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_minMax.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="behavior"></a><a href="#behavior" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>behavior</h4>
@@ -933,13 +933,13 @@
 <tr><td>2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled</td></tr>
 </tbody>
 </table>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">-3</span>)
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob4</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">-3</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"behavior"</span>;<span class="hljs-string">"threeStates"</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob3</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">-3</span>)
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob4</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">-3</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"behavior"</span>;<span class="hljs-string">"threeStates"</span>)
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_behavior.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="requiredlist-and-choicelist"></a><a href="#requiredlist-and-choicelist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>requiredList and choiceList</h4>
@@ -956,28 +956,28 @@
 <ul>
 <li>You want to display a drop-down list with only two options: &quot;Open&quot; or &quot;Closed&quot;. &quot;Closed&quot; must be preselected:</li>
 </ul>
-<pre><code class="hljs css language-4d">    <span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-number">0</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-string">"Open"</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-string">"Closed"</span>)
-    <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Closed"</span>)
-    <span class="hljs-function">OB SET ARRAY</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredList"</span>;<span class="hljs-variable">$RequiredList</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function">    ARRAY TEXT</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-number">0</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-string">"Open"</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$RequiredList</span>;<span class="hljs-string">"Closed"</span>)
+<span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Closed"</span>)
+<span class="hljs-function">    OB SET ARRAY</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredList"</span>;<span class="hljs-variable">$RequiredList</span>)
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_openClosed.png" alt=""></p>
 <ul>
 <li>You want to accept any integer value, but display a combo box to suggest the most common values:</li>
 </ul>
-<pre><code class="hljs css language-4d">    <span class="hljs-function">ARRAY LONGINT</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">0</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">5</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">10</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">20</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">50</span>)
-    <span class="hljs-function">APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">100</span>)
-    <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">10</span>) <span class="hljs-comment">//10 as default value</span>
-    <span class="hljs-function">OB SET ARRAY</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"choiceList"</span>;<span class="hljs-variable">$ChoiceList</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function">    ARRAY LONGINT</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">0</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">5</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">10</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">20</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">50</span>)
+<span class="hljs-function">    APPEND TO ARRAY</span>(<span class="hljs-variable">$ChoiceList</span>;<span class="hljs-number">100</span>)
+<span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">10</span>) <span class="hljs-comment">//10 as default value</span>
+<span class="hljs-function">    OB SET ARRAY</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"choiceList"</span>;<span class="hljs-variable">$ChoiceList</span>)
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_helloWorld_commonValues.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="requiredlistname-and-requiredlistreference"></a><a href="#requiredlistname-and-requiredlistreference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>requiredListName and requiredListReference</h4>
@@ -994,26 +994,26 @@
 <li>You want to display a drop-down list based on a &quot;colors&quot; list defined in the Tool box (containing the values &quot;blue&quot;, &quot;yellow&quot;, and &quot;green&quot;), save it as a value and display &quot;blue&quot; by default:</li>
 </ul>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_colors.png" alt=""></p>
-<pre><code class="hljs css language-4d">    <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"saveAs"</span>;<span class="hljs-string">"value"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"blue"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredListName"</span>;<span class="hljs-string">"colors"</span>) 
+<pre><code class="hljs css language-4d"><span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"saveAs"</span>;<span class="hljs-string">"value"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"blue"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredListName"</span>;<span class="hljs-string">"colors"</span>) 
 </code></pre>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_colorsResult.png" alt=""></p>
 <ul>
 <li>You want to display a drop-down list based on a list defined by programming and save it as a reference:</li>
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-variable">&lt;&gt;List</span>:=New list
-    <span class="hljs-function">APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Paris"</span>;<span class="hljs-number">1</span>)
-    <span class="hljs-function">APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"London"</span>;<span class="hljs-number">2</span>)
-    <span class="hljs-function">APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Berlin"</span>;<span class="hljs-number">3</span>)
-    <span class="hljs-function">APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Madrid"</span>;<span class="hljs-number">4</span>)
-    <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"saveAs"</span>;<span class="hljs-string">"reference"</span>)
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>) <span class="hljs-comment">//displays London by default</span>
-    <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredListReference"</span>;<span class="hljs-variable">&lt;&gt;List</span>)
+<span class="hljs-function">    APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Paris"</span>;<span class="hljs-number">1</span>)
+<span class="hljs-function">    APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"London"</span>;<span class="hljs-number">2</span>)
+<span class="hljs-function">    APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Berlin"</span>;<span class="hljs-number">3</span>)
+<span class="hljs-function">    APPEND TO LIST</span>(<span class="hljs-variable">&lt;&gt;List</span>;<span class="hljs-string">"Madrid"</span>;<span class="hljs-number">4</span>)
+<span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"integer"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"saveAs"</span>;<span class="hljs-string">"reference"</span>)
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>) <span class="hljs-comment">//displays London by default</span>
+<span class="hljs-function">    OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"requiredListReference"</span>;<span class="hljs-variable">&lt;&gt;List</span>)
 </code></pre>
 <pre><code class="hljs">![](/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_cities.png)
 </code></pre>
@@ -1029,10 +1029,10 @@
 <p>例:</p>
 <p>You want to display a combo box based on a &quot;colors&quot; list defined in the Tool box (containing the values &quot;blue&quot;, &quot;yellow&quot;, and &quot;green&quot;) and display &quot;green&quot; by default:</p>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_colors.png" alt=""></p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"blue"</span>)
- <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"choiceListName"</span>;<span class="hljs-string">"colors"</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"blue"</span>)
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"choiceListName"</span>;<span class="hljs-string">"colors"</span>)
 </code></pre>
 <p><img src="../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="unitslist-unitslistname-unitslistreference-and-unitreference"></a><a href="#unitslist-unitslistname-unitslistreference-and-unitreference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unitsList, unitsListName, unitsListReference and unitReference</h4>
