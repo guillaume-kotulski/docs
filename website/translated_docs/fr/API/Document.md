@@ -8,8 +8,8 @@ title: Document
 ## Propriétés
 
 <!-- REF document.properties -->
-| Nom                                                                          | Description                                                                                                                                                                         |
-| ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nom                                                                          | Description                                                                                                                                                                            |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |<!-- REF document.creationDate -->[creationDate]()<!-- END REF -->|<!-- REF document.creationDateDesc -->retourne la date de création du fichier.<!-- END REF -->|
 |<!-- REF document.creationTime -->[creationTime]()<!-- END REF -->| <!-- REF document.creationTimeDesc --> retourne l'heure de création du fichier (exprimée en secondes sous forme d'un nombre, commençant à 00:00). <!-- END REF -->|
 |<!-- REF document.exists -->[exists]()<!-- END REF -->|<!-- REF document.existsDesc --> retourne vrai si le fichier existe sur le disque, sinon elle retourne faux.<!-- END REF -->|
@@ -19,11 +19,11 @@ title: Document
 |<!-- REF document.isAlias -->[isAlias]()<!-- END REF -->| <!-- REF document.isAliasDesc -->returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.<!-- END REF -->|
 |<!-- REF document.isFile -->[isFile]() <!-- END REF -->|<!-- REF document.isFileDesc -->always returns true for a file.<!-- END REF -->|
 |<!-- REF document.isFolder -->[isFolder]()<!-- END REF -->|<!-- REF document.isFolderDesc -->returns always false for a file.<!-- END REF -->|
-|<!-- REF document.isWritable -->[isWritable]()<!-- END REF -->|<!-- REF document.isWritableDesc -->returns true if the file exists on disk and is writable.<!-- END REF -->|
+|<!-- REF document.isWritable -->[isWritable]()<!-- END REF -->|<!-- REF document.isWritableDesc -->retourne vrai si le fichier existe sur le disque et s'il est accessible en écriture.<!-- END REF -->|
 |<!-- REF document.modificationDate -->[modificationDate]()<!-- END REF -->|<!-- REF document.modificationDateDesc --> returns the date of the file's last modification.<!-- END REF -->|
-|<!-- REF document.modificationTime -->[modificationTime]()<!-- END REF -->|<!-- REF document.modificationTimeDesc -->returns the time of the file's last modification (expressed as a number of seconds beginning at 00:00).<!-- END REF -->|
-|<!-- REF document.name -->[name]()<!-- END REF -->| <!-- REF document.nameDesc --> returns the name of the file, without extension (if any).<!-- END REF -->|
-|<!-- REF document.original -->[orignial]() <!-- END REF -->|<!-- REF document.originalDesc -->returns the target element for an alias, a shortcut, or a symbolic link file.<!-- END REF -->|
+|<!-- REF document.modificationTime -->[modificationTime]()<!-- END REF -->|<!-- REF document.modificationTimeDesc -->retourne l'heure de la dernière modification du fichier (exprimée en secondes sous forme d'un nombre, commençant à 00:00).<!-- END REF -->|
+|<!-- REF document.name -->[name]()<!-- END REF -->| <!-- REF document.nameDesc --> retourne le nom du fichier, sans extension (le cas échéant).<!-- END REF -->|
+|<!-- REF document.original -->[original]() <!-- END REF -->|<!-- REF document.originalDesc -->returns the target element for an alias, a shortcut, or a symbolic link file.<!-- END REF -->|
 |<!-- REF document.parent -->[parent]()<!-- END REF -->|<!-- REF document.parentDesc -->returns the parent folder object of the file. If the path represents a system path (e.g., "/DATA/"), the system path is returned.<!-- END REF -->|
 |<!-- REF document.path -->[path]()<!-- END REF -->|<!-- REF document.pathDesc -->returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
 |<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
@@ -64,12 +64,12 @@ title: Document
 <!-- REF document.methods.Desc -->
 ## getContent()
 <!-- REF Document.getContent.Syntax -->
-**getContent** &rarr; Result<!-- END REF -->
+**getContent** &rarr; Résultat<!-- END REF -->
 
 <!-- REF Document.getContent.Parameters -->
-| Paramètres | Type | Description  |
-| ---------- | ---- | ------------ |
-| Result     | BLOB | File content |
+| Paramètres | Type | Description        |
+| ---------- | ---- | ------------------ |
+| Résultat   | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.getContent.Desc -->
@@ -98,9 +98,9 @@ To save a document contents in a BLOB field:
 **copyTo** (*destinationFolder*{;{*newName}*{;*overwrite*} ) &rarr; Result<!-- END REF -->
 
 <!-- REF Document.copyTo.Parameters -->
-| Paramètres | Type | Description  |
-| ---------- | ---- | ------------ |
-| Result     | BLOB | File content |
+| Paramètres | Type | Description        |
+| ---------- | ---- | ------------------ |
+| Result     | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.copyTo.Desc -->
@@ -128,9 +128,9 @@ To save a document contents in a BLOB field:
 **getText** &rarr; Result<!-- END REF -->
 
 <!-- REF Document.getText.Parameters -->
-| Paramètres | Type | Description  |
-| ---------- | ---- | ------------ |
-| Result     | BLOB | File content |
+| Paramètres | Type | Description        |
+| ---------- | ---- | ------------------ |
+| Result     | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.getText.Desc -->
@@ -158,9 +158,9 @@ To save a document contents in a BLOB field:
 **getIcone** &rarr; Result<!-- END REF -->
 
 <!-- REF Document.getIcone.Parameters -->
-| Paramètres | Type | Description  |
-| ---------- | ---- | ------------ |
-| Result     | BLOB | File content |
+| Paramètres | Type | Description        |
+| ---------- | ---- | ------------------ |
+| Result     | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.getIcone.Desc -->
