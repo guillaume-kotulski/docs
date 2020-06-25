@@ -90,27 +90,27 @@
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_VARIANT</span>(<span class="hljs-variable">$variant</span>)
 
 <span class="hljs-variable">$variant</span>:=<span class="hljs-string">"hello world"</span>
-<span class="hljs-variable">$vtype</span><span class="hljs-function">:=Type($variant) // 12 </span>(Is variant)
-<span class="hljs-variable">$vtypeVal</span><span class="hljs-function">:=Value type($variant) // 2 </span>(Is text)
+<span class="hljs-variable">$vtype</span>:=<span class="hljs-function">Type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 12 (Is variant)</span>
+<span class="hljs-variable">$vtypeVal</span>:=<span class="hljs-function">Value type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 2 (Is text)</span>
 
 <span class="hljs-variable">$variant</span>:=<span class="hljs-number">42</span>
-<span class="hljs-variable">$vtype</span><span class="hljs-function">:=Type($variant) // 12 </span>(Is variant)
-<span class="hljs-variable">$vtypeVal</span><span class="hljs-function">:=Value type($variant) // 1 </span>(Is real)
+<span class="hljs-variable">$vtype</span>:=<span class="hljs-function">Type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 12 (Is variant)</span>
+<span class="hljs-variable">$vtypeVal</span>:=<span class="hljs-function">Value type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 1 (Is real)</span>
 </code></pre>
 <p>Sie können Variablen vom Typ Variant immer verwenden, wo Variablen erwartet werden. Sie müssen nur sicherstellen, dass der Datentyp des Variableninhalts vom erwarteten Typ ist. Beim Zugriff auf Variablen vom Typ Variant wird nur ihr aktueller Wert berücksichtigt. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_VARIANT</span>(<span class="hljs-variable">$v</span>)
 <span class="hljs-variable">$v</span>:=<span class="hljs-string">"hello world"</span>
-<span class="hljs-variable">$v2</span>:=<span class="hljs-variable">$v</span> <span class="hljs-comment">//assign variable to another variable</span>
+<span class="hljs-variable">$v2</span>:=<span class="hljs-variable">$v </span><span class="hljs-comment">//assign variable to another variable</span>
 
-<span class="hljs-variable">$t</span><span class="hljs-function">:=Type($v) // 12 </span>(Is variant)
-<span class="hljs-variable">$t2</span><span class="hljs-function">:=Type($v2) // 2 </span>(Is text)
+<span class="hljs-variable">$t</span>:=<span class="hljs-function">Type</span>(<span class="hljs-variable">$v</span>) <span class="hljs-comment">// 12 (Is variant)</span>
+<span class="hljs-variable">$t2</span>:=<span class="hljs-function">Type</span>(<span class="hljs-variable">$v2</span>) <span class="hljs-comment">// 2 (Is text)</span>
 </code></pre>
 <p>Mit Variant lassen sich Parameter in Methoden ($0, $1,...) deklarieren, die von unterschiedlichem Typ sein können. In diesem Fall können Sie Code schreiben, der den Typ des Parameterwertes testet, zum Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_VARIANT</span>(<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
 Case of</span>
-<span class="hljs-function">: (Value type</span>(<span class="hljs-variable">$1</span>)=Is longint)
+: (<span class="hljs-function">Value type</span>(<span class="hljs-variable">$1</span>)=Is longint)
 ...
-<span class="hljs-function">: (Value type</span>(<span class="hljs-variable">$1</span>)=Is text)
+: (<span class="hljs-function">Value type</span>(<span class="hljs-variable">$1</span>)=Is text)
 ...<span class="hljs-keyword">
 End case</span>
 </code></pre>

@@ -73,7 +73,7 @@
 <p>変数を作成するには、&quot;コンパイラー&quot; または &quot;配列&quot; テーマのコマンドを使って変数を宣言します。</p>
 <p><strong>注:</strong> 配列とは、変数の一種です。 配列とは、同じタイプの変数を番号付きで並べたものです。 詳細については <a href="/docs/ja/Concepts/arrays.html">配列</a> を参照ください。</p>
 <p>たとえば、テキスト変数を宣言するには次のように書きます:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_TEXT</span>(myText)
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_TEXT</span>(myText)
 </code></pre>
 <p><strong>注:</strong> この方法は推奨されませんが、単純に使用することによって変数を作成することもできます。フィールドのように、正式にそれらを定義することは必須ではありません。 たとえば、今日の日付に30日を加えた日付を保持する変数が必要な場合、以下のように書くことができます:</p>
 <pre><code class="hljs css language-4d"> MyDate:=Current date+<span class="hljs-number">30</span> <span class="hljs-comment">// MyDateを作成し、そこに30日後の日付が代入されます</span>
@@ -82,12 +82,12 @@
 <pre><code class="hljs css language-4d"> [MyTable]MyField:=MyText
 </code></pre>
 <p>いくつかの基本的な変数宣言の例です:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_BLOB</span>(vxMyBlob) <span class="hljs-comment">// プロセス変数 vxMyBlob を BLOB型として宣言します</span>
- <span class="hljs-function">C_DATE</span>(<span class="hljs-variable">$vdCurDate</span>) <span class="hljs-comment">// ローカル変数 $vdCurDate を日付型として宣言します</span>
- <span class="hljs-function">C_LONGINT</span>(vg1;vg2;vg3) <span class="hljs-comment">// 3つのプロセス変数 vg1, vg2, vg3 を倍長整数型として宣言します</span>
- <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$vObj</span>) <span class="hljs-comment">// ローカル変数 $vObj をオブジェクト型として宣言します</span>
- <span class="hljs-function">C_COLLECTION</span>(<span class="hljs-variable">$vCol</span>) <span class="hljs-comment">// ローカル変数 $vCol をコレクション型として宣言します</span>
- <span class="hljs-function">ARRAY LONGINT</span>(alAnArray;<span class="hljs-number">10</span>) <span class="hljs-comment">// プロセス変数 alAnArray を 10個の倍長整数型要素を持つ配列として宣言します</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_BLOB</span>(vxMyBlob) <span class="hljs-comment">// プロセス変数 vxMyBlob を BLOB型として宣言します</span>
+<span class="hljs-function"> C_DATE</span>(<span class="hljs-variable">$vdCurDate</span>) <span class="hljs-comment">// ローカル変数 $vdCurDate を日付型として宣言します</span>
+<span class="hljs-function"> C_LONGINT</span>(vg1;vg2;vg3) <span class="hljs-comment">// 3つのプロセス変数 vg1, vg2, vg3 を倍長整数型として宣言します</span>
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$vObj</span>) <span class="hljs-comment">// ローカル変数 $vObj をオブジェクト型として宣言します</span>
+<span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$vCol</span>) <span class="hljs-comment">// ローカル変数 $vCol をコレクション型として宣言します</span>
+<span class="hljs-function"> ARRAY LONGINT</span>(alAnArray;<span class="hljs-number">10</span>) <span class="hljs-comment">// プロセス変数 alAnArray を 10個の倍長整数型要素を持つ配列として宣言します</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="変数への代入"></a><a href="#変数への代入" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数への代入</h2>
 <p>変数を対象に、データを格納したり、格納したデータを別の対象にコピーしたりすることができます。 変数にデータを格納することを、<strong>変数にデータを代入する</strong>と言い、代入演算子 (:=) を使っておこないます。 代入演算子はフィールドに対してデータを代入する場合にも使います。</p>
@@ -115,9 +115,9 @@
 <p>ローカル変数の名前は必ずドル記号 ($) で始め、この記号を除く31文字までの文字を指定できます。 これより長い名前を指定すると、4D は余分の32文字以降を切り捨てます。</p>
 <p>多くのメソッドや変数を持つデータベースで作業する場合、現在作業しているメソッドの範囲内で一時的に変数が必要となる場合がよくあります。 この場合、同じ変数名が他で使用されていないかどうかを気にすることなくローカル変数を作成することができます。</p>
 <p>データベースではしばしば、ユーザーによる少量のデータ入力を必要とする場合があります。 <code>Request</code> コマンドを使って、この情報を取得することができます。 このコマンドはデータ入力を求めるダイアログボックスを表示し、 ユーザーがデータを入力すると、その情報を戻り値として返します。 このようなデータは通常、メソッド内で長期間維持する必要はありません。 これは、ローカル変数を使用する典型的な例といえます。 次に例を示します:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span><span class="hljs-function">:=Request</span>(<span class="hljs-string">"ID を入力してください:"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"ID を入力してください:"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
-    <span class="hljs-function">QUERY</span>([People];[People]ID =<span class="hljs-variable">$vsID</span>)<span class="hljs-keyword">
+<span class="hljs-function">    QUERY</span>([People];[People]ID =<span class="hljs-variable">$vsID</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <p>このメソッドは、ユーザーに ID を入力するように要求します。 ローカル変数 $vsID にレスポンスが代入され、ユーザーが入力した ID に基づいた検索がおこなわれます。 このメソッドが終了した時点で、$vsID ローカル変数はメモリから消去されます。 この変数は 1回のみ、このメソッド内でしか使われないため、これ以上維持する必要はありません。</p>

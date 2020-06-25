@@ -93,11 +93,11 @@ Class constructor</span>
 
  <span class="hljs-comment">//C_OBJECT($poly)</span>
 <span class="hljs-function">C_BOOLEAN</span>(<span class="hljs-variable">$instance</span>)
-<span class="hljs-variable">$poly</span><span class="hljs-function">:=cs.Polygon.new</span>(<span class="hljs-number">4</span>;<span class="hljs-number">3</span>)
+<span class="hljs-variable">$poly</span>:=cs.Polygon.<span class="hljs-function">new</span>(<span class="hljs-number">4</span>;<span class="hljs-number">3</span>)
 
-<span class="hljs-variable">$instance</span><span class="hljs-function">:=OB Instance of</span>(<span class="hljs-variable">$poly</span>;cs.Polygon)  
+<span class="hljs-variable">$instance</span>:=<span class="hljs-function">OB Instance of</span>(<span class="hljs-variable">$poly</span>;cs.Polygon)  
  <span class="hljs-comment">// true</span>
-<span class="hljs-variable">$instance</span><span class="hljs-function">:=OB Instance of</span>(<span class="hljs-variable">$poly</span>;4D.Object)
+<span class="hljs-variable">$instance</span>:=<span class="hljs-function">OB Instance of</span>(<span class="hljs-variable">$poly</span>;4D.Object)
  <span class="hljs-comment">// true </span>
 </code></pre>
 <p>Beim Aufzählen der Eigenschaften eines Objekts wird der Prototyp seiner Klasse nicht mitgezählt. Demzufolge geben die Anweisung <code>For each</code> und der Befehl <code>JSON Stringify</code> nicht Eigenschaften des Objekts prototype der Klasse zurück. Die Eigenschaft des Objekts prototype einer Klasse ist eine interne ausgeblendete Eigenschaft.</p>
@@ -106,8 +106,8 @@ Class constructor</span>
 <p>Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Class: Person.4dm</span><span class="hljs-keyword">
 Class constructor</span>
-  <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>) <span class="hljs-comment">// FirstName</span>
-  <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$2</span>) <span class="hljs-comment">// LastName</span>
+<span class="hljs-function">  C_TEXT</span>(<span class="hljs-variable">$1</span>) <span class="hljs-comment">// FirstName</span>
+<span class="hljs-function">  C_TEXT</span>(<span class="hljs-variable">$2</span>) <span class="hljs-comment">// LastName</span>
   <span class="hljs-literal">This</span>.firstName:=<span class="hljs-variable">$1</span>
   <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$2</span>
 </code></pre>
@@ -121,9 +121,9 @@ $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
 <span class="hljs-comment">//Nothing</span>
 </code></pre>
 <p>Können Sie in einer Methode wie folgt schreiben:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span><span class="hljs-function">:=cs.Empty.new</span>()  
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=cs.Empty.<span class="hljs-function">new</span>()  
 <span class="hljs-comment">//$o : {}</span>
-<span class="hljs-variable">$cName</span><span class="hljs-function">:=OB Class</span>(<span class="hljs-variable">$o</span>).name <span class="hljs-comment">//"Empty"</span>
+<span class="hljs-variable">$cName</span>:=<span class="hljs-function">OB Class</span>(<span class="hljs-variable">$o</span>).name <span class="hljs-comment">//"Empty"</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="class-stores"></a><a href="#class-stores" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Stores</h2>
 <p>Klassen sind über ihre Class Stores verfügbar. Es gibt folgende Class Stores:</p>
@@ -159,29 +159,29 @@ $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
 <li>Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle der Anwendung nicht denselben Namen verwenden.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="4d-entwickleroberfläche"></a><a href="#4d-entwickleroberfläche" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D Entwickleroberfläche</h3>
-<p>Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the <strong>File</strong> menu or the Explorer.</p>
-<h4><a class="anchor" aria-hidden="true" id="file-menu-and-toolbar"></a><a href="#file-menu-and-toolbar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File menu and toolbar</h4>
-<p>You can create a new class file for the project by selecting <strong>New &gt; Class...</strong> in the 4D Developer <strong>File</strong> menu or from the toolbar.</p>
-<p>You can also use the <strong>Ctrl+Shift+Alt+k</strong> shortcut.</p>
+<p>Beim Erstellen auf der 4D Entwickleroberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü <strong>Datei/Ablage</strong> oder über den Explorer.</p>
+<h4><a class="anchor" aria-hidden="true" id="menü-dateiablage-und-werkzeugleiste"></a><a href="#menü-dateiablage-und-werkzeugleiste" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Menü Datei/Ablage und Werkzeugleiste</h4>
+<p>Sie erstellen eine Datei Klasse für das Projekt über den Eintrag <strong>Neu &gt; Klasse</strong> im Menü <strong>Datei/Ablage</strong> oder das <strong>Icon Neu</strong> in der Werkzeugleiste.</p>
+<p>Sie können auch die Tastenkombination <strong>Strg+Shift+Alt+k</strong> verwenden.</p>
 <h4><a class="anchor" aria-hidden="true" id="explorer"></a><a href="#explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Explorer</h4>
-<p>In the <strong>Methods</strong> page of the Explorer, classes are grouped in the <strong>Classes</strong> category.</p>
-<p>To create a new class, you can:</p>
+<p>Im Explorer werden Klassen auf der Seite <strong>Methoden</strong> in der Kategorie <strong>Klassen</strong> gruppiert.</p>
+<p>Um eine neue Klasse zu erstellen:</p>
 <ul>
-<li>select the <strong>Classes</strong> category and click on the <img src="/docs/assets/en/Users/PlussNew.png" alt=""> button.</li>
-<li>select <strong>New Class...</strong> from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. <img src="/docs/assets/en/Concepts/newClass.png" alt=""></li>
-<li>select <strong>New &gt; Class...</strong> from the contexual menu of the Explorer's Home page.</li>
+<li>wählen Sie die Kategorie <strong>Klassen</strong> und klicken auf die Schaltfläche <img src="/docs/assets/en/Users/PlussNew.png" alt="">.</li>
+<li>Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Gruppe Klassen den Eintrag <strong>Neue Klasse</strong>. <img src="/docs/assets/en/Concepts/newClass.png" alt=""></li>
+<li>Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag <strong>Neu &gt; Klasse...</strong>.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="class-code-support"></a><a href="#class-code-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class code support</h4>
-<p>In the various 4D Developer windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:</p>
+<h4><a class="anchor" aria-hidden="true" id="unterstützung-von-code-für-klassen"></a><a href="#unterstützung-von-code-für-klassen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unterstützung von Code für Klassen</h4>
+<p>In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode verwaltet mit einigen spezifischen Merkmalen:</p>
 <ul>
-<li>In the code editor:
+<li>Im Code-Editor gilt folgendes:
 <ul>
-<li>a class cannot be run</li>
-<li>a class function is a code block</li>
-<li><strong>Goto definition</strong> on an object member searches for class Function declarations; for example, &quot;$o.f()&quot; will find &quot;Function f&quot;.</li>
-<li><strong>Search references</strong> on class function declaration searches for the function used as object member; for example, &quot;Function f&quot; will find &quot;$o.f()&quot;.</li>
+<li>Es kann keine Klasse laufen</li>
+<li>Eine Klassenfunktion ist ein Code Block</li>
+<li><strong>Goto definition</strong> auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: &quot;$o.f()&quot; findet &quot;Function f&quot;.</li>
+<li><strong>Search references</strong> auf Deklarationen von Class Function sucht nach der Funktion, die als Object Member verwendet wird; Beispiel: &quot;Function f&quot; findet &quot;$o.f()&quot;.</li>
 </ul></li>
-<li>In the Runtime explorer and Debugger, class functions are displayed with the &lt;ClassName&gt; constructor or &lt;ClassName&gt;.&lt;FunctionName&gt; format.</li>
+<li>Im Runtime-Explorer und Debugger werden Class Functions mit dem Format<ClassName> Constructor oder .\ angezeigt.<ClassName>.&lt;FunctionName&gt; format.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="deleting-a-class"></a><a href="#deleting-a-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deleting a class</h3>
 <p>To delete an existing class, you can:</p>
@@ -205,12 +205,12 @@ $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
 <p>In the class definition file, function declarations use the <code>Function</code> keyword, and the name of the function. The function name must be ECMAScript compliant.</p>
 <p>Within a class function, the <code>This</code> is used as the object instance. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span> getFullName
-  <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$0</span>)
-  <span class="hljs-variable">$0</span><span class="hljs-function">:=This.firstName+" "+Uppercase</span>(<span class="hljs-literal">This</span>.lastName)<span class="hljs-keyword">
+<span class="hljs-function">  C_TEXT</span>(<span class="hljs-variable">$0</span>)
+  <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.firstName+<span class="hljs-string">" "</span>+<span class="hljs-function">Uppercase</span>(<span class="hljs-literal">This</span>.lastName)<span class="hljs-keyword">
 
 Function</span> getAge
-  <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$0</span>)
-  <span class="hljs-variable">$0</span><span class="hljs-function">:=</span>(Current date-<span class="hljs-literal">This</span>.birthdate)/<span class="hljs-number">365.25</span>
+<span class="hljs-function">  C_LONGINT</span>(<span class="hljs-variable">$0</span>)
+  <span class="hljs-variable">$0</span>:=(Current date-<span class="hljs-literal">This</span>.birthdate)/<span class="hljs-number">365.25</span>
 </code></pre>
 <p>For a class function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, for example &quot;MyClass.myMethod&quot;.</p>
 <p>In the database code, class functions are called as member methods of the object instance and can receive parameters if any. The following syntaxes are supported:</p>
@@ -231,23 +231,23 @@ Function</span> getAge
 <h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Rectangle</span>
 Class Constructor
-    <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
+<span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
     <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
     <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$1</span>
     <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$2</span>
 
 <span class="hljs-comment">// Function definition</span><span class="hljs-keyword">
 Function</span> getArea
-    <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$0</span>)
-    <span class="hljs-variable">$0</span><span class="hljs-function">:=(This.height)*</span>(<span class="hljs-literal">This</span>.width)
+<span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$0</span>)
+    <span class="hljs-variable">$0</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
 
 </code></pre>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)  
 <span class="hljs-function">C_REAL</span>(<span class="hljs-variable">$area</span>)
 
-<span class="hljs-variable">$o</span><span class="hljs-function">:=cs.Rectangle.new</span>()  
-<span class="hljs-variable">$area</span><span class="hljs-function">:=$o.getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//5000</span>
+<span class="hljs-variable">$o</span>:=cs.Rectangle.<span class="hljs-function">new</span>()  
+<span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//5000</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="class-constructor"></a><a href="#class-constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class constructor</h3>
 <h4><a class="anchor" aria-hidden="true" id="syntax-1"></a><a href="#syntax-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h4>
@@ -268,7 +268,7 @@ Class Constructor
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
 <span class="hljs-comment">// You can instantiate an object</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
-<span class="hljs-variable">$o</span><span class="hljs-function">:=cs.MyClass.new</span>(<span class="hljs-string">"HelloWorld"</span>)  
+<span class="hljs-variable">$o</span>:=cs.MyClass.<span class="hljs-function">new</span>(<span class="hljs-string">"HelloWorld"</span>)  
 <span class="hljs-comment">// $o = {"name":"HelloWorld"}</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="class-extends-classname"></a><a href="#class-extends-classname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class extends &lt;ClassName&gt;</h3>
@@ -294,7 +294,7 @@ Class extends &lt;ParentClass&gt;
  Class extends</span> Polygon<span class="hljs-keyword">
 
  Class constructor</span>
- <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$1</span>)
 
   <span class="hljs-comment">// It calls the parent class's constructor with lengths</span>
   <span class="hljs-comment">// provided for the Polygon's width and height</span>
@@ -329,14 +329,14 @@ Function</span> getArea
 </ul></li>
 </ul>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// inside myClass constructor</span>
- <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
- <span class="hljs-function">Super</span>(<span class="hljs-variable">$1</span>) <span class="hljs-comment">//calls superclass constructor with a text param</span>
- <span class="hljs-literal">This</span>.param:=<span class="hljs-variable">$2</span> <span class="hljs-comment">// use second param</span>
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
+<span class="hljs-function"> Super</span>(<span class="hljs-variable">$1</span>) <span class="hljs-comment">//calls superclass constructor with a text param</span>
+ <span class="hljs-literal">This</span>.param:=<span class="hljs-variable">$2 </span><span class="hljs-comment">// use second param</span>
 </code></pre>
 <ul>
 <li>inside a <a href="#class-function">class member function</a>, <code>Super</code> designates the prototype of the superclass and allows to call a function of the superclass hierarchy.</li>
 </ul>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">Super.doSomething</span>(<span class="hljs-number">42</span>) <span class="hljs-comment">//calls "doSomething" function  </span>
+<pre><code class="hljs css language-4d"> Super.<span class="hljs-function">doSomething</span>(<span class="hljs-number">42</span>) <span class="hljs-comment">//calls "doSomething" function  </span>
     <span class="hljs-comment">//declared in superclasses</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
@@ -344,16 +344,16 @@ Function</span> getArea
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: Rectangle</span><span class="hljs-keyword">
 
  Class constructor</span>
- <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
+<span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
  <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
  <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$1</span>
  <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$2</span><span class="hljs-keyword">
 
  Function</span> sayName
- <span class="hljs-function">ALERT</span>(<span class="hljs-string">"Hi, I am a "</span>+<span class="hljs-literal">This</span>.name+<span class="hljs-string">"."</span>)<span class="hljs-keyword">
+<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"Hi, I am a "</span>+<span class="hljs-literal">This</span>.name+<span class="hljs-string">"."</span>)<span class="hljs-keyword">
 
  Function</span> getArea
- <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$0</span>)
+<span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$0</span>)
  <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.height*<span class="hljs-literal">This</span>.width
 </code></pre>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: Square</span><span class="hljs-keyword">
@@ -361,11 +361,11 @@ Function</span> getArea
  Class extends</span> Rectangle<span class="hljs-keyword">
 
  Class constructor</span>
- <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$1</span>)
 
   <span class="hljs-comment">// It calls the parent class's constructor with lengths</span>
   <span class="hljs-comment">// provided for the Rectangle's width and height</span>
- <span class="hljs-function">Super</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$1</span>)
+<span class="hljs-function"> Super</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$1</span>)
 
   <span class="hljs-comment">// In derived classes, Super must be called before you
   // can use 'This'</span>
@@ -376,7 +376,7 @@ Function</span> getArea
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: Rectangle</span><span class="hljs-keyword">
 
  Function</span> nbSides
- <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$0</span>)
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$0</span>)
  <span class="hljs-variable">$0</span>:=<span class="hljs-string">"I have 4 sides"</span>
 </code></pre>
 <p>You also created the <code>Square</code> class with a function calling the superclass function:</p>
@@ -385,14 +385,14 @@ Function</span> getArea
  Class extends</span> Rectangle<span class="hljs-keyword">
 
  Function</span> description
- <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$0</span>)
- <span class="hljs-variable">$0</span><span class="hljs-function">:=Super.nbSides</span>()+<span class="hljs-string">" which are all equal"</span>
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$0</span>)
+ <span class="hljs-variable">$0</span>:=Super.<span class="hljs-function">nbSides</span>()+<span class="hljs-string">" which are all equal"</span>
 </code></pre>
 <p>Then you can write in a project method:</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$square</span>)
- <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$message</span>)
- <span class="hljs-variable">$square</span><span class="hljs-function">:=cs.Square.new</span>()
- <span class="hljs-variable">$message</span><span class="hljs-function">:=$square.description</span>() <span class="hljs-comment">//I have 4 sides which are all equal</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$square</span>)
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$message</span>)
+ <span class="hljs-variable">$square</span>:=cs.Square.<span class="hljs-function">new</span>()
+ <span class="hljs-variable">$message</span>:=<span class="hljs-variable">$square</span>.<span class="hljs-function">description</span>() <span class="hljs-comment">//I have 4 sides which are all equal</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="this"></a><a href="#this" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>This</h3>
 <h4><a class="anchor" aria-hidden="true" id="this---object"></a><a href="#this---object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>This -&gt; Object</h4>
@@ -407,8 +407,8 @@ Function</span> getArea
 <p>The <code>This</code> keyword returns a reference to the currently processed object. In 4D, it can be used in <a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html">different contexts</a>.</p>
 <p>In most cases, the value of <code>This</code> is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.</p>
 <p>When a formula is called as a member method of an object, its <code>This</code> is set to the object the method is called on. For example:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span><span class="hljs-function">:=New object("prop";42;"f";Formula</span>(<span class="hljs-literal">This</span>.prop))
-<span class="hljs-variable">$val</span><span class="hljs-function">:=$o.f</span>() <span class="hljs-comment">//42</span>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"prop"</span>;<span class="hljs-number">42</span>;<span class="hljs-string">"f"</span>;<span class="hljs-function">Formula</span>(<span class="hljs-literal">This</span>.prop))
+<span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">//42</span>
 </code></pre>
 <p>When a <a href="#class-constructor">class constructor</a> function is used (with the <code>new()</code> keyword), its <code>This</code> is bound to the new object being constructed.</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: ob</span>
@@ -419,7 +419,7 @@ Class Constructor
     <span class="hljs-literal">This</span>.a:=<span class="hljs-number">42</span> 
 </code></pre>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">// in a 4D method  </span>
-<span class="hljs-variable">$o</span><span class="hljs-function">:=cs.ob.new</span>()
+<span class="hljs-variable">$o</span>:=cs.ob.<span class="hljs-function">new</span>()
 <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.a <span class="hljs-comment">//42</span>
 </code></pre>
 <blockquote>
@@ -432,10 +432,10 @@ Class Constructor
     <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.a+<span class="hljs-literal">This</span>.b
 </code></pre>
 <p>Then you can write in a project method:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span><span class="hljs-function">:=cs.ob.new</span>()
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=cs.ob.<span class="hljs-function">new</span>()
 <span class="hljs-variable">$o</span>.a:=<span class="hljs-number">5</span>
 <span class="hljs-variable">$o</span>.b:=<span class="hljs-number">3</span>
-<span class="hljs-variable">$val</span><span class="hljs-function">:=$o.f</span>() <span class="hljs-comment">//8</span>
+<span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">//8</span>
 </code></pre>
 <p>In this example, the object assigned to the variable $o doesn't have its own <em>f</em> property, it inherits it from its class. Since <em>f</em> is called as a method of $o, its <code>This</code> refers to $o.</p>
 <h2><a class="anchor" aria-hidden="true" id="class-commands"></a><a href="#class-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class commands</h2>
