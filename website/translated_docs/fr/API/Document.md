@@ -8,7 +8,7 @@ title: Document
 ## Propriétés
 
 <!-- REF document.properties -->
-| name                                                                         | description                                                                                                                                                                         |
+| Nom                                                                          | Description                                                                                                                                                                         |
 | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |<!-- REF document.creationDate -->[creationDate]()<!-- END REF -->|<!-- REF document.creationDateDesc -->retourne la date de création du fichier.<!-- END REF -->|
 |<!-- REF document.creationTime -->[creationTime]()<!-- END REF -->| <!-- REF document.creationTimeDesc --> retourne l'heure de création du fichier (exprimée en secondes sous forme d'un nombre, commençant à 00:00). <!-- END REF -->|
@@ -28,6 +28,7 @@ title: Document
 |<!-- REF document.path -->[path]()<!-- END REF -->|<!-- REF document.pathDesc -->returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
 |<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
 <!-- END REF -->
+
 
 ## Méthodes
 
@@ -73,7 +74,7 @@ title: Document
 
 <!-- REF Document.getContent.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.getContent.Summary -->a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+La méthode file.getContent( ) retourne <!-- REF Document.getContent.Summary -->Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
 
 *Valeur retournée*
 
@@ -104,7 +105,7 @@ To save a document contents in a BLOB field:
 
 <!-- REF Document.copyTo.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.copyTo.Summary -->a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+The file.getContent( ) method returns <!-- REF Document.copyTo.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
 
 *Valeur retournée*
 
@@ -134,7 +135,7 @@ To save a document contents in a BLOB field:
 
 <!-- REF Document.getText.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.getText.Summary -->a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+The file.getContent( ) method returns <!-- REF Document.getText.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
 
 *Valeur retournée*
 
@@ -164,7 +165,7 @@ To save a document contents in a BLOB field:
 
 <!-- REF Document.getIcone.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.getIcone.Summary -->a BLOB containing the entire content of the file. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+The file.getContent( ) method returns <!-- REF Document.getIcone.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
 
 *Valeur retournée*
 

@@ -29,6 +29,7 @@ title: Document
 |<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
 <!-- END REF -->
 
+
 ## Methoden
 
 

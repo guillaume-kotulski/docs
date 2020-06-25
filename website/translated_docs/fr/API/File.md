@@ -7,7 +7,6 @@ Hérité de : [Document](Document.md)
 
 ## Propriétés
 
-
 <!-- INCLUDE document.properties -->
 
 ## Méthodes

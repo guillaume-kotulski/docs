@@ -4,7 +4,6 @@ title: Document
 ---
 
 ## Description
-blabla
 
 ## Properties
 
@@ -29,6 +28,7 @@ blabla
 |<!-- REF document.path -->[path]()<!-- END REF -->|<!-- REF document.pathDesc -->returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
 |<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
 <!-- END REF -->
+
 
 ## Methods
 
