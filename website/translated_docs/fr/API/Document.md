@@ -16,17 +16,17 @@ title: Document
 |<!-- REF document.extension -->[extension]()<!-- END REF -->| <!-- REF document.extensionDesc -->retourne la date de création du fichier. <!-- END REF -->|
 |<!-- REF document.fullName -->[fullName]()<!-- END REF -->|<!-- REF document.fullNameDesc -->retourne le nom complet du fichier, extension comprise (le cas échéant).<!-- END REF -->|
 |<!-- REF document.hidden -->[hidden]() <!-- END REF -->|<!-- REF document.hiddenDesc -->  retourne vrai si le fichier est identifié comme "caché" au niveau du système, sinon elle retourne faux. <!-- END REF -->|
-|<!-- REF document.isAlias -->[isAlias]()<!-- END REF -->| <!-- REF document.isAliasDesc -->returns true if the file is an alias, a shortcut, or a symbolic link, and false otherwise.<!-- END REF -->|
-|<!-- REF document.isFile -->[isFile]() <!-- END REF -->|<!-- REF document.isFileDesc -->always returns true for a file.<!-- END REF -->|
-|<!-- REF document.isFolder -->[isFolder]()<!-- END REF -->|<!-- REF document.isFolderDesc -->returns always false for a file.<!-- END REF -->|
+|<!-- REF document.isAlias -->[isAlias]()<!-- END REF -->| <!-- REF document.isAliasDesc -->retourne Vrai si le fichier est un alias, un raccourci ou un lien symbolique, sinon elle retourne Faux.<!-- END REF -->|
+|<!-- REF document.isFile -->[isFile]() <!-- END REF -->|<!-- REF document.isFileDesc -->retourne toujours vrai pour un fichier.<!-- END REF -->|
+|<!-- REF document.isFolder -->[isFolder]()<!-- END REF -->|<!-- REF document.isFolderDesc -->retourne systématiquement faux pour un fichier.<!-- END REF -->|
 |<!-- REF document.isWritable -->[isWritable]()<!-- END REF -->|<!-- REF document.isWritableDesc -->retourne vrai si le fichier existe sur le disque et s'il est accessible en écriture.<!-- END REF -->|
-|<!-- REF document.modificationDate -->[modificationDate]()<!-- END REF -->|<!-- REF document.modificationDateDesc --> returns the date of the file's last modification.<!-- END REF -->|
+|<!-- REF document.modificationDate -->[modificationDate]()<!-- END REF -->|<!-- REF document.modificationDateDesc --> retourne la date de la dernière modification apportée au fichier.<!-- END REF -->|
 |<!-- REF document.modificationTime -->[modificationTime]()<!-- END REF -->|<!-- REF document.modificationTimeDesc -->retourne l'heure de la dernière modification du fichier (exprimée en secondes sous forme d'un nombre, commençant à 00:00).<!-- END REF -->|
 |<!-- REF document.name -->[name]()<!-- END REF -->| <!-- REF document.nameDesc --> retourne le nom du fichier, sans extension (le cas échéant).<!-- END REF -->|
-|<!-- REF document.original -->[original]() <!-- END REF -->|<!-- REF document.originalDesc -->returns the target element for an alias, a shortcut, or a symbolic link file.<!-- END REF -->|
-|<!-- REF document.parent -->[parent]()<!-- END REF -->|<!-- REF document.parentDesc -->returns the parent folder object of the file. If the path represents a system path (e.g., "/DATA/"), the system path is returned.<!-- END REF -->|
-|<!-- REF document.path -->[path]()<!-- END REF -->|<!-- REF document.pathDesc -->returns the POSIX path of the file. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.<!-- END REF -->|
-|<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->returns the path of the file expressed with the current platform syntax. <!-- END REF -->|
+|<!-- REF document.original -->[original]() <!-- END REF -->|<!-- REF document.originalDesc -->retourne l'élément cible d'un alias, d'un raccourci ou d'un lien symbolique.<!-- END REF -->|
+|<!-- REF document.parent -->[parent]()<!-- END REF -->|<!-- REF document.parentDesc -->retourne l'objet dossier parent du fichier. Si le chemin représente un filesystem  (ex : "/DATA/"), le filesystem est retourné.<!-- END REF -->|
+|<!-- REF document.path -->[path]()<!-- END REF -->|<!-- REF document.pathDesc -->retourne le chemin POSIX du fichier. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.<!-- END REF -->|
+|<!-- REF document.platformPath -->[platformPath]()<!-- END REF -->|  <!-- REF document.platformPathDesc -->retourne le chemin du fichier exprimé dans la syntaxe de la plateforme. <!-- END REF -->|
 <!-- END REF -->
 
 
@@ -74,14 +74,14 @@ title: Document
 
 <!-- REF Document.getContent.Desc -->
 #### Description
-La méthode file.getContent( ) retourne <!-- REF Document.getContent.Summary -->Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+La méthode file.getContent( ) retourne <!-- REF Document.getContent.Summary -->un BLOB avec le contenu intégral du fichier. Pour plus d'informations sur les BLOB, veuillez vous reporter à la section Commandes du thème BLOB.<!-- END REF -->
 
 *Valeur retournée*
 
-The file.getContent( ) method returns a BLOB.
+La méthode file.getContent( ) retourne un BLOB.
 
 #### Exemple
-To save a document contents in a BLOB field:
+Pour sauvegarder le contenu d'un document dans un champ BLOB :
 
  ```4d
  C_TEXT($vPath)
@@ -95,24 +95,24 @@ To save a document contents in a BLOB field:
 ## copyTo()
 
 <!-- REF Document.copyTo.Syntax -->
-**copyTo** (*destinationFolder*{;{*newName}*{;*overwrite*} ) &rarr; Result<!-- END REF -->
+**copyTo** (*destinationFolder*{;{*nouveauNom}*{;*écraser*} ) &rarr; Résultat<!-- END REF -->
 
 <!-- REF Document.copyTo.Parameters -->
 | Paramètres | Type | Description        |
 | ---------- | ---- | ------------------ |
-| Result     | BLOB | Contenu du fichier |
+| Résultat   | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.copyTo.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.copyTo.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+La méthode file.copyTo( ) retourne <!-- REF Document.copyTo.Summary -->un BLOB avec le contenu intégral du fichier. Pour plus d'informations sur les BLOB, veuillez vous reporter à la section Commandes du thème BLOB.<!-- END REF -->
 
 *Valeur retournée*
 
-The file.getContent( ) method returns a BLOB.
+La méthode file.getContent( ) retourne un BLOB.
 
 #### Exemple
-To save a document contents in a BLOB field:
+Pour sauvegarder le contenu d'un document dans un champ BLOB :
 
  ```4d
  C_TEXT($vPath)
@@ -125,24 +125,24 @@ To save a document contents in a BLOB field:
 
 ## getText()
 <!-- REF Document.getText.Syntax -->
-**getText** &rarr; Result<!-- END REF -->
+**getText** &rarr; Résultat<!-- END REF -->
 
 <!-- REF Document.getText.Parameters -->
 | Paramètres | Type | Description        |
 | ---------- | ---- | ------------------ |
-| Result     | BLOB | Contenu du fichier |
+| Résultat   | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.getText.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.getText.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+La méthode file.getContent( ) retourne <!-- REF Document.getText.Summary -->un BLOB avec le contenu intégral du fichier. Pour plus d'informations sur les BLOB, veuillez vous reporter à la section Commandes du thème BLOB.<!-- END REF -->
 
 *Valeur retournée*
 
-The file.getContent( ) method returns a BLOB.
+La méthode file.getContent( ) retourne un BLOB.
 
 #### Exemple
-To save a document contents in a BLOB field:
+Pour sauvegarder le contenu d'un document dans un champ BLOB :
 
  ```4d
  C_TEXT($vPath)
@@ -155,24 +155,24 @@ To save a document contents in a BLOB field:
 
 ## getIcone()
 <!-- REF Document.getIcone.Syntax -->
-**getIcone** &rarr; Result<!-- END REF -->
+**getIcone** &rarr; Résultat<!-- END REF -->
 
 <!-- REF Document.getIcone.Parameters -->
 | Paramètres | Type | Description        |
 | ---------- | ---- | ------------------ |
-| Result     | BLOB | Contenu du fichier |
+| Résultat   | BLOB | Contenu du fichier |
 <!-- END REF -->
 
 <!-- REF Document.getIcone.Desc -->
 #### Description
-The file.getContent( ) method returns <!-- REF Document.getIcone.Summary -->un BLOB avec le contenu intégral du fichier. For information on BLOBs, please refer to the BLOB Commands section.<!-- END REF -->
+La méthode file.getIcon( ) retourne<!-- REF Document.getIcon.Summary -->un BLOB avec le contenu intégral du fichier. Pour plus d'informations sur les BLOB, veuillez vous reporter à la section Commandes du thème BLOB.<!-- END REF -->
 
 *Valeur retournée*
 
-The file.getContent( ) method returns a BLOB.
+La méthode file.getContent( ) retourne un BLOB.
 
 #### Exemple
-To save a document contents in a BLOB field:
+Pour sauvegarder le contenu d'un document dans un champ BLOB :
 
  ```4d
  C_TEXT($vPath)
