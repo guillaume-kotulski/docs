@@ -88,12 +88,12 @@ $o:=cs.Empty.new()
 $cName:=OB Class($o).name //"Empty"
 ```
 
-## Class Stores
+## Stores für Klassen
 
-Klassen sind über ihre Class Stores verfügbar. Es gibt folgende Class Stores:
+Klassen sind über Stores für Klassen verfügbar. Es gibt folgende Stores für Klassen:
 
-- Ein Class Store für eingebaute 4D Klassen. Er wird über den Befehl `4D` zurückgegeben.
-- Ein Class Store pro geöffneter Anwendung oder Komponente. Er wird über den Befehl `cs` zurückgegeben. Das sind "Benutzerklassen".
+- Ein Store für in 4D integrierte Klassen. Er wird über den Befehl `4D` zurückgegeben.
+- Ein Store für Klassen pro geöffneter Anwendung oder Komponente. Er wird über den Befehl `cs` zurückgegeben. Das sind "Benutzerklassen".
 
 Sie können z.B. für ein Objekt von myClass mit der Anweisung `cs.myClass.new()` eine neue Instanz erstellen (`cs` bedeutet *classtore*).
 
@@ -111,12 +111,12 @@ Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Date
             - Klassen 
                 + Polygon.4dm
 
-### Klassename
+### Klassennamen
 
 Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
 - Der Klassenname muss mit den Regeln von ECMAScript konform sein. 
-- Bei den Namen wird zwischen Groß- und Kleinschreibung unterschieden.
+- Es wird zwischen Groß- und Kleinschreibung unterschieden.
 - Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle der Anwendung nicht denselben Namen verwenden. 
 
 ### 4D Entwickleroberfläche
@@ -135,8 +135,8 @@ Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen
 
 Um eine neue Klasse zu erstellen:
 
-- wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche ![](assets/en/Users/PlussNew.png).
-- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Gruppe Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche ![](assets/en/Users/PlussNew.png).
+- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
 - Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**. 
 
 #### Unterstützung von Code für Klassen
@@ -155,7 +155,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 Um eine vorhandene Klasse zu löschen, können Sie:
 
 - Auf Ihrer Festplatte im Ordner "Classes" die Klassendatei .4dm löschen,
-- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben**. 
+- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben** wählen. 
 
 ## Schlüsselwörter für Klassen
 
@@ -165,7 +165,7 @@ In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwe
 - `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. prototype).
 - `Class extends <ClassName>` to define inheritance.
 
-### Class Function
+### Function der Klasse
 
 #### Syntax
 
@@ -174,9 +174,9 @@ Function <name>
 // code
 ```
 
-Class functions are properties of the prototype object of the owner class. They are objects of the "Function" class.
+Functions der Klasse sind Eigenschaften des Objekts prototye der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
-In the class definition file, function declarations use the `Function` keyword, and the name of the function. The function name must be ECMAScript compliant.
+In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
 Within a class function, the `This` is used as the object instance. Beispiel:
 
