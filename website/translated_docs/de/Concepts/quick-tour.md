@@ -183,9 +183,9 @@ myColl[3]  //access to 4th element of the collection
 
 ## Klassen
 
-The 4D language supports object classes. Add a `myClass.4dm` file in the Project/Sources/Classes folder of a project to create a class named "myClass".
+Die 4D Programmiersprache unterstützt Objekt Klassen. Um eine Klasse mit Name "myClass" zu erstellen, fügen Sie im Ordner Project/Sources/Classes eines Projekts die Datei `myClass.4dm<code> hinzu.</p>
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. You can pass parameters.
+<p>To instantiate an object of the class in a method, call the user class from the <em>class store</em> (<code>cs`) and use the `new()` member function. You can pass parameters.
 
 ```4d
 // in a 4D method
