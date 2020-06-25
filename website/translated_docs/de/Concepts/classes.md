@@ -1,37 +1,37 @@
 ---
 id: classes
-title: Classes
+title: Klassen
 ---
 
 
 ## Overview
 
-The 4D language supports the concept of **classes**. In a programming language, using a class allows you to define an object behaviour with associated properties and functions.
+Die 4D Programmiersprache unterstützt das Konzept **Klassen**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
 
-Once a class is defined, you can **instantiate** objects of this class anywhere in your code. Each object is an instance of its class. A class can `extend` another class, and then inherits from its functions.
+Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse `erweitern` und erbt dann von deren Funktionen.
 
-The class model in 4D is similar to classes in JavaScript, and based on a chain of prototypes.
+Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf einer Kette von Prototypen.
 
-### Class object
+### Objekt Klasse
 
-A class is an object itself, of "Class" class. A class object has the following properties and methods:
+Die Klasse ist selbst ein Objekt vom Typ "Klasse". Ein Objekt Klasse hat folgende Eigenschaften und Methoden:
 
-- `name` which must be ECMAScript compliant
-- `superclass` object (optional, null if none)
-- `new()` method, allowing to instantiate class objects.
+- `name` (konform mit den Regeln von ECMAScript)
+- Objekt `superclass` (optional, null, wenn nicht vorhanden)
+- Methode `new()`, um Instanzen der Objekte in einer Klasse zu setzen.
 
-In addtion, a class object can reference:
+Zusätzlich kann ein Objekt Klasse verweisen auf:
 
-- a `constructor` object (optional)
-- a `prototype` object, containing named function objects (optional).
+- Ein Objekt `constructor` (optional)
+- Ein Objekt `prototype` mit Objekten "named function" (optional).
 
-A class object is a shared object and can therefore be accessed from different 4D processes simultaneously.
+Ein Objekt Klasse ist ein shared Object, d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
 
-### Property lookup and prototype
+### Eigenschaft lookup und prototype
 
-All objects in 4D are internally linked to a class object. When 4D does not find a property in an object, it searches in the prototype object of its class; if not found, 4D continue searching in the prototype object of its superclass, and so on until there is no more superclass.
+Alle Objekte in 4D sind intern an ein Objekt Klasse gebunden. Findet 4D eine Eigenschaft nicht in einem Objekt, sucht es im Objekt Prototyp seiner Klasse; wird sie hier nicht gefunden, sucht 4D weiter im Objekt Prototyp seiner Superklasse, usw. bis es keine Superklasse mehr gibt.
 
-All objects inherit from the class "Object" as their inheritance tree top class.
+Alle Objekte erben von der Klasse "Object" als ihrer obersten Klasse im Vererbungsbaum.
 
 ```4d
   //Class: Polygon
@@ -49,11 +49,11 @@ $instance:=OB Instance of($poly;4D.Object)
  // true 
 ```
 
-When enumerating properties of an object, its class prototype is not enumerated. As a consequence, `For each` statement and `JSON Stringify` command do not return properties of the class prototype object. The prototype object property of a class is an internal hidden property.
+Beim Aufzählen der Eigenschaften eines Objekts wird der Prototyp seiner Klasse nicht mitgezählt. Demzufolge geben die Anweisung `For each` und der Befehl `JSON Stringify` nicht Eigenschaften des Objekts prototype der Klasse zurück. Die Eigenschaft des Objekts prototype einer Klasse ist eine interne ausgeblendete Eigenschaft.
 
-### Class definition
+### Definition einer Klasse
 
-A user class file defines a model of object that can be instantiated in the database code by calling the `new()` class member method. You will usually use specific [class keywords](#class-keywords) and [class commands](#class-commands) in the class file.
+Eine Datei Benutzerklasse definiert ein Objektmodell, auf das sich über die Class Member Method `new()` im Code der Anwendung eine Instanz setzen lässt. In der Datei Klasse verwenden Sie in der Regel spezifische [Class Keywords](#class-keywords) und [Class Befehle](#class-commands).
 
 Beispiel:
 
@@ -66,21 +66,21 @@ Class constructor
   This.lastName:=$2
 ```
 
-In a method, creating a "Person":
+In einer Methode erstellen Sie eine "Person":
 
     C_OBJECT($o)
     $o:=cs.Person.new("John";"Doe")  
     // $o: {firstName: "John";lastName: "Doe" }
     
 
-Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following `Empty.4dm` class file:
+Sie könnten auch eine leere Datei Klasse erstellen und Instanzen auf leere Objekte setzen. Legen Sie z.B. die Datei Klasse `Empty.4dm` wie folgt an:
 
 ```4d
 //Empty.4dm class file
 //Nothing
 ```
 
-You could write in a method:
+Können Sie in einer Methode wie folgt schreiben:
 
 ```4d
 $o:=cs.Empty.new()  
@@ -88,61 +88,67 @@ $o:=cs.Empty.new()
 $cName:=OB Class($o).name //"Empty"
 ```
 
-## Class stores
+## Class Stores
 
-Available classes are accessible from their class stores. The following class stores are available:
+Klassen sind über ihre Class Stores verfügbar. Es gibt folgende Class Stores:
 
-- a class store for built-in 4D classes. It is returned by the `4d` command.
-- a class store for each opened database or component. It is returned by the `cs` command. These are "user classes".
+- Ein Class Store für eingebaute 4D Klassen. Er wird über den Befehl `4D` zurückgegeben.
+- Ein Class Store pro geöffneter Anwendung oder Komponente. Er wird über den Befehl `cs` zurückgegeben. Das sind "Benutzerklassen".
 
-For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
+Sie können z.B. für ein Objekt von myClass mit der Anweisung `cs.myClass.new()` eine neue Instanz erstellen (`cs` bedeutet *classtore*).
 
-## Handling user classes
+## Benutzerklassen verwalten
 
-### Class files
+### Datei Klasse
 
-A user class in 4D is defined by a specific method file (.4dm), stored in the `/Project/Sources/Classes/` folder. The name of the file is the class name.
+Eine Benutzerklasse in 4D wird über eine spezifische Datei Methode (.4dm) definiert, die im Ordner `/Project/Sources/Classes/` gespeichert wird. Der Name der Datei ist der Klassenname.
 
-> The class file name must be ECMAScript compliant. **Class names are case sensitive**.
+Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Datei anlegen:
 
-For example, if you want to define a class named "Polygon", you need to create the following file:
-
-- Database folder 
+- Ordner der Anwendung 
     + Project 
         * Sources 
-            - Classes 
+            - Klassen 
                 + Polygon.4dm
 
-### 4D Developer interface
+### Klassename
 
-Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
+Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
-#### File menu and toolbar
+- Der Klassenname muss mit den Regeln von ECMAScript konform sein. 
+- Bei den Namen wird zwischen Groß- und Kleinschreibung unterschieden.
+- Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle der Anwendung nicht denselben Namen verwenden. 
 
-You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
+### 4D Entwickleroberfläche
 
-You can also use the **Ctrl+Shift+Alt+k** shortcut.
+Beim Erstellen auf der 4D Entwickleroberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü **Datei/Ablage** oder über den Explorer.
+
+#### Menü Datei/Ablage und Werkzeugleiste
+
+Sie erstellen eine Datei Klasse für das Projekt über den Eintrag **Neu > Klasse** im Menü **Datei/Ablage** oder das **Icon Neu** in der Werkzeugleiste.
+
+Sie können auch die Tastenkombination **Strg+Shift+Alt+k** verwenden.
 
 #### Explorer
 
-In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
+Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen** gruppiert.
 
-To create a new class, you can:
+Um eine neue Klasse zu erstellen:
 
-- select the **Classes** category and click on the ![](assets/en/Users/PlussNew.png) button.
-- select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
-- select **New > Class...** from the contexual menu of the Explorer's Home page. 
+- wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche ![](assets/en/Users/PlussNew.png).
+- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Gruppe Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**. 
 
-#### Class code support
+#### Unterstützung von Code für Klassen
 
-In the various 4D Developer windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:
+In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode verwaltet mit einigen spezifischen Merkmalen:
 
-- In the code editor: 
-    - a class cannot be run
-    - a class function is a code block 
-    - **Goto definition** on an object member searches for class Function declarations; for example, "$o.f()" will find "Function f".
-    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
-- In the Runtime explorer and Debugger, class functions are displayed with the \<ClassName> constructor or \<ClassName>.\<FunctionName> format. 
+- Im Code-Editor gilt folgendes: 
+    - Es kann keine Klasse laufen
+    - Eine Klassenfunktion ist ein Code Block 
+    - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
+    - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Object Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
+- Im Runtime-Explorer und Debugger werden Class Functions mit dem Format<ClassName> Constructor oder \.\ angezeigt.<ClassName>.\<FunctionName> format. 
 
 ### Deleting a class
 
@@ -234,7 +240,7 @@ Class Constructor
 
 A class constructor function, which can accept parameters, can be used to define a user class.
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionnally passed to the `new()` function.
+In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
 
 For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
 
@@ -274,7 +280,7 @@ Class extension must respect the following rules:
 - A user class cannot extend itself.
 - It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a"). 
 
-Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax' will throw an error in this case.
+Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
 
 An extended class can call the constructor of its parent class using the [`Super`](#super) command.
 
@@ -305,12 +311,12 @@ $0:=This.height*This.width
 
 ### Super
 
-#### Super {( param )} {-> Object}
+#### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                 |
-| --------- | ------ | -- | ------------------------------------------- |
-| param     | mixed  | -> | Parameter to pass to the parent constructor |
-| Result    | object | <- | Object's parent                             |
+| Parameter | Type   |    | Description                                    |
+| --------- | ------ | -- | ---------------------------------------------- |
+| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
+| Result    | object | <- | Object's parent                                |
 
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
