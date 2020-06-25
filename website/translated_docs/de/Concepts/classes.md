@@ -155,14 +155,14 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 Um eine vorhandene Klasse zu löschen, können Sie:
 
 - Auf Ihrer Festplatte im Ordner "Classes" die Klassendatei .4dm löschen,
-- in the Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu. 
+- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben**. 
 
-## Class keywords
+## Schlüsselwörter für Klassen
 
-Specific 4D keywords can be used in class definitions:
+In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwenden:
 
-- `Function <Name>` to define member methods of the objects. 
-- `Class constructor` to define the properties of the objects (i.e. the prototype).
+- `Function <Name>` zum Definieren von Member Methods der Objekte. 
+- `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. prototype).
 - `Class extends <ClassName>` to define inheritance.
 
 ### Class Function
