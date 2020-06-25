@@ -60,17 +60,17 @@ Hérité de : [Document](Document.md)
 <!-- INCLUDE document.methods.Desc -->
 ## create()
 <!--REF File.create.Syntax -->
-**create** &rarr; boolean<!-- END REF -->
+**create** &rarr; booléen<!-- END REF -->
 
 <!--REF File.create.Parameters -->
 | Paramètres | Type    | Description                                           |
 | ---------- | ------- | ----------------------------------------------------- |
-| Result     | Booléen | Vrai si le fichier a été créé avec succès, sinon Faux |
+| Résultat   | Booléen | Vrai si le fichier a été créé avec succès, sinon Faux |
 <!-- END REF -->
 
 <!-- REF File.create.Desc -->
 #### Description
-The file.create( ) method <!-- REF File.create.Summary -->creates a file on disk according to the properties of the file object.<!-- END REF -->
+La méthode file.create( ) <!-- REF File.create.Summary -->crée un fichier sur disque en fonction des propriétés de l'objet fichier.<!-- END REF -->
 
 Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés fichier.platformPath ou fichier.path. Si le fichier existe déjà sur disque, la fonction ne fait rien (aucune erreur n'est générée) et retourne faux.
 
@@ -88,7 +88,7 @@ Création d'un fichier de préférenes dans le dossier de la base de donées :
 
 ## createAlias()
 <!--REF File.createAlias.Syntax -->
- **file.createAlias** (*destinationFolder* ; *aliasName* {; *aliasType*} ) &rarr; Result<!-- END REF -->
+ **file.createAlias** (*destinationFolder* ; *aliasName* {; *aliasType*} ) &rarr; Résultat<!-- END REF -->
 
  <!--REF File.createAlias.Parameters -->
 | Paramètres        | Type        | Description                                       |
@@ -96,17 +96,17 @@ Création d'un fichier de préférenes dans le dossier de la base de donées :
 | destinationFolder | Objet       | Dossier de destination de l'alias ou du raccourci |
 | aliasName         | Texte       | Nom de l'alias ou du raccourci                    |
 | aliasType         | Entier long | Type du lien de l'alias                           |
-| Result            | Objet       | Référence du dossier de l'alias ou du raccourci   |
+| Résultat          | Objet       | Référence du dossier de l'alias ou du raccourci   |
 <!-- END REF -->
 
 <!-- REF File.createAlias.Desc -->
 #### Description
-The file.createAlias( ) method <!-- REF File.createAlias.Summary -->creates an alias (macOS) or a shortcut (Windows) to the file with the specified aliasName name in the folder designated by the destinationFolder object<!-- END REF -->.
+La méthode file.createAlias( ) <!-- REF File.createAlias.Summary -->crée un alias (macOS) ou un raccourci (Windows) pour le fichier avec le nom nomAlias spécifié dans le dossier désigné par l'objet dossierDestination.<!-- END REF -->.
 
 Passez le nom de l'alias ou du raccourci à créer dans le paramètre nomAlias.
 
 Par défaut sur macOS, la méthode crée un alias standard. Vous pouvez également créer un lien symbolique à l'aide du paramètre typeAlias. Les constantes suivantes sont disponibles :
-| Constant         | Valeur | Commentaire                               |
+| Constante        | Valeur | Commentaire                               |
 | ---------------- | ------ | ----------------------------------------- |
 | fk alias link    | 0      | Lien alias (macOS uniquement)(par défaut) |
 | fk symbolic link | 1      | Lien symbolique (macOS uniquement)        |
@@ -118,7 +118,7 @@ Objet retourné
 La méthode folder.createAlias( ) retourne un objet Folder avec la propriété dossier.isAlias mise à Vrai.
 
 #### Exemple
-You want to create an alias to a file in your database folder:
+Vous souhaitez créer un alias pour le fichier contenu dans votre dossier de base de données :
 ```4d
  $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt")
  $aliasFile:=$myFile.createAlias(File("/PACKAGE");"ReadMe")
@@ -131,16 +131,16 @@ You want to create an alias to a file in your database folder:
 
 <!-- REF File.delete.Desc -->
 #### Description
-The file.delete( ) method <!-- REF File.delete.Summary -->deletes the file.<!-- END REF -->
+La méthode file.delete( ) <!-- REF File.delete.Summary -->supprime le fichier.<!-- END REF -->
 
-If the file is currently open, an error is generated.
+Si le fichier est ouvert, une erreur est générée.
 
-If the file does not exist on disk, the method does nothing (no error is generated).
+Si le fichier n'existe pas sur disque, la méthode ne fait rien (aucune erreur n'est générée).
 
-WARNING: file.delete( ) can delete any file on a disk. This includes documents created with other applications, as well as the applications themselves. file.delete( ) should be used with extreme caution. Deleting a file is a permanent operation and cannot be undone.
+ATTENTION : file.delete( ) peut supprimer n'importe quel fichier sur un disque, y compris les documents créés avec d'autres applications ainsi que les applications elles-mêmes. file.delete( ) doit être utilisé avec beaucoup de précaution. La suppression d'un fichier est une opération permanente et irréversible.
 
 #### Exemple
-You want to delete a specific file in the database folder:
+Vous souhaitez supprimer un fichier spécifique dans un dossier de base de données :
  ```4d
   $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
@@ -152,7 +152,7 @@ You want to delete a specific file in the database folder:
 
 ## moveTo()
 <!--REF File.moveTo.Syntax -->
- **moveTo** ( *destinationFolder* {; *newName*})  &rarr; Result<!-- END REF -->
+ **moveTo** ( *destinationFolder* {; *nouveauNom*})  &rarr; Résultat<!-- END REF -->
 
 <!--REF File.moveTo.Parameters -->
 | Paramètres        | Type  | Description                  |
@@ -175,7 +175,7 @@ Objet retourné
 The method returns the moved File object.
 
 #### Exemple
-You want to create an alias to a file in your database folder:
+Vous souhaitez créer un alias pour le fichier contenu dans votre dossier de base de données :
 
  ```4d
  $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt")
