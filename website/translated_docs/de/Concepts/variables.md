@@ -48,7 +48,7 @@ Hier sehen Sie einige grundlegende Variablendeklarationen:
 
 Daten lassen sich in Variablen und Arrays setzen und daraus kopieren. Daten in eine Variable setzen heißt, **der Variablen die Daten zuweisen**. Das geschieht über den Zuweisungsoperator (:=). Der Zuweisungsoperator wird auch verwendet, um Feldern Daten zuzuweisen.
 
-The assignment operator is the primary way to create a variable and to put data into it. You write the name of the variable that you want to create on the left side of the assignment operator. Beispiel:
+Der Zuweisungsoperator ist wesentlich, um eine Variable zu erstellen und Daten in sie einzusetzen. You write the name of the variable that you want to create on the left side of the assignment operator. Beispiel:
 
 ```4d
 MyNumber:=3
