@@ -107,12 +107,12 @@ Eine Prozessvariable ist nur innerhalb eines Prozesses verfügbar. Sie ist in de
 
 Der Name der Prozessvariable hat kein vorangestelltes Zeichen. Der Name der Prozessvariablen kann max. 31 Zeichen lang sein.
 
-Im interpretierten Modus werden Variablen dynamisch verwaltet; sie werden nach Bedarf im Speicher gehalten und entfernt. Im kompilierten Modus nutzen alle Prozesse, die Sie anlegen (Benutzerprozesse) gemeinsam dieselbe Definition der Prozessvariablen, aber jeder Prozess hat pro Variable eine andere Instanz. For example, the variable myVar is one variable in the process P_1 and another one in the process P_2.
+Im interpretierten Modus werden Variablen dynamisch verwaltet; sie werden nach Bedarf im Speicher gehalten und entfernt. Im kompilierten Modus nutzen alle Prozesse, die Sie anlegen (Benutzerprozesse) gemeinsam dieselbe Definition der Prozessvariablen, aber jeder Prozess hat pro Variable eine andere Instanz. So ist die Variable myVar eine Variable im Prozess P_1 und eine andere im Prozess P_2.
 
-A process can “peek and poke” process variables from another process using the commands `GET PROCESS VARIABLE` and `SET PROCESS VARIABLE`. It is good programming practice to restrict the use of these commands to the situation for which they were added to 4D:
+Ein Prozess kann über die Befehle `GET PROCESS VARIABLE` und `SET PROCESS VARIABLE` Prozessvariablen aus einem anderen Prozess "erspähen und anstoßen". Es ist eine gute Programmierpraxis, diese Befehle nur für die Situation anzuwenden, für die sie in 4D hinzugefügt wurden:
 
-- Interprocess communication at specific places or your code
-- Handling of interprocess drag and drop
+- Kommunikation auf Interprozessebene an spezifischen Stellen in Ihrem Code
+- Verwalten von Drag-and-Drop auf Interprozessebene
 - In Client/Server, communication between processes on client machines and the stored procedures running on the server machines
 
 For more information, see the chapter **Processes** and the description of these commands.
