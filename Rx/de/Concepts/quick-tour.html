@@ -168,24 +168,24 @@ myColl:=<span class="hljs-function">New collection</span>(<span class="hljs-stri
 myColl[<span class="hljs-number">3</span>]  <span class="hljs-comment">//access to 4th element of the collection</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="klassen"></a><a href="#klassen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Klassen</h2>
-<p>The 4D language supports object classes. Add a <code>myClass.4dm</code> file in the Project/Sources/Classes folder of a project to create a class named &quot;myClass&quot;.</p>
-<p>To instantiate an object of the class in a method, call the user class from the <em>class store</em> (<code>cs</code>) and use the <code>new()</code> member function. You can pass parameters.</p>
+<p>Die 4D Programmiersprache unterstützt Objekt Klassen. Um eine Klasse mit Name &quot;myClass&quot; zu erstellen, fügen Sie im Ordner Project/Sources/Classes eines Projekts die Datei `myClass.4dm<code> hinzu.</p></p>
+<p>Um eine Instanz auf ein Objekt der Klasse in einer Methode zu setzen, rufen Sie die Benutzerklasse aus dem <em>Store der Klassen</em> auf (<code>cs`) und verwenden die Member Function `new()`. Sie können Parameter übergeben.
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// in a 4D method</span>
 <span class="hljs-variable">$o</span>:=cs.myClass.<span class="hljs-function">new</span>() 
 </code></pre>
-<p>In the <code>myClass</code> class method, use the <code>Function &lt;methodName&gt;</code> statement to define the <em>methodName</em> class member method. A class member method can receive and return parameters like any method, and use <code>This</code> as the object instance.</p>
+<p>In der Klassenmethode <code>myClass</code> definieren Sie mit der Anweisung <code>Function &lt;methodName&gt;</code> die Member Method <em>methodName</em> der Klasse. Sie kann wie jede andere Methode Parameter empfangen und zurückgeben, und <code>This</code> als Instanz des Objekts verwenden.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//in the myClass.4dm file</span><span class="hljs-keyword">
 Function</span> hello
 <span class="hljs-function">  C_TEXT</span>(<span class="hljs-variable">$0</span>)
   <span class="hljs-variable">$0</span>:=<span class="hljs-string">"Hello "</span>+<span class="hljs-literal">This</span>.who
 </code></pre>
-<p>To execute a class member method, just use the <code>()</code> operator on the member method of the object instance.</p>
+<p>Um eine Member Method der Klasse auszuführen, setzen Sie den Operator <code>()</code> für die Member Method der Instanz des Objekts.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=cs.myClass.<span class="hljs-function">new</span>()
 <span class="hljs-variable">$o</span>.who:=<span class="hljs-string">"World"</span>
 <span class="hljs-variable">$message</span>:=<span class="hljs-variable">$o</span>.myClass.<span class="hljs-function">hello</span>()  
 <span class="hljs-comment">//$message: "Hello World"</span>
 </code></pre>
-<p>Optionally, use the <code>Class constructor</code> keyword to declare properties of the object.</p>
+<p>Optional können Sie das Schlüsselwort <code>Class constructor</code> zum Deklarieren von Eigenschaften des Objekts verwenden.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//in the Rectangle.4dm file</span><span class="hljs-keyword">
 Class constructor</span>
 <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
@@ -193,7 +193,7 @@ Class constructor</span>
 <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$2  </span>
 <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
 </code></pre>
-<p>A class can inherit from another class by using <code>Class inherits &lt;ClassName&gt;</code>. Superclasses can be called using the <code>Super</code> command. Beispiel:</p>
+<p>Eine Klasse kann über <code>Class inherits &lt;ClassName&gt;</code> von einer anderen Klasse erben. Superklassen lassen sich über den Befehl <code>Super</code> aufrufen. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//in the Square.4dm file</span><span class="hljs-keyword">
 Class extends</span> rectangle<span class="hljs-keyword">
 
