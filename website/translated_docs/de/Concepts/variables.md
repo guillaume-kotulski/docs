@@ -72,9 +72,9 @@ atNames{1}:="Richard"
 
 ## Local, Process, and Interprocess variables
 
-Sie können drei Variablentypen erstellen: **lokal**, **Prozess** und **Interprozess**. The difference between the three types of elements is their scope, or the objects to which they are available.
+Sie können drei Variablentypen erstellen: **lokal**, **Prozess** und **Interprozess**. Der Unterschied zwischen den Typen sind ihre Reichweite oder die Objekte, für die sie verfügbar sind.
 
-### Local variables
+### Lokale Variable
 
 A local variable is, as its name implies, local to a method—accessible only within the method in which it was created and not accessible outside of that method. Being local to a method is formally referred to as being “local in scope.” Local variables are used to restrict a variable so that it works only within the method.
 
