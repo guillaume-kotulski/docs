@@ -5,11 +5,11 @@ title: ピクチャー
 
 ## サポートされるネイティブフォーマット
 
-4Dはピクチャーフォーマットのネイティブ管理を統合しています。 これは、ピクチャーが変換されることなく、元のフォーマットのまま 4D で格納、表示されることを意味します。 (シェイドや透過など) フォーマットにより異なる特定の機能はコピー・ペーストされる際にも保持され、改変なく表示されます。 This native support is valid for all pictures stored in 4D forms: [static pictures](FormObjects/staticPicture.md) pasted in Design mode, pictures pasted into [inputs objects](FormObjects/input_overview.md) at runtime, etc.
+4Dはピクチャーフォーマットのネイティブ管理を統合しています。 これは、ピクチャーが変換されることなく、元のフォーマットのまま 4D で格納、表示されることを意味します。 (シェイドや透過など) フォーマットにより異なる特定の機能はコピー・ペーストされる際にも保持され、改変なく表示されます。 このネイティブサポートは 4D に格納されるすべてのピクチャー (デザインモードでフォームにペーストされた [スタティックピクチャー](FormObjects/staticPicture.md)、ランタイムで [入力オブジェクト](FormObjects/input_overview.md) にペーストされたピクチャーなど) に対して有効です。
 
 もっとも一般的なフォーマット (例: jpeg、gif、png、tiff、bmp、等) はどちらのフォーマットでもサポートされます。 macOS では、PDF フォーマットのエンコーディング/デコーディングも可能です。
 
-> サポートされるフォーマットの完全なリストは OS や、マシンにインストールされているカスタムコーデックによって異なります。 To find out which codecs are available, you must use the `PICTURE CODEC LIST` command (see also the [picture data type](Concepts/dt_picture.md) description).
+> サポートされるフォーマットの完全なリストは OS や、マシンにインストールされているカスタムコーデックによって異なります。 どのコーデックが利用可能かを調べるためには、`PICTURE CODEC LIST` コマンドを使用してください。また、データ型の [ピクチャー](Concepts/dt_picture.md) の項も参照ください。
 
 ### 利用不可能なピクチャーフォーマット
 
@@ -29,16 +29,15 @@ title: ピクチャー
 
 ### Scale factor (macOS only)
 
-High resolution displays have a higher pixel density than traditional standard displays. For pictures to render correctly on high resolution displays, the number of pixels in the picture must be multiplied by the *scale factor* (*i.e.*, two times larger, three times larger, etc.).
+従来の標準的なディスプレイと比較して、高解像度ディスプレイは高い画素密度を持ちます。 これらの高解像度ディスプレイにおいてピクチャーが正しく表示されるには、適用する *スケール係数* (例: 2倍、3倍など) に応じてその画素数を増やす必要があります。
 
 When using high resolution pictures, you can specify the scale factor by adding "@nx" in the picture's name (where *n* designates the scale factor). In the table below, you can see that the scale factor is indicated in the names of the high resolution pictures, *circle@2x.png* and *circle@3x.png*.
 
-| Display Type        | Scale Factor                                   | 例題                                                                  |
-| ------------------- | ---------------------------------------------- | ------------------------------------------------------------------- |
-| Standard Resolution | 1:1 pixel density.                             | **1x**  
-![](assets/en/FormEditor/pictureScale1.png)  
-*circle.png* |
-| High Resolution     | Pixel density increased by a factor of 2 or 3. |                                                                     |
+| Display Type | スケール係数              | 例題                                                                |
+| ------------ | ------------------- | ----------------------------------------------------------------- |
+| 標準解像度        | 1:1 ピクセル密度          | **1x**  
+![](assets/en/FormEditor/pictureScale1.png) *circle.png* |
+| 高解像度         | ピクセル密度は2、または3の係数で増加 |                                                                   |
 
 
 <table>
@@ -52,7 +51,7 @@ When using high resolution pictures, you can specify the scale factor by adding 
   
   <tr>
     <td>
-      ![](assets/en/FormEditor/pictureScale2.png)<br />*circle@2x.png*
+      ![](assets/en/FormEditor/pictureScale2.png)*circle@2x.png*
     </td>
     
     <td>
@@ -70,8 +69,8 @@ High resolution pictures with the @nx convention can be used in the following ob
 * [リストボックスヘッダー](FormObjects/listbox_overview.md#list-box-headers)
 * [メニューアイコン](Menus/properties.md#item-icon)
 
-4D automatically prioritizes pictures with the highest resolution. <br />  
-**Example**: When using two screens (one high resolution display, one standard display) and you move a form from one screen to another, 4D automatically renders the highest possible resolution of the picture. Even if a command or property specifies *circle.png*, *circle@3x.png* will be used (if it exists).
+4D は自動的に最高解像度のピクチャーを優先します。 <br />  
+**例**: 標準解像度と高解像度の２つのディスプレイを使用している際に、片方からもう片方へとフォームを移動させると、4D は常に使用可能な範囲内での最高解像度のピクチャーを表示します。 コマンドまたはプロパティが *circle.png* を指定していたとしても、*circle@3x.png* があれば、それを使用します。
 
 > Note that resolution prioritization occurs only for displaying pictures onscreen, there is no automatic prioritization made when printing.
 
@@ -83,10 +82,6 @@ While 4D automatically prioritizes the highest resolution, there are, however, s
 | ------------- | ------------------- |
 | Drop or Paste | If the picture has: |
 
-
-<
-
-p>
 
 <
 
@@ -114,7 +109,7 @@ ul>
     
     ## ピクチャー上のマウス座標
     
-    4D lets you retrieve the local coordinates of the mouse in an [input object](FormObjects/input_overview.md) associated with a [picture expression](FormObjects/properties_Object.md#expression-type), in case of a click or a hovering, even if a scroll or zoom has been applied to the picture. このピクチャーマップに似た機構は、たとえば地図作製ソフトウェアのインターフェースや、スクロール可能なボタンバーを管理するのに使用できます。
+    4D では、[ピクチャー式](FormObjects/properties_Object.md#式の型) が設定された [入力オブジェクト](FormObjects/input_overview.md) をクリック、またはホバーした際のマウスのローカル座標を取得できます。これはスクロールやズーム処理がおこなわれている場合でも可能です。 このピクチャーマップに似た機構は、たとえば地図作製ソフトウェアのインターフェースや、スクロール可能なボタンバーを管理するのに使用できます。
     
     座標は *MouseX* と *MouseY* [システム変数](https://doc.4d.com/4Dv18/4D/18/System-Variables.300-4505547.ja.html) に返されます。 座標はピクセル単位で表現され、ピクチャーの左上隅が起点 (0,0) となります。 マウスがピクチャの座標の外側にある場合には、*MouseX* と *MouseY* には-1が返されます。
     
