@@ -62,9 +62,9 @@ Natürlich wären Variablen nicht sehr hilfreich, wenn Sie keine Daten daraus er
 [Products]Size:=MyNumber
 ```
 
-In diesem Fall ist *[Products]Size* gleich 3. This example is rather simple, but it illustrates the fundamental way that data is transferred from one place to another by using the language.
+In diesem Fall ist *[Products]Size* gleich 3. Dieses Beispiel ist ganz einfach, aber es zeigt, wie Daten über Programmierung von einer Stelle an eine andere übertragen werden.
 
-You assign data to array elements by using curly braces ({...}):
+Daten an Elemente eines Array weisen Sie über geschweifte Klammern zu, also {...}:
 
 ```4d
 atNames{1}:="Richard"
@@ -72,7 +72,7 @@ atNames{1}:="Richard"
 
 ## Local, Process, and Interprocess variables
 
-You can create three types of variables: **local**, **process**, and **interprocess**. The difference between the three types of elements is their scope, or the objects to which they are available.
+Sie können drei Variablentypen erstellen: **lokal**, **Prozess** und **Interprozess**. The difference between the three types of elements is their scope, or the objects to which they are available.
 
 ### Local variables
 
