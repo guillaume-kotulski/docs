@@ -33,12 +33,11 @@ title: ピクチャー
 
 When using high resolution pictures, you can specify the scale factor by adding "@nx" in the picture's name (where *n* designates the scale factor). In the table below, you can see that the scale factor is indicated in the names of the high resolution pictures, *circle@2x.png* and *circle@3x.png*.
 
-| Display Type | スケール係数              | 例題                                                                  |
-| ------------ | ------------------- | ------------------------------------------------------------------- |
+| Display Type | スケール係数              | 例題                                                                |
+| ------------ | ------------------- | ----------------------------------------------------------------- |
 | 標準解像度        | 1:1 ピクセル密度          | **1x**  
-![](assets/en/FormEditor/pictureScale1.png)  
-*circle.png* |
-| 高解像度         | ピクセル密度は2、または3の係数で増加 |                                                                     |
+![](assets/en/FormEditor/pictureScale1.png) *circle.png* |
+| 高解像度         | ピクセル密度は2、または3の係数で増加 |                                                                   |
 
 
 <table>
@@ -52,7 +51,7 @@ When using high resolution pictures, you can specify the scale factor by adding 
   
   <tr>
     <td>
-      ![](assets/en/FormEditor/pictureScale2.png)<br />*circle@2x.png*
+      ![](assets/en/FormEditor/pictureScale2.png)*circle@2x.png*
     </td>
     
     <td>
@@ -83,10 +82,6 @@ While 4D automatically prioritizes the highest resolution, there are, however, s
 | ------------- | ------------------- |
 | Drop or Paste | If the picture has: |
 
-
-<
-
-p>
 
 <
 
