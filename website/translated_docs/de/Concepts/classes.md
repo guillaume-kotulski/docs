@@ -108,7 +108,7 @@ Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Date
 - Ordner der Anwendung 
     + Project 
         * Sources 
-            - Classes 
+            - Klassen 
                 + Polygon.4dm
 
 ### Klassennamen
