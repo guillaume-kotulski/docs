@@ -187,14 +187,12 @@ Die 4D Programmiersprache unterstützt Objekt Klassen. Um eine Klasse mit Name "
 
 <p>Um eine Instanz auf ein Objekt der Klasse in einer Methode zu setzen, rufen Sie die Benutzerklasse aus dem <em>Store der Klassen</em> auf (<code>cs`) und verwenden die Member Function `new()`. Sie können Parameter übergeben.
 
-
 ```4d
 // in a 4D method
 $o:=cs.myClass.new() 
 ```
 
 In der Klassenmethode `myClass` definieren Sie mit der Anweisung `Function <methodName>` die Member Method *methodName* der Klasse. Sie kann wie jede andere Methode Parameter empfangen und zurückgeben, und `This` als Instanz des Objekts verwenden.
-
 
 ```4d
 //in the myClass.4dm file
@@ -214,7 +212,6 @@ $message:=$o.myClass.hello()
 
 Optional können Sie das Schlüsselwort `Class constructor` zum Deklarieren von Eigenschaften des Objekts verwenden.
 
-
 ```4d
 //in the Rectangle.4dm file
 Class constructor
@@ -225,7 +222,6 @@ This.name:="Rectangle"
 ```
 
 Eine Klasse kann über `Class inherits <ClassName>` von einer anderen Klasse erben. Superklassen lassen sich über den Befehl `Super` aufrufen. Beispiel:
-
 
 ```4d
 //in the Square.4dm file
