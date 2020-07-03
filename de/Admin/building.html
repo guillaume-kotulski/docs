@@ -88,17 +88,22 @@
 <p><img src="/docs/assets/en/Project/appbuilderProj.png" alt=""></p>
 <p>Building can only be carried out once the database is compiled. If you select this command without having previously compiled the database, or if the compiled code does not correspond to the interpreted code, a warning dialog box appears indicating that the database must be (re)compiled.</p>
 <h3><a class="anchor" aria-hidden="true" id="build-application-settings"></a><a href="#build-application-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build application settings</h3>
-<p>Each build application parameter is stored as an XML key in the application project file named &quot;buildApp.4DSettings&quot; XML file, located in the Settings folder of the database.</p>
+<p>Each build application parameter is stored as an XML key in the application project file named &quot;buildApp.4DSettings&quot; XML file, located in the Settings folder of the project.</p>
 <p>Default parameters are used the first time the Build Application dialog box is used. The contents of the project file are updated, if necessary, when you click <strong>Build</strong> or <strong>Save settings</strong>. You can define several other XML settings file for the same project and employ them using the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html">BUILD APPLICATION</a> command.</p>
 <p>XML keys provide additional options besides those displayed in the Build Application dialog box. The description of these keys are detailed in the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html">4D XML Keys BuildApplication</a> manual.</p>
 <h3><a class="anchor" aria-hidden="true" id="logbuch"></a><a href="#logbuch" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logbuch</h3>
-<p>When an application is built, 4D generates a log file in the <strong>Logs</strong> folder. The log file stores the following information for each build:</p>
+<p>When an application is built, 4D generates a log file named <em>BuildApp.log.xml</em> in the <strong>Logs</strong> folder of the project. The log file stores the following information for each build:</p>
 <ul>
 <li>The start and end of building of targets,</li>
 <li>The name and full access path of the files generated,</li>
 <li>The date and time of the build,</li>
-<li>Any errors that occurred.</li>
+<li>Any errors that occurred,</li>
+<li>Any signing issues (e.g. a non-signed plug-in).</li>
 </ul>
+<p>Checking this file may help you saving time during the subsequent deployment steps, for example if you intend to notarize your application.</p>
+<blockquote>
+<p>Use the <code>Get 4D file(Build application log file)</code> command to get the log file location.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="application-name-and-destination-folder"></a><a href="#application-name-and-destination-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Application name and destination folder</h2>
 <p><img src="/docs/assets/en/Project/buidappstructureProj.png" alt=""></p>
 <p>Enter the name of the application in <strong>Application Name</strong>.</p>
@@ -317,7 +322,7 @@
 <li>designate the license number(s) that you want to integrate into your single-user stand-alone application</li>
 <li>sign the application by means of a certificate in macOS.</li>
 </ul>
-<p><img src="/docs/assets/en/Project/buildapplicenseProj.png" alt=""></p>
+<p><img src="/docs/assets/en/Admin/buildappCertif.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="licenses"></a><a href="#licenses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Licenses</h3>
 <p>This tab displays the list of available deployment licenses that you can integrate into your application. By default, the list is empty. You must explicitly add your <em>4D Developer Professional</em> license as well as each <em>4D Desktop Volume</em> license to be used in the application built. You can add another 4D Developer Professional number and its associated licenses other than the one currently being used.</p>
 <p>To remove or add a license, use the <strong>[+]</strong> and <strong>[-]</strong> buttons at the bottom of the window.</p>
@@ -341,7 +346,7 @@
 <ul>
 <li>Check the <strong>Sign application</strong> option to include certification in the application builder procedure for OS X. 4D will check the availability of elements required for certification when the build occurs:</li>
 </ul>
-<p><img src="/docs/assets/en/Project/buildapposxcertProj.png" alt=""></p>
+<p><img src="/docs/assets/en/Admin/buildapposxcertProj.png" alt=""></p>
 <p>This option is displayed under both Windows and macOS, but it is only taken into account for macOS versions.</p>
 <ul>
 <li><strong>Name of certificate</strong> - Enter the name of your developer certificate validated by Apple in this entry area. The certificate name is usually the name of the certificate in the Keychain Access utility (part in red in the following example):</li>
@@ -350,6 +355,14 @@
 <p>To obtain a developer certificate from Apple, Inc., you can use the commands of the Keychain Access menu or go here: <a href="http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html">http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html</a>.</p>
 <blockquote>
 <p>This certificate requires the presence of the Apple codesign utility, which is provided by default and usually located in the “/usr/bin/” folder. If an error occurs, make sure that this utility is present on your disk.</p>
+</blockquote>
+<ul>
+<li><strong>Generate self-signed certificate</strong> - runs the &quot;Certificate Assistant&quot; that allows you to generate a self-signed certificate. If you do not have an Apple developer certificate, you need to provide a self-signed certificate. With this certificate, no alert message is displayed if the application is deployed internally. If the application is deployed externally (i.e. through http or email), at launch macOS displays an alert message that the application's developer is unidentified. The user can &quot;force&quot; the opening of the application.</li>
+</ul>
+<p>&lt;</p>
+<p>p&gt;In the &quot;Certificate Assistant&quot;, be sure to select the appropriate options: <img src="/docs/assets/en/Admin/Cert1.png" alt=""> <img src="/docs/assets/en/Admin/Cert2.png" alt=""></p>
+<blockquote>
+<p>4D recommends to subscribe to the Apple Developer Program to get access to Developer Certificates that are necessary to notarize applications (see below).</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="about-gatekeeper"></a><a href="#about-gatekeeper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>About Gatekeeper</h4>
 <p>Gatekeeper is a security feature of OS X that controls the execution of applications downloaded from the Internet. If a downloaded application does not come from the Apple Store or is not signed, it is rejected and cannot be launched.</p>
