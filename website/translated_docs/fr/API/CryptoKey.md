@@ -86,7 +86,7 @@ L'objet `keyPair` qui en résulte est un objet partagé et peut être alors util
 | privateKey |           | Texte | <- | Clé primaire au format PEM |
 
 
-This method returns the private key of the `cryptoKey` object in PEM format, or an empty string if none is available.
+Cette méthode retourne la clé privée de l'objet `cryptoKey` au format PEM, ou une chaine vide si aucune n'est disponible.
 
 ## cryptoKey.getPublicKey()
 
@@ -99,13 +99,13 @@ This method returns the private key of the `cryptoKey` object in PEM format, or 
 
 #### cryptoKey.getPublicKey() -> publicKey
 
-| Paramètres | Propriété | Type  |    | Description              |
-| ---------- | --------- | ----- | -- | ------------------------ |
-|            |           |       |    |                          |
-| publicKey  |           | Texte | <- | Public key in PEM format |
+| Paramètres | Propriété | Type  |    | Description                |
+| ---------- | --------- | ----- | -- | -------------------------- |
+|            |           |       |    |                            |
+| publicKey  |           | Texte | <- | Clé publique au format PEM |
 
 
-This method returns the public key of the `cryptoKey` object in PEM format, or an empty string if none is available.
+Cette méthode retourne la clé publique de l'objet `cryptoKey` au format PEM, ou une chaine vide si aucune n'est disponible.
 
 ## cryptoKey.sign()
 
