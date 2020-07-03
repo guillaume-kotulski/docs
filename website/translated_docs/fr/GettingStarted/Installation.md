@@ -3,7 +3,7 @@ id: installation
 title: Installation
 ---
 
-Welcome to 4D! On this page, you will find all of the necessary information about installing and launching your 4D product.
+Welcome to 4D! Cette page regroupe toutes les informations nécessaires sur l'installation et le lancement de votre produit 4D.
 
 ## Required configuration
 
@@ -13,19 +13,19 @@ Additional technical details are available on the 4D website's [Resources page](
 
 ## Installation on disk
 
-4D products are installed from the 4D website:
+Les produits 4D sont installés à partir du site web de 4D :
 
-1. Connect to the 4D website and go to the [Downloads](https://us.4d.com/product-download) page.
+1. Connectez-vous au site internet de 4D puis consultez la page [Téléchargements](https://us.4d.com/product-download).
 
-2. Click on the download link for your 4D product and follow the on-screen instructions.
+2. Cliquez sur le lien de téléchargement du produit 4D de votre choix, puis suivez les instructions qui s'affichent à l'écran.
 
-## Sign in
+## Connexion
 
-Once you have completed the installation, you can start 4D and sign in. To do so, double-click on the 4D product icon.
+Une fois l'installation terminée, vous pouvez lancer 4D et vous connecter. Pour ce faire, double-cliquez sur l'icône du produit 4D.
 
 ![](assets/en/getStart/logo4d.png)
 
-The Welcome Wizard then appears:
+Apparaît ensuite l'assistant de bienvenue :
 
 ![](assets/en/getStart/welcome2.png)
 
