@@ -63,15 +63,15 @@ webServer:=WEB Server(Web server receiving request)
 
 ## Méthodes du serveur web
 
-A web server object contains the following member methods:
+Un objet serveur Web contient les méthodes membres suivantes :
 
-| Méthode   | Paramètres        | Return value    | Description           |
-| --------- | ----------------- | --------------- | --------------------- |
-| `start()` | settings (object) | status (object) | Starts the web server |
-| `stop()`  | -                 | -               | Stops the web server  |
+| Méthode   | Paramètres       | Valeur retournée | Description            |
+| --------- | ---------------- | ---------------- | ---------------------- |
+| `start()` | settings (objet) | status (object)  | Démarre le serveur web |
+| `stop()`  | -                | -                | Stoppe le serveur web  |
 
 
-To start and stop a web server, just call the `start()` and `stop()` member methods of the web server object:
+Pour démarrer et arrêter un serveur Web, il suffit d'appeler les méthodes membres `start()` et `stop()` de l'objet serveur Web :
 
 ```4d
 C_OBJECT($status)
