@@ -15,9 +15,9 @@ No activation is required for the following uses:
 - 4D used in remote mode (connection to a 4D Server)
 - 4D used in local mode with an interpreted database with no access to the Design environment.
 
-## First activation
+## Première activation
 
-With 4D, select the **License Manager...** command from the **Help** menu of the application. With 4D Server, just launch the 4D Server application. The dialog box for choosing the [activation mode](#activation-mode) appears.
+Pour activer 4D, sélectionnez la commande **Gestionnaire de licences...** du menu **Aide**. Pour activer 4D Server, lancez l'application 4D Server. The dialog box for choosing the [activation mode](#activation-mode) appears.
 
 ![](assets/en/getStart/server1.png)
 
