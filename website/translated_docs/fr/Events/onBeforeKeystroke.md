@@ -16,7 +16,7 @@ Ces événements sont également activés par des commandes de langage qui simul
 
 Gardez à l'esprit que les modifications utilisateur qui ne sont pas effectuées à l'aide du clavier (coller, glisser-déposer, etc.) ne sont pas prises en compte. Pour traiter ces événements, vous devez utiliser [`On After Edit`](onAfterEdit.md).
 
-> The `On Before Keystroke` and `On After Keystroke` events are not generated when using an input method. Une méthode de saisie (ou IME, Input Method Editor) est un programme ou un composant système qui peut être utilisé pour saisir des caractères ou des symboles complexes (par exemple, du japonais ou du chinois) à l'aide d'un clavier occidental.
+> Les événements `On Before Keystroke` et `On After Keystroke` ne sont pas générés lors de l'utilisation d'une méthode de saisie. Une méthode de saisie (ou IME, Input Method Editor) est un programme ou un composant système qui peut être utilisé pour saisir des caractères ou des symboles complexes (par exemple, du japonais ou du chinois) à l'aide d'un clavier occidental.
 
 ### See also
 
