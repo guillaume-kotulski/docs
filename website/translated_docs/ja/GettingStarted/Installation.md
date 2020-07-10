@@ -170,4 +170,4 @@ title: インストールとアクティベーション
 - 
 - 
 
-Find the 4D developer community on line here: <https://discuss.4d.com>.
+4Dデベロッパーのオンラインコミュニティは以下のWeb サイトで見つけることができます: <https://discuss.4d.com>
