@@ -1,11 +1,11 @@
 ---
 id: propertiesDisplay
-title: Display
+title: 表示フォーマット
 ---
 
 * * *
 
-## Alpha Format
+## 文字フォ－マット
 
 Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Here is a list of formats provided for alphanumeric fields:
 
@@ -54,11 +54,11 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
 
 * * *
 
-## Date Format
+## 日付フォーマット
 
-Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+日付フォーマットは、表示や印刷時に日付を表示する方法を制御します。 データ入力の際は選択した表示フォーマットとは関係なく、YYYY/MM/DD 形式で日付を入力します。
 
-> Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
+> [数値フォーマット](#数値フォーマット) や [文字フォ－マット](#文字フォ－マット) と異なり、日付表示フォ－マットは4Dの組み込みフォーマットのなかから選択しなければなりません。
 
 The table below shows choices available:
 
@@ -96,7 +96,7 @@ The table below shows choices available:
 
 * * *
 
-## Number Format
+## 数値フォーマット
 
 > Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
 
