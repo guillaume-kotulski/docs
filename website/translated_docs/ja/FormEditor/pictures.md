@@ -23,15 +23,15 @@ title: ピクチャー
 
 このアイコンは、そのピクチャーがローカルでは表示も編集もできないことを意味します。ですが、中身を改変することなく保存し、他のマシンで表示することは可能です。 たとえば、Windows での PDF ピクチャーや、PICT フォーマットのピクチャーなどが該当します。
 
-## High Resolution Pictures
+## 高解像度ピクチャー
 
-4D supports high resolution pictures on both macOS and Windows platforms. High resolution pictures can be defined by either scale factor or dpi.
+4D は macOS および Windows の両方で高解像度ピクチャーの表示をサポートしています。 高解像度ピクチャーは、スケール係数または dpi によって定義されます。
 
-### Scale factor (macOS only)
+### スケール係数 (macOS のみ)
 
 従来の標準的なディスプレイと比較して、高解像度ディスプレイは高い画素密度を持ちます。 これらの高解像度ディスプレイにおいてピクチャーが正しく表示されるには、適用する *スケール係数* (例: 2倍、3倍など) に応じてその画素数を増やす必要があります。
 
-When using high resolution pictures, you can specify the scale factor by adding "@nx" in the picture's name (where *n* designates the scale factor). In the table below, you can see that the scale factor is indicated in the names of the high resolution pictures, *circle@2x.png* and *circle@3x.png*.
+高解像度のピクチャーを使う場合、ピクチャー名に "@nx" (*n*: スケール係数) を付けてスケール係数を指定することができます。 下のテーブルの例でも、高解像度ピクチャーの名前に、*circle@2x.png*、*circle@3x.png* といった形でスケール係数が指定されています。
 
 | Display Type | スケール係数              | 例題                                                                |
 | ------------ | ------------------- | ----------------------------------------------------------------- |
