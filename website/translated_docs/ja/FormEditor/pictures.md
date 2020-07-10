@@ -75,7 +75,7 @@ title: ピクチャー
 
 > 解像度の優先順位付けはディスプレイ上のピクチャー表示にのみ適用され、印刷に関しては自動適用されないことに留意が必要です。
 
-### DPI (macOs and Windows)
+### DPI (macOS および Windows)
 
 While 4D automatically prioritizes the highest resolution, there are, however, some behavioral differences depending on screen and image dpi*(*)*, and picture format:
 
