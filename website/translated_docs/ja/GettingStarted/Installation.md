@@ -66,7 +66,7 @@ title: インストールとアクティベーション
 
 コンピューターからインターネットへのアクセスがないために [オンラインアクティベーション](#オンラインアクティベーション) が出来ない場合、以下の手順を踏んでオフラインアクティベーションへと進んで下さい。
 
-1. ヘルプメニューから "ライセンスマネージャー" を開き、**オフラインアクティベーション** タブを選択します。
+1. **ヘルプ** メニューから "ライセンスマネージャー" を開き、**オフラインアクティベーション** タブを選択します。
 2. ライセンス番号とメールアドレスを入力し、**ファイルを生成** をクリックして IDファイル (*reg.txt*) を作成します。
 
 ![](assets/en/getStart/activ3.png)
@@ -89,21 +89,21 @@ title: インストールとアクティベーション
 
 9. 他のライセンスを追加するためには **番号追加** ボタンをクリックします。 これらの手順を、手順6のライセンスがすべて追加されるまで繰り返します。
 
-Your 4D application is now activated.
+これで、お使いの4Dアプリケーションのアクティベーションが完了しました。
 
-### Emergency Activation
+### 緊急アクティベーション
 
-This mode can be used for a special temporary activation of 4D (5 days maximum) without connecting to the 4D Web site. This activation can only be used one time.
+このモードは、特別に一時的な4Dのアクティベーションをおこなうために使用します。このアクティベーションを行うと、4Dインターネットサイトに接続せずに、最大5日間4Dを利用できます。 このアクティベーションは一回のみ使用することができます。
 
-## Adding licenses
+## ライセンスの追加
 
-You can add new licenses, for example to extend the capacities of your application, at any time.
+アプリケーションの拡張ライセンスは、いつでも追加することができます。
 
-Choose the **License Manager...** command from the **Help** menu of the 4D or 4D Server application, then click on the **Refresh** button:
+4D または 4D Server アプリケーションの **ヘルプ** メニューから **ライセンスマネージャー...** を選択し、**更新** ボタンをクリックしてください:
 
 ![](assets/en/getStart/licens1.png)
 
-This button connects you to our customer database and automatically activates any new or updated licenses related to the current license (the current license is displayed in **bold** in the "Active Licenses" list). You will just be prompted for your user account and password.
+このボタンを押すと 4D カスタマーデータベースに接続し、利用中のライセンスに紐付いている新しい、あるいは更新されたライセンスの自動アクティベーションがおこなわれます (利用中のライセンスは "有効なライセンス" 一覧内で **太字** で表示されているものです)。 You will just be prompted for your user account and password.
 
 - If you purchased additional expansions for a 4D Server, you do not need to enter any license number -- just click **Refresh**.
 - At the first activation of a 4D Server, you just need to enter the server number and all the purchased expansions are automatically assigned.
