@@ -21,11 +21,11 @@ With 4D, select the **License Manager...** command from the **Help** menu of the
 
 ![](assets/en/getStart/server1.png)
 
-4D offers three activation modes. We recommend **Instant Activation**.
+4D は 3つのアクティベーションモードを用意しています。 推奨されるのは **オンラインアクティベーション** です。
 
-### Instant Activation
+### オンラインアクティベーション
 
-Enter your user ID (email or 4D account) as well as your password. If you do not have an existing user account, you will need to create it at the following address:
+ユーザーID (メールアドレスまたは 4Dアカウント) とパスワードを入力します。 既存のユーザーアカウントが無い場合、まず以下のアドレスから作成する必要があります:
 
 <https://account.4d.com/us/login.shtml>
 
