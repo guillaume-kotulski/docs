@@ -7,7 +7,7 @@ title: 表示フォーマット
 
 ## 文字フォ－マット
 
-Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Here is a list of formats provided for alphanumeric fields:
+文字フォーマットは、表示や印刷時に文字フィールドや変数にデータを表示する方法を制御します。 Here is a list of formats provided for alphanumeric fields:
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
@@ -150,7 +150,7 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
     ###.##0
     
 
-ドットは、ユーザが少なくとも4桁以上の数値を入力した場合にのみ表示されます。
+ポイント (点) は、ユーザが少なくとも4桁以上の数値を入力した場合にのみ表示されます。
 
 数値表示フォーマットにおいて、スペースは文字として扱われます。
 
@@ -202,27 +202,27 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
 
 ### XML記法
 
-The `&xml` format will make a number compliant with XML standard rules. In particular, the decimal separator character will be a period "." in all cases, regardless of the system settings.
+`&xml` フォーマットを使用すると、数字を XML 標準ルールに沿ったものにします。 特に小数点がシステム設定に関係なくすべての場合においてポイント (ピリオド) に変換されます。
 
-### Displaying a number as a time
+### 数値を時間として表示する
 
-You can display a number as a time (with a time format) by using `&/` followed by a digit. Time is determined by calculating the number of seconds since midnight that the value represents. The digit in the format corresponds to the order in which the time format appears in the Format drop-down menu.
+`&/`の後に数字を指定することにより、数値を時間として (時間フォーマットで) 表示することができます。 時間は午前0 時を基点とした秒数として計算されます。 フォーマット内の数字は表示フォーマットドロップダウンメニュー上でその時間フォーマットが表示される順番に相当します。
 
 たとえば次のフォーマットを指定すると:
 
-    &/5
+    &/7
     
 
-corresponds to the 5th time format in the pop-up menu, specifically the AM/PM time. A number field with this format would display 25000 as:
+ドロップダウンメニューの7番目の時間フォーマット (AM/PM で表わす時間) に対応します。 このフォーマットが指定された数値フィールドの場合、25000 は次のように表示されます:
 
     6:56 AM
     
 
 ### 例題
 
-The following table shows how different formats affect the display of numbers. The three columns — Positive, Negative, and Zero — each show how 1,234.50, –1,234.50, and 0 would be displayed.
+次の表は各種フォーマットの数値表示への効果を表わしています。 正数、負数、ゼロという 3つの欄では 1234.50、-1234.50、0 がそれぞれどのように表示されるかを示しています。
 
-| Format Entered                     | Positive       | Negative    | Zero                   |
+| 入力されたフォーマット                        | 正数             | 負数          | ゼロ                     |
 | ---------------------------------- | -------------- | ----------- | ---------------------- |
 | ###                                | <<<            | <<<         |                        |
 | ####                               | 1234           | <<<<        |                        |
@@ -255,14 +255,14 @@ The following table shows how different formats affect the display of numbers. T
 
 #### JSON 文法
 
-| 名            | データタイプ | とりうる値                                                          |
-| ------------ | ------ | -------------------------------------------------------------- |
-| numberFormat | string | Numbers (including a decimal point or minus sign if necessary) |
+| 名            | データタイプ | とりうる値                      |
+| ------------ | ------ | -------------------------- |
+| numberFormat | string | 数値 (必要に応じて小数点およびマイナス記号を含む) |
 
 
 #### 対象オブジェクト
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [Progress Indicators](progressIndicator.md)
+[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [インジケーター](progressIndicator.md)
 
 * * *
 
