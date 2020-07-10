@@ -131,14 +131,14 @@ With 4D, select the **License Manager...** command from the **Help** menu of the
 
 ## 連絡先
 
-お買い求めいただきました製品のインストールやアクティベーションに関するご質問はフォーディー・ジャパン社、またはお住まいの地域の代理店までお寄せください。 or your local distributor.
+お買い求めいただきました製品のインストールやアクティベーションに関するご質問はフォーディー・ジャパン社、 またはお住まいの地域の代理店までお寄せください。
 
-For the US:
+日本にお住まいの方:
 
-- Web: <https://us.4d.com/4d-technical-support>
-- Telephone: 1-408-557-4600
+- Web: <https://jp.4d.com/technical-support>
+- Tel: 03-4400-1789
 
-For the UK:
 
-- Web: <https://uk.4d.com/4d-technical-support>
-- Telephone: 01625 536178
+
+- 
+-
