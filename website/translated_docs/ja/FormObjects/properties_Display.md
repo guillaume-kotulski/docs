@@ -262,7 +262,7 @@ title: 表示フォーマット
 
 #### 対象オブジェクト
 
-[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [インジケーター](progressIndicator.md)
+[コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [進捗インジケーター](progressIndicator.md)
 
 * * *
 
@@ -513,7 +513,7 @@ Windows では System time short フォーマットと同じ     | 04:30:25 JST 
         
         このプロパティが選択されていると、アプリケーションモードでオブジェクトがデフォルトで非表示になります。
         
-        大部分のオブジェクトに対して、表示状態プロパティを指定することができます。 このプロパティを使用すると、ダイナミックなインターフェースを容易に開発できるようになります。 インターフェースを開発するとき、多くの場合はフォームの `On Load` イベント中にプログラムからオブジェクトを非表示にした後で、一部のオブジェクトを再度表示する必要性が頻繁に生じます。 The Visible property allows inverting this logic by making certain objects invisible by default. The developer can then program their display using the `OBJECT SET VISIBLE` command depending on the context.
+        大部分のオブジェクトに対して、表示状態プロパティを指定することができます。 このプロパティを使用すると、ダイナミックなインターフェースを容易に開発できるようになります。 インターフェースを開発するとき、多くの場合はフォームの `On Load` イベント中にプログラムからオブジェクトを非表示にした後で、一部のオブジェクトを再度表示する必要性が頻繁に生じます。 表示状態プロパティを使用すると、特定オブジェクトをあらかじめ非表示にしておくことにより、このロジックを逆に働かせることができます。 この後、状況に応じて `OBJECT SET VISIBLE` コマンドを使用し、これらのオブジェクトを表示するようプログラミングすることができます。
         
         #### JSON 文法
         
