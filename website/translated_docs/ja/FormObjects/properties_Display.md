@@ -394,7 +394,7 @@ Windows では System time short フォーマットと同じ     | 04:30:25 JST 
 
 列のデータに表示フォーマットを割り当てるために使用します。 提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。
 
-ブール式および数値式の列はチェックボックスとして表示することができます。 表示タイプにチェックボックスを選択すると、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
+ブール式および数値 (数値または整数) 式の列はチェックボックスとして表示することができます。 表示タイプにチェックボックスを選択すると、[タイトル](#タイトル)プロパティが表示され、チェックボックスのタイトルを設定できます。
 
 ブール式の列はポップアップメニューとしても表示することができます。 この場合には、[テキスト (True時) とテキスト (False時)](#テキスト-True時-テキスト-False時) プロパティが表示され、ポップアップメニューの対応するタイトルを設定できます。
 
@@ -452,12 +452,12 @@ Windows では System time short フォーマットと同じ     | 04:30:25 JST 
         
         ## タイトル
         
-        This property is available for a list box column if:
+        タイトルは、リストボックス列のプロパティとして次の場合に提供されます:
         
-        - the [column type](properties_Object.md#expression-type) is **boolean** and its [display type](properties_Display.md#display-type) is "Check Box"
-        - the [column type](properties_Object.md#expression-type) is **number** (numeric or integer) and its [display type](properties_Display.md#display-type) is "Three-states Checkbox".
+        - [式タイプ](properties_Object.md#式タイプ) が **ブール** で [表示タイプ](properties_Display.md#表示タイプ) が "チェックボックス" の場合
+        - [式タイプ](properties_Object.md#式タイプ) が **数値** (数値または整数) で [表示タイプ](properties_Display.md#表示タイプ) が "スリーステートチェックボックス" の場合
         
-        In that cases, the title of the check box can be entered using this property.
+        これらの場合に、チェックボックスのタイトルをこのプロパティで設定できます。
         
         #### JSON 文法
         
