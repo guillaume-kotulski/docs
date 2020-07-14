@@ -7,7 +7,7 @@ title: アニメーション
 
 ## 先頭フレームに戻る
 
-Pictures are displayed in a continuous loop. When the user reaches the last picture and clicks again, the first picture appears, and so forth.
+ピクチャーを連続的に表示し続けます。 最後のピクチャーに到達して再度クリックすると、最初のピクチャーが表示されます。
 
 #### JSON 文法
 
@@ -22,9 +22,9 @@ Pictures are displayed in a continuous loop. When the user reaches the last pict
 
 * * *
 
-## Switch back when released
+## マウスアップで戻る
 
-Displays the first picture all the time except when the user clicks the button. Displays the second picture until the mouse button is released. This mode allows you to create an action button with a different picture for each state (idle and clicked). You can use this mode to create a 3D effect or display any picture that depicts the action of the button.
+ユーザーがボタンをクリックしているとき以外は、一番目のピクチャーが常に表示されます。 ボタンがクリックされると、マウスボタンが放されるまで二番目のピクチャーが表示されます。 このモードを使用すると、それぞれの状態 (アイドルとクリック) ごとに異なるピクチャーを使用した動作ボタンを作成することができます。 You can use this mode to create a 3D effect or display any picture that depicts the action of the button.
 
 #### JSON 文法
 
