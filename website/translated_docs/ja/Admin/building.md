@@ -33,7 +33,7 @@ title: プロジェクトパッケージのビルド
 
 ### アプリケーションビルド設定
 
-Each build application parameter is stored as an XML key in the application project file named "buildApp.4DSettings" XML file, located in the Settings folder of the project.
+アプリケーションビルドに関わる各パラメーター設定は XML キーの形で、"buildApp.4DSettings" という名称のアプリケーションプロジェクトファイルに保存されます。この XML ファイルはプロジェクトの Settings フォルダーに配置されます。
 
 アプリケーションビルドダイアログが初めて表示されるときにはデフォルトパラメーターが使用されます。 **ビルド** ボタンや **設定保存** ボタンをクリックすると、このプロジェクトファイルの内容が更新されます。 同じデータベースについて内容の異なる複数の XML ファイルを定義し、[BUILD APPLICATION](https://doc.4d.com/4Dv18/4D/18/BUILD-APPLICATION.301-4505371.ja.html) コマンドでそれらを使い分けることができます。
 
@@ -41,17 +41,17 @@ Each build application parameter is stored as an XML key in the application proj
 
 ### ログファイル
 
-When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. ログファイルにはビルド毎に以下の情報が書き込まれます:
+アプリケーションをビルドすると、4D はログファイル (*BuildApp.log.xml*) を生成して、プロジェクトの **Logs** フォルダーに保存します。 ログファイルにはビルド毎に以下の情報が書き込まれます:
 
 - ターゲットビルドの開始と終了
 - 生成されたファイルの名称とフルパス
 - ビルドの日付と時刻
-- Any errors that occurred,
-- Any signing issues (e.g. a non-signed plug-in).
+- 発生したエラー
+- 署名の問題 (例: 署名されていないプラグイン)
 
-Checking this file may help you saving time during the subsequent deployment steps, for example if you intend to notarize your application.
+アプリケーションを公証する場合などは、このファイルを確認することで、後の運用手順で時間を節約できることがあります。
 
-> Use the `Get 4D file(Build application log file)` command to get the log file location.
+> `Get 4D file(Build application log file)` コマンドを使って、ログファイルの場所を取得します。
 
 ## アプリケーション名と保存先フォルダー
 
@@ -334,22 +334,22 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 アプリケーションにその他の (現在 4D にロードされていない) プラグインやコンポーネントを統合したい場合、4D Server や 4D Volume Desktop の **Plugins** や **Components** フォルダーにそれらを配置します。 ソースアプリケーションのフォルダーから内容をコピーするメカニズム ([4D Volume Desktop フォルダーのカスタマイズ](#4D-Volume-Desktop-フォルダーのカスタマイズ) 参照) により、どんなタイプのファイルでもアプリケーションに統合することができます。
 
-同じプラグインの異なるバージョンが見つかった場合 (現在 4D にロードされているものと同じプラグインが、ソースアプリケーションのフォルダーにも配置されている場合など)、4D Volume Desktop/4D Server フォルダーにインストールされているバージョンが優先されます。 However, if there are two instances of the same component, the application will not open.
+同じプラグインの異なるバージョンが見つかった場合 (現在 4D にロードされているものと同じプラグインが、ソースアプリケーションのフォルダーにも配置されている場合など)、4D Volume Desktop/4D Server フォルダーにインストールされているバージョンが優先されます。 他方、同じコンポーネントが両方にインストールされていた場合は、アプリケーションを開くことはできません。
 
-> The use of plug-ins and/or components in a deployment version requires the necessary license numbers.
+> 配布するアプリケーションでプラグインやコンポーネントを使用するには、それぞれ適切なライセンスが必要です。
 
-## Licenses & Certificate page
+## ライセンス&証明書ページ
 
-The Licences & Certificate page can be used to:
+ライセンス&証明書のページでは、次のようなことができます:
 
-* designate the license number(s) that you want to integrate into your single-user stand-alone application
-* sign the application by means of a certificate in macOS.
+* シングルユーザーのスタンドアロンアプリケーションに統合するライセンス番号を指定します。
+* macOS 環境下では、証明書を使用してアプリケーションに署名をすることができます。
 
 ![](assets/en/Admin/buildappCertif.png)
 
-### Licenses
+### ライセンスリスト
 
-This tab displays the list of available deployment licenses that you can integrate into your application. デフォルトでリストは空です。 アプリケーションをビルドするには *4D Developer Professional* ライセンスと、その開発ライセンスに対応する *4D Desktop Volume* ライセンスを指定しなければなりません。 
+アプリケーションに統合するのに使用できる配付ライセンスの一覧を表示します。 デフォルトでリストは空です。 アプリケーションをビルドするには *4D Developer Professional* ライセンスと、その開発ライセンスに対応する *4D Desktop Volume* ライセンスを指定しなければなりません。 
 
 ライセンスを追加または取り除くにはウィンドウ下部の **[+]** または **[-]** ボタンをクリックします。
 
@@ -376,13 +376,13 @@ This tab displays the list of available deployment licenses that you can integra
 
 アプリケーションビルダーは、macOS 環境下において組み込み 4D アプリに署名をする機能を備えています (macOS のシングルユーザーアプリ、サーバーおよびクライアントアプリ)。 アプリケーションを署名することにより、 macOS において「Mac App Store と確認済みの開発元からのアプリケーションを許可」のオプションが選択されているときに Gatekeeper の機能を使用してアプリケーションを実行することが可能になります (後述の "Gatekeeper について" を参照ください)。
 
-- **アプリケーションに署名** オプションにチェックをすると、macOS のアプリケーションビルド処理に認証が含まれます。 4D will check the availability of elements required for certification when the build occurs: 
+- **アプリケーションに署名** オプションにチェックをすると、macOS のアプリケーションビルド処理に認証が含まれます。 4D はビルドの際に、認証に必要な要素の有無をチェックします: 
 
 ![](assets/en/Admin/buildapposxcertProj.png)
 
-This option is displayed under both Windows and macOS, but it is only taken into account for macOS versions.
+このオプションは Windows と macOS 両方の環境で表示されますが、macOS の場合においてのみ有効です。
 
-* **Name of certificate** - Enter the name of your developer certificate validated by Apple in this entry area. この認証名は通常、キーチェーンアクセスユーティリティ内の証明書の名前と一緒です:
+* **認証名** - Apple によって有効化されたデベロッパー認証名を入力してください。 この認証名は通常、キーチェーンアクセスユーティリティ内の証明書の名前と一緒です:
 
 ![](assets/en/Project/certificate.png)
 
