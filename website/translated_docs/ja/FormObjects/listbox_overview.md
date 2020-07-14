@@ -1073,12 +1073,12 @@ ARRAY OBJECT(obColumn;0) // カラム配列
 
 #### behavior
 
-behavior 属性は、値の通常の表示とは異なる表示方法を提供します。 In 4D v15, a single variation is proposed:
+behavior 属性は、値の通常の表示とは異なる表示方法を提供します。 4D v15では、一つだけ他の表示方法が用意されています:
 
-| Attribute | Available value(s) | valueType(s) | 説明                                                                                                                                                                                   |
-| --------- | ------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| behavior  | threeStates        | integer      | Represents a numeric value as a three-states check box.  
-2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
+| 属性       | 使用可能な値      | valueType | 説明                                                                                                        |
+| -------- | ----------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| behavior | threeStates | integer   | スリーステートチェックボックスを数値として表現します。  
+2=セミチェック、1=チェック、0=チェックされていない、-1=非表示、-2=チェックなしが無効化、-3=チェックが無効化、-4=セミチェックが無効化 |
 
 
 ```4d
