@@ -47,7 +47,7 @@ Two main locations can be used for static picture path:
 
 フィールドがオリジナルのピクチャーよりも小さいサイズにされた場合、ピクチャーはトランケート (中央合わせなし) されます。
 
-### Center / Truncated (non-centered)
+### 中央合わせ / トランケート (中央合わせしない)
 
 `JSON 文法では: "truncatedCenter" / "truncatedTopLeft"`
 
@@ -68,4 +68,4 @@ The **Center** format causes 4D to center the picture in the area and crop any p
 
 #### 対象オブジェクト
 
-[Static Picture](staticPicture.md)
+[スタティックピクチャー](staticPicture.md)
