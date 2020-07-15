@@ -1,15 +1,15 @@
 ---
 id: stepper
-title: Stepper
+title: ステッパー
 ---
 
 ## 概要
 
-A stepper lets the user scroll through numeric values, durations (times) or dates by predefined steps by clicking on the arrow buttons.
+このオブジェクトを使用すると、ユーザーは矢印ボタンをクリックすることで、数値、時間、または日付を定義済みのステップ毎にスクロールすることができます。
 
 ![](assets/en/FormObjects/indicator_numericStepper.png)
 
-## Using steppers
+## ステッパーの使用
 
 You can assign the variable associated with the object to an enterable area (field or variable) to store or modify the current value of the object.
 
