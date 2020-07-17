@@ -81,14 +81,14 @@ title: Scale
 
 インジケーターの最大値です。
 
-- For numeric steppers, this property represent seconds when the object is associated with a time type value and are ignored when it is associated with a date type value.
-- To enable [Barber shop thermometers](progressIndicator.md#barber-shop), this property must be omitted. 
+- 時間型のステッパーの場合、値は秒を表します。日付型のステッパーでは、最小および最大プロパティは無視されます。
+- [バーバーショップサーモメーター](progressIndicator.md#バーバーショップ) を有効にするには、このプロパティを取り除きます。 
 
 #### JSON 文法
 
-|  名  |     データタイプ      | とりうる値                               |
-|:---:|:---------------:| ----------------------------------- |
-| max | string / number | minimum: 0 (for numeric data types) |
+|  名  |     データタイプ      | とりうる値           |
+|:---:|:---------------:| --------------- |
+| max | string / number | 最小値: 0 (数値型の場合) |
 
 
 #### 対象オブジェクト
@@ -99,13 +99,13 @@ title: Scale
 
 ## 最小
 
-インジケーターの最小値です。 For numeric steppers, this property represent seconds when the object is associated with a time type value and are ignored when it is associated with a date type value.
+インジケーターの最小値です。 時間型のステッパーの場合、値は秒を表します。日付型のステッパーでは、最小および最大プロパティは無視されます。
 
 #### JSON 文法
 
-|  名  |     データタイプ      | とりうる値                               |
-|:---:|:---------------:| ----------------------------------- |
-| min | string / number | minimum: 0 (for numeric data types) |
+|  名  |     データタイプ      | とりうる値           |
+|:---:|:---------------:| --------------- |
+| min | string / number | 最小値: 0 (数値型の場合) |
 
 
 #### 対象オブジェクト
