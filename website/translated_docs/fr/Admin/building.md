@@ -51,7 +51,7 @@ Lorsqu'une application est créée, 4D génère un fichier journal nommé *Build
 
 La vérification de ce fichier peut vous aider à gagner du temps lors des prochaines étapes de déploiement, si vous avez l'intention, par exemple, de notariser votre application.
 
-> Use the `Get 4D file(Build application log file)` command to get the log file location.
+> Utilisez la commande `Get 4D file (Build application log file)` pour obtenir l'emplacement du fichier journal.
 
 ## Nom de l'application et dossier de destination
 
@@ -87,9 +87,9 @@ Génère un composant compilé à partir de la structure.
 
 Un composant est un fichier de structure 4D standard dans lequel des fonctionnalités spécifiques ont été développées. Une fois le composant configuré et installé dans une autre base 4D (la base hôte), ses fonctionnalités sont accessibles depuis la base hôte. Pour plus d’informations sur les composants, reportez-vous au chapitre "Développer et installer des composants 4D".
 
-If you have named your application, *MyComponent*, 4D will create a Components folder containing *MyComponent.4dbase* folder: *\<destination>/Components/name.4dbase/\<name>.4DZ*.
+Si vous avez nommé votre application, *MyComponent*, 4D créera un dossier Composants contenant le dossier *MyComponent.4dbase* : *\<destination>/Components/name.4dbase/\<name>.4DZ*.
 
-The *MyComponent.4dbase* folder contains: - *MyComponent.4DZ* file - A *Resources* folder - any associated Resources are automatically copied into this folder. Les éventuels dossiers “Components” ou “Plugins” ne sont pas recopiés (un composant ne peut pas utiliser de plug-ins ni d'autres composants).
+Le dossier *MyComponent.4dbase* contient : - un fichier *MyComponent.4DZ* - un dossier *Resources* - toutes les ressources associées sont automatiquement copiées dans ce dossier. Les éventuels dossiers “Components” ou “Plugins” ne sont pas recopiés (un composant ne peut pas utiliser de plug-ins ni d'autres composants).
 
 ## Page Application
 
@@ -388,9 +388,9 @@ L'option est affichée sous Windows et Os X mais n’est prise en compte que pou
 
 Pour obtenir un certificat de développeur auprès d’Apple, Inc., vous pouvez utiliser les commandes du menu Trousseaux d’accès ou vous connecter à la page suivante :[ http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html](http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html).
 
-> Le certificat requiert la présence de l’utilitaire codesign d’Apple. Cet utilitaire est fourni par défaut et se trouve généralement dans le dossier "/usr/bin/". If an error occurs, make sure that this utility is present on your disk.
+> Le certificat requiert la présence de l’utilitaire codesign d’Apple. Cet utilitaire est fourni par défaut et se trouve généralement dans le dossier "/usr/bin/". Si une erreur est générée, assurez-vous que cet utilitaire est présent sur votre disque.
 
-* **Generate self-signed certificate** - runs the "Certificate Assistant" that allows you to generate a self-signed certificate. If you do not have an Apple developer certificate, you need to provide a self-signed certificate. With this certificate, no alert message is displayed if the application is deployed internally. If the application is deployed externally (i.e. through http or email), at launch macOS displays an alert message that the application's developer is unidentified. The user can "force" the opening of the application. 
+* **Générer un certificat auto-signé** - exécute l '«Assistant de certificat» qui vous permet de générer un certificat auto-signé. Si vous ne disposez pas d'un certificat de développeur Apple, vous devez fournir un certificat auto-signé. Avec ce certificat, aucun message d'alerte ne s'affiche si l'application est déployée en interne. Si l'application est déployée en externe (c'est-à-dire via http ou e-mail), au lancement, macOS affiche un message d'alerte indiquant que le développeur de l'application n'est pas identifié. L'utilisateur peut "forcer" l'ouverture de l'application. 
 
 <
 
