@@ -13,11 +13,11 @@ Cette classe est disponible depuis le "class store" de `4D`.
 
 Un objet `cryptoKey` est instancié par la méthode [4D.CryptoKey.new](#4dcryptokeynew). Ses propriétés sont les suivantes (en lecture seule) :
 
-| Propriété | Type    | Description                                                                                                               |
-| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
-| type      | Texte   | Nom du type de clé. Par exemple : "ECDSA" ou "RSA".                                                                       |
-| size      | integer | Défini uniquement pour les clés RSA : la taille de la clé est exprimée en octets. Généralement 2048                       |
-| curve     | Texte   | Defined only for ECDSA keys: the normalised curve name of the key. Par exemple : "prime256v1", "secp384r1" or "secp521r1" |
+| Propriété | Type    | Description                                                                                                                           |
+| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| type      | Texte   | Nom du type de clé. Par exemple : "ECDSA" ou "RSA".                                                                                   |
+| size      | integer | Défini uniquement pour les clés RSA : la taille de la clé est exprimée en octets. Généralement 2048                                   |
+| curve     | Texte   | Définie uniquement pour les clés ECDSA : le nom de courbe normalisé de la clé. Par exemple : "prime256v1", "secp384r1" or "secp521r1" |
 
 
 ### Exemple
@@ -120,8 +120,8 @@ Cette méthode retourne la clé publique de l'objet `cryptoKey` au format PEM, o
 
 | Paramètres | Propriété | Type    |    | Description                                                                                                                                                             |
 | ---------- | --------- | ------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message    |           | Texte   | -> | Message string to sign                                                                                                                                                  |
-| options    |           | object  | -> | Signing options                                                                                                                                                         |
+| message    |           | Texte   | -> | Chaîne message à signer                                                                                                                                                 |
+| options    |           | object  | -> | Options de signature                                                                                                                                                    |
 |            | hash      | Texte   |    | Digest algorithm to use. For example: "HASH256", "HASH384", or "HASH512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
 |            | pss       | boolean |    | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                      |
 |            | encoding  | Texte   |    | Representation to be used for result signature. Possible values: "Base64" or "Base64URL". Default is "Base64".                                                          |
@@ -148,7 +148,7 @@ The `cryptoKey` must contain a valid **private** key.
 | ---------- | --------- | ---------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | message    |           | Texte      | -> | Message string that was used to produce the signature                                                                                                                   |
 | signature  |           | Texte      | -> | Signature to verify, in Base64 or Base64URL representation, depending on "encoding" option                                                                              |
-| options    |           | object     | -> | Signing options                                                                                                                                                         |
+| options    |           | object     | -> | Options de signature                                                                                                                                                    |
 |            | hash      | Texte      |    | Digest algorithm to use. For example: "HASH256", "HASH384", or "HASH512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
 |            | pss       | boolean    |    | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                      |
 |            | encoding  | Texte      |    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                                                                 |
@@ -217,7 +217,7 @@ The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://too
 |            | errors            | collection |    | If `success` is `false`, may contain a collection of errors                                                                                      |
 
 
-This method decrypts the `message` parameter using the **private** key. The algorithm used depends on the type of the key.
+Cette méthode déchiffre le paramètre de `message` à l'aide de la clé **privée**. The algorithm used depends on the type of the key.
 
 The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
