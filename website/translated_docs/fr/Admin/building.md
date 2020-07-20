@@ -41,15 +41,15 @@ Les clés XML fournissent des options supplémentaires à celles affichées dans
 
 ### Fichier d'historique
 
-When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. Le fichier d'historique stocke les informations suivantes pour chaque génération :
+Lorsqu'une application est créée, 4D génère un fichier journal nommé *BuildApp.log.xml* dans le dossier **Logs** du projet. Le fichier d'historique stocke les informations suivantes pour chaque génération :
 
 - Le début et la fin de la génération des cibles,
 - Le nom et le chemin d'accès complet des fichiers générés,
 - La date et l'heure de la génération,
 - Toutes les erreurs qui se sont produites,
-- Any signing issues (e.g. a non-signed plug-in).
+- Tout problème de signature (par exemple, un plug-in non signé).
 
-Checking this file may help you saving time during the subsequent deployment steps, for example if you intend to notarize your application.
+La vérification de ce fichier peut vous aider à gagner du temps lors des prochaines étapes de déploiement, si vous avez l'intention, par exemple, de notariser votre application.
 
 > Use the `Get 4D file(Build application log file)` command to get the log file location.
 
