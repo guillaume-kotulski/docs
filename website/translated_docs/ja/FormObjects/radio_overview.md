@@ -42,19 +42,19 @@ title: ラジオボタン
 
 ![](assets/en/FormObjects/radio_regular.png)
 
-In addition to initiating code execution, the Regular radio button style changes bullsey color when being hovered.
+通常スタイルのラジオボタンにマウスオーバーすると、"目玉" の色が変化します。
 
 ### フラット
 
-The Flat radio button style is a standard system button (*i.e.*, a small bullseye with text) which executes code when a user clicks on it.
+フラットスタイルのラジオボタンは、標準的なシステムボタンで (小さな目玉状の円とテキストを表示したもの)、ユーザークリックに応じてコードを実行します。
 
 ![](assets/en/FormObjects/radio_flat.png)
 
-By default, the Flat style has a minimalist appearance. フラットボタンのグラフィック的な装飾は最小限であるため、印刷されるフォームでの使用に適しています。
+フラットスタイルでは、装飾が最小限に抑えられています。 フラットボタンのグラフィック的な装飾は最小限であるため、印刷されるフォームでの使用に適しています。
 
 ### ツールバー
 
-The Toolbar radio button style is primarily intended for integration in a toolbar.
+ツールバースタイルのラジオボタンは、主としてツールバーで使用するためのものです。
 
 ツールバーボタンは、透明の背景に中央配置のラベルがデフォルトで付いています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
@@ -66,7 +66,7 @@ The Toolbar radio button style is primarily intended for integration in a toolba
 
 ### ベベル
 
-The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. ボタンにマウスオーバーしたときの表示は OS によって異なります:
+ベベルスタイルは [ツールバー](#ツールバー) スタイルと似た動作をしますが、薄いグレーの背景にグレーの枠が描画されます。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
 - *Windows* - ボタンがハイライト表示されます。
     
@@ -78,7 +78,7 @@ The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behav
 
 角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。
 
-- *Windows* - the button is identical to the [Bevel](#bevel) style.
+- Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
 
 - *macOS* - 角が丸くなっています。 ![](assets/en/FormObjects/roundedBevel.png)
 
@@ -86,17 +86,17 @@ The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behav
 
 OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては異なる点があります。
 
-- *Windows* - the button is identical to the [Bevel](#bevel) style.
+- Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
 
 - *macOS* - 2トーンのシステムボタンです。
 
 ### OS Xテクスチャー
 
-The OS X Textured radio button style is nearly identical to the [Toolbar](#toolbar) style except, depending on the OS, it may have a different appearance and does not display hover.
+OS Xテクスチャースタイルは [ツールバー](#ツールバー) スタイルとほぼ同一ですが、OSによってはマウスオーバー時の変化がないほか、外観の異なる点があります。
 
 デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:
 
-- *Windows* - a toolbar-like button with a label in the center and the background is always displayed.
+- *Windows* - ツールバースタイルのようなボタンに中央配置のラベルが付き、背景は常に表示されます。
 
 - *macOS* - 灰色のグラデーションを表示する標準のシステムボタンです。 高さは定義済みで、変更できません。
     
