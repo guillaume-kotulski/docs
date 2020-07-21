@@ -475,7 +475,7 @@
         "title": "スプリッター"
       },
       "FormObjects/staticPicture": {
-        "title": "Static picture"
+        "title": "スタティックピクチャー"
       },
       "FormObjects/stepper": {
         "title": "ステッパー"
@@ -560,7 +560,7 @@
         "title": "ORDA Data Model Classes"
       },
       "Project/architecture": {
-        "title": "Architecture of a project"
+        "title": "プロジェクトのアーキテクチャー"
       },
       "Project/creating": {
         "title": "Creating or opening a project"
