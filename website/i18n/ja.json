@@ -463,10 +463,10 @@
         "title": "スピナー"
       },
       "FormObjects/splitters": {
-        "title": "Splitter"
+        "title": "スプリッター"
       },
       "FormObjects/staticPicture": {
-        "title": "Static picture"
+        "title": "スタティックピクチャー"
       },
       "FormObjects/stepper": {
         "title": "ステッパー"
