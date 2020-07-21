@@ -436,7 +436,7 @@
         "title": "Resizing Options"
       },
       "FormObjects/propertiesScale": {
-        "title": "Scale"
+        "title": "スケール"
       },
       "FormObjects/propertiesSubform": {
         "title": "Subform"
@@ -451,22 +451,22 @@
         "title": "Web Area"
       },
       "FormObjects/radiobuttonOverview": {
-        "title": "Radio Button"
+        "title": "ラジオボタン"
       },
       "FormObjects/ruler": {
         "title": "ルーラー"
       },
       "FormObjects/shapesOverview": {
-        "title": "Shapes"
+        "title": "図形"
       },
       "FormObjects/spinner": {
-        "title": "Spinner"
+        "title": "スピナー"
       },
       "FormObjects/splitters": {
-        "title": "Splitter"
+        "title": "スプリッター"
       },
       "FormObjects/staticPicture": {
-        "title": "Static picture"
+        "title": "スタティックピクチャー"
       },
       "FormObjects/stepper": {
         "title": "ステッパー"
