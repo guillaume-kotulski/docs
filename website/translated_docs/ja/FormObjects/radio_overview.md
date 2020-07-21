@@ -104,7 +104,7 @@ OS Xテクスチャースタイルは [ツールバー](#ツールバー) スタ
 
 ### Office XP
 
-The Office XP button style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's behavior.
+Office XPスタイルは [ベベル](#ベベル) ボタンような外観に、[ツールバーボタン](#ツールバーボタン) スタイルの動作を組み合わせたものです。
 
 Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
@@ -116,13 +116,13 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### 折りたたみ/展開
 
-This button style can be used to add a standard collapse/expand icon. これらは階層リストで使用されます。 In Windows, the button looks like a [+] or a [-]; in macOS, it looks like a triangle pointing right or down.
+このスタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。 Windows では [+] または [-] のように表示されます。macOS では、右や下を指す三角として表示されます。
 
 ![](assets/en/FormObjects/checkbox_collapse.png)
 
 ### 開示ボタン
 
-The disclosure radio button style displays the radio button as a standard disclosure button, usually used to show/hide additional information. The button symbol points downwards with value 0 and upwards with value 1.
+開示ボタンスタイルが適用されると、詳細情報の表示/非表示にするのに使われる標準的な開示ボタンとして描画されます。 値が 0 のときにはボタンの矢印が下向き、値が 1 のときは上向きになります。
 
 ![](assets/en/FormObjects/checkbox_disclosure.png)
 
