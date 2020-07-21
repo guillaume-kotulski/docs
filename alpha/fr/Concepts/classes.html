@@ -73,21 +73,21 @@
 <h3><a class="anchor" aria-hidden="true" id="lobjet-classe"></a><a href="#lobjet-classe" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>L'objet classe</h3>
 <p>Une classe est un objet de classe &quot;Class&quot;. Un objet de classe a les propriétés et méthodes suivantes :</p>
 <ul>
-<li><code>name</code> qui doit être conforme à ECMAScript</li>
+<li><code>name</code> which must be <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMAScript</a> compliant</li>
 <li>un objet <code>superclass</code> (facultatif, nul s'il n'y en a aucun)</li>
 <li>une méthode <code>new()</code> permettant d'instancier des objets de classe.</li>
 </ul>
-<p>In addition, a class object can reference:</p>
+<p>De plus, un objet de classe peut référencer :</p>
 <ul>
 <li>un objet <code>constructeur</code> (facultatif)</li>
 <li>un objet <code>prototype</code>, contenant des objets de fonction nommés (facultatif).</li>
 </ul>
 <p>Un objet de classe est un objet partagé et est donc accessible simultanément à partir de différents processus 4D.</p>
 <h3><a class="anchor" aria-hidden="true" id="recherche-et-prototype-des-propriétés"></a><a href="#recherche-et-prototype-des-propriétés" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recherche et prototype des propriétés</h3>
-<p>Tous les objets de 4D sont liés en interne à un objet de classe. When 4D does not find a property in an object, it searches in the prototype object of its class; if not found, 4D continues searching in the prototype object of its superclass, and so on until there is no more superclass.</p>
+<p>Tous les objets de 4D sont liés en interne à un objet de classe. Lorsque 4D ne trouve pas de propriété dans un objet, il effectue un recherche dans l'objet prototype de sa classe; s'il ne la trouve pas, 4D poursuit sa recherche dans l'objet prototype de sa classe mère (superclass), et ainsi de suite jusqu'à ce qu'il n'y ait plus de superclass.</p>
 <p>Tous les objets héritent de la classe &quot;Object&quot; comme classe supérieure d'arbre d'héritage.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Class: Polygon</span><span class="hljs-keyword">
-Class constructor</span>(<span class="hljs-variable">$width </span>: Integer;<span class="hljs-variable">$height </span>: Integer)
+Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)
     <span class="hljs-literal">This</span>.area:=<span class="hljs-variable">$width</span>*<span class="hljs-variable">$height</span>
 
     <span class="hljs-comment">//var $poly : Object</span><span class="hljs-keyword">
@@ -104,14 +104,14 @@ Class constructor</span>(<span class="hljs-variable">$width </span>: Integer;<sp
 <p>A user class file defines a model of object that can be instantiated in the database code by calling the <code>new()</code> class member method. You will usually use specific <a href="#class-keywords">class keywords</a> and <a href="#class-commands">class commands</a> in the class file.</p>
 <p>Par exemple:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Class: Person.4dm</span><span class="hljs-keyword">
-Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text;<span class="hljs-variable">$lastname </span>: Text)
+Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <span class="hljs-variable">$lastname </span>: Text)
     <span class="hljs-literal">This</span>.firstName:=<span class="hljs-variable">$firstname</span>
     <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$lastname</span>
 </code></pre>
 <p>In a method, creating a &quot;Person&quot;:</p>
-<pre><code class="hljs">var $o:Object
+<pre><code class="hljs">var $o : Object
 $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
-// $o:{firstName: &quot;John&quot;;lastName: &quot;Doe&quot; }
+// $o:{firstName: &quot;John&quot;; lastName: &quot;Doe&quot; }
 </code></pre>
 <p>Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following <code>Empty.4dm</code> class file:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Fichier classe Empty.4dm</span>
@@ -151,7 +151,7 @@ $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
 <h3><a class="anchor" aria-hidden="true" id="class-names"></a><a href="#class-names" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class names</h3>
 <p>When naming classes, you should keep in mind the following rules:</p>
 <ul>
-<li>A class name must be ECMAScript compliant.</li>
+<li>A class name must be <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMAScript</a> compliant.</li>
 <li>Class names are case sensitive.</li>
 <li>Giving the same name to a class and a database table is not recommended, in order to prevent any conflict.</li>
 </ul>
@@ -195,92 +195,89 @@ $o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="class-function"></a><a href="#class-function" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Function</h3>
 <h4><a class="anchor" aria-hidden="true" id="syntaxe"></a><a href="#syntaxe" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntaxe</h4>
-<pre><code class="hljs css language-js"><span class="hljs-built_in">Function</span> &lt;name&gt;({<span class="hljs-attr">parameterName</span> : type;...})
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span> &lt;name&gt;({<span class="hljs-variable">$parameterName </span>: type; ...}){-&gt;<span class="hljs-variable">$parameterName </span>: type}
 <span class="hljs-comment">// code</span>
 </code></pre>
 <p>Class functions are properties of the prototype object of the owner class. They are objects of the &quot;Function&quot; class.</p>
-<p>In the class definition file, function declarations use the <code>Function</code> keyword, and the name of the function. The function name must be ECMAScript compliant.</p>
+<p>In the class definition file, function declarations use the <code>Function</code> keyword, and the name of the function. The function name must be <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMAScript</a> compliant.</p>
 <blockquote>
-<p><strong>Tip:</strong> Starting the function name with an underscore character (&quot;_&quot;) will exclude the function from the autocompletion features. For example, if you declare <code>Function _myPrivateFunction</code> in MyClass, it will not be proposed in the code editor when you type in <code>&quot;cs.MyClass. &quot;</code>.</p>
+<p><strong>Tip:</strong> Starting the function name with an underscore character (&quot;_&quot;) will exclude the function from the autocompletion features in the 4D code editor. For example, if you declare <code>Function _myPrivateFunction</code> in <code>MyClass</code>, it will not be proposed in the code editor when you type in <code>&quot;cs.MyClass. &quot;</code>.</p>
 </blockquote>
-<p>Immediately following the function name, <a href="/docs/alpha/fr/Concepts/parameters.html#named-parameters-class-functions">parameters</a> for the function can be declared with an assigned name and data type. Par exemple:</p>
-<pre><code class="hljs css language-code4d"><span class="hljs-keyword">Function</span> <span class="hljs-title">setFullName</span>($firstname : <span class="hljs-type">Text</span>;$lastname : <span class="hljs-type">Text</span>)
+<p>Immediately following the function name, <a href="#parameters">parameters</a> for the function can be declared with an assigned name and data type, including the return parameter (optional). Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> computeArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt;<span class="hljs-variable">$area </span>: Integer
 </code></pre>
-<blockquote>
-<p><a href="/docs/alpha/fr/Concepts/parameters.html#sequential-parameters">Sequential parameters</a> ($1, $2...) can be also used in class functions.</p>
-</blockquote>
 <p>Within a class function, the <code>This</code> command is used as the object instance. Par exemple:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> setFullname</span>(<span class="hljs-variable">$firstname </span>: Text;<span class="hljs-variable">$lastname </span>: Text)
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> setFullname</span>(<span class="hljs-variable">$firstname </span>: Text; <span class="hljs-variable">$lastname </span>: Text)
     <span class="hljs-literal">This</span>.firstName:=<span class="hljs-variable">$firstname</span>
     <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$lastname</span><span class="hljs-keyword">
 
-Function</span><span class="hljs-function"> getFullname</span>()<span class="hljs-keyword">
-    var</span> <span class="hljs-variable">$0 </span>: Text
-    <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.firstName+<span class="hljs-string">" "</span>+<span class="hljs-function">Uppercase</span>(<span class="hljs-literal">This</span>.lastName)
+Function</span><span class="hljs-function"> getFullname</span>()-&gt;<span class="hljs-variable">$fullname </span>: Text
+    <span class="hljs-variable">$fullname</span>:=<span class="hljs-literal">This</span>.firstName+<span class="hljs-string">" "</span>+<span class="hljs-function">Uppercase</span>(<span class="hljs-literal">This</span>.lastName)
 </code></pre>
 <p>For a class function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, for example &quot;MyClass.myMethod&quot;.</p>
 <p>In the database code, class functions are called as member methods of the object instance and can receive <a href="#class-function-parameters">parameters</a> if any. The following syntaxes are supported:</p>
 <ul>
-<li><p>use of the <code>()</code> operator. For example, <code>myObject.methodName(&quot;hello&quot;)</code></p></li>
-<li><p>use of a &quot;Function&quot; class member method:</p>
+<li>use of the <code>()</code> operator. For example, <code>myObject.methodName(&quot;hello&quot;)</code></li>
+<li>use of a &quot;Function&quot; class member method:
 <ul>
 <li><code>apply()</code></li>
 <li><code>call()</code></li>
 </ul></li>
 </ul>
 <blockquote>
-<p><strong>Thread-safety warning:</strong> If a class function is not thread-safe and called by a method with the &quot;Can be run in preemptive process&quot; attribute:</p>
-<ul>
-<li>the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.</li>
-</ul>
+<p><strong>Thread-safety warning:</strong> If a class function is not thread-safe and called by a method with the &quot;Can be run in preemptive process&quot; attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="class-function-parameters"></a><a href="#class-function-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class function parameters</h4>
-<p>Function parameters are declared using the parameter name and the parameter type, separated by colon. The parameter name must be <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMA Script</a> compliant. Multiple parameters (and types) are separated by semicolons (;).</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x</span>;<span class="hljs-variable">$y </span>: Variant;<span class="hljs-variable">$z </span>: Integer;<span class="hljs-variable">$xy </span>: Object)
+<h4><a class="anchor" aria-hidden="true" id="parameters"></a><a href="#parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
+<p>Function parameters are declared using the parameter name and the parameter type, separated by a colon. The parameter name must be <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMAScript</a> compliant. Multiple parameters (and types) are separated by semicolons (;).</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x</span>; <span class="hljs-variable">$y </span>: Variant; <span class="hljs-variable">$z </span>: Integer; <span class="hljs-variable">$xy </span>: Object)
 </code></pre>
 <blockquote>
-<p>If the type is not defined, the parameter will be defined as <code>Variant</code>.</p>
+<p>If the type is not stated, the parameter will be defined as <code>Variant</code>.</p>
 </blockquote>
-<p>The return parameter ($0) is not supported in the named parameter list. It must be declared inside the function code. For example:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant;<span class="hljs-variable">$y </span>: Integer)<span class="hljs-keyword">
-    var</span> <span class="hljs-variable">$0 </span>: Text
+<p>You declare the return parameter (optional) by adding an arrow (-&gt;) and its definition after the parameter list. For example:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt;<span class="hljs-variable">$result </span>: Integer
+</code></pre>
+<p>You can also declare the return parameter only by adding <code>: type</code>, in which case it will automatically be available through $0. For example:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
+    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
 </code></pre>
 <blockquote>
-<p>The classic 4D syntax for method parameters can be used in conjunction with the class function parameter syntax. For example:</p>
+<p>The classic 4D syntax for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:</p>
 <pre><code class="hljs css language-4d"></code></pre>
 </blockquote>
 <p>Function add($x : Integer)
-var $0,$2 : Integer
-$0:=$x+$2</p>
+var $2,$value : Integer
+var $0 : Text
+$value:=$x+$2
+$0:=String($value)</p>
 <pre><code class="hljs">
 #### Example
 
 <span class="hljs-comment">```4d</span>
 <span class="hljs-comment">// Class: Rectangle</span><span class="hljs-keyword">
-Class constructor</span>(<span class="hljs-variable">$width </span>: Integer;<span class="hljs-variable">$height </span>: Integer)
+Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)
     <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
     <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$height</span>
     <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$width</span>
 
 <span class="hljs-comment">// Function definition</span><span class="hljs-keyword">
-Function</span><span class="hljs-function"> getArea</span>()<span class="hljs-keyword">
-    var</span> <span class="hljs-variable">$0 </span>: Integer
-    <span class="hljs-variable">$0</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
+Function</span><span class="hljs-function"> getArea</span>()-&gt;<span class="hljs-variable">$result </span>: Integer
+    <span class="hljs-variable">$result</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
 </code></pre>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
-<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)  
-<span class="hljs-function">C_REAL</span>(<span class="hljs-variable">$area</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span><span class="hljs-keyword">
+var</span> <span class="hljs-variable">$rect </span>: cs.Rectangle<span class="hljs-keyword">
+var</span> <span class="hljs-variable">$area </span>: Real
 
-<span class="hljs-variable">$o</span>:=cs.Rectangle.<span class="hljs-function">new</span>()  
-<span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//5000</span>
+<span class="hljs-variable">$rect</span>:=cs.Rectangle.<span class="hljs-function">new</span>()  
+<span class="hljs-variable">$area</span>:=<span class="hljs-variable">$rect</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//5000</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="class-constructor"></a><a href="#class-constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class constructor</h3>
 <h4><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h4>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// Class: MyClass</span>
-Class Constructor({<span class="hljs-attr">parameterName</span> : type;...})
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: MyClass</span>
+<span class="hljs-function">Class Constructor</span>({<span class="hljs-variable">$parameterName </span>: type; ...})
 <span class="hljs-comment">// code</span>
 </code></pre>
-<p>A class constructor function, which can accept <a href="#class-function-parameters">parameters</a>, can be used to define a user class.</p>
+<p>A class constructor function, which can accept <a href="#parameters">parameters</a>, can be used to define a user class.</p>
 <p>In that case, when you call the <code>new()</code> class member method, the class constructor is called with the parameters optionally passed to the <code>new()</code> function.</p>
 <p>For a class constructor function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.constructor</em>&quot;, for example &quot;MyClass.constructor&quot;.</p>
 <h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
@@ -290,15 +287,15 @@ Class Constructor({<span class="hljs-attr">parameterName</span> : type;...})
     <span class="hljs-literal">This</span>.name:=<span class="hljs-variable">$name</span>
 </code></pre>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
-<span class="hljs-comment">// You can instantiate an object</span>
-<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
+<span class="hljs-comment">// You can instantiate an object</span><span class="hljs-keyword">
+var</span> <span class="hljs-variable">$o </span>: cs.MyClass
 <span class="hljs-variable">$o</span>:=cs.MyClass.<span class="hljs-function">new</span>(<span class="hljs-string">"HelloWorld"</span>)  
 <span class="hljs-comment">// $o = {"name":"HelloWorld"}</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="class-extends-classname"></a><a href="#class-extends-classname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class extends &lt;ClassName&gt;</h3>
 <h4><a class="anchor" aria-hidden="true" id="syntax-1"></a><a href="#syntax-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h4>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// Class: ChildClass</span>
-Class extends &lt;ParentClass&gt;
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: ChildClass</span><span class="hljs-keyword">
+Class extends</span> &lt;ParentClass&gt;
 </code></pre>
 <p>The <code>Class extends</code> keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.</p>
 <p>Class extension must respect the following rules:</p>
@@ -308,7 +305,7 @@ Class extends &lt;ParentClass&gt;
 <li>A user class cannot extend itself.</li>
 <li>It is not possible to extend classes in a circular way (i.e. &quot;a&quot; extends &quot;b&quot; that extends &quot;a&quot;).</li>
 </ul>
-<p>Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax' will throw an error in this case.</p>
+<p>Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and <code>check syntax</code> will throw an error in this case.</p>
 <p>An extended class can call the constructor of its parent class using the <a href="#super"><code>Super</code></a> command.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>This example creates a class called <code>Square</code> from a class called <code>Polygon</code>.</p>
@@ -365,7 +362,7 @@ var</span> <span class="hljs-variable">$text1</span>,<span class="hljs-variable"
 <h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>This example illustrates the use of <code>Super</code> in a class constructor. The command is called to avoid duplicating the constructor parts that are common between <code>Rectangle</code> and <code>Square</code> classes.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Rectangle</span><span class="hljs-keyword">
-Class constructor</span>(<span class="hljs-variable">$width </span>: Integer;<span class="hljs-variable">$height </span>: Integer)
+Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)
     <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
     <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$height</span>
     <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$width</span><span class="hljs-keyword">
