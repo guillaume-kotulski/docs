@@ -213,7 +213,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
 
 #### Beispiele
 
-- Einfache lokale und Prozessvariable deklarieren:
+- Einfache lokale Variable bzw. Prozessvariable deklarieren:
 
 ```4d
 var $myText, myText, $vt : Text
@@ -225,14 +225,14 @@ var $o : 4D.Object
 //also equivalent to C_OBJECT($o)
 ```
 
-- To declare object variables of 4D class:
+- Objektvariablen der 4D Klasse deklarieren:
 
 ```4d
 var $myFolder : 4D.Folder
 var $myFile : 4D.File
 ```
 
-- To declare object variables of user class:
+- Objektvariablen der Benutzerklasse deklarieren:
 
 ```4d
 var $myClass : cs.MyClass
@@ -240,11 +240,11 @@ var $dataclass : cs.Employee
 var $entity : cs.EmployeeEntity
 ```
 
-### Using a C_ directive
+### Eine C_Direktive verwenden
 
-> **Compatibility Note:** This feature is deprecated as of 4D v18 R3. It is now recommended to use the [var](#using-the-var-keyword) keyword.
+> **Hinweis zur Kompatibilität:** Diese Funktionalität ist ab 4D v18 R3 veraltet. Es wird empfohlen, das Schlüsselwort [var](#using-the-var-keyword) zu verwenden.
 
-Directives from the "Compiler" theme commands allow you to declare variables of basic types.
+Über Direktiven von Compiler-Befehlen können Sie Grundtypen von Variablen deklarieren.
 
 Wollen Sie z. B. eine Textvariable definieren, schreiben Sie:
 
@@ -263,7 +263,7 @@ Hier sehen Sie einige grundlegende Variablendeklarationen:
  ARRAY LONGINT(alAnArray;10) //Die Prozessvariable alAnArray ist als ein Array vom Typ Lange Ganzzahl mit 10 Elementen deklariert
 ```
 
-**Note:** Arrays are a particular type of variables. Ein Array ist eine sortierte Reihe von Variablen desselben Typs. Weitere Informationen dazu finden Sie unter [Arrays](Concepts/arrays.md).
+**Hinweis:** Arrays sind ein besonderer Variablentyp. Ein Array ist eine sortierte Reihe von Variablen desselben Typs. Weitere Informationen dazu finden Sie unter [Arrays](Concepts/arrays.md).
 
 ## Assigning Data
 
