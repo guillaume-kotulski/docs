@@ -116,7 +116,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Long integer value
+      Wert Lange Ganzzahl
     </td>
   </tr>
   
@@ -126,7 +126,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Real value
+      Zahlenwert
     </td>
   </tr>
   
@@ -136,7 +136,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Pointer value
+      Zeigerwert
     </td>
   </tr>
   
@@ -146,7 +146,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Picture value
+      Bildwert
     </td>
   </tr>
   
@@ -156,7 +156,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      BLOB value
+      BLOB Wert
     </td>
   </tr>
   
@@ -166,7 +166,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Collection value
+      Collection Wert
     </td>
   </tr>
   
@@ -176,7 +176,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Variant value
+      Variant Wert
     </td>
   </tr>
   
@@ -186,7 +186,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Object with default class (4D.Object)
+      Objekt mit Standardklasse (4D.Objekt)
     </td>
   </tr>
   
@@ -196,7 +196,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Object of the 4D class name
+      Objekt des 4D Klassennamens
     </td>
   </tr>
   
@@ -206,14 +206,14 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
     </td>
     
     <td>
-      Object of the user class name
+      Objekt des Benutzerklassennamens
     </td>
   </tr>
 </table>
 
 #### Beispiele
 
-- To declare local and process basic variables:
+- Einfache lokale und Prozessvariable deklarieren:
 
 ```4d
 var $myText, myText, $vt : Text
