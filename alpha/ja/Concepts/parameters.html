@@ -77,21 +77,27 @@
 <p>また、プロジェクトメソッド <code>DO SOMETHING</code> が3つの引数を受け取る場合、このメソッドを呼び出すには以下のように書きます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">DO_SOMETHING</span>(<span class="hljs-variable">$WithThis</span>;<span class="hljs-variable">$AndThat</span>;<span class="hljs-variable">$ThisWay</span>)
 </code></pre>
-<p>引数は、セミコロン (;) で区切ります。 引数の値は呼び出し時に <a href="#引数の渡し方-値か参照か">評価</a> され、その値はそれぞれ自動的にサブルーチン (呼び出されたメソッドまたはクラス関数) 内でローカル変数に格納されます。このローカル変数は、名前付き変数 (クラス関数のみ) の場合と受け渡し順に番号が付けられた変数 (メソッドおよびクラス関数) の場合があります。</p>
+<p>引数は、セミコロン (;) で区切ります。 Their value is <a href="#values-or-references">evaluated</a> at the moment of the call and copied into local variables within the called class function or method, either in:</p>
+<ul>
+<li><a href="#named-parameters-class-functions">named variables</a> (class functions only), or</li>
+<li><a href="#sequential-parameters">sequentially numbered variables</a> (methods and class functions).</li>
+</ul>
 <h2><a class="anchor" aria-hidden="true" id="名前付き引数-クラス関数"></a><a href="#名前付き引数-クラス関数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>名前付き引数 (クラス関数)</h2>
-<p>呼び出されたクラス関数において、引数の値はローカル変数に代入されます。 クラス関数の引数は <strong>パラメーター名</strong> とその <strong>データ型</strong> をコロン (:) で区切って宣言することができます。 引数名は <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMAScript</a> に準拠している必要があります. 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。</p>
+<p>呼び出されたクラス関数において、引数の値はローカル変数に代入されます。 クラス関数の引数は <strong>パラメーター名</strong> とその <strong>データ型</strong> をコロン (:) で区切って宣言することができます。 The parameter name must be compliant with <a href="/docs/alpha/ja/Concepts/object.html#object-property-identifiers">property naming rules</a>. 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。</p>
+<blockquote>
+<p>This syntax is not supported with methods. See <a href="#sequential-parameters">Sequential parameters</a>.</p>
+</blockquote>
 <p>たとえば、<code>getArea()</code> 関数に 2つの引数を渡して呼び出す場合:</p>
 <pre><code class="hljs">$area:=$o.getArea(50;100)
 </code></pre>
 <p>クラス関数において、引数の値はそれぞれ対応するパラメーターに代入されます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// クラス: Polygon</span><span class="hljs-keyword">
-Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-variable">$width</span>: Integer; <span class="hljs-variable">$height </span>: Integer)<span class="hljs-keyword">
-    var</span> <span class="hljs-variable">$0 </span>: Integer
-    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$width</span>*<span class="hljs-variable">$height</span>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Polygon</span><span class="hljs-keyword">
+Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt; <span class="hljs-variable">$area </span>: Integer
+    <span class="hljs-variable">$area</span>:=<span class="hljs-variable">$width</span>*<span class="hljs-variable">$height</span>
 </code></pre>
 <blockquote>
-<p>パラメーターの型が宣言されていない場合には、<code>バリアント</code> 型として定義されます。</p>
-<p>位置引数と名前付き引数は組み合わせて使えます。 たとえば:</p>
+<p>If the type is not defined, the parameter will be defined as <code>Variant</code>.</p>
+<p><a href="#sequential-parameters">Sequential parameters syntax</a> can be used to declare class function parameters. Both syntaxes can be mixed. たとえば:</p>
 <pre><code class="hljs css language-4d"></code></pre>
 </blockquote>
 <p>Function add($x : Integer)
@@ -106,9 +112,9 @@ $0:=$x+$2</p>
 Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
 </span></code></pre>
 <h2><a class="anchor" aria-hidden="true" id="位置引数"></a><a href="#位置引数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>位置引数</h2>
-<p>メソッドやクラス関数の引数は、受け渡し順に番号が付けられた変数を使って宣言することができます: <strong>$1</strong>, <strong>$2</strong>, <strong>$3</strong>, ...。 ローカル変数の番号は、引数の順序を表わします。</p>
+<p>You can declare methods parameters using sequentially numbered variables: <strong>$1</strong>, <strong>$2</strong>, <strong>$3</strong>, and so on. ローカル変数の番号は、引数の順序を表わします。</p>
 <blockquote>
-<p>このシンタックスはメソッドとクラス関数でサポートされています。 しかしながら、クラス関数の場合は名前付き引数を使ったシンタックスが推奨されます。</p>
+<p>This syntax is supported for methods and class functions. However for class functions, it is recommended to use <a href="#named-parameters-class-functions">named parameters</a> syntax.</p>
 </blockquote>
 <p>たとえば、プロジェクトメソッド <code>DO SOMETHING</code> が3つの引数を受け取る場合、このメソッドを呼び出すには以下のように書きます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">DO_SOMETHING</span>(<span class="hljs-variable">$WithThis</span>;<span class="hljs-variable">$AndThat</span>;<span class="hljs-variable">$ThisWay</span>)
@@ -138,7 +144,7 @@ Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
 </ul>
 <p>テーブルや配列の式は <a href="Concepts/dt_pointer.md#メソッドの引数としてのポインター">ポインターを介した参照として</a> 渡す必要があります。</p>
 <h3><a class="anchor" aria-hidden="true" id="using-objects-properties-as-named-parameters"></a><a href="#using-objects-properties-as-named-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using objects properties as named parameters</h3>
-<p>引数としてオブジェクトを渡すことによって <strong>名前付き引数</strong> を扱うことができます。 このプログラミング方法はシンプルかつ柔軟なだけでなく、コードの可読性も向上させます。</p>
+<p>Using objects as parameters allow you to handle <strong>named parameters</strong>, even with methods. このプログラミング方法はシンプルかつ柔軟なだけでなく、コードの可読性も向上させます。</p>
 <p>たとえば、<code>CreatePerson</code> メソッドを例にとると:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// CreatePerson メソッド</span>
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$person</span>)
@@ -278,11 +284,22 @@ End if</span>
 <p>Data can be returned from methods and class functions. For example, the following line is a statement that uses the built-in command, <code>Length</code>, to return the length of a string. このステートメントでは、<code>Length</code> 関数が <em>MyLength</em> という変数に値を返します。</p>
 <pre><code class="hljs css language-4d">MyLength:=<span class="hljs-function">Length</span>(<span class="hljs-string">"How did I get here?"</span>)
 </code></pre>
-<p>どのようなサブルーチンでも値を返すことができます。 返す値は、ローカル変数 <code>$0</code> に格納します。</p>
-<p>The return parameter ($0) is not supported in the named parameter list. そのため、関数のコード内にて宣言する必要があります。 たとえば:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant;<span class="hljs-variable">$y </span>: Integer)<span class="hljs-keyword">
-    var</span> <span class="hljs-variable">$0 </span>: Text
+<p>どのようなサブルーチンでも値を返すことができます。 Only one single return parameter can be declared per method or class function.</p>
+<p>Like for <a href="#named-parameters-class-functions">input parameters</a>, return parameters can be declared using:</p>
+<ul>
+<li>the named syntax (class functions only), or</li>
+<li>the sequential syntax (methods and class functions).</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="named-syntax-class-functions"></a><a href="#named-syntax-class-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Named syntax (class functions)</h3>
+<p>You declare the return parameter of a function by adding an arrow (-&gt;) and the parameter definition after the input parameter(s) list. たとえば:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt;<span class="hljs-variable">$result </span>: Integer
 </code></pre>
+<p>You can also declare the return parameter only by adding <code>: type</code>, in which case it will automatically be available through <code>$0</code> (<a href="#sequential-syntax">see sequential syntax below</a>). たとえば:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
+    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="sequential-syntax"></a><a href="#sequential-syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sequential syntax</h3>
+<p>The value to be returned is automatically put into the local variable <code>$0</code>.</p>
 <p>For example, the following method, called <code>Uppercase4</code>, returns a string with the first four characters of the string passed to it in uppercase:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Uppercase4 メソッド</span>
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">4</span>))+<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">5</span>)
@@ -383,7 +400,7 @@ End if</span>
 </code></pre>
 <p><code>CreatePerson</code> メソッドを実行すると、サブルーチンにおいても同じオブジェクト参照が扱われているため、両方のアラートボックスにおいて ”50” と表示されます。</p>
 <p><strong>4D Server:</strong> &quot;サーバー上で実行&quot; オプションが使用された場合など、同じマシン上で実行されないメソッド間で引数が渡される場合、参照渡しは利用できません。 このような場合には、参照の代わりにオブジェクトとコレクションのコピーが引数として渡されます。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/Concepts/methods.html"><span class="arrow-prev">← </span><span>メソッド</span></a><a class="docs-next button" href="/docs/alpha/ja/Concepts/shared.html"><span>共有オブジェクトと共有コレクション</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概要">概要</a></li><li><a href="#名前付き引数-クラス関数">名前付き引数 (クラス関数)</a></li><li><a href="#位置引数">位置引数</a><ul class="toc-headings"><li><a href="#inputoutput-variables">Input/Output variables</a></li><li><a href="#サポートされているデータ型">サポートされているデータ型</a></li><li><a href="#using-objects-properties-as-named-parameters">Using objects properties as named parameters</a></li><li><a href="#declaring-variables-for-sequential-parameters">Declaring variables for sequential parameters</a></li><li><a href="#parameter-indirection">Parameter indirection</a></li></ul></li><li><a href="#returning-values">Returning values</a></li><li><a href="#任意パラメーター">任意パラメーター</a></li><li><a href="#引数の渡し方-値か参照か">引数の渡し方: 値か参照か</a><ul class="toc-headings"><li><a href="#特殊ケース-オブジェクトやコレクションの場合">特殊ケース: オブジェクトやコレクションの場合</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/Concepts/methods.html"><span class="arrow-prev">← </span><span>メソッド</span></a><a class="docs-next button" href="/docs/alpha/ja/Concepts/shared.html"><span>共有オブジェクトと共有コレクション</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概要">概要</a></li><li><a href="#名前付き引数-クラス関数">名前付き引数 (クラス関数)</a></li><li><a href="#位置引数">位置引数</a><ul class="toc-headings"><li><a href="#inputoutput-variables">Input/Output variables</a></li><li><a href="#サポートされているデータ型">サポートされているデータ型</a></li><li><a href="#using-objects-properties-as-named-parameters">Using objects properties as named parameters</a></li><li><a href="#declaring-variables-for-sequential-parameters">Declaring variables for sequential parameters</a></li><li><a href="#parameter-indirection">Parameter indirection</a></li></ul></li><li><a href="#returning-values">Returning values</a><ul class="toc-headings"><li><a href="#named-syntax-class-functions">Named syntax (class functions)</a></li><li><a href="#sequential-syntax">Sequential syntax</a></li></ul></li><li><a href="#任意パラメーター">任意パラメーター</a></li><li><a href="#引数の渡し方-値か参照か">引数の渡し方: 値か参照か</a><ul class="toc-headings"><li><a href="#特殊ケース-オブジェクトやコレクションの場合">特殊ケース: オブジェクトやコレクションの場合</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
