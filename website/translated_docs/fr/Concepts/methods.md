@@ -93,7 +93,7 @@ ALERT("Hello world!")
 ```4d
 C_OBJECT($o)
 $o:=New object("custom_Alert";Formula(myAlert))
-$o.custom_Alert() //displays "Hello world!"
+$o.custom_Alert() //affiche "Hello world!"
 ```
 
 La syntaxe avec des crochets est également prise en charge :
@@ -117,7 +117,7 @@ C_OBJECT($o)
 $o:=New object("full_name";Formula(fullName))
 $result:=$o.full_name("John";"Smith") 
 //$result = "John Smith"
-// equivalent to $result:=fullName("param1";"param2")
+// équivalent à $result:=fullName("param1";"param2")
 ```
 
 Lorsqu'elles sont associées à la fonction `This`, ces méthodes objets vous permettent d'écrire du code générique très puissant. Par exemple:
@@ -133,7 +133,7 @@ La méthode agit ensuite comme un nouvel attribut calculé qui peut être ajout�
 ```4d
 C_OBJECT($o)
 $o:=New object("firstName";"Jim";"lastName";"Wesson")
-$o.fullName:=Formula(fullName2) //add the method  
+$o.fullName:=Formula(fullName2) //ajouter la méthode  
 
 $result:=$o.fullName() 
 //$result = "Jim Wesson"
