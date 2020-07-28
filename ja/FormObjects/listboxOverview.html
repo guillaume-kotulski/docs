@@ -319,12 +319,12 @@
 <tr><th>プロパティ</th><th>型</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>area</td><td>text</td><td>リストボックスオブジェクトエリア (&quot;header&quot;, &quot;footer&quot;, &quot;cell&quot;)</td></tr>
-<tr><td>areaName</td><td>text</td><td>エリアの名称</td></tr>
+<tr><td>area</td><td>テキスト</td><td>リストボックスオブジェクトエリア (&quot;header&quot;, &quot;footer&quot;, &quot;cell&quot;)</td></tr>
+<tr><td>areaName</td><td>テキスト</td><td>エリアの名称</td></tr>
 <tr><td>column</td><td>倍長整数</td><td>列番号</td></tr>
-<tr><td>columnName</td><td>text</td><td>列の名称</td></tr>
-<tr><td>footerName</td><td>text</td><td>フッターの名称</td></tr>
-<tr><td>headerName</td><td>text</td><td>ヘッダーの名称</td></tr>
+<tr><td>columnName</td><td>テキスト</td><td>列の名称</td></tr>
+<tr><td>footerName</td><td>テキスト</td><td>フッターの名称</td></tr>
+<tr><td>headerName</td><td>テキスト</td><td>ヘッダーの名称</td></tr>
 <tr><td>horizontalScroll</td><td>倍長整数</td><td>右方向スクロールの場合は正の数値、左方向の場合は負の数値</td></tr>
 <tr><td>isRowSelected</td><td>boolean</td><td>行が選択されていれば True、でなければ False</td></tr>
 <tr><td>newPosition</td><td>倍長整数</td><td>列あるいは行の変更後の位置</td></tr>
@@ -832,11 +832,11 @@
 <tr><th>valueType</th><th>デフォルトのウィジェット</th><th>他に選択可能なウィジェット</th></tr>
 </thead>
 <tbody>
-<tr><td>text</td><td>テキスト入力</td><td>ドロップダウンメニュー (指定リスト) またはコンボボックス (選択リスト)</td></tr>
+<tr><td>テキスト</td><td>テキスト入力</td><td>ドロップダウンメニュー (指定リスト) またはコンボボックス (選択リスト)</td></tr>
 <tr><td>実数</td><td>管理されたテキスト入力 (数字とセパレーター)</td><td>ドロップダウンメニュー (指定リスト) またはコンボボックス (選択リスト)</td></tr>
 <tr><td>integer</td><td>管理されたテキスト入力 (数字のみ)</td><td>ドロップダウンメニュー (指定リスト) またはコンボボックス (選択リスト) またはスリーステートチェックボックス</td></tr>
 <tr><td>boolean</td><td>チェックボックス</td><td>ドロップダウンメニュー (指定リスト)</td></tr>
-<tr><td>color</td><td>背景色</td><td>text</td></tr>
+<tr><td>color</td><td>背景色</td><td>テキスト</td></tr>
 <tr><td>event</td><td>ラベル付ボタン</td><td></td></tr>
 <tr><td></td><td></td><td>すべてのウィジェットには、単位切り替えボタン または 省略ボタン を追加でセルに付属させることができます</td></tr>
 </tbody>
@@ -849,7 +849,7 @@
 <tr><th>値の型</th><th>デフォルトのフォーマット</th><th>入力コントロール</th></tr>
 </thead>
 <tbody>
-<tr><td>text</td><td>オブジェクト内で定義されているものと同じ</td><td>制限なし</td></tr>
+<tr><td>テキスト</td><td>オブジェクト内で定義されているものと同じ</td><td>制限なし</td></tr>
 <tr><td>実数</td><td>オブジェクト内で定義されているものと同じ (システムの小数点セパレーターを使用)</td><td>&quot;0-9&quot; と &quot;.&quot; と &quot;-&quot;</td></tr>
 <tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot; と &quot;.&quot;</td></tr>
 <tr><td>integer</td><td>オブジェクト内で定義されているものと同じ</td><td>&quot;0-9&quot; と &quot;-&quot;</td></tr>
@@ -864,7 +864,7 @@
 <p>唯一必須の属性は &quot;valueType&quot; であり、サポートされる値は &quot;text&quot;、&quot;real&quot;、&quot;integer&quot;、&quot;boolean&quot;、&quot;color&quot; そして &quot;event&quot;です。 以下の表には、リストボックスオブジェクト配列において &quot;valueType&quot;の値に応じてサポートされるすべての属性がまとめてあります (他の属性はすべて無視されます)。 表示フォーマットに関しては、その更に下に詳細な説明と例があります。</p>
 <table>
 <thead>
-<tr><th></th><th>valueType</th><th>text</th><th>実数</th><th>integer</th><th>boolean</th><th>color</th><th>event</th></tr>
+<tr><th></th><th>valueType</th><th>テキスト</th><th>実数</th><th>integer</th><th>boolean</th><th>color</th><th>event</th></tr>
 </thead>
 <tbody>
 <tr><td><em>属性</em></td><td><em>説明</em></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
