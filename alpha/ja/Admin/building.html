@@ -279,15 +279,9 @@
 </code></pre>
 </blockquote></li>
 </ul>
-<p>&quot;クライアントの自動更新を有効にする&quot; オプションを選択している場合、<em>&lt;ApplicationName&gt;Server</em> フォルダー/パッケージには追加で <em>Upgrade4DClient</em> サブフォルダーが作成されます。 このサブフォルダーには macOS/Windows 版のクライアントアプリケーションが圧縮されて格納されます。 クライアントアプリケーションを自動更新するときに、このファイルは使用されます。</p>
-<h4><a class="anchor" aria-hidden="true" id="サーバーやクライアントフォルダーのカスタマイズ"></a><a href="#サーバーやクライアントフォルダーのカスタマイズ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>サーバーやクライアントフォルダーのカスタマイズ</h4>
-<p>クライアント/サーバーアプリケーションのビルド中に、4D Server フォルダーの内容は Server サブフォルダーに、4D Volume Desktop フォルダーの内容は Client サブフォルダーにコピーされます。 元の 4D Server と 4D Volume Desktop の内容は必要に応じてカスタマイズできます。 たとえば、次のようなことが可能です</p>
-<ul>
-<li>特定の言語に対応した4D Serverをインストールする</li>
-<li>Plugins フォルダーにプラグインを追加する</li>
-</ul>
-<h4><a class="anchor" aria-hidden="true" id="web-ファイルの場所-1"></a><a href="#web-ファイルの場所-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web ファイルの場所</h4>
-<p>サーバーやクライアントを Web サーバーとして使用する場合、Web サーバーが使用するファイルを 特定の場所に配置しなければなりません:</p>
+<p>&quot;クライアントの自動更新を有効にする&quot; オプションを選択している場合、<em>&lt;ApplicationName&gt;Server</em> フォルダー/パッケージには追加で <em>Upgrade4DClient</em> サブフォルダーが作成されます。 このサブフォルダーには macOS/Windows 版のクライアントアプリケーションが圧縮されて格納されます。 This file is used during the automatic client application update.</p>
+<h4><a class="anchor" aria-hidden="true" id="location-of-web-files"></a><a href="#location-of-web-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Location of Web files</h4>
+<p>If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. 特定の場所に配置しなければなりません:</p>
 <ul>
 <li><em>cert.pem</em> と <em>key.pem</em> ファイル (オプション): これらのファイルは SSL 接続で使用されます。</li>
 <li>デフォルト Web ルートフォルダー (WebFolder)</li>
