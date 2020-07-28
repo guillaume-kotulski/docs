@@ -88,10 +88,10 @@
 <p><code>var</code> キーワードを使って変数を宣言するには、次のシンタックスを用います:</p>
 <p><code>var &lt;varName&gt;{; &lt;varName2&gt;;...}{ : &lt;varType&gt;}</code></p>
 <p>たとえば:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myText </span>: Text  <span class="hljs-comment">//a text variable</span><span class="hljs-keyword">
-var</span> myDate1; myDate2 : Date  <span class="hljs-comment">//several date variables</span><span class="hljs-keyword">
-var</span> <span class="hljs-variable">$myFile </span>: 4D.File  <span class="hljs-comment">//a file class object variable</span><span class="hljs-keyword">
-var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">//a variant variable</span>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myText </span>: Text  <span class="hljs-comment">// テキスト変数</span><span class="hljs-keyword">
+var</span> myDate1; myDate2 : Date  <span class="hljs-comment">// 複数の日付変数</span><span class="hljs-keyword">
+var</span> <span class="hljs-variable">$myFile </span>: 4D.File  <span class="hljs-comment">// File クラスオブジェクト変数</span><span class="hljs-keyword">
+var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">// バリアント型変数</span>
 </code></pre>
 <p><code>varName</code> に指定する変数名は 4Dの <a href="/docs/alpha/ja/Concepts/identifiers.html">識別子の命名規則</a> に従う必要があります。<br>
 このシンタックスは <a href="#ローカル変数とプロセス変数">ローカル変数とプロセス変数</a> の宣言のみサポートしています。<a href="#インタープロセス変数">インタープロセス変数</a> および <a href="/docs/alpha/ja/Concepts/arrays.html">配列</a> には使用できません。</p>
@@ -247,9 +247,9 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
 var</span> myVar <span class="hljs-comment">//variant</span><span class="hljs-keyword">
 
 var</span> <span class="hljs-variable">$o </span>: Object    
-<span class="hljs-comment">//equivalent to:  </span><span class="hljs-keyword">
+<span class="hljs-comment">// 次と同義です:</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$o </span>: 4D.Object
-<span class="hljs-comment">//also equivalent to C_OBJECT($o)</span>
+<span class="hljs-comment">// C_OBJECT($o) とも同義です</span>
 </code></pre>
 <ul>
 <li>4Dクラス型のオブジェクト変数の宣言:</li>
