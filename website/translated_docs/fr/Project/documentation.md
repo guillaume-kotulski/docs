@@ -80,7 +80,7 @@ Pour afficher la documentation dans la fenêtre de l'Explorateur :
 
 ### Modifier le fichier documentation
 
-You can create and/or edit a Markdown documentation file from the Explorer window for the selected element.
+Vous pouvez créer et/ou modifier un fichier de documentation Markdown à partir de la fenêtre de l'Explorateur pour l'élément sélectionné.
 
 If there is no documentation file for the selected element, you can:
 
