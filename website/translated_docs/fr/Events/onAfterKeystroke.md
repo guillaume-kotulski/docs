@@ -12,7 +12,7 @@ title: Sue après frappe clavier
 
 > The `On After Keystroke` event can generally be replaced by the [`On After Edit`](onAfterEdit.md) event (see below).
 
-After the [`On Before Keystroke`](onBeforeKeystroke.md) and `On After Keystroke` event properties are selected for an object, you can detect and handle the keystrokes within the object, using the `FORM event` command that will return `On Before Keystroke` and then `On After Keystroke` (for more information, please refer to the description of the `Get edited text` command).
+Après avoir sélectionné les propriétés d'événement [`On Before Keystroke`](onBeforeKeystroke.md) et `On After Keystroke` pour un objet, vous pouvez détecter et gérer les frappes au sein de l'objet, en utilisant la commande `FORM event` qui renverra `On Before Keystroke` puis `On After Keystroke` (pour plus d'informations, veuillez reportez-vous à la description de la commande `Get edited text`).
 
 Ces événements sont également activés par des commandes de langage qui simulent une action utilisateur telle que `POST KEY`.
 
