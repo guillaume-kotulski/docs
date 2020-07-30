@@ -89,9 +89,9 @@ S'il n'y a pas de fichier de documentation pour l'élément sélectionné, vous 
 
 ![](assets/en/Project/comments-explo3.png)
 
-4D automatically creates an appropriately named .md file with a basic template at the relevant location and opens it with your default Markdown editor.
+4D crée automatiquement un fichier .md nommé correctement avec un modèle de base à l'emplacement approprié et l'ouvre avec votre éditeur Markdown par défaut.
 
-If a documentation file already exists for the selected element, you can open it with your Markdown editor by choosing the **Edit Documentation...** option in the contextual menu or options menu of the Explorer.
+Si un fichier de documentation existe déjà pour l'élément sélectionné, vous pouvez l'ouvrir avec votre éditeur Markdown en choisissant l'option **Modifier la documentation...** dans le menu contextuel ou le menu d'options de l'Explorateur.
 
 ## Visualiser la documentation dans l'éditeur de code
 
@@ -134,7 +134,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     </td>
     
     <td>
-      Commentaire HTML. Used in priority as the method description in the <a href="#viewing-documentation-in-the-code-editor">code editor tips</a>
+      Commentaire HTML. Utilisé en priorité comme description de méthode dans les <a href="#viewing-documentation-in-the-code-editor">astuces de l'éditeur de code</a>
     </td>
   </tr>
   
@@ -144,7 +144,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     </td>
     
     <td>
-      Heading level 2 in Markdown. The first sentence after this tag is used as the method description in the code editor tips if HTML comment is not used
+      Titre de niveau 2 en Markdown. La première phrase qui suit cette balise est utilisée comme description d'une méthode dans les astuces de l'éditeur de code si le commentaire HTML n'est pas utilisé
     </td>
   </tr>
   
@@ -154,7 +154,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     </td>
     
     <td>
-      Heading level 2, you can use this area to show sample code
+      Titre de niveau 2, vous pouvez utiliser cette zone pour afficher un exemple de code
     </td>
   </tr>
   
@@ -164,21 +164,21 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     </td>
     
     <td>
-      Used to format 4D code examples (uses highlight.js library)
+      Utilisé pour formater des exemples de code 4D (utilise la bibliothèque highlight.js)
     </td>
   </tr>
 </table>
 
 ### Prise en charge du markdown
 
-- The title tag is supported:
+- La balise de titre est prise en charge :
 
     # Title 1
     ## Title 2
     ### Title 3
     
 
-- The style tags (italic, bold, strikethrough) are supported:
+- Les balises de style (italique, gras, barré) sont prises en charge :
 
     _italic_
     **bold**
@@ -186,7 +186,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     ~~strikethrough~~
     
 
-- The code block tag (```4d ...```) is supported with 4D code highlight:
+- La balise du bloc de code (```4d ...```) est prise en charge avec le code couleur de 4D :
     
     \
     
