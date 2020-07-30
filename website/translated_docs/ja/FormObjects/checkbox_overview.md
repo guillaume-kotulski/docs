@@ -24,7 +24,7 @@ title: チェックボックス
 
 ### スリーステートチェックボックス
 
-[通常](checkbox_overview.md#通常) および [フラット](checkbox_overview.md#フラット) タイプのチェックボックスは 3番目の状態を受け入れます。 この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。
+Check box objects with [Regular](checkbox_overview.md#regular) and [Flat](checkbox_overview.md#flat) [button style](propertiesTextAndPicture.md#button-style) accept a third state. この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。
 
 ![](assets/en/FormObjects/checkbox_3states.png)
 
@@ -78,15 +78,15 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ## チェックボックスのボタンスタイル
 
-チェックボックススタイルは、チェックボックスの外観を制御すると同時に、提供されるプロパティをも決定します。 チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
+Check boxes use [button styles](propertiesTextAndPicture.md#button-style) to control a check box's general appearance as well as its available properties. チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
 
 スタイルによって [提供されるプロパティ](#プロパティ一覧) は異なりますが、大多数のチェックボックスは *構造上* 同じです。 違いは、関連づけられた変数の処理にあります。
 
-次の既定スタイルが提供されています:
+4D provides check boxes in the following predefined button styles:
 
 ### 通常
 
-通常スタイルのチェックボックスは、標準的なシステムチェックボックス (四角形にタイトルが付いたもの) です。
+The Regular check box button style is a standard system check box (*i.e.*, a rectangle with a descriptive title):
 
 ![](assets/en/FormObjects/checkbox_regular.png)
 
@@ -107,7 +107,7 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ### フラット
 
-フラットスタイルのチェックボックスでは、装飾が最小限に抑えられています。 このグラフィック的特性により、フラットスタイルは印刷フォームでの使用に適しています。
+The Flat check box button style is a minimalist appearance. このグラフィック的特性により、フラットスタイルは印刷フォームでの使用に適しています。
 
 ![](assets/en/FormObjects/checkbox_flat.png)
 
@@ -125,11 +125,11 @@ true/false ステータスで表すことのできるアクション ("checkable
                 }
     
 
-### ツールバーボタン
+### Toolbar Button
 
-チェックボックスのツールバーボタンスタイルは、主としてツールバーで使用するためのものです。
+The Toolbar Button check box button style is primarily intended for integration in a toolbar.
 
-ツールバーボタンスタイルは、透明の背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+The Toolbar Button check box button style has a transparent background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 チェックなし / チェック / ハイライト状態の例です:
 
@@ -152,9 +152,9 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ### ベベル
 
-ベベルスタイルはデフォルトでは、ベベルボタンのような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
+The Bevel check box button style combines the appearance of the [Regular](#regular) button style (*i.e.*, a rectangle with a descriptive title) with the [Toolbar Button](#toolbar-button) button style's behavior.
 
-ベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+The Bevel button style has a light gray background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 チェックなし / チェック / ハイライト状態の例です:
 
@@ -177,15 +177,15 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ### 角の丸いベベル
 
-角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。 ベベルスタイルと同様に、角の丸いベベルスタイルはベベルボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
+The Rounded Bevel check box button style is nearly identical to the [Bevel](#bevel) button style except, depending on the OS, the corners of the button may be rounded. As with the Bevel button style, the Rounded Bevel button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
 
-角の丸いベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+The Rounded Bevel button style has a light gray background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 macOS の例:
 
 ![](assets/en/FormObjects/checkbox_roundedbevel_mac.png)
 
-> Windows 上では、角の丸いベベルスタイルは [ベベル](#ベベル) スタイルと同じです。
+> On Windows, the Rounded Bevel button style is identical to the [Bevel](#bevel) button style.
 
 #### JSON 例:
 
@@ -205,13 +205,13 @@ macOS の例:
 
 ### OS Xグラデーション
 
-OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては異なる点があります。 ベベルスタイルと同様に、OS Xグラデーションスタイルはベベルボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
+The OS X Gradient check box button style is nearly identical to the [Bevel](#bevel) button style. As with the Bevel button style, the OS X Gradient button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
 
-OS X グラデーションスタイルは明るいグレーの背景にラベルが付いています。macOS 上では2トーンのシステムボタンとして表示されます。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+The OS X Gradient button style has a light gray background with a title and may be displayed as a two-tone system button on macOS. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 ![](assets/en/FormObjects/checkbox_osxgradient_mac.png)
 
-> Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
+> On Windows, this check box button style is identical to the [Bevel](#bevel) button style.
 
 #### JSON 例:
 
@@ -230,15 +230,15 @@ OS X グラデーションスタイルは明るいグレーの背景にラベル
 
 ### OS Xテクスチャー
 
-OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては異なる点があります。 ベベルスタイルと同様に、OS Xテクスチャースタイルはベベルボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
+The OS X Textured button style is similar to the [Bevel](#bevel) button style but with a smaller size (maximum size is the size of a standard macOS system button). As with the Bevel button style, the OS X Textured button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
 
-デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:
+By default, the OS X Textured button style appears as:
 
 - *Windows* - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。
     
     ![](assets/en/FormObjects/checkbox_osxtextured.png)
 
-- *macOS* - 灰色のグラデーションを表示する標準のシステムボタンです。 高さは定義済みで、変更できません。
+- *macOS* - a standard system button. 高さは定義済みで、変更できません。
     
     ![](assets/en/FormObjects/checkbox_osxtextured_mac.png)
 
@@ -257,9 +257,9 @@ OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルとほ
 
 ### Office XP
 
-Office XPスタイルはベベルボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
+The Office XP button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
 
-Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
+The colors (highlight and background) of a check box with the Office XP button style are based on the system colors. The appearance of the check box can be different when the cursor hovers over it, depending on the OS:
 
 - *Windows* - マウスオーバー時にのみ背景が表示されます。 チェックなし / チェック / ハイライト状態の例です:
     
@@ -287,9 +287,9 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### 折りたたみ/展開
 
-このチェックボックススタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。
+This check box button style can be used to add a standard collapse/expand icon. These icons are used natively in hierarchical lists.
 
-- *Windows* - [+] または [-] のように表示されます。
+- *Windows* - the icon looks like a [+] or a [-]
     
     ![](assets/en/FormObjects/checkbox_collapse.png)
 
@@ -312,7 +312,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### 開示ボタン
 
-開示ボタンスタイルが適用されたチェックボックスは macOS および Windowsにおいて、詳細情報の表示/非表示にするのに使われる標準的な開示ボタンとして描画されます。 値が 0 のときにはボタンの矢印が下向き、値が 1 のときは上向きになります。
+In macOS and Windows, a check box with the "Disclosure" button style appears as a standard disclosure button, usually used to show/hide additional information. 値が 0 のときにはボタンの矢印が下向き、値が 1 のときは上向きになります。
 
 - *Windows*
     
@@ -337,7 +337,7 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 ### カスタム
 
-カスタムスタイルのチェックボックスは、背景ピクチャーを使用できるほか、さまざまな追加パラメーターを管理することができます:
+The Custom button style accepts a personalized background picture and allows managing specific properties:
 
 - [背景パス名](properties_TextAndPicture.md#backgroundPathname)
 - [アイコンオフセット](properties_TextAndPicture.md#icon-offset)
