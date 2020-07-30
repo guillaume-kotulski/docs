@@ -187,7 +187,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     ~~strikethrough~~
     
 
-- La balise du bloc de code (```4d ...```) est prise en charge avec le code 4D :
+- La balise du bloc de code (```4d ...```) est prise en charge avec le code couleur de 4D :
     
     \
     
@@ -196,7 +196,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
           $txt:="Hello world!"  
           \
 
-- The table tag is supported:
+- La balise de tableau est prise en charge :
 
     | Parameter | Type   | Description  |
     | --------- | ------ | ------------ |
@@ -204,7 +204,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     | toolbar   | String |Toolbar name  |
     
 
-- The link tag is supported:
+- La balise de lien est prise en charge :
 
     // Case 1
     The [documentation](https://doc.4d.com) of the command ....
@@ -215,7 +215,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     [1]: https://blog.4d.com
     
 
-- The image tags are supported:
+- Les balises d'image sont prises en charge :
 
     ![image info](pictures/image.png)
     
@@ -226,11 +226,11 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
 
 [![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 
-> For more information, see the [GitHug Markdown guide](https://guides.github.com/features/mastering-markdown/).
+> Pour plus d'informations, consultez le [guide Markdown GitHug](https://guides.github.com/features/mastering-markdown/).
 
 ## Exemple
 
-In the `WP SwitchToolbar.md` file, you can write:
+Dans le fichier `WP SwitchToolbar.md`, vous pouvez entrer le code suivant :
 
 ```4d
 <!-- This method returns a different logo depending on the size parameter -->
