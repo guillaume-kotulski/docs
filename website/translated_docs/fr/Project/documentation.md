@@ -195,7 +195,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
           $txt:="Hello world!"  
           \
 
-- The table tag is supported:
+- La balise de tableau est prise en charge :
 
     | Parameter | Type   | Description  |
     | --------- | ------ | ------------ |
@@ -203,7 +203,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     | toolbar   | String |Toolbar name  |
     
 
-- The link tag is supported:
+- La balise de lien est prise en charge :
 
     // Case 1
     The [documentation](https://doc.4d.com) of the command ....
@@ -214,7 +214,7 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     [1]: https://blog.4d.com
     
 
-- The image tags are supported:
+- Les balises d'image sont prises en charge :
 
     ![image info](pictures/image.png)
     
@@ -223,16 +223,16 @@ De nouveaux fichiers de documentation sont créés avec les contenus par défaut
     [![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
     
 
-[![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
+[![logo blog 4D avec lien](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 
 > For more information, see the [GitHub Markdown guide](https://guides.github.com/features/mastering-markdown/).
 
 ## Exemple
 
-In the `WP SwitchToolbar.md` file, you can write:
+Dans le fichier `WP SwitchToolbar.md`, vous pouvez entrer le code suivant :
 
 ```4d
-<!-- This method returns a different logo depending on the size parameter -->
+<!-- Cette méthode retourne un logo différent, en fonction du paramètre size -->
 
 
 GetLogo (size) -> logo
@@ -246,15 +246,15 @@ GetLogo (size) -> logo
 
 ## Description
 
-This method returns a logo of a specific size, depending on the value of the *size* parameter value.
-1 = smallest size, 5 = largest size.
+Cette méthode retourne un logo de taille spécifique, selon la valeur du paramètre *size*.
+1 = plus petite taille, 5 = plus grande taille.
 
-## Example
+## Exemple
 
 C_PICTURE($logo)
 C_LONGINT($size)
 
-//Get the largest logo
+//Obtenir le plus grand logo
 $logo:=GetLogo(5)
 ```
 
