@@ -104,7 +104,7 @@ OS Xテクスチャースタイルは [ツールバー](#ツールバー) スタ
 
 ### Office XP
 
-Office XPスタイルは [ベベル](#ベベル) ボタンような外観に、[ツールバーボタン](#ツールバーボタン) スタイルの動作を組み合わせたものです。
+The Office XP button style combines the appearance of the [Regular](#regular) style (standard system button) with the [Toolbar](#toolbar) style's behavior.
 
 Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
