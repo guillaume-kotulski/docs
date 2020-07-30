@@ -12,12 +12,12 @@ title: Sur après modification
 
 ### Cas général
 
-This event can be used filter the data entry in keyboard enterable objects at the lowest level.
+Cet événement peut être utilisé pour filtrer la saisie de données dans les objets saisissables au clavier au niveau le plus bas.
 
-When it is used, this event is generated after each change made to the contents of an enterable object, regardless of the action that caused the change, *i.e.*:
+Lorsqu'il est utilisé, cet événement est généré après chaque modification apportée au contenu d'un objet saisissable, quelle que soit l'action qui a provoqué la modification, c'est-à-dire :
 
-- Standard editing actions which modify content like paste, cut, delete or cancel;
-- Dropping a value (action similar to paste);
+- Actions d'édition standard qui modifient le contenu comme les actions coller, couper, supprimer ou annuler;
+- Supprimer une valeur (action similaire à coller);
 - Any keyboard entry made by the user; in this case, the `On After Edit` event is generated after the [`On Before Keystroke`](onBeforeKeystroke.md) and [`On After Keystroke`](onAfterKeystroke.md) events, if they are used.
 - Any modification made using a language command that simulates a user action (i.e., `POST KEY`).
 
