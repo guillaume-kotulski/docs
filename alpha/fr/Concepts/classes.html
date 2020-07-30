@@ -388,9 +388,9 @@ Class constructor</span> (<span class="hljs-variable">$side </span>: Integer)
 <p>The <code>Super</code> keyword allows calls to the <code>superclass</code>, i.e. the parent class.</p>
 <p><code>Super</code> serves two different purposes:</p>
 <ul>
-<li><p>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. When used in a constructor, the <code>Super</code> command appears alone and must be used before the <code>This</code> keyword is used.</p>
+<li><p>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. Lorsqu'elle est utilisée dans un constructeur, la commande <code>Super</code> apparaît seule et doit être utilisée avant que le mot clé <code>This</code> ne soit utilisé.</p>
 <ul>
-<li><p>If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.</p></li>
+<li><p>Si tous les constructeurs de classe de l'arborescence d'héritage ne sont pas appelés correctement, l'erreur -10748 est générée. It's 4D developer to make sure calls are valid.</p></li>
 <li><p>If the <code>This</code> command is called on an object whose superclasses have not been constructed, error -10743 is generated.</p></li>
 <li><p>If <code>Super</code> is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.</p></li>
 </ul></li>
