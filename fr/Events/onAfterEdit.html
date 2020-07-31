@@ -76,13 +76,13 @@
 </table>
 <h2><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h2>
 <h3><a class="anchor" aria-hidden="true" id="cas-général"></a><a href="#cas-général" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cas général</h3>
-<p>This event can be used filter the data entry in keyboard enterable objects at the lowest level.</p>
-<p>When it is used, this event is generated after each change made to the contents of an enterable object, regardless of the action that caused the change, <em>i.e.</em>:</p>
+<p>Cet événement peut être utilisé pour filtrer la saisie de données dans les objets saisissables au clavier au niveau le plus bas.</p>
+<p>Lorsqu'il est utilisé, cet événement est généré après chaque modification apportée au contenu d'un objet saisissable, quelle que soit l'action qui a provoqué la modification, c'est-à-dire :</p>
 <ul>
-<li>Standard editing actions which modify content like paste, cut, delete or cancel;</li>
-<li>Dropping a value (action similar to paste);</li>
-<li>Any keyboard entry made by the user; in this case, the <code>On After Edit</code> event is generated after the <a href="/docs/fr/Events/onBeforeKeystroke.html"><code>On Before Keystroke</code></a> and <a href="/docs/fr/Events/onAfterKeystroke.html"><code>On After Keystroke</code></a> events, if they are used.</li>
-<li>Any modification made using a language command that simulates a user action (i.e., <code>POST KEY</code>).</li>
+<li>Actions d'édition standard qui modifient le contenu comme les actions coller, couper, supprimer ou annuler;</li>
+<li>Déposer une valeur (action similaire à coller);</li>
+<li>Toute entrée au clavier effectuée par l'utilisateur; dans ce cas, l'événement <code>On After Edit</code> est généré après les événements <a href="/docs/fr/Events/onBeforeKeystroke.html"><code>On Before Keystroke</code></a> et <a href="/docs/fr/Events/onAfterKeystroke.html"><code>On After Keystroke</code></a>, s'ils sont utilisés.</li>
+<li>Toute modification apportée à l'aide d'une commande de langage qui simule une action de l'utilisateur (c'est-à-dire <code>POST KEY</code>).</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="4d-view-pro"></a><a href="#4d-view-pro" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D View Pro</h3>
 <p>The object returned by the <code>FORM Event</code> command contains:</p>
