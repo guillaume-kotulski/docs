@@ -337,7 +337,7 @@ Office XP スタイルのチェックボックスの反転表示と背景のカ�
 
 ### カスタム
 
-The Custom button style accepts a personalized background picture and allows managing specific properties:
+カスタムスタイルのチェックボックスは、背景ピクチャーを使用できるほか、さまざまな追加パラメーターを管理することができます:
 
 - [背景パス名](properties_TextAndPicture.md#backgroundPathname)
 - [アイコンオフセット](properties_TextAndPicture.md#icon-offset)
