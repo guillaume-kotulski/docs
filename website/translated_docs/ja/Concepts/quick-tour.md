@@ -228,7 +228,7 @@ This.width:=$2
 This.name:="Rectangle"
 ```
 
-A class can extend another class by using `Class extends <ClassName>`. また、`Super` コマンドを使って、スーパークラスを呼び出すことができます。 たとえば:
+クラスはほかのクラスから継承することもできます: `Class extends <ClassName>`。 また、`Super` コマンドを使って、スーパークラスを呼び出すことができます。 たとえば:
 
 ```4d
 // Square.4dm ファイル内
