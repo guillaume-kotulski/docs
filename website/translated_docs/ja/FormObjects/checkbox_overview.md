@@ -211,7 +211,7 @@ OS X グラデーションスタイルは明るいグレーの背景にラベル
 
 ![](assets/en/FormObjects/checkbox_osxgradient_mac.png)
 
-> On Windows, this check box button style is identical to the [Bevel](#bevel) button style.
+> Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
 
 #### JSON 例:
 
@@ -230,15 +230,15 @@ OS X グラデーションスタイルは明るいグレーの背景にラベル
 
 ### OS Xテクスチャー
 
-The OS X Textured button style is similar to the [Bevel](#bevel) button style but with a smaller size (maximum size is the size of a standard macOS system button). As with the Bevel button style, the OS X Textured button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
+OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルと似ていますが、サイズがより小さいです (最大サイズは macOS の標準的なシステムボタンのサイズです)。 ベベルスタイルと同様に、OS Xテクスチャースタイルは通常ボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
 
-By default, the OS X Textured button style appears as:
+デフォルトで、OS Xテクスチャースタイルの外観は次の通りです:
 
 - *Windows* - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。
     
     ![](assets/en/FormObjects/checkbox_osxtextured.png)
 
-- *macOS* - a standard system button. 高さは定義済みで、変更できません。
+- *macOS* - 標準のシステムボタンです。 高さは定義済みで、変更できません。
     
     ![](assets/en/FormObjects/checkbox_osxtextured_mac.png)
 
@@ -257,9 +257,9 @@ By default, the OS X Textured button style appears as:
 
 ### Office XP
 
-The Office XP button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
+Office XPスタイルは通常ボタンような外観に、[ツールバーボタン](#ツールバーボタン) スタイルの動作を組み合わせたものです。
 
-The colors (highlight and background) of a check box with the Office XP button style are based on the system colors. The appearance of the check box can be different when the cursor hovers over it, depending on the OS:
+Office XP スタイルのチェックボックスの反転表示と背景のカラーはシステムカラーに基づいています。 チェックボックスにマウスオーバーしたときの表示は OS によって異なります:
 
 - *Windows* - マウスオーバー時にのみ背景が表示されます。 チェックなし / チェック / ハイライト状態の例です:
     
@@ -287,9 +287,9 @@ The colors (highlight and background) of a check box with the Office XP button s
 
 ### 折りたたみ/展開
 
-This check box button style can be used to add a standard collapse/expand icon. These icons are used natively in hierarchical lists.
+このチェックボックススタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。
 
-- *Windows* - the icon looks like a [+] or a [-]
+- *Windows* - [+] または [-] のように表示されます。
     
     ![](assets/en/FormObjects/checkbox_collapse.png)
 
@@ -312,7 +312,7 @@ This check box button style can be used to add a standard collapse/expand icon. 
 
 ### 開示ボタン
 
-In macOS and Windows, a check box with the "Disclosure" button style appears as a standard disclosure button, usually used to show/hide additional information. 値が 0 のときにはボタンの矢印が下向き、値が 1 のときは上向きになります。
+開示ボタンスタイルが適用されたチェックボックスは macOS および Windowsにおいて、詳細情報の表示/非表示にするのに使われる標準的な開示ボタンとして描画されます。 値が 0 のときにはボタンの矢印が下向き、値が 1 のときは上向きになります。
 
 - *Windows*
     
