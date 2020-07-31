@@ -24,7 +24,7 @@ title: チェックボックス
 
 ### スリーステートチェックボックス
 
-Check box objects with [Regular](checkbox_overview.md#regular) and [Flat](checkbox_overview.md#flat) [button style](propertiesTextAndPicture.md#button-style) accept a third state. この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。
+[ボタンスタイル](propertiesTextAndPicture.md#ボタンスタイル) が [通常](checkbox_overview.md#通常) および [フラット](checkbox_overview.md#フラット) タイプのチェックボックスは 3番目の状態を受け入れます。 この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。
 
 ![](assets/en/FormObjects/checkbox_3states.png)
 
@@ -78,15 +78,15 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ## チェックボックスのボタンスタイル
 
-Check boxes use [button styles](propertiesTextAndPicture.md#button-style) to control a check box's general appearance as well as its available properties. チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
+チェックボックスの [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル)は、チェックボックスの外観を制御すると同時に、提供されるプロパティをも決定します。 チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。
 
 スタイルによって [提供されるプロパティ](#プロパティ一覧) は異なりますが、大多数のチェックボックスは *構造上* 同じです。 違いは、関連づけられた変数の処理にあります。
 
-4D provides check boxes in the following predefined button styles:
+次の既定スタイルが提供されています:
 
 ### 通常
 
-The Regular check box button style is a standard system check box (*i.e.*, a rectangle with a descriptive title):
+通常スタイルのチェックボックスは、標準的なシステムチェックボックス (四角形にタイトルが付いたもの) です。
 
 ![](assets/en/FormObjects/checkbox_regular.png)
 
@@ -107,7 +107,7 @@ The Regular check box button style is a standard system check box (*i.e.*, a rec
 
 ### フラット
 
-The Flat check box button style is a minimalist appearance. このグラフィック的特性により、フラットスタイルは印刷フォームでの使用に適しています。
+フラットスタイルのチェックボックスでは、装飾が最小限に抑えられています。 このグラフィック的特性により、フラットスタイルは印刷フォームでの使用に適しています。
 
 ![](assets/en/FormObjects/checkbox_flat.png)
 
@@ -125,11 +125,11 @@ The Flat check box button style is a minimalist appearance. このグラフィ�
                 }
     
 
-### Toolbar Button
+### ツールバーボタン
 
-The Toolbar Button check box button style is primarily intended for integration in a toolbar.
+チェックボックスのツールバーボタンスタイルは、主としてツールバーで使用するためのものです。
 
-The Toolbar Button check box button style has a transparent background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+ツールバーボタンスタイルは、透明の背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 チェックなし / チェック / ハイライト状態の例です:
 
@@ -152,9 +152,9 @@ The Toolbar Button check box button style has a transparent background with a ti
 
 ### ベベル
 
-The Bevel check box button style combines the appearance of the [Regular](#regular) button style (*i.e.*, a rectangle with a descriptive title) with the [Toolbar Button](#toolbar-button) button style's behavior.
+ベベルスタイルはデフォルトでは、通常ボタンのような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
 
-The Bevel button style has a light gray background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+ベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 チェックなし / チェック / ハイライト状態の例です:
 
@@ -177,15 +177,15 @@ The Bevel button style has a light gray background with a title. また、通常
 
 ### 角の丸いベベル
 
-The Rounded Bevel check box button style is nearly identical to the [Bevel](#bevel) button style except, depending on the OS, the corners of the button may be rounded. As with the Bevel button style, the Rounded Bevel button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
+角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。 ベベルスタイルと同様に、角の丸いベベルスタイルは通常ボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
 
-The Rounded Bevel button style has a light gray background with a title. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+角の丸いベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 macOS の例:
 
 ![](assets/en/FormObjects/checkbox_roundedbevel_mac.png)
 
-> On Windows, the Rounded Bevel button style is identical to the [Bevel](#bevel) button style.
+> Windows 上では、角の丸いベベルスタイルは [ベベル](#ベベル) スタイルと同じです。
 
 #### JSON 例:
 
@@ -205,9 +205,9 @@ macOS の例:
 
 ### OS Xグラデーション
 
-The OS X Gradient check box button style is nearly identical to the [Bevel](#bevel) button style. As with the Bevel button style, the OS X Gradient button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
+OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一です。 ベベルスタイルと同様に、OS Xグラデーションスタイルは通常ボタンような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
 
-The OS X Gradient button style has a light gray background with a title and may be displayed as a two-tone system button on macOS. また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
+OS X グラデーションスタイルは明るいグレーの背景にラベルが付いています。macOS 上では2トーンのシステムボタンとして表示されることがあります。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
 ![](assets/en/FormObjects/checkbox_osxgradient_mac.png)
 
