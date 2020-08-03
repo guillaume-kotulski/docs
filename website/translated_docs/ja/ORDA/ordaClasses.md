@@ -17,10 +17,10 @@ ORDA を使用して、データモデル上に高レベルクラス関数を作
 $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
 ```
 
-これらの関数はローカルデータストアーだけでなく、クライアント/サーバーやリモートアーキテクチャーでも使用することができます ([例題](#リモートデータストアの例) を参照ください):
+これらの関数はローカルデータストアだけでなく、クライアント/サーバーやリモートアーキテクチャーでも使用することができます ([リモートデータストアの例](#リモートデータストアの例) を参照ください):
 
 ```4d
- //$cityManager is the reference of a remote datastore
+ //$cityManager はリモートデータストアへの参照です
 Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
