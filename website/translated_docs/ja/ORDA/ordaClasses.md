@@ -17,7 +17,7 @@ ORDA を使用して、データモデル上に高レベルクラス関数を作
 $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
 ```
 
-Developers can not only use these functions in local datastores, but also in client/server as well as remote architectures (see the full example [below](#example-with-remote-datastore)):
+これらの関数はローカルデータストアーだけでなく、クライアント/サーバーやリモートアーキテクチャーでも使用することができます ([例題](#リモートデータストアの例) を参照ください):
 
 ```4d
  //$cityManager is the reference of a remote datastore
@@ -115,7 +115,7 @@ Then, you can get an entity selection of the "best" companies by executing:
     $best:=ds.Company.GetBestOnes()
 ```
 
-#### Example with a remote datastore
+#### リモートデータストアの例
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
