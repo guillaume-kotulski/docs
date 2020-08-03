@@ -12,7 +12,7 @@ title: Images
 * Sous Windows, 4D utilise WIC (Windows Imaging Component). 
 * sous macOS, 4D utilise ImageIO.
 
-Les formats d'image les plus courants sont pris en charge par les deux plates-formes : jpeg, gif, png, tiff, bmp, etc. Sous macOS, le format pdf est également disponible pour l'encodage et le décodage.
+The most common picture formats are supported of both platforms: .jpeg, .gif, .png, .tiff, .bmp, etc. On macOS, the .pdf format is also available for encoding and decoding.
 
 La liste complète des formats pris en charge varie en fonction du système d’exploitation et des codecs personnalisés installés sur les postes. Pour connaître les codecs disponibles, vous devez utiliser la commande `PICTURE CODEC LIST`. Notez que les listes de codecs disponibles pour la lecture et pour l'écriture peuvent différer, étant donné que les codecs d'encodage peuvent nécessiter des licences spécifiques.
 
@@ -20,14 +20,14 @@ La liste complète des formats pris en charge varie en fonction du système d’
 
 ### Identifiants de codecs d'images
 
-Les formats d'images reconnus par 4D sont retournés par la commande `PICTURE CODEC LIST` sous forme d'identifiants de codecs d'images. Ces identifiants peuvent être :
+Picture formats recognized by 4D are returned by the `PICTURE CODEC LIST` command as picture Codec IDs. Ces identifiants peuvent être :
 
 * une extension (par exemple “.gif”)
-* Un type Mime (par exemple “image/jpg”)
+* As a MIME type (for example “image/jpeg”)
 
 La forme utilisée pour chaque format dépend du mode de déclaration du codec au niveau du système d’exploitation.
 
-La plupart des commandes de gestion d'images de 4D attendent un identifiant de codec en paramètre. Il est donc impératif d'utiliser l'identifiant système retourné par la commande `PICTURE CODEC LIST`.
+La plupart des commandes de gestion d'images de 4D attendent un identifiant de codec en paramètre. It is therefore imperative to use the system ID returned by the `PICTURE CODEC LIST` command.
 
 ### Format d'image non disponible
 
@@ -39,7 +39,7 @@ L'icône est automatiquement utilisée partout où l'image doit être affichée 
 
 ![](assets/en/Project/picNoFormat2.png)
 
-Cette icône indique que l'image ne peut être ni affichée ni manipulée localement -- mais elle peut être stockée sans altération pour être affichée sur une autre machine. C'est le cas, par exemple, pour les images PDF sous Windows ou les images au format PICT.
+Cette icône indique que l'image ne peut être ni affichée ni manipulée localement -- mais elle peut être stockée sans altération pour être affichée sur une autre machine. This is the case, for example, for PDF pictures on Windows, or for PICT format pictures.
 
 ### Résolution d'image
 
@@ -97,9 +97,9 @@ This resolution behavior is supported for project databases by all [4D form obje
 
 4D vous permet de récupérer les coordonnées locales de la souris dans un champ ou une variable image en cas de clic ou de survol, même si un défilement ou un zoom a été appliqué à l'image. Ce mécanisme, proche de celui d'une image map, peut être utilisé par exemple pour gérer les barres de bouton défilables ou bien l'interface de logiciels de cartographie.
 
-Les coordonnées sont retournées dans les [Variables système](https://doc.4d.com/4Dv18/4D/18/System-Variables.300-4505547.en.html) *MouseX* et *MouseY*. Les coordonnées sont exprimées en pixels par rapport à l'angle supérieur gauche de l'image (0,0). Lorsque la souris se trouve en dehors du système de coordonnées de l'image, la valeur -1 est retournée dans *MouseX* et *MouseY*.
+The coordinates are returned in the *MouseX* and *MouseY* [System Variables](https://doc.4d.com/4Dv18/4D/18/System-Variables.300-4505547.en.html). Les coordonnées sont exprimées en pixels par rapport à l'angle supérieur gauche de l'image (0,0). Lorsque la souris se trouve en dehors du système de coordonnées de l'image, la valeur -1 est retournée dans *MouseX* et *MouseY*.
 
-Vous pouvez lire la valeur des variables MouseX et MouseY dans le contexte des événements formulaire `Sur clic`, `Sur double clic`, `Sur relâchement bouton`, `Sur début survol` et `Sur survol`.
+You can get the value of these variables as part of the `On Clicked`, `On Double Clicked`, `On Mouse up`, `On Mouse Enter`, or `On Mouse Move` form events.
 
 ## Opérateurs sur les images
 
