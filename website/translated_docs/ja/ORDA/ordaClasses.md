@@ -24,7 +24,7 @@ $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
 Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
-Thanks to this feature, the entire business logic of your 4D application can be stored as a independent layer so that it can be easily maintained or reused:
+この機能により、4D アプルケーションのビジネスロジックをまるごと独立したレイヤーに保存し、簡単に管理・利用することができます:
 
 - it allows you to "hide" the overall complexity of the underlying physical structure and only expose understandable and ready-to-use functions.
 
