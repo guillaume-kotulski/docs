@@ -95,13 +95,13 @@ Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 #### 例題
 
 ```4D
-// cs.Company class
+// cs.Company クラス
 
 
 Class extends DataClass
 
-// Returns companies which revenue is over the average
-// Returns an entity selection related to the DataClass Company 
+// 収益が平均以上の会社を返します
+// Company DataClass にリレートしているエンティティセレクションを返します 
 
 Function GetBestOnes()
     $sel:=This.query("revenues >= :1";This.all().average("revenues"));
@@ -155,7 +155,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 ```
 
-### EntitySelection Class
+### EntitySelection クラス
 
 Each table exposed with ORDA offers an EntitySelection class in the `cs` class store.
 
@@ -166,12 +166,12 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 #### 例題
 
 ```4d
-// cs.EmployeeSelection class
+// cs.EmployeeSelection クラス
 
 
 Class extends EntitySelection
 
-//Extract from this entity selection the employees with a salary greater than the average
+// 給与が平均以上の社員を当該エンティティセレクションから抽出します
 
 Function withSalaryGreaterThanAverage
     C_OBJECT($0)
@@ -185,7 +185,7 @@ Then, you can get employees with a salary greater than the average in any entity
 $moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
 ```
 
-### Entity Class
+### Entity クラス
 
 Each table exposed with ORDA offers an Entity class in the `cs` class store.
 
@@ -196,7 +196,7 @@ Each table exposed with ORDA offers an Entity class in the `cs` class store.
 #### 例題
 
 ```4d
-// cs.CityEntity class
+// cs.CityEntity クラス
 
 
 Class extends Entity
@@ -207,7 +207,7 @@ Function getPopulation()
 
 Function isBigCity
 C_BOOLEAN($0)
-// The function getPopulation() is usable inside the class
+// 関数 getPopulation() をクラス内で使用することができます
 $0:=This.getPopulation()>50000
 ```
 
