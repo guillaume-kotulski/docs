@@ -52,7 +52,7 @@ ORDA データモデルクラスはすべて **`cs`** クラスストアのプ�
 
 > ORDA ユーザークラスは通常のクラスファイル (.4dm) としてプロジェクトの Classes サブフォルダーに保存されます [(後述参照)](#クラスファイル)。
 
-ORDA データモデルユーザークラスのオブジェクトインスタンスは、それだの親クラスのプロパティや関数を使うことができます。 For example, an Entity class object can call functions from the [ORDA Entity generic class](https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html).
+ORDA データモデルユーザークラスのオブジェクトインスタンスは、それだの親クラスのプロパティや関数を使うことができます。 たとえば、Entity クラスのオブジェクトは [ORDA の Entity 汎用クラス](https://doc.4d.com/4Dv18R4/4D/18-R4/ORDA-Entity.201-4981870.ja.html) の関数を呼び出すことができます。
 
 ## クラスの説明
 
@@ -60,12 +60,12 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 ### DataStore クラス
 
-A 4D database exposes its own DataStore class in the `cs` class store.
+4D のデータベースは、自身の DataStore クラスを `cs` クラスストアに公開します。
 
-- **Extends**: 4D.DataStoreImplementation 
-- **Class name**: cs.DataStore
+- **親クラス**: 4D.DataStoreImplementation 
+- **クラス名**: cs.DataStore
 
-You can create functions in the DataStore class that will be available through the `ds` object.
+DataStore クラス内には、`ds` オブジェクトを介して使用する関数を作成することができます。
 
 #### 例題
 
@@ -78,7 +78,7 @@ Function getDesc
   $0:="社員と会社を公開するデータベース"
 ```
 
-This function can then be called:
+この関数は次のように使えます:
 
 ```4d
 $desc:=ds.getDesc() //"社員と会社を..."
@@ -86,11 +86,11 @@ $desc:=ds.getDesc() //"社員と会社を..."
 
 ### DataClass クラス
 
-Each table exposed with ORDA offers a DataClass class in the `cs` class store.
+ORDA で公開されるテーブル毎に、DataClass クラスが `cs` クラスストアに公開されます。
 
-- **Extends**: 4D.DataClass 
-- **Class name**: cs.*DataClassName* (where *DataClassName* is the table name)
-- **Example name**: cs.Employee
+- **親クラス**: 4D.DataClass 
+- **クラス名**: cs.*DataClassName* (*DataClassName* はテーブル名です)
+- **例**: cs.Employee
 
 #### 例題
 
@@ -108,7 +108,7 @@ Function GetBestOnes()
     $0:=$sel
 ```
 
-Then, you can get an entity selection of the "best" companies by executing:
+全会社データから平均以上の会社データをエンティティセレクションに抽出するには次を実行します:
 
 ```4d
     var $best : cs.CompanySelection
@@ -117,14 +117,14 @@ Then, you can get an entity selection of the "best" companies by executing:
 
 #### リモートデータストアの例
 
-The following *City* catalog is exposed in a remote datastore (partial view):
+次の *City* カタログをリモートデータストアとして公開しています:
 
 ![](assets/en/ORDA/Orda_example.png)
 
-The `City Class` provides an API:
+`City クラス` は API を提供しています:
 
 ```4d
-// cs.City class
+// cs.City クラス
 
 Class extends DataClass
 
