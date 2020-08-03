@@ -118,7 +118,8 @@
     $editor.<span class="hljs-keyword">editor</span>.currentSelection.push(<span class="hljs-string">"btnHello"</span>)    
     
     <span class="hljs-comment">// Notify the modification to the 4D Form editor</span>
-    $result:=New object(<span class="hljs-string">"currentSelection"</span>; $editor.<span class="hljs-keyword">editor</span>.currentSelection; <span class="hljs-string">"currentPage"</span>; $editor.<span class="hljs-keyword">editor</span>.currentPage)
+    $result:=New object(<span class="hljs-string">"currentSelection"</span>; $editor.<span class="hljs-keyword">editor</span>.currentSelection;\  
+        <span class="hljs-string">"currentPage"</span>; $editor.<span class="hljs-keyword">editor</span>.currentPage)
 </code></pre>
 <p>You can then call the macro:
 <img src="/docs/alpha/assets/en/FormEditor/macroex1.png" alt="">
@@ -243,7 +244,7 @@ Class constructor(<span class="hljs-variable">$macro</span> : Object)
 <tr><td>$editor.name</td><td>String</td><td>Name of the form</td></tr>
 <tr><td>$editor.table</td><td>number</td><td>Table number of the form, 0 for project form</td></tr>
 <tr><td>$editor.currentPageNumber</td><td>number</td><td>The number of the current page</td></tr>
-<tr><td>$editor.currentPage</td><td>Object</td><td>The current page, containing all the form objects and the entry order of the page, including groups</td></tr>
+<tr><td>$editor.currentPage</td><td>Object</td><td>The current page, containing all the form objects and the entry order of the page</td></tr>
 <tr><td>$editor.currentSelection</td><td>Collection</td><td>Collection of names of selected objects</td></tr>
 <tr><td>$editor.formProperties</td><td>Object</td><td>Properties of the current form</td></tr>
 <tr><td>$editor.target</td><td>string</td><td>Name of the object under the mouse when clicked on a macro</td></tr>
