@@ -79,7 +79,7 @@ $NewPhrase:=Uppercase4("This is good.")
 
 In this example, the variable *$NewPhrase* gets “THIS is good.”
 
-The returned value, `$0`, is a local variable within the subroutine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. For example, you can write:
+The returned value, `$0`, is a local variable within the subroutine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. Par exemple, vous pouvez écrire :
 
 ```4d
 // Faire_quelque chose
