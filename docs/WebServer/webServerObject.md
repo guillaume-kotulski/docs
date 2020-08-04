@@ -5,21 +5,21 @@ title: Web Server object
 
 ## Overview
 
-A 4D project can start and monitor a web server for the main (host) database as well as each hosted component.
+A 4D project can start and monitor a web server for the main (host) application as well as each hosted component.
 
-For example, if you installed two components in your main database, you can start and monitor up to three independant web servers from your application:
+For example, if you installed two components in your main application, you can start and monitor up to three independant web servers from your application:
 
-- one web server for the host database,
+- one web server for the host application,
 - one web server for the component #1,
 - one web server for the component #2.
 
-Other than memory, there is no limit to the number of components and thus, of web servers, that can be attached to a single 4D database project. 
+Other than memory, there is no limit to the number of components and thus, of web servers, that can be attached to a single 4D project. 
 
-Each 4D web server, including the main database's web server, is exposed as a specific **object**. Once instantiated, a web server object can be handled from the current database or from any component. 
+Each 4D web server, including the main application's web server, is exposed as a specific **object**. Once instantiated, a web server object can be handled from the current application or from any component. 
 
 > The legacy [WEB commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) of the 4D language are supported but cannot select the web server to which they apply (see below). 
 
-Each web server (host database or component) can be used in its own separate context, including:
+Each web server (host application or component) can be used in its own separate context, including:
 - `On Web Authentication` and `On Web Connection` database method calls
 - 4D tags processing and method calls,
 - managing web sessions and TLS protocols.
@@ -29,7 +29,7 @@ This feature allows you to develop independant components and features that come
 
 ## Instantiating a web server object
 
-The web server object of the host database (default web server) is automatically loaded by 4D at startup. Thus, if you write in a newly created database:
+The web server object of the host application (default web server) is automatically loaded by 4D at startup. Thus, if you write in a newly created project:
 
 ```4d
 $nbSrv:=WEB Server list.length   
@@ -46,8 +46,8 @@ webServer:=WEB Server
 webServer:=WEB Server(Web server database)
 ```
 
-If the database uses components and you want to call: 
-- the host database's web server from a component or 
+If the application uses components and you want to call: 
+- the host application's web server from a component or 
 - the server that received the request (whatever the server), 
 
 you can also use:
@@ -61,16 +61,16 @@ webServer:=WEB Server(Web server receiving request)
 ```
 
 
-## Web server methods
+## Web server functions
 
-A web server object contains the following member methods: 
+A web server object contains the following class functions: 
 
-|Method|Parameter|Return value|Description|
+|Function|Parameter|Return value|Description|
 |---|---|---|---|
 |`start()`|settings (object)|status (object)|Starts the web server|
 |`stop()`|-|-|Stops the web server|
 
-To start and stop a web server, just call the `start()` and `stop()` member methods of the web server object:
+To start and stop a web server, just call the `start()` and `stop()` class functiions of the web server object:
 
 ```4d
 C_OBJECT($status)
@@ -91,6 +91,7 @@ A web server object contains the following properties.
 
 |Property|Type|Description|
 |---|---|---|
+|allowHTTPOnLocal|boolean|Allow HTTP access to the Web Server administration component when it is used from the same computer even when HTTP protocol is turned off. Default=False|
 |certificateFolder|text|Folder where the certificate files are located. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter, it can be a `Folder` object.|
 |characterSet|number or text|Character set that the 4D Web Server should use to communicate with browsers connecting to the database. The default value actually depends on the language of the OS. Can be a MIBEnum longint or Name string, identifiers [defined by IANA](http://www.iana.org/assignments/character-sets) supported by the 4D Web Server: <li>4 = ISO-8859-1</li><li>12 = ISO-8859-9</li><li>13 = ISO-8859-10</li><li>17 = Shift-JIS</li><li>2024 = Windows-31J</li><li>2026 = Big5</li><li>38 = euc-kr</li><li>106 = UTF-8</li><li>2250 = Windows-1250</li><li>2251 = Windows-1251</li><li>2253 = Windows-1253</li><li>2255 = Windows-1255</li><li>2256 = Windows-1256|
 |cipherSuite|text|Cipher list used for the secure protocol. Sets the priority of ciphering algorithms implemented by the web server. Can be a sequence of strings separated by colons (for example "ECDHE-RSA-AES128-..."). See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.|
@@ -129,8 +130,8 @@ A web server object contains the following properties.
 These properties are defined:
 
 1. using the `settings` parameter of the `webServer.start( )` method (except for read-only properties, see below),
-2. if not used, using the `WEB SET OPTION` command (host databases only), 
-3. if not used, in the database settings of the host database or the component. 
+2. if not used, using the `WEB SET OPTION` command (host applications only), 
+3. if not used, in the settings of the host application or the component. 
 
 - If the web server is not started, the properties contain the values that will be used at the next web server startup. 
 - If the web server is started, the properties contain the actual values used by the web server (default settings could have been overriden by the `settings` parameter of the `webServer.start()` method.
