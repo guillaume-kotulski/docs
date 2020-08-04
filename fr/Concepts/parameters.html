@@ -163,7 +163,7 @@
 </code></pre>
 <ul>
 <li><p>Triggers - The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans le trigger lui-même.</p></li>
-<li><p>Form objects that accept the <code>On Drag Over</code> form event - The $0 parameter (Longint), which is the result of the <code>On Drag Over</code> form event, is typed by the compiler if the parameter has not been explicitly declared. Nevertheless, if you want to declare it, you must do so in the object method. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
+<li><p>Form objects that accept the <code>On Drag Over</code> form event - The $0 parameter (Longint), which is the result of the <code>On Drag Over</code> form event, is typed by the compiler if the parameter has not been explicitly declared. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$0</span>)<span class="hljs-keyword">
  If</span>(Form event=On Drag Over)
