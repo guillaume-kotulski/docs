@@ -7,15 +7,15 @@ title: プロジェクトの開発
 
 4D projects are developed using the **4D Developer** (**4D**) application. It provides an Integrated Development Environment (IDE) for 4D projects as well as an application runtime, allowing to develop, test, and debug the project.
 
-> Because most of the 4D project files are text files, you can use any text editor to work in them. ファイルへの同時アクセスはファイルアクセスマネージャーによって管理されます (後述参照)。
+> 4D プロジェクトファイルの大多数はテキストファイルなため、任意のテキストエディターを使って作業することも可能です。 ファイルへの同時アクセスはファイルアクセスマネージャーによって管理されます (後述参照)。
 
-Multi-user development is managed via standard source control tools, which allow developers to work on different branches, and compare, merge, or revert modifications.
+マルチユーザー開発は標準的なソース管理ツールを使っておこないます。これによって、異なるブランチで開発し、比較してマージまたは変更を戻すといった処理が可能になります。
 
 ## Development configurations
 
-Interpreted projects (*databaseName.4DProject*, see [Architecture of a 4D project](architecture.md)) can be opened in the following configurations:
+インタープリター版のプロジェクトファイル (*databaseName.4DProject* ([4D プロジェクトのアーキテクチャー](architecture.md) 参照)) は次の開発環境で開くことができます:
 
-- 4D Developer opening **local project files** - in this case, all aspects of the project are available to the developer. Project files can be created, modified, compiled, etc. The result of the development can be tested at any moment by using the **Test application** menu command from 4D Developer or using the [integrated web server](WebServer/webServerObject.md). 
+- 4D Developer を使い、**ローカルなプロジェクトファイル** を開きます - この場合、プロジェクトのすべての要素が開発者に提供されます。 プロジェクトファイルを作成・編集・コンパイルすることができます。 また、4D Developer にて **Test application** メニューコマンドを実行するか、[統合された Web サーバー](WebServer/webServerObject.md)を使用することで、開発の成果をいつでもテストすることができます。 
 - 4D Developer connection from the **same machine as 4D Server** - in this case, development is supported the same as local projects. This feature allows you to develop a client/server application in the same context as the deployment context ()[detailed below](#developing-projects-with-4d-server)). 
 - 4D Developer connection from a **remote machine** - in this case, 4D Server sends a .4dz version of the project ([compressed format](building.md#build-compiled-structure)) to 4D Developer. As a consequence, all structure files are read-only. This feature is useful for testing purposes. 
 

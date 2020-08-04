@@ -1,23 +1,23 @@
 ---
 id: licenses
-title: Managing 4D Licenses
+title: 4D ライセンスの管理
 ---
 
-ディスクへのインストール終了後、4D 製品を利用するためにはアクティベーションをおこないます。 Usually, the activation is automatic if you [sign in using your 4D account](GettingStarted/Installation.md) in the Welcome Wizard.
+ディスクへのインストール終了後、4D 製品を利用するためにはアクティベーションをおこないます。 [4D アカウントでサインイン](GettingStarted/Installation.md) した場合、アクティベーションは自動的におこなわれます。
 
-However, in specific cases you could need to activate your licenses manually, for example if:
+しかし、場合によってはライセンスを手動でアクティベーションする必要があります。たとえば:
 
-- your configuration does not allow the automatic activation,
-- you have purchased additional licenses. 
+- 自動アクティベーションが可能でない場合
+- 追加のライセンスを購入した場合 
 
 以下の利用モードの場合には、アクティベーションは必要はありません:
 
 - リモートモードで利用される 4D (4D Serverへの接続)
 - インタープリターモードのデータベースを開く場合で、デザインモードへはアクセスしないローカルモードの4D
 
-## First activation
+## 初回のアクティベーション
 
-With 4D, select the **License Manager...** command from the **Help** menu of the application. With 4D Server, just launch the 4D Server application. [アクティベーションモード](#アクティベーションモード) を選択するダイアログボックスが表示されます。
+4D でおこなう場合は、**ヘルプ** メニューから **ライセンスマネージャー...** を選択します。 4D Server でおこなう場合は、4D Server アプリケーションを起動します。 [アクティベーションモード](#アクティベーションモード) を選択するダイアログボックスが表示されます。
 
 ![](assets/en/getStart/server1.png)
 

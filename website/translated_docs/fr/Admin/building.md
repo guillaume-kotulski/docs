@@ -1,51 +1,51 @@
 ---
 id: building
-title: Building a project package
+title: Générer un package projet
 ---
 
-4D Developer includes a final application builder to create a project package (final build). This builder simplifies the finalization and deployment process for 4D compiled applications. It automatically handles the specific features of different operating systems and facilitates the deployment of client-server applications.
+4D Developer inclut un générateur d’application final pour créer un package de projet (version finale). Ce générateur simplifie le processus de finalisation et de déploiement des applications compilées 4D. Il gère automatiquement les fonctionnalités spécifiques de différents systèmes d'exploitation et facilite le déploiement d'applications client-serveur.
 
-The application builder allows you to:
+Le générateur d'applications vous permet de :
 
-* Build a compiled database, without interpreted code,
-* Build a stand-alone, double-clickable application, *i.e.*, merged with 4D Volume Desktop, the 4D database engine,
-* Build different applications from the same compiled database via an XML project,
-* Build homogeneous client-server applications,
-* Build client-server applications with automatic updating of client and server parts.
-* Save your build settings for future use (*Save settings* button).
+* Générer une base de données compilée, sans code interprété,
+* Générer une application autonome exécutable, c'est-à-dire fusionnée avec 4D Volume Desktop, le moteur de base de données 4D,
+* Générer différentes applications à partir de la même base de données compilée via un projet XML,
+* Générer des applications client-serveur homogènes,
+* Générer des applications client-serveur avec mise à jour automatique des composants client et serveur.
+* Enregistrer vos paramètres de génération pour une utilisation ultérieure (bouton *Enregistrer les paramètres*).
 
-## Build application overview
+## Aperçu du générateur d'application
 
-Building a project package can be carried out using:
+Générer un package de projet peut être réalisée à l'aide de :
 
-- either the [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html) command, 
-- or the [Build Application window](#application-builder). 
+- soit la commande [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html), 
+- soit la[ fenêtre Générateur d'application](#application-builder). 
 
-To display the Build Application dialog, select **Design** > **Build Application...** from the menu bar.
+Pour afficher la boîte de dialogue du générateur d'application, sélectionnez **Développement** > **Générer l'application...** dans la barre de menus.
 
 ![](assets/en/Project/buildappProj.png)
 
-The Build Application dialog includes several pages that can be accessed using tabs:
+La boîte de dialogue du générateur d'application comprend plusieurs pages accessibles via des onglets :
 
 ![](assets/en/Project/appbuilderProj.png)
 
-Building can only be carried out once the database is compiled. If you select this command without having previously compiled the database, or if the compiled code does not correspond to the interpreted code, a warning dialog box appears indicating that the database must be (re)compiled.
+La génération ne peut s'effectuer qu'une fois la base de données compilée. Si vous sélectionnez cette commande sans avoir préalablement compilé la base de données ou si le code compilé ne correspond pas au code interprété, une boîte de dialogue d'avertissement apparaît indiquant que la base de données doit être (re) compilée.
 
-### Build application settings
+### Paramètres du générateur d'application
 
 Chaque paramètre de générateur d'application est stocké en tant que clé XML dans le fichier de l'application nommé "buildApp.4DSettings", situé dans le dossier Settings du projet.
 
-Default parameters are used the first time the Build Application dialog box is used. The contents of the project file are updated, if necessary, when you click **Build** or **Save settings**. You can define several other XML settings file for the same project and employ them using the [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html) command.
+Les paramètres par défaut sont utilisés lors de la première utilisation de la boîte de dialogue du Générateur d'application. Le contenu du fichier est mis à jour, si nécessaire, lorsque vous cliquez sur **Construire** ou **Enregistrer les paramètres**. Vous pouvez définir plusieurs autres fichiers de paramètres XML pour le même projet et les utiliser à l'aide de la commande [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html).
 
-XML keys provide additional options besides those displayed in the Build Application dialog box. The description of these keys are detailed in the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) manual.
+Les clés XML fournissent des options supplémentaires à celles affichées dans la boîte de dialogue du Générateur d'application. La description de ces clés est détaillée dans le manuel [4D Clés XML BuildApplication](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html).
 
-### Log file
+### Fichier d'historique
 
-Lorsqu'une application est créée, 4D génère un fichier journal nommé *BuildApp.log.xml* dans le dossier **Logs** du projet. The log file stores the following information for each build:
+Lorsqu'une application est créée, 4D génère un fichier journal nommé *BuildApp.log.xml* dans le dossier **Logs** du projet. Le fichier d'historique stocke les informations suivantes pour chaque génération :
 
-- The start and end of building of targets,
-- The name and full access path of the files generated,
-- The date and time of the build,
+- Le début et la fin de la génération des cibles,
+- Le nom et le chemin d'accès complet des fichiers générés,
+- La date et l'heure de la génération,
 - Toutes les erreurs qui se sont produites,
 - Tout problème de signature (par exemple, un plug-in non signé).
 
@@ -53,7 +53,7 @@ La vérification de ce fichier peut vous aider à gagner du temps lors des proch
 
 > Utilisez la commande `Get 4D file (Build application log file)` pour obtenir l'emplacement du fichier journal.
 
-## Application name and destination folder
+## Nom de l'application et dossier de destination
 
 ![](assets/en/Project/buidappstructureProj.png)
 
@@ -61,13 +61,13 @@ Entrez le nom de l'application dans **Nom de l'application**.
 
 Spécifiez le dossier de l'application générée dans le**Dossier de destination**. Si le dossier spécifié n'existe pas déjà, 4D vous créera un dossier *Build*.
 
-## Compiled structure page
+## Page de structure compilée
 
 Cet onglet vous permet de générer un fichier de structure compilé standard et/ou un composant compilé :
 
 ![](assets/en/Project/appbuilderProj.png)
 
-### Build compiled structure
+### Générer une structure compilée
 
 Génère une base de données contenant uniquement du code compilé.
 
@@ -77,11 +77,11 @@ Cette fonctionnalité crée un fichier *.4dz* dans un dossier *Compiled Database
 
 > Un fichier .4dz est essentiellement une version compressée du dossier du projet. Les fichiers .4dz peuvent être utilisés par 4D Server, la licence 4D Volume (applications fusionnées) et 4D Developer. La taille compacte et optimisée des fichiers .4dz facilite le déploiement des packages de projet.
 
-#### Include related folders
+#### Inclure les dossiers associés
 
 Lorsque vous cochez cette option, tous les dossiers liés à la base de données sont recopiés dans le dossier Build en tant que dossiers *Components* et *Resources*. Pour plus d'informations sur ces dossiers, voir [Architecture de la base de données](https://livedoc.4d.com/4D-Design-Reference-18/Managing-4D-databases/Description-of-4D-files.300-4575698.en.html#100374).
 
-### Build component
+### Générer un composant
 
 Génère un composant compilé à partir de la structure.
 
