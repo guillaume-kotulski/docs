@@ -228,7 +228,7 @@ End if</span>
 </code></pre>
 <ul>
 <li><p>Triggers - The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans le trigger lui-même.</p></li>
-<li><p>Form objects that accept the <code>On Drag Over</code> form event - The $0 parameter (Longint), which is the result of the <code>On Drag Over</code> form event, is typed by the compiler if the parameter has not been explicitly declared. Nevertheless, if you want to declare it, you must do so in the object method. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
+<li><p>Form objects that accept the <code>On Drag Over</code> form event - The $0 parameter (Longint), which is the result of the <code>On Drag Over</code> form event, is typed by the compiler if the parameter has not been explicitly declared. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$0</span>)<span class="hljs-keyword">
  If</span>(Form event=On Drag Over)
@@ -307,7 +307,7 @@ End if</span>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$NewPhrase</span>:=<span class="hljs-function">Uppercase4</span>(<span class="hljs-string">"This is good."</span>)
 </code></pre>
 <p>In this example, the variable <em>$NewPhrase</em> gets “THIS is good.”</p>
-<p>The returned value, <code>$0</code>, is a local variable within the subroutine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. For example, you can write:</p>
+<p>The returned value, <code>$0</code>, is a local variable within the subroutine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. Par exemple, vous pouvez écrire :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Faire_quelque chose</span>
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>)
 <span class="hljs-function">ALERT</span>(<span class="hljs-variable">$0</span>)
