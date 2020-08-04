@@ -68,24 +68,24 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/variables.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">変数</h1></header><article><div><span><p>4D のデータは、根本的に異なっている 2つの方法で保持されます。 <strong>フィールド</strong> はディスクに永続的にデータを保存するのに対し、<strong>変数</strong> はメモリ上に一時的にデータを格納します。</p>
 <p>データベースを作成する際には、フィールドに名前とデータタイプを指定します。 同様に、変数にも名前と <a href="/docs/ja/Concepts/data-types.html">データタイプ</a> を指定します。</p>
-<p>いったん作成された変数は、データベースで必要とされる場所に使用できます。 たとえば、テキスト変数を同じタイプのフィールドに格納するには次のように書きます:</p>
+<p>いったん作成された変数は、データベースで必要とされる場所に使用できます。 For example, you might need to store a text variable in a field of same type:</p>
 <pre><code class="hljs css language-4d"> [MyTable]MyField:=MyText
 </code></pre>
 <p>変数はランゲージの要素です。画面上に表示されることのない、裏方に徹した変数を作成・利用することができます。 もちろん、フォーム上に変数の値を表示することもできます (ポインターやBLOBを除く)。また、変数に値を入力したり、変数の値をレポートに印刷したりすることも可能です。 このとき、入力可や入力不可の変数オブジェクトはフィールドオブジェクトと同様に振舞い、提供されるコントロールも類似しています。 フォーム上のボタン、リストボックス、スクロールエリア、ピクチャーボタンなどのオブジェクトも変数を使って制御することができるほか、保存不要な計算結果を表示させることもできます。</p>
-<h2><a class="anchor" aria-hidden="true" id="変数の宣言"></a><a href="#変数の宣言" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数の宣言</h2>
-<p>変数は宣言によって作成されます。 4D ランゲージでは、変数の宣言方法は2つあります:</p>
+<h2><a class="anchor" aria-hidden="true" id="declaring-variables"></a><a href="#declaring-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Declaring Variables</h2>
+<p>You create variables by declaring them. The 4D language offers two ways to declare variables:</p>
 <ul>
-<li><code>var</code> キーワードを使った宣言 (推奨、とくにオブジェクトやクラスをコードで使用する場合)</li>
-<li>&quot;コンパイラー&quot; や &quot;配列&quot; テーマの 4D ランゲージコマンドを使った宣言 (廃止予定、クラシックランゲージのみ)</li>
+<li>using the <code>var</code> keyword (recommended, specially if your code uses objects and classes),</li>
+<li>using one of the &quot;Compiler&quot; or &quot;Arrays&quot; theme 4D language commands (deprecated, classic language only).</li>
 </ul>
-<p><strong>注:</strong> この方法は推奨されませんが、単純に使用することによって変数を宣言することもできます。正式にそれらを定義することは必須ではありません。 たとえば、今日の日付に30日足した値を格納した変数を宣言するには、次のように書くことができます:</p>
-<pre><code class="hljs css language-4d"> MyDate:=Current date+<span class="hljs-number">30</span> <span class="hljs-comment">//  MyDateを作成します</span>
- <span class="hljs-comment">// これは日付型の変数であると 4D は推測します </span>
- <span class="hljs-comment">// 30日後の日付が代入されます</span>
+<p><strong>Note:</strong> Although it is usually not recommended, you can create basic variables simply by using them; you do not necessarily need to formally define them. For example, to declare a variable that will hold the current date plus 30 days, you can write:</p>
+<pre><code class="hljs css language-4d"> MyDate:=Current date+<span class="hljs-number">30</span> <span class="hljs-comment">//MyDate is created  </span>
+ <span class="hljs-comment">// 4D guesses it is of date type  </span>
+ <span class="hljs-comment">// and assigns the current date plus 30 days</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="var-キーワードによる宣言"></a><a href="#var-キーワードによる宣言" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>var</code> キーワードによる宣言</h3>
-<p>オブジェクト変数をクラスに紐づけることができるため、<code>var</code> キーワードを使った変数宣言が推奨されます。 このシンタックスはコードエディターの自動補完機能を強化します。</p>
-<p><code>var</code> キーワードを使って変数を宣言するには、次のシンタックスを用います:</p>
+<h3><a class="anchor" aria-hidden="true" id="using-the-var-keyword"></a><a href="#using-the-var-keyword" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the <code>var</code> keyword</h3>
+<p>Declaring variables using the <code>var</code> keyword is recommended since this syntax allows you to bind object variables with classes. Using this syntax enhances code editor suggestions and type-ahead features.</p>
+<p>To declare a variable of any type with the <code>var</code> keyword, use the following syntax:</p>
 <p><code>var &lt;varName&gt;{; &lt;varName2&gt;;...}{ : &lt;varType&gt;}</code></p>
 <p>たとえば:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myText </span>: Text  <span class="hljs-comment">// テキスト変数</span><span class="hljs-keyword">
@@ -93,22 +93,22 @@ var</span> myDate1; myDate2 : Date  <span class="hljs-comment">// 複数の日�
 var</span> <span class="hljs-variable">$myFile </span>: 4D.File  <span class="hljs-comment">// File クラスオブジェクト変数</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">// バリアント型変数</span>
 </code></pre>
-<p><code>varName</code> に指定する変数名は 4Dの <a href="/docs/ja/Concepts/identifiers.html">識別子の命名規則</a> に従う必要があります。<br>
-このシンタックスは <a href="#ローカル変数とプロセス変数">ローカル変数とプロセス変数</a> の宣言のみサポートしています。<a href="#インタープロセス変数">インタープロセス変数</a> および <a href="/docs/ja/Concepts/arrays.html">配列</a> には使用できません。</p>
-<p><code>varType</code> には次が指定できます:</p>
+<p><code>varName</code> is the variable name, it must comply with the <a href="/docs/ja/Concepts/identifiers.html">4D rules</a> about identifiers.<br>
+This syntax only supports <a href="#local-process-and-interprocess-variables">local and process variables</a> declarations, thus excluding <a href="#interprocess-variables">interprocess variables</a> and <a href="/docs/ja/Concepts/arrays.html">arrays</a>.</p>
+<p><code>varType</code> can be:</p>
 <ul>
-<li><a href="/docs/ja/Concepts/data-types.html">基本のデータ型</a>: 変数には、宣言された型の値が格納されます</li>
-<li><a href="/docs/ja/Concepts/classes.html">クラス参照</a> (4Dクラスまたはユーザークラス): 変数には、定義されたクラスのオブジェクトへの参照が格納されます</li>
+<li>a <a href="/docs/ja/Concepts/data-types.html">basic type</a>, in which case the variable contains a value of the declared type,</li>
+<li>a <a href="/docs/ja/Concepts/classes.html">class reference</a> (4D class or user class), in which case the variable contains a reference to an object of the defined class.</li>
 </ul>
-<p><code>varType</code> を省略すると、<strong>variant</strong> 型の変数が作成されます。</p>
-<p>サポートされている <code>varType</code> 値の一覧です:</p>
+<p>If <code>varType</code> is omitted, a variable of the <strong>variant</strong> type is created.</p>
+<p>The following table lists all supported <code>varType</code> values:</p>
 <table>
   <tr>
     <th>
       varType
     </th>
 <pre><code class="hljs">&lt;th&gt;
-  内容
+  Contents
 &lt;/th&gt;
 </code></pre>
   </tr>
@@ -117,7 +117,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       テキスト
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  テキスト値
+  Text value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -126,7 +126,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       日付
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  日付値
+  Date value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -135,7 +135,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       時間
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  時間値
+  Time value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -144,7 +144,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       ブール
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  ブール値
+  Boolean value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -153,7 +153,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       整数
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  倍長整数値
+  Long integer value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -162,7 +162,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       実数
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  実数値
+  Real value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -171,7 +171,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       ポインター
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  ポインター値
+  Pointer value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -180,7 +180,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       ピクチャー
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  ピクチャー値
+  Picture value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -189,7 +189,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       BLOB
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  BLOB値
+  BLOB value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -198,7 +198,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       コレクション
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  コレクション値
+  Collection value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -207,7 +207,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       バリアント
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  バリアント値
+  Variant value
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -216,7 +216,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       オブジェクト
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  デフォルトクラス (4D.Object) のオブジェクト
+  Object with default class (4D.Object)
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -225,7 +225,7 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       4D.\<className>
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  4Dクラス名のオブジェクト
+  Object of the 4D class name
 &lt;/td&gt;
 </code></pre>
   </tr>
@@ -234,14 +234,14 @@ var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">
       cs.\<className>
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  ユーザークラス名のオブジェクト
+  Object of the user class name
 &lt;/td&gt;
 </code></pre>
   </tr>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <ul>
-<li>基本のデータ型の、ローカル変数およびプロセス変数の宣言:</li>
+<li>To declare local and process basic variables:</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myText</span>; myText; <span class="hljs-variable">$vt </span>: Text<span class="hljs-keyword">
 var</span> myVar <span class="hljs-comment">//variant</span><span class="hljs-keyword">
@@ -252,23 +252,23 @@ var</span> <span class="hljs-variable">$o </span>: 4D.Object
 <span class="hljs-comment">// C_OBJECT($o) とも同義です</span>
 </code></pre>
 <ul>
-<li>4Dクラス型のオブジェクト変数の宣言:</li>
+<li>To declare object variables of 4D class:</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myFolder </span>: 4D.Folder<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$myFile </span>: 4D.File
 </code></pre>
 <ul>
-<li>ユーザークラス型のオブジェクト変数の宣言:</li>
+<li>To declare object variables of user class:</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myClass </span>: cs.MyClass<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$dataclass </span>: cs.Employee<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="c_-指示子による宣言"></a><a href="#c_-指示子による宣言" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>C_ 指示子による宣言</h3>
+<h3><a class="anchor" aria-hidden="true" id="using-a-c_-directive"></a><a href="#using-a-c_-directive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a C_ directive</h3>
 <blockquote>
-<p><strong>互換性に関する注記:</strong> 4D v18 R3 以降は廃止予定となっています。 <a href="#using-the-var-keyword">var</a> キーワードの使用が推奨されます。</p>
+<p><strong>Compatibility Note:</strong> This feature is deprecated as of 4D v18 R3. It is now recommended to use the <a href="#using-the-var-keyword">var</a> keyword.</p>
 </blockquote>
-<p>&quot;コンパイラー&quot; テーマコマンドの指示子を使って、基本のデータ型の変数を宣言することができます。</p>
+<p>Directives from the &quot;Compiler&quot; theme commands allow you to declare variables of basic types.</p>
 <p>たとえば、テキスト変数を宣言するには次のように書きます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_TEXT</span>(myText)
 </code></pre>
@@ -280,15 +280,15 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 <span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$vCol</span>) <span class="hljs-comment">// ローカル変数 $vCol をコレクション型として宣言します</span>
 <span class="hljs-function"> ARRAY LONGINT</span>(alAnArray;<span class="hljs-number">10</span>) <span class="hljs-comment">// プロセス変数 alAnArray を 10個の倍長整数型要素を持つ配列として宣言します</span>
 </code></pre>
-<p><strong>注:</strong> 配列とは、変数の一種です。 配列とは、同じタイプの変数を番号付きで並べたものです。 詳細については <a href="/docs/ja/Concepts/arrays.html">配列</a> を参照ください。</p>
+<p><strong>Note:</strong> Arrays are a particular type of variables. 配列とは、同じタイプの変数を番号付きで並べたものです。 詳細については <a href="/docs/ja/Concepts/arrays.html">配列</a> を参照ください。</p>
 <h2><a class="anchor" aria-hidden="true" id="変数への代入"></a><a href="#変数への代入" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数への代入</h2>
 <p>変数を対象に、データを格納したり、格納したデータを別の対象にコピーしたりすることができます。 変数にデータを格納することを、<strong>変数にデータを代入する</strong>と言い、代入演算子 (:=) を使っておこないます。 代入演算子はフィールドに対してデータを代入する場合にも使います。</p>
-<p>代入演算子は、変数を作成し、変数にデータを代入するために使用します。 作成する変数名を代入演算子の左側に書きます。 たとえば:</p>
+<p>The assignment operator is a primary way to create a variable and to put data into it. 作成する変数名を代入演算子の左側に書きます。 たとえば:</p>
 <pre><code class="hljs css language-4d">MyNumber:=<span class="hljs-number">3</span>
 </code></pre>
 <p>は変数 <em>MyNumber</em> を作成し、数値 3を代入します。 MyNumber が既に存在していれば、そこに数値 3が代入されます。</p>
 <blockquote>
-<p><a href="#変数の作成">データ型の宣言</a> をせずに変数を作成することは通常推奨されません。</p>
+<p>It is usually not recommended to create variables without <a href="#creating-variables">declaring their type</a>.</p>
 </blockquote>
 <p>もちろん、変数からデータを取り出すことができなければ、便利とはいえません。 再度代入演算子を使用します。 [Products]Size というフィールドに <em>MyNumber</em> 変数の値を代入するには、代入演算子の右側に MyNumber を書きます:</p>
 <pre><code class="hljs css language-4d">[Products]Size:=MyNumber
@@ -335,7 +335,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </blockquote>
 <p>インタープロセス変数の名前は、必ずインタープロセス記号 (&lt;&gt;) で始めます。記号の後に31バイトまでの名前を指定できます。</p>
 <p>クライアント/サーバーでは、各マシン (クライアントマシンとサーバーマシン) で同じインタープロセス変数定義を共有しますが、マシンごとに各変数のインスタンスが存在します。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/variant.html"><span class="arrow-prev">← </span><span>バリアント</span></a><a class="docs-next button" href="/docs/ja/Concepts/arrays.html"><span>配列</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#変数の宣言">変数の宣言</a><ul class="toc-headings"><li><a href="#var-キーワードによる宣言"><code>var</code> キーワードによる宣言</a></li><li><a href="#c_-指示子による宣言">C_ 指示子による宣言</a></li></ul></li><li><a href="#変数への代入">変数への代入</a></li><li><a href="#ローカル、プロセス、およびインタープロセス変数">ローカル、プロセス、およびインタープロセス変数</a><ul class="toc-headings"><li><a href="#ローカル変数">ローカル変数</a></li><li><a href="#プロセス変数">プロセス変数</a></li><li><a href="#インタープロセス変数">インタープロセス変数</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/variant.html"><span class="arrow-prev">← </span><span>バリアント</span></a><a class="docs-next button" href="/docs/ja/Concepts/arrays.html"><span>配列</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#declaring-variables">Declaring Variables</a><ul class="toc-headings"><li><a href="#using-the-var-keyword">Using the <code>var</code> keyword</a></li><li><a href="#using-a-c_-directive">Using a C_ directive</a></li></ul></li><li><a href="#変数への代入">変数への代入</a></li><li><a href="#ローカル、プロセス、およびインタープロセス変数">ローカル、プロセス、およびインタープロセス変数</a><ul class="toc-headings"><li><a href="#ローカル変数">ローカル変数</a></li><li><a href="#プロセス変数">プロセス変数</a></li><li><a href="#インタープロセス変数">インタープロセス変数</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
