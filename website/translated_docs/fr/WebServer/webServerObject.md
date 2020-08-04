@@ -138,7 +138,7 @@ Jeu de caractères devant être utilisé par 4D Web Server pour communiquer avec
             `HSTSMaxAge` property. HSTS requires that HTTPS is enabled on the server. HTTP must also be enabled to allow initial client connections.| |HSTSMaxAge|number|Maximum length of time (in seconds) that HSTS is active for each new client connection. This information is stored on the client side for the specified duration.</p> 
             <
             
-            p>
+            
             
             <
             
@@ -146,7 +146,7 @@ Jeu de caractères devant être utilisé par 4D Web Server pour communiquer avec
             
             <
             
-            p>
+            
             
             <
             
