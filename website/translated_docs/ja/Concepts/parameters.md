@@ -55,9 +55,9 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)
 
 テーブルや配列の式は [ポインターを介した参照として](Concepts/dt_pointer.md#メソッドの引数としてのポインター) 渡す必要があります。
 
-## 戻り値
+## Returning values
 
-メソッドからデータを返すこともできます。 以下は、文字列のデータ長を返すビルトインの `Length` コマンドを用いたステートメントです。 このステートメントでは、`Length` 関数が *MyLength* という変数に値を返します。
+メソッドからデータを返すこともできます。 For example, the following line is a statement that uses the built-in command, `Length`, to return the length of a string. このステートメントでは、`Length` 関数が *MyLength* という変数に値を返します。
 
 ```4d
 MyLength:=Length("How did I get here?")
