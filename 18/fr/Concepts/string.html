@@ -73,9 +73,9 @@
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="constantes-littérales-de-type-chaîne"></a><a href="#constantes-littérales-de-type-chaîne" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constantes littérales de type chaîne</h2>
 <p>Une constante littérale de type chaîne est incluse entre des guillemets droits (&quot;…&quot;). En voici quelques exemples :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-string">"Ajouter Enregistrements"</span>
-<span class="hljs-string">"Aucun enregistrement trouvé."</span>
-<span class="hljs-string">"Facture"</span>
+<pre><code class="hljs css language-4d"><span class="hljs-string">"Add Records"</span>
+<span class="hljs-string">"No records found."</span>
+<span class="hljs-string">"Invoice"</span>
 </code></pre>
 <p>Une chaîne vide est spécifiée par la succession de deux guillemets (&quot;&quot;).</p>
 <h3><a class="anchor" aria-hidden="true" id="séquences-déchappement"></a><a href="#séquences-déchappement" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Séquences d’échappement</h3>
@@ -92,7 +92,7 @@
 <tr><td>\&quot;</td><td>&quot; (Guillemets)</td></tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> Le caractère \ est utilisé comme séparateur dans les chemins d’accès sous Windows. Vous devez donc saisir un double \ lorsque vous souhaitez insérer une barre oblique inversée devant un caractère utilisé dans une des séquences d’échappement reconnues par 4D (ex : “C:\MesDocuments\Nouveaux.txt”).</p>
+<p><strong>Note:</strong> The \ (backslash) character is used as a separator in pathnames under Windows. Vous devez donc saisir un double \ lorsque vous souhaitez insérer une barre oblique inversée devant un caractère utilisé dans une des séquences d’échappement reconnues par 4D (ex : “C:\MesDocuments\Nouveaux.txt”).</p>
 <h2><a class="anchor" aria-hidden="true" id="opérateurs-sur-les-chaînes"></a><a href="#opérateurs-sur-les-chaînes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Opérateurs sur les chaînes</h2>
 <table>
 <thead>
@@ -105,13 +105,13 @@
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; = &quot;abd&quot;</td><td>Faux</td></tr>
 <tr><td>Inégalité</td><td>Chaîne # Chaîne</td><td>Booléen</td><td>&quot;abc&quot; # &quot;abd&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; # &quot;abc&quot;</td><td>Faux</td></tr>
-<tr><td>Supérieur à</td><td>Chaîne &gt; Chaîne</td><td>Booléen</td><td>&quot;abd&quot; &gt; &quot;abc&quot;</td><td>Vrai</td></tr>
+<tr><td>Supérieur à</td><td>String &gt; String</td><td>Booléen</td><td>&quot;abd&quot; &gt; &quot;abc&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; &gt; &quot;abc&quot;</td><td>Faux</td></tr>
-<tr><td>Inférieur à</td><td>Chaîne &lt; Chaîne</td><td>Booléen</td><td>&quot;abc&quot; &lt; &quot;abd&quot;</td><td>Vrai</td></tr>
+<tr><td>Inférieur à</td><td>String &lt; String</td><td>Booléen</td><td>&quot;abc&quot; &lt; &quot;abd&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; &lt; &quot;abc&quot;</td><td>Faux</td></tr>
-<tr><td>Supérieur ou égal à</td><td>Chaîne &gt;= Chaîne</td><td>Booléen</td><td>&quot;abd&quot; &gt;= &quot;abc&quot;</td><td>Vrai</td></tr>
+<tr><td>Supérieur ou égal à</td><td>String &gt;= String</td><td>Booléen</td><td>&quot;abd&quot; &gt;= &quot;abc&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; &gt;= &quot;abd&quot;</td><td>Faux</td></tr>
-<tr><td>Inférieur ou égal à</td><td>Chaîne &lt;= String</td><td>Booléen</td><td>&quot;abc&quot; &lt;= &quot;abd&quot;</td><td>Vrai</td></tr>
+<tr><td>Inférieur ou égal à</td><td>String &lt;= String</td><td>Booléen</td><td>&quot;abc&quot; &lt;= &quot;abd&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abd&quot; &lt;= &quot;abc&quot;</td><td>Faux</td></tr>
 <tr><td>Contient mot-clé</td><td>Chaîne % Chaîne</td><td>Booléen</td><td>&quot;Alpha Bravo&quot; % &quot;Bravo&quot;</td><td>Vrai</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;Alpha Bravo&quot; % &quot;ravo&quot;</td><td>Faux</td></tr>
@@ -134,9 +134,9 @@
      <span class="hljs-string">"A"</span>=<span class="hljs-string">"å"</span>
       <span class="hljs-comment">// etc</span>
 </code></pre>
-<p><strong>Note :</strong> Les comparaisons de chaîne tiennent compte des spécificités du langage <strong>défini pour le fichier de données 4D</strong> (qui n'est pas toujours identique au langage défini pour le système).</p>
+<p><strong>Note:</strong> String comparison takes into account specificities of the language <strong>defined for the 4D data file</strong> (which is not always the same as the language defined for the system).</p>
 <h3><a class="anchor" aria-hidden="true" id="le-joker-"></a><a href="#le-joker-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Le joker (@)</h3>
-<p>Le langage 4D prend en charge <strong>@</strong> en tant que joker. Ce caractère peut être utilisé dans toute comparaison de chaînes. Il remplace un ou plusieurs caractères. Ainsi, par exemple, l'expression suivante est évaluée à <code>TRUE</code> :</p>
+<p>The 4D language supports <strong>@</strong> as a wildcard character. Ce caractère peut être utilisé dans toute comparaison de chaînes. Il remplace un ou plusieurs caractères. Ainsi, par exemple, l'expression suivante est évaluée à <code>TRUE</code> :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-string">"abcdefghij"</span>=<span class="hljs-string">"abc@"</span>
 </code></pre>
 <p>Le joker doit être utilisé dans le second opérande (la chaîne qui se trouve à droite de l'opérateur). L'expression suivante est évaluée à <code>FAUX</code> car le joker est alors considéré en tant que caractère :</p>
@@ -162,9 +162,9 @@
 <p>L'expression suivante sera correctement évaluée :</p>
 <pre><code class="hljs css language-4d">(<span class="hljs-function">Code de caractere</span>(<span class="hljs-variable">$vaValeur</span><span class="hljs-variable">[[Longueur($vaValeur)]]</span>)#<span class="hljs-number">64</span>)  
 </code></pre>
-<p><strong>Note :</strong> Une option 4D du mode Développement vous permet de paramétrer le mode d’interprétation du caractère @ lorsque celui-ci est inclus dans une chaîne de caractères.</p>
+<p><strong>Note:</strong> A 4D option in the Design environment allows you to define how the @ character is interpreted when it is included in a character string.</p>
 <h3><a class="anchor" aria-hidden="true" id="mots-clés"></a><a href="#mots-clés" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mots-clés</h3>
-<p>A la différence des autres comparaisons de chaîne, les recherches par mots-clés recherchent des “mots” dans des “textes” : les mots sont évalués individuellement et dans leur globalité. L’opérateur <strong>%</strong> retournera toujours <code>Faux</code> si la recherche porte sur plusieurs mots ou une partie de mot (par exemple une syllabe). Les “mots” sont des chaînes de caractères encadrées par des “séparateurs”, qui sont les espaces, les caractères de ponctuation et les tirets. Une apostrophe, comme dans “aujourd'hui”, est généralement considérée comme partie du mot, mais sera ignorée dans certains cas (cf. règles ci-dessous). Les nombres peuvent être recherchés car ils sont évalués dans leur ensemble (incluant les symboles décimaux). Les autres symboles (monnaie, température, etc.) seront ignorés.</p>
+<p>A la différence des autres comparaisons de chaîne, les recherches par mots-clés recherchent des “mots” dans des “textes” : les mots sont évalués individuellement et dans leur globalité. The <strong>%</strong> operator always returns <code>False</code> if the query concerns several words or only part of a word (for example, a syllable). Les “mots” sont des chaînes de caractères encadrées par des “séparateurs”, qui sont les espaces, les caractères de ponctuation et les tirets. Une apostrophe, comme dans “aujourd'hui”, est généralement considérée comme partie du mot, mais sera ignorée dans certains cas (cf. règles ci-dessous). Les nombres peuvent être recherchés car ils sont évalués dans leur ensemble (incluant les symboles décimaux). Les autres symboles (monnaie, température, etc.) seront ignorés.</p>
 <pre><code class="hljs css language-4d">     <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"Bravo"</span> <span class="hljs-comment">// Retourne Vrai</span>
  <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"vo"</span> <span class="hljs-comment">// Retourne Faux</span>
  <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"Alpha Bravo"</span> <span class="hljs-comment">// Retourne Faux</span>
@@ -172,7 +172,7 @@
  <span class="hljs-string">"Software and Computers"</span>%<span class="hljs-string">"comput@"</span> <span class="hljs-comment">// Retourne Vrai</span>
 </code></pre>
 <blockquote>
-<p><strong>Notes :</strong> - 4D utilise la librairie ICU pour la comparaison des chaînes (à l'aide des opérateurs &lt;&gt;=#) et la détection des mots-clés. Pour plus d'informations sur les règles mises en oeuvre, reportez-vous à l'adresse <a href="http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries">http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries</a>. En version japonaise, 4D utilise par défaut la librairie Mecab en lieu et place de ICU pour la détection des mots-clés.</p>
+<p><strong>Notes:</strong> - 4D uses the ICU library for comparing strings (using &lt;&gt;=# operators) and detecting keywords. Pour plus d'informations sur les règles mises en oeuvre, reportez-vous à l'adresse <a href="http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries">http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries</a>. En version japonaise, 4D utilise par défaut la librairie Mecab en lieu et place de ICU pour la détection des mots-clés.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="symboles-dindice-de-chaîne"></a><a href="#symboles-dindice-de-chaîne" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symboles d'indice de chaîne</h2>
 <p>Les symboles d'indice de chaîne sont les suivants : [[...]]</p>
@@ -200,13 +200,14 @@ End if</span>
 <h3><a class="anchor" aria-hidden="true" id="note-avancée-sur-la-référence-à-des-caractères-invalides"></a><a href="#note-avancée-sur-la-référence-à-des-caractères-invalides" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Note avancée sur la référence à des caractères invalides</h3>
 <p>Lorsque vous utilisez les symboles d'indice de chaîne, il est de votre responsabilité de vous référer à des caractères existant dans la chaîne, de la même manière que pour les éléments d'un tableau. Si, par exemple, vous référencez le 20e caractère d'une chaîne, cette chaîne doit contenir au moins 20 caractères.</p>
 <ul>
-<li><p>Ne pas respecter cette condition en mode interprété n'est pas signalé comme une erreur par 4D.</p></li>
-<li><p>Ne pas respecter cette condition en mode compilé (sans options) peut entraîner une &quot;corruption&quot; de la mémoire, si, par exemple, vous écrivez un caractère au-delà de la fin d'une chaîne ou d'un texte.</p></li>
-<li><p>Ne pas respecter cette condition en mode compilé est signalé lorsque le contrôle d'exécution est activé. Si, par exemple, vous exécutez le code suivant :</p>
-<p>//Ne pas faire ça !
-vsAnyText:=&quot;&quot;
-vsAnyText[[1]]:=&quot;A&quot;</p></li>
+<li>Ne pas respecter cette condition en mode interprété n'est pas signalé comme une erreur par 4D.</li>
+<li>Ne pas respecter cette condition en mode compilé (sans options) peut entraîner une &quot;corruption&quot; de la mémoire, si, par exemple, vous écrivez un caractère au-delà de la fin d'une chaîne ou d'un texte.</li>
+<li>Ne pas respecter cette condition en mode compilé est signalé lorsque le contrôle d'exécution est activé. Si, par exemple, vous exécutez le code suivant :</li>
 </ul>
+<pre><code class="hljs">//Ne pas faire ça !
+ vsAnyText:=<span class="hljs-string">""</span>
+ vsAnyText<span class="hljs-string">[[1]]</span>:=<span class="hljs-string">"A"</span>
+</code></pre>
 <p>L'alerte suivante s'affichera en mode compilé :</p>
 <p><img src="/docs/18/assets/en/Concepts/Syntax_Error.en.png" alt="alt-text"></p>
 <h3><a class="anchor" aria-hidden="true" id="exemple"></a><a href="#exemple" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h3>
