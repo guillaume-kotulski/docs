@@ -83,8 +83,8 @@
 </ul></li>
 </ul>
 <p>(*)Lorsqu'elles sont exposées sous forme de texte dans le débogueur ou exportées en JSON, les propriétés d'objet de type image indiquent &quot;[objet Image]&quot;.</p>
-<p><strong>Warning:</strong> Keep in mind that attribute names differentiate between upper and lower case.</p>
-<p>You manage Object type variables, fields or expressions using the commands available in the <strong>Objects (Language)</strong> theme or through the object notation (see <a href="/docs/18/fr/Concepts/object.html#syntax-basics">Syntax basics</a>). A noter que des commandes spécifiques du thème Requêtes, telles que <code>CHERCHER PAR ATTRIBUT</code>, <code>CHERCHER PAR ATTRIBUT DANS SELECTION</code> ou <code>TRIER PAR ATTRIBUT</code> peuvent être utilisées pour traiter des champs objets.</p>
+<p><strong>Attention :</strong> N'oubliez pas que les noms d'attributs tiennent compte des majuscules/minuscules.</p>
+<p>Pour gérer les variables, champs ou expressions de type objet, vous pouvez utiliser la notation objet (cf. <a href="/docs/18/fr/Concepts/object.html#syntax-basics">Utiliser la notation objet</a>) ou les commandes 4D du thème <strong>Objets (Langage)</strong>. A noter que des commandes spécifiques du thème Requêtes, telles que <code>CHERCHER PAR ATTRIBUT</code>, <code>CHERCHER PAR ATTRIBUT DANS SELECTION</code> ou <code>TRIER PAR ATTRIBUT</code> peuvent être utilisées pour traiter des champs objets.</p>
 <p>Chaque valeur de propriété accessible par la notation objet est considérée comme une expression. Lorsque la notation objet est activée dans votre base (voir ci-dessous), vous pouvez utiliser ces valeurs là où une expression 4D est attendue :</p>
 <ul>
 <li>Dans le code 4D, soit écrites dans les méthodes (éditeur de méthodes) soit externalisées (formules, fichiers d'étiquettes traités par la commande PROCESS 4D TAGS ou le Serveur Web, fichiers d'export, documents 4D Write Pro, etc.),</li>
@@ -108,13 +108,13 @@
 <h3><a class="anchor" aria-hidden="true" id="propriétés-des-objets"></a><a href="#propriétés-des-objets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Propriétés des objets</h3>
 <p>Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :</p>
 <ul>
-<li>using a &quot;dot&quot; symbol: &gt; object.propertyName</li>
+<li>à l'aide du symbole &quot;point&quot; : &gt; objet.NomPropriété</li>
 </ul>
 <p>Exemple :</p>
 <pre><code class="hljs css language-4d">     employee.name:=<span class="hljs-string">"Smith"</span>
 </code></pre>
 <ul>
-<li>using a string within square brackets: &gt; object[&quot;propertyName&quot;]</li>
+<li>à l'aide d'une chaîne entre crochets : &gt; objet[&quot;NomPropriété&quot;]</li>
 </ul>
 <p>Voici quelques exemples :</p>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$vName</span>:=employee[<span class="hljs-string">"name"</span>]
@@ -128,7 +128,7 @@
 </code></pre>
 <p>La notation objet est utilisable avec tout élément de langage qui contient ou retourne un objet, c'est-à-dire :</p>
 <ul>
-<li><strong>Objects</strong> themselves (stored in variables, fields, object properties, object arrays, or collection elements). Voici quelques exemples :</li>
+<li>avec les <strong>objets</strong> eux-mêmes (stockés dans des variables, champs, propriétés d'objets, tableaux d'objets ou éléments de collections). Voici quelques exemples :</li>
 </ul>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$age</span>:=<span class="hljs-variable">$myObjVar</span>.employee.age <span class="hljs-comment">//variable</span>
  <span class="hljs-variable">$addr</span>:=[Emp]data_obj.address <span class="hljs-comment">//champ</span>
@@ -137,12 +137,12 @@
  <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$myCollection</span>[<span class="hljs-number">3</span>].subvalue <span class="hljs-comment">//élément de collection</span>
 </code></pre>
 <ul>
-<li><strong>4D commands</strong> that return objects. Exemple :</li>
+<li>avec les <strong>commandes 4D</strong> qui retournent des objets. Exemple :</li>
 </ul>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$measures</span>:=Lire mesures base.DB.tables
 </code></pre>
 <ul>
-<li><strong>Project methods</strong> that return objects. Exemple :</li>
+<li>avec les <strong>méthodes projet</strong> qui retournent des objets. Exemple :</li>
 </ul>
 <pre><code class="hljs css language-4d">      <span class="hljs-comment">// MyMethod1</span>
 <span class="hljs-function">     C_OBJECT</span>(<span class="hljs-variable">$0</span>)
@@ -152,24 +152,24 @@
      <span class="hljs-variable">$result</span>:=MyMethod1.a <span class="hljs-comment">//10</span>
 </code></pre>
 <ul>
-<li><strong>Collections</strong> Example:</li>
+<li><strong>Collections</strong> Exemple :</li>
 </ul>
 <pre><code class="hljs css language-4d">     myColl.length <span class="hljs-comment">//taille de la collection</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="pointeurs"></a><a href="#pointeurs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pointeurs</h3>
-<p><strong>Preliminary Note:</strong> Since objects are always passed by reference, there is usually no need to use pointers. En passant un objet, 4D utilise automatiquement, en interne, un mécanisme similaire à un pointeur pour minimiser la mémoire nécessaire, pour vous permettre de modifier le paramètre et de retourner les modifications. Par conséquent, vous n'aurez pas besoin d'utiliser des pointeurs. Cependant, si vous souhaitez utiliser des pointeurs, il est possible d'accéder aux valeurs de propriétés via des pointeurs.</p>
+<p><strong>Note :</strong> Les objets étant toujours passés par référence, l'utilisation de pointeurs n'est généralement pas nécessaire. En passant un objet, 4D utilise automatiquement, en interne, un mécanisme similaire à un pointeur pour minimiser la mémoire nécessaire, pour vous permettre de modifier le paramètre et de retourner les modifications. Par conséquent, vous n'aurez pas besoin d'utiliser des pointeurs. Cependant, si vous souhaitez utiliser des pointeurs, il est possible d'accéder aux valeurs de propriétés via des pointeurs.</p>
 <p>La notation objet pour les pointeurs est semblable à la notation objet standard, à la seule différence que le symbole &quot;point&quot; doit être omis.</p>
 <ul>
 <li>Accès direct :</li>
 </ul>
 <blockquote>
-<p>pointerOnObject-&gt;propertyName</p>
+<p>pointeurObjet-&gt;nomPropriété</p>
 </blockquote>
 <ul>
 <li>Accès par le nom :</li>
 </ul>
 <blockquote>
-<p>pointerOnObject-&gt;[&quot;propertyName&quot;]</p>
+<p>pointeurObjet-&gt; nomPropriété&quot;]</p>
 </blockquote>
 <p>Exemple :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(vObj)
@@ -180,7 +180,7 @@
  x:=vPtr-&gt;a <span class="hljs-comment">//x=10</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="valeur-null"></a><a href="#valeur-null" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valeur Null</h3>
-<p>When using the object notation, the <strong>null</strong> value is supported though the <strong>Null</strong> command. Cette commande peut être utilisée pour affecter ou comparer la valeur null aux propriétés d'objets ou aux éléments de collections, par exemple :</p>
+<p>Lorsque la notation objet est utilisée, la valeur <strong>null</strong> est prise en charge via la commande <strong>Null</strong>. Cette commande peut être utilisée pour affecter ou comparer la valeur null aux propriétés d'objets ou aux éléments de collections, par exemple :</p>
 <pre><code class="hljs css language-4d"> myObject.address.zip:=<span class="hljs-literal">Null</span><span class="hljs-keyword">
  If</span>(myColl[<span class="hljs-number">2</span>]=<span class="hljs-literal">Null</span>)
 </code></pre>
@@ -197,7 +197,7 @@
   <span class="hljs-comment">//$val=0</span>
 </code></pre>
 <ul>
-<li>Reading the <strong>length</strong> property of an undefined collection produces 0:</li>
+<li>La lecture de la propriété <strong>length</strong> d'une collection indéfinie renvoie 0 :</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function">     C_COLLECTION</span>(<span class="hljs-variable">$c</span>) <span class="hljs-comment">//variable créée mais pas de collection définie</span>
  <span class="hljs-variable">$size</span>:=<span class="hljs-variable">$c</span>.length <span class="hljs-comment">//$size = 0</span>
@@ -245,7 +245,7 @@
   <span class="hljs-comment">//afin d'éviter des erreurs dans le code</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="identifiants-de-propriétés-dobjets"></a><a href="#identifiants-de-propriétés-dobjets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Identifiants de propriétés d'objets</h2>
-<p>Les règles de nommage des tokens (noms des propriétés d'objets auxquelles on accède via la notation objet) sont plus restrictives que celles qui s'appliquent aux noms d'identifiants 4D standard. They must comply with JavaScript Identifier Grammar (see <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMA Script standard</a>):</p>
+<p>Les règles de nommage des tokens (noms des propriétés d'objets auxquelles on accède via la notation objet) sont plus restrictives que celles qui s'appliquent aux noms d'identifiants 4D standard. Ils doivent se conformer à la grammaire des identificateurs JavaScript (voir <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">la norme ECMA Script</a>):</p>
 <ul>
 <li>le premier caractère doit être une lettre, un trait de soulignement (_) ou le symbole dollar ($),</li>
 <li>les autres caractères peuvent être des lettres, des chiffres, des traits de soulignement ou des symboles dollar (les espaces sont proscrits),</li>
