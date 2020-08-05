@@ -613,9 +613,9 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
        $n:=Size of array(LB_Arrays)
        ARRAY LONGINT(_ListboxBackground;$n) // 行背景色配列
        For($i;1;$n)
-          If(LB_Arrays{$i}=True) // selected
+          If(LB_Arrays{$i}=True) // 選択されていれば
              _ListboxBackground{$i}:=0x0080C080 // 背景色を緑にします
-          Else // not selected
+          Else // 選択されていなければ
              _ListboxBackground{$i}:=lk inherited
           End if
        End for
