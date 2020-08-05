@@ -203,24 +203,24 @@ ASSERT($status.success)
 
 #### cryptoKey.decrypt(message;options) -> status
 
-| 引数      | プロパティ             | 型      |    | 説明                                                                                            |
-| ------- | ----------------- | ------ | -- | --------------------------------------------------------------------------------------------- |
-| message |                   | テキスト   | -> | options.encodingEncrypted を使ってデコードし復号するメッセージ文字列                                               |
-| options |                   | オブジェクト | -> | デコーディングオプション                                                                                  |
-|         | hash              | テキスト   |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。                                       |
-|         | encodingEncrypted | テキスト   |    | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"      |
-|         | encodingDecrypted | テキスト   |    | バイナリの復号メッセージを結果の文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
-|         |                   |        |    |                                                                                               |
-| status  |                   | オブジェクト | <- | 戻り値                                                                                           |
-|         | success           | ブール    |    | メッセージの復号に成功した場合は true                                                                         |
-|         | result            | テキスト   |    | options.encodingDecrypted を使って復号およびデコードされたメッセージ                                               |
-|         | errors            | コレクション |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                             |
+| 引数      | プロパティ             | 型      |    | 説明                                                                                         |
+| ------- | ----------------- | ------ | -- | ------------------------------------------------------------------------------------------ |
+| message |                   | テキスト   | -> | options.encodingEncrypted を使ってデコードし復号するメッセージ文字列                                            |
+| options |                   | オブジェクト | -> | デコーディングオプション                                                                               |
+|         | hash              | テキスト   |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。                                    |
+|         | encodingEncrypted | テキスト   |    | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"   |
+|         | encodingDecrypted | テキスト   |    | バイナリの復号メッセージを文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
+|         |                   |        |    |                                                                                            |
+| status  |                   | オブジェクト | <- | 戻り値                                                                                        |
+|         | success           | ブール    |    | メッセージの復号に成功した場合は true                                                                      |
+|         | result            | テキスト   |    | options.encodingDecrypted を使って復号およびデコードされたメッセージ                                            |
+|         | errors            | コレクション |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                          |
 
 
-This method decrypts the `message` parameter using the **private** key. 使用されるアルゴリズムはキーの種類に依存します。
+このメソッドは **秘密** 鍵を使って `message` を復号します。 使用されるアルゴリズムはキーの種類に依存します。
 
 キーは RSA キーでなければならず、アルゴリズムは RSA-OAEP です ([RFC 3447](https://tools.ietf.org/html/rfc3447) 参照)。
 
-The method returns a status object with `success` property set to `true` if the `message` could be successfully decrypted.
+`message` の復号に成功した場合には、success プロパティが `true` に設定された `status` オブジェクトを返します。
 
-In case the `message` couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
+キーまたはアルゴリズムが合致しないなどの理由で `message` の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
