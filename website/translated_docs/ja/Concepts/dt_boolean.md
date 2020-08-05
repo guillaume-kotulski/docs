@@ -15,9 +15,9 @@ title: ブール
 
 ```4d
  If(myButton=1) // ボタンがクリックされたら
-    myBoolean:=True // myBoolean を True に設定
+    myBoolean:=True // myBoolean を true に設定
  Else // ボタンがクリックされていなければ
-    myBoolean:=False // myBoolean を False に設定
+    myBoolean:=False // myBoolean を false に設定
  End if
 ```
 
