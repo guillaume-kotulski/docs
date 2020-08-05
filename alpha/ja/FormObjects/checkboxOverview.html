@@ -79,7 +79,7 @@
 </ul>
 <p>フォーム上のすべてのチェックボックスは選択/未選択のいずれかの状態にすることができます。 チェックボックスのグループを使用すると、複数の候補を選択できるようになります。</p>
 <h3><a class="anchor" aria-hidden="true" id="スリーステートチェックボックス"></a><a href="#スリーステートチェックボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スリーステートチェックボックス</h3>
-<p><a href="/docs/alpha/ja/FormObjects/checkboxOverview.html#通常">通常</a> および <a href="/docs/alpha/ja/FormObjects/checkboxOverview.html#フラット">フラット</a> タイプのチェックボックスは 3番目の状態を受け入れます。 この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。</p>
+<p><a href="propertiesTextAndPicture.md#ボタンスタイル">ボタンスタイル</a> が <a href="/docs/alpha/ja/FormObjects/checkboxOverview.html#通常">通常</a> および <a href="/docs/alpha/ja/FormObjects/checkboxOverview.html#フラット">フラット</a> タイプのチェックボックスは 3番目の状態を受け入れます。 この 3番目の状態は中間的な状態であり、一般的には表示のために用いられます。 たとえば、選択されたオブジェクトが複数あるうち、一部のオブジェクトにのみ特定のプロパティが存在することを表すのに使用されます。</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_3states.png" alt=""></p>
 <p>この 3番目の状態を有効にするには <a href="/docs/alpha/ja/FormObjects/propertiesDisplay.html#スリーステート">スリーステート</a> プロパティを選択します。</p>
 <p>このプロパティは、数値型の <a href="/docs/alpha/ja/FormObjects/propertiesObject.html#変数あるいは式">変数あるいは式</a> に関連付けられた通常およびフラットスタイルのチェックボックスに対してのみ使用できます。ブール型のチェックボックスは <a href="/docs/alpha/ja/FormObjects/propertiesDisplay.html#スリーステート">スリーステート</a> プロパティを利用することができません (ブール式には中間状態が存在しません)。</p>
@@ -127,7 +127,7 @@
 </table>
 <p>これらのアクションについての詳細は、<a href="https://doc.4d.com/4Dv18/4D/18/Standard-actions.300-4575620.ja.html">標準アクション</a> の章を参照してください。</p>
 <h2><a class="anchor" aria-hidden="true" id="チェックボックスのボタンスタイル"></a><a href="#チェックボックスのボタンスタイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>チェックボックスのボタンスタイル</h2>
-<p>チェックボックススタイルは、チェックボックスの外観を制御すると同時に、提供されるプロパティをも決定します。 チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。</p>
+<p>チェックボックスの <a href="/docs/alpha/ja/FormObjects/propertiesTextAndPicture.html#ボタンスタイル">ボタンスタイル</a>は、チェックボックスの外観を制御すると同時に、提供されるプロパティをも決定します。 チェックボックスには、あらかじめ定義されたスタイルを割り当てることができます。 これらのプロパティや動作を組み合わせることで、多数のバリエーションが得られます。</p>
 <p>スタイルによって <a href="#プロパティ一覧">提供されるプロパティ</a> は異なりますが、大多数のチェックボックスは <em>構造上</em> 同じです。 違いは、関連づけられた変数の処理にあります。</p>
 <p>次の既定スタイルが提供されています:</p>
 <h3><a class="anchor" aria-hidden="true" id="通常"></a><a href="#通常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通常</h3>
@@ -180,7 +180,7 @@
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="ベベル"></a><a href="#ベベル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ベベル</h3>
-<p>ベベルスタイルはデフォルトでは、ベベルボタンのような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
+<p>ベベルスタイルはデフォルトでは、通常ボタンのような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
 <p>ベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は <a href="/docs/alpha/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられます。</p>
 <p>チェックなし / チェック / ハイライト状態の例です:</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_bevel.png" alt=""></p>
@@ -198,7 +198,7 @@
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="角の丸いベベル"></a><a href="#角の丸いベベル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>角の丸いベベル</h3>
-<p>角の丸いベベルスタイルは <a href="#ベベル">ベベル</a> スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。 ベベルスタイルと同様に、角の丸いベベルスタイルはベベルボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
+<p>角の丸いベベルスタイルは <a href="#ベベル">ベベル</a> スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。 ベベルスタイルと同様に、角の丸いベベルスタイルは通常ボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
 <p>角の丸いベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は <a href="/docs/alpha/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられます。</p>
 <p>macOS の例:</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_roundedbevel_mac.png" alt=""></p>
@@ -219,8 +219,8 @@
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="os-xグラデーション"></a><a href="#os-xグラデーション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OS Xグラデーション</h3>
-<p>OS Xグラデーションスタイルは <a href="#ベベル">ベベル</a> スタイルとほぼ同一ですが、OSによっては異なる点があります。 ベベルスタイルと同様に、OS Xグラデーションスタイルはベベルボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
-<p>OS X グラデーションスタイルは明るいグレーの背景にラベルが付いています。macOS 上では2トーンのシステムボタンとして表示されます。 また、通常は <a href="/docs/alpha/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられます。</p>
+<p>OS Xグラデーションスタイルは <a href="#ベベル">ベベル</a> スタイルとほぼ同一です。 ベベルスタイルと同様に、OS Xグラデーションスタイルは通常ボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
+<p>OS X グラデーションスタイルは明るいグレーの背景にラベルが付いています。macOS 上では2トーンのシステムボタンとして表示されることがあります。 また、通常は <a href="/docs/alpha/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられます。</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxgradient_mac.png" alt=""></p>
 <blockquote>
 <p>Windows 上では、このスタイルは <a href="#ベベル">ベベル</a> スタイルと同じです。</p>
@@ -239,12 +239,12 @@
            }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="os-xテクスチャー"></a><a href="#os-xテクスチャー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OS Xテクスチャー</h3>
-<p>OS Xテクスチャースタイルは <a href="#ベベル">ベベル</a> スタイルとほぼ同一ですが、OSによっては異なる点があります。 ベベルスタイルと同様に、OS Xテクスチャースタイルはベベルボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
-<p>デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:</p>
+<p>OS Xテクスチャースタイルは <a href="#ベベル">ベベル</a> スタイルと似ていますが、サイズがより小さいです (最大サイズは macOS の標準的なシステムボタンのサイズです)。 ベベルスタイルと同様に、OS Xテクスチャースタイルは通常ボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
+<p>デフォルトで、OS Xテクスチャースタイルの外観は次の通りです:</p>
 <ul>
 <li><p><em>Windows</em> - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p></li>
-<li><p><em>macOS</em> - 灰色のグラデーションを表示する標準のシステムボタンです。 高さは定義済みで、変更できません。</p>
+<li><p><em>macOS</em> - 標準のシステムボタンです。 高さは定義済みで、変更できません。</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured_mac.png" alt=""></p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="json-例-6"></a><a href="#json-例-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
@@ -259,8 +259,8 @@
             }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="office-xp"></a><a href="#office-xp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Office XP</h3>
-<p>Office XPスタイルはベベルボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
-<p>Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:</p>
+<p>Office XPスタイルは通常ボタンような外観に、<a href="#ツールバーボタン">ツールバーボタン</a> スタイルの動作を組み合わせたものです。</p>
+<p>Office XP スタイルのチェックボックスの反転表示と背景のカラーはシステムカラーに基づいています。 チェックボックスにマウスオーバーしたときの表示は OS によって異なります:</p>
 <ul>
 <li><p><em>Windows</em> - マウスオーバー時にのみ背景が表示されます。 チェックなし / チェック / ハイライト状態の例です:</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_officexp.png" alt=""></p></li>
