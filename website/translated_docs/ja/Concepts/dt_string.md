@@ -138,11 +138,11 @@ Character code("A")=Character code("a")
 他の文字列比較と異なり、"%" 記号を使ったキーワードによる検索はテキスト中の単語を検索します: 単語は一つのまとまりとして個々に扱われます。 複数の単語や、音節など単語の一部を検索するような場合、**%** 演算子は常に `False` を返します。 区切り文字 (スペースや句読点など) に囲まれた文字列が単語として認識されます。 “Today's” のようにアポストロフィを含む単語は、通常それを含めた 1つの単語として扱われますが、特定の場合には無視されます (以下の注記を参照ください)。 数字も検索できます。小数点は区切り文字ではなく、数字の一部として扱われます。 ただし、通貨や温度などを表す記号は無視されます。
 
 ```4d
-     "Alpha Bravo Charlie"%"Bravo" // True
-     "Alpha Bravo Charlie"%"vo" // False
-     "Alpha Bravo Charlie"%"Alpha Bravo" // False
-     "Alpha,Bravo,Charlie"%"Alpha" // True
-     "Software and Computers"%"comput@" // True
+     "Alpha Bravo Charlie"%"Bravo" // true
+     "Alpha Bravo Charlie"%"vo" // false
+     "Alpha Bravo Charlie"%"Alpha Bravo" // false
+     "Alpha,Bravo,Charlie"%"Alpha" // true
+     "Software and Computers"%"comput@" // true
 ```
 
 > **注:** - 4Dは、<>=# 演算子を使った文字列比較や、キーワードの検出にICUライブラリを使用しています。 実装されているルールの詳細に関しては、以下のアドレスを参照して下さい: <http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries> - 日本語版の 4Dでは、ICU の代わりにデフォルトで Mecab が使用されています。詳細な情報に関しては、 [Mecab のサポート(日本語版)](https://doc.4d.com/4Dv18/4D/18/DatabaseData-storage-page.300-4575463.ja.html#1334024) を参照してください。
