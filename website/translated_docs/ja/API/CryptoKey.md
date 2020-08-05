@@ -160,11 +160,11 @@ ASSERT($status.success)
 
 このメソッドは、`cryptoKey` オブジェクトキーおよび指定された `options` を使って、utf8 形式の `message` 文字列の署名を検証します。
 
-The method returns a `status` object with `success` property set to `true` if `message` could be successfully verified (i.e. the signature matches).
+検証で署名が合致した場合には、`success` プロパティが `true` に設定された `status` オブジェクトを返します。
 
-In case the signature couldn't be verified because it was not signed with the same `message`, key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
+`message`、キーまたはアルゴリズムが署名と合致しないなどの理由で認証が成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
 
-The `cryptoKey` must contain a valid **public** key.
+`cryptoKey` は有効な **公開** 鍵を格納していなくてはなりません。
 
 ## cryptoKey.encrypt()
 
