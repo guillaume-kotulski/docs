@@ -42,21 +42,21 @@ title: 文字列
 | -------- | ------------- | --- | ----------------------- | -------- |
 | 連結 (結合)  | 文字列 + 文字列     | 文字列 | "abc" + "def"           | "abcdef" |
 | 繰り返し     | 文字列 * 数値      | 文字列 | "ab" * 3                | "ababab" |
-| 等しい      | 文字列 = 文字列     | ブール | "abc" = "abc"           | True     |
+| 等しい      | 文字列 = 文字列     | ブール | "abc" = "abc"           | true     |
 |          |               |     | "abc" = "abd"           | False    |
-| 異なる      | 文字列 # 文字列     | ブール | "abc" # "abd"           | True     |
+| 異なる      | 文字列 # 文字列     | ブール | "abc" # "abd"           | true     |
 |          |               |     | "abc" # "abc"           | False    |
-| 大きい      | 文字列 > 文字列     | ブール | "abd" > "abc"           | True     |
+| 大きい      | 文字列 > 文字列     | ブール | "abd" > "abc"           | true     |
 |          |               |     | "abc" > "abc"           | False    |
-| 小さい      | 文字列 < 文字列     | ブール | "abc" < "abd"           | True     |
+| 小さい      | 文字列 < 文字列     | ブール | "abc" < "abd"           | true     |
 |          |               |     | "abc" < "abc"           | False    |
-| 以上       | 文字列 >= 文字列    | ブール | "abd" >= "abc"          | True     |
+| 以上       | 文字列 >= 文字列    | ブール | "abd" >= "abc"          | true     |
 |          |               |     | "abc" >= "abd"          | False    |
-| 以下       | 文字列 <= String | ブール | "abc" <= "abd"          | True     |
+| 以下       | 文字列 <= String | ブール | "abc" <= "abd"          | true     |
 |          |               |     | "abd" <= "abc"          | False    |
-| キーワードを含む | 文字列 % 文字列     | ブール | "Alpha Bravo" % "Bravo" | True     |
+| キーワードを含む | 文字列 % 文字列     | ブール | "Alpha Bravo" % "Bravo" | true     |
 |          |               |     | "Alpha Bravo" % "ravo"  | False    |
-|          | ピクチャー % 文字列   | ブール | Picture_expr % "Mer"    | True (*) |
+|          | ピクチャー % 文字列   | ブール | Picture_expr % "Mer"    | true (*) |
 
 
 (*) キーワード "Mer" がピクチャー式 (フィールドまたは変数) に格納されたピクチャーの IPTC/Keywords メタデータに含まれている場合。
