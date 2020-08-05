@@ -64,10 +64,10 @@ ASSERT($status.success)
 `settings` の `type` プロパティには、キーのタイプを指定します。
 
 - "RSA": `settings.size` に指定されたサイズを使って、RSA キーペアを生成します。
-- "ECDSA": `settings.curve` に指定された曲線を用いて、楕円曲線デジタル署名アルゴリズム (Elliptic Curve Digital Signature Algorithm) を使ったキーペアを生成します。 Note that ECDSA keys cannot be used for encryption but only for signature.
-- "PEM": loads a key pair definition in PEM format, using `settings.pem`.
+- "ECDSA": `settings.curve` に指定された曲線を用いて、楕円曲線デジタル署名アルゴリズム (Elliptic Curve Digital Signature Algorithm) を使ったキーペアを生成します。 ECDSA キーは署名だけに使用されるもので、暗号化には使用できないことに留意してください。
+- "PEM": `settings.pem` を使って、PEM 形式のキーペアをロードします。
 
-The resulting `keyPair` object is a shared object and can therefore be used by multiple 4D processes simultaneously.
+戻り値の `keyPair` オブジェクトは共有オブジェクトのため、複数の 4D プロセスによって同時使用できます。
 
 ## cryptoKey.getPrivateKey()
 
