@@ -80,13 +80,13 @@ ASSERT($status.success)
 
 #### cryptoKey.getPrivateKey() -> privateKey
 
-| 引数         | プロパティ | 型    |    | 説明                        |
-| ---------- | ----- | ---- | -- | ------------------------- |
-|            |       |      |    |                           |
-| privateKey |       | テキスト | <- | Private key in PEM format |
+| 引数         | プロパティ | 型    |    | 説明         |
+| ---------- | ----- | ---- | -- | ---------- |
+|            |       |      |    |            |
+| privateKey |       | テキスト | <- | PEM 形式の秘密鍵 |
 
 
-This method returns the private key of the `cryptoKey` object in PEM format, or an empty string if none is available.
+このメソッドは、`cryptoKey` オブジェクトの秘密鍵を PEM 形式で返します。無い場合はからの文字列を返します。
 
 ## cryptoKey.getPublicKey()
 
@@ -99,13 +99,13 @@ This method returns the private key of the `cryptoKey` object in PEM format, or 
 
 #### cryptoKey.getPublicKey() -> publicKey
 
-| 引数        | プロパティ | 型    |    | 説明                       |
-| --------- | ----- | ---- | -- | ------------------------ |
-|           |       |      |    |                          |
-| publicKey |       | テキスト | <- | Public key in PEM format |
+| 引数        | プロパティ | 型    |    | 説明         |
+| --------- | ----- | ---- | -- | ---------- |
+|           |       |      |    |            |
+| publicKey |       | テキスト | <- | PEM 形式の公開鍵 |
 
 
-This method returns the public key of the `cryptoKey` object in PEM format, or an empty string if none is available.
+このメソッドは、`cryptoKey` オブジェクトの公開鍵を PEM 形式で返します。無い場合はからの文字列を返します。
 
 ## cryptoKey.sign()
 
@@ -120,8 +120,8 @@ This method returns the public key of the `cryptoKey` object in PEM format, or a
 
 | 引数        | プロパティ    | 型       |    | 説明                                                                                                                                                                      |
 | --------- | -------- | ------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| message   |          | テキスト    | -> | Message string to sign                                                                                                                                                  |
-| options   |          | オブジェクト  | -> | Signing options                                                                                                                                                         |
+| message   |          | テキスト    | -> | 署名をするメッセージ                                                                                                                                                              |
+| options   |          | オブジェクト  | -> | 署名オプション                                                                                                                                                                 |
 |           | hash     | テキスト    |    | Digest algorithm to use. For example: "HASH256", "HASH384", or "HASH512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
 |           | pss      | boolean |    | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                      |
 |           | encoding | テキスト    |    | Representation to be used for result signature. Possible values: "Base64" or "Base64URL". Default is "Base64".                                                          |
@@ -148,7 +148,7 @@ The `cryptoKey` must contain a valid **private** key.
 | --------- | -------- | ---------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | message   |          | テキスト       | -> | Message string that was used to produce the signature                                                                                                                   |
 | signature |          | テキスト       | -> | Signature to verify, in Base64 or Base64URL representation, depending on "encoding" option                                                                              |
-| options   |          | オブジェクト     | -> | Signing options                                                                                                                                                         |
+| options   |          | オブジェクト     | -> | 署名オプション                                                                                                                                                                 |
 |           | hash     | テキスト       |    | Digest algorithm to use. For example: "HASH256", "HASH384", or "HASH512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
 |           | pss      | boolean    |    | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                      |
 |           | encoding | テキスト       |    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                                                                 |
