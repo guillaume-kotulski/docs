@@ -188,7 +188,7 @@ ASSERT($status.success)
 | result  |                   | テキスト   | <- | options.encodingEncrypted を使って暗号化およびエンコードされたメッセージ                                                |
 
 
-This method encrypts the `message` parameter using the **public** key. The algorithm used depends on the type of the key.
+このメソッドは **公開** 鍵を使って `message` を暗号化します。 使用されるアルゴリズムはキーの種類に依存します。
 
 The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
@@ -217,7 +217,7 @@ The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://too
 |         | errors            | コレクション |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                                                                            |
 
 
-This method decrypts the `message` parameter using the **private** key. The algorithm used depends on the type of the key.
+This method decrypts the `message` parameter using the **private** key. 使用されるアルゴリズムはキーの種類に依存します。
 
 The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
