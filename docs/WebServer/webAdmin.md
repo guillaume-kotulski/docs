@@ -27,7 +27,7 @@ To use a custom `settings.4DSettings` file for the WebAdmin web server, you can 
 "%HOMEPATH%\Desktop\4D Server.exe" MyApp.4DLink --admin-settings-file %HOMEPATH%\Web\mySettings.4DSettings
 ```
 
-- or,  designate a `settings.4DSettings` file path with a `\<administration admin_settings_path>` element in the 4D Server preferences (`4D Preferences v18.4DPreference` file) for each 4D Server application on the computer:
+- or,  designate a `4DSettings` file path with a `\<administration admin_settings_path>` element in the 4D Server preferences (`4D Preferences v18.4DPreference` file):
 
 ```
 <?xml version="1.0" encoding="UTF-8"?><preferences stamp="30">
@@ -40,6 +40,7 @@ To use a custom `settings.4DSettings` file for the WebAdmin web server, you can 
 </preferences>
 ```
 
+> You can define specific settings for each 4D Server application on the computer using the `instance_4d` element. 
 
 ## Launching the WebAdmin web server
 
@@ -98,3 +99,19 @@ Status of the HTTP request log file (HTTPDebugLog_nn.txt, stored in the "Logs" f
 #### Description 
 
 Folder where the certificate files are located. The path is formatted in POSIX full path using filesystems.
+
+
+### Instances
+
+#### Syntax
+
+```
+<instances>
+	<instance_4d path="file:///Users/imac/4D/Apps/4D Server.app/"  admin_settings_path="file:///Users/imac/mySettings.4DSettings" />
+	<instance_4d path="file:///4D_2/4D.app/"  admin_settings_path="file:///Users/imac/mySettings_2.4DSettings" />
+</instances>
+```
+
+#### Definition
+
+Allow 4D Server administrator to specify a WebAdmin `4DSettings` for each 4D Server application, so that it is possible to deploy multiple 4D Server applications on the same host machine.
