@@ -37,7 +37,7 @@ Si vous souhaitez obtenir tous les calculs pour un attribut de type Numérique, 
 
  `GET  /rest/Employee/salary/?$compute=$all`
 
-**Response**:
+**Réponse** :
 
 ````
 {
@@ -55,7 +55,7 @@ Si vous souhaitez obtenir tous les calculs pour un attribut de type Chaîne, vou
 
  `GET  /rest/Employee/firstName/?$compute=$all`
 
-**Response**:
+**Réponse** :
 
 ````
 {
@@ -71,7 +71,7 @@ Si vous souhaitez obtenir un calcul avec un attribut, vous pouvez écrire ce qui
 
  `GET  /rest/Employee/salary/?$compute=sum`
 
-**Response**:
+**Réponse** :
 
 `235000`
 
