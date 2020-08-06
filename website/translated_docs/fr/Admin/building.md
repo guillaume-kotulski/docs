@@ -45,7 +45,7 @@ Les clés XML fournissent des options supplémentaires à celles affichées dans
 
 ### Fichier d'historique
 
-When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. Le fichier d'historique stocke les informations suivantes pour chaque génération :
+Lorsqu'une application est créée, 4D génère un fichier journal nommé *BuildApp.log.xml* dans le dossier **Logs** du projet. Le fichier d'historique stocke les informations suivantes pour chaque génération :
 
 - Le début et la fin de la génération des cibles,
 - Le nom et le chemin d'accès complet des fichiers générés,
