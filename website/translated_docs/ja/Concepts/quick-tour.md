@@ -187,14 +187,14 @@ myColl[3]  // コレクションの4番目の要素にアクセスします (0�
 
 4D ランゲージではオブジェクトクラスがサポートされています。 "myClass" という名称のクラスを作成するには、プロジェクトの Project/Sources/Classes フォルダーに `myClass.4dm` ファイルを追加します。
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. 引数を渡すこともできます。
+あるメソッドにおいて、クラスのオブジェクトをインスタンス化するには、*クラスストア* (`cs`) よりユーザークラスを呼び出して、`new()` メンバー関数を使います。 引数を渡すこともできます。
 
 ```4d  
 // 4D メソッド内
 $o:=cs.myClass.new() 
 ```
 
-In the `myClass` class method, use the `Function <methodName>`  statement to define the *methodName* class member method. ほかのメソッドのように、クラスメンバーメソッドは引数を受け取ったり、値を返すことができ、オブジェクトインスタンスとして `This` を使えます。
+`myClass` クラスメソッド内では、*methodName* クラスメンバーメソッドを宣言するのに `Function <methodName>` ステートメントを使います。 ほかのメソッドのように、クラスメンバーメソッドは引数を受け取ったり、値を返すことができ、オブジェクトインスタンスとして `This` を使えます。
 
 ```4d  
 // myClass.4dm ファイル内
