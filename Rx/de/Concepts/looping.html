@@ -74,7 +74,7 @@
 </code></pre>
 <p>Eine Schleife <code>While...End while</code> führt die Anweisung innerhalb der Schleife solange aus, wie der Boolean Ausdruck wahr ist. Sie prüft den Boolean Ausdruck am Beginn der Schleife und tritt gar nicht in die Schleife ein, wenn der Ausdruck FALSE ist.</p>
 <p>Es ist üblich, den getesteten Wert im Boolean Ausdruck direkt vor Eintreten in die Schleife <code>While...End while</code> zu initialisieren. Den Wert initialisieren heißt, Sie setzen etwas Passendes, so dass der Boolean Ausdruck TRUE ist und <code>While...End while</code> die Schleife ausführt.</p>
-<p>Sie müssen dem Boolean Ausdruck in der Schleife einen sinnvollen Wert zuweisen, da sonst die Schleife endlos läuft. The following loop continues forever because <em>NeverStop</em> is always TRUE:</p>
+<p>Sie müssen dem Boolean Ausdruck in der Schleife einen sinnvollen Wert zuweisen, da sonst die Schleife endlos läuft. Nachfolgende Schleife läuft endlos, da <em>NeverStop</em> immer wahr ist:</p>
 <pre><code class="hljs css language-4d"> NeverStop:=<span class="hljs-literal">True</span><span class="hljs-keyword">
  While</span>(NeverStop)<span class="hljs-keyword">
  End while</span>
@@ -86,7 +86,7 @@
 <span class="hljs-function">    ADD RECORD</span>([aTable]) <span class="hljs-comment">//Add a new record</span><span class="hljs-keyword">
  End while</span> <span class="hljs-comment">//The loop always ends with End while</span>
 </code></pre>
-<p>In diesem Beispiel wird die Systemvariable <code>OK</code> über den Befehl <code>CONFIRM</code> gesetzt, bevor die Schleife startet. If the user clicks the <strong>OK</strong> button in the confirmation dialog box, the <code>OK</code> system variable is set to 1 and the loop starts. Ansonsten wird die Systemvariable <code>OK</code> auf 0 gesetzt und die Schleife übersprungen. Sobald die Schleife läuft, sorgt der Befehl <code>ADD RECORD</code> dafür, dass sie weiterläuft, da er die Systemvariable <code>OK</code> auf 1 setzt, wenn der Benutzer den Datensatz sichert. Annulliert der Benutzer den letzten Datensatz,  d.h. er sichert ihn nicht, wird die Systemvariable <code>OK</code> auf 0 gesetzt und die Schleife stoppt.</p>
+<p>In diesem Beispiel wird die Systemvariable <code>OK</code> über den Befehl <code>CONFIRM</code> gesetzt, bevor die Schleife startet. Klickt der Benutzer im Dialogfenster Bestätigen auf die Schaltfläche <strong>OK</strong>, wird die Systemvariable <code>OK</code> auf 1 gesetzt und die Schleife startet. Ansonsten wird die Systemvariable <code>OK</code> auf 0 gesetzt und die Schleife übersprungen. Sobald die Schleife läuft, sorgt der Befehl <code>ADD RECORD</code> dafür, dass sie weiterläuft, da er die Systemvariable <code>OK</code> auf 1 setzt, wenn der Benutzer den Datensatz sichert. Annulliert der Benutzer den letzten Datensatz,  d.h. er sichert ihn nicht, wird die Systemvariable <code>OK</code> auf 0 gesetzt und die Schleife stoppt.</p>
 <h2><a class="anchor" aria-hidden="true" id="repeatuntil"></a><a href="#repeatuntil" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Repeat...Until</h2>
 <p>Die formale Syntax der Abfragefolge <code>Repeat...Until</code> lautet:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Repeat</span>
@@ -109,16 +109,16 @@
 </code></pre>
 <p>Die Schleife <code>For...End for</code> wird über eine Zählervariable gesteuert:</p>
 <ul>
-<li>The counter variable <em>Counter_Variable</em> is a numeric variable (Real or Long Integer) that the <code>For...End for</code> loop initializes to the value specified by <em>Start_Expression</em>.</li>
-<li>Each time the loop is executed, the counter variable is incremented by the value specified in the optional value <em>Increment_Expression</em>. If you do not specify <em>Increment_Expression</em>, the counter variable is incremented by one (1), which is the default.</li>
-<li>When the counter variable passes the <em>End_Expression</em> value, the loop stops.</li>
+<li><em>Counter_Variable</em> ist eine numerische Variable vom Typ Zahl oder Lange Ganzzahl. Sie wird von der Schleife <code>For...End for</code> auf den in <em>Start_Expression</em> festgelegten Wert initialisiert.</li>
+<li>Die Zählervariable wird nach jedem Durchlaufen der Schleife um den optionalen Wert erhöht, der in <em>Increment_Expression</em> angegeben ist. Geben Sie <em>Increment_Expression</em> nicht an, wird die Zählervariable standardmäßig um Eins (1) erhöht.</li>
+<li>Sobald die Zählervariable <em>End_Expression</em> durchläuft, stoppt die Schleife.</li>
 </ul>
-<p><strong>Important:</strong> The numeric expressions <em>Start_Expression</em>, <em>End_Expression</em> and <em>Increment_Expression</em> are evaluated once at the beginning of the loop. Sind diese Ausdrücke Variablen, und ändern Sie eine dieser Variablen innerhalb der Schleife, hat das keine Auswirkung auf die Schleife.</p>
-<p><strong>Tip:</strong> However, for special purposes, you can change the value of the counter variable <em>Counter_Variable</em> within the loop; this will affect the loop.</p>
+<p><strong>Wichtig:</strong> Die numerischen Ausdrücke <em>Start_Expression</em>, <em>End_Expression</em> und <em>Increment_Expression</em> werden einmal am Schleifenbeginn gewertet. Sind diese Ausdrücke Variablen, und ändern Sie eine dieser Variablen innerhalb der Schleife, hat das keine Auswirkung auf die Schleife.</p>
+<p><strong>Tipp:</strong> Für besondere Zwecke können Sie den Wert der Zählervariablen <em>Counter_Variable</em> innerhalb der Schleife ändern; das wirkt sich dann auch auf die Schleife aus.</p>
 <ul>
-<li>Usually <em>Start_Expression</em> is less than <em>End_Expression</em>.</li>
-<li>If <em>Start_Expression</em> and <em>End_Expression</em> are equal, the loop will execute only once.</li>
-<li>If <em>Start_Expression</em> is greater than <em>End_Expression</em>, the loop will not execute at all unless you specify a negative <em>Increment_Expression</em>. Sehen Sie die Beispiele.</li>
+<li>Im Normalfall ist <em>Start_Expression</em> kleiner als <em>End_Expression</em>.</li>
+<li>Sind <em>Start_Expression</em> und <em>End_Expression</em> gleich, wird die Schleife nur einmal ausgeführt.</li>
+<li>Ist <em>Start_Expression</em> größer als <em>End_Expression</em>, wird die Schleife gar nicht ausgeführt, außer <em>Increment_Expression</em> hat einen negativen Wert. Sehen Sie die Beispiele.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="allgemeine-beispiele"></a><a href="#allgemeine-beispiele" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Allgemeine Beispiele</h3>
 <ol>
@@ -160,7 +160,7 @@
 </code></pre>
 <p>Die meisten der Schleifen <code>For...End for</code> in Ihrer Datenbank sehen wie in den oben aufgeführten Beispielen aus.</p>
 <h3><a class="anchor" aria-hidden="true" id="variablenzähler-verringern"></a><a href="#variablenzähler-verringern" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variablenzähler verringern</h3>
-<p>Manchmal benötigen Sie in einer Schleife eine absteigende Zählervariable. To do so, you must specify <em>Start_Expression</em> greater than <em>End_Expression</em> and a negative <em>Increment_Expression</em>. Folgende Beispiele führen dieselben Aktionen wie oben aus, sie zählen jedoch rückwärts:</p>
+<p>Manchmal benötigen Sie in einer Schleife eine absteigende Zählervariable. Dazu muss <em>Start_Expression</em> größer als <em>End_Expression</em> sein und <em>Increment_Expression</em> einen negativen Wert haben. Folgende Beispiele führen dieselben Aktionen wie oben aus, sie zählen jedoch rückwärts:</p>
 <ol start="5">
 <li>Folgendes Beispiel führt 100 Durchläufe aus:</li>
 </ol>
@@ -199,7 +199,7 @@
  End for</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="die-zählervariable-um-mehr-als-eins-erhöhen"></a><a href="#die-zählervariable-um-mehr-als-eins-erhöhen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Die Zählervariable um mehr als Eins erhöhen</h3>
-<p>If you need to, you can use an <em>Increment_Expression</em> (positive or negative) whose absolute value is greater than one.</p>
+<p>Bei Bedarf können Sie <em>Increment_Expression</em> (positiv oder negativ) für absolute Werte größer als Eins einsetzen.</p>
 <ol start="9">
 <li>Folgende Schleife ordnet dem Array anArray nur die geraden Elemente zu:</li>
 </ol>
@@ -228,7 +228,7 @@
     <span class="hljs-variable">$i</span>:=<span class="hljs-variable">$i</span>+<span class="hljs-number">1</span> <span class="hljs-comment">//Need to increment the counter</span><span class="hljs-keyword">
  Until</span>(<span class="hljs-variable">$i</span>=<span class="hljs-number">100</span>) <span class="hljs-comment">//Loop 100 times</span>
 </code></pre>
-<p><strong>Tip:</strong> The <code>For...End for</code> loop is usually faster than the <code>While...End while</code> and <code>Repeat...Until</code> loops, because 4D tests the condition internally for each cycle of the loop and increments the counter. Verwenden Sie deshalb möglichst die Schleife <code>For...End for</code>.</p>
+<p><strong>Tipp:</strong> Die Schleife <code>For...End for</code> ist normalerweise schneller als die Schleifen <code>While...End while</code> und <code>Repeat...Until</code>, da 4D die Bedingung für jeden Schleifenzyklus intern abfragt und dann den Zähler erhöht. Verwenden Sie deshalb möglichst die Schleife <code>For...End for</code>.</p>
 <h3><a class="anchor" aria-hidden="true" id="die-ausführung-der-schleife-forend-for-optimieren"></a><a href="#die-ausführung-der-schleife-forend-for-optimieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Die Ausführung der Schleife For...End for optimieren</h3>
 <p>Sie können als Zähler Variablen vom Typ Zahl und Lange Ganzzahl, aber auch Interprozess-, Prozess- und lokale Variablen verwenden. Verwenden Sie für lange sich wiederholende Schleifen, besonders im kompilierten Modus, lokale Variablen vom Typ Lange Ganzzahl.</p>
 <ol start="10">
@@ -281,7 +281,7 @@
 <span class="hljs-function">    statement</span>(s)<span class="hljs-keyword">
  End for each</span>
 </code></pre>
-<p>The <code>For each...End for each</code> structure iterates a specified <em>Current_item</em> over all values of the <em>Expression</em>. The <em>Current_item</em> type depends on the <em>Expression</em> type. The <code>For each...End for each</code> loop can iterate through three <em>Expression</em> types:</p>
+<p>Die Struktur <code>For each...End for each</code> durchläuft den angegebenen Eintrag <em>Current_item</em> für alle Werte von <em>Expression</em>. Der Typ <em>Current_item</em> richtet sich nach der Art von <em>Expression</em>. Die Schleife <code>For each...End for each</code> kann drei Arten durchlaufen:</p>
 <ul>
 <li>Collections: Schleife durch jedes Element der Collection</li>
 <li>Entity-Selections: Schleife durch jede Entity</li>
@@ -301,22 +301,22 @@
 </table>
 <ul>
 <li>Die Anzahl Schleifen wird beim Starten berechnet und ändert sich nicht während der Durchführung. Einträge während der Schleife hinzufügen oder entfernen wird generell nicht empfohlen, da dies zu fehlenden oder überflüssigen Wiederholungen führen kann.</li>
-<li>By default, the enclosed <em>statement(s)</em> are executed for each value in <em>Expression</em>. Es ist jedoch möglich, die Schleife durch Testen einer Bedingung entweder am Anfang (<code>While</code>) oder am Ende der Schleife (<code>Until</code>) zu verlassen.</li>
-<li>The <em>begin</em> and <em>end</em> optional parameters can be used with collections and entity selections to define boundaries for the loop.</li>
-<li>The <code>For each...End for each</code> loop can be used on a <strong>shared collection</strong> or a <strong>shared object</strong>. Muss Ihr Code ein oder mehrere Elemente der Collection oder Objekteigenschaften ändern, müssen Sie <code>Use...End use</code> verwenden. Sie können <code>Use...End use</code> je nach Bedarf wie folgt aufrufen:
+<li>Standardmäßig werden die angegebenen <em>Anweisungen</em> für jeden Wert in <em>Expression</em> ausgeführt. Es ist jedoch möglich, die Schleife durch Testen einer Bedingung entweder am Anfang (<code>While</code>) oder am Ende der Schleife (<code>Until</code>) zu verlassen.</li>
+<li>Über die optionalen Parameter <em>begin</em> und <em>end</em> lassen sich in Collections und Entity-Selections Grenzen für die Schleife definieren.</li>
+<li>Die Schleife <code>For each...End for each</code> lässt sich für eine <strong>shared collection</strong> oder ein <strong>shared object</strong> verwenden. Muss Ihr Code ein oder mehrere Elemente der Collection oder Objekteigenschaften ändern, müssen Sie <code>Use...End use</code> verwenden. Sie können <code>Use...End use</code> je nach Bedarf wie folgt aufrufen:
 <ul>
 <li>Vor Eintreten in die Schleife, wenn Einträge zur Wahrung der Integrität gemeinsman geändert werden sollen, oder</li>
 <li>Innerhalb der Schleife, wenn nur ein paar Elemente/Eigenschaften geändert werden müssen und kein Verwalten der Integrität erforderlich ist.</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="schleife-durch-collections"></a><a href="#schleife-durch-collections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schleife durch Collections</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the <em>Collection</em> type, the <em>Current_Item</em> parameter is a variable of the same type as the collection elements. Die Anzahl Schleifen basiert standardmäßig auf der Anzahl Einträge in der Collection.</p>
-<p>The collection must contain only elements of the same type, otherwise an error will be returned as soon as the <em>Current_Item</em> variable is assigned the first mismatched value type.</p>
-<p>At each loop iteration, the <em>Current_Item</em> variable is automatically filled with the matching element of the collection. Dabei müssen Sie folgende Punkte berücksichtigen:</p>
+<p>Beim Verwenden von <code>For each...End for each</code> mit einer <em>Expression</em> vom Typ <em>Collection</em> ist der Parameter <em>Current_Item</em> eine Variable vom gleichen Typ wie die Collection Elemente. Die Anzahl Schleifen basiert standardmäßig auf der Anzahl Einträge in der Collection.</p>
+<p>Die Collection darf nur Elemente vom gleichen Typ enthalten, sonst wird ein Fehler zurückgegeben, sobald die Variable <em>Current_Item</em> dem ersten Wert mit einem unpassenden Typ zugewiesen wird.</p>
+<p>Bei jeder Wiederholung der Schleife wird die Variable <em>Current_Item</em> automatisch mit dem passenden Element der Collection gefüllt. Dabei müssen Sie folgende Punkte berücksichtigen:</p>
 <ul>
-<li>If the <em>Current_Item</em> variable is of the object type or collection type (i.e. if <em>Expression</em> is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). Bei einer Variablen mit einem skalaren Typ wird nur die Variable geändert.</li>
-<li>The <em>Current_Item</em> variable must be of the same type as the collection elements. Ist ein Element davon nicht vom gleichen Typ wie die Variable, wird ein Fehler generiert und die Schleife stoppt.</li>
-<li>If the collection contains elements with a <strong>Null</strong> value, an error will be generated if the <em>Current_Item</em> variable type does not support <strong>Null</strong> values (such as longint variables).</li>
+<li>Ist die Variable <em>Current_Item</em> vom Typ Objekt oder Collection (z.B. wenn <em>Expression</em> eine Collection von Objekten oder von Collections ist), wird durch Ändern dieser Variablen automatisch das zutreffende Element der Collection geändert (weil Objekte und Collections beide dieselbe Referenz nutzen). Bei einer Variablen mit einem skalaren Typ wird nur die Variable geändert.</li>
+<li>Die Variable <em>Current_Item</em> muss vom gleichen Typ wie die Elemente der Collection sein. Ist ein Element davon nicht vom gleichen Typ wie die Variable, wird ein Fehler generiert und die Schleife stoppt.</li>
+<li>Enthält die Collection Elemente mit einem Wert <strong>Null</strong>, wird ein Fehler generiert, wenn der Variablentyp von <em>Current_Item</em> keine <strong>Null</strong> Werte unterstützt, wie z. B. der Typ Lange Ganzzahl.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-2"></a><a href="#beispiel-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
 <p>Sie wollen für eine Collection mit Zahlen ein paar Statistiken berechnen:</p>
@@ -340,9 +340,9 @@
   <span class="hljs-comment">//$vUnder=4,$vOver=2</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="schleife-durch-entity-selections"></a><a href="#schleife-durch-entity-selections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schleife durch Entity-Selections</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the <em>Entity selection</em> type, the <em>Current_Item</em> parameter is the entity that is currently processed.</p>
-<p>Die Anzahl Schleifen basiert auf der Anzahl Entities in der Entity-Selection. On each loop iteration, the <em>Current_Item</em> parameter is automatically filled with the entity of the entity selection that is currently processed.</p>
-<p><strong>Note:</strong> If the entity selection contains an entity that was removed meanwhile by another process, it is automatically skipped during the loop.</p>
+<p>Beim Verwenden von <code>For each...End for each</code> mit einer <em>Expression</em> vom Typ <em>Entity-Selection</em> ist der Parameter <em>Current_Item</em> die Entity, die gerade bearbeitet wird.</p>
+<p>Die Anzahl Schleifen basiert auf der Anzahl Entities in der Entity-Selection. Bei jeder Wiederholung der Schleife wird der Parameter <em>Current_Item</em> automatisch mit der Entity der Entity-Selection gefüllt, die gerade bearbeitet wird.</p>
+<p><strong>Hinweis:</strong> Enthält die Entity-Selection eine Entity, die zwischenzeitlich durch einen anderen Prozess entfernt wurde, wird sie während der Schleife automatisch übersprungen.</p>
 <p>Beachten Sie, dass jede Änderung in der aktuellen Entity explizit mit <code>entity.save( )</code> gesichert werden muss.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-3"></a><a href="#beispiel-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
 <p>Sie wollen das Gehalt aller britischen Angestellten in einer Entity-Selection erhöhen:</p>
@@ -353,7 +353,7 @@
  End for each</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="schleife-durch-objekteigenschaften"></a><a href="#schleife-durch-objekteigenschaften" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schleife durch Objekteigenschaften</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the Object type, the <em>Current_Item</em> parameter is a text variable automatically filled with the name of the currently processed property.</p>
+<p>Beim Verwenden von <code>For each...End for each</code> mit einer* Expression* vom Typ Objekt ist der Parameter <em>Current_Item</em> eine Textvariable, die automatisch mit dem Namen der gerade bearbeiteten Eigenschaft gefüllt wird.</p>
 <p>Die Eigenschaften des Objekts werden in der Reihenfolge ihrer Erstellung bearbeitet. Während der Schleife lassen sich Eigenschaften im Objekt hinzufügen oder daraus entfernen. Das verändert nicht die Anzahl Schleifen, diese basiert weiterhin auf der ursprünglichen Anzahl Eigenschaften für das Objekt.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-4"></a><a href="#beispiel-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
 <p>Sie wollen die Namen in folgendem Objekt auf Großschreibung umstellen:</p>
@@ -378,17 +378,17 @@
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="parameter-begin--end"></a><a href="#parameter-begin--end" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter begin / end</h3>
 <p>Mit den optionalen Parametern begin und end können Sie Grenzen für die Wiederholung der Schleife definieren.</p>
-<p><strong>Note:</strong> The <em>begin</em> and <em>end</em> parameters can only be used in iterations through collections and entity selections (they are ignored on object properties).</p>
+<p><strong>Hinweis:</strong> Die Parameter <em>begin</em> und <em>end</em> sind nur für Schleifen in Collections und Entity-Selections möglich, in Objekteigenschaften werden sie ignoriert.</p>
 <ul>
-<li>In the <em>begin</em> parameter, pass the element position in <em>Expression</em> at which to start the iteration (<em>begin</em> is included).</li>
-<li>In the <em>end</em> parameter, you can also pass the element position in <em>Expression</em> at which to stop the iteration (<em>end</em> is excluded).</li>
+<li>Im Parameter <em>begin</em> übergeben Sie die Position des Elements in <em>Expression</em>, bei der der Durchlauf startet (inkl. <em>begin</em>).</li>
+<li>Im Parameter <em>end</em> übergeben Sie die Position des Elements in <em>Expression</em>, bei der Durchlauf stoppt (exkl. <em>end</em>).</li>
 </ul>
-<p>If <em>end</em> is omitted or if <em>end</em> is greater than the number of elements in <em>Expression</em>, elements are iterated from <em>begin</em> until the last one (included). If the <em>begin</em> and <em>end</em> parameters are positive values, they represent actual positions of elements in <em>Expression</em>. If <em>begin</em> is a negative value, it is recalculed as <code>begin:=begin+Expression size</code> (it is considered as the offset from the end of <em>Expression</em>). If the calculated value is negative, <em>begin</em> is set to 0. <strong>Note:</strong> Even if begin is negative, the iteration is still performed in the standard order. If <em>end</em> is a negative value, it is recalculed as <code>end:=end+Expression size</code></p>
+<p>Wird <em>end</em> weggelassen oder ist <em>end</em> größer als die Anzahl Elemente in <em>Expression</em>, werden Elemente ab <em>begin</em> bis zum letzten Element einschließlich durchlaufen. Sind die Parameter <em>begin</em> und <em>end</em> positive Werte, geben sie die aktuellen Positionen der Elemente in <em>Expression</em> an. Ist <em>begin</em> ein negativer Wert, wird er als <code>begin:=begin+Expression size</code> berechnet (=Versatz vom Ende der <em>Expression</em>). Ist der berechnete Wert negativ, wird <em>begin</em> auf 0 gesetzt. <strong>Hinweis:</strong> Auch wenn <em>begin</em> negativ ist, erfolgt der Durchlauf in der standardmäßigen Reihenfolge. Ist <em>end</em> ein negativer Wert, wird er berechnet als <code>end:=end+Expression size</code></p>
 <p>Beispiel:</p>
 <ul>
 <li>Eine Collection enthält 10 Elemente (nummeriert von 0 bis 9)</li>
-<li>begin=-4 -&gt; begin=-4+10=6 -&gt; iteration starts at the 6th element (#5)</li>
-<li>end=-2 -&gt; end=-2+10=8 -&gt; iteration stops before the 8th element (#7), i.e. at the 7th element.</li>
+<li>begin=-4 &gt; -&gt; begin=-4+10=6 &gt;-&gt; der Durchlauf startet mit dem 6. Element (#5)</li>
+<li>end=-2 &gt; end=-2+10=8 &gt; der Durchlauf stoppt vor dem 8. Element (#7), z.B. beim 7. Element.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-5"></a><a href="#beispiel-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$col</span>;<span class="hljs-variable">$col2</span>)
@@ -408,7 +408,7 @@
 <p>Sie können die Ausführung von <code>For each...End for each</code> durch Einfügen einer Bedingung <code>Until</code> oder <code>While</code> in der Schleife steuern. Ist eine Anweisung <code>Until(condition)</code> in der Schleife vorhanden, stoppt der Durchlauf, sobald condition mit <code>Wahr</code> gewertet wird. Bei einer Anweisung <code>While(condition)</code> stoppt der Durchlauf dagegen, sobald condition mit <code>Falsch</code> gewertet wird.</p>
 <p>Sie können je nach Bedarf ein anderes Schlüsselwort verwenden:</p>
 <ul>
-<li>The <code>Until</code> condition is tested at the end of each iteration, so if the <em>Expression</em> is not empty or null, the loop will be executed at least once.</li>
+<li>Die Bedingung <code>Until</code> wird am Ende jedes Durchlaufs getestet, d. h. wenn <em>Expression</em> nicht leer oder null ist, wird die Schleife mindestens einmal ausgeführt.</li>
 <li>Die Bedingung <code>While</code> wird am Anfang jedes Durchlaufs getestet, d. h. je nach Ergebnis der Bedingung wird die Schleife u. U. gar nicht ausgeführt.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-6"></a><a href="#beispiel-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
