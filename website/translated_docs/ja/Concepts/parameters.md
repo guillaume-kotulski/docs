@@ -79,7 +79,7 @@ $0:=Uppercase(Substring($1;1;4))+Substring($1;5)
 $NewPhrase:=Uppercase4("This is good.")
 ```
 
-In this example, the variable *$NewPhrase* gets “THIS is good.”
+変数 *$NewPhrase* には“THIS is good.” が格納されます。
 
 戻り値 `$0` はサブルーチン内のローカル変数です。 したがって、サブルーチン内で通常のローカル変数のように使用できます。 たとえば:
 
