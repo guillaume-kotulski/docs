@@ -303,8 +303,8 @@ title: ループ構造
 各ループの繰り返しにおいて、_Current_Item_ 変数には、合致するコレクションの要素が自動的に代入されます。 このとき、以下の点に注意する必要があります:
 
 - _Current_Item_ 変数がオブジェクト型あるいはコレクション型であった場合 (つまり _Expression_ がオブジェクトのコレクション、あるいはコレクションのコレクションであった場合)、この変数を変更すると自動的にコレクションの対応する要素も変更されます (オブジェクトとコレクションは同じ参照を共有しているからです)。 変数がスカラー型である場合、変数のみが変更されます。
-- The _Current_Item_ variable must be of the same type as the collection elements. コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。
-- If the collection contains elements with a **Null** value, an error will be generated if the _Current_Item_ variable type does not support **Null** values (such as longint variables).
+- _Current_Item_ 変数は、コレクション要素の型と合致している必要があります。 コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。
+- コレクションが **Null** 値の要素を格納していたとき、_Current_Item_ 変数の型が **Null** 値をサポートしない型 (倍長整数変数など) であった場合にはエラーが生成されます。
 
 #### 例題
 
@@ -332,11 +332,11 @@ title: ループ構造
 
 ### エンティティセレクション内のループ
 
-When `For each...End for each` is used with an _Expression_ of the _Entity selection_ type, the _Current_Item_ parameter is the entity that is currently processed.
+`For each...End for each` が _Entity selection_ 型の _Expression_ に対して使用された場合、_Current_Item_ は現在処理中のエンティティです。
 
-ループの回数はエンティティセレクション内のエンティティの数に基づきます。 On each loop iteration, the *Current_Item* parameter is automatically filled with the entity of the entity selection that is currently processed.
+ループの回数はエンティティセレクション内のエンティティの数に基づきます。 各ループの繰り返しにおいて、*Current_Item* には、処理の対象であるエンティティセレクション内のエンティティが自動的に代入されます。
 
-**Note:** If the entity selection contains an entity that was removed meanwhile by another process, it is automatically skipped during the loop.
+**注:** エンティティセレクション内のエンティティが、途中で他のプロセスによって削除された場合、そのエンティティはループにおいて自動的にスキップされます。
 
 カレントエンティティに対して適用された変更は、`entity.save( )` で明示的に保存する必要があることに注意してください。
 
@@ -353,7 +353,7 @@ Employees データクラスの中から、英国の従業員の給与を引き�
 
 ### オブジェクト内のループ
 
-When `For each...End for each` is used with an *Expression* of the Object type, the *Current_Item* parameter is a text variable automatically filled with the name of the currently processed property.
+`For each...End for each` が Object 型の *Expression* に対して使用された場合、*Current_Item* は現在処理中のプロパティ名が自動代入されたテキスト変数です。
 
 オブジェクトのプロパティは作成順に処理されていきます。 ループ中、プロパティをオブジェクトに追加/削除することが可能ですが、その場合でも残りのループ回数は、オブジェクトの元のプロパティ数に基づいているため、変化しません。
 
@@ -386,17 +386,17 @@ When `For each...End for each` is used with an *Expression* of the Object type, 
 
 任意の begin と end パラメーターを指定することで、繰り返しの範囲を定義することができます。
 
-**Note:** The *begin* and *end* parameters can only be used in iterations through collections and entity selections (they are ignored on object properties).
+**注:** *begin* と *end* パラメーターは、コレクションおよびエンティティセレクション型に対するループにおいてのみ使用することができます (オブジェクト型のときは無視されます)。
 
-- In the *begin* parameter, pass the element position in *Expression* at which to start the iteration (*begin* is included).
-- In the *end* parameter, you can also pass the element position in *Expression* at which to stop the iteration (*end* is excluded).
+- *begin* には、*Expression* においてループを開始したい要素位置を渡します (このとき *begin* の値が指す要素はループに含まれます)。
+- *end* には、*Expression* においてループを終了する要素位置を渡します (このとき *end* の値が指す要素はループに含まれません)。
 
-If *end* is omitted or if *end* is greater than the number of elements in *Expression*, elements are iterated from *begin* until the last one (included). If the *begin* and *end* parameters are positive values, they represent actual positions of elements in *Expression*. If *begin* is a negative value, it is recalculed as `begin:=begin+Expression size` (it is considered as the offset from the end of *Expression*). If the calculated value is negative, *begin* is set to 0. **Note:** Even if begin is negative, the iteration is still performed in the standard order. If *end* is a negative value, it is recalculed as `end:=end+Expression size`
+*end* が省略されている、あるいは *end* が *Expression* の要素数より大きい場合、*begin* 引数の位置から最後の要素まで (含まれる) をループします。 *begin* と *end* が正の値の場合、それらは *Expression* 内の要素の実際の位置を表します。 *begin* 引数が負の値の場合、それは `begin:=begin+Expression のサイズ` として再計算されます (つまり、*Expression* の終端からのオフセットであるとみなされます)。 再計算された値も負の値だった場合、*begin* は0に設定されます。 **注:** *begin* が負の値だったとしても、繰り返しそのものは標準の順番で実行されます。 *end* が負の値だった場合、それは `end:=end+Expression のサイズ` として再計算されます。
 
 たとえば:
 - コレクションには 10の要素が格納されています (ナンバリングは #0から#9)
-- begin=-4 -> begin=-4+10=6 -> iteration starts at the 6th element (#5)
-- end=-2 -> end=-2+10=8 -> iteration stops before the 8th element (#7), i.e. at the 7th element.
+- begin=-4 -> begin=-4+10=6 -> ループは6番目の要素 (#5) から開始されます
+- end=-2 -> end=-2+10=8 -> 繰り返しは8番目の要素 (#7) の前に終了します、つまり7番目 (#6) の要素の処理が最後のループとなります。
 
 #### 例題
 
@@ -419,7 +419,7 @@ If *end* is omitted or if *end* is greater than the number of elements in *Expre
 
 使用する条件は状況に応じて選べます:
 
-- The `Until` condition is tested at the end of each iteration, so if the *Expression* is not empty or null, the loop will be executed at least once.
+- `Until` 条件は各ループの終わりにテストされます。そのため、*Expression* が空あるいは null でないかぎり、ループは少なくとも1回は実行されます。
 - `While` 条件は各ループの始めにテストされます。そのため、評価の結果次第では、ループは一度も実行されないこともありえます。
 
 #### 例題
