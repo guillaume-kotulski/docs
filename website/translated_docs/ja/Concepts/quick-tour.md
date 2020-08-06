@@ -56,7 +56,7 @@ var myPerson : cs.Person
 MyOtherDate:=Current date+30
 ```
 
-上のコードは "MyOtherDate に、現在の日付に30日を加算した値を代入します" という意味です。 This line declares the variable, assigns it with both the (temporary) date type and a content. このように代入によって宣言された変数はデータ型が規定されていないと解釈され、コードの違う行では別のデータ型の値を代入することもでき、その際にはデータ型を動的に変化させます。 `var` によって宣言された変数はデータ型を変化させることはできません。 [コンパイルモード](interpreted.md) においては、その宣言方法にかかわらず、変数のデータ型は変更できません。
+上のコードは "MyOtherDate に、現在の日付に30日を加算した値を代入します" という意味です。 この1行で変数が宣言され、変数に (仮の) データ型とデータが割り当てられます。 このように代入によって宣言された変数はデータ型が規定されていないと解釈され、コードの違う行では別のデータ型の値を代入することもでき、その際にはデータ型を動的に変化させます。 `var` によって宣言された変数はデータ型を変化させることはできません。 [コンパイルモード](interpreted.md) においては、その宣言方法にかかわらず、変数のデータ型は変更できません。
 
 ## コマンド
 
@@ -195,14 +195,14 @@ myColl[3]  // コレクションの4番目の要素にアクセスします (0�
 
 4D ランゲージではオブジェクトクラスがサポートされています。 "myClass" という名称のクラスを作成するには、プロジェクトの Project/Sources/Classes フォルダーに `myClass.4dm` ファイルを追加します。
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. 引数を渡すこともできます。
+あるメソッドにおいて、クラスのオブジェクトをインスタンス化するには、*クラスストア* (`cs`) よりユーザークラスを呼び出して、`new()` メンバー関数を使います。 引数を渡すこともできます。
 
 ```4d  
 // 4D メソッド内
 $o:=cs.myClass.new() 
 ```
 
-In the `myClass` class method, use the `Function <methodName>`  statement to define the *methodName* class member method. ほかのメソッドのように、クラスメンバーメソッドは引数を受け取ったり、値を返すことができ、オブジェクトインスタンスとして `This` を使えます。
+`myClass` クラスメソッド内では、*methodName* クラスメンバーメソッドを宣言するのに `Function <methodName>` ステートメントを使います。 ほかのメソッドのように、クラスメンバーメソッドは引数を受け取ったり、値を返すことができ、オブジェクトインスタンスとして `This` を使えます。
 
 ```4d  
 // myClass.4dm ファイル内
