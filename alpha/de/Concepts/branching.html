@@ -85,14 +85,14 @@
     ...<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>Der Ausdruck ist nur WAHR, wenn beide Methoden WAHR sind. However, even if <em>MethodA</em> returns FALSE, 4D will still evaluate <em>MethodB</em>, which is a useless waste of time. In diesem Fall ist folgende Struktur besser geeignet:</p>
+<p>Der Ausdruck ist nur WAHR, wenn beide Methoden WAHR sind. Jedoch, selbst wenn <em>MethodA</em> FALSE zurückgibt, bewertet 4D weiter <em>MethodB</em>, was unnötig Zeit verbraucht. In diesem Fall ist folgende Struktur besser geeignet:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(MethodA)<span class="hljs-keyword">
     If</span>(MethodB)
        ...<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>The result is similar and <em>MethodB</em> is evaluated only if necessary.</p>
+<p>Das Ergebnis ist gleich, und <em>MethodB</em> wird nur bei Bedarf bewertet.</p>
 <h3><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h3>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// Ask the user to enter a name</span>
  <span class="hljs-variable">$Find</span>:=<span class="hljs-function">Request</span>(Type a name)<span class="hljs-keyword">
@@ -102,7 +102,7 @@
 <span class="hljs-function">    ALERT</span>(<span class="hljs-string">"You did not enter a name."</span>)<span class="hljs-keyword">
  End if</span> 
 </code></pre>
-<p><strong>Tip:</strong> Branching can be performed without statements to be executed in one case or the other. Wenn Sie einen Algorithmus oder eine spezifische Anwendung entwickeln, können Sie auch schreiben:</p>
+<p><strong>Tipp:</strong> In spezifischen Fällen können Sie auch Abfragen ohne Befehlsfolge einrichten. Wenn Sie einen Algorithmus oder eine spezifische Anwendung entwickeln, können Sie auch schreiben:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(Boolean_Expression)<span class="hljs-keyword">
  Else</span>
 <span class="hljs-function">    statement</span>(s)<span class="hljs-keyword">
@@ -197,7 +197,7 @@
  End case</span>
 </code></pre>
 <p>Für hierarchisches Testen können Sie auch hierarchischen Code einsetzen.</p>
-<p><strong>Tip:</strong> Branching can be performed without statements to be executed in one case or another. Wenn Sie einen Algorithmus oder eine spezifische Anwendung entwickeln, können Sie auch schreiben:</p>
+<p><strong>Tipp:</strong> In spezifischen Fällen können Sie auch Abfragen ohne Befehlsfolge einrichten. Wenn Sie einen Algorithmus oder eine spezifische Anwendung entwickeln, können Sie auch schreiben:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Boolean_Expression)
     :(Boolean_Expression)
