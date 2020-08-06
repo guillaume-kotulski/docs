@@ -85,7 +85,7 @@
     ...<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>この場合、両方のメソッドが true である場合に限り、式は true になります。 しかしながら <em>MethodA</em> が FALSE あっても、4Dは<em>MethodB</em> も評価するため、これは時間の無駄になります。 この場合には、以下のような構造を使用するほうが賢明といえます:</p>
+<p>この場合、両方のメソッドが true である場合に限り、式は true になります。 しかしながら <em>MethodA</em> が false であっても、4Dは<em>MethodB</em> も評価するため、これは時間の無駄になります。 この場合には、以下のような構造を使用するほうが賢明といえます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(MethodA)<span class="hljs-keyword">
     If</span>(MethodB)
        ...<span class="hljs-keyword">
@@ -183,17 +183,22 @@
 <p>したがって、階層的なテストを実行するときには、階層上で低い位置にある条件がテスト順序で先に記述されていることを確認する必要があります。 以下の例では、ケース2が true の場合、ケース1も必ず true であるため、ケース1は後に位置すべきです。 このままの順序では、ケース2のステートメントはけっして実行されません:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//statement(s)</span>
+       ...
+ <span class="hljs-comment">// ステートメントなど</span>
     :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">// このケースが判定されることはありません</span>
-       ... <span class="hljs-comment">//statement(s)</span><span class="hljs-keyword">
+       ...
+ <span class="hljs-comment">// ステートメントなど</span><span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>vResult = 1の判定により他の条件を見る前に分岐するので、第2のケースが判定されることはありません。 コードが正しく実行されるためには次のように書きます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">// このケースが先に判定されます</span>
-       ... <span class="hljs-comment">//statement(s)</span>
+       ...
+ <span class="hljs-comment">// ステートメントなど</span>
     :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//statement(s)</span><span class="hljs-keyword">
+       ...
+ 
+<span class="hljs-comment">// ステートメントなど</span><span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>さらに階層的なテストを実行したい場合、コードも階層化する必要があります。</p>

@@ -68,7 +68,7 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/ORDA/ordaClasses.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">ORDA データモデルクラス</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="プレビューフィーチャー"></a><a href="#プレビューフィーチャー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プレビューフィーチャー</h2>
 <blockquote>
-<p>4D v18 R4 で提供される ORDA データモデルクラスの関数は <strong>プレビューフィーチャー</strong> です: 関数はすべて制限なく公開されます。 将来的には、(とくに REST リクエストを介した) 関数へのアクセスが管理できるようになります。 次のリリースでは、<strong>データモデルクラス関数はすべてデフォルトでプライベートに設定</strong> されるため、 公開したい関数は個別に設定する必要があります。</p>
+<p>ORDA data model class functions are provided as a <strong>preview feature</strong> in 4D v18 R4: all functions you create are exposed without restrictions. 将来的には、(とくに REST リクエストを介した) 関数へのアクセスが管理できるようになります。 In the next release, <strong>by default all your data model class functions will be set to private</strong>. 公開したい関数は個別に設定する必要があります。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="概要"></a><a href="#概要" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>概要</h2>
 <p>ORDA を使用して、データモデル上に高レベルクラス関数を作成することができます。 これによってビジネス指向のコードを書き、APIのように &quot;公開&quot; することができます。 データストア、データクラス、エンティティ、およびエンティティセレクションはそれぞれ、関数を持つことのできるクラスオブジェクトとして提供されています。</p>
@@ -87,9 +87,9 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <p><img src="/docs/assets/en/ORDA/api.png" alt=""></p>
 <p>各データモデルオブジェクトに関わるクラスは、4D Developer によって <a href="#クラスの作成">あらかじめ自動的に作成</a> されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="アーキテクチャー"></a><a href="#アーキテクチャー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>アーキテクチャー</h2>
-<p>ORDA では、<strong><code>4D</code></strong> <a href="/docs/ja/Concepts/classes.html#クラスストア">クラスストア</a> を介して公開される <strong>汎用クラス</strong> と、<strong><code>cs</code></strong> <a href="/docs/ja/Concepts/classes.html#クラスストア">クラスストア</a> で公開される <strong>ユーザークラス</strong> が提供されています:</p>
+<p>ORDA provides <strong>generic classes</strong> exposed through the <strong><code>4D</code></strong> <a href="/docs/ja/Concepts/classes.html#class-stores">class store</a>, as well as <strong>user classes</strong> (extending generic classes) exposed in the <strong><code>cs</code></strong> <a href="/docs/ja/Concepts/classes.html#class-stores">class store</a>:</p>
 <p><img src="/docs/assets/en/ORDA/ClassDiagramImage.png" alt=""></p>
-<p>ORDA データモデルクラスはすべて <strong><code>cs</code></strong> クラスストアのプロパティとして公開されます。 次の ORDA クラスが提供されています:</p>
+<p>All ORDA data model classes are exposed as properties of the <strong><code>cs</code></strong> class store. 次の ORDA クラスが提供されています:</p>
 <table>
 <thead>
 <tr><th>クラス</th><th>例</th><th>次によってインスタンス化されます</th></tr>
@@ -107,13 +107,13 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <p>ORDA データモデルユーザークラスのオブジェクトインスタンスは、それだの親クラスのプロパティや関数を使うことができます。 たとえば、Entity クラスのオブジェクトは <a href="https://doc.4d.com/4Dv18R4/4D/18-R4/ORDA-Entity.201-4981870.ja.html">ORDA の Entity 汎用クラス</a> の関数を呼び出すことができます。</p>
 <h2><a class="anchor" aria-hidden="true" id="クラスの説明"></a><a href="#クラスの説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスの説明</h2>
 <blockquote>
-<p><strong>注記</strong>: ORDA データモデル関数は常にサーバー上で実行されることに留意してください。 つまり、関数を呼び出すとサーバーへのリクエストが生成されます。</p>
+<p><strong>Note</strong>: Keep in mind that ORDA data model functions are always executed on the server. つまり、関数を呼び出すとサーバーへのリクエストが生成されます。</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="datastore-クラス"></a><a href="#datastore-クラス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataStore クラス</h3>
 <p>4D のデータベースは、自身の DataStore クラスを <code>cs</code> クラスストアに公開します。</p>
 <ul>
-<li><strong>親クラス</strong>: 4D.DataStoreImplementation</li>
-<li><strong>クラス名</strong>: cs.DataStore</li>
+<li><strong>Extends</strong>: 4D.DataStoreImplementation</li>
+<li><strong>Class name</strong>: cs.DataStore</li>
 </ul>
 <p>DataStore クラス内には、<code>ds</code> オブジェクトを介して使用する関数を作成することができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -130,9 +130,9 @@ Function</span> getDesc
 <h3><a class="anchor" aria-hidden="true" id="dataclass-クラス"></a><a href="#dataclass-クラス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DataClass クラス</h3>
 <p>ORDA で公開されるテーブル毎に、DataClass クラスが <code>cs</code> クラスストアに公開されます。</p>
 <ul>
-<li><strong>親クラス</strong>: 4D.DataClass</li>
-<li><strong>クラス名</strong>: cs.<em>DataClassName</em> (<em>DataClassName</em> はテーブル名です)</li>
-<li><strong>例</strong>: cs.Employee</li>
+<li><strong>Extends</strong>: 4D.DataClass</li>
+<li><strong>Class name</strong>: cs.<em>DataClassName</em> (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Example name</strong>: cs.Employee</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4D"><span class="hljs-comment">// cs.Company クラス</span><span class="hljs-keyword">
@@ -152,7 +152,7 @@ Function</span><span class="hljs-function"> GetBestOnes</span>()
     <span class="hljs-variable">$best</span>:=ds.Company.<span class="hljs-function">GetBestOnes</span>()
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="リモートデータストアの例"></a><a href="#リモートデータストアの例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リモートデータストアの例</h4>
-<p>次の <em>City</em> カタログをリモートデータストアとして公開しています:</p>
+<p>The following <em>City</em> catalog is exposed in a remote datastore (partial view):</p>
 <p><img src="/docs/assets/en/ORDA/Orda_example.png" alt=""></p>
 <p><code>City クラス</code> は API を提供しています:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.City クラス</span><span class="hljs-keyword">
@@ -182,9 +182,9 @@ Function</span><span class="hljs-function"> getCityName</span>()<span class="hlj
 <h3><a class="anchor" aria-hidden="true" id="entityselection-クラス"></a><a href="#entityselection-クラス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EntitySelection クラス</h3>
 <p>ORDA で公開されるテーブル毎に、EntitySelection クラスが <code>cs</code> クラスストアに公開されます。</p>
 <ul>
-<li><strong>親クラス</strong>: 4D.EntitySelection</li>
-<li><strong>クラス名</strong>: <em>DataClassName</em>Selection (<em>DataClassName</em> はテーブル名です)</li>
-<li><strong>例</strong>: cs.EmployeeSelection</li>
+<li><strong>Extends</strong>: 4D.EntitySelection</li>
+<li><strong>Class name</strong>: <em>DataClassName</em>Selection (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Example name</strong>: cs.EmployeeSelection</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.EmployeeSelection クラス</span><span class="hljs-keyword">
@@ -205,9 +205,9 @@ Function</span> withSalaryGreaterThanAverage
 <h3><a class="anchor" aria-hidden="true" id="entity-クラス"></a><a href="#entity-クラス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entity クラス</h3>
 <p>ORDA で公開されるテーブル毎に、Entity クラスが <code>cs</code> クラスストアに公開されます。</p>
 <ul>
-<li><strong>親クラス</strong>: 4D.Entity</li>
-<li><strong>クラス名</strong>: <em>DataClassName</em>Entity (<em>DataClassName</em> はテーブル名です)</li>
-<li><strong>例</strong>: cs.CityEntity</li>
+<li><strong>Extends</strong>: 4D.Entity</li>
+<li><strong>Class name</strong>: <em>DataClassName</em>Entity (where <em>DataClassName</em> is the table name)</li>
+<li><strong>Example name</strong>: cs.CityEntity</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.CityEntity クラス</span><span class="hljs-keyword">
@@ -237,32 +237,32 @@ End if</span>
 <h2><a class="anchor" aria-hidden="true" id="定義規則"></a><a href="#定義規則" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>定義規則</h2>
 <p>データモデルクラスを作成・編集する際には次のルールに留意しなくてはなりません。</p>
 <ul>
-<li><p>4D のテーブル名は、<strong>cs</strong> <a href="/docs/ja/Concepts/classes.html#クラスストア">クラスストア</a> 内において自動的に DataClass クラス名として使用されるため、<strong>cs</strong> 名前空間において衝突があってはなりません。 特に:</p>
+<li><p>Since they are used to define automatic DataClass class names in the <strong>cs</strong> <a href="/docs/ja/Concepts/classes.html#class-stores">class store</a>, 4D table names must be compliant in order to avoid any conflict in the <strong>cs</strong> namespace. 特に:</p>
 <ul>
 <li>4D テーブルと <a href="/docs/ja/Concepts/classes.html#クラス名">ユーザークラス名</a> に同じ名前を使用してはいけません。 衝突が起きた場合には、ユーザークラスのコンストラクターは使用不可となります (コンパイラーにより警告が返されます)。</li>
 <li>4D テーブルに予約語を使用してはいけません (例: &quot;DataClass&quot;)。</li>
 </ul></li>
 <li><p>クラス定義の際、<a href="/docs/ja/Concepts/classes.html#class-extends-classname"><code>Class extends</code></a> ステートメントに使用する親クラスの名前は完全に合致するものでなくてはいけません (文字の大小が区別されます)。 たとえば、EntitySelection クラスを継承するには <code>Class extends EntitySelection</code> と書きます。</p></li>
 <li><p>データモデルクラスオブジェクトのインスタンス化に <code>new()</code> キーワードは使えません (エラーが返されます)。 通常の <a href="#アーキテクチャー">インスタンス化の方法</a> を使う必要があります。</p></li>
-<li><p><strong><code>4D</code></strong> <a href="/docs/ja/Concepts/classes.html#クラスストア">クラスストア</a> のネイティブな ORDA クラスメソッドを、データモデルユーザークラス関数でオーバーライドすることはできません。</p></li>
+<li><p>You cannot override a native ORDA class method from the <strong><code>4D</code></strong> <a href="/docs/ja/Concepts/classes.html#class-stores">class store</a> with a data model user class function.</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="データモデルクラスの管理"></a><a href="#データモデルクラスの管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>データモデルクラスの管理</h2>
 <h3><a class="anchor" aria-hidden="true" id="クラスファイル"></a><a href="#クラスファイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスファイル</h3>
-<p>ORDA データモデルユーザークラスは、クラスと同じ名称の .4dm ファイルを <a href="/docs/ja/Concepts/classes.html#クラスファイル">通常のクラスファイルと同じ場所</a> (つまり、Project フォルダー内の <code>/Sources/Classes</code> フォルダー) に追加することで定義されます。 たとえば、<code>Utilities</code> データクラスのエンティティクラスは、<code>UtilitiesEntity.4dm</code> ファイルによって定義されます。</p>
+<p>An ORDA data model user class is defined by adding, at the <a href="/docs/ja/Concepts/classes.html#class-files">same location as regular class files</a> (<em>i.e.</em> in the <code>/Sources/Classes</code> folder of the project folder), a .4dm file with the name of the class. たとえば、<code>Utilities</code> データクラスのエンティティクラスは、<code>UtilitiesEntity.4dm</code> ファイルによって定義されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="クラスの作成"></a><a href="#クラスの作成" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスの作成</h3>
 <p>各データモデルオブジェクトに関わるクラスは、4D によってあらかじめ自動的にメモリ内に作成されます。</p>
 <p><img src="/docs/assets/en/ORDA/ORDA_Classes-3.png" alt=""></p>
 <blockquote>
-<p>空の ORDA クラスは、デフォルトではエクスプローラーに表示されません。 表示するにはエクスプローラーのオプションメニューより <strong>データクラスを全て表示</strong> を選択します: <img src="/docs/assets/en/ORDA/showClass.png" alt=""></p>
+<p>空の ORDA クラスは、デフォルトではエクスプローラーに表示されません。 You need to show them by selecting <strong>Show all data classes</strong> from the Explorer's options menu: <img src="/docs/assets/en/ORDA/showClass.png" alt=""></p>
 </blockquote>
 <p>ORDA ユーザークラスは通常のクラスとは異なるアイコンで表されます。 空のクラスは薄く表示されます:</p>
 <p><img src="/docs/assets/en/ORDA/classORDA2.png" alt=""></p>
 <p>ORDA クラスファイルを作成するには、エクスプローラーで任意のクラスをダブルクリックします。 4D はクラスファイルを作成し、<code>extends</code> ステートメントを自動で追加します。 たとえば、Entity クラスを継承するクラスの場合は:</p>
-<pre><code class="hljs">Class extends Entity
+<pre><code class="hljs"><span class="hljs-class"><span class="hljs-keyword">Class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Entity</span></span>
 </code></pre>
 <p>定義されたクラスはエクスプローラー内で濃く表示されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="クラスの編集"></a><a href="#クラスの編集" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスの編集</h3>
-<p>定義された ORDA クラスファイルを 4D メソッドエディターで開くには、ORDA クラス名を選択してエクスプローラーのオブションメニュー、またはコンテキストメニューの <strong>編集...</strong> を使用するか、ORDA クラス名をダブルクリックします (通常のクラスと同様):</p>
+<p>To open a defined ORDA class in the 4D method editor, select or double-click on an ORDA class name and use <strong>Edit...</strong> from the contextual menu/options menu of the Explorer window (like for any class):</p>
 <p><img src="/docs/assets/en/ORDA/classORDA4.png" alt=""></p>
 <p>ローカルデータストア (ds) に基づいた ORDA クラスの場合には、4D ストラクチャーウィンドウからも直接クラスコードにアクセスできます:</p>
 <p><img src="/docs/assets/en/ORDA/classORDA5.png" alt=""></p>

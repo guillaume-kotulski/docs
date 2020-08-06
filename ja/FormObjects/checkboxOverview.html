@@ -131,34 +131,34 @@
 <p>スタイルによって <a href="#プロパティ一覧">提供されるプロパティ</a> は異なりますが、大多数のチェックボックスは <em>構造上</em> 同じです。 違いは、関連づけられた変数の処理にあります。</p>
 <p>次の既定スタイルが提供されています:</p>
 <h3><a class="anchor" aria-hidden="true" id="通常"></a><a href="#通常" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>通常</h3>
-<p>通常スタイルのチェックボックスは、標準的なシステムチェックボックス (四角形にタイトルが付いたもの) です。</p>
+<p>The Regular check box button style is a standard system check box (<em>i.e.</em>, a rectangle with a descriptive title):</p>
 <p><img src="/docs/assets/en/FormObjects/checkbox_regular.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例"></a><a href="#json-例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-        &quot;type&quot;: &quot;checkbox&quot;, 
-        &quot;style&quot;:&quot;regular&quot;,
-        &quot;text&quot;: &quot;Cancel&quot;,   
-        &quot;action&quot;: &quot;Cancel&quot;,     
-        &quot;left&quot;: 60,         
-        &quot;top&quot;: 160,     
-        &quot;width&quot;: 100,           
-        &quot;height&quot;: 20        
-        &quot;dataSourceTypeHint&quot;:&quot;boolean&quot;
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+        <span class="hljs-string">"style"</span>:<span class="hljs-string">"regular"</span>,
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Cancel"</span>,   
+        <span class="hljs-string">"action"</span>: <span class="hljs-string">"Cancel"</span>,     
+        <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,         
+        <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+        <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+        <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>        
+        <span class="hljs-string">"dataSourceTypeHint"</span>:<span class="hljs-string">"boolean"</span>
         }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="フラット"></a><a href="#フラット" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>フラット</h3>
 <p>フラットスタイルのチェックボックスでは、装飾が最小限に抑えられています。 このグラフィック的特性により、フラットスタイルは印刷フォームでの使用に適しています。</p>
 <p><img src="/docs/assets/en/FormObjects/checkbox_flat.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-1"></a><a href="#json-例-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;flat&quot;,
-            &quot;text&quot;: &quot;Cancel&quot;,   
-            &quot;action&quot;: &quot;cancel&quot;, 
-            &quot;left&quot;: 60,     
-            &quot;top&quot;: 160, 
-            &quot;width&quot;: 100,           
-            &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"flat"</span>,
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Cancel"</span>,   
+            <span class="hljs-string">"action"</span>: <span class="hljs-string">"cancel"</span>, 
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
             }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="ツールバーボタン"></a><a href="#ツールバーボタン" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ツールバーボタン</h3>
@@ -167,34 +167,34 @@
 <p>チェックなし / チェック / ハイライト状態の例です:</p>
 <p><img src="/docs/assets/en/FormObjects/checkbox_toolbar.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-2"></a><a href="#json-例-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;,
-                &quot;style&quot;:&quot;toolbar&quot;,  
-                &quot;text&quot;: &quot;Checkbox&quot;,
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4 
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,                   
-                &quot;height&quot;: 20                    
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>,
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"toolbar"</span>,  
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span> 
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,                   
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                    
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="ベベル"></a><a href="#ベベル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ベベル</h3>
-<p>ベベルスタイルはデフォルトでは、通常ボタンのような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
+<p>The Bevel check box button style combines the appearance of the <a href="#regular">Regular</a> button style (<em>i.e.</em>, a rectangle with a descriptive title) with the <a href="#toolbar-button">Toolbar Button</a> button style's behavior.</p>
 <p>ベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は <a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられます。</p>
 <p>チェックなし / チェック / ハイライト状態の例です:</p>
 <p><img src="/docs/assets/en/FormObjects/checkbox_bevel.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-3"></a><a href="#json-例-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;bevel&quot;,
-                &quot;text&quot;: &quot;Checkbox&quot;,  
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4 
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,               
-                &quot;height&quot;: 20                
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"bevel"</span>,
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,  
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span> 
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,               
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="角の丸いベベル"></a><a href="#角の丸いベベル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>角の丸いベベル</h3>
@@ -226,78 +226,84 @@
 <p>Windows 上では、このスタイルは <a href="#ベベル">ベベル</a> スタイルと同じです。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="json-例-5"></a><a href="#json-例-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;gradientBevel&quot;, 
-            &quot;text&quot;: &quot;Checkbox&quot;, 
-            &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;,
-            &quot;iconFrames&quot;: 4
-            &quot;left&quot;: 60,     
-            &quot;top&quot;: 160,     
-            &quot;width&quot;: 100,               
-            &quot;height&quot;: 20                
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"gradientBevel"</span>, 
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>, 
+            <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>,
+            <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span>
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,               
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                
            }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="os-xテクスチャー"></a><a href="#os-xテクスチャー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OS Xテクスチャー</h3>
 <p>OS Xテクスチャースタイルは <a href="#ベベル">ベベル</a> スタイルと似ていますが、サイズがより小さいです (最大サイズは macOS の標準的なシステムボタンのサイズです)。 ベベルスタイルと同様に、OS Xテクスチャースタイルは通常ボタンような外観に、チェックボックスの <a href="#ツールバーボタン">ツールバーボタン</a> スタイルの機能を組み合わせたものです。</p>
 <p>デフォルトで、OS Xテクスチャースタイルの外観は次の通りです:</p>
 <ul>
-<li><p><em>Windows</em> - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p></li>
-<li><p><em>macOS</em> - 標準のシステムボタンです。 高さは定義済みで、変更できません。</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_osxtextured_mac.png" alt=""></p></li>
+<li><em>Windows</em> - 明るいブルーの背景に中央配置のラベルが付いた標準のシステムボタンです。</li>
 </ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - a standard system button. 高さは定義済みで、変更できません。</li>
+</ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_osxtextured_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-6"></a><a href="#json-例-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;texturedBevel&quot;, 
-            &quot;text&quot;: &quot;Checkbox&quot;, 
-            &quot;left&quot;: 60, 
-            &quot;top&quot;: 160, 
-            &quot;width&quot;: 100,                   
-            &quot;height&quot;: 20                    
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"texturedBevel"</span>, 
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>, 
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,                   
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                    
             }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="office-xp"></a><a href="#office-xp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Office XP</h3>
 <p>Office XPスタイルは通常ボタンような外観に、<a href="#ツールバーボタン">ツールバーボタン</a> スタイルの動作を組み合わせたものです。</p>
 <p>Office XP スタイルのチェックボックスの反転表示と背景のカラーはシステムカラーに基づいています。 チェックボックスにマウスオーバーしたときの表示は OS によって異なります:</p>
 <ul>
-<li><p><em>Windows</em> - マウスオーバー時にのみ背景が表示されます。 チェックなし / チェック / ハイライト状態の例です:</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_officexp.png" alt=""></p></li>
-<li><p><em>macOS</em> - 背景は常に表示されます。 チェックなし / チェック状態の例です:</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_officexp_mac.png" alt=""></p></li>
+<li><em>Windows</em> - マウスオーバー時にのみ背景が表示されます。 チェックなし / チェック / ハイライト状態の例です:</li>
 </ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_officexp.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - 背景は常に表示されます。 チェックなし / チェック状態の例です:</li>
+</ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_officexp_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-7"></a><a href="#json-例-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;office&quot;,
-                &quot;text&quot;: &quot;Checkbox&quot;,  
-                &quot;action&quot;: &quot;fontBold&quot;,
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4     
-               &quot;left&quot;: 60,  
-                &quot;top&quot;: 160,     
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"office"</span>,
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,  
+                <span class="hljs-string">"action"</span>: <span class="hljs-string">"fontBold"</span>,
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span>     
+               <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,  
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="折りたたみ展開"></a><a href="#折りたたみ展開" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>折りたたみ/展開</h3>
 <p>このチェックボックススタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。</p>
 <ul>
-<li><p><em>Windows</em> - [+] または [-] のように表示されます。</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_collapse.png" alt=""></p></li>
-<li><p><em>macOS</em> - 右や下を指す三角として表示されます。</p>
-<p><img src="/docs/assets/en/FormObjects/checkbox_collapse_mac.png" alt=""></p></li>
+<li><em>Windows</em> - the icon looks like a [+] or a [-]</li>
 </ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_collapse.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - 右や下を指す三角として表示されます。</li>
+</ul>
+<p><img src="/docs/assets/en/FormObjects/checkbox_collapse_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-8"></a><a href="#json-例-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;disclosure&quot;,
-                &quot;method&quot;: &quot;m_collapse&quot;,
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"disclosure"</span>,
+                <span class="hljs-string">"method"</span>: <span class="hljs-string">"m_collapse"</span>,
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="開示ボタン"></a><a href="#開示ボタン" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>開示ボタン</h3>
@@ -309,14 +315,14 @@
 <p><img src="/docs/assets/en/FormObjects/checkbox_disclosure_mac.png" alt=""></p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="json-例-9"></a><a href="#json-例-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;,     
-                &quot;style&quot;:&quot;roundedDisclosure&quot;,    
-                &quot;method&quot;: &quot;m_disclose&quot;,
-                &quot;left&quot;: 60,     
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>,     
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"roundedDisclosure"</span>,    
+                <span class="hljs-string">"method"</span>: <span class="hljs-string">"m_disclose"</span>,
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="カスタム"></a><a href="#カスタム" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>カスタム</h3>
@@ -328,21 +334,21 @@
 </ul>
 <p>カスタムチェックボックスには通常、<a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ画像</a> が関連付けられ、これは同じく <a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#状態の数">4つの状態を持つ</a> <a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#backgroundPathname">背景ピクチャー</a> と同時に使用することができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-例-10"></a><a href="#json-例-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 例:</h4>
-<pre><code class="hljs">    &quot;myCheckbox&quot;: {
-        &quot;type&quot;: &quot;checkbox&quot;,
-        &quot;style&quot;:&quot;custom&quot;,
-        &quot;text&quot;: &quot;OK&quot;, 
-        &quot;icon&quot;: &quot;/RESOURCES/smiley.jpg&quot;, 
-        &quot;iconFrame&quot;: 4, 
-        &quot;customBackgroundPicture&quot;: &quot;/RESOURCES/paper.jpg&quot;, 
-        &quot;iconOffset&quot;: 5, // クリック時のアイコンオフセット
-        &quot;left&quot;: 60, 
-        &quot;top&quot;: 160, 
-        &quot;width&quot;: 100,       
-        &quot;height&quot;: 20,
-        &quot;customBorderX&quot;: 20,
-        &quot;customBorderY&quot;: 5
-        }
+<pre><code class="hljs">    <span class="hljs-attr">"myCheckbox":</span> <span class="hljs-string">{</span>
+        <span class="hljs-attr">"type":</span> <span class="hljs-string">"checkbox"</span><span class="hljs-string">,</span>
+        <span class="hljs-string">"style"</span><span class="hljs-string">:"custom",</span>
+        <span class="hljs-attr">"text":</span> <span class="hljs-string">"OK"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"icon":</span> <span class="hljs-string">"/RESOURCES/smiley.jpg"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"iconFrame":</span> <span class="hljs-number">4</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"customBackgroundPicture":</span> <span class="hljs-string">"/RESOURCES/paper.jpg"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"iconOffset":</span> <span class="hljs-number">5</span><span class="hljs-string">,</span> <span class="hljs-string">//</span> <span class="hljs-string">クリック時のアイコンオフセット</span>
+        <span class="hljs-attr">"left":</span> <span class="hljs-number">60</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"top":</span> <span class="hljs-number">160</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"width":</span> <span class="hljs-number">100</span><span class="hljs-string">,</span>       
+        <span class="hljs-attr">"height":</span> <span class="hljs-number">20</span><span class="hljs-string">,</span>
+        <span class="hljs-attr">"customBorderX":</span> <span class="hljs-number">20</span><span class="hljs-string">,</span>
+        <span class="hljs-attr">"customBorderY":</span> <span class="hljs-number">5</span>
+        <span class="hljs-string">}</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="プロパティ一覧"></a><a href="#プロパティ一覧" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロパティ一覧</h2>
 <p>すべてのチェックボックスは次の基本プロパティを共有します:</p>

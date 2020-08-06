@@ -81,27 +81,27 @@
 <p>La fenêtre présente les caractéristiques principales suivantes :</p>
 <ul>
 <li>Zone d'aperçu avec des messages d'aide : la zone centrale affiche un aperçu de chaque objet. Vous pouvez survoler un objet pour obtenir des informations sur celui-ci dans un message d'aide.</li>
-<li>Vous pouvez filtrer le contenu de la fenêtre en utilisant le menu <strong>Catégories</strong> : <img src="/docs/assets/en/FormEditor/library3.png" alt=""></li>
+<li>You can filter the window contents by using the <strong>Categories</strong> menu: <img src="/docs/assets/en/FormEditor/library3.png" alt=""></li>
 <li>Pour utiliser un objet de la bibliothèque dans votre formulaire, vous pouvez soit :
 <ul>
-<li>faire un clic droit sur un objet et sélectionnez <strong>Copier</strong> dans le menu contextuel</li>
+<li>right-click on an object and select <strong>Copy</strong> in the contextual menu</li>
 <li>ou glisser-déposer l'objet de la bibliothèque. L'objet est ensuite ajouté au formulaire.</li>
 </ul></li>
 </ul>
 <p>Cette bibliothèque est en lecture seule. Si vous souhaitez modifier des objets par défaut ou créer votre propre bibliothèque d'objets préconfigurés ou vos formulaires projets, vous devez créer une bibliothèque d'objets personnalisée (voir ci-dessous).</p>
 <p>Tous les objets proposés dans la bibliothèque d'objets standard sont décrits dans <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Library-objects.200-4354586.en.html">cette section sur doc.4d.com</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="créer-et-utiliser-des-bibliothèques-dobjets-personnalisées"></a><a href="#créer-et-utiliser-des-bibliothèques-dobjets-personnalisées" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Créer et utiliser des bibliothèques d'objets personnalisées</h2>
-<p>4D permet de créer et d’utiliser des bibliothèques d’objets personnalisées. Une bibliothèque d’objets personnalisée est un projet 4D qui vous permet de stocker vos objets favoris dans les formulaires (boutons, textes, images, etc). Ces objets peuvent être ensuite réutilisés dans différents formulaires et différents projets.</p>
+<p>4D permet de créer et d’utiliser des bibliothèques d’objets personnalisées. A custom object library is a 4D project where you can store your favorite objects (buttons, texts, pictures, etc.) You can then reuse these objects in different forms and different projects.</p>
 <p>Les objets sont stockés avec toutes leurs propriétés, y compris leurs méthodes objet. Les bibliothèques sont constituées et utilisées par simple glisser-déposer ou copier-coller.</p>
 <p>A l’aide des bibliothèques d'objets, vous pouvez constituer des fonds d’objets de formulaires regroupés par familles graphiques, par fonctionnalités, etc.</p>
 <h3><a class="anchor" aria-hidden="true" id="créer-une-bibliothèque-dobjets"></a><a href="#créer-une-bibliothèque-dobjets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Créer une bibliothèque d’objets</h3>
-<p>Pour créer une bibliothèque d’objets, sélectionnez la commande <strong>Nouveau &gt; Bibliothèque d’objets...</strong> dans le menu <strong>Fichier</strong> ou dans la barre d’outils de 4D. Une boîte de dialogue standard d’enregistrement de fichiers apparaît, vous permettant de choisir le nom et l’emplacement de la bibliothèque d’objets.</p>
+<p>To create an object library, select <strong>New&gt;Object Library...</strong> from the 4D <strong>File</strong> menu or tool bar. Une boîte de dialogue standard d’enregistrement de fichiers apparaît, vous permettant de choisir le nom et l’emplacement de la bibliothèque d’objets.</p>
 <p>Lorsque vous validez la boîte de dialogue, 4D crée sur disque une nouvelle bibliothèque d’objets et affiche sa fenêtre (vide par défaut).</p>
 <p><img src="/docs/assets/en/FormEditor/library4.png" alt=""></p>
 <p>Vous pouvez créer autant de bibliothèques que vous voulez par projet. Une bibliothèque créée et construite sous macOS peut être utilisée sous Windows et inversement.</p>
 <h3><a class="anchor" aria-hidden="true" id="ouvrir-une-bibliothèque-dobjets"></a><a href="#ouvrir-une-bibliothèque-dobjets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ouvrir une bibliothèque d’objets</h3>
 <p>Une même bibliothèque d’objets ne peut être ouverte que par une seule base à la fois. En revanche, il est possible d’ouvrir plusieurs bibliothèques différentes dans la même base.</p>
-<p>Pour ouvrir une bibliothèque d’objets personnalisée, sélectionnez la commande <strong>Ouvrir&gt;Bibliothèque d’objets...</strong> dans le menu <strong>Fichier</strong> ou la barre d’outils de 4D. Une boîte de dialogue standard d’ouverture de fichiers apparaît, vous permettant de désigner la bibliothèque d’objets à ouvrir. Vous pouvez sélectionner les types de fichier suivants :</p>
+<p>To open a custom object library, select <strong>Open&gt;Object Library...</strong> command in the 4D <strong>File</strong> menu or tool bar. Une boîte de dialogue standard d’ouverture de fichiers apparaît, vous permettant de désigner la bibliothèque d’objets à ouvrir. Vous pouvez sélectionner les types de fichier suivants :</p>
 <ul>
 <li><strong>.4dproject</strong></li>
 <li><strong>.4dz</strong></li>
@@ -114,15 +114,15 @@
 <h3><a class="anchor" aria-hidden="true" id="construire-une-bibliothèque-dobjets"></a><a href="#construire-une-bibliothèque-dobjets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Construire une bibliothèque d’objets</h3>
 <p>Les objets sont placés dans une bibliothèque d’objets par glisser-déposer ou couper/copier-coller. Ils peuvent provenir soit d’un formulaire soit d’une autre bibliothèque d’objets (y compris la <a href="#using-the-standard-object-library">bibliothèque préconfigurée</a>). Aucun lien n’est conservé avec l’objet d’origine : si celui-ci est modifié, la modification ne sera pas reportée dans l’objet copié.</p>
 <blockquote>
-<p>Pour que vous puissiez effectuer des glisser-déposer d’objets depuis les formulaires vers des bibliothèques, vous devez sélectionner l’option de déplacement <strong>Commencer un glisser-déposer</strong> dans les Préférences de 4D.</p>
+<p>In order to be able to drag and drop objects from forms to object libraries, you must make sure the <strong>Start drag and drop</strong> option in the 4D Preferences is selected.</p>
 </blockquote>
 <p>Les principales opérations sont accessibles via le menu contextuel ou le menu d'options de la fenêtre :</p>
 <p><img src="/docs/assets/en/FormEditor/library5.png" alt=""></p>
 <ul>
-<li>**Couper ** ou <strong>Copier</strong> vers le conteneur de données</li>
-<li><strong>Coller</strong> un objet à partir du conteneur de données</li>
-<li><strong>Effacer</strong> - supprime l'objet de la bibliothèque</li>
-<li><strong>Renommer</strong> - une boite de dialogue apparait pour vous permettre de renommer l'élément. A noter que les noms d'objets doivent être uniques dans une bibliothèque.</li>
+<li><strong>Cut</strong> or <strong>Copy</strong> to the pasteboard</li>
+<li><strong>Paste</strong> an object from the pasteboard</li>
+<li><strong>Clear</strong> - deletes the object from the library</li>
+<li><strong>Rename</strong> - a dialog box appears allowing you to rename the item. A noter que les noms d'objets doivent être uniques dans une bibliothèque.</li>
 </ul>
 <p>Vous pouvez placer dans la bibliothèque des objets individuels (y compris des sous-formulaires) ou des ensembles d’objets. Chaque objet ou ensemble d’objets est regroupé en un seul élément :</p>
 <p><img src="/docs/assets/en/FormEditor/library6.png" alt=""></p>
