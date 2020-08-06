@@ -32,17 +32,17 @@ title: インストール
 
 ![](assets/en/getStart/welcome2.png)
 
-- If you want to discover and explore 4D, click on the **free trial** link. (4D アカウントでログイン、またはアカウントを新規作成する必要があります)。
+- 4D を試用するには、"初めて 4D をお使いですか？" の下にある、**無料体験版を開始するにはここをクリック** から先に進みます (4D アカウントでログイン、またはアカウントを新規作成する必要があります)。
 
-- If you already have a 4D account, click on the **Sign in** link in the upper right side of the Welcome Wizard dialog and enter your account information. マシン上でアクティベーション済みのライセンスは自動的に更新 (追加ライセンスがあれば自動的にロード) されます。
+- 4D アカウントをすでに持っている場合は、Welcome ウィザードの右上にある **ログイン** リンクをクリックし、アカウント情報を入力します。 マシン上でアクティベーション済みのライセンスは自動的に更新 (追加ライセンスがあれば自動的にロード) されます。
 
-Expand the **Open or create project application** area and select the action you want to perform:
+**アプリケーションプロジェクトを開始または作成** 項目を展開すると、いくつかの選択肢が表示されます:
 
-- **Connect to 4D Server** - use 4D as a remote client and connect to an application that is already loaded by 4D Server.
+- **4D Server に接続** - 4D をリモートクライアントとして試用し、4D Server にてすでに起動されているアプリケーションに接続します。
 
-- **Open a local application project** - load an existing application project stored on your disk.
+- **ローカルアプリケーションプロジェクトを開く** - ディスク上に保存されている既存のアプリケーションプロジェクトを開きます。
 
-- **Create a new application project** - create a new, empty application project on your disk.
+- **新規にアプリケーションプロジェクトを作成する** - ディスク上に新規のアプリケーションプロジェクトを作成します。
 
 ぜひ 4D を楽しんでください！
 
