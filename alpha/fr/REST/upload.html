@@ -74,18 +74,18 @@
 <p>Pour télécharger une image, vous devez d'abord sélectionner l'objet fichier sur le client à l'aide de l'API intégré HTML 5 pour utiliser le fichier à partir d'une application Web. 4D utilise l'attribut de type MIME de l'objet fichier afin de le gérer correctement.</p>
 <p>Téléchargez ensuite l'image sélectionnée sur 4D Server :</p>
 <p><code>POST /rest/$upload?$rawPict=true</code></p>
-<p><strong>Result</strong>:</p>
+<p><strong>Résultat</strong> :</p>
 <p><code>{ &quot;ID&quot;: &quot;D507BC03E613487E9B4C2F6A0512FE50&quot; }</code></p>
 <p>Utilisez ensuite cet ID pour l'ajouter à un attribut en utilisant<a href="/docs/alpha/fr/REST/method.html#methodupdate"><code>$method=update</code></a> pour ajouter l'image à une entité :</p></p>
 <p><code>POST /rest/Employee/?$method=update</code></p>
-<p><strong>POST data</strong>:</p>
+<p><strong>Données POST</strong> :</p>
 <pre><code class="hljs">{
     <span class="hljs-attribute">__KEY</span>: <span class="hljs-string">"12"</span>,
     __STAMP: <span class="hljs-number">4</span>,
     photo: { <span class="hljs-string">"ID"</span>: <span class="hljs-string">"D507BC03E613487E9B4C2F6A0512FE50"</span> } 
 }
 </code></pre>
-<p><strong>Response</strong>:</p>
+<p><strong>Réponse</strong> :</p>
 <p>L'entité modifiée est retournée :</p>
 <pre><code class="hljs">{
     <span class="hljs-attr">"__KEY"</span>: <span class="hljs-string">"12"</span>, 
