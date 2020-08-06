@@ -87,7 +87,7 @@ true/false ステータスで表すことのできるアクション ("checkable
 
 ### 通常
 
-The Regular check box button style is a standard system check box (*i.e.*, a rectangle with a descriptive title):
+通常スタイルのチェックボックスは、標準的なシステムチェックボックス (四角形にタイトルが付いたもの) です。
 
 ![](assets/en/FormObjects/checkbox_regular.png)
 
@@ -163,7 +163,7 @@ The Regular check box button style is a standard system check box (*i.e.*, a rec
 
 ### ベベル
 
-The Bevel check box button style combines the appearance of the [Regular](#regular) button style (*i.e.*, a rectangle with a descriptive title) with the [Toolbar Button](#toolbar-button) button style's behavior.
+ベベルスタイルはデフォルトでは、通常ボタンのような外観に、チェックボックスの [ツールバーボタン](#ツールバーボタン) スタイルの機能を組み合わせたものです。
 
 ベベルスタイルは、明るいグレーの背景にラベルが付いています。 また、通常は [4つの状態を持つ画像](properties_TextAndPicture.md#状態の数) が関連付けられます。
 
@@ -261,7 +261,7 @@ OS Xテクスチャースタイルは [ベベル](#ベベル) スタイルと似
 
   ![](assets/en/FormObjects/checkbox_osxtextured.png)
 
- - *macOS* - a standard system button. 高さは定義済みで、変更できません。
+ - *macOS* - 標準のシステムボタンです。 高さは定義済みで、変更できません。
 
   ![](assets/en/FormObjects/checkbox_osxtextured_mac.png)
 
@@ -319,7 +319,7 @@ Office XP スタイルのチェックボックスの反転表示と背景のカ�
 
 このチェックボックススタイルは標準の折りたたみ/展開アイコンを表示するのに使用します。 これらは階層リストで使用されます。
 
- - *Windows* - the icon looks like a [+] or a [-]
+ - *Windows* - [+] または [-] のように表示されます。
 
   ![](assets/en/FormObjects/checkbox_collapse.png)
 
