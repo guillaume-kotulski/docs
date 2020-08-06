@@ -221,97 +221,40 @@
 <tr><th>フォームイベント</th><th>取得される追加プロパティ (メインプロパティについては<a href="https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.ja.html">Form event</a> 参照)</th><th>コメント</th></tr>
 </thead>
 <tbody>
-<tr><td>On After Edit</td><td>- <a href="#additional-properties">column</a></td></tr>
+<tr><td>On After Edit</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On After Keystroke</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On After Sort</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">headerName</a></li></td><td><em>複合フォーミュラはソート不可 <br>(例: This.firstName + This.lastName)</em></td></tr>
+<tr><td>On Alternative Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>配列リストボックスのみ</em></td></tr>
+<tr><td>On Before Data Entry</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Before Keystroke</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Begin Drag Over</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Clicked</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Close Detail</td><td><li><a href="#additional-properties">row</a></li></td><td><em>カレントセレクション&amp;命名セレクションリストボックスのみ</em></td></tr>
+<tr><td>On Collapse</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>階層リストボックスのみ</em></td></tr>
+<tr><td>On Column Moved</td><td><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">newPosition</a></li><li><a href="#additional-properties">oldPosition</a></li></td><td></td></tr>
+<tr><td>On Column Resize</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">newSize</a></li><li><a href="#additional-properties">oldSize</a></li></td><td></td></tr>
+<tr><td>On Data Change</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Delete Action</td><td><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Display Detail</td><td><li><a href="#additional-properties">isRowSelected</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Double Clicked</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Drag Over</td><td><li><a href="#additional-properties">area</a></li><li><a href="#additional-properties">areaName</a></li><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Drop</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Expand</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>階層リストボックスのみ</em></td></tr>
+<tr><td>On Footer Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">footerName</a></li></td><td><em>配列、カレントセレクション&amp;命名セレクションリストボックスのみ</em></td></tr>
+<tr><td>On Getting Focus</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>追加プロパティの取得はセル編集時のみ</em></td></tr>
+<tr><td>On Header Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">headerName</a></li></td><td></td></tr>
+<tr><td>On Load</td><td></td><td></td></tr>
+<tr><td>On Losing Focus</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>追加プロパティの取得はセル編集完了時のみ</em></td></tr>
+<tr><td>On Mouse Enter</td><td><li><a href="#additional-properties">area</a></li><li><a href="#additional-properties">areaName</a></li><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Mouse Leave</td><td></td><td></td></tr>
+<tr><td>On Mouse Move</td><td><li><a href="#additional-properties">area</a></li><li><a href="#additional-properties">areaName</a></li><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Open Detail</td><td><li><a href="#additional-properties">row</a></li></td><td><em>カレントセレクション&amp;命名セレクションリストボックスのみ</em></td></tr>
+<tr><td>On Row Moved</td><td><li><a href="#additional-properties">newPosition</a></li><li><a href="#additional-properties">oldPosition</a></li></td><td><em>配列リストボックスのみ</em></td></tr>
+<tr><td>On Selection Change</td><td></td><td></td></tr>
+<tr><td>On Scroll</td><td><li><a href="#additional-properties">horizontalScroll</a></li><li><a href="#additional-properties">verticalScroll</a></li></td><td></td></tr>
+<tr><td>On Unload</td><td></td><td></td></tr>
 </tbody>
 </table>
-<ul>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On After Keystroke   | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On After Sort        | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">headerName</a>                                                                | <em>複合フォーミュラはソート不可<br>
-(例: This.firstName + This.lastName)</em> |
-| On Alternative Click | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>配列リストボックスのみ</em>                                           |
-| On Before Data Entry | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Before Keystroke  | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Begin Drag Over   | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Clicked           | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Close Detail      | - <a href="#additional-properties">row</a>                                                                                                                                                 | <em>カレントセレクション&amp;命名セレクションリストボックスのみ</em>                          |
-| On Collapse          | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>階層リストボックスのみ</em>                                           |
-| On Column Moved      | - <a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">newPosition</a></li>
-<li><a href="#additional-properties">oldPosition</a>                                                          |                                                         |
-| On Column Resize     | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">newSize</a></li>
-<li><a href="#additional-properties">oldSize</a>                               |                                                         |
-| On Data Change       | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Delete Action     | - <a href="#additional-properties">row</a>                                                                                                                                                 |                                                         |
-| On Display Detail    | - <a href="#additional-properties">isRowSelected</a></li>
-<li><a href="#additional-properties">row</a>                                                                                                       |                                                         |
-| On Double Clicked    | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Drag Over         | - <a href="#additional-properties">area</a></li>
-<li><a href="#additional-properties">areaName</a></li>
-<li><a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a> |                                                         |
-| On Drop              | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Expand            | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>階層リストボックスのみ</em>                                           |
-| On Footer Click      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">footerName</a>                                                                | <em>配列、カレントセレクション&amp;命名セレクションリストボックスのみ</em>                       |
-| On Getting Focus     | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>追加プロパティの取得はセル編集時のみ</em>                                    |
-| On Header Click      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">headerName</a>                                                                |                                                         |
-| On Load              |                                                                                                                                                                                 |                                                         |
-| On Losing Focus      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>追加プロパティの取得はセル編集完了時のみ</em>                                  |
-| On Mouse Enter       | - <a href="#additional-properties">area</a></li>
-<li><a href="#additional-properties">areaName</a></li>
-<li><a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a> |                                                         |
-| On Mouse Leave       |                                                                                                                                                                                 |                                                         |
-| On Mouse Move        | - <a href="#additional-properties">area</a></li>
-<li><a href="#additional-properties">areaName</a></li>
-<li><a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a> |                                                         |
-| On Open Detail       | - <a href="#additional-properties">row</a>                                                                                                                                                 | <em>カレントセレクション&amp;命名セレクションリストボックスのみ</em>                          |
-| On Row Moved         | - <a href="#additional-properties">newPosition</a></li>
-<li><a href="#additional-properties">oldPosition</a>                                                                                                 | <em>配列リストボックスのみ</em>                                           |
-| On Selection Change  |                                                                                                                                                                                 |                                                         |
-| On Scroll            | - <a href="#additional-properties">horizontalScroll</a></li>
-<li><a href="#additional-properties">verticalScroll</a>                                                                                         |                                                         |
-| On Unload            |                                                                                                                                                                                 |                                                         |</li>
-</ul>
 <h4><a class="anchor" aria-hidden="true" id="追加プロパティ"></a><a href="#追加プロパティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>追加プロパティ</h4>
 <p>リストボックスやリストボックス列オブジェクトにて発生するフォームイベントは、次の追加プロパティを返すことがあります:</p>
 <table>
@@ -353,74 +296,30 @@
 <tr><th>フォームイベント</th><th>取得される追加プロパティ (メインプロパティについては<a href="https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.ja.html">Form event</a> 参照)</th><th>コメント</th></tr>
 </thead>
 <tbody>
-<tr><td>On After Edit</td><td>- <a href="#additional-properties">column</a></td></tr>
+<tr><td>On After Edit</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On After Keystroke</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On After Sort</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">headerName</a></li></td><td><em>複合フォーミュラはソート不可 <br>(例: This.firstName + This.lastName)</em></td></tr>
+<tr><td>On Alternative Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>配列リストボックスのみ</em></td></tr>
+<tr><td>On Before Data Entry</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Before Keystroke</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Begin Drag Over</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Clicked</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Column Moved</td><td><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">newPosition</a></li><li><a href="#additional-properties">oldPosition</a></li></td><td></td></tr>
+<tr><td>On Column Resize</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">newSize</a></li><li><a href="#additional-properties">oldSize</a></li></td><td></td></tr>
+<tr><td>On Data Change</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Double Clicked</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Drag Over</td><td><li><a href="#additional-properties">area</a></li><li><a href="#additional-properties">areaName</a></li><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Drop</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td></td></tr>
+<tr><td>On Footer Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">footerName</a></li></td><td><em>配列、カレントセレクション&amp;命名セレクションリストボックスのみ</em></td></tr>
+<tr><td>On Getting Focus</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>追加プロパティの取得はセル編集時のみ</em></td></tr>
+<tr><td>On Header Click</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">headerName</a></li></td><td></td></tr>
+<tr><td>On Load</td><td></td><td></td></tr>
+<tr><td>On Losing Focus</td><td><li><a href="#additional-properties">column</a></li><li><a href="#additional-properties">columnName</a></li><li><a href="#additional-properties">row</a></li></td><td><em>追加プロパティの取得はセル編集完了時のみ</em></td></tr>
+<tr><td>On Row Moved</td><td><li><a href="#additional-properties">newPosition</a></li><li><a href="#additional-properties">oldPosition</a></li></td><td><em>配列リストボックスのみ</em></td></tr>
+<tr><td>On Scroll</td><td><li><a href="#additional-properties">horizontalScroll</a></li><li><a href="#additional-properties">verticalScroll</a></li></td><td></td></tr>
+<tr><td>On Unload</td><td></td><td></td></tr>
 </tbody>
 </table>
-<ul>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On After Keystroke   | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On After Sort        | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">headerName</a>                                                                | <em>複合フォーミュラはソート不可<br>
-(例: This.firstName + This.lastName)</em> |
-| On Alternative Click | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>配列リストボックスのみ</em>                                           |
-| On Before Data Entry | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Before Keystroke  | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Begin Drag Over   | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Clicked           | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Column Moved      | - <a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">newPosition</a></li>
-<li><a href="#additional-properties">oldPosition</a>                                                          |                                                         |
-| On Column Resize     | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">newSize</a></li>
-<li><a href="#additional-properties">oldSize</a>                               |                                                         |
-| On Data Change       | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Double Clicked    | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Drag Over         | - <a href="#additional-properties">area</a></li>
-<li><a href="#additional-properties">areaName</a></li>
-<li><a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a> |                                                         |
-| On Drop              | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       |                                                         |
-| On Footer Click      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">footerName</a>                                                                | <em>配列、カレントセレクション&amp;命名セレクションリストボックスのみ</em>                       |
-| On Getting Focus     | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>追加プロパティの取得はセル編集時のみ</em>                                    |
-| On Header Click      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">headerName</a>                                                                |                                                         |
-| On Load              |                                                                                                                                                                                 |                                                         |
-| On Losing Focus      | - <a href="#additional-properties">column</a></li>
-<li><a href="#additional-properties">columnName</a></li>
-<li><a href="#additional-properties">row</a>                                                                       | <em>追加プロパティの取得はセル編集完了時のみ</em>                                  |
-| On Row Moved         | - <a href="#additional-properties">newPosition</a></li>
-<li><a href="#additional-properties">oldPosition</a>                                                                                                 | <em>配列リストボックスのみ</em>                                           |
-| On Scroll            | - <a href="#additional-properties">horizontalScroll</a></li>
-<li><a href="#additional-properties">verticalScroll</a>                                                                                         |                                                         |
-| On Unload            |                                                                                                                                                                                 |                                                         |</li>
-</ul>
 <h2><a class="anchor" aria-hidden="true" id="リストボックスヘッダー"></a><a href="#リストボックスヘッダー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスヘッダー</h2>
 <blockquote>
 <p>リストボックスのヘッダープロパティにアクセスするためには、リストボックスのプロパティリストで <a href="/docs/Rx/ja/FormObjects/propertiesHeaders.html#ヘッダーを表示">ヘッダーを表示</a> オプションが選択されていなければなりません。</p>
@@ -554,7 +453,7 @@
 <p>システムのハイライトを非表示にして、リストボックスの選択行を緑の背景色で表しました:</p>
 <p><img src="/docs/Rx/assets/en/FormObjects/listbox_styles7.png" alt=""></p>
 <p>配列タイプのリストボックスの場合、<a href="/docs/Rx/ja/FormObjects/propertiesBackgroundAndBorder.html#行背景色配列">行背景色配列</a> をプログラムにより更新する必要があります。 JSON フォームにおいて、リストボックスに次の行背景色配列を定義した場合:</p>
-<pre><code class="hljs">    &quot;rowFillSource&quot;: &quot;_ListboxBackground&quot;,
+<pre><code class="hljs">    <span class="hljs-string">"rowFillSource"</span>: <span class="hljs-string">"_ListboxBackground"</span>,
 </code></pre>
 <p>リストボックスのオブジェクトメソッドに次のように書けます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
@@ -572,8 +471,8 @@
 </code></pre>
 <p>セレクションタイプのリストボックスで同じ効果を得るには、<a href="/docs/Rx/ja/FormObjects/propertiesListBox.html#ハイライトセット">ハイライトセット</a> プロパティで指定されたセットに応じて <a href="/docs/Rx/ja/FormObjects/propertiesBackgroundAndBorder.html#背景色式">背景色式</a> が更新されるよう、メソッドを利用します。</p>
 <p>JSON フォームにおいて、リストボックスに次のハイライトセットおよび背景色式を定義した場合:</p>
-<pre><code class="hljs">    &quot;highlightSet&quot;: &quot;$SampleSet&quot;,
-    &quot;rowFillSource&quot;: &quot;UI_SetColor&quot;,
+<pre><code class="hljs">    <span class="hljs-string">"highlightSet"</span>: <span class="hljs-string">"<span class="hljs-variable">$SampleSet</span>"</span>,
+    <span class="hljs-string">"rowFillSource"</span>: <span class="hljs-string">"UI_SetColor"</span>,
 </code></pre>
 <p><em>UI_SetColor</em> メソッドに次のように書けます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(<span class="hljs-function">Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
@@ -725,9 +624,8 @@
 <p>リストボックスが階層形式で表示されると (先頭3つの配列が階層化されている場合)、以下のように表示されます:</p>
 <p><img src="/docs/Rx/assets/en/FormObjects/hierarch2.png" alt=""></p>
 <p>階層を正しく構築するためには、事前に配列をソートしなければなりません。 たとえば、配列中にデータが AAABBAACC の順で含まれていると、階層は以下のようになります:</p>
-<blockquote>
-<p>A B A C</p>
-</blockquote>
+<pre><code class="hljs">&gt; A B A C
+</code></pre>
 <p>階層 &quot;ノード&quot; を展開したり折りたたんだりするには、ノード上をクリックします。 ノード上を <strong>Alt+クリック</strong> (Windows) または <strong>Option+クリック</strong> (macOS) すると、すべてのサブ要素が同時に展開されたり折りたたまれたりします。 これらの動作は <code>LISTBOX EXPAND</code> および <code>LISTBOX COLLAPSE</code> コマンドを使用することでプログラミングでも実行可能です。</p>
 <p>階層リストボックスに日付や時間型の値を表示する際、それらは Short system format で表示されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="ソートの管理-1"></a><a href="#ソートの管理-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ソートの管理</h4>
@@ -772,7 +670,7 @@
 <h4><a class="anchor" aria-hidden="true" id="ブレーク行の管理"></a><a href="#ブレーク行の管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ブレーク行の管理</h4>
 <p>ユーザーがブレーク行を選択すると、<code>LISTBOX GET CELL POSITION</code> は対応する配列の最初のオカレンスを返します。 以下のケースで:</p>
 <p><img src="/docs/Rx/assets/en/FormObjects/hierarch11.png" alt=""></p>
-<p>... <code>LISTBOX GET CELL POSITION</code> は (2;4) を返します。 プログラムでブレーク行を選択するには <code>LISTBOX SELECT BREAK</code> コマンドを使用する必要があります。</p>
+<p><code>LISTBOX GET CELL POSITION</code> は (2;4) を返します。 プログラムでブレーク行を選択するには <code>LISTBOX SELECT BREAK</code> コマンドを使用する必要があります。</p>
 <p>ブレーク行はリストボックスのグラフィカルな表示 (スタイルやカラー) を管理する内部的な配列では考慮されません。 しかし、オブジェクトのグラフィックを管理するオブジェクト (フォーム) テーマのコマンドを使用してブレーク行の表示を変更できます。 階層を構成する配列に対して、適切なコマンドを実行します。</p>
 <p>以下のリストボックスを例題とします (割り当てた配列名は括弧内に記載しています):</p>
 <p><em>非階層表示:</em> <img src="/docs/Rx/assets/en/FormObjects/hierarch12.png" alt=""></p>
@@ -823,7 +721,7 @@
 <p>リストボックスカラムにオブジェクト配列が割り当てられているとき、セルの表示・入力・編集の方法は、配列の要素の valueType 属性に基づきます。 次の valueType の値がサポートされています:</p>
 <ul>
 <li>&quot;text&quot;: テキスト値</li>
-<li>&quot;real&quot;: セパレーターを含む数値。セパレーターの例: &lt;space&gt;, &lt;.&gt;, &lt;,&gt;</li>
+<li>&quot;real&quot;: セパレーターを含む数値。セパレーターの例: &lt;space&gt;, &lt;.&gt;,  &lt;,&gt;</li>
 <li>&quot;integer&quot;: 整数値</li>
 <li>&quot;boolean&quot;: true/false 値</li>
 <li>&quot;color&quot;: 背景色を定義</li>
@@ -856,7 +754,7 @@
 <tr><td>実数</td><td>オブジェクト内で定義されているものと同じ (システムの小数点セパレーターを使用)</td><td>&quot;0-9&quot; と &quot;.&quot; と &quot;-&quot;</td></tr>
 <tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot; と &quot;.&quot;</td></tr>
 <tr><td>整数</td><td>オブジェクト内で定義されているものと同じ</td><td>&quot;0-9&quot; と &quot;-&quot;</td></tr>
-<tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot;</td></tr>
+<tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot; と &quot;.&quot;</td></tr>
 <tr><td>ブール</td><td>チェックボックス</td><td>N/A</td></tr>
 <tr><td>color</td><td>N/A</td><td>N/A</td></tr>
 <tr><td>event</td><td>N/A</td><td>N/A</td></tr>
@@ -895,7 +793,7 @@
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob1</span>)
  <span class="hljs-variable">$entry</span>:=<span class="hljs-string">"Hello world!"</span>
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
-<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は$entry に格納されます</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は $entry に格納されます</span>
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob2</span>)
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"real"</span>)
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>/<span class="hljs-number">3</span>)
@@ -929,8 +827,7 @@
 <tr><th>属性</th><th>使用可能な値</th><th>valueType</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>behavior</td><td>threeStates</td><td>整数</td><td>スリーステートチェックボックスを数値として表現します。</td></tr>
-<tr><td>2=セミチェック、1=チェック、0=チェックされていない、-1=非表示、-2=チェックなしが無効化、-3=チェックが無効化、-4=セミチェックが無効化</td></tr>
+<tr><td>behavior</td><td>threeStates</td><td>整数</td><td>スリーステートチェックボックスを数値として表現します。<br>2=セミチェック、1=チェック、0=チェックされていない、-1=非表示、-2=チェックなしが無効化、-3=チェックが無効化、-4=セミチェックが無効化</td></tr>
 </tbody>
 </table>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob3</span>)
@@ -1077,9 +974,11 @@
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$ob4</span>)
 <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"color"</span>)
 <span class="hljs-function">OB SET</span>(<span class="hljs-variable">$ob4</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">0x00FF0000</span>)
-</code></pre>
-<p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_colorValue.png" alt=""></p></li>
-<li><p>値がテキストの場合、そのテキストが表示されます (<em>例</em>: &quot;value&quot;;&quot;Automatic&quot;)。</p></li>
+</code></pre></li>
+</ul>
+<p><img src="/docs/Rx/assets/en/FormObjects/listbox_column_objectArray_colorValue.png" alt=""></p>
+<ul>
+<li>値がテキストの場合、そのテキストが表示されます (<em>例</em>: &quot;value&quot;;&quot;Automatic&quot;)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="event-valuetype"></a><a href="#event-valuetype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>event valueType</h4>
 <p>&quot;event&quot; valueType を使用すると、クリックした際に <code>On Clicked</code> イベントを生成する単純なボタンを表示します。 データまたは値を渡す/返すことはできません。</p>

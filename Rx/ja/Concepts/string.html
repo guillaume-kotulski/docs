@@ -92,8 +92,7 @@
 <tr><td>\&quot;</td><td>&quot; (引用符)</td></tr>
 </tbody>
 </table>
-<p><strong>注:</strong> \ (バックスラッシュ) は Windows でパス名の区切り文字として使用されています。 通常 4D はメソッドエディターに入力されたバックスラッシュを自動で &quot;\&quot; に置き換えることで、これを正しく解釈します。例えば &quot;C:\Folder&quot; と入力すると &quot;C:\\Folder&quot; に変換されます。しかし “C:\MyDocuments\New” と入力した場合、4Dは二番目のバックスラッシュは &quot;\N&quot; (行送り) と解釈してしまい、“C:\\MyDocuments\New”を表示します。このようなケースでは開発者がバックスラッシュを2つ入力するようにしなければなりません。<br>
-さらに正規表現のパターン定義でもバックスラッシュがエスケープシーケンスとして使用されます。正規表現パターン &quot;\&quot; を4Dのメソッドエディターに記述する場合は &quot;\\&quot; となる点に注意してください。</p>
+<p><strong>注:</strong> \ (バックスラッシュ) は Windows でパス名の区切り文字として使用されています。 通常 4D はメソッドエディターに入力されたバックスラッシュを自動で &quot;\&quot; に置き換えることで、これを正しく解釈します。例えば &quot;C:\Folder&quot; と入力すると &quot;C:\\Folder&quot; に変換されます。しかし “C:\MyDocuments\New” と入力した場合、4Dは二番目のバックスラッシュは &quot;\N&quot; (行送り) と解釈してしまい、“C:\\MyDocuments\New”を表示します。このようなケースでは開発者がバックスラッシュを2つ入力するようにしなければなりません。<br /> さらに正規表現のパターン定義でもバックスラッシュがエスケープシーケンスとして使用されます。正規表現パターン &quot;\&quot; を4Dのメソッドエディターに記述する場合は &quot;\\&quot; となる点に注意してください。</p>
 <h2><a class="anchor" aria-hidden="true" id="文字列演算子"></a><a href="#文字列演算子" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>文字列演算子</h2>
 <table>
 <thead>
@@ -112,7 +111,7 @@
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; &lt; &quot;abc&quot;</td><td>False</td></tr>
 <tr><td>以上</td><td>文字列 &gt;= 文字列</td><td>ブール</td><td>&quot;abd&quot; &gt;= &quot;abc&quot;</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abc&quot; &gt;= &quot;abd&quot;</td><td>False</td></tr>
-<tr><td>以下</td><td>文字列 &lt;= String</td><td>ブール</td><td>&quot;abc&quot; &lt;= &quot;abd&quot;</td><td>True</td></tr>
+<tr><td>以下</td><td>String &lt;= String</td><td>ブール</td><td>&quot;abc&quot; &lt;= &quot;abd&quot;</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;abd&quot; &lt;= &quot;abc&quot;</td><td>False</td></tr>
 <tr><td>キーワードを含む</td><td>文字列 % 文字列</td><td>ブール</td><td>&quot;Alpha Bravo&quot; % &quot;Bravo&quot;</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>&quot;Alpha Bravo&quot; % &quot;ravo&quot;</td><td>False</td></tr>
@@ -166,7 +165,7 @@
 </code></pre>
 <p><strong>注:</strong> ストラクチャー設定のデータベースページには、文字列に @ 記号が含まれているとき、それをどう解釈するかを指定するオプションが提供されています。</p>
 <h3><a class="anchor" aria-hidden="true" id="キーワード"></a><a href="#キーワード" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>キーワード</h3>
-<p>他の文字列比較と異なり、&quot;%&quot; 記号を使ったキーワードによる検索はテキスト中の単語を検索します: 単語は一つのまとまりとして個々に扱われます。 複数の単語や、音節など単語の一部を検索するような場合、<strong>%</strong> 演算子は常に <code>False</code> を返します。 区切り文字 (スペースや句読点など) に囲まれた文字列が単語として認識されます。 “Today's” のようにアポストロフィを含む単語は、通常それを含めた 1つの単語として扱われますが、特定の場合には無視されます (以下の注記を参照ください)。 数字も検索できます。小数点は区切り文字ではなく、数字の一部として扱われます。 ただし、通貨や温度などを表す記号は無視されます。</p>
+<p>他の文字列比較と異なり、&quot;%&quot; 記号を使ったキーワードによる検索はテキスト中の単語を検索します: 単語は一つのまとまりとして個々に扱われます。 複数の単語や、音節など単語の一部を検索するような場合、<strong>%</strong> 演算子は常に <code>false</code> を返します。 区切り文字 (スペースや句読点など) に囲まれた文字列が単語として認識されます。 “Today's” のようにアポストロフィを含む単語は、通常それを含めた 1つの単語として扱われますが、特定の場合には無視されます (以下の注記を参照ください)。 数字も検索できます。小数点は区切り文字ではなく、数字の一部として扱われます。 ただし、通貨や温度などを表す記号は無視されます。</p>
 <pre><code class="hljs css language-4d">     <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"Bravo"</span> <span class="hljs-comment">// true</span>
      <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"vo"</span> <span class="hljs-comment">// false</span>
      <span class="hljs-string">"Alpha Bravo Charlie"</span>%<span class="hljs-string">"Alpha Bravo"</span> <span class="hljs-comment">// false</span>
@@ -202,13 +201,14 @@ End if</span>
 <h3><a class="anchor" aria-hidden="true" id="無効な文字列参照に関する注意"></a><a href="#無効な文字列参照に関する注意" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>無効な文字列参照に関する注意</h3>
 <p>文字列参照記号を使用する際、配列に存在する要素を指定するのと同じ要領で、文字列内に存在する文字を指定しなければなりません。 たとえば、文字列変数の20番目の文字を参照する場合、この変数は必ず、少なくとも20文字以上の長さがなくてはなりません。長さが足りない場合:</p>
 <ul>
-<li><p>インタープリターモードでは構文エラーは発生しません。</p></li>
-<li><p>コンパイルモードで範囲チェックオプションを無効にしている場合には、メモリ領域を破壊するおそれがあります。</p></li>
-<li><p>コンパイルモードで範囲チェックオプションを有効にしている場合には、エラーが発生します。 たとえば、次のように文字列やテキストの終点を超えた位置に文字を書き込むコードを実行すると:</p>
-<p>// 真似をしないでください
-vsAnyText:=&quot;&quot;
-vsAnyText[[1]]:=&quot;A&quot;</p></li>
+<li>インタープリターモードでは構文エラーは発生しません。</li>
+<li>コンパイルモードで範囲チェックオプションを無効にしている場合には、メモリ領域を破壊するおそれがあります。</li>
+<li>コンパイルモードで範囲チェックオプションを有効にしている場合には、エラーが発生します。 たとえば、次のように文字列やテキストの終点を超えた位置に文字を書き込むコードを実行すると:</li>
 </ul>
+<pre><code class="hljs">// 真似をしないでください
+ vsAnyText:=<span class="hljs-string">""</span>
+ vsAnyText<span class="hljs-string">[[1]]</span>:=<span class="hljs-string">"A"</span>
+</code></pre>
 <p>ランタイムにおいてエラーがトリガーされます:</p>
 <p><img src="/docs/Rx/assets/en/Concepts/Syntax_Error.en.png" alt="alt-text"></p>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>

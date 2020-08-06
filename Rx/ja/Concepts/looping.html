@@ -81,7 +81,7 @@
 </code></pre>
 <p>このようにメソッドの実行が制御不能になった場合には、トレース機能を使用し、ループを止めて、問題点を追跡することができます。 メソッドのトレース方法については、<a href="/docs/Rx/ja/Concepts/error-handling.html">エラー処理</a> の章を見てください。</p>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> CONFIRM</span>(<span class="hljs-string">"新規にレコード追加しますか？"</span>) <span class="hljs-comment">// ユーザーに確認します</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-function"> CONFIRM</span>(<span class="hljs-string">"新規レコードを追加しますか？"</span>) <span class="hljs-comment">// ユーザーに確認します</span><span class="hljs-keyword">
  While</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-comment">// 利用者が望む限りループします</span>
 <span class="hljs-function">    ADD RECORD</span>([aTable]) <span class="hljs-comment">// 新規にレコードを追加します</span><span class="hljs-keyword">
  End while</span> <span class="hljs-comment">// ループは必ず End while によって終わります</span>
@@ -371,9 +371,9 @@
  End for each</span>
 </code></pre>
 <pre><code class="hljs">{
-    &quot;firstname&quot;: &quot;GREGORY&quot;,
-    &quot;lastname&quot;: &quot;BADIKORA&quot;,
-    &quot;age&quot;: 20
+    <span class="hljs-attr">"firstname"</span>: <span class="hljs-string">"GREGORY"</span>,
+    <span class="hljs-attr">"lastname"</span>: <span class="hljs-string">"BADIKORA"</span>,
+    <span class="hljs-attr">"age"</span>: <span class="hljs-number">20</span>
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="begin--end-パラメーター"></a><a href="#begin--end-パラメーター" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>begin / end パラメーター</h3>
