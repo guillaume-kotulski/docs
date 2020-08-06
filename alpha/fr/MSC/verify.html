@@ -73,25 +73,25 @@
 <p>Lorsque la base est chiffrée, la cohérence des données chiffrées est vérifiée. Si aucune clé de données valide n'a été fournie, une boîte de dialogue s'affiche pour vous demander de saisir une phrase secrète ou la clé des données.</p>
 </blockquote>
 <ul>
-<li><strong>Verify the records and the indexes:</strong> Starts the total data verification procedure.</li>
-<li><strong>Verify the records only</strong>: Starts the verification procedure for records only (indexes are not verified).</li>
-<li><strong>Verify the indexes only</strong>: Starts the verification procedure for indexes only (records are not verified).</li>
+<li><strong>Vérifier les enregistrements et les index :</strong> lance la procédure de vérification globale des données.</li>
+<li><strong>Vérifier uniquement les enregistrements :</strong> lance la procédure de vérification des enregistrements uniquement (les index ne sont pas vérifiés).</li>
+<li><strong>Vérifier uniquement les index :</strong> lance la procédure de vérification des index uniquement (les enregistrements ne sont pas vérifiés).</li>
 </ul>
 <blockquote>
 <p>La vérification des enregistrements et des index peut également être effectuée en mode détaillé, table par table (cf. paragraphe “Détails” ci-dessous).</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="voir-le-compte-rendu"></a><a href="#voir-le-compte-rendu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Voir le compte rendu</h2>
-<p>Quelle que soit la vérification demandée, 4D génère un fichier de compte-rendu dans le dossier <code>Logs</code> de la base. Ce fichier liste l’ensemble des vérifications effectuées et signale chaque erreur rencontrée, le cas échéant ([OK] est affiché lorsque la vérification est correcte). It is created in XML format and is named: <em>DatabaseName</em><em>Verify_Log</em><em>yyyy-mm-dd hh-mm-ss</em>.xml where:</p>
+<p>Quelle que soit la vérification demandée, 4D génère un fichier de compte-rendu dans le dossier <code>Logs</code> de la base. Ce fichier liste l’ensemble des vérifications effectuées et signale chaque erreur rencontrée, le cas échéant ([OK] est affiché lorsque la vérification est correcte). Il est créé au format XML et est nommé <em>NomBase</em><em>Verify_Log</em><em>aaaa-mm-jjj hh-mm-ss</em>.xml&quot; où :</p>
 <ul>
-<li><em>DatabaseName</em> is the name of the project file without any extension, for example &quot;Invoices&quot;,</li>
-<li><em>yyyy-mm-dd hh-mm-ss</em> is the timestamp of the file, based upon the local system time when the maintenance operation was started, for example &quot;2019-02-11 15-20-45&quot;.</li>
+<li><em>NomBase</em> est le nom du fichier de structure sans extension, par exemple &quot;Factures&quot;,</li>
+<li><em>aaaa-mm-jj hh-mm-ss</em> est l'horodatage du fichier, basé sur la date et l'heure système locales au moment du lancement de l'opération de vérification, par exemple &quot;2019-02-11 15-20-45&quot;.</li>
 </ul>
-<p>When you click on the <strong>Open log file</strong> button, 4D displays the most recent log file in the default browser of the machine.</p>
+<p>Lorsque vous cliquez sur le bouton <strong>Voir le compte rendu</strong>, 4D affiche le fichier de compte-rendu le plus récent dans le navigateur par défaut de l’ordinateur.</p>
 <h2><a class="anchor" aria-hidden="true" id="détails"></a><a href="#détails" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Détails</h2>
-<p>The <strong>Table list</strong> button displays a detailed page that can be used to view and select the actual records and indexes to be checked:</p>
+<p>Le bouton <strong>Liste des tables</strong> provoque l’affichage d’une page détaillée permettant de visualiser et de sélectionner les enregistrements et les index à vérifier :</p>
 <p><img src="/docs/alpha/assets/en/MSC/MSC_Verify.png" alt=""></p>
 <p>La désignation des éléments à vérifier permet notamment de gagner du temps lors de la vérification.</p>
-<p>La liste principale affiche toutes les tables de la base. Pour chaque table, vous pouvez limiter la vérification aux enregistrements et/ou à chaque index. Cliquez sur l’icône en forme de triangle pour déployer le contenu d’une table ou les index d’un champ et sélectionnez/ désélectionnez les cases à cocher en fonction de vos souhaits. Par défaut, tout est sélectionné. You can also use the <strong>Select all</strong>, <strong>Deselect all</strong>, <strong>All records</strong> and <strong>All indexes</strong> shortcut buttons.</p>
+<p>La liste principale affiche toutes les tables de la base. Pour chaque table, vous pouvez limiter la vérification aux enregistrements et/ou à chaque index. Cliquez sur l’icône en forme de triangle pour déployer le contenu d’une table ou les index d’un champ et sélectionnez/ désélectionnez les cases à cocher en fonction de vos souhaits. Par défaut, tout est sélectionné. Vous pouvez également utiliser les boutons raccourcis <strong>Tout sélectionner</strong>, <strong>Tout désélectionner</strong>, <strong>Tous les enregistrements</strong> et <strong>Tous les index</strong>.</p>
 <p>Pour chaque ligne de table, la colonne “Action” résume les opérations à effectuer. Lorsque la table est déployée, les lignes “Enregistrements” et “Champs indexés” indiquent le nombre d’éléments concernés.</p>
 <p>La colonne &quot;Etat&quot; affiche le statut de la vérification de chaque élément à l’aide de symboles :</p>
 <table>
@@ -104,8 +104,8 @@
 <tr><td><img src="/docs/alpha/assets/en/MSC/MSC_KO.png" alt=""></td><td>Vérification non effectuée</td></tr>
 </tbody>
 </table>
-<p>Click on <strong>Verify</strong> to begin the verification or on <strong>Standard</strong> to go back to the standard page.</p>
-<p>The <strong>Open log file</strong> button can be used to display the log file in the default browser of the machine (see <a href="#open-log-file">Open log file</a> above).</p>
+<p>Cliquez sur le bouton <strong>Vérifier</strong> pour lancer la vérification ou sur le bouton <strong>Standard</strong> pour retourner à la page standard.</p>
+<p>Le bouton <strong>Voir le compte rendu</strong> permet d’afficher le fichier de compte-rendu dans le navigateur par défaut de l’ordinateur (cf. paragraphe <a href="#open-log-file">Voir le compte rendu</a> ci-dessus).</p>
 <blockquote>
 <p>La page standard ne tient pas compte des modifications effectuées dans la page détaillée : lorsque vous cliquez sur un bouton de vérification dans la page standard, tous les éléments sont vérifiés. En revanche, les paramétrages effectués dans la page détaillée sont conservés d’une session à l’autre.</p>
 </blockquote>
