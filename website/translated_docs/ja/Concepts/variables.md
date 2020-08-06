@@ -23,7 +23,7 @@ title: 変数
 - `var` キーワードを使った宣言 (推奨、とくにオブジェクトやクラスをコードで使用する場合)
 - "コンパイラー" や "配列" テーマの 4D ランゲージコマンドを使った宣言 (廃止予定、クラシックランゲージのみ)
 
-**Note:** Although it is usually not recommended, you can create basic variables simply by using them; you do not necessarily need to formally define them. たとえば、今日の日付に30日足した値を格納した変数を宣言するには、次のように書くことができます:
+**注:** この方法は推奨されませんが、単純に使用することによって変数を宣言することもできます。正式にそれらを定義することは必須ではありません。 たとえば、今日の日付に30日足した値を格納した変数を宣言するには、次のように書くことができます:
 
 ```4d
  MyDate:=Current date+30 //  MyDateを作成します
@@ -49,15 +49,15 @@ var $myFile : 4D.File  // File クラスオブジェクト変数
 var $myVar // バリアント型変数
 ```
 
-`varName` is the variable name, it must comply with the [4D rules](Concepts/identifiers.md) about identifiers.   
-This syntax only supports [local and process variables](#local-process-and-interprocess-variables) declarations, thus excluding [interprocess variables](#interprocess-variables) and [arrays](Concepts/arrays.md).
+`varName` に指定する変数名は 4Dの [識別子の命名規則](Concepts/identifiers.md) に従う必要があります。   
+このシンタックスは [ローカル変数とプロセス変数](#ローカル変数とプロセス変数) の宣言のみサポートしています。[インタープロセス変数](#インタープロセス変数) および [配列](Concepts/arrays.md) には使用できません。
 
 `varType` には次が指定できます:
 
 - [基本のデータ型](Concepts/data-types.md): 変数には、宣言された型の値が格納されます
 - [クラス参照](Concepts/classes.md) (4Dクラスまたはユーザークラス): 変数には、定義されたクラスのオブジェクトへの参照が格納されます
 
-If `varType` is omitted, a variable of the **variant** type is created.
+`varType` を省略すると、**variant** 型の変数が作成されます。
 
 サポートされている `varType` 値の一覧です:
 
@@ -245,7 +245,7 @@ var $entity : cs.EmployeeEntity
 
 ### C_ 指示子による宣言
 
-> **Compatibility Note:** This feature is deprecated as of 4D v18 R3. [var](#using-the-var-keyword) キーワードの使用が推奨されます。
+> **互換性に関する注記:** 4D v18 R3 以降は廃止予定となっています。 [var](#using-the-var-keyword) キーワードの使用が推奨されます。
 
 "コンパイラー" テーマコマンドの指示子を使って、基本のデータ型の変数を宣言することができます。
 
@@ -266,7 +266,7 @@ var $entity : cs.EmployeeEntity
  ARRAY LONGINT(alAnArray;10) // プロセス変数 alAnArray を 10個の倍長整数型要素を持つ配列として宣言します
 ```
 
-**Note:** Arrays are a particular type of variables. 配列とは、同じタイプの変数を番号付きで並べたものです。 詳細については [配列](Concepts/arrays.md) を参照ください。
+**注:** 配列とは、変数の一種です。 配列とは、同じタイプの変数を番号付きで並べたものです。 詳細については [配列](Concepts/arrays.md) を参照ください。
 
 
 ## 変数への代入
