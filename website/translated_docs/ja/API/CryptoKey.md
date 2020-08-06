@@ -130,7 +130,7 @@ ASSERT($status.success)
 
 このメソッドは、`cryptoKey` オブジェクトキーおよび指定された `options` を使って、utf8 形式の `message` 文字列を署名します。 `options.encoding` 属性に指定した値に応じて、base64 または base64URL 形式の署名を返します。
 
-The `cryptoKey` must contain a valid **private** key.
+`cryptoKey` は有効な **秘密** 鍵を格納していなくてはなりません。
 
 ## cryptoKey.verify()
 
@@ -162,7 +162,7 @@ The `cryptoKey` must contain a valid **private** key.
 
 `message`、キーまたはアルゴリズムが署名と合致しないなどの理由で認証が成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
 
-The `cryptoKey` must contain a valid **public** key.
+`cryptoKey` は有効な **公開** 鍵を格納していなくてはなりません。
 
 ## cryptoKey.encrypt()
 
@@ -185,7 +185,7 @@ The `cryptoKey` must contain a valid **public** key.
 |         |                   |        |    |                                                                                                   |
 | result  |                   | テキスト   | <- | options.encodingEncrypted を使って暗号化およびエンコードされたメッセージ                                                 |
 
-This method encrypts the `message` parameter using the **public** key. 使用されるアルゴリズムはキーの種類に依存します。
+このメソッドは **公開** 鍵を使って `message` を暗号化します。 使用されるアルゴリズムはキーの種類に依存します。
 
 キーは RSA キーでなければならず、アルゴリズムは RSA-OAEP です ([RFC 3447](https://tools.ietf.org/html/rfc3447) 参照)。
 
@@ -215,7 +215,7 @@ This method encrypts the `message` parameter using the **public** key. 使用さ
 |         | result            | テキスト   |    | options.encodingDecrypted を使って復号およびデコードされたメッセージ                                            |
 |         | errors            | コレクション |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                          |
 
-This method decrypts the `message` parameter using the **private** key. 使用されるアルゴリズムはキーの種類に依存します。
+このメソッドは **秘密** 鍵を使って `message` を復号します。 使用されるアルゴリズムはキーの種類に依存します。
 
 キーは RSA キーでなければならず、アルゴリズムは RSA-OAEP です ([RFC 3447](https://tools.ietf.org/html/rfc3447) 参照)。
 
