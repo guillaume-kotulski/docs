@@ -102,51 +102,51 @@
 <p>オブジェクトタイプとは、フォームオブジェクトの &quot;<a href="/docs/alpha/ja/FormObjects/propertiesObject.html#タイプ">タイプ</a>&quot; JSON プロパティを指します。</p>
 </blockquote>
 <p>次の例では、<em>button</em> タイプのすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:</p>
-<pre><code class="hljs">button {
-    font-family: Helvetica Neue;
-    font-size: 20px;
+<pre><code class="hljs"><span class="hljs-selector-tag">button</span> {
+    <span class="hljs-attribute">font-family</span>: Helvetica Neue;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
 }
 </code></pre>
 <p>複数のオブジェクトタイプに同じスタイルを適用するには、それらのオブジェクトタイプをカンマ &quot;,&quot; 区切りで併記し、その後の中カッコ { } 内にスタイルを宣言します:</p>
-<pre><code class="hljs">text, input {
-  text-align: left;
-  stroke: grey;
+<pre><code class="hljs"><span class="hljs-selector-tag">text</span>, <span class="hljs-selector-tag">input</span> {
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">stroke</span>: grey;
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="オブジェクト名"></a><a href="#オブジェクト名" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>オブジェクト名</h3>
 <p>オブジェクト名はフォーム上で一意的なもののため、CSS の <strong>ID セレクター</strong> と同様に、スタイルの適用対象を指定するのに使えます。</p>
 <p>シャープ記号 &quot;#&quot; の後にオブジェクト名を指定し、中カッコ { } の中に適用するスタイルを宣言します。</p>
 <p>次の例では、&quot;okButton&quot; というオブジェクト名を持つすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:</p>
-<pre><code class="hljs">#okButton {
-    font-family: Helvetica Neue;
-    font-size: 20px;
+<pre><code class="hljs"><span class="hljs-selector-id">#okButton</span> {
+    <span class="hljs-attribute">font-family</span>: Helvetica Neue;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="クラス"></a><a href="#クラス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラス</h3>
 <p>CSS の <strong>クラスセレクター</strong>と同様に、スタイルの適用対象をフォームオブジェクトの <code>クラス</code> 属性で指定することができます。</p>
 <p>ドット記号 &quot;.&quot; の後にクラス名を指定し、中カッコ { } の中に適用するスタイルを宣言します。</p>
 <p>次の例では、<code>okButtons</code> クラスを持つすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:</p>
-<pre><code class="hljs">.okButtons {
-    font-family: Helvetica Neue;
-    font-size: 20px;
-    text-align: center;
+<pre><code class="hljs"><span class="hljs-selector-class">.okButtons</span> {
+    <span class="hljs-attribute">font-family</span>: Helvetica Neue;
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">text-align</span>: center;
 }
 </code></pre>
 <p>さらに、特定のオブジェクトタイプに限定してスタイルを適用するには、そのオブジェクトタイプの後にドット &quot;.&quot; 区切りでクラス名を指定し、その後の中カッコ { } 内にスタイルを宣言します:</p>
-<pre><code class="hljs">text.center {
-  text-align: center;
-  stroke: red;
+<pre><code class="hljs"><span class="hljs-selector-tag">text</span><span class="hljs-selector-class">.center</span> {
+  <span class="hljs-attribute">text-align</span>: center;
+  <span class="hljs-attribute">stroke</span>: red;
 }
 </code></pre>
 <p>4D フォームの JSON式記述においては、フォームオブジェクトにクラス名を設定するには <code>class</code> 属性を使います。 この属性には一つ以上のクラス名を指定することができます。複数の場合はクラス名を半角スペースで区切ります:</p>
-<pre><code class="hljs">class: &quot;okButtons important&quot;             
+<pre><code class="hljs"><span class="hljs-keyword">class</span>: "<span class="hljs-symbol">okButtons</span> <span class="hljs-symbol">important</span>"             
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="すべてのオブジェクト"></a><a href="#すべてのオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>すべてのオブジェクト</h3>
 <p>アスタリスク &quot;*&quot; は、CSS の <strong>全称セレクター</strong> と同様に、すべてのフォームオブジェクトを対象にスタイルを適用します。</p>
 <p>アスタリスク &quot;*&quot; の後に、中カッコ { } の中に適用するスタイルを宣言します。</p>
 <p>次の例では、すべてのオブジェクトの塗りカラーをグレーにします:</p>
 <pre><code class="hljs">* {
-  fill: gray;
+  <span class="hljs-attribute">fill</span>: gray;
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="オブジェクト属性"></a><a href="#オブジェクト属性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>オブジェクト属性</h3>
@@ -166,38 +166,37 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p><code>borderStyle</code> (境界線スタイル) 属性を持つすべてのオブジェクトの描画色を紫に指定します:</p>
-<pre><code class="hljs">[borderStyle]
+<pre><code class="hljs"><span class="hljs-selector-attr">[borderStyle]</span>
 {
-     stroke: purple;
+     <span class="hljs-attribute">stroke</span>: purple;
 }
 </code></pre>
 <p>テキストタイプかつ、タイトルプロパティ (text属性) の値が &quot;Hello&quot; のオブジェクトの文字色を青に指定します:</p>
-<pre><code class="hljs">text[text=Hello]
+<pre><code class="hljs"><span class="hljs-selector-tag">text</span><span class="hljs-selector-attr">[text=Hello]</span>
 {
-     stroke: blue;
+     <span class="hljs-attribute">stroke</span>: blue;
 }
 </code></pre>
 <p>タイトルプロパティ (text属性) の値が &quot;Hello&quot; を含むオブジェクトの描画色を青に指定します:</p>
-<pre><code class="hljs">[text~=Hello]
+<pre><code class="hljs"><span class="hljs-selector-attr">[text~=Hello]</span>
 {
-     stroke: blue;
+     <span class="hljs-attribute">stroke</span>: blue;
 }
+
 </code></pre>
 <p>テキストタイプかつ、タイトルプロパティ (text属性) の値が &quot;Hello&quot; で始まるオブジェクトの文字色を黄色に指定します:</p>
-<pre><code class="hljs">text[text|=Hello]
+<pre><code class="hljs"><span class="hljs-selector-tag">text</span><span class="hljs-selector-attr">[text|=Hello]</span>
 {
-     stroke: yellow;
+     <span class="hljs-attribute">stroke</span>: yellow;
 }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="スタイルシート宣言"></a><a href="#スタイルシート宣言" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スタイルシート宣言</h2>
-<p>多くのフォームオブジェクト属性をスタイルシートによって指定することができますが、次の属性は除外されます:</p>
-<ul>
-<li>&quot;method&quot;</li>
-<li>&quot;type&quot;</li>
-<li>&quot;class&quot;</li>
-<li>&quot;event&quot;</li>
-<li>choiceList, excludedList, labels, list, requiredList (リストタイプ)</li>
-</ul>
+<p>多くのフォームオブジェクト属性をスタイルシートによって指定することができますが、次の属性は除外されます:
+- &quot;method&quot;
+- &quot;type&quot;
+- &quot;class&quot;
+- &quot;event&quot;
+- choiceList, excludedList, labels, list, requiredList (リストタイプ)</p>
 <p>フォームオブジェクトの属性は、それらの JSON 名を使って CSS 属性のように指定できます (オブジェクトタイプやメソッド、イベント、リストなどの属性を除く)。 詳細についてはデザインリファレンスの <a href="https://doc.4d.com/4Dv18/4D/18/Dynamic-Forms.300-4575729.ja.html">ダイナミックフォーム </a> を参照ください。</p>
 <h3><a class="anchor" aria-hidden="true" id="属性マッピング"></a><a href="#属性マッピング" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>属性マッピング</h3>
 <p>次の属性については、4D の名称または CSS の名称を使用することができます:</p>
@@ -223,10 +222,11 @@
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="特殊な属性値"></a><a href="#特殊な属性値" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>特殊な属性値</h3>
 <ul>
-<li><p><code>icon</code>, <code>picture</code>, および <code>customBackgroundPicture</code> のように、値として画像のパスを受け付ける属性の場合、次のように書きます:</p>
-<p>icon: url(&quot;/RESOURCES/Images/Buttons/edit.png&quot;); /* 絶対パス <em>/
-icon: url(&quot;edit.png&quot;); /</em> フォームファイルを基準とした相対パス */</p></li>
+<li><code>icon</code>, <code>picture</code>, および <code>customBackgroundPicture</code> のように、値として画像のパスを受け付ける属性の場合、次のように書きます:</li>
 </ul>
+<pre><code class="hljs"><span class="hljs-attribute">icon</span>: url(<span class="hljs-string">"/RESOURCES/Images/Buttons/edit.png"</span>); <span class="hljs-comment">/* 絶対パス */</span>
+<span class="hljs-attribute">icon</span>: url(<span class="hljs-string">"edit.png"</span>); <span class="hljs-comment">/* フォームファイルを基準とした相対パス */</span>
+</code></pre>
 <ul>
 <li><p><code>fill</code>, <code>stroke</code> , <code>alternateFill</code> , <code>horizontalLineStroke</code> および <code>verticalLineStroke</code> の属性は 3種類のシンタックスを受け付けます:</p>
 <ul>
@@ -266,35 +266,33 @@ icon: url(&quot;edit.png&quot;); /</em> フォームファイルを基準とし�
 <h3><a class="anchor" aria-hidden="true" id="複数スタイルシート"></a><a href="#複数スタイルシート" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>複数スタイルシート</h3>
 <p>ランタイムにおいて複数のスタイルシートが存在する場合、それらの優先順位は次のように決まります:</p>
 <ol>
-<li>4D フォームはまずデフォルトの CSS ファイル <code>/SOURCES/styleSheets.css</code> を読み込みます。</li>
-<li>次に、カレントプラットフォーム専用の CSS ファイル <code>/SOURCES/styleSheets_mac.css</code> または <code>/SOURCES/styleSheets_windows.css</code> がロードされます。</li>
-<li>その後、JSON フォーム内に CSS ファイルが定義されていれば、それを読み込みます:</li>
-</ol>
+<li><p>4D フォームはまずデフォルトの CSS ファイル <code>/SOURCES/styleSheets.css</code> を読み込みます。</p></li>
+<li><p>次に、カレントプラットフォーム専用の CSS ファイル <code>/SOURCES/styleSheets_mac.css</code> または <code>/SOURCES/styleSheets_windows.css</code> がロードされます。</p></li>
+<li><p>その後、JSON フォーム内に CSS ファイルが定義されていれば、それを読み込みます:</p>
 <ul>
-<li><pre><code class="hljs">  両プラットフォーム用のファイル:
-  
-
-  &quot;css&quot;: &quot;&lt;path&gt;&quot; 
-</code></pre></li>
-<li><pre><code class="hljs">  または、両プラットフォーム用に複数のファイル:
-  
-
-  &quot;css&quot;: [
-         &quot;&lt;path1&gt;&quot;,
-         &quot;&lt;path2&gt;&quot; 
-          ],
-</code></pre></li>
-<li><pre><code class="hljs">  または、プラットフォームごとのファイルリスト:
-  
-
-   &quot;css&quot;: [
-          {&quot;path&quot;: &quot;&lt;path&gt;&quot;, &quot;media&quot;: &quot;mac&quot;},
-          {&quot;path&quot;: &quot;&lt;path&gt;&quot;, &quot;media&quot;: &quot;windows&quot;},
-      ],
-</code></pre></li>
+<li>両プラットフォーム用のファイル:</li>
 </ul>
+<pre><code class="hljs"><span class="hljs-string">"css"</span>: <span class="hljs-string">"&lt;path&gt;"</span> 
+</code></pre>
+<ul>
+<li>または、両プラットフォーム用に複数のファイル:</li>
+</ul>
+<pre><code class="hljs"><span class="hljs-string">"css"</span>: [
+     <span class="hljs-string">"&lt;path1&gt;"</span>,
+     <span class="hljs-string">"&lt;path2&gt;"</span> 
+      ],
+</code></pre>
+<ul>
+<li>または、プラットフォームごとのファイルリスト:</li>
+</ul>
+<pre><code class="hljs"> <span class="hljs-string">"css"</span>: [
+        {<span class="hljs-string">"path"</span>: <span class="hljs-string">"&lt;path&gt;"</span>, <span class="hljs-string">"media"</span>: <span class="hljs-string">"mac"</span>},
+        {<span class="hljs-string">"path"</span>: <span class="hljs-string">"&lt;path&gt;"</span>, <span class="hljs-string">"media"</span>: <span class="hljs-string">"windows"</span>},
+    ],
+</code></pre></li>
+</ol>
 <blockquote>
-<p>ファイルパスは相対パスと絶対パスが使えます。 * 相対パスの基準は JSON フォームファイルです。 * セキュリティのため、絶対パスとして使用できるのはファイルシステムパスに限られます。 (<em>例</em>: &quot;/RESOURCES&quot;, &quot;/DATA&quot;)</p>
+<p>ファイルパスは相対パスと絶対パスが使えます。 *  相対パスの基準は JSON フォームファイルです。 *  セキュリティのため、絶対パスとして使用できるのはファイルシステムパスに限られます。 (<em>例</em>: &quot;/RESOURCES&quot;, &quot;/DATA&quot;)</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="スタイルシートの作成と編集"></a><a href="#スタイルシートの作成と編集" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スタイルシートの作成と編集</h2>
 <p>スタイルシートを作成するには、任意のテキストエディターを使い、&quot;.css&quot; 拡張子をファイル名に追加し、プロジェクトの &quot;/SOURCES&quot; フォルダーに保存します。</p>

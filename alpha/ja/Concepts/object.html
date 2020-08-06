@@ -152,7 +152,7 @@
      <span class="hljs-variable">$result</span>:=MyMethod1.a <span class="hljs-comment">//10</span>
 </code></pre>
 <ul>
-<li><strong>コレクション</strong> Example:</li>
+<li><strong>コレクション</strong> 例:</li>
 </ul>
 <pre><code class="hljs css language-4d">     myColl.length <span class="hljs-comment">// コレクションの長さ</span>
 </code></pre>
@@ -160,15 +160,17 @@
 <p><strong>注:</strong> オブジェクトは常に参照として渡されるため、通常はポインターを使用する必要はありません。 オブジェクトを引数として渡す際、4D 内部では自動的にポインターに類似したメカニズムを使うことでメモリの消費を最小限に抑え、引数を編集して返すことを可能にします。 つまり、ポインターは必要ないということです。 それでもポインターを使用したい場合には、プロパティ値はポインターを通してアクセスすることができます。</p>
 <p>ポインターを使ってオブジェクトプロパティにアクセスするには、直接オブジェクトを使用する場合と方法が似ていますが、&quot;ドット&quot; 記号は省略する必要があります。</p>
 <ul>
-<li><p>オブジェクト記法によるアクセス:</p>
+<li>オブジェクト記法によるアクセス:</li>
+</ul>
 <blockquote>
 <p>pointerOnObject-&gt;propertyName</p>
-</blockquote></li>
-<li><p>大カッコを使用する方法:</p>
+</blockquote>
+<ul>
+<li>大カッコを使用する方法:</li>
+</ul>
 <blockquote>
 <p>pointerOnObject-&gt;[&quot;propertyName&quot;]</p>
-</blockquote></li>
-</ul>
+</blockquote>
 <p>例:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_OBJECT</span>(vObj)
 <span class="hljs-function"> C_POINTER</span>(vPtr)
@@ -226,7 +228,7 @@
 <li>ブール: False</li>
 <li>文字列: &quot;&quot;</li>
 <li>数値: 0</li>
-<li>日付: &quot;オブジェクトではISO日付フォーマットの代わりに日付型を使用する&quot; 設定が有効化されている場合は !00-00-00!、それ以外の場合には &quot;&quot;</li>
+<li>日付:  &quot;オブジェクトではISO日付フォーマットの代わりに日付型を使用する&quot; 設定が有効化されている場合は !00-00-00!、それ以外の場合には &quot;&quot;</li>
 <li>時間: 0 (ミリ秒単位)</li>
 <li>未定義、Null: 変化なし</li>
 </ul>

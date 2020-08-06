@@ -79,9 +79,9 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
     <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$lastname</span>
 </code></pre>
 <p>In a method, creating a &quot;Person&quot;:</p>
-<pre><code class="hljs">var $o : cs.Person //object of Person class
-$o:=cs.Person.new(&quot;John&quot;;&quot;Doe&quot;)
-// $o:{firstName: &quot;John&quot;; lastName: &quot;Doe&quot; }
+<pre><code class="hljs">var <span class="hljs-variable">$o</span> : cs.Person <span class="hljs-regexp">//</span>object of Person class
+<span class="hljs-variable">$o</span>:=cs.Person.new(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Doe"</span>)
+<span class="hljs-regexp">//</span> <span class="hljs-variable">$o</span>:{firstName: <span class="hljs-string">"John"</span>; lastName: <span class="hljs-string">"Doe"</span> }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="managing-classes"></a><a href="#managing-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Managing classes</h2>
 <h3><a class="anchor" aria-hidden="true" id="class-definition"></a><a href="#class-definition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class definition</h3>
@@ -298,6 +298,8 @@ var $0 : Text
 $value:=$x+$2
 $0:=String($value)</p>
 <pre><code class="hljs">
+
+<span class="4d">
 #### Example
 
 <span class="hljs-comment">```4d</span>
@@ -310,7 +312,7 @@ Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <s
 <span class="hljs-comment">// Function definition</span><span class="hljs-keyword">
 Function</span><span class="hljs-function"> getArea</span>()-&gt;<span class="hljs-variable">$result </span>: Integer
     <span class="hljs-variable">$result</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
-</code></pre>
+</span></code></pre>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$rect </span>: cs.Rectangle<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$area </span>: Real
@@ -388,7 +390,7 @@ Class constructor</span> (<span class="hljs-variable">$side </span>: Integer)
 <p>The <code>Super</code> keyword allows calls to the <code>superclass</code>, i.e. the parent class.</p>
 <p><code>Super</code> serves two different purposes:</p>
 <ul>
-<li><p>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. When used in a constructor, the <code>Super</code> command appears alone and must be used before the <code>This</code> keyword is used.</p>
+<li>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. When used in a constructor, the <code>Super</code> command appears alone and must be used before the <code>This</code> keyword is used.
 <ul>
 <li><p>If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.</p></li>
 <li><p>If the <code>This</code> command is called on an object whose superclasses have not been constructed, error -10743 is generated.</p></li>

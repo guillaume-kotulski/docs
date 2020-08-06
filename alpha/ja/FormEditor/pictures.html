@@ -81,34 +81,16 @@
 <h2><a class="anchor" aria-hidden="true" id="高解像度ピクチャー"></a><a href="#高解像度ピクチャー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>高解像度ピクチャー</h2>
 <p>4D は macOS および Windows の両方で高解像度ピクチャーの表示をサポートしています。 高解像度ピクチャーは、スケール係数または dpi によって定義されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="スケール係数-macos-のみ"></a><a href="#スケール係数-macos-のみ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スケール係数 (macOS のみ)</h3>
-<p>従来の標準的なディスプレイと比較して、高解像度ディスプレイは高い画素密度を持ちます。 これらの高解像度ディスプレイにおいてピクチャーが正しく表示されるには、適用する <em>スケール係数</em> (例: 2倍、3倍など) に応じてその画素数を増やす必要があります。</p>
-<p>高解像度のピクチャーを使う場合、ピクチャー名に &quot;@nx&quot; (<em>n</em>: スケール係数) を付けてスケール係数を指定することができます。 下のテーブルの例でも、高解像度ピクチャーの名前に、<em>circle@2x.png</em>、<em>circle@3x.png</em> といった形でスケール係数が指定されています。</p>
+<p>従来の標準的なディスプレイと比較して、高解像度ディスプレイは高い画素密度を持ちます。 For pictures to render correctly on high resolution displays, the number of pixels in the picture must be multiplied by the <em>scale factor</em> (<em>i.e.</em>, two times larger, three times larger, etc.).</p>
+<p>When using high resolution pictures, you can specify the scale factor by adding &quot;@nx&quot; in the picture's name (where <em>n</em> designates the scale factor). In the table below, you can see that the scale factor is indicated in the names of the high resolution pictures, <em>circle@2x.png</em> and <em>circle@3x.png</em>.</p>
 <table>
 <thead>
 <tr><th>表示タイプ</th><th>スケール係数</th><th>例題</th></tr>
 </thead>
 <tbody>
-<tr><td>標準解像度</td><td>1:1 ピクセル密度</td><td><strong>1x</strong></td></tr>
-<tr><td><img src="/docs/alpha/assets/en/FormEditor/pictureScale1.png" alt=""> <em>circle.png</em></td></tr>
-<tr><td>高解像度</td><td>ピクセル密度は2、または3の係数で増加</td><td></td></tr>
+<tr><td>標準解像度</td><td>1:1 ピクセル密度</td><td><strong>1x</strong><br><img src="/docs/alpha/assets/en/FormEditor/pictureScale1.png" alt=""> <em>circle.png</em></td></tr>
+<tr><td>高解像度</td><td>ピクセル密度は2、または3の係数で増加</td><td><table><th>2x</th><th>3x</th><tr><td><img src="/docs/alpha/assets/en/FormEditor/pictureScale2.png" alt=""><em>circle@2x.png</em></td><td><img src="/docs/alpha/assets/en/FormEditor/pictureScale3.png" alt=""><br><em>circle@3x.png</em></td></tr></table></td></tr>
 </tbody>
-</table>
-<table>
-  <th>
-    2x
-  </th>
-  <th>
-    3x
-  </th>
-  <tr>
-    <td>
-      ![](/docs/alpha/assets/en/FormEditor/pictureScale2.png)*circle@2x.png*
-    </td>
-<pre><code class="hljs">&lt;td&gt;
-  ![](/docs/alpha/assets/en/FormEditor/pictureScale3.png)&lt;br /&gt;*circle@3x.png*
-&lt;/td&gt;
-</code></pre>
-  </tr>
 </table>
 <p>&quot;@nx&quot; で定義された高解像度ピクチャーは、次のオブジェクトで使用できます。</p>
 <ul>
@@ -119,34 +101,22 @@
 <li><a href="/docs/alpha/ja/FormObjects/listboxOverview.html#list-box-headers">リストボックスヘッダー</a></li>
 <li><a href="/docs/alpha/ja/Menus/properties.html#item-icon">メニューアイコン</a></li>
 </ul>
-<p>4D は自動的に最高解像度のピクチャーを優先します。 <br />  <br>
-<strong>例</strong>: 標準解像度と高解像度の２つのスクリーンを使用している際に、片方からもう片方へとフォームを移動させると、4D は常に使用可能な範囲内での最高解像度のピクチャーを表示します。 コマンドまたはプロパティが <em>circle.png</em> を指定していたとしても、<em>circle@3x.png</em> があれば、それを使用します。</p>
+<p>4D は自動的に最高解像度のピクチャーを優先します。 <br><br> <strong>Example</strong>: When using two screens (one high resolution display, one standard display) and you move a form from one screen to another, 4D  automatically renders the highest possible resolution of the picture. Even if a command or property specifies <em>circle.png</em>, <em>circle@3x.png</em> will be used (if it exists).</p>
 <blockquote>
 <p>解像度の優先順位付けはスクリーン上のピクチャー表示にのみ適用され、印刷に関しては自動適用されないことに留意が必要です。</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="dpi-macos-および-windows"></a><a href="#dpi-macos-および-windows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DPI (macOS および Windows)</h3>
-<p>高解像度が自動的に優先されますが、スクリーンやピクチャーの dpi <em>(</em>)*、およびピクチャー形式によって、動作に違いが生じることがあります:</p>
+<p>While 4D automatically prioritizes the highest resolution,  there are, however, some behavioral differences depending on screen and image dpi<em>(*)</em>, and picture format:</p>
 <table>
 <thead>
 <tr><th>演算子</th><th>動作</th></tr>
 </thead>
 <tbody>
-<tr><td>ドロップ、ペースト</td><td>ピクチャーの設定:</td></tr>
+<tr><td>ドロップ、ペースト</td><td>ピクチャーの設定:<ul><li><strong>72dpi or 96dpi</strong> - The picture is &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#center--truncated-non-centered">Center</a>&quot; formatted and the object containing the picture has the same number of pixels.</li><li><strong>Other dpi</strong> - The picture is &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#scaled-to-fit">Scaled to fit</a>&quot; formatted and the object containing the picture is equal to (picture's number of pixels * screen dpi) / (picture's dpi)</li> <li><strong>No dpi</strong> - The picture is &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#scaled-to-fit">Scaled to fit</a>&quot; formatted.</li></td></tr>
+<tr><td><a href="https://doc.4d.com/4Dv18/4D/18/Setting-object-display-properties.300-4575725.en.html#148057">Automatic Size</a> (Form Editor context menu)</td><td>If the picture's display format  is:<ul><li><strong><a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#スケーリング">スケーリング</a></strong> - ピクチャーを表示しているオブジェクトのピクセル数は (ピクチャーのピクセル数 / ピクチャーの dpi) * (スクリーンの dpi) にリサイズされます。 </li> <li><strong>スケーリング以外</strong> - ピクチャーを表示しているオブジェクトは、ピクチャーと同じピクセル数です。</li></ul><p></td></tr>
 </tbody>
 </table>
-<p>&lt;</p>
-<p>ul&gt;</p>
-<ul>
-<li><p><strong>72dpi または 96dpi</strong> - ピクチャーは &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#中央合わせ-トランケート-中央合わせしない">中央合わせ</a>&quot; 表示され、ピクチャーを表示しているオブジェクトは同じピクセル数です。</p></li>
-<li><p><strong>その他の dpi</strong> - ピクチャーは &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#スケーリング">スケーリング</a>&quot; 表示され、ピクチャーを表示しているオブジェクトのピクセル数は (ピクチャーのピクセル数 / ピクチャーの dpi) * (スクリーンの dpi) です。</p></li>
-<li><p><strong>dpi なし</strong> - ピクチャーは &quot;<a href="/docs/alpha/ja/FormObjects/propertiesPicture.html#スケーリング">スケーリング</a>&quot; 表示されます。| |
-<a href="https://doc.4d.com/4Dv18/4D/18/Setting-object-display-properties.300-4575725.ja.html#148057">自動サイズ</a> (フォームエディターのコンテキストメニュー)|ピクチャーの表示が:</p></li>
-<li><p><strong>[スケーリング](/docs/alpha/ja/FormObjects/propertiesPicture.html#スケーリング)</strong> - ピクチャーを表示しているオブジェクトのピクセル数は (ピクチャーのピクセル数 / ピクチャーの dpi) * (スクリーンの dpi) にリサイズされます。</p></li>
-<li><p><strong>スケーリング以外</strong> - ピクチャーを表示しているオブジェクトは、ピクチャーと同じピクセル数です。</p></li>
-</ul>
-<p>&lt;</p>
-<p>p&gt;|</p>
-<p><em>(</em>) 通常は macOS = 72dpi, Windows = 96dpi*</p>
+<p><em>(*) Typically,  macOS = 72dpi, Windows = 96dpi</em></p>
 <h2><a class="anchor" aria-hidden="true" id="ピクチャー上のマウス座標"></a><a href="#ピクチャー上のマウス座標" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ピクチャー上のマウス座標</h2>
 <p>4D では、<a href="/docs/alpha/ja/FormObjects/propertiesObject.html#式の型">ピクチャー式</a> が設定された <a href="/docs/alpha/ja/FormObjects/inputOverview.html">入力オブジェクト</a> をクリック、またはホバーした際のマウスのローカル座標を取得できます。これはスクロールやズーム処理がおこなわれている場合でも可能です。 このピクチャーマップに似た機構は、たとえば地図作製ソフトウェアのインターフェースや、スクロール可能なボタンバーを管理するのに使用できます。</p>
 <p>座標は <em>MouseX</em> と <em>MouseY</em> <a href="https://doc.4d.com/4Dv18/4D/18/System-Variables.300-4505547.ja.html">システム変数</a> に返されます。 座標はピクセル単位で表現され、ピクチャーの左上隅が起点 (0,0) となります。 マウスがピクチャの座標の外側にある場合には、<em>MouseX</em> と <em>MouseY</em> には-1が返されます。</p>

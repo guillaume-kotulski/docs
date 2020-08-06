@@ -72,7 +72,7 @@
 <ul>
 <li>識別子の 1文字目は、半角アルファベット、アンダースコア (&quot;_&quot;)、あるいはドル記号 (&quot;$&quot;) で始めます。</li>
 <li>その後の文字には、半角アルファベット文字・数字・スペース・アンダースコアを使用ができます。</li>
-<li>テーブル・フィールド・メソッド・変数の名称に、ピリオド (&quot;.&quot;) および大カッコ (&quot;[ ]&quot;) は使用できません。</li>
+<li>ピリオド (&quot;.&quot;) および大カッコ (&quot;[ ]&quot;) は、テーブル・フィールド・メソッド・変数の名称に使用できません。</li>
 <li>カンマ (,)・スラッシュ(/)・引用符(&quot;)・コロン(:) の使用は禁止されています。</li>
 <li>演算子として用いられる記号 (&quot;*&quot; や &quot;+&quot; など) の使用は禁止されています。</li>
 <li>予約語を使用しないでください。予約語にはコマンド名 (<code>Date</code>, <code>Time</code> 等)、キーワード (If, For 等)、そして定数が含まれます。</li>
@@ -174,7 +174,7 @@ If</span>(<span class="hljs-variable">$asKeywords{1}</span>=<span class="hljs-st
 <span class="hljs-variable">$viNextValue</span>:=<span class="hljs-variable">$aiBigArray{Size of array</span>(<span class="hljs-variable">$aiBigArray</span>)}
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="二次元配列の要素"></a><a href="#二次元配列の要素" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>二次元配列の要素</h3>
-<p>中カッコ (&quot;{ }&quot;) を2回使用して、2次元配列の要素を参照します。 参照される要素は2組の中カッコ内の2つの数式で表されます。</p>
+<p>中カッコ (&quot;{ }&quot;) を2回使用して、2次元配列の要素を参照します 。 参照される要素は2組の中カッコ内の2つの数式で表されます。</p>
 <p>例:</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">// 2次元インタープロセス配列の要素を指定します</span><span class="hljs-keyword">
 If</span>(<span class="hljs-variable">&lt;&gt;asKeywords{</span><span class="hljs-variable">$vlNextRow}{1}</span>=<span class="hljs-string">"Stop"</span>)
@@ -298,7 +298,8 @@ If</span>(<span class="hljs-function">Records in set</span>(<span class="hljs-st
 <h3><a class="anchor" aria-hidden="true" id="プロセス命名セレクション"></a><a href="#プロセス命名セレクション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロセス命名セレクション</h3>
 <p>プロセス命名セレクションの名前を表す文字列式を使用してプロセスセットを表します (&lt;&gt;記号も$記号も名前の先頭につきません) 。 インタープロセスセット名は255文字以内で指定します。</p>
 <p>例:</p>
-<pre><code class="hljs css language-4d">&lt;br /&gt;    <span class="hljs-comment">// インタープロセス命名セレクション</span>
+<pre><code class="hljs css language-4d">
+    <span class="hljs-comment">// インタープロセス命名セレクション</span>
 <span class="hljs-function">USE NAMED SELECTION</span>([Customers];<span class="hljs-string">"&lt;&gt;ByZipcode"</span>)
     <span class="hljs-comment">// プロセス命名セレクション</span>
 <span class="hljs-function">USE NAMED SELECTION</span>([Customers];<span class="hljs-string">"&lt;&gt;ByZipcode"</span>)

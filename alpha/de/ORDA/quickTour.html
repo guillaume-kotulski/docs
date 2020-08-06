@@ -25,6 +25,8 @@
 </code></pre>
 <blockquote>
 <p>In the ORDA world, ds.Company is a <strong>dataclass</strong>. ds.Company.city is an <strong>attribute</strong>.</p>
+</blockquote>
+<blockquote>
 <p>ORDA is case sensitive. <code>ds.company.city</code> will not refer to the ds.Company.city attribute.</p>
 </blockquote>
 <p>You have also noticed the extra <code>hires</code> property in the ds.Company dataclass. It does not correspond to a field. <code>hires</code> is actually the name of the <em>One to many</em> relation between Company and Employee:</p>
@@ -92,7 +94,7 @@ $entity.city:=<span class="hljs-string">"London"</span>
 <p>Keep in mind that once a group has been created, it cannot be deleted. If you want to deactivate a group, you just need to remove any users it contains.</p>
 <p>To create a group:</p>
 <ol>
-<li><p>Select <strong>Tool Box &gt; Groups</strong> in the <strong>Design</strong> menu or click on the <strong>Tool Box</strong> button of the 4D toolbar then on the <strong>Groups</strong> button. 4D displays the groups editor window. The list of groups displays all the groups of the database.</p></li>
+<li><p>Select <strong>Tool Box &gt; Groups</strong> in the <strong>Design</strong> menu or click  on the <strong>Tool Box</strong> button of the 4D toolbar then on the <strong>Groups</strong> button. 4D displays the groups editor window. The list of groups displays all the groups of the database.</p></li>
 <li><p>Click on the <img src="/docs/alpha/assets/en/Users/PlussNew.png" alt=""> button located below the list of groups.<br>
 OR<br>
 Right-click in the list of groups and choose the <strong>Add</strong> or <strong>Duplicate</strong> command in the context menu.</p></li>

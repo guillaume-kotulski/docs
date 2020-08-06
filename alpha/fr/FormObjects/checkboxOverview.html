@@ -74,8 +74,8 @@
 <h2><a class="anchor" aria-hidden="true" id="utiliser-une-case-à-cocher"></a><a href="#utiliser-une-case-à-cocher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utiliser une case à cocher</h2>
 <p>Une case à cocher peut être associée à une <a href="/docs/alpha/fr/FormObjects/propertiesObject.html#variable-or-expression">variable ou expression</a> de type entier ou booléen.</p>
 <ul>
-<li><strong>entier :</strong> si la case est cochée, la variable prend la valeur 1. Lorsqu'elle n'est pas cochée, elle porte la valeur 0. Si la case à cocher a un troisième état (voir ci-dessous), elle porte la valeur 2.</li>
-<li><strong>booléen :</strong> si la case est cochée, la variable prend la valeur <code>Vrai</code>. Lorsqu'elle n'est pas cochée, elle prend la valeur <code>Faux</code>.</li>
+<li><strong>integer:</strong> if the box is checked, the variable has the value 1. Lorsqu'elle n'est pas cochée, elle porte la valeur 0. Si la case à cocher a un troisième état (voir ci-dessous), elle porte la valeur 2.</li>
+<li><strong>boolean:</strong> if the box is checked, the variable has the value <code>True</code>. Lorsqu'elle n'est pas cochée, elle prend la valeur <code>Faux</code>.</li>
 </ul>
 <p>Une partie ou la totalité des cases à cocher contenues dans un formulaires peut être cochée ou non cochée. Un groupe de cases à cocher permet à l'utilisateur de cocher plusieurs options.</p>
 <h3><a class="anchor" aria-hidden="true" id="cases-à-cocher-à-trois-états"></a><a href="#cases-à-cocher-à-trois-états" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cases à cocher à trois états</h3>
@@ -128,37 +128,37 @@
 <p>Pour plus d'informations sur ces actions, veuillez vous reporter à la section <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html">Actions standard</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="styles-des-boutons-case-à-cocher"></a><a href="#styles-des-boutons-case-à-cocher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Styles des boutons &quot;Case à cocher&quot;</h2>
 <p>Check boxes use <a href="propertiesTextAndPicture.md#button-style">button styles</a> to control a check box's general appearance as well as its available properties. Il est possible d'appliquer différents styles prédéfinis aux cases à cocher. Plusieurs variantes peuvent être obtenues en combinant ces propriétés/comportements.</p>
-<p>À l'exception des <a href="#supported-properties">propriétés disponibles</a>, de nombreux objets case à cocher sont <em>structurellement</em> identiques. La différence réside dans le traitement de leurs variables associées.</p>
+<p>With the exception of the <a href="#supported-properties">available properties</a>, many check box objects are <em>structurally</em> identical. La différence réside dans le traitement de leurs variables associées.</p>
 <p>4D provides check boxes in the following predefined button styles:</p>
 <h3><a class="anchor" aria-hidden="true" id="classique"></a><a href="#classique" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Classique</h3>
 <p>The Regular check box button style is a standard system check box (<em>i.e.</em>, a rectangle with a descriptive title):</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_regular.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json-"></a><a href="#exemple-json-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-        &quot;type&quot;: &quot;checkbox&quot;, 
-        &quot;style&quot;:&quot;regular&quot;,
-        &quot;text&quot;: &quot;Cancel&quot;,   
-        &quot;action&quot;: &quot;Cancel&quot;,     
-        &quot;left&quot;: 60,         
-        &quot;top&quot;: 160,     
-        &quot;width&quot;: 100,           
-        &quot;height&quot;: 20        
-        &quot;dataSourceTypeHint&quot;:&quot;boolean&quot;
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+        <span class="hljs-string">"style"</span>:<span class="hljs-string">"regular"</span>,
+        <span class="hljs-string">"text"</span>: <span class="hljs-string">"Cancel"</span>,   
+        <span class="hljs-string">"action"</span>: <span class="hljs-string">"Cancel"</span>,     
+        <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,         
+        <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+        <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+        <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>        
+        <span class="hljs-string">"dataSourceTypeHint"</span>:<span class="hljs-string">"boolean"</span>
         }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="a-plat"></a><a href="#a-plat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>A plat</h3>
 <p>The Flat check box button style is a minimalist appearance. Le graphisme du style A plat est particulièrement utile pour les formulaires à imprimer.</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_flat.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--1"></a><a href="#exemple-json--1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;flat&quot;,
-            &quot;text&quot;: &quot;Cancel&quot;,   
-            &quot;action&quot;: &quot;cancel&quot;, 
-            &quot;left&quot;: 60,     
-            &quot;top&quot;: 160, 
-            &quot;width&quot;: 100,           
-            &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"flat"</span>,
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Cancel"</span>,   
+            <span class="hljs-string">"action"</span>: <span class="hljs-string">"cancel"</span>, 
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
             }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="toolbar-button"></a><a href="#toolbar-button" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Toolbar Button</h3>
@@ -167,16 +167,16 @@
 <p>Example with states unchecked / checked / highlighted:</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_toolbar.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--2"></a><a href="#exemple-json--2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;,
-                &quot;style&quot;:&quot;toolbar&quot;,  
-                &quot;text&quot;: &quot;Checkbox&quot;,
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4 
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,                   
-                &quot;height&quot;: 20                    
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>,
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"toolbar"</span>,  
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span> 
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,                   
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                    
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="bevel"></a><a href="#bevel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bevel</h3>
@@ -185,16 +185,16 @@
 <p>Example with states unchecked / checked / highlighted:</p>
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_bevel.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--3"></a><a href="#exemple-json--3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;bevel&quot;,
-                &quot;text&quot;: &quot;Checkbox&quot;,  
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4 
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,               
-                &quot;height&quot;: 20                
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"bevel"</span>,
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,  
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span> 
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,               
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="bevel-arrondi"></a><a href="#bevel-arrondi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bevel arrondi</h3>
@@ -226,78 +226,84 @@
 <p>On Windows, this check box button style is identical to the <a href="#bevel">Bevel</a> button style.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--5"></a><a href="#exemple-json--5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;gradientBevel&quot;, 
-            &quot;text&quot;: &quot;Checkbox&quot;, 
-            &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;,
-            &quot;iconFrames&quot;: 4
-            &quot;left&quot;: 60,     
-            &quot;top&quot;: 160,     
-            &quot;width&quot;: 100,               
-            &quot;height&quot;: 20                
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"gradientBevel"</span>, 
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>, 
+            <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>,
+            <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span>
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,               
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                
            }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="os-x-texture"></a><a href="#os-x-texture" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OS X Texture</h3>
 <p>The OS X Textured button style is similar to the <a href="#bevel">Bevel</a> button style but with a smaller size (maximum size is the size of a standard macOS system button). As with the Bevel button style, the OS X Textured button style combines the appearance of the <a href="#regular">Regular</a> button style with the <a href="#toolbar-button">Toolbar Button</a> button style's behavior.</p>
 <p>By default, the OS X Textured button style appears as:</p>
 <ul>
-<li><p><em>Windows</em> - a standard system button with a light blue background with a title in the center.</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p></li>
-<li><p><em>macOS</em> - a standard system button. Sa hauteur est prédéfinie : il n'est pas possible de l'agrandir ou de la réduire.</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured_mac.png" alt=""></p></li>
+<li><em>Windows</em> - a standard system button with a light blue background with a title in the center.</li>
 </ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - a standard system button. Sa hauteur est prédéfinie : il n'est pas possible de l'agrandir ou de la réduire.</li>
+</ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_osxtextured_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--6"></a><a href="#exemple-json--6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-            &quot;type&quot;: &quot;checkbox&quot;, 
-            &quot;style&quot;:&quot;texturedBevel&quot;, 
-            &quot;text&quot;: &quot;Checkbox&quot;, 
-            &quot;left&quot;: 60, 
-            &quot;top&quot;: 160, 
-            &quot;width&quot;: 100,                   
-            &quot;height&quot;: 20                    
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+            <span class="hljs-string">"style"</span>:<span class="hljs-string">"texturedBevel"</span>, 
+            <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>, 
+            <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+            <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+            <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,                   
+            <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>                    
             }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="office-xp"></a><a href="#office-xp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Office XP</h3>
 <p>The Office XP button style combines the appearance of the <a href="#regular">Regular</a> button style with the <a href="#toolbar-button">Toolbar Button</a> button style's behavior.</p>
 <p>The colors (highlight and background) of a check box with the Office XP button style are based on the system colors. The appearance of the check box can be different when the cursor hovers over it, depending on the OS:</p>
 <ul>
-<li><p><em>Sous Windows</em> - son arrière-plan n'apparaît que lorsque la souris le survole. Example with states unchecked / checked / highlighted:</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_officexp.png" alt=""></p></li>
-<li><p><em>Sous macOS</em> - son arrière-plan est toujours affiché. Example with states unchecked / checked:</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_officexp_mac.png" alt=""></p></li>
+<li><em>Windows</em> - its background only appears when the mouse rolls over it. Example with states unchecked / checked / highlighted:</li>
 </ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_officexp.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - its background is always displayed. Example with states unchecked / checked:</li>
+</ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_officexp_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--7"></a><a href="#exemple-json--7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;office&quot;,
-                &quot;text&quot;: &quot;Checkbox&quot;,  
-                &quot;action&quot;: &quot;fontBold&quot;,
-                &quot;icon&quot;: &quot;/RESOURCES/File.png&quot;, 
-                &quot;iconFrames&quot;: 4     
-               &quot;left&quot;: 60,  
-                &quot;top&quot;: 160,     
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"office"</span>,
+                <span class="hljs-string">"text"</span>: <span class="hljs-string">"Checkbox"</span>,  
+                <span class="hljs-string">"action"</span>: <span class="hljs-string">"fontBold"</span>,
+                <span class="hljs-string">"icon"</span>: <span class="hljs-string">"/RESOURCES/File.png"</span>, 
+                <span class="hljs-string">"iconFrames"</span>: <span class="hljs-number">4</span>     
+               <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,  
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>,     
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="contracterdéployer"></a><a href="#contracterdéployer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contracter/Déployer</h3>
 <p>This check box button style can be used to add a standard collapse/expand icon. These icons are used natively in hierarchical lists.</p>
 <ul>
-<li><p><em>Windows</em> - the icon looks like a [+] or a [-]</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_collapse.png" alt=""></p></li>
-<li><p><em>macOS</em> - it looks like a triangle pointing right or down.</p>
-<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_collapse_mac.png" alt=""></p></li>
+<li><em>Windows</em> - the icon looks like a [+] or a [-]</li>
 </ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_collapse.png" alt=""></p>
+<ul>
+<li><em>macOS</em> - it looks like a triangle pointing right or down.</li>
+</ul>
+<p><img src="/docs/alpha/assets/en/FormObjects/checkbox_collapse_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--8"></a><a href="#exemple-json--8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;, 
-                &quot;style&quot;:&quot;disclosure&quot;,
-                &quot;method&quot;: &quot;m_collapse&quot;,
-                &quot;left&quot;: 60, 
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>, 
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"disclosure"</span>,
+                <span class="hljs-string">"method"</span>: <span class="hljs-string">"m_collapse"</span>,
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>, 
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="bouton-disclosure"></a><a href="#bouton-disclosure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bouton disclosure</h3>
@@ -309,14 +315,14 @@
 <p><img src="/docs/alpha/assets/en/FormObjects/checkbox_disclosure_mac.png" alt=""></p></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--9"></a><a href="#exemple-json--9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckBox&quot;: {
-                &quot;type&quot;: &quot;checkbox&quot;,     
-                &quot;style&quot;:&quot;roundedDisclosure&quot;,    
-                &quot;method&quot;: &quot;m_disclose&quot;,
-                &quot;left&quot;: 60,     
-                &quot;top&quot;: 160, 
-                &quot;width&quot;: 100,           
-                &quot;height&quot;: 20            
+<pre><code class="hljs">    <span class="hljs-string">"myCheckBox"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"checkbox"</span>,     
+                <span class="hljs-string">"style"</span>:<span class="hljs-string">"roundedDisclosure"</span>,    
+                <span class="hljs-string">"method"</span>: <span class="hljs-string">"m_disclose"</span>,
+                <span class="hljs-string">"left"</span>: <span class="hljs-number">60</span>,     
+                <span class="hljs-string">"top"</span>: <span class="hljs-number">160</span>, 
+                <span class="hljs-string">"width"</span>: <span class="hljs-number">100</span>,           
+                <span class="hljs-string">"height"</span>: <span class="hljs-number">20</span>            
                 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="personnalisé"></a><a href="#personnalisé" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Personnalisé</h3>
@@ -328,21 +334,21 @@
 </ul>
 <p>Il est généralement associé à une <a href="/docs/alpha/fr/FormObjects/propertiesTextAndPicture.html#number-of-states">image à 4 états</a>, qui peut être utilisée conjointement avec une </a>image d'arrière-plan</a> <a href="/docs/alpha/fr/FormObjects/propertiesTextAndPicture.html#number-of-states">à 4 états</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--10"></a><a href="#exemple-json--10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
-<pre><code class="hljs">    &quot;myCheckbox&quot;: {
-        &quot;type&quot;: &quot;checkbox&quot;,
-        &quot;style&quot;:&quot;custom&quot;,
-        &quot;text&quot;: &quot;OK&quot;, 
-        &quot;icon&quot;: &quot;/RESOURCES/smiley.jpg&quot;, 
-        &quot;iconFrame&quot;: 4, 
-        &quot;customBackgroundPicture&quot;: &quot;/RESOURCES/paper.jpg&quot;, 
-        &quot;iconOffset&quot;: 5, //décalage icône personnalisé au clic
-        &quot;left&quot;: 60, 
-        &quot;top&quot;: 160, 
-        &quot;width&quot;: 100,       
-        &quot;height&quot;: 20,
-        &quot;customBorderX&quot;: 20,
-        &quot;customBorderY&quot;: 5
-        }
+<pre><code class="hljs">    <span class="hljs-attr">"myCheckbox":</span> <span class="hljs-string">{</span>
+        <span class="hljs-attr">"type":</span> <span class="hljs-string">"checkbox"</span><span class="hljs-string">,</span>
+        <span class="hljs-string">"style"</span><span class="hljs-string">:"custom",</span>
+        <span class="hljs-attr">"text":</span> <span class="hljs-string">"OK"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"icon":</span> <span class="hljs-string">"/RESOURCES/smiley.jpg"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"iconFrame":</span> <span class="hljs-number">4</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"customBackgroundPicture":</span> <span class="hljs-string">"/RESOURCES/paper.jpg"</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"iconOffset":</span> <span class="hljs-number">5</span><span class="hljs-string">,</span> <span class="hljs-string">//décalage</span> <span class="hljs-string">icône</span> <span class="hljs-string">personnalisé</span> <span class="hljs-string">au</span> <span class="hljs-string">clic</span>
+        <span class="hljs-attr">"left":</span> <span class="hljs-number">60</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"top":</span> <span class="hljs-number">160</span><span class="hljs-string">,</span> 
+        <span class="hljs-attr">"width":</span> <span class="hljs-number">100</span><span class="hljs-string">,</span>       
+        <span class="hljs-attr">"height":</span> <span class="hljs-number">20</span><span class="hljs-string">,</span>
+        <span class="hljs-attr">"customBorderX":</span> <span class="hljs-number">20</span><span class="hljs-string">,</span>
+        <span class="hljs-attr">"customBorderY":</span> <span class="hljs-number">5</span>
+        <span class="hljs-string">}</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="propriétés-prises-en-charge"></a><a href="#propriétés-prises-en-charge" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Propriétés prises en charge</h2>
 <p>Toutes les cases à cocher partagent une même série de propriétés de base :</p>

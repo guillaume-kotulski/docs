@@ -72,7 +72,7 @@
 <pre><code class="hljs css language-4d"><span class="hljs-function">ALERT</span>(<span class="hljs-string">"Hello"</span>)
 </code></pre>
 <p>Parameters are passed to methods or class functions in the same way. For example, if a class function named <code>getArea()</code> accepts two parameters, a call to the class function might look like this:</p>
-<pre><code class="hljs">$area:=$o.getArea(50;100)
+<pre><code class="hljs"><span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>)
 </code></pre>
 <p>Or, if a project method named <code>DO_SOMETHING</code> accepts three parameters, a call to the method might look like this:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">DO_SOMETHING</span>(<span class="hljs-variable">$WithThis</span>;<span class="hljs-variable">$AndThat</span>;<span class="hljs-variable">$ThisWay</span>)
@@ -88,7 +88,7 @@
 <p>This syntax is not supported with methods. See <a href="#sequential-parameters">Sequential parameters</a>.</p>
 </blockquote>
 <p>For example, when you call a <code>getArea()</code> function with two parameters:</p>
-<pre><code class="hljs">$area:=$o.getArea(50;100)
+<pre><code class="hljs"><span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>)
 </code></pre>
 <p>In the class function code, the value of each parameter is copied into the corresponding declared parameter:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Polygon</span><span class="hljs-keyword">
@@ -96,8 +96,8 @@ Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-var
     <span class="hljs-variable">$area</span>:=<span class="hljs-variable">$width</span>*<span class="hljs-variable">$height</span>
 </code></pre>
 <blockquote>
-<p>If the type is not defined, the parameter will be defined as <code>Variant</code>.</p>
-<p><a href="#sequential-parameters">Sequential parameters syntax</a> can be used to declare class function parameters. Both syntaxes can be mixed. For example:</p>
+<p>If the type is not defined, the parameter will be defined as <code>Variant</code>.
+<a href="#sequential-parameters">Sequential parameters syntax</a> can be used to declare class function parameters. Both syntaxes can be mixed. For example:</p>
 <pre><code class="hljs css language-4d"></code></pre>
 </blockquote>
 <p>Function add($x : Integer)
@@ -276,7 +276,7 @@ End if</span>
 <p>As with other local variables, it is not mandatory to declare generic parameters by compiler directive. However, it is recommended to avoid any ambiguity. To declare these parameters, you use a compiler directive to which you pass ${N} as a parameter, where N specifies the first generic parameter.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">${4}</span>)
 </code></pre>
-<p>This command means that starting with the fourth parameter (included), the method can receive a variable number of parameters of longint type. $1, $2 and $3 can be of any data type. However, if you use $2 by indirection, the data type used will be the generic type. Thus, it will be of the data type Longint, even if for you it was, for instance, of the data type Real.</p>
+<p>This command means that starting with the fourth  parameter (included), the method can receive a variable number of parameters of longint type. $1, $2 and $3 can be of any data type. However, if you use $2 by indirection, the data type used will be the generic type. Thus, it will be of the data type Longint, even if for you it was, for instance, of the data type Real.</p>
 <blockquote>
 <p>The number in the declaration has to be a constant and not a variable.</p>
 </blockquote>

@@ -25,6 +25,8 @@
 </code></pre>
 <blockquote>
 <p>In the ORDA world, ds.Company is a <strong>dataclass</strong>. ds.Company.city is an <strong>attribute</strong>.</p>
+</blockquote>
+<blockquote>
 <p>ORDA is case sensitive. <code>ds.company.city</code> will not refer to the ds.Company.city attribute.</p>
 </blockquote>
 <p>You have also noticed the extra <code>hires</code> property in the ds.Company dataclass. It does not correspond to a field. <code>hires</code> is actually the name of the <em>One to many</em> relation between Company and Employee:</p>
@@ -56,19 +58,19 @@ $entity.city:=<span class="hljs-string">"London"</span>
 <p>Vous utilisez l’éditeur d’utilisateurs pour créer des comptes utilisateurs, définir leurs propriétés et leur appartenance aux différents groupes.</p>
 <p>Pour ajouter un utilisateur depuis la boite à outils :</p>
 <ol>
-<li>Sélectionnez <strong>Boîte à outils &gt; Utilisateurs</strong> dans le menu <strong>Développement</strong> ou cliquez sur le bouton <strong>Boîte outils</strong> de la barre d’outils de 4D. 4D affiche la fenêtre d’édition des utilisateurs.</li>
+<li>Select <strong>Tool Box &gt; Users</strong> from the <strong>Design</strong> menu or click on the <strong>Tool Box</strong> button of the 4D toolbar. 4D affiche la fenêtre d’édition des utilisateurs.</li>
 </ol>
 <p>La liste des utilisateurs affiche tous les utilisateurs, y compris <a href="#designer-and-administrator">le Super_Utilisateur et l'l’Administrateur</a>.</p>
 <ol start="2">
-<li>Cliquez sur le bouton d’ajout <img src="/docs/alpha/assets/en/Users/PlussNew.png" alt=""> situé au-dessous de la Liste des utilisateurs. OU Cliquez avec le bouton droit de la souris dans la Liste des utilisateurs et choisissez la commande <strong>Ajouter</strong> ou <strong>Dupliquer</strong> dans le menu contextuel.</li>
+<li>Cliquez sur le bouton d’ajout <img src="/docs/alpha/assets/en/Users/PlussNew.png" alt=""> situé au-dessous de la Liste des utilisateurs. OR Right-click in the list of users and choose <strong>Add</strong> or <strong>Duplicate</strong> in the context menu.</li>
 </ol>
 <blockquote>
-<p>La commande <strong>Dupliquer</strong> permet de créer rapidement plusieurs utilisateurs ayant des caractéristiques communes.</p>
+<p>The <strong>Duplicate</strong> command can be used to create several users having the same characteristics quickly.</p>
 </blockquote>
 <p>4D ajoute un nouvel utilisateur à la liste, nommé par défaut &quot;Nouvel utilisateurN&quot;.</p>
 <ol start="3">
-<li><p>Saisissez le nom du nouvel utilisateur. Ce nom sera utilisé par l’utilisateur pour ouvrir la base. Vous pouvez renommer un utilisateur à tout moment en utilisant la commande <strong>Renommer</strong> du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.</p></li>
-<li><p>Pour saisir le mot de passe de l’utilisateur, cliquez sur le bouton <strong>Modifier...</strong> dans la zone des propriétés de l’utilisateur et saisissez deux fois le mot de passe dans la boite de dialogue. Vous pouvez saisir jusqu’à 15 caractères alphanumériques. L’éditeur de mots de passe tient compte de la casse des caractères (majuscules ou minuscules).</p></li>
+<li><p>Saisissez le nom du nouvel utilisateur. Ce nom sera utilisé par l’utilisateur pour ouvrir la base. You can rename a user at any time using the <strong>Rename</strong> command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.</p></li>
+<li><p>To enter a password for the user, click the <strong>Edit...</strong> button in the user properties area and enter the password twice in the dialog box. Vous pouvez saisir jusqu’à 15 caractères alphanumériques. L’éditeur de mots de passe tient compte de la casse des caractères (majuscules ou minuscules).</p></li>
 </ol>
 <blockquote>
 <p>Les utilisateurs peuvent modifier leur mot de passe à tout moment en fonction des options de la page Sécurité des propriétés de la base, ou à l'aide de la commande <code>CHANGE PASSWORD</code>.</p>
@@ -78,12 +80,12 @@ $entity.city:=<span class="hljs-string">"London"</span>
 </ol>
 <p>L’appartenance des utilisateurs aux groupes peut également être définie par groupe dans la <a href="#configuring-access-groups">page Groupes</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="supprimer-un-utilisateur"></a><a href="#supprimer-un-utilisateur" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supprimer un utilisateur</h3>
-<p>Pour supprimer un utilisateur, sélectionnez-le puis cliquez sur le bouton de suppression ou utilisez la commande <strong>Supprimer</strong> du menu contextuel. <img src="/docs/alpha/assets/en/Users/MinussNew.png" alt=""></p>
+<p>To delete a user, select it then click the deletion button or use the <strong>Delete</strong> command of the context menu. <img src="/docs/alpha/assets/en/Users/MinussNew.png" alt=""></p>
 <p>Les utilisateurs supprimés n'apparaissent plus dans la liste de l'éditeur d'utilisateurs. A noter que les numéros des utilisateurs supprimés peuvent être réattribués lors de la création de nouveaux comptes.</p>
 <h3><a class="anchor" aria-hidden="true" id="propriétés-des-utilisateurs"></a><a href="#propriétés-des-utilisateurs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Propriétés des utilisateurs</h3>
 <ul>
-<li><p>Le champ <strong>Type d’utilisateur</strong> : le champ Type d’utilisateur contient &quot;Super_Utilisateur&quot;, &quot;Administrateur&quot;, ou (pour tous les autres utilisateurs) &quot;Utilisateur&quot;.</p></li>
-<li><p><strong>Méthodes de démarrage</strong> : Nom d'une méthode associée qui sera automatiquement associée lorsque l'utilisateur ouvre la base (facultatif). Cette méthode peut être utilisée par exemple pour charger les préférences utilisateur.</p></li>
+<li><p><strong>User Kind</strong>: The User Kind field contains &quot;Designer&quot;, &quot;Administrator&quot;, or (for all other users) &quot;User&quot;.</p></li>
+<li><p><strong>Startup Method</strong>: Name of an associated method that will be automatically executed when the user opens the database (optional). Cette méthode peut être utilisée par exemple pour charger les préférences utilisateur.</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="éditeur-de-groupes"></a><a href="#éditeur-de-groupes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Éditeur de groupes</h2>
 <p>L'éditeur de groupes se trouve dans la boîte à outils de 4D.</p>
@@ -92,17 +94,17 @@ $entity.city:=<span class="hljs-string">"London"</span>
 <p>Attention, une fois créé, un groupe ne peut pas être supprimé. Si vous souhaitez désactiver un groupe, il vous suffit de retirer tous les utilisateurs qu’il contient.</p>
 <p>Pour créer un groupe :</p>
 <ol>
-<li><p>Sélectionnez <strong>Boîte à outils &gt; Groupes</strong> dans le menu <strong>Développement</strong> ou cliquez sur le bouton <strong>Boîte outils</strong> de la barre d’outils de 4D puis cliquez sur le bouton <strong>Groupes</strong>. 4D affiche la fenêtre d’édition des groupes. La liste des groupes affiche tous les groupes de la base.</p></li>
-<li><p>Cliquez sur le bouton <img src="/docs/alpha/assets/en/Users/PlussNew.png" alt=""> situé en-dessous de la liste des groupes.<br>
-OU<br>
-Faites un clic droit sur la liste de groupes et sélectionnez la commande <strong>Ajouter</strong> ou <strong>Dupliquer</strong> dans le menu contextuel.</p></li>
+<li><p>Select <strong>Tool Box &gt; Groups</strong> in the <strong>Design</strong> menu or click  on the <strong>Tool Box</strong> button of the 4D toolbar then on the <strong>Groups</strong> button. 4D affiche la fenêtre d’édition des groupes. La liste des groupes affiche tous les groupes de la base.</p></li>
+<li><p>Click on the <img src="/docs/alpha/assets/en/Users/PlussNew.png" alt=""> button located below the list of groups.<br>
+OR<br>
+Right-click in the list of groups and choose the <strong>Add</strong> or <strong>Duplicate</strong> command in the context menu.</p></li>
 </ol>
 <blockquote>
 <p>La commande Dupliquer permet de créer rapidement plusieurs groupes ayant des caractéristiques communes.</p>
 </blockquote>
 <p>4D ajoute un nouveau groupe à la liste, nommé par défaut &quot;Nouveau groupe1&quot;.</p>
 <ol start="3">
-<li>Saisissez le nom du nouveau groupe. Le nom du groupe peut avoir une longueur maximale de 15 caractères. Vous pouvez renommer un groupe à tout moment en utilisant la commande <strong>Renommer</strong> du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.</li>
+<li>Saisissez le nom du nouveau groupe. Le nom du groupe peut avoir une longueur maximale de 15 caractères. You can rename a group at any time using the <strong>Rename</strong> command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.</li>
 </ol>
 <h3><a class="anchor" aria-hidden="true" id="placer-des-utilisateurs-ou-des-groupes-dans-des-groupes"></a><a href="#placer-des-utilisateurs-ou-des-groupes-dans-des-groupes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Placer des utilisateurs ou des groupes dans des groupes</h3>
 <p>Vous pouvez placer tout utilisateur ou tout groupe dans un groupe et vous pouvez aussi le placer dans plusieurs groupes. Il n’est pas obligatoire de placer un utilisateur dans un groupe.</p>
@@ -117,7 +119,7 @@ Faites un clic droit sur la liste de groupes et sélectionnez la commande <stron
 <p>Vous pouvez également contrôler l’utilisation du serveur Web et du serveur SOAP de 4D en mode distant via la zone d’accès aux plug-ins.</p>
 <p>La zone “Plug-ins” de la page Groupes de la boîte à outils liste tous les plug-ins chargés par l’application 4D. Pour affecter un groupe à un plug-in, il suffit de cocher l’option correspondante.</p>
 <p><img src="/docs/alpha/assets/en/Users/plugins.png" alt=""></p>
-<p>Les lignes <strong>4D Client Web Server</strong> et <strong>4D Client SOAP Server</strong> permettent contrôler la possibilité de publication Web et SOAP (Web Services) de chaque 4D en mode distant. En effet, ces licences sont considérées par 4D Server comme des licences de plug-ins. Ainsi, comme pour un plug-in, vous pouvez restreindre le droit d’utiliser ces licences à un groupe d’utilisateurs spécifique.</p>
+<p>The <strong>4D Client Web Server</strong> and <strong>4D Client SOAP Server</strong> items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. En effet, ces licences sont considérées par 4D Server comme des licences de plug-ins. Ainsi, comme pour un plug-in, vous pouvez restreindre le droit d’utiliser ces licences à un groupe d’utilisateurs spécifique.</p>
 <h3><a class="anchor" aria-hidden="true" id="un-schéma-daccès-hiérarchique"></a><a href="#un-schéma-daccès-hiérarchique" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Un schéma d’accès hiérarchique</h3>
 <p>Le meilleur moyen d’assurer la sécurité de votre base de données et de proposer différents niveaux d’accès aux utilisateurs est d’utiliser un schéma hiérarchique des accès. Les utilisateurs peuvent être affectés à différents groupes et les groupes peuvent être hiérarchisés pour créer des niveaux de droits d’accès. Cette section décrit différentes approches de ce thème.</p>
 <p>Dans cet exemple, un utilisateur appartient à l’un des trois groupes définis suivant son niveau de responsabilité. Les utilisateurs du groupe Comptabilité sont responsables de la saisie de données. Les utilisateurs du groupe Dir. finance sont responsables de la mise à jour des données, comme la mise à jour d’enregistrements ou la suppression d’enregistrements obsolètes. Les utilisateurs du groupe Direction générale sont responsables de l’analyse de données, ce qui inclut la réalisation de recherches et l’impression d’états.</p>
