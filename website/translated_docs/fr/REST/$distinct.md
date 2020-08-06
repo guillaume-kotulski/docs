@@ -18,7 +18,7 @@ Dans l'exemple ci-dessous, nous souhaitons récupérer les différentes valeurs 
 
  `GET  /rest/Company/name?$filter="name=a*"&$distinct=true`
 
-**Response**:
+**Réponse** :
 
 ````
 [
