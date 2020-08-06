@@ -68,19 +68,19 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/FormObjects/formObjects_overview.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">4D フォームオブジェクトについて</h1></header><article><div><span><p>フォーム上のオブジェクトを編集することで、アプリケーションのフォームを構築しカスタマイズします。 オブジェクトの追加・配置、オブジェクトプロパティの設定、入力規制の追加によるビジネスルールの強化、操作に対して自動実行されるオブジェクトメソッドの追加などをおこなうことができます。</p>
 <h2><a class="anchor" aria-hidden="true" id="アクティブオブジェクトとスタティックオブジェクト"></a><a href="#アクティブオブジェクトとスタティックオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>アクティブオブジェクトとスタティックオブジェクト</h2>
-<p>4D forms support a large number of built-in <strong>active</strong> and <strong>static</strong> objects:</p>
+<p>4D フォームでは多くのビルトイン <strong>アクティブ</strong> オブジェクトおよび <strong>スタティック</strong> オブジェクトが提供されています:</p>
 <ul>
-<li><strong>active objects</strong> perform a database task or an interface function. アクティブオブジェクトの種類は、 入力フィールド、コンボボックス、ドロップダウンリスト、ピクチャーボタンなど様々ですが、いずれもデータを表示したり、メモリに一時保存したり、ダイアログボックスを開く・レポートを印刷する・バックグラウンドプロセスを開始するなどの動作を実行したりします。</li>
-<li><strong>static objects</strong> are generally used for setting the appearance of the form and its labels as well as for the graphic interface. アクティブオブジェクトと異なり、スタティックオブジェクトには変数や式が割り当てられません。 しかし、スタティックオブジェクトにダイナミックオブジェクトを挿入することは可能です。</li>
+<li><strong>アクティブオブジェクト</strong> はインターフェース機能やデータベースタスクを実行します。 アクティブオブジェクトの種類は、 入力フィールド、コンボボックス、ドロップダウンリスト、ピクチャーボタンなど様々ですが、いずれもデータを表示したり、メモリに一時保存したり、ダイアログボックスを開く・レポートを印刷する・バックグラウンドプロセスを開始するなどの動作を実行したりします。</li>
+<li><strong>スタティックオブジェクト</strong> (線、枠、背景ピクチャー等) は一般的に、フォームのアピアランスやラベル、グラフィックインターフェースを設定するために使用されます。 アクティブオブジェクトと異なり、スタティックオブジェクトには変数や式が割り当てられません。 しかし、スタティックオブジェクトにダイナミックオブジェクトを挿入することは可能です。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="オブジェクトの操作"></a><a href="#オブジェクトの操作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>オブジェクトの操作</h2>
 <p>4D フォームオブジェクトの追加や編集は次の方法でおこなえます:</p>
 <ul>
-<li><p><strong>Form editor:</strong> Drag an object from the Form editor toolbar onto the form. Then use the Property List to specify the object's properties.<br>
-See the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Building-forms.200-4354618.en.html">Building Forms</a> chapter for more information.</p></li>
-<li><p><strong>4D language</strong>: Commands from the <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/Objects-Forms.201-4127128.en.html">Objects (Forms)</a> theme such as <code>OBJECT DUPLICATE</code> or <code>OBJECT SET FONT STYLE</code> allow to create and define form objects.</p></li>
-<li><p><strong>JSON code in dynamic forms:</strong> Define the properties using JSON. <a href="/docs/18/ja/FormObjects/propertiesObject.html#type">type</a> プロパティでオブジェクトタイプを定義し、提供されている他のプロパティのうち必要なものを設定します。  See the <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/Dynamic-Forms.300-4163740.en.html#3692292">Dynamic Forms</a> page for information.<br>
-Example for a button object:</p></li>
+<li><p><strong>フォームエディター:</strong> ツールバーからオブジェクトをフォーム上にドラッグ＆ドロップします。 フォームに配置したら、そのオブジェクトのプロパティをプロパティリストから編集できます。<br>
+詳細については <a href="https://doc.4d.com/4Dv18/4D/18/Building-forms.200-4575447.ja.html">フォームの作成</a> を参照ください。</p></li>
+<li><p><strong>4D ランゲージ</strong>: <a href="https://doc.4d.com/4Dv18/4D/18/Objects-Forms.201-4504342.ja.html">オブジェクト(フォーム)</a> テーマのコマンド (<code>OBJECT DUPLICATE</code> や <code>OBJECT SET FONT STYLE</code> など) を使って、フィームオブジェクトを作成・定義することができます。</p></li>
+<li><p><strong>ダイナミックフォーム内の JSON コード:</strong> JSON を使ってプロパティを定義します。 <a href="/docs/18/ja/FormObjects/propertiesObject.html#type">type</a> プロパティでオブジェクトタイプを定義し、提供されている他のプロパティのうち必要なものを設定します。  詳細については <a href="https://doc.4d.com/4Dv18/4D/18/Dynamic-Forms.300-4575729.ja.html">ダイナミックフォーム</a> ページを参照ください。<br>
+次はボタンオブジェクトの例です:</p></li>
 </ul>
 <pre><code class="hljs">{ <span class="hljs-attr">"type"</span>: <span class="hljs-string">"button"</span>, <span class="hljs-attr">"style"</span>: <span class="hljs-string">"bevel"</span>, <span class="hljs-attr">"text"</span>: <span class="hljs-string">"OK"</span>, <span class="hljs-attr">"action"</span>: <span class="hljs-string">"Cancel"</span>, <span class="hljs-attr">"left"</span>: <span class="hljs-number">60</span>, <span class="hljs-attr">"top"</span>: <span class="hljs-number">160</span>, <span class="hljs-attr">"width"</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">"height"</span>: <span class="hljs-number">20</span> }
 </code></pre>
