@@ -85,13 +85,13 @@
   aCities{<span class="hljs-number">5</span>}:=<span class="hljs-string">"Frostbite Falls"</span> 
   aCities{<span class="hljs-number">6</span>}:=<span class="hljs-string">"Green Bay"</span> 
 </code></pre>
-<p>In this case, the name of the variable associated with the object in the form must be <em>aCities</em>. このコードをフォームメソッド内に置き、<code>On Load</code> フォームイベント発生時に実行されるようにします。</p>
+<p>この場合、フォームのオブジェクトに関連付けた変数名は <em>aCities</em> でなければなりません。 このコードをフォームメソッド内に置き、<code>On Load</code> フォームイベント発生時に実行されるようにします。</p>
 <ul>
 <li>オブジェクトが表示される前に、<a href="https://doc.4d.com/4Dv18/4D/18/LIST-TO-ARRAY.301-4504606.ja.html">LIST TO ARRAY</a> コマンドを使ってリストの値を配列にロードします。 たとえば:</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function">   LIST TO ARRAY</span>(<span class="hljs-string">"Cities"</span>;aCities)
 </code></pre>
-<p>In this case also, the name of the variable associated with the object in the form must be <em>aCities</em>. このコードは、前述した代入命令文の代わりに実行できます。</p>
+<p>この場合も、フォームのオブジェクトに関連付けた変数名は <em>aCities</em> でなければなりません。 このコードは、前述した代入命令文の代わりに実行できます。</p>
 <p>ユーザーがおこなった選択内容をフィールドに保存する必要があれば、レコードの登録後に代入命令を実行します。 たとえば、次のような Case文のコードを作成します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">  Case of</span>
     :(Form event=On Load)

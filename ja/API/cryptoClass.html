@@ -199,7 +199,7 @@
 </tbody>
 </table>
 <p>このメソッドは、<code>cryptoKey</code> オブジェクトキーおよび指定された <code>options</code> を使って、utf8 形式の <code>message</code> 文字列を署名します。 <code>options.encoding</code> 属性に指定した値に応じて、base64 または base64URL 形式の署名を返します。</p>
-<p>The <code>cryptoKey</code> must contain a valid <strong>private</strong> key.</p>
+<p><code>cryptoKey</code> は有効な <strong>秘密</strong> 鍵を格納していなくてはなりません。</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeyverify"></a><a href="#cryptokeyverify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.verify()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -232,7 +232,7 @@
 <p>このメソッドは、<code>cryptoKey</code> オブジェクトキーおよび指定された <code>options</code> を使って、utf8 形式の <code>message</code> 文字列の署名を検証します。</p>
 <p>検証で署名が合致した場合には、<code>success</code> プロパティが <code>true</code> に設定された <code>status</code> オブジェクトを返します。</p>
 <p><code>message</code>、キーまたはアルゴリズムが署名と合致しないなどの理由で認証が成功しなかった場合、返される <code>status</code> オブジェクトの <code>status.errors</code> プロパティにはエラーのコレクションが格納されます。</p>
-<p>The <code>cryptoKey</code> must contain a valid <strong>public</strong> key.</p>
+<p><code>cryptoKey</code> は有効な <strong>公開</strong> 鍵を格納していなくてはなりません。</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeyencrypt"></a><a href="#cryptokeyencrypt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.encrypt()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -259,7 +259,7 @@
 <tr><td>result</td><td></td><td>テキスト</td><td>&lt;-</td><td>options.encodingEncrypted を使って暗号化およびエンコードされたメッセージ</td></tr>
 </tbody>
 </table>
-<p>This method encrypts the <code>message</code> parameter using the <strong>public</strong> key. 使用されるアルゴリズムはキーの種類に依存します。</p>
+<p>このメソッドは <strong>公開</strong> 鍵を使って <code>message</code> を暗号化します。 使用されるアルゴリズムはキーの種類に依存します。</p>
 <p>キーは RSA キーでなければならず、アルゴリズムは RSA-OAEP です (<a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a> 参照)。</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeydecrypt"></a><a href="#cryptokeydecrypt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.decrypt()</h2>
 <p><details><summary>履歴</summary></p>
@@ -290,7 +290,7 @@
 <tr><td></td><td>errors</td><td>コレクション</td><td></td><td><code>success</code> が <code>false</code> の場合、エラーのコレクションが含まれている場合があります。</td></tr>
 </tbody>
 </table>
-<p>This method decrypts the <code>message</code> parameter using the <strong>private</strong> key. 使用されるアルゴリズムはキーの種類に依存します。</p>
+<p>このメソッドは <strong>秘密</strong> 鍵を使って <code>message</code> を復号します。 使用されるアルゴリズムはキーの種類に依存します。</p>
 <p>キーは RSA キーでなければならず、アルゴリズムは RSA-OAEP です (<a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a> 参照)。</p>
 <p><code>message</code> の復号に成功した場合には、success プロパティが <code>true</code> に設定された <code>status</code> オブジェクトを返します。</p>
 <p>キーまたはアルゴリズムが合致しないなどの理由で <code>message</code> の復号に成功しなかった場合、返される <code>status</code> オブジェクトの <code>status.errors</code> プロパティにはエラーのコレクションが格納されます。</p>

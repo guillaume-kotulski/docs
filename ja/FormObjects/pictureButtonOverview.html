@@ -70,8 +70,8 @@
 <p>ピクチャーボタンは <a href="/docs/ja/FormObjects/buttonOverview.html">標準のボタン</a> と似ていますが、 3つの状態 (有効、無効、クリック) を持てる標準ボタンとは異なり、ピクチャーボタンでは、その名前が表わすようにそれぞれの状態を別々のピクチャーにより表わします。</p>
 <p>ピクチャーボタンは、次の 2つの方法で使用します:</p>
 <ul>
-<li><p>フォーム上のコマンドボタンとして。 In this case, the picture button generally includes four different states: enabled, disabled, clicked and rolled over.<br>
-For example, a table of thumbnails that has one row of four columns, each thumbnail corresponds to the Default, Clicked, Roll over, and Disabled states.</p>
+<li><p>フォーム上のコマンドボタンとして。 この場合、ピクチャーボタンには通常 4種類の状態があります (有効、無効、クリック、ロールオーバー)。<br>
+たとえば、1行 4列からなるサムネールテーブルの場合、各サムネールはデフォルト、クリック、ロールオーバー、無効という状態に対応しています。</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>JSON 名</th><th>結果</th></tr>
@@ -85,8 +85,8 @@ For example, a table of thumbnails that has one row of four columns, each thumbn
 </tbody>
 </table>
 </li>
-<li><p>複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 With <a href="/docs/ja/FormObjects/picturePopupMenuOverview.html">Picture Pop-up Menus</a>, all choices are displayed simultaneously (as the items in the pop-up menu), while the picture button displays the choices consecutively (as the user clicks the button).<br>
-Here is an example of a picture button. たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:</p></li>
+<li><p>複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 <a href="/docs/ja/FormObjects/picturePopupMenuOverview.html">ピクチャーポップアップメニュー</a> ではすべての選択肢が (ポップアップメニューの項目として) 同時に表示されます。他方ピクチャーボタンは、選択候補を連続的に表示します (ボタンをクリックする度に変わります)。<br>
+次に示すのは、ピクチャーボタンの例です。 たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:</p></li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/button_pictureButton.png" alt=""></p>
 <p>オブジェクトをクリックするとピクチャーが変わります。</p>
@@ -105,7 +105,7 @@ Here is an example of a picture button. たとえば、カスタムアプリケ�
 <h2><a class="anchor" aria-hidden="true" id="アニメーション"></a><a href="#アニメーション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>アニメーション</h2>
 <p>ピクチャーボタンは、標準的な配置や見た目の設定以外にも、表示モードと動作モードを指定する専用プロパティを設定することができます。 これらのオプションは組み合わせて使用することができます。</p>
 <ul>
-<li>By default (when no <a href="/docs/ja/FormObjects/propertiesAnimation.html">animation option</a> is selected), a picture button displays the next picture in the series when the user clicks; it displays the previous picture in the series when the user holds down the <strong>Shift</strong> key and clicks. 系列中の最後のピクチャーに到達すると、もう一度クリックしてもピクチャーは変わりません。 つまりこの設定では、系列中の最初のピクチャーへ一巡して戻ることはありません。</li>
+<li>デフォルト (<a href="/docs/ja/FormObjects/propertiesAnimation.html">アニメーションオプション</a> 未選択) の場合、ユーザーがクリックすると、系列中の次のピクチャーを表示します。<strong>Shift</strong> キーを押しながらクリックすると、系列中の前のピクチャーを表示します。 系列中の最後のピクチャーに到達すると、もう一度クリックしてもピクチャーは変わりません。 つまりこの設定では、系列中の最初のピクチャーへ一巡して戻ることはありません。</li>
 </ul>
 <p>次のモードを選択することができます:</p>
 <ul>

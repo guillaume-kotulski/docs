@@ -73,10 +73,10 @@
 <h3><a class="anchor" aria-hidden="true" id="基本のユーザー機能"></a><a href="#基本のユーザー機能" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>基本のユーザー機能</h3>
 <p>実行中、リストボックスはリストとしてデータを表示し、入力を受け付けます。 セルを編集可能にするには (<a href="#入力の管理">その列について入力が許可されていれば</a>)、セル上で2回クリックします:</p>
 <p><img src="/docs/assets/en/FormObjects/listbox_edit.png" alt=""></p>
-<p>リストボックスのセルには、複数行のテキストを入力・表示できます。 To add a line break, press <strong>Ctrl+Carriage return</strong> on Windows or <strong>Option+Carriage return</strong> on macOS.</p>
+<p>リストボックスのセルには、複数行のテキストを入力・表示できます。 セル内で改行するには、<strong>Ctrl+Return</strong> (Windows) または <strong>Command+Return</strong> (macOS) を押します。</p>
 <p>セルにはブールやピクチャー、日付、時間、数値も表示することができます。 ヘッダーをクリックすると、列の値をソートできます (<a href="ソートの管理">標準ソート</a>)。 すべての列が自動で同期されます。</p>
 <p>またそれぞれの列幅を変更できるほか、ユーザーはマウスを使用して <a href="/docs/ja/FormObjects/propertiesListBox.html#locked-columns-and-static-columns">列</a> や <a href="/docs/ja/FormObjects/propertiesAction.html#movable-rows">行</a> の順番を (そのアクションが許可されていれば) 入れ替えることもできます。 リストボックスは <a href="#階層リストボックス">階層モード</a> で使用することもできます。</p>
-<p>The user can select one or more rows using the standard shortcuts: <strong>Shift+click</strong> for an adjacent selection and <strong>Ctrl+click</strong> (Windows) or <strong>Command+click</strong> (macOS) for a non-adjacent selection.</p>
+<p>ユーザーは標準のショートカットを使用して 1つ以上の行を選択できます。<strong>Shift+クリック</strong> で連続した行を、<strong>Ctrl+クリック</strong> (Windows) や <strong>Command+クリック</strong> (macOS) で非連続行を選択できます。</p>
 <h3><a class="anchor" aria-hidden="true" id="リストボックスの構成要素"></a><a href="#リストボックスの構成要素" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスの構成要素</h3>
 <p>リストボックスオブジェクトは、以下4つの項目で構成されます:</p>
 <ul>
@@ -96,16 +96,16 @@
 <h3><a class="anchor" aria-hidden="true" id="リストボックスの型"></a><a href="#リストボックスの型" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスの型</h3>
 <p>リストボックスには複数のタイプがあり、動作やプロパティの点で異なります。 リストボックスの型は <a href="/docs/ja/FormObjects/propertiesObject.html#データソース">データソースプロパティ</a> で定義します:</p>
 <ul>
-<li><strong>Arrays</strong>: each column is bound to a 4D array. 配列タイプのリストボックスは <a href="/docs/ja/FormObjects/listboxOverview.html#階層リストボックス">階層リストボックス</a> として表示することができます。</li>
-<li><strong>Selection</strong> (<strong>Current selection</strong> or <strong>Named selection</strong>): each column is bound to an expression (e.g. a field) which is evaluated for every record of the selection.</li>
-<li><strong>Collection or Entity selection</strong>: each column is bound to an expression which is evaluated for every element of the collection or every entity of the entity selection.</li>
+<li><strong>配列</strong>: 各列に 4D 配列を割り当てます。 配列タイプのリストボックスは <a href="/docs/ja/FormObjects/listboxOverview.html#階層リストボックス">階層リストボックス</a> として表示することができます。</li>
+<li><strong>セレクション</strong> (<strong>カレントセレクション</strong> または <strong>命名セレクション</strong>): 各列に式 (たとえばフィールド) を割り当てます。それぞれの行はセレクションのレコードを基に評価されます。</li>
+<li><strong>コレクションまたはエンティティセレクション</strong>: 各列に式を割り当てます。各行の中身はコレクションの要素ごと、あるいはエンティティセレクションのエンティティごとに評価されます。</li>
 </ul>
 <blockquote>
 <p>1つのリストボックス内に複数のデータソースタイプを組み合わせて指定することはできません。 データソースは、リストボックス作成時に定義され、 プログラムによって後から変更することはできません。</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="リストボックスの管理"></a><a href="#リストボックスの管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスの管理</h3>
 <p>リストボックスオブジェクトはプロパティによってあらかじめ設定可能なほか、プログラムにより動的に管理することもできます。</p>
-<p>4D ランゲージにはリストボックス関連のコマンドをまとめた &quot;リストボックス&quot; テーマが専用に設けられていますが、&quot;オブジェクトプロパティ&quot; コマンドや <code>EDIT ITEM</code>、<code>Displayed line number</code> コマンドなど、ほかのテーマのコマンドも利用することができます。 Refer to the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/List-Box-Commands-Summary.300-4311159.en.html">List Box Commands Summary</a> page of the <em>4D Language reference</em> for more information.</p>
+<p>4D ランゲージにはリストボックス関連のコマンドをまとめた &quot;リストボックス&quot; テーマが専用に設けられていますが、&quot;オブジェクトプロパティ&quot; コマンドや <code>EDIT ITEM</code>、<code>Displayed line number</code> コマンドなど、ほかのテーマのコマンドも利用することができます。 詳細については <em>4D ランゲージリファレンスマニュアル</em> の<a href="https://doc.4d.com/4Dv18/4D/18/List-Box-Commands-Summary.300-4505230.ja.html">リストボックスコマンド一覧</a>を参照してください。</p>
 <h2><a class="anchor" aria-hidden="true" id="リストボックスオブジェクト"></a><a href="#リストボックスオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスオブジェクト</h2>
 <h3><a class="anchor" aria-hidden="true" id="配列リストボックス"></a><a href="#配列リストボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配列リストボックス</h3>
 <p>配列リストボックスでは、それぞれの列に 4D の 1次元配列を割り当てなければなりません。ポインター配列を除きすべてのタイプの配列を使用できま す。 行数は配列の要素数により決定されます。</p>
@@ -120,17 +120,17 @@
 <pre><code class="hljs css language-4d"><span class="hljs-function">LIST TO ARRAY</span>(<span class="hljs-string">"ListName"</span>;ColumnName)
 </code></pre>
 <blockquote>
-<p><strong>Warning</strong>: When a list box contains several columns of different sizes, only the number of items of the smallest array (column) will be displayed. そのため、各配列の要素数は同じにしなければなりません。 リストボックスの列が一つでも空の場合 (ランゲージにより配列が正しく定義またはサイズ設定されなかったときに発生します)、リストボックスは何も表示しません。</p>
+<p><strong>警告</strong>: 異なる配列サイズの列がリストボックスに含まれる場合、もっとも小さい配列サイズの数だけを表示します。 そのため、各配列の要素数は同じにしなければなりません。 リストボックスの列が一つでも空の場合 (ランゲージにより配列が正しく定義またはサイズ設定されなかったときに発生します)、リストボックスは何も表示しません。</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="セレクションリストボックス"></a><a href="#セレクションリストボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>セレクションリストボックス</h3>
 <p>このタイプのリストボックスでは、列ごとにフィールド (例: <code>[Employees]LastName</code>) や式を割り当てます。 式は 1つ以上のフィールド (たとえば <code>[Employees]FirstName+“ ”[Employees]LastName</code>) または単にフォーミュラ (たとえば <code>String(Milliseconds)</code>) を使用できます。 式にはプロジェクトメソッド、変数、あるいは配列項目も指定できます。 カラムをプログラムで変更するには、<code>LISTBOX SET COLUMN FORMULA</code> および <code>LISTBOX INSERT COLUMN FORMULA</code> コマンドを使用します。</p>
-<p>The contents of each row is then evaluated according to a selection of records: the <strong>current selection</strong> of a table or a <strong>named selection</strong>.</p>
+<p>それぞれの行はセレクションのレコードを基に評価されます。セレクションは <strong>カレントセレクション</strong> または <strong>命名セレクション</strong>です。</p>
 <p>デー タソースがカレントセレクションである場合、データベースに対しておこなわれた変更はリストボックスに自動で反映され、またリストボックスへの変更も自動で データベースに適用されます。 つまりカレントセレクションは常に両方で同じです。</p>
 <h3><a class="anchor" aria-hidden="true" id="コレクションまたはエンティティセレクションリストボックス"></a><a href="#コレクションまたはエンティティセレクションリストボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コレクションまたはエンティティセレクションリストボックス</h3>
 <p>このタイプのリストボックスでは、各カラムに式が割り当てられている必要があります。 各行の中身はコレクション要素ごと、あるいはエンティティセレクションのエンティティごとに評価されます。</p>
 <p>コレクションの各要素、またはエンティティセレクションの各エンティティは、<a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html">This</a> コマンドを用いてオブジェクトとして取得します。 カラムの式にはプロジェクトメソッド、変数、あるいはフォーミュラが指定可能で、<code>This</code> を通して得た各エンティティあるいはコレクション要素オブジェクトが利用できます。例: <code>This.&lt;propertyPath&gt;</code> (あるいはスカラー値のコレクションの場合は <code>This.value</code>)。 カラムをプログラムで変更するには、<code>LISTBOX SET COLUMN FORMULA</code> および <code>LISTBOX INSERT COLUMN FORMULA</code> コマンドを使用します。</p>
 <p>データソースがエンティティセレクションの場合、リストボックス側に対しておこなった変更は自動的にデータベースに保存されます。 その一方で、データベース側に対しておこなった変更は、該当エンティティがリロードされてはじめてリストボックス側に反映されます。</p>
-<p>データソースがコレクションの場合、リストボックス内の値に変更をおこなった場合、その変更はコレクションにも反映されます。 On the other hand, if modifications are done on the collection using for example the various methods of the <em>Collections</em> theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. たとえば:</p>
+<p>データソースがコレクションの場合、リストボックス内の値に変更をおこなった場合、その変更はコレクションにも反映されます。 その一方で、コレクションに対して、たとえば <em>コレクション</em> テーマの様々なメソッドを使用して変更をおこなった場合、コレクション変数を自らに再代入することで明示的に 4D に通知する必要があり、それによってリストボックスのコンテンツは更新されます。 たとえば:</p>
 <pre><code class="hljs css language-4d">myCol:=myCol.<span class="hljs-function">push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">// リストボックスに new value を表示</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="プロパティ一覧"></a><a href="#プロパティ一覧" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロパティ一覧</h3>
@@ -330,7 +330,7 @@
 <p>さらに、ヘッダー特有のプロパティを設定することができます。 <a href="#ソートの管理">カスタマイズされた並び替え</a> などの用途に、ヘッダーの列タイトルの隣、あるいはタイトルの代わりにアイコンを表示することができます。</p>
 <p><img src="/docs/assets/en/FormObjects/lbHeaderIcon.png" alt=""></p>
 <p>ランタイムにおいてヘッダーで発生したイベントは、<a href="#オブジェクトメソッド">その列のオブジェクトメソッド</a> が受け取ります。</p>
-<p>ヘッダーに <code>OBJECT SET VISIBLE</code> コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのヘッダーが対象になります。 For example, <code>OBJECT SET VISIBLE(*;&quot;header3&quot;;False)</code> will hide all headers in the list box object to which <em>header3</em> belongs and not simply this header.</p>
+<p>ヘッダーに <code>OBJECT SET VISIBLE</code> コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのヘッダーが対象になります。 たとえば、<code>OBJECT SET VISIBLE(*;&quot;header3&quot;;False)</code> という命令の場合、指定したヘッダーだけではなく、<em>header3</em> が属するリストボックスの全ヘッダーを非表示にします。</p>
 <h3><a class="anchor" aria-hidden="true" id="ヘッダー特有のプロパティ"></a><a href="#ヘッダー特有のプロパティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ヘッダー特有のプロパティ</h3>
 <p><a href="/docs/ja/FormObjects/propertiesObject.html#オブジェクト名">オブジェクト名</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#変数あるいは式">変数あるいは式</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#タイトル">タイトル</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#CSSクラス">CSSクラス</a> - <a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#ピクチャーパス名">パス名</a> - <a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#アイコンの場所">アイコンの場所</a> - <a href="/docs/ja/FormObjects/propertiesCoordinatesAndSizing.html#幅">幅</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォント">フォント</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォントサイズ">フォントサイズ</a> - <a href="/docs/ja/FormObjects/propertiesText.html#太字">太字</a> - <a href="/docs/ja/FormObjects/propertiesText.html#イタリック">イタリック</a> - <a href="/docs/ja/FormObjects/propertiesText.html#下線">下線</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォントカラー">フォントカラー</a> - <a href="/docs/ja/FormObjects/propertiesText.html#横揃え">横揃え</a> - <a href="/docs/ja/FormObjects/propertiesText.html#縦揃え">縦揃え</a> - <a href="/docs/ja/FormObjects/propertiesHelp.html#ヘルプTips">ヘルプTips</a></p>
 <h2><a class="anchor" aria-hidden="true" id="リストボックスフッター"></a><a href="#リストボックスフッター" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスフッター</h2>
@@ -342,18 +342,18 @@
 <p><img src="/docs/assets/en/FormObjects/listbox_footers.png" alt=""></p>
 <p>リストボックスの各列フッター毎に標準のテキストプロパティを設定できます。設定すると、リストボックスや列に対する設定よりもこちらが優先されます。 さらに、フッター特有のプロパティを設定することができます。 <a href="/docs/ja/FormObjects/propertiesObject.html#変数の計算">カスタムまたは自動計算</a> をフッターに挿入することができます。</p>
 <p>ランタイムにおいてフッターで発生したイベントは、<a href="#オブジェクトメソッド">その列のオブジェクトメソッド</a> が受け取ります。</p>
-<p>フッターに <code>OBJECT SET VISIBLE</code> コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのフッターが対象になります。 For example, <code>OBJECT SET VISIBLE(*;&quot;footer3&quot;;False)</code> will hide all footers in the list box object to which <em>footer3</em> belongs and not simply this footer.</p>
+<p>フッターに <code>OBJECT SET VISIBLE</code> コマンドを使用すると、このコマンドに渡した引数に関わらず、そのリストボックスのすべてのフッターが対象になります。 たとえば、<code>OBJECT SET VISIBLE(*;&quot;footer3&quot;;False)</code> という命令の場合、指定したフッターだけではなく、<em>footer3</em> が属するリストボックスの全フッターを非表示にします。</p>
 <h3><a class="anchor" aria-hidden="true" id="フッター特有のプロパティ"></a><a href="#フッター特有のプロパティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>フッター特有のプロパティ</h3>
 <p><a href="/docs/ja/FormObjects/propertiesObject.html#オブジェクト名">オブジェクト名</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#変数あるいは式">変数あるいは式</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#式の型">式の型</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#変数の計算">変数の計算</a> - <a href="/docs/ja/FormObjects/propertiesObject.html#CSSクラス">CSSクラス</a> - <a href="/docs/ja/FormObjects/propertiesCoordinatesAndSizing.html#幅">幅</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#文字フォーマット">文字フォーマット</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#数値フォーマット">数値フォーマット</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#日付フォーマット">日付フォーマット</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#時間フォーマット">時間フォーマット</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#ピクチャーフォーマット">ピクチャーフォーマット</a> - <a href="/docs/ja/FormObjects/propertiesDisplay.html#ワードラップ">ワードラップ</a> <a href="/docs/ja/FormObjects/propertiesDisplay.html#エリプシスを使用して省略">エリプシスを使用して省略</a> - <a href="/docs/ja/FormObjects/propertiesBackgroundAndBorder.html#背景色-塗りカラー">背景色</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォント">フォント</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォントサイズ">フォントサイズ</a> - <a href="/docs/ja/FormObjects/propertiesText.html#太字">太字</a> - <a href="/docs/ja/FormObjects/propertiesText.html#イタリック">イタリック</a> - <a href="/docs/ja/FormObjects/propertiesText.html#下線">下線</a> - <a href="/docs/ja/FormObjects/propertiesText.html#フォントカラー">フォントカラー</a> - <a href="/docs/ja/FormObjects/propertiesText.html#横揃え">横揃え</a> - <a href="/docs/ja/FormObjects/propertiesText.html#縦揃え">縦揃え</a> - <a href="/docs/ja/FormObjects/propertiesHelp.html#ヘルプTips">ヘルプTips</a></p>
 <h2><a class="anchor" aria-hidden="true" id="入力の管理"></a><a href="#入力の管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>入力の管理</h2>
 <p>リストボックスのセルが入力可能であるには、以下の条件を満たす必要があります:</p>
 <ul>
 <li>セルが属する列が <a href="/docs/ja/FormObjects/propertiesEntry.html#入力可">入力可</a> に設定されている (でなければ、その列のセルには入力できません)。</li>
-<li><code>On Before Data Entry</code> イベントで $0 が -1 を返さない。 カーソルがセルに入ると、その列のメソッドで <code>On Before Data Entry</code> イベントが生成されます。 このイベントのコンテキストにおいて、$0 に -1 を設定すると、そのセルは入力不可として扱われます。 If the event was generated after <strong>Tab</strong> or <strong>Shift+Tab</strong> was pressed, the focus goes to either the next cell or the previous one, respectively. $0 が -1 でなければ (デフォルトは 0)、列は入力可であり編集モードに移行します。</li>
+<li><code>On Before Data Entry</code> イベントで $0 が -1 を返さない。 カーソルがセルに入ると、その列のメソッドで <code>On Before Data Entry</code> イベントが生成されます。 このイベントのコンテキストにおいて、$0 に -1 を設定すると、そのセルは入力不可として扱われます。 <strong>Tab</strong> や <strong>Shift+Tab</strong> が押された後にイベントが生成された場合には、フォーカスはそれぞれ次あるいは前のセルに移動します。 $0 が -1 でなければ (デフォルトは 0)、列は入力可であり編集モードに移行します。</li>
 </ul>
 <p>2つの配列で構築されるリストボックスを考えてみましょう。1つは日付でもう 1つはテキストです。 日付配列は入力不可ですが、テキスト配列は日付が過去でない場合に入力可とします。</p>
 <p><img src="/docs/assets/en/FormObjects/listbox_entry.png" alt=""></p>
-<p>Here is the method of the <em>arrText</em> column:</p>
+<p><em>arrText</em> 列のメソッドは以下の通りです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(FORM event.code=On Before Data Entry) <span class="hljs-comment">// セルがフォーカスを得たとき</span>
 <span class="hljs-function">       LISTBOX GET CELL POSITION</span>(*;<span class="hljs-string">"lb"</span>;<span class="hljs-variable">$col</span>;<span class="hljs-variable">$row</span>)
@@ -401,14 +401,14 @@
 <h2><a class="anchor" aria-hidden="true" id="選択行の管理"></a><a href="#選択行の管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>選択行の管理</h2>
 <p>選択行の管理は、リストボックスのタイプが配列か、レコードのセレクションか、あるいはコレクション/エンティティセレクションかによって異なります。</p>
 <ul>
-<li><p><strong>Selection list box</strong>: Selections are managed by a set, which you can modify if necessary, called <code>$ListboxSetX</code> by default (where X starts at 0 and is incremented based on the number of list boxes in the form). このセットはリストボックスの<a href="/docs/ja/FormObjects/propertiesListBox.html#ハイライトセット">プロパティリスト</a>で定義します。 このセットは 4D が自動で管理します。ユーザーがリストボックス中で 1つ以上の行を選択すると、セットが即座に更新されます。 他方、リストボックスの選択をプログラムから更新するために、&quot;セット&quot; テーマのコマンドを使用することができます。</p></li>
-<li><p><strong>Collection/Entity selection list box</strong>: Selections are managed through dedicated list box properties:</p>
+<li><p><strong>セレクションリストボックス</strong>: 選択行は、デフォルトで <code>$ListboxSetX</code> と呼ばれる変更可能なセットにより管理されます (X は 0 から始まり、フォーム内のリストボックスの数に応じて一つずつ増加していきます)。 このセットはリストボックスの<a href="/docs/ja/FormObjects/propertiesListBox.html#ハイライトセット">プロパティリスト</a>で定義します。 このセットは 4D が自動で管理します。ユーザーがリストボックス中で 1つ以上の行を選択すると、セットが即座に更新されます。 他方、リストボックスの選択をプログラムから更新するために、&quot;セット&quot; テーマのコマンドを使用することができます。</p></li>
+<li><p><strong>コレクション/エンティティセレクションリストボックス</strong>: 選択項目は、専用のリストボックスプロパティを通して管理されます。</p>
 <ul>
 <li><a href="/docs/ja/FormObjects/propertiesDataSource.html#カレントの項目">カレントの項目</a> は、選択された要素/エンティティを受け取るオブジェクトです。</li>
 <li><a href="/docs/ja/FormObjects/propertiesDataSource.html#選択された項目">選択された項目</a> は、選択された項目のコレクションです。</li>
 <li><a href="/docs/ja/FormObjects/propertiesDataSource.html#カレントの項目の位置">カレントの項目の位置</a> は、選択された要素あるいはエンティティの位置を返します。</li>
 </ul></li>
-<li><p><strong>Array list box</strong>: The <code>LISTBOX SELECT ROW</code> command can be used to select one or more rows of the list box by programming. <a href="/docs/ja/FormObjects/propertiesObject.html#変数あるいは式">リストボックスオブジェクトにリンクされた変数</a> は、行選択の取得、設定、保存に使用します。 この変数はブール配列で、4Dが自動的に作成・管理します。 この配列のサイズは、リストボックスのサイズにより決定されます。つまり、各列に関連付けられた配列のうち、最も小さな配列と同じ数の要素を持ちます。 この配列の各要素には、対応する行が選択された場合には <code>true</code> が、それ以外の場合は <code>false</code> が設定されます。 4D は、ユーザーの動作に応じてこの配列の内容を更新します。 これとは逆に、この配列要素の値を変更して、リストボックス中の選択行を変更することができます。 他方、この配列への要素の挿入や削除はできず、行のタイプ変更もできません。 <code>Count in array</code> コマンドを使用して、選択された行の数を調べることができます。 たとえば、以下のメソッドは配列タイプのリストボックスで、最初の行の選択を切り替えます:</p></li>
+<li><p><strong>配列リストボックス</strong>: <code>LISTBOX SELECT ROW</code> コマンドを使用して、プログラムからリストボックスの行を選択できます。 <a href="/docs/ja/FormObjects/propertiesObject.html#変数あるいは式">リストボックスオブジェクトにリンクされた変数</a> は、行選択の取得、設定、保存に使用します。 この変数はブール配列で、4Dが自動的に作成・管理します。 この配列のサイズは、リストボックスのサイズにより決定されます。つまり、各列に関連付けられた配列のうち、最も小さな配列と同じ数の要素を持ちます。 この配列の各要素には、対応する行が選択された場合には <code>true</code> が、それ以外の場合は <code>false</code> が設定されます。 4D は、ユーザーの動作に応じてこの配列の内容を更新します。 これとは逆に、この配列要素の値を変更して、リストボックス中の選択行を変更することができます。 他方、この配列への要素の挿入や削除はできず、行のタイプ変更もできません。 <code>Count in array</code> コマンドを使用して、選択された行の数を調べることができます。 たとえば、以下のメソッドは配列タイプのリストボックスで、最初の行の選択を切り替えます:</p></li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY BOOLEAN</span>(tBListBox;<span class="hljs-number">10</span>)
   <span class="hljs-comment">// tBListBox はフォーム内にあるリストボックス変数の名前です</span><span class="hljs-keyword">
@@ -474,7 +474,7 @@
 <pre><code class="hljs">    <span class="hljs-string">"highlightSet"</span>: <span class="hljs-string">"<span class="hljs-variable">$SampleSet</span>"</span>,
     <span class="hljs-string">"rowFillSource"</span>: <span class="hljs-string">"UI_SetColor"</span>,
 </code></pre>
-<p>You can write in the <em>UI_SetColor</em> method:</p>
+<p><em>UI_SetColor</em> メソッドに次のように書けます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(<span class="hljs-function">Is in set</span>(<span class="hljs-string">"$SampleSet"</span>))
     <span class="hljs-variable">$color</span>:=<span class="hljs-number">0x0080C080</span> <span class="hljs-comment">// 背景色を緑にします</span><span class="hljs-keyword">
  Else</span>
@@ -530,7 +530,7 @@
 </tbody>
 </table>
 <p>例として、リストボックスのプロパティにてフォントスタイルを設定しながら、列には行スタイル配列を使用して異なるスタイルを設定した場合、後者が有効となります。</p>
-<p>For each attribute (style, color and background color), an <strong>inheritance</strong> is implemented when the default value is used:</p>
+<p>それぞれの属性 (スタイル、カラー、背景色) について、デフォルトの値を使用した場合、属性の <strong>継承</strong> がおこなわれます:</p>
 <ul>
 <li>セル属性について: 行の属性値を受け継ぎます</li>
 <li>行属性について: 列の属性値を受け継ぎます</li>
@@ -566,9 +566,9 @@
 </table>
 <p><a href="/docs/ja/FormObjects/propertiesText.html#行スタイル配列">行スタイル配列</a>|<a href="/docs/ja/FormObjects/propertiesText.html#スタイル式">スタイル式</a>|<a href="/docs/ja/FormObjects/propertiesText.html#スタイル式">スタイル式</a> または <a href="/docs/ja/FormObjects/propertiesText.html#メタ情報式">メタ情報式</a>| 表示|<a href="/docs/ja/FormObjects/propertiesListBox.html#行コントロール配列">行コントロール配列</a>|-|-|</p>
 <h2><a class="anchor" aria-hidden="true" id="リストボックスの印刷"></a><a href="#リストボックスの印刷" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックスの印刷</h2>
-<p>Two printing modes are available: <strong>preview mode</strong> - which can be used to print a list box like a form object, and <strong>advanced mode</strong> - which lets you control the printing of the list box object itself within the form. フォームエディターで、リストボックスオブジェクトに &quot;印刷&quot; アピアランスを適用できる点に留意してください。</p>
+<p>リストボックスの印刷には 2つの印刷モードがあります: フォームオブジェクトのようにリストボックスを印刷する <strong>プレビューモード</strong> と、フォーム内でリストボックスオブジェクトの印刷方法を制御できる <strong>詳細モード</strong> があります。 フォームエディターで、リストボックスオブジェクトに &quot;印刷&quot; アピアランスを適用できる点に留意してください。</p>
 <h3><a class="anchor" aria-hidden="true" id="プレビューモード"></a><a href="#プレビューモード" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プレビューモード</h3>
-<p>Printing a list box in preview mode consists of directly printing the list box and the form that contains it using the standard print commands or the <strong>Print</strong> menu command. リストボックスはフォーム上に表示されている通りに印刷されます。 このモードでは、オブジェクトの印刷を細かく制御することはできません。とくに、表示されている以上の行を印刷することはできません。</p>
+<p>プレビューモードでのリストボックスの印刷は、標準の印刷コマンドや <strong>印刷</strong> メニューを使用して、リストボックスを含むフォームをそのまま出力します。 リストボックスはフォーム上に表示されている通りに印刷されます。 このモードでは、オブジェクトの印刷を細かく制御することはできません。とくに、表示されている以上の行を印刷することはできません。</p>
 <h3><a class="anchor" aria-hidden="true" id="詳細モード"></a><a href="#詳細モード" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>詳細モード</h3>
 <p>このモードでは、リストボックスの印刷は <code>Print object</code> コマンドを使用してプログラムにより実行されます (プロジェクトフォームとテーブルフォームがサポートされています)。 <code>LISTBOX GET PRINT INFORMATION</code> コマンドを使用してオブジェクトの印刷を制御できます。</p>
 <p>このモードでは:</p>
@@ -588,11 +588,11 @@
 <ul>
 <li>フォームエディターのプロパティリストを使用して階層要素を手作業で設定する (または JSON フォームを編集する)。</li>
 <li>フォームエディターのリストボックス管理メニューを使用して階層を生成する。</li>
-<li>Use the <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/LISTBOX-SET-HIERARCHY.301-4127969.en.html">LISTBOX SET HIERARCHY</a> and <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/LISTBOX-GET-HIERARCHY.301-4127970.en.html">LISTBOX GET HIERARCHY</a> commands, described in the <em>4D Language Reference</em> manual.</li>
+<li><a href="https://doc.4d.com/4Dv18/4D/18/LISTBOX-SET-HIERARCHY.301-4505193.ja.html">LISTBOX SET HIERARCHY</a> や <a href="https://doc.4d.com/4Dv18/4D/18/LISTBOX-GET-HIERARCHY.301-4505194.ja.html">LISTBOX GET HIERARCHY</a> コマンドを使用する (<em>4D ランゲージリファレンス</em> 参照)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="階層リストボックス-プロパティによる階層化"></a><a href="#階層リストボックス-プロパティによる階層化" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;階層リストボックス&quot; プロパティによる階層化</h4>
-<p>このプロパティを使用してリストボックスの階層表示を設定します。 In the JSON form, this feature is triggered <a href="/docs/ja/FormObjects/propertiesObject.html#hierarchical-list-box">when the <em>dataSource</em> property value is an array</a>, i.e. a collection.</p>
-<p>Additional options (<strong>Variable 1...10</strong>) are available when the <em>Hierarchical List Box</em> option is selected, corresponding to each <em>dataSource</em> array to use as break column. 入力欄に値が入力されると、新しい入力欄が追加されます。 10個までの変数を指定できます。 これらの変数は先頭列に表示される階層のレベルを設定します。</p>
+<p>このプロパティを使用してリストボックスの階層表示を設定します。 JSON フォームにおいては、<a href="/docs/ja/FormObjects/propertiesObject.html#階層リストボックス"><em>dataSource</em> プロパティの値が array であるときに</a>、この機能が利用可能になります。</p>
+<p><em>階層リストボックス</em> オプションが選択されると、追加オプションである <strong>Variable 1...10</strong> が利用可能になります。これらには階層の各レベルとして使用するデータソース (<em>dataSource</em>) 配列を指定します。 入力欄に値が入力されると、新しい入力欄が追加されます。 10個までの変数を指定できます。 これらの変数は先頭列に表示される階層のレベルを設定します。</p>
 <p>Variable 1 は常に、リストボックスの先頭列の変数名に対応します (この 2つの値は自動でバインドされます)。 Variable 1欄は常に表示され、入力できます。 例: country。 Variable 2 も常に表示され、入力できます。これは二番目の階層レベルを指定します。 例: regions。 三番目以降の欄は、その前の番号の欄が入力されると表示されます。 例えば: counties、cities等。 最大10レベルまで指定できます。 ある階層レベルの値を削除すると、その後の階層レベルが繰り上がります。</p>
 <p>最後の変数に複数の同じ値が存在しても、この変数が階層になることはありません。 たとえば、arr1 に A A A B B B、arr2 に 1 1 1 2 2 2、そしてarr3 に X X Y Y Y Z が値として設定されている場合、A、B、1、そして 2 は階層で表示できますが、X と Y は階層になりません:</p>
 <p><img src="/docs/assets/en/FormObjects/property_hierarchicalListBox.png" alt=""></p>
@@ -601,20 +601,20 @@
 <p>既存のリストボックスで階層を設定した場合、(最初のものを除き) これらの列を削除または非表示にしなければなりません。でないと、それらはリストボックス中で重複して表示されます。 エディターのポップアップメニューを使用して階層を設定すると (階層リストボックス参照)、不要な列は自動でリストボックスから取り除かれます。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="コンテキストメニューを使用した階層化"></a><a href="#コンテキストメニューを使用した階層化" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンテキストメニューを使用した階層化</h4>
-<p>When you select at least one column in addition to the first one in a list box object (of the array type) in the form editor, the <strong>Create hierarchy</strong> command is available in the context menu:</p>
+<p>フォームエディター内で配列タイプのリストボックスオブジェクトの一番目から任意の数の列を選択すると、<strong>階層を作成</strong> コマンドがコンテキストメニューから利用できるようになります:</p>
 <p><img src="/docs/assets/en/FormObjects/listbox_hierarchy1.png" alt=""></p>
 <p>このコマンドは階層化のショートカットです。 このコマンドを選択すると、以下のアクションが実行されます:</p>
 <ul>
-<li>The <strong>Hierarchical list box</strong> option is checked for the object in the Property List.</li>
+<li>そのオブジェクトのプロパティリストで <strong>階層リストボックス</strong> オプションが選択されます。</li>
 <li>その列の変数が階層を指定するために使用されます。 既に設定されていた変数は置き換えられます。</li>
 <li>(先頭列を除き) 選択された列はリストボックス内に表示されなくなります。</li>
 </ul>
-<p>例: 左から国、地域、都市、人口列が設定されたリストボックスがあります。 When Country, Region and City are selected, if you choose <strong>Create hierarchy</strong> in the context menu, a three-level hierarchy is created in the first column, columns 2 and 3 are removed and the Population column becomes the second:</p>
+<p>例: 左から国、地域、都市、人口列が設定されたリストボックスがあります。 国、地域、都市が (下図の通り) 選択され、コンテキストメニューから <strong>階層を作成</strong> を選択すると、先頭列に3レベルの階層が作成され、二番目と三番目の列は取り除かれます。人口列が二番目になります:</p>
 <p><img src="/docs/assets/en/FormObjects/listbox_hierarchy2.png" alt=""></p>
 <h5><a class="anchor" aria-hidden="true" id="階層をキャンセル"></a><a href="#階層をキャンセル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>階層をキャンセル</h5>
-<p>When the first column is selected and already specified as hierarchical, you can use the <strong>Cancel hierarchy</strong> command. このコマンドを選択すると以下のアクションが実行されます:</p>
+<p>階層リストボックスとして定義されたリストボックスで先頭列を選択すると、<strong>階層をキャンセル</strong> コマンドを使用できます。 このコマンドを選択すると以下のアクションが実行されます:</p>
 <ul>
-<li>The <strong>Hierarchical list box</strong> option is deselected for the object,</li>
+<li>そのオブジェクトの <strong>階層リストボックス</strong> オプションの選択が解除されます。</li>
 <li>2番目以降の階層レベルが削除され、通常の列としてリストボックスに追加されます。</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="動作"></a><a href="#動作" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>動作</h3>
@@ -626,7 +626,7 @@
 <p>階層を正しく構築するためには、事前に配列をソートしなければなりません。 たとえば、配列中にデータが AAABBAACC の順で含まれていると、階層は以下のようになります:</p>
 <pre><code class="hljs">&gt; A B A C
 </code></pre>
-<p>階層 &quot;ノード&quot; を展開したり折りたたんだりするには、ノード上をクリックします。 If you <strong>Alt+click</strong> (Windows) or <strong>Option+click</strong> (macOS) on the node, all its sub-elements will be expanded or collapsed as well. これらの動作は <code>LISTBOX EXPAND</code> および <code>LISTBOX COLLAPSE</code> コマンドを使用することでプログラミングでも実行可能です。</p>
+<p>階層 &quot;ノード&quot; を展開したり折りたたんだりするには、ノード上をクリックします。 ノード上を <strong>Alt+クリック</strong> (Windows) または <strong>Option+クリック</strong> (macOS) すると、すべてのサブ要素が同時に展開されたり折りたたまれたりします。 これらの動作は <code>LISTBOX EXPAND</code> および <code>LISTBOX COLLAPSE</code> コマンドを使用することでプログラミングでも実行可能です。</p>
 <p>階層リストボックスに日付や時間型の値を表示する際、それらは Short system format で表示されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="ソートの管理-1"></a><a href="#ソートの管理-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ソートの管理</h4>
 <p>階層モードのリストボックスにおいて、(リストボックス列のヘッダーをクリックして実行される) 標準の並べ替えは常に以下のようにおこなわれます:</p>
@@ -664,17 +664,17 @@
 <p>親が折りたたまれているために行が非表示になっていると、それらは選択から除外されます。 (直接あるいはスクロールによって) 表示されている行のみを選択できます。 言い換えれば、行を選択かつ隠された状態にすることはできません。</p>
 </blockquote>
 <p>選択と同様に、<code>LISTBOX GET CELL POSITION</code> コマンドは階層リストボックスと非階層リストボックスにおいて同じ値を返します。 つまり以下の両方の例題で、<code>LISTBOX GET CELL POSITION</code> は同じ位置 (3;2) を返します。</p>
-<p><em>Non-hierarchical representation:</em> <img src="/docs/assets/en/FormObjects/hierarch9.png" alt=""></p>
-<p><em>Hierarchical representation:</em> <img src="/docs/assets/en/FormObjects/hierarch10.png" alt=""></p>
+<p><em>非階層表示:</em> <img src="/docs/assets/en/FormObjects/hierarch9.png" alt=""></p>
+<p><em>階層表示:</em> <img src="/docs/assets/en/FormObjects/hierarch10.png" alt=""></p>
 <p>サブ階層のすべての行が隠されているとき、ブレーク行は自動で隠されます。 先の例題で 1から 3行目までが隠されていると、&quot;Brittany&quot; のブレーク行は表示されません。</p>
 <h4><a class="anchor" aria-hidden="true" id="ブレーク行の管理"></a><a href="#ブレーク行の管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ブレーク行の管理</h4>
 <p>ユーザーがブレーク行を選択すると、<code>LISTBOX GET CELL POSITION</code> は対応する配列の最初のオカレンスを返します。 以下のケースで:</p>
 <p><img src="/docs/assets/en/FormObjects/hierarch11.png" alt=""></p>
-<p>... <code>LISTBOX GET CELL POSITION</code> returns (2;4). プログラムでブレーク行を選択するには <code>LISTBOX SELECT BREAK</code> コマンドを使用する必要があります。</p>
+<p><code>LISTBOX GET CELL POSITION</code> は (2;4) を返します。 プログラムでブレーク行を選択するには <code>LISTBOX SELECT BREAK</code> コマンドを使用する必要があります。</p>
 <p>ブレーク行はリストボックスのグラフィカルな表示 (スタイルやカラー) を管理する内部的な配列では考慮されません。 しかし、オブジェクトのグラフィックを管理するオブジェクト (フォーム) テーマのコマンドを使用してブレーク行の表示を変更できます。 階層を構成する配列に対して、適切なコマンドを実行します。</p>
 <p>以下のリストボックスを例題とします (割り当てた配列名は括弧内に記載しています):</p>
-<p><em>Non-hierarchical representation:</em> <img src="/docs/assets/en/FormObjects/hierarch12.png" alt=""></p>
-<p><em>Hierarchical representation:</em> <img src="/docs/assets/en/FormObjects/hierarch13.png" alt=""></p>
+<p><em>非階層表示:</em> <img src="/docs/assets/en/FormObjects/hierarch12.png" alt=""></p>
+<p><em>階層表示:</em> <img src="/docs/assets/en/FormObjects/hierarch13.png" alt=""></p>
 <p>階層モードでは <code>tStyle</code> や <code>tColors</code> 配列で変更されたスタイルは、ブレーク行に適用されません。 ブレークレベルでカラーやスタイルを変更するには、以下のステートメントを実行します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> OBJECT SET RGB COLORS</span>(T1;<span class="hljs-number">0x0000FF</span>;<span class="hljs-number">0xB0B0B0</span>)
 <span class="hljs-function"> OBJECT SET FONT STYLE</span>(T2;Bold)
@@ -703,11 +703,11 @@
 <p><img src="/docs/assets/en/FormObjects/listbox_column_objectArray_config.png" alt=""></p>
 <p>オブジェクトカラムに対しては、座標、サイズ、スタイルなどに関連した標準のプロパティが使用可能です。 プロパティリストを使用して定義する方法のほかにも、オブジェクト型のリストボックスカラムのそれぞれの行に対してスタイル、フォントカラー、背景色、表示状態をプログラムで定義することもできます。 これらのタイプのカラムは非表示にすることも可能です。</p>
 <p>しかしながら、データソーステーマは、オブジェクト型のリストボックスカラムに対しては選択できません。 実際、カラムの各セルの中身は、それに対応するオブジェクト配列の要素の属性に基づいています。 配列の各オブジェクト要素には、以下を定義できます:</p>
-<p>the value type (mandatory): text, color, event, etc. the value itself (optional): used for input/output. the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に &quot;Hello World!&quot; 書き込むことができます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">//column array</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob</span>) <span class="hljs-comment">//first element</span>
-<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>) <span class="hljs-comment">//defines the value type (mandatory)</span>
-<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Hello World!"</span>) <span class="hljs-comment">//defines the value</span>
+<p>値の型 (必須): テキスト、カラー、イベント、他 値そのもの (任意): 入力/出力に使用 セルの内容表示 (任意): ボタン、リスト、他 追加の設定 (任意): 値の型によります これらのプロパティを定義するには、適切な属性をオブジェクト内に設定する必要があります (使用可能な属性は以下に一覧としてまとめてあります)。 たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に &quot;Hello World!&quot; 書き込むことができます:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
+<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob</span>) <span class="hljs-comment">// 第一要素</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>) <span class="hljs-comment">// 値の型を定義 (必須)</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob</span>;<span class="hljs-string">"value"</span>;<span class="hljs-string">"Hello World!"</span>) <span class="hljs-comment">// 値を定義</span>
 <span class="hljs-function"> APPEND TO ARRAY</span>(obColumn;<span class="hljs-variable">$ob</span>)  
 </code></pre>
 <p><img src="/docs/assets/en/FormObjects/listbox_column_objectArray_helloWorld.png" alt=""></p>
@@ -724,7 +724,7 @@
 <li>&quot;color&quot;: 背景色を定義</li>
 <li>&quot;event&quot;: ラベル付ボタンを表示</li>
 </ul>
-<p>4D uses default widgets with regards to the &quot;valueType&quot; value (i.e., a &quot;text&quot; is displayed as a text input widget, a &quot;boolean&quot; as a check box), but alternate displays are also available through options (<em>e.g.</em>, a real can also be represented as a drop-down menu). 以下の一覧はそれぞれの値の型に対してのデフォルトの表示方法と、他に選択可能な表示方の一覧を表しています:</p>
+<p>4D は &quot;valueType&quot; の値に応じたデフォルトのウィジェットを使用します (つまり、&quot;text&quot; と設定すればテキスト入力ウィジェットが表示され、&quot;boolean&quot; と設定すればチェックボックスが表示されます)。しかし、オプションを使用することによって表示方法の選択が可能な場合もあります (たとえば、&quot;real&quot; と設定した場合、ドロップダウンメニューとしても表示できます)。 以下の一覧はそれぞれの値の型に対してのデフォルトの表示方法と、他に選択可能な表示方の一覧を表しています:</p>
 <table>
 <thead>
 <tr><th>valueType</th><th>デフォルトのウィジェット</th><th>他に選択可能なウィジェット</th></tr>
@@ -749,9 +749,9 @@
 <tbody>
 <tr><td>テキスト</td><td>オブジェクト内で定義されているものと同じ</td><td>制限なし</td></tr>
 <tr><td>実数</td><td>オブジェクト内で定義されているものと同じ (システムの小数点セパレーターを使用)</td><td>&quot;0-9&quot; と &quot;.&quot; と &quot;-&quot;</td></tr>
-<tr><td></td><td></td><td>&quot;0-9&quot; and &quot;.&quot; if min&gt;=0</td></tr>
+<tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot; と &quot;.&quot;</td></tr>
 <tr><td>整数</td><td>オブジェクト内で定義されているものと同じ</td><td>&quot;0-9&quot; と &quot;-&quot;</td></tr>
-<tr><td></td><td></td><td>&quot;0-9&quot; if min&gt;=0</td></tr>
+<tr><td></td><td></td><td>min&gt;=0 の場合、&quot;0-9&quot; と &quot;.&quot;</td></tr>
 <tr><td>ブール</td><td>チェックボックス</td><td>N/A</td></tr>
 <tr><td>color</td><td>N/A</td><td>N/A</td></tr>
 <tr><td>event</td><td>N/A</td><td>N/A</td></tr>
@@ -786,11 +786,11 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="value"></a><a href="#value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>value</h4>
 <p>セルの値は &quot;value&quot; 属性に保存されています。 この属性は入力と出力に使用されるほか、 リストを使用する際のデフォルト値を定義するのにも使用できます (以下参照)。</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">//column array</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY OBJECT</span>(obColumn;<span class="hljs-number">0</span>) <span class="hljs-comment">// カラム配列</span>
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob1</span>)
  <span class="hljs-variable">$entry</span>:=<span class="hljs-string">"Hello world!"</span>
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"text"</span>)
-<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// if the user enters a new value, $entry will contain the edited value</span>
+<span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob1</span>;<span class="hljs-string">"value"</span>;<span class="hljs-variable">$entry</span>) <span class="hljs-comment">// ユーザーが新しい値を入力した場合、 編集された値は $entry に格納されます</span>
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$ob2</span>)
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"valueType"</span>;<span class="hljs-string">"real"</span>)
 <span class="hljs-function"> OB SET</span>(<span class="hljs-variable">$ob2</span>;<span class="hljs-string">"value"</span>;<span class="hljs-number">2</span>/<span class="hljs-number">3</span>)
@@ -930,7 +930,7 @@
 </code></pre>
 <p><img src="../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="unitslist、unitslistname、-unitslistreference-と-unitreference"></a><a href="#unitslist、unitslistname、-unitslistreference-と-unitreference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>unitsList、unitsListName、 unitsListReference と unitReference</h4>
-<p>You can use specific attributes to add units associated with cell values (<em>e.g.</em>: &quot;10 cm&quot;, &quot;20 pixels&quot;, etc.). 単位リストを定義するためには、以下の属性のどれか一つを使用します:</p>
+<p>特定の値を使用することで、セルの値に関連した単位を追加することができます (<em>例</em>: &quot;10 cm&quot;, &quot;20 pixels&quot; 等)。 単位リストを定義するためには、以下の属性のどれか一つを使用します:</p>
 <ul>
 <li>&quot;unitsList&quot;: 利用可能な単位 (例: &quot;cm&quot;、&quot;inches&quot;、&quot;km&quot;、&quot;miles&quot;、他) を定義するのに使用する x 要素を格納した配列。 オブジェクト内で単位を定義するためには、この属性を使用します。</li>
 <li>&quot;unitsListReference&quot;: 利用可能な単位を含んだ 4Dリストへの参照。 <a href="https://doc.4d.com/4Dv18/4D/18/New-list.301-4505738.ja.html">New list</a> コマンドで作成された 4D リストで単位を定義するためには、この属性を使用します。</li>
@@ -940,7 +940,7 @@
 <ul>
 <li>&quot;unitReference&quot;: &quot;unitList&quot;、&quot;unitsListReference&quot; または &quot;unitsListName&quot; の値リスト内で選択された項目へのインデックス (1からx) を格納する単一の値。</li>
 </ul>
-<p>The current unit is displayed as a button that cycles through the &quot;unitList&quot;, &quot;unitsListReference&quot; or &quot;unitsListName&quot; values each time it is clicked (e.g., &quot;pixels&quot; -&gt; &quot;rows&quot; -&gt; &quot;cm&quot; -&gt; &quot;pixels&quot; -&gt; etc.)</p>
+<p>カレントの単位は、ボタンとして表示されます。このボタンは、クリックするたびに &quot;unitList&quot;、&quot;unitsListReference&quot; または &quot;unitsListName&quot; の値を切り替えていきます (例: &quot;pixels&quot; -&gt; &quot;rows&quot; -&gt; &quot;cm&quot; -&gt; &quot;pixels&quot; -&gt; 等)。</p>
 <p>例:</p>
 <p>数値の入力と、その後に可能性のある二つの単位 (&quot;lines&quot; または &quot;pixels&quot;) を続けて表示したい場合を考えます。 カレントの値は &quot;2&quot; + &quot;lines&quot; と、 オブジェクト内で直接定義された値 (&quot;unitsList&quot; 属性) を使用するものとします:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ARRAY TEXT</span>(<span class="hljs-variable">$_units</span>;<span class="hljs-number">0</span>)
@@ -975,7 +975,7 @@
 </ul>
 <p><img src="/docs/assets/en/FormObjects/listbox_column_objectArray_colorValue.png" alt=""></p>
 <ul>
-<li>If the value is a text, then the text is displayed (<em>e.g.</em>: &quot;value&quot;;&quot;Automatic&quot;).</li>
+<li>値がテキストの場合、そのテキストが表示されます (<em>例</em>: &quot;value&quot;;&quot;Automatic&quot;)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="event-valuetype"></a><a href="#event-valuetype" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>event valueType</h4>
 <p>&quot;event&quot; valueType を使用すると、クリックした際に <code>On Clicked</code> イベントを生成する単純なボタンを表示します。 データまたは値を渡す/返すことはできません。</p>
@@ -989,7 +989,7 @@
 <h3><a class="anchor" aria-hidden="true" id="イベント管理"></a><a href="#イベント管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>イベント管理</h3>
 <p>オブジェクトリストボックス配列を使用している際には、複数のイベントを管理することができます:</p>
 <ul>
-<li><strong>On Data Change</strong>: An <code>On Data Change</code> event is triggered when any value has been modified either:
+<li><strong>On Data Change</strong>: 以下の場所において、どんな値でも変更された場合には <code>On Data Change</code> イベントがトリガーされます:
 <ul>
 <li>テキスト入力</li>
 <li>ドロップダウンリスト</li>
@@ -997,8 +997,8 @@
 <li>単位ボタン (値 x が値 x+1 へとスイッチしたとき)</li>
 <li>チェックボックス (チェック/チェックなしの状態がスイッチしたとき)</li>
 </ul></li>
-<li><strong>On Clicked</strong>: When the user clicks on a button installed using the &quot;event&quot; <em>valueType</em> attribute, an <code>On Clicked</code> event will be generated. このイベントはプログラマーによって管理されます。</li>
-<li><strong>On Alternative Click</strong>: When the user clicks on an ellipsis button (&quot;alternateButton&quot; attribute), an <code>On Alternative Click</code> event will be generated. このイベントはプログラマーによって管理されます。</li>
+<li><strong>On Clicked</strong>: ユーザーが、&quot;event&quot; <em>valueType</em> 属性を使用して実装されたボタンをクリックした場合、<code>On Clicked</code> イベントが生成されます。 このイベントはプログラマーによって管理されます。</li>
+<li><strong>On Alternative Click</strong>: ユーザーが省略ボタン (&quot;alternateButton&quot; 属性) をクリックした場合、<code>On Alternative Click</code> イベントが生成されます。 このイベントはプログラマーによって管理されます。</li>
 </ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/FormObjects/listOverview.html"><span class="arrow-prev">← </span><span>階層リスト</span></a><a class="docs-next button" href="/docs/ja/FormObjects/pictureButtonOverview.html"><span>ピクチャーボタン</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概要">概要</a><ul class="toc-headings"><li><a href="#基本のユーザー機能">基本のユーザー機能</a></li><li><a href="#リストボックスの構成要素">リストボックスの構成要素</a></li><li><a href="#リストボックスの型">リストボックスの型</a></li><li><a href="#リストボックスの管理">リストボックスの管理</a></li></ul></li><li><a href="#リストボックスオブジェクト">リストボックスオブジェクト</a><ul class="toc-headings"><li><a href="#配列リストボックス">配列リストボックス</a></li><li><a href="#セレクションリストボックス">セレクションリストボックス</a></li><li><a href="#コレクションまたはエンティティセレクションリストボックス">コレクションまたはエンティティセレクションリストボックス</a></li><li><a href="#プロパティ一覧">プロパティ一覧</a></li><li><a href="#フォームイベント">フォームイベント</a></li></ul></li><li><a href="#リストボックス列">リストボックス列</a><ul class="toc-headings"><li><a href="#列特有のプロパティ">列特有のプロパティ</a></li><li><a href="#フォームイベント-1">フォームイベント</a></li></ul></li><li><a href="#リストボックスヘッダー">リストボックスヘッダー</a><ul class="toc-headings"><li><a href="#ヘッダー特有のプロパティ">ヘッダー特有のプロパティ</a></li></ul></li><li><a href="#リストボックスフッター">リストボックスフッター</a><ul class="toc-headings"><li><a href="#フッター特有のプロパティ">フッター特有のプロパティ</a></li></ul></li><li><a href="#入力の管理">入力の管理</a></li><li><a href="#選択行の管理">選択行の管理</a><ul class="toc-headings"><li><a href="#選択行の見た目のカスタマイズ">選択行の見た目のカスタマイズ</a></li></ul></li><li><a href="#ソートの管理">ソートの管理</a></li><li><a href="#スタイルとカラー、表示の管理">スタイルとカラー、表示の管理</a><ul class="toc-headings"><li><a href="#優先順位と継承">優先順位と継承</a></li><li><a href="#配列と式の使用">配列と式の使用</a></li></ul></li><li><a href="#リストボックスの印刷">リストボックスの印刷</a><ul class="toc-headings"><li><a href="#プレビューモード">プレビューモード</a></li><li><a href="#詳細モード">詳細モード</a></li></ul></li><li><a href="#階層リストボックス">階層リストボックス</a><ul class="toc-headings"><li><a href="#階層の指定">階層の指定</a></li><li><a href="#動作">動作</a></li></ul></li><li><a href="#オブジェクト配列の使用">オブジェクト配列の使用</a><ul class="toc-headings"><li><a href="#オブジェクト配列カラムの設定">オブジェクト配列カラムの設定</a></li><li><a href="#属性">属性</a></li><li><a href="#イベント管理">イベント管理</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

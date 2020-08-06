@@ -94,7 +94,7 @@
 <p>フォーム上では、スプリッター周辺にある各オブジェクトのリサイズオプションに基づいて、スプリッターとこれらのオブジェクトとが作用しあいます:</p>
 <table>
 <thead>
-<tr><th>オブジェクトのリサイズオプション</th><th>水平スプリッターの上、または垂直スプリッターの左にあるオブジェクト(1)</th><th>Object(s) below an horizontal <em>non-Pusher</em> splitter or to the right of a vertical <em>non-Pusher</em> splitter</th><th>Object(s) below an horizontal <em>Pusher</em> splitter or to the right of a vertical <em>Pusher</em> splitter</th></tr>
+<tr><th>オブジェクトのリサイズオプション</th><th>水平スプリッターの上、または垂直スプリッターの左にあるオブジェクト(1)</th><th>水平スプリッターの下、または垂直スプリッターの右にあるオブジェクト (非 &quot;プッシャー&quot; の場合)</th><th>水平スプリッターの下、または垂直スプリッターの右にあるオブジェクト (&quot;プッシャー&quot; の場合)</th></tr>
 </thead>
 <tbody>
 <tr><td>なし</td><td>そのまま変わらない</td><td>次に停止するまでスプリッターとともに移動 (スプリッターとの相対的な位置は変更されない)。 下または右への移動時の停止位置はウインドウの境界または別のスプリッター。</td><td>無制限にスプリッターとともに移動 (スプリッターとの相対的な位置は変更されない)。 停止しない (次節を参照)。</td></tr>
@@ -108,7 +108,7 @@
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="プログラムによるスプリッターの管理"></a><a href="#プログラムによるスプリッターの管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プログラムによるスプリッターの管理</h2>
 <p>オブジェクトメソッドをスプリッターに指定することができます。スプリッターを移動する間 <code>On Clicked</code> イベントでこのメソッドが呼び出されます。</p>
-<p>A <a href="/docs/ja/FormObjects/propertiesObject.html#variable-or-expression">variable</a> of the <em>Longint</em> type is associated with each splitter. この変数はオブジェクトメソッドやフォームメソッドで使用することができます。 この変数の値により、スプリッターの最初の位置に対する現在位置がピクセル単位で示されます。</p>
+<p>各スプリッターには <em>倍長整数</em> 型の <a href="/docs/ja/FormObjects/propertiesObject.html#変数あるいは式">変数</a> が割り当てられます。 この変数はオブジェクトメソッドやフォームメソッドで使用することができます。 この変数の値により、スプリッターの最初の位置に対する現在位置がピクセル単位で示されます。</p>
 <ul>
 <li>この値が負数の場合: スプリッターは上または左方向へ移動されました。</li>
 <li>この値が正数の場合: スプリッターは下または右方向へ移動されました。</li>

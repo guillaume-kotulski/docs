@@ -114,16 +114,16 @@
 <tr><td>System date abbreviated <em>(1)</em></td><td>systemMedium</td><td>2020/03/25</td></tr>
 <tr><td>System date long</td><td>systemLong</td><td>2020年3月25日 水曜日</td></tr>
 <tr><td>RFC 822</td><td>rfc822</td><td>Tue, 25 Mar 2020 22:00:00 GMT</td></tr>
-<tr><td>Short Century</td><td>shortCentury</td><td>03/25/20 but 04/25/2032 <em>(2)</em></td></tr>
+<tr><td>Short Century</td><td>shortCentury</td><td>03/25/20、ただし 04/25/2032 <em>(2)</em></td></tr>
 <tr><td>Internal date long</td><td>long</td><td>March 25, 2020</td></tr>
 <tr><td>Internal date abbreviated <em>(1)</em></td><td>abbreviated</td><td>Mar 25, 2020</td></tr>
 <tr><td>Internal date short</td><td>short</td><td>03/25/2020</td></tr>
 <tr><td>ISO Date Time <em>(3)</em></td><td>iso8601</td><td>2020-03-25T00:00:00</td></tr>
 </tbody>
 </table>
-<p><em>(1)</em> To avoid ambiguity and in accordance with current practice, the abbreviated date formats display &quot;jun&quot; for June and &quot;jul&quot; for July.</p>
-<p><em>(2)</em> The year is displayed using two digits when it belongs to the interval (1930;2029) otherwise it will be displayed using four digits. これはデフォルト設定ですが、<a href="https://doc.4d.com/4Dv18/4D/18/SET-DEFAULT-CENTURY.301-4505667.ja.html">SET DEFAULT CENTURY</a> コマンドで変更することができます。</p>
-<p><em>(3)</em> The <code>ISO Date Time</code> format corresponds to the XML date and time representation standard (ISO8601). これは主に XML フォーマットや Web サービスのデータを読み込んだり書き出したりするために使用します。</p>
+<p><em>(1)</em> &quot;June&quot; は &quot;Jun&quot;、”July” は &quot;Jul&quot; に省略されます。</p>
+<p><em>(2)</em> 年は、1930年~2029年の間は2桁の数字で表示されますが、それ以外の場合は4桁で表示されます。 これはデフォルト設定ですが、<a href="https://doc.4d.com/4Dv18/4D/18/SET-DEFAULT-CENTURY.301-4505667.ja.html">SET DEFAULT CENTURY</a> コマンドで変更することができます。</p>
+<p><em>(3)</em> <code>ISO Date Time</code> フォーマットは XML の日付と時間表現の標準 (ISO8601) に対応します。 これは主に XML フォーマットや Web サービスのデータを読み込んだり書き出したりするために使用します。</p>
 <blockquote>
 <p>表示フォーマットにかかわらず、年度を2 桁で入力すると、4D は年が00~29 の間であれば 21 世紀とみなし、30~99 の間であれば 20 世紀とみなします。 これはデフォルト設定ですが、<a href="https://doc.4d.com/4Dv18/4D/18/SET-DEFAULT-CENTURY.301-4505667.ja.html">SET DEFAULT CENTURY</a> コマンドで変更することができます。</p>
 </blockquote>
@@ -159,8 +159,8 @@
 </tbody>
 </table>
 <p>(1) キャレット (^) は、ほとんどのフォントの数字と同じ幅を占めるスペースを生成します。</p>
-<p>たとえば、3桁の数字を表示する場合、###というフォーマットを使用できます。 If the user enters more digits than the format allows, 4D displays &lt;&lt;&lt; in the field to indicate that more digits were entered than the number of digits specified in the display format.</p>
-<p>ユーザーがマイナスの数値を入力すると、左端の文字はマイナス記号として表示されます (負数の表示フォーマットが指定されていない場合)。 If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as &lt;&lt;&lt; because the minus sign occupies a placeholder and there are only three placeholders.</p>
+<p>たとえば、3桁の数字を表示する場合、###というフォーマットを使用できます。 フォーマットにより許可された桁数を超えて入力すると、4Dは &lt;&lt;&lt; をフィールドに表示し、表示フォーマットで指定された桁数を超える入力がおこなわれたことを示します。</p>
+<p>ユーザーがマイナスの数値を入力すると、左端の文字はマイナス記号として表示されます (負数の表示フォーマットが指定されていない場合)。 ##0というフォーマットであれば、マイナス 26 は -26 と表示されます。マイナス260 は &lt;&lt;&lt; と表示されますが、これはプレースホルダーが 3桁分しか指定されていないところに、マイナス記号により 1つのプレースホルダが使用されてしまい、桁あふれしたためです。</p>
 <blockquote>
 <p>表示フォ－マットとは関係なく、4Dはフィ－ルドに入力された数値を受け入れ、保存します。 データが失われることはありません。</p>
 </blockquote>
@@ -199,7 +199,7 @@
 </code></pre>
 <p>この場合、ゼロは “￥0.00” と表示されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="科学的記数法"></a><a href="#科学的記数法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>科学的記数法</h3>
-<p>If you want to display numbers in scientific notation, use the <strong>ampersand</strong> (&amp;) followed by a number to specify the number of digits you want to display. たとえば次のフォーマットを指定すると:</p>
+<p>科学的記数法で数値を表示したい場合には、<strong>アンパサンド</strong> (&amp;) に続けて表示したい桁数を指定します。 たとえば次のフォーマットを指定すると:</p>
 <pre><code class="hljs">&amp;3
 </code></pre>
 <p>759.62 は以下のように表示されます:</p>
@@ -275,25 +275,25 @@
 <p>トランケートとスケーリングオプションを選択しても、ピクチャーが変更されることはなく、 ピクチャーフィールドのデータは失われません。 ピクチャー表示フォーマットはピクチャーの表示にのみ影響します。</p>
 <h3><a class="anchor" aria-hidden="true" id="スケーリング"></a><a href="#スケーリング" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スケーリング</h3>
 <p><code>JSON 文法では: &quot;scaled&quot;</code></p>
-<p>The <strong>Scaled to fit</strong> format causes 4D to resize the picture to fit the dimensions of the area.</p>
+<p><strong>スケーリング</strong> を選択すると、ピクチャーはフィールドエリアの大きさに合うようにリサイズされます。</p>
 <p><img src="/docs/assets/en/FormObjects/property_pictureFormat_ScaledToFit.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="トランケート-中央合わせ中央合わせしない"></a><a href="#トランケート-中央合わせ中央合わせしない" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>トランケート (中央合わせ/中央合わせしない)</h3>
 <p><code>JSON 文法では: &quot;truncatedCenter&quot; / &quot;truncatedTopLeft&quot;</code></p>
-<p>The <strong>Truncated (centered)</strong> format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 上下、および左右のはみ出し量は同じになります。</p>
-<p>The <strong>Truncated (non-centered)</strong> format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. ピクチャーは右と下にはみ出します。</p>
+<p><strong>トランケート (中央合わせ)</strong> フォーマットを選択すると、4D はエリアの中央にピクチャーを配置し、収まらない部分はエリアからはみ出します。 上下、および左右のはみ出し量は同じになります。</p>
+<p><strong>トランケート (中央合わせしない)</strong> フォーマットを選択すると、4D はピクチャーの左上角をフィールドの左上角に合わせて配置し、フィールドエリアに収まらない部分はエリアからはみ出します。 ピクチャーは右と下にはみ出します。</p>
 <blockquote>
-<p>When the picture format is <strong>Truncated (non-centered)</strong>, it is possible to add scroll bars to the input area.</p>
+<p>ピクチャーフォーマットが <strong>トランケート (中央合わせしない)</strong> の場合、入力エリアにスクロールバーを追加できます。</p>
 </blockquote>
 <p><img src="/docs/assets/en/FormObjects/property_pictureFormat_Truncated.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="スケーリング-プロポーショナル-とスケーリング-中央合わせ・プロポーショナル"></a><a href="#スケーリング-プロポーショナル-とスケーリング-中央合わせ・プロポーショナル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スケーリング (プロポーショナル) とスケーリング (中央合わせ・プロポーショナル)</h3>
 <p><code>JSON 文法では: &quot;proportionalTopLeft&quot; / &quot;proportionalCenter&quot;</code></p>
-<p>When you use <strong>Scaled to fit (proportional)</strong>, the picture is reduced proportionally on all sides to fit the area created for the picture. The <strong>Scaled to fit centered (proportional)</strong> option does the same, but centers the picture in the picture area.</p>
+<p><strong>スケーリング (プロポーショナル)</strong> を使用すると、ピクチャーエリアに収まるよう、比率を保ったままサイズが調整されます。 <strong>スケーリング (中央合わせ・プロポーショナル)</strong> オプションも同様ですが、ピクチャーはエリアの中央に配置されます。</p>
 <p>ピクチャーがエリアよりも小さい場合、サイズは変更されません。 ピクチャーがエリアよりも大きい場合、そのエリア内に全体が表示されるよう、比率を保ったままサイズが小さくなります。 比率が保たれるため、ピクチャーは歪むことなく表示されます。</p>
-<p>If you have applied the <strong>Scaled to fit centered (proportional)</strong> format, the picture is also centered in the area:</p>
+<p><strong>中央合わせ</strong> を選択した場合、画像はエリアの中央に配置されます:</p>
 <p><img src="/docs/assets/en/FormObjects/property_pictureFormat_ScaledProportional.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="繰り返し"></a><a href="#繰り返し" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>繰り返し</h3>
 <p><code>JSON 文法では: &quot;tiled&quot;</code></p>
-<p>When the area that contains a picture with the <strong>Replicated</strong> format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.</p>
+<p><strong>繰り返し</strong> フォーマットを持つピクチャーが含まれるエリアが拡大されると、ピクチャーは変形されず、エリア全体を埋めるのに必要なだけピクチャーが繰り返されます。</p>
 <p><img src="/docs/assets/en/FormObjects/property_pictureFormat_Replicated.png" alt=""></p>
 <p>フィールドがオリジナルのピクチャーよりも小さいサイズにされた場合、ピクチャーはトランケート (中央合わせなし) されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-3"></a><a href="#json-文法-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
@@ -350,10 +350,10 @@
 <li><a href="/docs/ja/FormObjects/inputOverview.html">入力オブジェクト</a> にテキストとして</li>
 <li><a href="/docs/ja/FormObjects/listboxOverview.html#リストボックス列">リストボックス列</a> に表示タイプ <a href="/docs/ja/FormObjects/propertiesDisplay.html#表示タイプ">&quot;ポップアップ&quot;</a> を選択して</li>
 </ul>
-<p>... you can select the text to display for each value:</p>
+<p>... 値の代わりに表示するテキストを指定することができます:</p>
 <ul>
-<li><strong>Text when True</strong> - the text to be displayed when the value is &quot;true&quot;</li>
-<li><strong>Text when False</strong> - the text to be displayed when the value is &quot;false&quot;</li>
+<li><strong>テキスト (True時)</strong> - 値が &quot;true&quot; の時に表示するテキスト</li>
+<li><strong>テキスト (False時)</strong> - 値が &quot;false&quot; の時に表示するテキスト</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-5"></a><a href="#json-文法-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
@@ -361,7 +361,7 @@
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>booleanFormat</td><td>string</td><td>&quot;&lt;<em>textWhenTrue</em>&gt;;&lt;<em>textWhenFalse</em>&gt;&quot;, e.g. &quot;Assigned;Unassigned&quot;</td></tr>
+<tr><td>booleanFormat</td><td>string</td><td>&quot;&lt;<em>テキスト (true時)</em>&gt;;&lt;<em>テキスト (false時)</em>&gt;&quot;, 例: &quot;済み;未処理&quot; /</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-5"></a><a href="#対象オブジェクト-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
@@ -377,7 +377,7 @@
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>controlType</td><td>string</td><td><li><strong>number columns</strong>: &quot;automatic&quot; (default) or &quot;checkbox&quot;<li><strong>boolean columns</strong>: &quot;checkbox&quot; (default) or &quot;popup&quot;</td></tr>
+<tr><td>controlType</td><td>string</td><td><li><strong>数値列</strong>: &quot;automatic&quot; (デフォルト) または &quot;checkbox&quot;<li><strong>ブール列</strong>: &quot;checkbox&quot; (デフォルト) または &quot;popup&quot;</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-6"></a><a href="#対象オブジェクト-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
@@ -401,15 +401,15 @@
 <h2><a class="anchor" aria-hidden="true" id="スリーステート"></a><a href="#スリーステート" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>スリーステート</h2>
 <p>チェックボックスオブジェクトに、3 番目の状態を付加します。 チェックボックスが 3番目の状態になると、チェックボックスに関連付けられた変数は値2を返します。</p>
 <h4><a class="anchor" aria-hidden="true" id="リストボックス列におけるスリーステートチェックボックス"></a><a href="#リストボックス列におけるスリーステートチェックボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストボックス列におけるスリーステートチェックボックス</h4>
-<p><a href="/docs/ja/FormObjects/propertiesObject.html#式タイプ">式タイプ</a> が数値型のリストボックス列は、スリーステートチェックボックスとして表示できます。 If chosen, the following values are displayed:</p>
+<p><a href="/docs/ja/FormObjects/propertiesObject.html#式タイプ">式タイプ</a> が数値型のリストボックス列は、スリーステートチェックボックスとして表示できます。 スリーステートチェックボックスタイプを選択すると、以下の値が表示されます:</p>
 <ul>
-<li>0 = unchecked box,</li>
-<li>1 = checked box,</li>
-<li>2 (or any value &gt;0) = semi-checked box (third state). データ入力時、この状態は2を返します。</li>
-<li>-1 = invisible check box,</li>
-<li>-2 = unchecked box, not enterable,</li>
-<li>-3 = checked box, not enterable,</li>
-<li>-4 = semi-checked box, not enterable</li>
+<li>0 = チェックされていない</li>
+<li>1 = チェックされている</li>
+<li>2 (または2以上の任意の数値) セミチェックボックス (三番目の状態) データ入力時、この状態は2を返します。</li>
+<li>-1 = 非表示チェックボックス</li>
+<li>-2 = チェックされていない、入力不可</li>
+<li>-3 = チェックされている、入力不可</li>
+<li>-4 = セミチェックボックス、入力不可</li>
 </ul>
 <p>スリーステートチェックボックスの場合も、<a href="#タイトル">タイトル</a>プロパティが表示され、チェックボックスのタイトルを設定できます。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-8"></a><a href="#json-文法-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
@@ -427,8 +427,8 @@
 <h2><a class="anchor" aria-hidden="true" id="タイトル"></a><a href="#タイトル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>タイトル</h2>
 <p>タイトルは、リストボックス列のプロパティとして次の場合に提供されます:</p>
 <ul>
-<li>the <a href="/docs/ja/FormObjects/propertiesObject.html#expression-type">column type</a> is <strong>boolean</strong> and its <a href="/docs/ja/FormObjects/propertiesDisplay.html#display-type">display type</a> is &quot;Check Box&quot;</li>
-<li>the <a href="/docs/ja/FormObjects/propertiesObject.html#expression-type">column type</a> is <strong>number</strong> (numeric or integer) and its <a href="/docs/ja/FormObjects/propertiesDisplay.html#display-type">display type</a> is &quot;Three-states Checkbox&quot;.</li>
+<li><a href="/docs/ja/FormObjects/propertiesObject.html#式タイプ">式タイプ</a> が <strong>ブール</strong> で <a href="/docs/ja/FormObjects/propertiesDisplay.html#表示タイプ">表示タイプ</a> が &quot;チェックボックス&quot; の場合</li>
+<li><a href="/docs/ja/FormObjects/propertiesObject.html#式タイプ">式タイプ</a> が <strong>数値</strong> (数値または整数) で <a href="/docs/ja/FormObjects/propertiesDisplay.html#表示タイプ">表示タイプ</a> が &quot;スリーステートチェックボックス&quot; の場合</li>
 </ul>
 <p>これらの場合に、チェックボックスのタイトルをこのプロパティで設定できます。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-9"></a><a href="#json-文法-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
@@ -510,7 +510,7 @@
 <p><code>JSON 文法では: &quot;none&quot;</code></p>
 <p>このオブションの場合、4D はいっさい自動改行をおこないません。表示可能な最後の単語はエリアをはみ出します。 テキストタイプのエリアでは改行がサポートされます:</p>
 <p><img src="/docs/assets/en/FormObjects/wordwrap3.png" alt=""></p>
-<p>リストボックスの場合、長すぎるテキストは切り落とされ、省略記号 (...) が表示されます。 In the following example, the Wordwrap option is <strong>checked for the left column</strong> and <strong>unchecked for the right column</strong>:</p>
+<p>リストボックスの場合、長すぎるテキストは切り落とされ、省略記号 (...) が表示されます。 以下の例では、左の列ではワードラップのオプションがチェックされていて、右の列ではされていません:</p>
 <p><img src="/docs/assets/en/FormObjects/property_wordwrap1.png" alt=""></p>
 <p>ワードラップの オプションの値に関わらず、行の高さは変化しないことに注意してください。 改行を含むテキストがカラムの中に表示しきれないとき、表示しきれない部分は 切り落とされ、省略記号も表示されません。 単一の行を表示するリストボックスの場合、テキストの最初の行のみ表示されます:</p>
 <p><img src="/docs/assets/en/FormObjects/property_wordwrap2.png" alt=""></p>

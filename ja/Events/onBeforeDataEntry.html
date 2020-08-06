@@ -78,7 +78,7 @@
 <p>This event is generated just before a cell in the list box is edited (before the entry cursor is displayed). This event allows the developer, for example, to display a different text depending on whether the user is in the display or edit mode.</p>
 <p>When the cursor arrives in the cell, the <code>On Before Data Entry</code> event is generated in the list box or column method.</p>
 <ul>
-<li>このイベントのコンテキストにおいて、$0 に -1 を設定すると、そのセルは入力不可として扱われます。 If the event was generated after <strong>Tab</strong> or <strong>Shift+Tab</strong> was pressed, the focus goes to either the next cell or the previous one, respectively.</li>
+<li>このイベントのコンテキストにおいて、$0 に -1 を設定すると、そのセルは入力不可として扱われます。 <strong>Tab</strong> や <strong>Shift+Tab</strong> が押された後にイベントが生成された場合には、フォーカスはそれぞれ次あるいは前のセルに移動します。</li>
 <li>$0 が -1 でなければ (デフォルトは 0)、列は入力可であり編集モードに移行します。</li>
 </ul>
 <p>See also <a href="/docs/ja/FormObjects/listboxOverview.html#managing-entry">Managing entry</a> section.</p>
