@@ -74,8 +74,8 @@
 <h2><a class="anchor" aria-hidden="true" id="utiliser-une-case-à-cocher"></a><a href="#utiliser-une-case-à-cocher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utiliser une case à cocher</h2>
 <p>Une case à cocher peut être associée à une <a href="/docs/fr/FormObjects/propertiesObject.html#variable-or-expression">variable ou expression</a> de type entier ou booléen.</p>
 <ul>
-<li><strong>integer:</strong> if the box is checked, the variable has the value 1. Lorsqu'elle n'est pas cochée, elle porte la valeur 0. Si la case à cocher a un troisième état (voir ci-dessous), elle porte la valeur 2.</li>
-<li><strong>boolean:</strong> if the box is checked, the variable has the value <code>True</code>. Lorsqu'elle n'est pas cochée, elle prend la valeur <code>Faux</code>.</li>
+<li><strong>entier :</strong> si la case est cochée, la variable prend la valeur 1. Lorsqu'elle n'est pas cochée, elle porte la valeur 0. Si la case à cocher a un troisième état (voir ci-dessous), elle porte la valeur 2.</li>
+<li><strong>booléen :</strong> si la case est cochée, la variable prend la valeur <code>Vrai</code>. Lorsqu'elle n'est pas cochée, elle prend la valeur <code>Faux</code>.</li>
 </ul>
 <p>Une partie ou la totalité des cases à cocher contenues dans un formulaires peut être cochée ou non cochée. Un groupe de cases à cocher permet à l'utilisateur de cocher plusieurs options.</p>
 <h3><a class="anchor" aria-hidden="true" id="cases-à-cocher-à-trois-états"></a><a href="#cases-à-cocher-à-trois-états" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cases à cocher à trois états</h3>
@@ -128,7 +128,7 @@
 <p>Pour plus d'informations sur ces actions, veuillez vous reporter à la section <a href="https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html">Actions standard</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="styles-des-boutons-case-à-cocher"></a><a href="#styles-des-boutons-case-à-cocher" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Styles des boutons &quot;Case à cocher&quot;</h2>
 <p>Check boxes use <a href="propertiesTextAndPicture.md#button-style">button styles</a> to control a check box's general appearance as well as its available properties. Il est possible d'appliquer différents styles prédéfinis aux cases à cocher. Plusieurs variantes peuvent être obtenues en combinant ces propriétés/comportements.</p>
-<p>With the exception of the <a href="#supported-properties">available properties</a>, many check box objects are <em>structurally</em> identical. La différence réside dans le traitement de leurs variables associées.</p>
+<p>À l'exception des <a href="#supported-properties">propriétés disponibles</a>, de nombreux objets case à cocher sont <em>structurellement</em> identiques. La différence réside dans le traitement de leurs variables associées.</p>
 <p>4D provides check boxes in the following predefined button styles:</p>
 <h3><a class="anchor" aria-hidden="true" id="classique"></a><a href="#classique" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Classique</h3>
 <p>The Regular check box button style is a standard system check box (<em>i.e.</em>, a rectangle with a descriptive title):</p>
@@ -242,7 +242,7 @@
 <p>The OS X Textured button style is similar to the <a href="#bevel">Bevel</a> button style but with a smaller size (maximum size is the size of a standard macOS system button). As with the Bevel button style, the OS X Textured button style combines the appearance of the <a href="#regular">Regular</a> button style with the <a href="#toolbar-button">Toolbar Button</a> button style's behavior.</p>
 <p>By default, the OS X Textured button style appears as:</p>
 <ul>
-<li><em>Windows</em> - a standard system button with a light blue background with a title in the center.</li>
+<li><em>Sous Windows</em> - un bouton système standard avec un fond bleu clair et un libellé au centre.</li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/checkbox_osxtextured.png" alt=""></p>
 <ul>
@@ -264,11 +264,11 @@
 <p>The Office XP button style combines the appearance of the <a href="#regular">Regular</a> button style with the <a href="#toolbar-button">Toolbar Button</a> button style's behavior.</p>
 <p>The colors (highlight and background) of a check box with the Office XP button style are based on the system colors. The appearance of the check box can be different when the cursor hovers over it, depending on the OS:</p>
 <ul>
-<li><em>Windows</em> - its background only appears when the mouse rolls over it. Example with states unchecked / checked / highlighted:</li>
+<li><em>Sous Windows</em> - son arrière-plan n'apparaît que lorsque la souris le survole. Example with states unchecked / checked / highlighted:</li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/checkbox_officexp.png" alt=""></p>
 <ul>
-<li><em>macOS</em> - its background is always displayed. Example with states unchecked / checked:</li>
+<li><em>Sous macOS</em> - son arrière-plan est toujours affiché. Example with states unchecked / checked:</li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/checkbox_officexp_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--7"></a><a href="#exemple-json--7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
@@ -292,7 +292,7 @@
 </ul>
 <p><img src="/docs/assets/en/FormObjects/checkbox_collapse.png" alt=""></p>
 <ul>
-<li><em>macOS</em> - it looks like a triangle pointing right or down.</li>
+<li><em>Sous macOS</em> - il ressemble à un triangle pointant sur vers la droite ou vers le bas.</li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/checkbox_collapse_mac.png" alt=""></p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json--8"></a><a href="#exemple-json--8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>

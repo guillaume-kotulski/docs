@@ -199,7 +199,7 @@
 </tbody>
 </table>
 <p>Cette méthode signe la représentation utf8 d'une chaîne <code>message</code> à l'aide des clés d'objet <code>cryptoKey</code> et des <code>options</code> fournies. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut <code>options.encoding</code> que vous avez passé.</p>
-<p>The <code>cryptoKey</code> must contain a valid <strong>private</strong> key.</p>
+<p>La <code>cryptoKey</code> doit contenir une clé <strong>privée</strong> valide.</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeyverify"></a><a href="#cryptokeyverify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.verify()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -232,7 +232,7 @@
 <p>Cette méthode vérifie et compare la signature base64 par rapport à la représentation utf8 du <code>message</code> à l'aide des clés d'objet <code>cryptoKey</code> et des <code>options</code> fournies.</p>
 <p>La méthode renvoie un objet <code>status</code> avec la propriété <code>success</code> définie sur <code>true</code> si le <code>message</code> a pu être déchiffré avec succès (la signature est correspondante).</p>
 <p>Si la signature n'a pas pu être vérifiée car elle n'a pas été signée avec le même <code>message</code>, la clé ou l'algorithme, l'objet <code>status</code> retourné contient une collection d'erreurs dans <code>status.errors</code>.</p>
-<p>The <code>cryptoKey</code> must contain a valid <strong>public</strong> key.</p>
+<p>La <code>cryptoKey</code> doit contenir une clé <strong>publique</strong> valide.</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeyencrypt"></a><a href="#cryptokeyencrypt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.encrypt()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -259,7 +259,7 @@
 <tr><td>result</td><td></td><td>Texte</td><td>&lt;-</td><td>Message chiffré et encodé à l'aide de <code>options.encodingEncrypted</code></td></tr>
 </tbody>
 </table>
-<p>This method encrypts the <code>message</code> parameter using the <strong>public</strong> key. L'algorithme utilisé dépend du type de clé.</p>
+<p>Cette méthode chiffre le paramètre <code>message</code> à l'aide de la clé <strong>publique</strong>. L'algorithme utilisé dépend du type de clé.</p>
 <p>La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <h2><a class="anchor" aria-hidden="true" id="cryptokeydecrypt"></a><a href="#cryptokeydecrypt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cryptoKey.decrypt()</h2>
 <p><details><summary>Historique</summary></p>
@@ -290,7 +290,7 @@
 <tr><td></td><td>errors</td><td>collection</td><td></td><td>Si <code>success</code> est mis sur <code>false</code>, il peut contenir une collection d'erreurs</td></tr>
 </tbody>
 </table>
-<p>This method decrypts the <code>message</code> parameter using the <strong>private</strong> key. L'algorithme utilisé dépend du type de clé.</p>
+<p>Cette méthode déchiffre le paramètre de <code>message</code> à l'aide de la clé <strong>privée</strong>. L'algorithme utilisé dépend du type de clé.</p>
 <p>La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <p>La méthode renvoie un objet &quot;status&quot; avec la propriété <code>success</code> définie sur <code>true</code> si le <code>message</code> a pu être déchiffré avec succès.</p>
 <p>Si le <code>message</code> n'a pas pu être déchiffré car il n'a pas été chiffré avec la même clé ou le même algorithme, l'objet <code>status</code> retourné contient une collection d'erreurs dans <code>status.errors</code>.</p>
