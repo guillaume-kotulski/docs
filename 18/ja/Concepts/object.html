@@ -83,8 +83,8 @@
 </ul></li>
 </ul>
 <p>(*) デバッガー内でテキストとして表示したり、JSON へと書き出されたりした場合、ピクチャー型のオブジェクトプロパティは &quot;[object Picture]&quot; と表されます。</p>
-<p><strong>Warning:</strong> Keep in mind that attribute names differentiate between upper and lower case.</p>
-<p>You manage Object type variables, fields or expressions using the commands available in the <strong>Objects (Language)</strong> theme or through the object notation (see <a href="/docs/18/ja/Concepts/object.html#syntax-basics">Syntax basics</a>). オブジェクト型フィールドに対して処理をおこなうには <code>QUERY BY ATTRIBUTE</code>、<code>QUERY SELECTION BY ATTRIBUTE</code> や <code>ORDER BY ATTRIBUTE</code> など、クエリテーマの特定のコマンドも使用することができます。</p>
+<p><strong>警告:</strong> 属性名は大文字と小文字を区別するという点に注意してください。</p>
+<p>オブジェクト型の変数・フィールド・式を操作するには <strong>オブジェクト (ランゲージ)</strong> テーマのコマンドを使用するか、オブジェクト記法 (<a href="/docs/18/ja/Concepts/object.html#オブジェクト記法の使用">オブジェクト記法の使用</a> 参照)を用います。 オブジェクト型フィールドに対して処理をおこなうには <code>QUERY BY ATTRIBUTE</code>、<code>QUERY SELECTION BY ATTRIBUTE</code> や <code>ORDER BY ATTRIBUTE</code> など、クエリテーマの特定のコマンドも使用することができます。</p>
 <p>オブジェクト記法を使ってアクセスされたそれぞれのプロパティ値は式とみなされます。 データベース内でオブジェクト記法が有効化されている場合 (以下参照)、4D内で式が期待される場所であれば、どこでもこのような値を使用することができます:</p>
 <ul>
 <li>4Dコード内。メソッド (メソッドエディター) に書いても、外部化(フォーミュラ、PROCESS 4D TAGS あるいは Web Server によって処理される 4D tags ファイル、4D Write Proドキュメントなど) しても使用可能です。</li>
@@ -108,13 +108,13 @@
 <h3><a class="anchor" aria-hidden="true" id="オブジェクトプロパティ"></a><a href="#オブジェクトプロパティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>オブジェクトプロパティ</h3>
 <p>オブジェクト記法では、オブジェクトプロパティは二通りの方法でアクセスすることができます:</p>
 <ul>
-<li>using a &quot;dot&quot; symbol: &gt; object.propertyName</li>
+<li>&quot;ドット&quot;記号を使用する方法: &gt; object.propertyName</li>
 </ul>
 <p>例:</p>
 <pre><code class="hljs css language-4d">     employee.name:=<span class="hljs-string">"Smith"</span>
 </code></pre>
 <ul>
-<li>using a string within square brackets: &gt; object[&quot;propertyName&quot;]</li>
+<li>大カッコ内の文字列を使用する方法: &gt; object[&quot;propertyName&quot;]</li>
 </ul>
 <p>例:</p>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$vName</span>:=employee[<span class="hljs-string">"name"</span>]
@@ -128,7 +128,7 @@
 </code></pre>
 <p>オブジェクトを格納、あるいは返すあらゆるランゲージ要素に対してオブジェクト記法を使用できます。たとえば:</p>
 <ul>
-<li><strong>Objects</strong> themselves (stored in variables, fields, object properties, object arrays, or collection elements). 例:</li>
+<li><strong>オブジェクト</strong> 自身 (変数、フィールド、オブジェクトプロパティ、オブジェクト配列、コレクション要素などに保存されているもの) 例:</li>
 </ul>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$age</span>:=<span class="hljs-variable">$myObjVar</span>.employee.age <span class="hljs-comment">// 変数</span>
      <span class="hljs-variable">$addr</span>:=[Emp]data_obj.address <span class="hljs-comment">// フィールド</span>
@@ -137,12 +137,12 @@
      <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$myCollection</span>[<span class="hljs-number">3</span>].subvalue <span class="hljs-comment">// コレクション要素</span>
 </code></pre>
 <ul>
-<li><strong>4D commands</strong> that return objects. 例:</li>
+<li>オブジェクトを返す <strong>4D コマンド</strong> 例:</li>
 </ul>
 <pre><code class="hljs css language-4d">     <span class="hljs-variable">$measures</span>:=Get database measures.DB.tables
 </code></pre>
 <ul>
-<li><strong>Project methods</strong> that return objects. 例:</li>
+<li>オブジェクトを返す <strong>プロジェクトメソッド</strong> 例:</li>
 </ul>
 <pre><code class="hljs css language-4d">      <span class="hljs-comment">// MyMethod1</span>
 <span class="hljs-function">     C_OBJECT</span>(<span class="hljs-variable">$0</span>)
@@ -152,12 +152,12 @@
      <span class="hljs-variable">$result</span>:=MyMethod1.a <span class="hljs-comment">//10</span>
 </code></pre>
 <ul>
-<li><strong>Collections</strong> Example:</li>
+<li><strong>コレクション</strong> 例:</li>
 </ul>
 <pre><code class="hljs css language-4d">     myColl.length <span class="hljs-comment">// コレクションの長さ</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="ポインター"></a><a href="#ポインター" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ポインター</h3>
-<p><strong>Preliminary Note:</strong> Since objects are always passed by reference, there is usually no need to use pointers. オブジェクトを引数として渡す際、4D 内部では自動的にポインターに類似したメカニズムを使うことでメモリの消費を最小限に抑え、引数を編集して返すことを可能にします。 つまり、ポインターは必要ないということです。 それでもポインターを使用したい場合には、プロパティ値はポインターを通してアクセスすることができます。</p>
+<p><strong>注:</strong> オブジェクトは常に参照として渡されるため、通常はポインターを使用する必要はありません。 オブジェクトを引数として渡す際、4D 内部では自動的にポインターに類似したメカニズムを使うことでメモリの消費を最小限に抑え、引数を編集して返すことを可能にします。 つまり、ポインターは必要ないということです。 それでもポインターを使用したい場合には、プロパティ値はポインターを通してアクセスすることができます。</p>
 <p>ポインターを使ってオブジェクトプロパティにアクセスするには、直接オブジェクトを使用する場合と方法が似ていますが、&quot;ドット&quot; 記号は省略する必要があります。</p>
 <ul>
 <li>オブジェクト記法によるアクセス:</li>
@@ -180,7 +180,7 @@
  x:=vPtr-&gt;a <span class="hljs-comment">//x=10</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="null-値"></a><a href="#null-値" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Null 値</h3>
-<p>When using the object notation, the <strong>null</strong> value is supported though the <strong>Null</strong> command. このコマンドを使用すると、null 値をオブジェクトプロパティやコレクション要素に割り当てたり、それらと比較したりすることができます。例:</p>
+<p>オブジェクト記法を使用する場合、<strong>null</strong> 値は <strong>Null</strong> コマンドを通してサポートされています。 このコマンドを使用すると、null 値をオブジェクトプロパティやコレクション要素に割り当てたり、それらと比較したりすることができます。例:</p>
 <pre><code class="hljs css language-4d"> myObject.address.zip:=<span class="hljs-literal">Null</span><span class="hljs-keyword">
  If</span>(myColl[<span class="hljs-number">2</span>]=<span class="hljs-literal">Null</span>)
 </code></pre>
@@ -197,7 +197,7 @@
       <span class="hljs-comment">// $val=0</span>
 </code></pre>
 <ul>
-<li>Reading the <strong>length</strong> property of an undefined collection produces 0:</li>
+<li>未定義のコレクションの <strong>length</strong> プロパティは 0 を返します:</li>
 </ul>
 <pre><code class="hljs css language-4d"><span class="hljs-function">     C_COLLECTION</span>(<span class="hljs-variable">$c</span>) <span class="hljs-comment">// 変数は作成されたが、コレクションは未定義     $size:=$c.length // $size = 0</span>
 </code></pre>

@@ -71,7 +71,7 @@
 <li>時間は 24時間制です。</li>
 <li>時間の値は数値として扱うことができます。 時間から返される数値は、その時間が表す総秒数です。</li>
 </ul>
-<p><strong>Note:</strong> In the 4D Language Reference manual, Time parameters in command descriptions are denoted as Time, except when marked otherwise.</p>
+<p><strong>注:</strong> このマニュアルでは、コマンド説明における時間引数は特に明記されていない限り、「時間」と表記されています。</p>
 <h2><a class="anchor" aria-hidden="true" id="時間リテラル"></a><a href="#時間リテラル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>時間リテラル</h2>
 <p>時間リテラル定数は、疑問符 (? ... ?) で囲んで表します。</p>
 <p>時間は、“時:分:秒” の順で表し、それぞれをコロン (:) で区切ります。 時間は24時間制で指定します。</p>
@@ -81,7 +81,7 @@
 <span class="hljs-literal">?13:01:59?</span> <span class="hljs-comment">// 午後1時1分59秒</span>
 </code></pre>
 <p>空の時間は、?00.00.00? のように指定します。</p>
-<p><strong>Tip:</strong> The Method Editor includes a shortcut for entering a null time. 空の時間を入力するには、疑問符 (?) の入力後に Enter キーを押します。</p>
+<p><strong>Tip:</strong> メソッドエディターでは空の時間を入力するためのショートカットが提供されています。 空の時間を入力するには、疑問符 (?) の入力後に Enter キーを押します。</p>
 <h2><a class="anchor" aria-hidden="true" id="時間演算子"></a><a href="#時間演算子" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>時間演算子</h2>
 <table>
 <thead>
@@ -101,13 +101,13 @@
 <tr><td></td><td></td><td></td><td>?01:02:03? = ?01:02:04?</td><td>False</td></tr>
 <tr><td>異なる</td><td>時間 # 時間</td><td>ブール</td><td>?01:02:03? # ?01:02:04?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:03? # ?01:02:03?</td><td>False</td></tr>
-<tr><td>大きい</td><td>Time &gt; Time</td><td>ブール</td><td>?01:02:04? &gt; ?01:02:03?</td><td>True</td></tr>
+<tr><td>大きい</td><td>時間 &gt; 時間</td><td>ブール</td><td>?01:02:04? &gt; ?01:02:03?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:03? &gt; ?01:02:03?</td><td>False</td></tr>
-<tr><td>小さい</td><td>Time &lt; Time</td><td>ブール</td><td>?01:02:03? &lt; ?01:02:04?</td><td>True</td></tr>
+<tr><td>小さい</td><td>時間 &lt; 時間</td><td>ブール</td><td>?01:02:03? &lt; ?01:02:04?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:03? &lt; ?01:02:03?</td><td>False</td></tr>
-<tr><td>以上</td><td>Time &gt;= Time</td><td>ブール</td><td>?01:02:03? &gt;=?01:02:03?</td><td>True</td></tr>
+<tr><td>以上</td><td>時間 &gt;= 時間</td><td>ブール</td><td>?01:02:03? &gt;=?01:02:03?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:03? &gt;=?01:02:04?</td><td>False</td></tr>
-<tr><td>以下</td><td>Time &lt;= Time</td><td>ブール</td><td>?01:02:03? &lt;=?01:02:03?</td><td>True</td></tr>
+<tr><td>以下</td><td>時間 &lt;= 時間</td><td>ブール</td><td>?01:02:03? &lt;=?01:02:03?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:04? &lt;=?01:02:03?</td><td>False</td></tr>
 </tbody>
 </table>
@@ -126,10 +126,10 @@
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h3>
 <p>モジューロ演算子を使用できます。とくに24時間フォーマットを考慮した時間の追加に便利です:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$t1</span>:=<span class="hljs-literal">?23:00:00?</span> <span class="hljs-comment">// It is 23:00 p.m.</span>
-  <span class="hljs-comment">// We want to add 2 and a half hours</span>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$t1</span>:=<span class="hljs-literal">?23:00:00?</span> <span class="hljs-comment">// これは午後11:00です</span>
+  <span class="hljs-comment">// 2時間30分を追加します</span>
 <span class="hljs-variable">$t2</span>:=<span class="hljs-variable">$t1 </span>+<span class="hljs-literal">?02:30:00?</span> <span class="hljs-comment">// 単純な追加を行うと $t2 は ?25:30:00? になります。</span>
-<span class="hljs-variable">$t2</span>:=(<span class="hljs-variable">$t1 </span>+<span class="hljs-literal">?02:30:00?</span>)%<span class="hljs-literal">?24:00:00?</span> <span class="hljs-comment">// $t2 は ?01:30:00? と and it is 1:30 a.m. the next morning</span>
+<span class="hljs-variable">$t2</span>:=(<span class="hljs-variable">$t1 </span>+<span class="hljs-literal">?02:30:00?</span>)%<span class="hljs-literal">?24:00:00?</span> <span class="hljs-comment">// $t2 は ?01:30:00? と なります。 (翌朝)</span>
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/18/ja/Concepts/string.html"><span class="arrow-prev">← </span><span>文字列</span></a><a class="docs-next button" href="/docs/18/ja/Concepts/variant.html"><span>バリアント</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#時間リテラル">時間リテラル</a></li><li><a href="#時間演算子">時間演算子</a><ul class="toc-headings"><li><a href="#例題-1">例題 1</a></li><li><a href="#例題-2">例題 2</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/18/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://forums.4d.com/">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

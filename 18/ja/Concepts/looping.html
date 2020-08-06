@@ -74,19 +74,19 @@
 </code></pre>
 <p><code>While...End while</code> ループは、ブール式が true である限り、ループ内のステートメントを実行し続けます。 ループの始めにブール式を評価し、ブール式が FALSE の場合にはループをおこないません。</p>
 <p>一般に、<code>While...End while</code> ループに入る手前で、ブール式で判定する値を初期化しておきます。 通常はブール式が true になるように設定してからループに入ります。</p>
-<p>ブール式は、ループ内の要素を使って設定されなければなりません。そうでなければ、ループは永久に続くでしょう。 The following loop continues forever because <em>NeverStop</em> is always TRUE:</p>
+<p>ブール式は、ループ内の要素を使って設定されなければなりません。そうでなければ、ループは永久に続くでしょう。 以下の例では、<em>NeverStop</em> がいつも true であるので、ループは永久に続きます。</p>
 <pre><code class="hljs css language-4d"> NeverStop:=<span class="hljs-literal">True</span><span class="hljs-keyword">
  While</span>(NeverStop)<span class="hljs-keyword">
  End while</span>
 </code></pre>
 <p>このようにメソッドの実行が制御不能になった場合には、トレース機能を使用し、ループを止めて、問題点を追跡することができます。 メソッドのトレース方法については、<a href="/docs/18/ja/Concepts/error-handling.html">エラー処理</a> の章を見てください。</p>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> CONFIRM</span>(<span class="hljs-string">"Add a new record?"</span>) <span class="hljs-comment">//The user wants to add a record?</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-function"> CONFIRM</span>(<span class="hljs-string">"新規レコードを追加しますか？"</span>) <span class="hljs-comment">// ユーザーに確認します</span><span class="hljs-keyword">
  While</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-comment">// 利用者が望む限りループします</span>
 <span class="hljs-function">    ADD RECORD</span>([aTable]) <span class="hljs-comment">// 新規にレコードを追加します</span><span class="hljs-keyword">
  End while</span> <span class="hljs-comment">// ループは必ず End while によって終わります</span>
 </code></pre>
-<p>この例では、まずループに入る前に <code>CONFIRM</code> コマンドによりシステム変数 <code>OK</code> がセットされます。 If the user clicks the <strong>OK</strong> button in the confirmation dialog box, the <code>OK</code> system variable is set to 1 and the loop starts. それ以外の場合はシステム変数 <code>OK</code> に0が設定され、ループをスキップします。 ループに入ると、<code>ADD RECORD</code> コマンドはループを続けます。これは、ユーザーがレコードを保存した時点で、システム変数 <code>OK</code> に1が設定されるからです。 ユーザーが最後のレコードを取り消した (保存しない) 時点で、システム変数 <code>OK</code> に0がセットされ、ループは終了します。</p>
+<p>この例では、まずループに入る前に <code>CONFIRM</code> コマンドによりシステム変数 <code>OK</code> がセットされます。 ユーザーがダイアログボックスで <strong>OK</strong> ボタンをクリックすると、システム変数 <code>OK</code> に1がセットされ、ループを開始します。 それ以外の場合はシステム変数 <code>OK</code> に0が設定され、ループをスキップします。 ループに入ると、<code>ADD RECORD</code> コマンドはループを続けます。これは、ユーザーがレコードを保存した時点で、システム変数 <code>OK</code> に1が設定されるからです。 ユーザーが最後のレコードを取り消した (保存しない) 時点で、システム変数 <code>OK</code> に0がセットされ、ループは終了します。</p>
 <h2><a class="anchor" aria-hidden="true" id="repeatuntil"></a><a href="#repeatuntil" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Repeat...Until</h2>
 <p><code>Repeat...Until</code> による制御フロー構造の正式な構文は以下のようになります:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Repeat</span>
@@ -109,16 +109,16 @@
 </code></pre>
 <p><code>For...End for</code> ループは、カウンター変数によりループを制御します:</p>
 <ul>
-<li>The counter variable <em>Counter_Variable</em> is a numeric variable (Real or Long Integer) that the <code>For...End for</code> loop initializes to the value specified by <em>Start_Expression</em>.</li>
-<li>Each time the loop is executed, the counter variable is incremented by the value specified in the optional value <em>Increment_Expression</em>. If you do not specify <em>Increment_Expression</em>, the counter variable is incremented by one (1), which is the default.</li>
-<li>When the counter variable passes the <em>End_Expression</em> value, the loop stops.</li>
+<li>カウンター変数 <em>Counter_Variable</em> は、数値変数 (実数または倍長整数) で、<em>Start_Expression</em> に指定した値に初期化されます。</li>
+<li>ループを実行するたびに、任意の引数である <em>Increment_Expression</em> の値がカウンター変数に加算されます。 <em>Increment_Expression</em> を指定しない場合、増分値は1になります。</li>
+<li>カウンターが <em>End_Expression</em> の値を超えた時点で、ループを停止します。</li>
 </ul>
-<p><strong>Important:</strong> The numeric expressions <em>Start_Expression</em>, <em>End_Expression</em> and <em>Increment_Expression</em> are evaluated once at the beginning of the loop. これらの数値が変数で指定されている場合、ループ内でその変数の値を変更してもループは影響を受けません。</p>
-<p><strong>Tip:</strong> However, for special purposes, you can change the value of the counter variable <em>Counter_Variable</em> within the loop; this will affect the loop.</p>
+<p><strong>重要:</strong> <em>Start_Expression</em>、<em>End_Expression</em>、<em>Increment_Expression</em> の値は、ループの始めに一度だけ評価されます。 これらの数値が変数で指定されている場合、ループ内でその変数の値を変更してもループは影響を受けません。</p>
+<p><strong>Tip:</strong> 特別な目的のために、カウンター変数 <em>Counter_Variable</em> の値を変更することができます。ループ内でカウンター変数を変更すると、ループはその影響を受けます。</p>
 <ul>
-<li>Usually <em>Start_Expression</em> is less than <em>End_Expression</em>.</li>
-<li>If <em>Start_Expression</em> and <em>End_Expression</em> are equal, the loop will execute only once.</li>
-<li>If <em>Start_Expression</em> is greater than <em>End_Expression</em>, the loop will not execute at all unless you specify a negative <em>Increment_Expression</em>. 次に例を示します。</li>
+<li>通常、<em>Start_Expression</em> は <em>End_Expression</em> より小さい。</li>
+<li><em>Start_Expression</em> と <em>End_Expression</em> が等しい場合、1回だけループがおこなわれます。</li>
+<li><em>Start_Expression</em> が <em>End_Expression</em> より大きい場合、<em>Increment_Expression</em> に負の値を指定しない限り、ループはおこなわれません。 次に例を示します。</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="基本的な使用例"></a><a href="#基本的な使用例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>基本的な使用例</h3>
 <ol>
@@ -160,7 +160,7 @@
 </code></pre>
 <p>データベースで作成する大部分の <code>For...End for</code> ループは、上記例題のいずれかの形式になるでしょう。</p>
 <h3><a class="anchor" aria-hidden="true" id="カウンター変数の減算"></a><a href="#カウンター変数の減算" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>カウンター変数の減算</h3>
-<p>ループに際してカウンター変数を増加させるのではなく、減少させたい場合があります。 To do so, you must specify <em>Start_Expression</em> greater than <em>End_Expression</em> and a negative <em>Increment_Expression</em>. 次に挙げる例題は、前述の例と同じ処理を逆の順序でおこないます:</p>
+<p>ループに際してカウンター変数を増加させるのではなく、減少させたい場合があります。 その場合、<em>Start_Expression</em> に <em>End_Expression</em> より大きい値を設定し、<em>Increment_Expression</em> に負の数を指定する必要があります。 次に挙げる例題は、前述の例と同じ処理を逆の順序でおこないます:</p>
 <ol start="5">
 <li>以下の例は、100回の繰り返しをおこないます:</li>
 </ol>
@@ -199,7 +199,7 @@
  End for</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="1より大きな値によるカウンター変数の増加"></a><a href="#1より大きな値によるカウンター変数の増加" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1より大きな値によるカウンター変数の増加</h3>
-<p>If you need to, you can use an <em>Increment_Expression</em> (positive or negative) whose absolute value is greater than one.</p>
+<p>必要に応じて、<em>Increment_Expression</em> (正または負の値) に、その絶対値が1より大きな値を指定できます。</p>
 <ol start="9">
 <li>以下の例は、配列 anArray の偶数要素について処理を行います:</li>
 </ol>
@@ -228,7 +228,7 @@
     <span class="hljs-variable">$i</span>:=<span class="hljs-variable">$i</span>+<span class="hljs-number">1</span> <span class="hljs-comment">// カウンターの増分が必要</span><span class="hljs-keyword">
  Until</span>(<span class="hljs-variable">$i</span>=<span class="hljs-number">100</span>) <span class="hljs-comment">// 100回のループ</span>
 </code></pre>
-<p><strong>Tip:</strong> The <code>For...End for</code> loop is usually faster than the <code>While...End while</code> and <code>Repeat...Until</code> loops, because 4D tests the condition internally for each cycle of the loop and increments the counter. したがって、可能な限り <code>For...End for</code> ループの使用が推奨されます。</p>
+<p><strong>Tip:</strong> <code>For...End for</code> ループは、<code>While...End while</code> や <code>Repeat...Until</code> ループよりも高速です。これは4Dが内部的にカウンター変数のテストおよび増加を行うからです。 したがって、可能な限り <code>For...End for</code> ループの使用が推奨されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="forend-for-ループの最適化"></a><a href="#forend-for-ループの最適化" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For...End for ループの最適化</h3>
 <p>カウンター変数 (インタープロセス、プロセス、ローカル変数) には実数、または倍長整数タイプを使用します。 数多く繰り返されるループの場合、とくにコンパイルモードでは、倍長整数タイプのローカル変数を使用してください。</p>
 <ol start="10">
@@ -281,7 +281,7 @@
 <span class="hljs-function">    statement</span>(s)<span class="hljs-keyword">
  End for each</span>
 </code></pre>
-<p>The <code>For each...End for each</code> structure iterates a specified <em>Current_item</em> over all values of the <em>Expression</em>. The <em>Current_item</em> type depends on the <em>Expression</em> type. The <code>For each...End for each</code> loop can iterate through three <em>Expression</em> types:</p>
+<p><code>For each...End for each</code> 構造は、<em>Expression</em> に含まれるすべての<em>Current_item</em> に対して処理を繰り返します。 <em>Current_item</em> の型は <em>Expression</em> の型に依存します。 <code>For each...End for each</code> ループは3種類の *Expression * を対象に反復処理をおこなうことができます:</p>
 <ul>
 <li>コレクション: コレクションの各要素をループします</li>
 <li>エンティティセレクション: 各エンティティをループします</li>
@@ -301,22 +301,22 @@
 </table>
 <ul>
 <li>ループの数は開始時に評価され、処理中に変化することはありません。 ループ中に項目を追加・削除することは、繰り返しの不足・重複を引き起こすことがあるため、一般的には推奨されません。</li>
-<li>By default, the enclosed <em>statement(s)</em> are executed for each value in <em>Expression</em>. しかしながら、ループの先頭 (<code>While</code>) あるいはループの終わり (<code>Until</code>) で条件をテストすることで、ループを抜け出すことは可能です。</li>
-<li>The <em>begin</em> and <em>end</em> optional parameters can be used with collections and entity selections to define boundaries for the loop.</li>
-<li>The <code>For each...End for each</code> loop can be used on a <strong>shared collection</strong> or a <strong>shared object</strong>. コレクションの要素またはオブジェクトのプロパティを変更する場合は、<code>Use...End use</code> 構文も追加で必要です。 <code>Use...End use</code> 構文の使い方は、つぎのように状況に応じて異なります:
+<li>デフォルトでは、内部の <em>statement(s)</em> 部の処理は、<em>Expression</em> の各項目に対して実行されます。 しかしながら、ループの先頭 (<code>While</code>) あるいはループの終わり (<code>Until</code>) で条件をテストすることで、ループを抜け出すことは可能です。</li>
+<li>任意の <em>begin</em> および <em>end</em> パラメーターを指定することで、コレクションおよびエンティティセレクションに対してループの範囲を定義することができます。</li>
+<li><code>For each...End for each</code> ループは <strong>共有コレクション</strong> や <strong>共有オブジェクト</strong> に対して使用することもできます。 コレクションの要素またはオブジェクトのプロパティを変更する場合は、<code>Use...End use</code> 構文も追加で必要です。 <code>Use...End use</code> 構文の使い方は、つぎのように状況に応じて異なります:
 <ul>
 <li>整合性のため要素やプロパティを一括で処理しなくてはならない場合には、ループに入る前 (外側) に使います。</li>
 <li>要素やプロパティを個々に変更して差し支えない場合は、ループの中で使います。</li>
 </ul></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="コレクション内のループ"></a><a href="#コレクション内のループ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コレクション内のループ</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the <em>Collection</em> type, the <em>Current_Item</em> parameter is a variable of the same type as the collection elements. デフォルトでは、ループの回数はコレクションの要素数に基づいています。</p>
-<p>The collection must contain only elements of the same type, otherwise an error will be returned as soon as the <em>Current_Item</em> variable is assigned the first mismatched value type.</p>
-<p>At each loop iteration, the <em>Current_Item</em> variable is automatically filled with the matching element of the collection. このとき、以下の点に注意する必要があります:</p>
+<p><code>For each...End for each</code> が <em>Collection</em> 型の <em>Expression</em> に対して使用された場合、<em>Current_Item</em> はコレクション要素と同じ型の変数です。 デフォルトでは、ループの回数はコレクションの要素数に基づいています。</p>
+<p>コレクションの要素はすべて同じ型でなくてはなりません。そうでない場合には、<em>Current_Item</em> 変数に別の型の値が代入されたときにエラーが生成されます。</p>
+<p>各ループの繰り返しにおいて、<em>Current_Item</em> 変数には、合致するコレクションの要素が自動的に代入されます。 このとき、以下の点に注意する必要があります:</p>
 <ul>
-<li>If the <em>Current_Item</em> variable is of the object type or collection type (i.e. if <em>Expression</em> is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). 変数がスカラー型である場合、変数のみが変更されます。</li>
-<li>The <em>Current_Item</em> variable must be of the same type as the collection elements. コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。</li>
-<li>If the collection contains elements with a <strong>Null</strong> value, an error will be generated if the <em>Current_Item</em> variable type does not support <strong>Null</strong> values (such as longint variables).</li>
+<li><em>Current_Item</em> 変数がオブジェクト型あるいはコレクション型であった場合 (つまり <em>Expression</em> がオブジェクトのコレクション、あるいはコレクションのコレクションであった場合)、この変数を変更すると自動的にコレクションの対応する要素も変更されます (オブジェクトとコレクションは同じ参照を共有しているからです)。 変数がスカラー型である場合、変数のみが変更されます。</li>
+<li><em>Current_Item</em> 変数は、コレクション要素の型と合致している必要があります。 コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。</li>
+<li>コレクションが <strong>Null</strong> 値の要素を格納していたとき、<em>Current_Item</em> 変数の型が <strong>Null</strong> 値をサポートしない型 (倍長整数変数など) であった場合にはエラーが生成されます。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>数値のコレクションを対象に、統計情報を計算します:</p>
@@ -340,9 +340,9 @@
   <span class="hljs-comment">//$vUnder=4,$vOver=2</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="エンティティセレクション内のループ"></a><a href="#エンティティセレクション内のループ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>エンティティセレクション内のループ</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the <em>Entity selection</em> type, the <em>Current_Item</em> parameter is the entity that is currently processed.</p>
-<p>ループの回数はエンティティセレクション内のエンティティの数に基づきます。 On each loop iteration, the <em>Current_Item</em> parameter is automatically filled with the entity of the entity selection that is currently processed.</p>
-<p><strong>Note:</strong> If the entity selection contains an entity that was removed meanwhile by another process, it is automatically skipped during the loop.</p>
+<p><code>For each...End for each</code> が <em>Entity selection</em> 型の <em>Expression</em> に対して使用された場合、<em>Current_Item</em> は現在処理中のエンティティです。</p>
+<p>ループの回数はエンティティセレクション内のエンティティの数に基づきます。 各ループの繰り返しにおいて、<em>Current_Item</em> には、処理の対象であるエンティティセレクション内のエンティティが自動的に代入されます。</p>
+<p><strong>注:</strong> エンティティセレクション内のエンティティが、途中で他のプロセスによって削除された場合、そのエンティティはループにおいて自動的にスキップされます。</p>
 <p>カレントエンティティに対して適用された変更は、<code>entity.save( )</code> で明示的に保存する必要があることに注意してください。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>Employees データクラスの中から、英国の従業員の給与を引き上げます:</p>
@@ -353,7 +353,7 @@
  End for each</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="オブジェクト内のループ"></a><a href="#オブジェクト内のループ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>オブジェクト内のループ</h3>
-<p>When <code>For each...End for each</code> is used with an <em>Expression</em> of the Object type, the <em>Current_Item</em> parameter is a text variable automatically filled with the name of the currently processed property.</p>
+<p><code>For each...End for each</code> が Object 型の <em>Expression</em> に対して使用された場合、<em>Current_Item</em> は現在処理中のプロパティ名が自動代入されたテキスト変数です。</p>
 <p>オブジェクトのプロパティは作成順に処理されていきます。 ループ中、プロパティをオブジェクトに追加/削除することが可能ですが、その場合でも残りのループ回数は、オブジェクトの元のプロパティ数に基づいているため、変化しません。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-4"></a><a href="#例題-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>下のオブジェクトに格納されている名前に関したプロパティの値をすべて大文字に変えます:</p>
@@ -378,17 +378,17 @@
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="begin--end-パラメーター"></a><a href="#begin--end-パラメーター" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>begin / end パラメーター</h3>
 <p>任意の begin と end パラメーターを指定することで、繰り返しの範囲を定義することができます。</p>
-<p><strong>Note:</strong> The <em>begin</em> and <em>end</em> parameters can only be used in iterations through collections and entity selections (they are ignored on object properties).</p>
+<p><strong>注:</strong> <em>begin</em> と <em>end</em> パラメーターは、コレクションおよびエンティティセレクション型に対するループにおいてのみ使用することができます (オブジェクト型のときは無視されます)。</p>
 <ul>
-<li>In the <em>begin</em> parameter, pass the element position in <em>Expression</em> at which to start the iteration (<em>begin</em> is included).</li>
-<li>In the <em>end</em> parameter, you can also pass the element position in <em>Expression</em> at which to stop the iteration (<em>end</em> is excluded).</li>
+<li><em>begin</em> には、<em>Expression</em> においてループを開始したい要素位置を渡します (このとき <em>begin</em> の値が指す要素はループに含まれます)。</li>
+<li><em>end</em> には、<em>Expression</em> においてループを終了する要素位置を渡します (このとき <em>end</em> の値が指す要素はループに含まれません)。</li>
 </ul>
-<p>If <em>end</em> is omitted or if <em>end</em> is greater than the number of elements in <em>Expression</em>, elements are iterated from <em>begin</em> until the last one (included). If the <em>begin</em> and <em>end</em> parameters are positive values, they represent actual positions of elements in <em>Expression</em>. If <em>begin</em> is a negative value, it is recalculed as <code>begin:=begin+Expression size</code> (it is considered as the offset from the end of <em>Expression</em>). If the calculated value is negative, <em>begin</em> is set to 0. <strong>Note:</strong> Even if begin is negative, the iteration is still performed in the standard order. If <em>end</em> is a negative value, it is recalculed as <code>end:=end+Expression size</code></p>
+<p><em>end</em> が省略されている、あるいは <em>end</em> が <em>Expression</em> の要素数より大きい場合、<em>begin</em> 引数の位置から最後の要素まで (含まれる) をループします。 <em>begin</em> と <em>end</em> が正の値の場合、それらは <em>Expression</em> 内の要素の実際の位置を表します。 <em>begin</em> 引数が負の値の場合、それは <code>begin:=begin+Expression のサイズ</code> として再計算されます (つまり、<em>Expression</em> の終端からのオフセットであるとみなされます)。 再計算された値も負の値だった場合、<em>begin</em> は0に設定されます。 <strong>注:</strong> <em>begin</em> が負の値だったとしても、繰り返しそのものは標準の順番で実行されます。 <em>end</em> が負の値だった場合、それは <code>end:=end+Expression のサイズ</code> として再計算されます。</p>
 <p>たとえば:</p>
 <ul>
 <li>コレクションには 10の要素が格納されています (ナンバリングは #0から#9)</li>
-<li>begin=-4 -&gt; begin=-4+10=6 -&gt; iteration starts at the 6th element (#5)</li>
-<li>end=-2 -&gt; end=-2+10=8 -&gt; iteration stops before the 8th element (#7), i.e. at the 7th element.</li>
+<li>begin=-4 -&gt; begin=-4+10=6 -&gt; ループは6番目の要素 (#5) から開始されます</li>
+<li>end=-2 -&gt; end=-2+10=8 -&gt; 繰り返しは8番目の要素 (#7) の前に終了します、つまり7番目 (#6) の要素の処理が最後のループとなります。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-5"></a><a href="#例題-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$col</span>;<span class="hljs-variable">$col2</span>)
@@ -408,7 +408,7 @@
 <p><code>For each...End for each</code> の実行は、<code>Until</code> あるいは <code>While</code> 条件を追加することでコントロールすることができます。 <code>Until(condition)</code> 条件がループに組み込まれた場合、condition の式が true に評価されるとループは停止します。<code>While(condition)</code> 条件の場合は逆に、condition の式が false になるとループが停止します。</p>
 <p>使用する条件は状況に応じて選べます:</p>
 <ul>
-<li>The <code>Until</code> condition is tested at the end of each iteration, so if the <em>Expression</em> is not empty or null, the loop will be executed at least once.</li>
+<li><code>Until</code> 条件は各ループの終わりにテストされます。そのため、<em>Expression</em> が空あるいは null でないかぎり、ループは少なくとも1回は実行されます。</li>
 <li><code>While</code> 条件は各ループの始めにテストされます。そのため、評価の結果次第では、ループは一度も実行されないこともありえます。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-6"></a><a href="#例題-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>

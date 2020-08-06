@@ -85,24 +85,24 @@
     ...<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>この場合、両方のメソッドが true である場合に限り、式は true になります。 However, even if <em>MethodA</em> returns FALSE, 4D will still evaluate <em>MethodB</em>, which is a useless waste of time. この場合には、以下のような構造を使用するほうが賢明といえます:</p>
+<p>この場合、両方のメソッドが true である場合に限り、式は true になります。 しかしながら <em>MethodA</em> が false であっても、4Dは<em>MethodB</em> も評価するため、これは時間の無駄になります。 この場合には、以下のような構造を使用するほうが賢明といえます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(MethodA)<span class="hljs-keyword">
     If</span>(MethodB)
        ...<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>The result is similar and <em>MethodB</em> is evaluated only if necessary.</p>
+<p>上記の結果はほぼ同じで、<em>MethodB</em> は必要な場合にのみ評価されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">// Ask the user to enter a name</span>
- <span class="hljs-variable">$Find</span>:=<span class="hljs-function">Request</span>(Type a name)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">// ユーザーに名前の入力を求めます</span>
+ <span class="hljs-variable">$Find</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"名前を入力してください"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
 <span class="hljs-function">    QUERY</span>([People];[People]LastName=<span class="hljs-variable">$Find</span>)<span class="hljs-keyword">
  Else</span>
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"You did not enter a name."</span>)<span class="hljs-keyword">
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"名前が入力されませんでした"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p><strong>Tip:</strong> Branching can be performed without statements to be executed in one case or the other. 下のようなコードはどちらも有効です:</p>
+<p><strong>Tip:</strong> 一方の条件に実行ステートメントがない分岐処理を書くこともできます。 下のようなコードはどちらも有効です:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(Boolean_Expression)<span class="hljs-keyword">
  Else</span>
 <span class="hljs-function">    statement</span>(s)<span class="hljs-keyword">
@@ -154,27 +154,27 @@
 <h3><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
 <p>下記の例は数値変数を判定し、対応する数字をアラートボックスに表示します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
-    :(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">//Test if the number is 1</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"One."</span>) <span class="hljs-comment">//If it is 1, display an alert</span>
-    :(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">//Test if the number is 2</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Two."</span>) <span class="hljs-comment">//If it is 2, display an alert</span>
-    :(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">//Test if the number is 3</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Three."</span>) <span class="hljs-comment">//If it is 3, display an alert</span><span class="hljs-keyword">
-    Else</span> <span class="hljs-comment">//If it is not 1, 2, or 3, display an alert</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)<span class="hljs-keyword">
+    :(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">// 数値が1の場合</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"一です。"</span>) <span class="hljs-comment">// 1のアラートボックスを表示します</span>
+    :(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">// 数値が2の場合</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"二です。"</span>) <span class="hljs-comment">// 2のアラートボックスを表示します</span>
+    :(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">// 数値が3の場合</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"三です。"</span>) <span class="hljs-comment">// 3のアラートボックスを表示します</span><span class="hljs-keyword">
+    Else</span> <span class="hljs-comment">// 数値が1,2,3のいずれでもない場合</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"一、二、三のいずれでもありません。"</span>)<span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>比較するために、同じことを <code>If...Else...End if</code> 構文で記述すると以下のようになります。</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">//Test if the number is 1</span>
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"One."</span>) <span class="hljs-comment">//If it is 1, display an alert</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">// 数値が1の場合</span>
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"一です。"</span>) <span class="hljs-comment">// 1のアラートボックスを表示します</span><span class="hljs-keyword">
  Else</span><span class="hljs-keyword">
-    If</span>(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">//Test if the number is 2</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Two."</span>) <span class="hljs-comment">//If it is 2, display an alert</span><span class="hljs-keyword">
+    If</span>(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">// 数値が2の場合</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"二です。"</span>) <span class="hljs-comment">// 2のアラートボックスを表示します</span><span class="hljs-keyword">
     Else</span><span class="hljs-keyword">
-       If</span>(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">//Test if the number is 3</span>
-<span class="hljs-function">          ALERT</span>(<span class="hljs-string">"Three."</span>) <span class="hljs-comment">//If it is 3, display an alert</span><span class="hljs-keyword">
-       Else</span> <span class="hljs-comment">//If it is not 1, 2, or 3, display an alert</span>
-<span class="hljs-function">          ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)<span class="hljs-keyword">
+       If</span>(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">// 数値が3の場合</span>
+<span class="hljs-function">          ALERT</span>(<span class="hljs-string">"三です。"</span>) <span class="hljs-comment">// 3のアラートボックスを表示します</span><span class="hljs-keyword">
+       Else</span> <span class="hljs-comment">// 数値が1,2,3のいずれでもない場合</span>
+<span class="hljs-function">          ALERT</span>(<span class="hljs-string">"一、二、三のいずれでもありません。"</span>)<span class="hljs-keyword">
        End if</span><span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
@@ -183,21 +183,26 @@
 <p>したがって、階層的なテストを実行するときには、階層上で低い位置にある条件がテスト順序で先に記述されていることを確認する必要があります。 以下の例では、ケース2が true の場合、ケース1も必ず true であるため、ケース1は後に位置すべきです。 このままの順序では、ケース2のステートメントはけっして実行されません:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//statement(s)</span>
-    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">//this case will never be detected</span>
-       ... <span class="hljs-comment">//statement(s)</span><span class="hljs-keyword">
+       ...
+ <span class="hljs-comment">// ステートメントなど</span>
+    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">// このケースが判定されることはありません</span>
+       ...
+ <span class="hljs-comment">// ステートメントなど</span><span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>vResult = 1の判定により他の条件を見る前に分岐するので、第2のケースが判定されることはありません。 コードが正しく実行されるためには次のように書きます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
-    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">//this case will be detected first</span>
-       ... <span class="hljs-comment">//statement(s)</span>
+    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">// このケースが先に判定されます</span>
+       ...
+ <span class="hljs-comment">// ステートメントなど</span>
     :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//statement(s)</span><span class="hljs-keyword">
+       ...
+ 
+<span class="hljs-comment">// ステートメントなど</span><span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>さらに階層的なテストを実行したい場合、コードも階層化する必要があります。</p>
-<p><strong>Tip:</strong> Branching can be performed without statements to be executed in one case or another. 下のようなコードはどちらも有効です:</p>
+<p><strong>Tip:</strong> 分岐構造において、ケースに続くステートメントの記述は必須ではありません。 下のようなコードはどちらも有効です:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Boolean_Expression)
     :(Boolean_Expression)

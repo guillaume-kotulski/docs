@@ -67,14 +67,14 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/shared.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">共有オブジェクトと共有コレクション</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="概要"></a><a href="#概要" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>概要</h2>
-<p><strong>Shared objects</strong> and <strong>shared collections</strong> are specific <a href="/docs/18/ja/Concepts/object.html">objects</a> and <a href="/docs/18/ja/Concepts/collection.html">collections</a> whose contents are shared between processes. In contrast to <a href="/docs/18/ja/Concepts/variables.html#interprocess-variables">interprocess variables</a>, shared objects and shared collections have the advantage of being compatible with <strong>preemptive 4D processes</strong>: they can be passed by reference as parameters to commands such as <code>New process</code> or <code>CALL WORKER</code>.</p>
+<p><strong>共有オブジェクト</strong> および <strong>共有コレクション</strong> はプロセス間でコンテンツを共有することができる、特殊な <a href="/docs/18/ja/Concepts/object.html">オブジェクト</a> と <a href="/docs/18/ja/Concepts/collection.html">コレクション</a> です。 <a href="/docs/18/ja/Concepts/variables.html#インタープロセス変数">インタープロセス変数</a> に比べると、共有オブジェクトと共有コレクションは <strong>プリエンプティブ4Dプロセス</strong> と互換性があるという点で利点があります。つまり、<code>New process</code> や <code>CALL WORKER</code> といったコマンドの引数として、参照の形で渡すことができるということです。</p>
 <p>共有オブジェクトと共有コレクションは、標準の <code>C_OBJECT</code> と <code>C_COLLECTION</code> コマンドで宣言された変数に保存することができますが、専用のコマンドを使用してインスタンス化されている必要があります:</p>
 <ul>
 <li>共有オブジェクトを作成するには、<code>New shared object</code> コマンドを使用します。</li>
 <li>共有コレクションを作成するには、<code>New shared collection</code> コマンドを使用します。</li>
 </ul>
-<p><strong>Note:</strong> Shared objects and collections can be set as properties of standard (not shared) objects or collections.</p>
-<p>In order to modify a shared object/collection, the <strong>Use...End use</strong> structure must be called. Reading a shared object/collection value does not require <strong>Use...End use</strong>.</p>
+<p><strong>注:</strong> 共有オブジェクトと共有コレクションは標準の (非共有の) オブジェクトおよびコレクションのプロパティとして設定することができます。</p>
+<p>共有オブジェクト/コレクションを編集するには、<strong>Use...End use</strong> 構文を使う必要があります。 共有オブジェクト/コレクションの値を読むにあたっては、<strong>Use...End use</strong> は必要ありません。</p>
 <p><code>Storage</code> コマンドが返す、データベースにおいて固有かつグローバルなカタログは、そのデータベース内あるいはコンポーネントからいつでも利用することができ、すべての共有オブジェクトおよびコレクションを保存するのに使用することができます。</p>
 <h2><a class="anchor" aria-hidden="true" id="共有オブジェクト共有コレクションの使用"></a><a href="#共有オブジェクト共有コレクションの使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>共有オブジェクト/共有コレクションの使用</h2>
 <p><code>New shared object</code> あるいは <code>New shared collection</code> コマンドでインスタンス化されると、その共有オブジェクト/コレクションの属性と要素はどのプロセスからでも編集/読み出しができるようになります。</p>
@@ -91,22 +91,22 @@
  End<span class="hljs-keyword"> Use</span>
 </code></pre>
 <p>一度に 1プロセスのみ、共有オブジェクト/コレクションを編集することができます。 <code>Use</code> は共有オブジェクト/コレクションを他のスレッドからアクセスできないようにロックする一方、<code>End use</code> はこのロックを解除します。 <code>Use...End use</code> を使わずに共有オブジェクト/コレクションを編集しようとすると、エラーが生成されます。 すでに他のプロセスによって使用されている共有オブジェクト/コレクションに対して、別のプロセスが <code>Use...End use</code> を呼び出した場合、先着プロセスが <code>End use</code> でロックを解除するまで、その呼び出しは待機状態になります (エラーは生成されません)。 したがって、<code>Use...End use</code> 構文内の処理は迅速に実行され、ロックは可及的速やかに解除される必要があります。 そのため、共有オブジェクト/コレクションをインターフェース(ダイアログボックスなど) から直接編集することは避けることが強く推奨されます。</p>
-<p>Assigning shared objects/collections to properties or elements of other shared objects/collections is allowed and creates <strong>shared groups</strong>. 共有グループは、共有オブジェクト/コレクションのプロパティ値あるいは要素として他の共有オブジェクト/コレクションが設定されたときに自動的に作成されます。 共有グループを使用すると共有オブジェクトを入れ子にすることができますが、以下のルールに気をつける必要があります:</p>
+<p>共有オブジェクト/コレクションを他の共有オブジェクト/コレクションのプロパティあるいは要素に割り当てることは可能で、このとき <strong>共有グループ</strong> が作成されます。 共有グループは、共有オブジェクト/コレクションのプロパティ値あるいは要素として他の共有オブジェクト/コレクションが設定されたときに自動的に作成されます。 共有グループを使用すると共有オブジェクトを入れ子にすることができますが、以下のルールに気をつける必要があります:</p>
 <ul>
 <li>あるグループの共有オブジェクト/コレクションに対して <code>Use</code> を使うと、そのグループに所属するすべての共有オブジェクト/コレクションのプロパティ/要素がロックされます。</li>
 <li>共有オブジェクト/コレクションは一つの共有グループにしか所属することができません。 すでにグループに所属している共有オブジェクト/コレクションを他のグループへと割り当てようとした場合、エラーが返されます。</li>
 <li>一旦グループ化された共有オブジェクト/コレクションについて、グループを解除することはできません。 一度共有グループに含まれた共有オブジェクト/コレクションは、セッション中はずっと同グループに所属することになります。 親オブジェクト/コレクションから子オブジェクト/コレクションへの参照をすべて削除したとしても、両者のリンクが解除されるわけではありません。</li>
 </ul>
 <p>共有グループのルールについての詳細は、例題2を参照してください。</p>
-<p><strong>Note:</strong> Shared groups are managed through an internal property named <em>locking identifier</em>. この値についての詳細は、<a href="https://doc.4d.com/4Dv18/4D/18/Shared-objects-and-shared-collections.300-4505654.ja.html#3648963">ランゲージリファレンス</a> を参照ください。</p>
+<p><strong>注:</strong> 共有グループは、<em>ロック識別子</em> と呼ばれる内部プロパティによって管理されています。 この値についての詳細は、<a href="https://doc.4d.com/4Dv18/4D/18/Shared-objects-and-shared-collections.300-4505654.ja.html#3648963">ランゲージリファレンス</a> を参照ください。</p>
 <h3><a class="anchor" aria-hidden="true" id="読み出し"></a><a href="#読み出し" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>読み出し</h3>
 <p>たとえ共有オブジェクト/コレクションが他のプロセスによって使用中であっても、それらのプロパティや要素は、<code>Use...End use</code> 構文を呼び出さずとも取得することが可能です。</p>
 <p>ただし、複数の値が互いにリンクしていてそれらを一度に読み出す必要がある場合には、一貫性の観点から、共有オブジェクト/コレクションを <code>Use...End use</code> 内で扱う必要があります。</p>
 <h3><a class="anchor" aria-hidden="true" id="複製"></a><a href="#複製" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>複製</h3>
 <p>共有オブジェクト (あるいは共有オブジェクトをプロパティとして格納しているオブジェクト) に対して <code>OB Copy</code> コマンドを使用することは可能ですが、含まれている子オブジェクト含め、標準 (非共有) のオブジェクトが戻り値として返されます。</p>
 <h3><a class="anchor" aria-hidden="true" id="ストレージ"></a><a href="#ストレージ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ストレージ</h3>
-<p><strong>Storage</strong> is a unique shared object, automatically available on each application and machine. この共有オブジェクトは <code>Storage</code> コマンドから返されます。 このオブジェクトは、他のプリエンティブあるいは標準プロセスからでも利用出来るように、セッション中に定義されたすべての共有オブジェクト/コレクションを参照するためのものです。</p>
-<p><code>ストレージ</code> オブジェクトは標準の共有オブジェクトとは異なり、共有オブジェクト/コレクションがプロパティとして追加されたときでも共有グループを作成しないという点に注意してください。 This exception allows the <strong>Storage</strong> object to be used without locking all connected shared objects or collections.</p>
+<p><strong>ストレージ</strong> は固有の共有オブジェクトで、各アプリケーションおよびマシン上で利用可能です。 この共有オブジェクトは <code>Storage</code> コマンドから返されます。 このオブジェクトは、他のプリエンティブあるいは標準プロセスからでも利用出来るように、セッション中に定義されたすべての共有オブジェクト/コレクションを参照するためのものです。</p>
+<p><code>ストレージ</code> オブジェクトは標準の共有オブジェクトとは異なり、共有オブジェクト/コレクションがプロパティとして追加されたときでも共有グループを作成しないという点に注意してください。 この例外的な振る舞いにより、<strong>ストレージ</strong> オブジェクトを使用するたびに、リンクされている共有オブジェクト/コレクションをすべてロックせずに済みます。</p>
 <p>詳細な情報については、<code>Storage</code> コマンドの詳細を参照してください。</p>
 <h2><a class="anchor" aria-hidden="true" id="useend-use"></a><a href="#useend-use" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use...End use</h2>
 <p><code>Use...End use</code> 構文の正式なシンタックスは、以下の通りです:</p>
@@ -114,21 +114,21 @@
 <span class="hljs-function">    statement</span>(s) <span class="hljs-comment">// ステートメント</span><span class="hljs-keyword">
  End use</span>
 </code></pre>
-<p>The <code>Use...End use</code> structure defines a sequence of statements that will execute tasks on the <em>Shared_object_or_Shared_collection</em> parameter under the protection of an internal semaphore. <em>Shared_object_or_Shared_collection</em> can be any valid shared object or shared collection.</p>
-<p>Shared objects and shared collections are designed to allow communication between processes, in particular, <strong>preemptive 4D processes</strong>. これらはプロセスから他のプロセスへ、参照型の引数として渡すことができます。 For detailed information on shared objects or shared collections, refer to the <strong>Shared objects and shared collections</strong> page. 共有オブジェクトおよび共有コレクションを扱う際には、複数プロセスによる同時アクセスを避けるために、必ずそれらを <code>Use...End use</code> キーワードでくくる必要があります。</p>
+<p><code>Use...End use</code> 構文は、内部セマフォーの保護下において <em>Shared_object_or_Shared_collection</em> 引数に対して処理を実行するステートメントを定義します。 <em>Shared_object_or_Shared_collection</em> として任意の有効な共有オブジェクトあるいは共有コレクションを渡すことができます。</p>
+<p>共有オブジェクトおよび共有コレクションは、プロセス間の (とくに <strong>プリエンプティブ4Dプロセス</strong> 間の) 通信ができるように設計されています 。 これらはプロセスから他のプロセスへ、参照型の引数として渡すことができます。 共有オブジェクトおよび共有コレクションについての詳細な情報については、<strong>共有オブジェクトと共有コレクション</strong> を参照してください。 共有オブジェクトおよび共有コレクションを扱う際には、複数プロセスによる同時アクセスを避けるために、必ずそれらを <code>Use...End use</code> キーワードでくくる必要があります。</p>
 <ul>
-<li>Once the <strong>Use</strong> line is successfully executed, all <em>Shared_object_or_Shared_collection</em> properties/elements are locked for all other process in write access until the corresponding <code>End use</code> line is executed.</li>
-<li>The <em>statement(s)</em> sequence can execute any modification on the Shared_object_or_Shared_collection properties/elements without risk of concurrent access.</li>
-<li>If another shared object or collection is added as a property of the <em>Shared_object_or_Shared_collection</em> parameter, they become connected within the same shared group (see <strong>Using shared objects or collections</strong>).</li>
-<li>If another process tries to access one of the <em>Shared_object_or_Shared_collection</em> properties or connected properties while a <strong>Use...End use</strong> sequence is being executed, it is automatically put on hold and waits until the current sequence is terminated.</li>
-<li>The <strong>End use</strong> line unlocks the <em>Shared_object_or_Shared_collection</em> properties and all objects sharing the same locking identifier.</li>
-<li>Several <strong>Use...End use</strong> structures can be nested in the 4D code. この場合、すべてのロックはスタックされ、プロパティ/要素は最後の <strong>End use</strong> が実行されたときに解除されます。</li>
+<li><strong>Use</strong> の実行が成功すると、対応する **End use</code> が実行されるまで、<em>Shared_object_or_Shared_collection</em> のプすべてのロパティ/要素は他のあらゆるプロセスに対し書き込みアクセスがロックされます。</li></li>
+<li><em>statement(s)</em> で実行されるステートメントは、<em>Shared_object_or_Shared_collection</em> のプロパティ/要素に対して、競合アクセスのリスクなしに変更も実行することができます。</li>
+<li><em>Shared_object_or_Shared_collection</em> に他の共有オブジェクトあるいはコレクションがプロパティとして追加された場合、それらも同じ共有グループとして連結されます (<strong>共有オブジェクト/共有コレクションの使用</strong> を参照してください)。</li>
+<li>**Use...End use ** 内ステートメントの実行中に、他のプロセスが <em>Shared_object_or_Shared_collection</em> のプロパティやリンクされたプロパティにアクセスしようとした場合、そのアクセスは自動的に保留され、実行中の処理が終了するまで待機します。</li>
+<li><strong>End use</strong> は、<em>Shared_object_or_Shared_collection</em> プロパティおよび、同じロック識別子を共有するすべてのオブジェクトのロックを解除します。</li>
+<li>4D コード内では、複数の <strong>Use...End use</strong> 構文を入れ子にすることができます。 この場合、すべてのロックはスタックされ、プロパティ/要素は最後の <strong>End use</strong> が実行されたときに解除されます。</ul></li>
 </ul>
-<p><strong>Note:</strong> If a collection method modifies a shared collection, an internal <strong>Use</strong> is automatically called for this shared collection while the function is executed.</p>
+<p><strong>注:</strong> コレクションのメンバーメソッドが共有コレクションを変更する場合、そのメソッド実行中は、対象の共有コレクションに対して <strong>Use</strong> が内部的に自動で呼ばれます。</p>
 <h2><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h2>
 <p>それぞれ異なる製品の在庫更新を実行する複数のプロセスを起動し、同じ共有オブジェクトを更新していきます。 まずメインプロセスで空の共有オブジェクトをインスタンス化してから、共有オブジェクトへの参照と対象製品を引数として渡して別プロセス起動します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY TEXT</span>(<span class="hljs-variable">$_items</span>;<span class="hljs-number">0</span>)
- ... <span class="hljs-comment">//fill the array with items to count</span>
+ ... <span class="hljs-comment">// 在庫を確認する製品を配列に格納します</span>
  <span class="hljs-variable">$nbItems</span>:=<span class="hljs-function">Size of array</span>(<span class="hljs-variable">$_items</span>)
 <span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$inventory</span>)
  <span class="hljs-variable">$inventory</span>:=New shared object<span class="hljs-keyword">
@@ -136,10 +136,10 @@
     <span class="hljs-variable">$inventory</span>.nbItems:=<span class="hljs-variable">$nbItems</span><span class="hljs-keyword">
  End use</span>
 
-  <span class="hljs-comment">//Create processes</span><span class="hljs-keyword">
+  <span class="hljs-comment">// プロセスを起動します</span><span class="hljs-keyword">
  For</span>(<span class="hljs-variable">$i</span>;<span class="hljs-number">1</span>;<span class="hljs-variable">$nbItems</span>)
     <span class="hljs-variable">$ps</span>:=<span class="hljs-function">New process</span>(<span class="hljs-string">"HowMany"</span>;<span class="hljs-number">0</span>;<span class="hljs-string">"HowMany_"</span>+<span class="hljs-variable">$_items{</span><span class="hljs-variable">$i}</span>;<span class="hljs-variable">$_items{</span><span class="hljs-variable">$i}</span>;<span class="hljs-variable">$inventory</span>)
-  <span class="hljs-comment">//$inventory object sent by reference</span><span class="hljs-keyword">
+  <span class="hljs-comment">// $inventory オブジェクトは参照で渡されます</span><span class="hljs-keyword">
  End for</span>
 </code></pre>
 <p>&quot;HowMany&quot; メソッド内では、在庫確認が終わるとすぐに $inventory 共有オブジェクトが更新されます:</p>
