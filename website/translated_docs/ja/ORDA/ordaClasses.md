@@ -5,7 +5,8 @@ title: ORDA データモデルクラス
 
 ## プレビューフィーチャー
 
-> 4D v18 R4 で提供される ORDA データモデルクラスの関数は **プレビューフィーチャー** です: 関数はすべて制限なく公開されます。 将来的には、(とくに REST リクエストを介した) 関数へのアクセスが管理できるようになります。 次のリリースでは、**データモデルクラス関数はすべてデフォルトでプライベートに設定** されるため、 公開したい関数は個別に設定する必要があります。
+> ORDA data model class functions are provided as a **preview feature** in 4D v18 R4: all functions you create are exposed without restrictions. 将来的には、(とくに REST リクエストを介した) 関数へのアクセスが管理できるようになります。 In the next release, **by default all your data model class functions will be set to private**. 公開したい関数は個別に設定する必要があります。
+
 
 ## 概要
 
@@ -30,17 +31,20 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 - 構造が発展した場合には影響を受ける関数を適応させるだけで、クライアントアプリケーションは引き続き透過的にそれらを呼び出すことができます。
 
+
 ![](assets/en/ORDA/api.png)
+
 
 各データモデルオブジェクトに関わるクラスは、4D Developer によって [あらかじめ自動的に作成](#クラスの作成) されます。
 
+
 ## アーキテクチャー
 
-ORDA では、**`4D`** [クラスストア](Concepts/classes.md#クラスストア) を介して公開される **汎用クラス** と、**`cs`** [クラスストア](Concepts/classes.md#クラスストア) で公開される **ユーザークラス** が提供されています:
+ORDA provides **generic classes** exposed through the **`4D`** [class store](Concepts/classes.md#class-stores), as well as **user classes** (extending generic classes) exposed in the **`cs`** [class store](Concepts/classes.md#class-stores):
 
 ![](assets/en/ORDA/ClassDiagramImage.png)
 
-ORDA データモデルクラスはすべて **`cs`** クラスストアのプロパティとして公開されます。 次の ORDA クラスが提供されています:
+All ORDA data model classes are exposed as properties of the **`cs`** class store. 次の ORDA クラスが提供されています:
 
 | クラス                         | 例                    | 次によってインスタンス化されます                                                                                                                                                                                                                                                                                                                                                                  |
 | --------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,27 +53,30 @@ ORDA データモデルクラスはすべて **`cs`** クラスストアのプ�
 | cs.*DataClassName*Entity    | cs.EmployeeEntity    | `dataClass.get()`, `dataClass.new()`, `entitySelection.first()`, `entitySelection.last()`, `entity.previous()`, `entity.next()`, `entity.first()`, `entity.last()`, `entity.clone()`                                                                                                                                                                                              |
 | cs.*DataClassName*Selection | cs.EmployeeSelection | `dataClass.query()`, `entitySelection.query()`, `dataClass.all()`, `dataClass.fromCollection()`, `dataClass.newSelection()`, `entitySelection.drop()`, `entity.getSelection()`, `entitySelection.and()`, `entitySelection.minus()`, `entitySelection.or()`, `entitySelection.orderBy()`, `entitySelection.orderByFormula()`, `entitySelection.slice()`, `Create entity selection` |
 
-
 > ORDA ユーザークラスは通常のクラスファイル (.4dm) としてプロジェクトの Classes サブフォルダーに保存されます [(後述参照)](#クラスファイル)。
 
 ORDA データモデルユーザークラスのオブジェクトインスタンスは、それだの親クラスのプロパティや関数を使うことができます。 たとえば、Entity クラスのオブジェクトは [ORDA の Entity 汎用クラス](https://doc.4d.com/4Dv18R4/4D/18-R4/ORDA-Entity.201-4981870.ja.html) の関数を呼び出すことができます。
 
+
 ## クラスの説明
 
-> **注記**: ORDA データモデル関数は常にサーバー上で実行されることに留意してください。 つまり、関数を呼び出すとサーバーへのリクエストが生成されます。
+
+> **Note**: Keep in mind that ORDA data model functions are always executed on the server. つまり、関数を呼び出すとサーバーへのリクエストが生成されます。
+
 
 ### DataStore クラス
 
+
 4D のデータベースは、自身の DataStore クラスを `cs` クラスストアに公開します。
 
-- **親クラス**: 4D.DataStoreImplementation 
-- **クラス名**: cs.DataStore
+- **Extends**: 4D.DataStoreImplementation
+- **Class name**: cs.DataStore
 
 DataStore クラス内には、`ds` オブジェクトを介して使用する関数を作成することができます。
 
 #### 例題
 
-```4d
+```4d  
 // cs.DataStore class
 
 Class extends DataStoreImplementation
@@ -84,13 +91,17 @@ Function getDesc
 $desc:=ds.getDesc() //"社員と会社を..."
 ```
 
+
+
 ### DataClass クラス
 
 ORDA で公開されるテーブル毎に、DataClass クラスが `cs` クラスストアに公開されます。
 
-- **親クラス**: 4D.DataClass 
-- **クラス名**: cs.*DataClassName* (*DataClassName* はテーブル名です)
-- **例**: cs.Employee
+- **Extends**: 4D.DataClass
+- **Class name**: cs.*DataClassName* (where *DataClassName* is the table name)
+- **Example name**: cs.Employee
+
+
 
 #### 例題
 
@@ -115,15 +126,16 @@ Function GetBestOnes()
     $best:=ds.Company.GetBestOnes()
 ```
 
+
 #### リモートデータストアの例
 
-次の *City* カタログをリモートデータストアとして公開しています:
+The following *City* catalog is exposed in a remote datastore (partial view):
 
 ![](assets/en/ORDA/Orda_example.png)
 
 `City クラス` は API を提供しています:
 
-```4d
+```4d  
 // cs.City クラス
 
 Class extends DataClass
@@ -155,13 +167,15 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 ```
 
+
 ### EntitySelection クラス
 
 ORDA で公開されるテーブル毎に、EntitySelection クラスが `cs` クラスストアに公開されます。
 
-- **親クラス**: 4D.EntitySelection 
-- **クラス名**: *DataClassName*Selection (*DataClassName* はテーブル名です)
-- **例**: cs.EmployeeSelection
+- **Extends**: 4D.EntitySelection
+- **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
+- **Example name**: cs.EmployeeSelection
+
 
 #### 例題
 
@@ -189,9 +203,9 @@ $moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
 
 ORDA で公開されるテーブル毎に、Entity クラスが `cs` クラスストアに公開されます。
 
-- **親クラス**: 4D.Entity 
-- **クラス名**: *DataClassName*Entity (*DataClassName* はテーブル名です)
-- **例**: cs.CityEntity
+- **Extends**: 4D.Entity
+- **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
+- **Example name**: cs.CityEntity
 
 #### 例題
 
@@ -228,21 +242,26 @@ End if
 
 データモデルクラスを作成・編集する際には次のルールに留意しなくてはなりません。
 
-- 4D のテーブル名は、**cs** [クラスストア](Concepts/classes.md#クラスストア) 内において自動的に DataClass クラス名として使用されるため、**cs** 名前空間において衝突があってはなりません。 特に:
-    
-    - 4D テーブルと [ユーザークラス名](Concepts/classes.md#クラス名) に同じ名前を使用してはいけません。 衝突が起きた場合には、ユーザークラスのコンストラクターは使用不可となります (コンパイラーにより警告が返されます)。 
+- Since they are used to define automatic DataClass class names in the **cs** [class store](Concepts/classes.md#class-stores), 4D table names must be compliant in order to avoid any conflict in the **cs** namespace. 特に:
+    - 4D テーブルと [ユーザークラス名](Concepts/classes.md#クラス名) に同じ名前を使用してはいけません。 衝突が起きた場合には、ユーザークラスのコンストラクターは使用不可となります (コンパイラーにより警告が返されます)。
     - 4D テーブルに予約語を使用してはいけません (例: "DataClass")。
+
 - クラス定義の際、[`Class extends`](Concepts/classes.md#class-extends-classname) ステートメントに使用する親クラスの名前は完全に合致するものでなくてはいけません (文字の大小が区別されます)。 たとえば、EntitySelection クラスを継承するには `Class extends EntitySelection` と書きます。
 
 - データモデルクラスオブジェクトのインスタンス化に `new()` キーワードは使えません (エラーが返されます)。 通常の [インスタンス化の方法](#アーキテクチャー) を使う必要があります。
 
-- **`4D`** [クラスストア](Concepts/classes.md#クラスストア) のネイティブな ORDA クラスメソッドを、データモデルユーザークラス関数でオーバーライドすることはできません。
+- You cannot override a native ORDA class method from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function.
+
+
+
 
 ## データモデルクラスの管理
 
+
 ### クラスファイル
 
-ORDA データモデルユーザークラスは、クラスと同じ名称の .4dm ファイルを [通常のクラスファイルと同じ場所](Concepts/classes.md#クラスファイル) (つまり、Project フォルダー内の `/Sources/Classes` フォルダー) に追加することで定義されます。 たとえば、`Utilities` データクラスのエンティティクラスは、`UtilitiesEntity.4dm` ファイルによって定義されます。
+An ORDA data model user class is defined by adding, at the [same location as regular class files](Concepts/classes.md#class-files) (*i.e.* in the `/Sources/Classes` folder of the project folder), a .4dm file with the name of the class. たとえば、`Utilities` データクラスのエンティティクラスは、`UtilitiesEntity.4dm` ファイルによって定義されます。
+
 
 ### クラスの作成
 
@@ -250,7 +269,7 @@ ORDA データモデルユーザークラスは、クラスと同じ名称の .4
 
 ![](assets/en/ORDA/ORDA_Classes-3.png)
 
-> 空の ORDA クラスは、デフォルトではエクスプローラーに表示されません。 表示するにはエクスプローラーのオプションメニューより **データクラスを全て表示** を選択します: ![](assets/en/ORDA/showClass.png)
+> 空の ORDA クラスは、デフォルトではエクスプローラーに表示されません。 You need to show them by selecting **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
 ORDA ユーザークラスは通常のクラスとは異なるアイコンで表されます。 空のクラスは薄く表示されます:
 
@@ -258,14 +277,16 @@ ORDA ユーザークラスは通常のクラスとは異なるアイコンで表
 
 ORDA クラスファイルを作成するには、エクスプローラーで任意のクラスをダブルクリックします。 4D はクラスファイルを作成し、`extends` ステートメントを自動で追加します。 たとえば、Entity クラスを継承するクラスの場合は:
 
-    Class extends Entity
-    
+```
+Class extends Entity
+```
 
 定義されたクラスはエクスプローラー内で濃く表示されます。
 
+
 ### クラスの編集
 
-定義された ORDA クラスファイルを 4D メソッドエディターで開くには、ORDA クラス名を選択してエクスプローラーのオブションメニュー、またはコンテキストメニューの **編集...** を使用するか、ORDA クラス名をダブルクリックします (通常のクラスと同様):
+To open a defined ORDA class in the 4D method editor, select or double-click on an ORDA class name and use **Edit...** from the contextual menu/options menu of the Explorer window (like for any class):
 
 ![](assets/en/ORDA/classORDA4.png)
 
@@ -273,8 +294,10 @@ ORDA クラスファイルを作成するには、エクスプローラーで任
 
 ![](assets/en/ORDA/classORDA5.png)
 
+
 ### メソッドエディター
 
 4D メソッドエディターにおいて、ORDA クラス型として定義された変数は、自動補完機能の対象となります。 Entity クラス変数の例です:
 
 ![](assets/en/ORDA/AutoCompletionEntity.png)
+
