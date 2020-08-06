@@ -353,7 +353,7 @@ Sie wollen das Gehalt aller britischen Angestellten in einer Entity-Selection er
 
 ### Schleife durch Objekteigenschaften
 
-When `For each...End for each` is used with an *Expression* of the Object type, the *Current_Item* parameter is a text variable automatically filled with the name of the currently processed property.
+Beim Verwenden von `For each...End for each` mit einer* Expression* vom Typ Objekt ist der Parameter *Current_Item* eine Textvariable, die automatisch mit dem Namen der gerade bearbeiteten Eigenschaft gefüllt wird.
 
 Die Eigenschaften des Objekts werden in der Reihenfolge ihrer Erstellung bearbeitet. Während der Schleife lassen sich Eigenschaften im Objekt hinzufügen oder daraus entfernen. Das verändert nicht die Anzahl Schleifen, diese basiert weiterhin auf der ursprünglichen Anzahl Eigenschaften für das Objekt.
 
@@ -386,17 +386,17 @@ Sie schreiben:
 
 Mit den optionalen Parametern begin und end können Sie Grenzen für die Wiederholung der Schleife definieren.
 
-**Note:** The *begin* and *end* parameters can only be used in iterations through collections and entity selections (they are ignored on object properties).
+**Hinweis:** Die Parameter *begin* und *end* sind nur für Schleifen in Collections und Entity-Selections möglich, in Objekteigenschaften werden sie ignoriert.
 
-- In the *begin* parameter, pass the element position in *Expression* at which to start the iteration (*begin* is included).
-- In the *end* parameter, you can also pass the element position in *Expression* at which to stop the iteration (*end* is excluded).
+- Im Parameter *begin* übergeben Sie die Position des Elements in *Expression*, bei der der Durchlauf startet (inkl. *begin*).
+- Im Parameter *end* übergeben Sie die Position des Elements in *Expression*, bei der Durchlauf stoppt (exkl. *end*).
 
-If *end* is omitted or if *end* is greater than the number of elements in *Expression*, elements are iterated from *begin* until the last one (included). If the *begin* and *end* parameters are positive values, they represent actual positions of elements in *Expression*. If *begin* is a negative value, it is recalculed as `begin:=begin+Expression size` (it is considered as the offset from the end of *Expression*). If the calculated value is negative, *begin* is set to 0. **Note:** Even if begin is negative, the iteration is still performed in the standard order. If *end* is a negative value, it is recalculed as `end:=end+Expression size`
+Wird *end* weggelassen oder ist *end* größer als die Anzahl Elemente in *Expression*, werden Elemente ab *begin* bis zum letzten Element einschließlich durchlaufen. Sind die Parameter *begin* und *end* positive Werte, geben sie die aktuellen Positionen der Elemente in *Expression* an. Ist *begin* ein negativer Wert, wird er als `begin:=begin+Expression size` berechnet (=Versatz vom Ende der *Expression*). Ist der berechnete Wert negativ, wird *begin* auf 0 gesetzt. **Hinweis:** Auch wenn *begin* negativ ist, erfolgt der Durchlauf in der standardmäßigen Reihenfolge. Ist *end* ein negativer Wert, wird er berechnet als `end:=end+Expression size`
 
 Beispiel:
 - Eine Collection enthält 10 Elemente (nummeriert von 0 bis 9)
-- begin=-4 -> begin=-4+10=6 -> iteration starts at the 6th element (#5)
-- end=-2 -> end=-2+10=8 -> iteration stops before the 8th element (#7), i.e. at the 7th element.
+- begin=-4 > -> begin=-4+10=6 >-> der Durchlauf startet mit dem 6. Element (#5)
+- end=-2 > end=-2+10=8 > der Durchlauf stoppt vor dem 8. Element (#7), z.B. beim 7. Element.
 
 #### Beispiel
 
@@ -419,7 +419,7 @@ Sie können die Ausführung von `For each...End for each` durch Einfügen einer 
 
 Sie können je nach Bedarf ein anderes Schlüsselwort verwenden:
 
-- The `Until` condition is tested at the end of each iteration, so if the *Expression* is not empty or null, the loop will be executed at least once.
+- Die Bedingung `Until` wird am Ende jedes Durchlaufs getestet, d. h. wenn *Expression* nicht leer oder null ist, wird die Schleife mindestens einmal ausgeführt.
 - Die Bedingung `While` wird am Anfang jedes Durchlaufs getestet, d. h. je nach Ergebnis der Bedingung wird die Schleife u. U. gar nicht ausgeführt.
 
 #### Beispiel
