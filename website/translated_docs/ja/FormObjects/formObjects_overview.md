@@ -18,7 +18,7 @@ title: 4D フォームオブジェクトについて
 
 4D フォームオブジェクトの追加や編集は次の方法でおこなえます:
 
-*   **[Form Editor](FormEditor/formEditor.md):** Drag an object from the Form Editor toolbar onto the form. フォームに配置したら、そのオブジェクトのプロパティをプロパティリストから編集できます。   
+*   **[フォームエディター](FormEditor/formEditor.md):** ツールバーからオブジェクトをフォーム上にドラッグ＆ドロップします。 フォームに配置したら、そのオブジェクトのプロパティをプロパティリストから編集できます。   
   詳細については [フォームの作成](https://doc.4d.com/4Dv18/4D/18/Building-forms.200-4575447.ja.html) を参照ください。
 
 * **4D ランゲージ**: [オブジェクト(フォーム)](https://doc.4d.com/4Dv18/4D/18/Objects-Forms.201-4504342.ja.html) テーマのコマンド (`OBJECT DUPLICATE` や `OBJECT SET FONT STYLE` など) を使って、フィームオブジェクトを作成・定義することができます。
