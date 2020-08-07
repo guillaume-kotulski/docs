@@ -1,6 +1,6 @@
 ---
 id: propertiesPrint
-title: Imprimer
+title: Print
 ---
 
 ---
@@ -24,13 +24,13 @@ The print options are:
 > This property can be set by programming using the `OBJECT SET PRINT VARIABLE FRAME` command.
 
 
-#### Grammaire JSON
+#### JSON Grammar
 
-|    Nom     | Type de données | Valeurs possibles                                   |
-|:----------:|:---------------:| --------------------------------------------------- |
-| printFrame |     string      | "fixed", "variable", (subform only) "fixedMultiple" |
+|    Name    | Data Type | Possible Values                                     |
+|:----------:|:---------:| --------------------------------------------------- |
+| printFrame |  string   | "fixed", "variable", (subform only) "fixedMultiple" |
 
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Input](input_overview.md) - [Subforms](subform_overview.md) (list subforms only) - [4D Write Pro areas](writeProArea_overview.md)
