@@ -1,6 +1,6 @@
 ---
 id: propertiesPicture
-title: Image
+title: Picture
 ---
 
 ---
@@ -14,14 +14,14 @@ Two main locations can be used for static picture path:
 - in an image folder (e.g. named **Images**) within the form folder. Appropriate when the static pictures are used only in the form and/or you want to be able to move or duplicate the whole form within the project or different projects. In this case, the Pathname is "\<picture path\>" and is resolved from the root of the form folder.
 
 
-#### Grammaire JSON
+#### JSON Grammar
 
-|   Nom   | Type de données | Valeurs possibles                           |
-|:-------:|:---------------:| ------------------------------------------- |
-| picture |      Texte      | Relative or filesystem path in POSIX syntax |
+|  Name   | Data Type | Possible Values                             |
+|:-------:|:---------:| ------------------------------------------- |
+| picture |   text    | Relative or filesystem path in POSIX syntax |
 
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Picture button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Static Picture](staticPicture.md)
 
@@ -62,12 +62,12 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 ![](assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom           | Type de données | Valeurs possibles                                        |
-| ------------- | --------------- | -------------------------------------------------------- |
-| pictureFormat | string          | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| Name          | Data Type | Possible Values                                          |
+| ------------- | --------- | -------------------------------------------------------- |
+| pictureFormat | string    | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Static Picture](staticPicture.md)
