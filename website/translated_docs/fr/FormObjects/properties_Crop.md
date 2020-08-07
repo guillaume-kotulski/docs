@@ -1,6 +1,6 @@
 ---
 id: propertiesCrop
-title: Découpage
+title: Crop
 ---
 
 ---
@@ -8,13 +8,13 @@ title: Découpage
 
 Sets the number of columns in a thumbnail table.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom         | Type de données | Valeurs possibles |
-|:----------- |:---------------:| ----------------- |
-| columnCount |     integer     | minimum: 1        |
+| Name        | Type de données | Possible Values |
+|:----------- |:---------------:| --------------- |
+| columnCount |     integer     | minimum: 1      |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Picture Button](pictureButton_overview.md) - [Button Grid](buttonGrid_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md)
 
@@ -26,13 +26,13 @@ Sets the number of columns in a thumbnail table.
 
 Sets the number of rows in a thumbnail table.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom      | Type de données | Valeurs possibles |
-|:-------- |:---------------:| ----------------- |
-| rowCount |     integer     | minimum: 1        |
+| Name     | Type de données | Possible Values |
+|:-------- |:---------------:| --------------- |
+| rowCount |     integer     | minimum: 1      |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Picture Button](pictureButton_overview.md) - [Button Grid](buttonGrid_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md)
 
