@@ -4,17 +4,17 @@ title: Background and Border
 ---
 
 ---
-## Couleur de fond alternée
+## Alternate Background Color
 
 Allows setting a different background color for odd-numbered rows/columns in a list box. By default, *Automatic* is selected: the column uses the alternate background color set at the list box level.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom           | Type de données | Valeurs possibles                         |
+| Name          | Type de données | Possible Values                           |
 | ------------- | --------------- | ----------------------------------------- |
 | alternateFill | string          | any css value; "transparent"; "automatic" |
 
-#### Objets pris en charge
+#### Objects Supported
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 
@@ -26,23 +26,23 @@ Defines the background color of an object.
 
 In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
 
-#### Grammaire JSON
+#### JSON Grammar
 
 
-| Nom          | Type de données | Valeurs possibles                         |
+| Name         | Type de données | Possible Values                           |
 | ------------ | --------------- | ----------------------------------------- |
 | border-style | string          | any css value; "transparent"; "automatic" |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
 
-#### Voir également
+#### See also
 [Transparent](#transparent)
 
 
 ---
-## Expression couleur de fond
+## Background Color Expression
 
 `Selection and collection type list boxes`
 
@@ -51,13 +51,13 @@ An expression or a variable (array variables cannot be used) to apply a custom b
 You can also set this property using the `LISTBOX SET PROPERTY` command with `lk background color expression` constant.
 > With collection or entity selection type list boxes, this property can also be set using a [Meta Info Expression](properties_Text.md#meta-info-expression).
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom           | Type de données | Valeurs possibles                         |
+| Name          | Type de données | Possible Values                           |
 | ------------- | --------------- | ----------------------------------------- |
 | rowFillSource | string          | An expression returning a RGB color value |
 
-#### Objets pris en charge
+#### Objects Supported
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 
@@ -66,17 +66,17 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 
 
 ---
-## Style de la bordure
+## Border Line Style
 
 Allows setting a standard style for the object border.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom         | Type de données | Valeurs possibles                                                 |
+| Name        | Type de données | Possible Values                                                   |
 | ----------- | --------------- | ----------------------------------------------------------------- |
 | borderStyle | Texte           | "system", "none", "solid", "dotted", "raised", "sunken", "double" |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md) - [Buttons](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicator](progressIndicator.md) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Stepper](stepper.md) - [Subform](subform_overview.md#overview) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -87,13 +87,13 @@ Allows setting a standard style for the object border.
 
 Describes dotted line type as a sequence of black and white points.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom             | Type de données        | Valeurs possibles                                                        |
+| Name            | Type de données        | Possible Values                                                          |
 | --------------- | ---------------------- | ------------------------------------------------------------------------ |
 | strokeDashArray | number array or string | Ex. "6 1" or \[6,1\] for a sequence of 6 black point and 1 white point |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Rectangle](shapes_overview.md#rectangle) - [Oval](shapes_overview.md#oval) - [Line](shapes_overview.md#line)
 
@@ -101,7 +101,7 @@ Describes dotted line type as a sequence of black and white points.
 
 
 ---
-## Masquer lignes vides finales
+## Hide extra blank rows
 
 Controls the display of extra blank rows added at the bottom of a list box object. By default, 4D adds such extra rows to fill the empty area:
 
@@ -111,13 +111,13 @@ You can remove these empty rows by selecting this option. The bottom of the list
 
 ![](assets/en/FormObjects/property_hideExtraBlankRows2.png)
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom                | Type de données | Valeurs possibles |
-| ------------------ | --------------- | ----------------- |
-| hideExtraBlankRows | boolean         | true, false       |
+| Name               | Type de données | Possible Values |
+| ------------------ | --------------- | --------------- |
+| hideExtraBlankRows | boolean         | true, false     |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [List Box](listbox_overview.md#overview)
 
@@ -135,15 +135,15 @@ Designates the color of the object's lines. The color can be specified by:
 
 You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom    | Type de données | Valeurs possibles                         |
+| Name   | Type de données | Possible Values                           |
 | ------ | --------------- | ----------------------------------------- |
 | stroke | string          | any css value, "transparent", "automatic" |
 
 > This property is also available for text based objects, in which case it designates both the font color and the object's lines, see [Font color](properties_Text.md#font-color).
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Line](shapes_overview.md#line) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle)
 
@@ -154,13 +154,13 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 Designates the thickness of a line.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom         | Type de données | Valeurs possibles                                                 |
+| Name        | Type de données | Possible Values                                                   |
 | ----------- | --------------- | ----------------------------------------------------------------- |
 | strokeWidth | number          | 0 for smallest width on a printed form, or any integer value < 20 |
 
-#### Objets pris en charge
+#### Objects Supported
 
 [Line](shapes_overview.md#line) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle)
 
@@ -171,7 +171,7 @@ Designates the thickness of a line.
 
 
 ---
-## Tableau couleurs de fond
+## Row Background Color Array
 
 `Array type list boxes`
 
@@ -200,13 +200,13 @@ Next you want to color the cells with negative values in dark orange. To do this
 You can get the same result using the `LISTBOX SET ROW FONT STYLE` and `LISTBOX SET ROW COLOR` commands. They have the advantage of letting you skip having to predefine style/color arrays for the columns: instead they are created dynamically by the commands.
 
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom           | Type de données | Valeurs possibles            |
+| Name          | Type de données | Possible Values              |
 | ------------- | --------------- | ---------------------------- |
 | rowFillSource | string          | The name of a longint array. |
 
-#### Objets pris en charge
+#### Objects Supported
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 
@@ -218,14 +218,14 @@ You can get the same result using the `LISTBOX SET ROW FONT STYLE` and `LISTBOX 
 
 Sets the list box background to "Transparent". When set, any [alternate background color](#alternate-background-color) or [background color](#background-color-fill-color) defined for the column is ignored.
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom          | Type de données | Valeurs possibles |
-| ------------ | --------------- | ----------------- |
-| border-style | Texte           | "transparent"     |
+| Name         | Type de données | Possible Values |
+| ------------ | --------------- | --------------- |
+| border-style | Texte           | "transparent"   |
 
-#### Objets pris en charge
+#### Objects Supported
 [List Box](listbox_overview.md#overview)
 
-#### Voir également
+#### See also
 [Background Color / Fill Color](#background-color-fill-color)
