@@ -392,7 +392,7 @@ Il est généralement associé à une [image à 4 états](properties_TextAndPict
         "icon": "/RESOURCES/smiley.jpg", 
         "iconFrame": 4, 
         "customBackgroundPicture": "/RESOURCES/paper.jpg", 
-        "iconOffset": 5, //décalage icône personnalisé au clic
+        "iconOffset": 5, //custom icon offset when clicked
         "left": 60, 
         "top": 160, 
         "width": 100,       
