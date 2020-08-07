@@ -202,27 +202,27 @@ Function getAge
 
 データベースのコード内では、クラスメソッドはオブジェクトインスタンスのメンバーメソッドとして呼び出され、引数を受け取ることができます。 次のシンタックスがサポートされています:
 
-- `()` 演算子の使用 For example `myObject.methodName("hello")`.
-- use of a "Function" class member methods
+- `()` 演算子の使用 例: `myObject.methodName("hello")`.
+- "Function" クラスメンバーメソッドの使用
     - `apply()`
     - `call()`
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
-> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **スレッドセーフに関する警告:** クラスメソッドがスレッドセーフではなく、"プリエンプティブプロセスで実行可能" なメソッドから呼び出された場合:  
+> - 普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。 - ランタイムにおいてのみ、4D はエラーを生成します。
 
 
-#### Example
+#### 例題
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 Class Constructor
     C_LONGINT($1;$2)
     This.name:="Rectangle"
     This.height:=$1
     This.width:=$2
 
-// Function definition
+// Function 定義
 Function getArea
     C_LONGINT($0)
     $0:=(This.height)*(This.width)
@@ -230,7 +230,7 @@ Function getArea
 ```
 
 ```4d
-// In a project method
+// プロジェクトメソッド
 C_OBJECT($o)  
 C_REAL($area)
 
@@ -241,34 +241,34 @@ $area:=$o.getArea(50;100) //5000
 
 ### Class constructor
 
-#### Syntax
+#### シンタックス
 
 ```js
-// Class: MyClass
+// クラス: MyClass
 Class Constructor
-// code
+// コード
 ```
 
-A class constructor function, which can accept parameters, can be used to define a user class.
+クラスコンストラクター関数を使って、ユーザークラスを定義することができます。このコンストラクターは引数を受け取ることができます。
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
+クラスコンストラクターが定義されていると、`new()` クラスメンバーメソッドを呼び出したときに、当該コンストラクターが呼び出されます (引数を指定している場合は `new()` メソッドに渡します)。
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+クラスコンストラクターメソッドの場合には、 `Current method name` コマンドは次を返します:  "*\<ClassName>.constructor*" （例: "MyClass.constructor".
 
 
-#### Example:
+#### 例題:
 
 ```4d
-// Class: MyClass
-// Class constructor of MyClass
+// クラス: MyClass
+// MyClass のクラスコンストラクター
 Class Constructor
 C_TEXT($1)
 This.name:=$1
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// プロジェクトメソッド
+// オブジェクトをインスタンス化します
 C_OBJECT($o)
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -279,14 +279,14 @@ $o:=cs.MyClass.new("HelloWorld")
 
 ### Class extends \<ClassName>
 
-#### Syntax
+#### シンタックス
 
 ```js
-// Class: ChildClass
+// クラス: ChildClass
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
+クラス宣言において `Class extends` キーワードを使うと、別のユーザークラスの子ユーザークラスを作成することができます。 The child class inherits all functions of the parent class.
 
 Class extension must respect the following rules:
 
@@ -338,7 +338,7 @@ The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 `Super` serves two different purposes:
 
 - inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。
-    - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
+    - 継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。 It's 4D developer to make sure calls are valid.
     - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
     - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
 
@@ -358,10 +358,10 @@ The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
 #### Example 1
 
-This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
+This example illustrates the use of `Super` in a class constructor. `Rectangle` と `Square` の共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。
 
 ```4d
-  //Class: Rectangle
+  // クラス: Rectangle
 
  Class constructor
  C_LONGINT($1;$2)
@@ -378,25 +378,25 @@ This example illustrates the use of `Super` in a class constructor. The command 
 ```
 
 ```4d
-  //Class: Square
+  // クラス: Square
 
  Class extends Rectangle
 
  Class constructor
  C_LONGINT($1)
 
-  // It calls the parent class's constructor with lengths
-  // provided for the Rectangle's width and height
+  // 親クラスのコンストラクターを呼び出します
+  // 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
  Super($1;$1)
 
-  // In derived classes, Super must be called before you
-  // can use 'This'
+  // 派生クラスにおいては、'This' を使用するより先に
+  // Super を呼び出しておく必要があります
  This.name:="Square"
 ```
 
-#### Example 2
+#### 例題 2
 
-This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
+クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
 
 ```4d
   //Class: Rectangle
