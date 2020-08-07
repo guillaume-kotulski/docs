@@ -3,10 +3,10 @@ id: info
 title: '$info'
 ---
 
-Renvoie des informations sur les ensembles d'entités stockés couramment dans le cache de 4D Server ainsi que sur les sessions utilisateur
+Returns information about the entity sets currently stored in 4D Server's cache as well as user sessions
 
 ## Description
-En appelant cette requête pour votre projet, vous récupérez des informations dans les propriétés suivantes :
+When you call this request for your project, you retrieve information in the following properties:
 
 | Propriété      | Type       | Description                                                                         |
 | -------------- | ---------- | ----------------------------------------------------------------------------------- |
@@ -21,14 +21,14 @@ En appelant cette requête pour votre projet, vous récupérez des informations 
 For each entity selection currently stored in 4D Server's cache, the following information is returned:
 
 
-| Propriété     | Type    | Description                                                                                                                                                                                                                                                                                                                   |
-| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id            | Chaine  | Un UUID qui référence l'ensemble d'entités.                                                                                                                                                                                                                                                                                   |
-| dataClass     | Chaine  | Nom de la classe du datastore.                                                                                                                                                                                                                                                                                                |
-| selectionSize | Nombre  | Number of entities in the entity selection.                                                                                                                                                                                                                                                                                   |
-| sorted        | Booléen | Retourne vrai si l'ensemble a été trié (à l'aide de `$orderby`) ou faux s'il n'est pas trié.                                                                                                                                                                                                                                  |
-| refreshed     | Date    | Date de création de l'ensemble d'entités ou de la dernière utilisation.                                                                                                                                                                                                                                                       |
-| expires       | Date    | Date d'expiration de l'ensemble d'entités (cette date/heure change chaque fois que l'ensemble d'entités est actualisé). La différence entre actualisé et expire est le timeout d'un ensemble d'entités. Cette valeur correspond soit à deux heures par défaut, soit à la valeur que vous avez définie à l'aide de `$timeout`. |
+| Propriété     | Type    | Description                                                                                                                                                                                                                                                         |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id            | Chaine  | A UUID that references the entity set.                                                                                                                                                                                                                              |
+| dataClass     | Chaine  | Name of the datastore class.                                                                                                                                                                                                                                        |
+| selectionSize | Nombre  | Number of entities in the entity selection.                                                                                                                                                                                                                         |
+| sorted        | Booléen | Returns true if the set was sorted (using `$orderby`) or false if it's not sorted.                                                                                                                                                                                  |
+| refreshed     | Date    | When the entity set was created or the last time it was used.                                                                                                                                                                                                       |
+| expires       | Date    | When the entity set will expire (this date/time changes each time when the entity set is refreshed). The difference between refreshed and expires is the timeout for an entity set. This value is either two hours by default or what you defined using `$timeout`. |
 
 For information about how to create an entity selection, refer to `$method=entityset`. If you want to remove the entity selection from 4D Server's cache, use `$method=release`.
 > 4D also creates its own entity selections for optimization purposes, so the ones you create with `$method=entityset` are not the only ones returned.
@@ -38,16 +38,16 @@ For information about how to create an entity selection, refer to `$method=entit
 
 Pour chaque session utilisateur, les informations suivantes sont retournées dans la collection *sessionInfo* :
 
-| Propriété  | Type   | Description                                                       |
-| ---------- | ------ | ----------------------------------------------------------------- |
-| sessionID  | Chaine | Un UUID qui référence la session.                                 |
-| userName   | Chaine | Nom de l'utilisateur qui lance la session.                        |
-| lifeTime   | Nombre | La durée d'une session utilisateur en secondes (3600 par défaut). |
-| expiration | Date   | Date et heure d'expiration courante de la session utilisateur.    |
+| Propriété  | Type   | Description                                                  |
+| ---------- | ------ | ------------------------------------------------------------ |
+| sessionID  | Chaine | A UUID that references the session.                          |
+| userName   | Chaine | The name of the user who runs the session.                   |
+| lifeTime   | Nombre | The lifetime of a user session in seconds (3600 by default). |
+| expiration | Date   | The current expiration date and time of the user session.    |
 
 ## Exemple
 
-Retourne des informations sur les ensembles d'entités stockés couramment dans le cache de 4D Server ainsi que sur les sessions utilisateur:
+Retrieve information about the entity sets currently stored in 4D Server's cache as well as user sessions:
 
 `GET /rest/$info`
 
