@@ -4,7 +4,7 @@ title: Users and sessions
 ---
 
 
-## Authentification des utilisateurs
+## Authenticating users
 
 As a first step to open a REST session on the 4D server, the user sending the request must be authenticated.
 
@@ -14,9 +14,9 @@ Once a user is successfully logged, a session is open. See below to know how to 
 
 The session will automatically be closed once the timeout is reached.
 
-## Cookie de session
+## Session cookie
 
-Chaque requête REST est gérée via une session spécifique sur le serveur 4D.
+Each REST request is handled through a specific session on the 4D server.
 
 When a first valid REST request is received, the server creates the session and sends a session cookie named `WASID4D` in the **"Set-Cookie" response header**, containing the session UUID, for example:
 
@@ -24,7 +24,7 @@ When a first valid REST request is received, the server creates the session and 
 WASID4D=EA0400C4D58FF04F94C0A4XXXXXX3
 ```
 
-Assurez-vous, dans les requêtes REST, que ce cookie est inclus dans **l'en-tête "Cookie"** afin de réutiliser la même session. Sinon, une nouvelle session sera ouverte et une autre licence utilisée.
+Assurez-vous, dans les requêtes REST, que ce cookie est inclus dans **l'en-tête "Cookie"** afin de réutiliser la même session. Otherwise, a new session will be opened, and another license used.
 
 ### Exemple
 
