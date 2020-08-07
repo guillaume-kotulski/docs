@@ -11,14 +11,14 @@ Dataclass names can be used directly in the REST requests to work with entities 
 
 ## Syntaxe
 
-| Syntaxe                                                                            | Exemple                                  | Description                                                                     |
-| ---------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------- |
-| [**{dataClass}**](#dataClass)                                                      | `/Employee`                              | Returns all the data (by default the first 100 entities) for the dataclass      |
-| [**{dataClass}({key})**](#dataclasskey)                                            | `/Employee(22)`                          | Returns the data for the specific entity defined by the dataclass's primary key |
-| [**{dataClass}:{attribute}(value)**](#dataclassattributevalue)                     | `/Employee:firstName(John)`              | Returns the data for one entity in which the attribute's value is defined       |
-| [**{dataClass}/{dataClassClassFunction}**](ClassFunctions.md#function-calls)       | `/City/getCity`                          | Executes a dataclass class function                                             |
-| [**{dataClass}({EntitySelectionClassFunction}**](ClassFunctions.md#function-calls) | `/City/getPopulation/?$filter="ID<3"` | Executes an entity selection class function                                     |
-| [**{dataClass}({key})/{EntityClassFunction}**](ClassFunctions.md#function-calls)   | `City(2)/getPopulation`                  | Executes an entity class function                                               |
+| Syntaxe                                                                            | Exemple                                  | Description                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------- |
+| [**{dataClass}**](#dataClass)                                                      | `/Employee`                              | Renvoie toutes les données (par défaut les 100 premières entités) de la dataclass      |
+| [**{dataClass}({clé})**](#dataclasskey)                                            | `/Employee(22)`                          | Renvoie les données de l'entité spécifique définie par la clé primaire de la dataclass |
+| [**{dataClass}:{attribute}(value)**](#dataclassattributevalue)                     | `/Employee:firstName(John)`              | Renvoie les données d'une entité dans laquelle la valeur de l'attribut est définie     |
+| [**{dataClass}/{dataClassClassFunction}**](ClassFunctions.md#function-calls)       | `/City/getCity`                          | Executes a dataclass class function                                                    |
+| [**{dataClass}({EntitySelectionClassFunction}**](ClassFunctions.md#function-calls) | `/City/getPopulation/?$filter="ID<3"` | Executes an entity selection class function                                            |
+| [**{dataClass}({key})/{EntityClassFunction}**](ClassFunctions.md#function-calls)   | `City(2)/getPopulation`                  | Executes an entity class function                                                      |
 
 > Function calls are detailed in the [Calling ORDA class functions](ClassFunctions.md) section.
 
@@ -30,17 +30,17 @@ Renvoie toutes les données (par défaut, les 100 premières entités) pour une 
 
 ### Description
 
-When you call this parameter in your REST request, the first 100 entities are returned unless you have specified a value using [`$top/$limit`]($top_$limit.md).
+Lorsque vous appelez ce paramètre dans votre requête REST, les 100 premières entités sont renvoyées, sauf si vous avez spécifié une valeur à l'aide de [`$top/$limit`]($top_$limit.md).
 
-Here is a description of the data returned:
+Voici une description des données retournées :
 
-| Propriété     | Type       | Description                                                                                                                                                                                     |
-| ------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| __entityModel | Chaine     | Nom de la classe du datastore.                                                                                                                                                                  |
-| __COUNT       | Nombre     | Number of entities in the datastore class.                                                                                                                                                      |
-| __SENT        | Nombre     | Number of entities sent by the REST request. This number can be the total number of entities if it is less than the value defined by `$top/$limit`.                                             |
-| __FIRST       | Nombre     | Entity number that the selection starts at. Either 0 by default or the value defined by `$skip`.                                                                                                |
-| __ENTITIES    | Collection | This collection of objects contains an object for each entity with all its attributes. All relational attributes are returned as objects with a URI to obtain information regarding the parent. |
+| Propriété     | Type       | Description                                                                                                                                                                                                            |
+| ------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| __entityModel | Chaine     | Nom de la classe du datastore.                                                                                                                                                                                         |
+| __COUNT       | Nombre     | Nombre d'entités dans la classe du datastore.                                                                                                                                                                          |
+| __SENT        | Nombre     | Number of entities sent by the REST request. This number can be the total number of entities if it is less than the value defined by `$top/$limit`.                                                                    |
+| __FIRST       | Nombre     | Numéro d'entité à partir duquel la sélection commence. Soit 0 par défaut soit la valeur définie par `$skip`.                                                                                                           |
+| __ENTITIES    | Collection | This collection of objects contains an object for each entity with all its attributes. Tous les attributs relationnels sont renvoyés en tant qu'objets avec un URI pour obtenir des informations concernant le parent. |
 
 Each entity contains the following properties:
 
@@ -50,7 +50,7 @@ Each entity contains the following properties:
 | __TIMESTAMP | Date   | Timestamp of the last modification of the entity                                                           |
 | __STAMP     | Nombre | Internal stamp that is needed when you modify any of the values in the entity when using `$method=update`. |
 
-If you want to specify which attributes you want to return, define them using the following syntax [{attribute1, attribute2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
+Si vous souhaitez indiquer les attributs à retourner, définissez-les à l'aide de la syntaxe suivante [{attribut1, attribut2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
 
  `GET  /rest/Company/name,address`
 
@@ -58,7 +58,7 @@ If you want to specify which attributes you want to return, define them using th
 
 ### Exemple
 
-Return all the data for a specific datastore class.
+Renvoie toutes les données d'une classe de datastore spécifique.
 
  `GET  /rest/Company`
 
@@ -142,27 +142,27 @@ Return all the data for a specific datastore class.
 ````
 
 
-## {dataClass}({key})
+## {dataClass}({clé})
 
 Renvoie les données de l'entité spécifique définie par la clé primaire de la dataclass, par exemple, `Company (22) ou Company ("IT0911AB2200")`
 
 ### Description
 
-By passing the dataclass and a key, you can retrieve all the public information for that entity. The key is the value in the attribute defined as the Primary Key for your datastore class. Pour plus d'informations sur la définition d'une clé primaire, reportez-vous à la section **Modification de la clé primaire** dans **l'éditeur de modèle de données**.
+En passant la dataclass et une clé, vous pouvez récupérer toutes les informations publiques de cette entité. La clé est la valeur de l'attribut définie comme clé primaire pour votre classe de datastore. Pour plus d'informations sur la définition d'une clé primaire, reportez-vous à la section **Modification de la clé primaire** dans **l'éditeur de modèle de données**.
 
-For more information about the data returned, refer to [{datastoreClass}](#datastoreclass).
+Pour plus d'informations sur les données retournées, reportez-vous à [{datastoreClass}](#datastoreclass).
 
-If you want to specify which attributes you want to return, define them using the following syntax [{attribute1, attribute2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
+Si vous souhaitez indiquer les attributs à retourner, définissez-les à l'aide de la syntaxe suivante [{attribut1, attribut2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
 
  `GET  /rest/Company(1)/name,address`
 
-If you want to expand a relation attribute using `$expand`, you do so by specifying it as shown below:
+Si vous souhaitez développer un attribut relationnel à l'aide de `$expand`, vous devez l'indiquer comme suit :
 
  `GET  /rest/Company(1)/name,address,staff?$expand=staff`
 
 ### Exemple
 
-The following request returns all the public data in the Company datastore class whose key is 1.
+La requête suivante retourne toutes les données publiques de la classe de datastore de Company dont la clé est 1.
 
  `GET  /rest/Company(1)`
 
@@ -193,25 +193,25 @@ The following request returns all the public data in the Company datastore class
 
 ## {dataClass}:{attribute}(value)
 
-Returns the data for one entity in which the attribute's value is defined
+Renvoie les données d'une entité dans laquelle la valeur de l'attribut est définie
 
 ### Description
 
-En passant la *dataClass* et un *attribut* avec une valeur, vous pouvez récupérer toutes les informations publiques de cette entité. The value is a unique value for attribute, but is not the primary key.
+En passant la *dataClass* et un *attribut* avec une valeur, vous pouvez récupérer toutes les informations publiques de cette entité. La valeur est une valeur unique pour l'attribut, mais ce n'est pas la clé primaire.
 
  `GET  /rest/Company:companyCode(Acme001)`
 
-If you want to specify which attributes you want to return, define them using the following syntax [{attribute1, attribute2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
+Si vous souhaitez indiquer les attributs à retourner, définissez-les à l'aide de la syntaxe suivante [{attribut1, attribut2, ...}](manData.md##selecting-attributes-to-get). Par exemple:
 
  `GET  /rest/Company:companyCode(Acme001)/name,address`
 
-If you want to use a relation attribute using [$attributes]($attributes.md), you do so by specifying it as shown below:
+Si vous souhaitez utiliser un attribut relationnel à l'aide de [$attributes]($attributes.md), vous devez l'indiquer comme suit :
 
  `GET  /rest/Company:companyCode(Acme001)?$attributes=name,address,staff.name`
 
 ### Exemple
 
-The following request returns all the public data of the employee named "Jones".
+La requête suivante retourne toutes les données publiques de l'employé nommé "Jones".
 
  `GET  /rest/Employee:lastname(Jones)`
 
