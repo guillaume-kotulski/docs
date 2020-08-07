@@ -1,6 +1,6 @@
 ---
 id: propertiesForm
-title: Form Properties
+title: Propriétés des formulaires
 ---
 
 ---
@@ -15,9 +15,9 @@ Each form has is made of at least two pages:
 For more information, please refer to [Form pages](forms.md#form-pages).
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name  | Type de données | Possible Values                                                          |
+| Nom   | Type de données | Valeurs possibles                                                        |
 | ----- | --------------- | ------------------------------------------------------------------------ |
 | pages | collection      | Collection of pages (each page is an object, page 0 is the first element |
 
@@ -29,7 +29,7 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 This property is the name of the form itself and is used to refer to the form by name using the 4D language. The form name must comply with the [rules specified for identifiers](Concepts/identifiers.md) in 4D.
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
 The form name is defined by the name of the folder that contains the form.4Dform file. See [project architecture](Project/architecture.md#sources-folder) for more information.
 
@@ -58,9 +58,9 @@ Supported types depend on the form category:
 | None                     | *no destination* | A form with no specific feature                               | Project forms - Table forms |
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name        | Type de données | Possible Values                                              |
+| Nom         | Type de données | Valeurs possibles                                            |
 | ----------- | --------------- | ------------------------------------------------------------ |
 | destination | string          | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
@@ -75,9 +75,9 @@ To inherit from a table form, set the table in the [Inherited Form Table](#inher
 To remove inheritance, select **\<None>** in the Property List (or " " in JSON).
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name          | Type de données | Possible Values                                                                                                    |
+| Nom           | Type de données | Valeurs possibles                                                                                                  |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
 | inheritedForm | string          | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
@@ -91,9 +91,9 @@ This property specifies the database table from which to [inherit a form](forms.
 Set to **\<None>** in the Property List (or " " in JSON) to inherited from a project form.
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name               | Type de données  | Possible Values            |
+| Nom                | Type de données  | Valeurs possibles          |
 | ------------------ | ---------------- | -------------------------- |
 | inheritedFormTable | string or number | table name or table number |
 
@@ -108,11 +108,11 @@ Only project forms can be specified as published subforms.
 
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name   | Type de données | Possible Values |
-| ------ | --------------- | --------------- |
-| shared | boolean         | true, false     |
+| Nom    | Type de données | Valeurs possibles |
+| ------ | --------------- | ----------------- |
+| shared | boolean         | true, false       |
 
 
 ---
@@ -127,13 +127,13 @@ When the option is used, if the window is opened using the `Open form window` co
 
 When this option is selected, the [Save Value](FormObjects/properties_Object.md#save-value) option is available for certain objects.
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name             | Type de données | Possible Values |
-| ---------------- | --------------- | --------------- |
-| memorizeGeometry | boolean         | true, false     |
+| Nom              | Type de données | Valeurs possibles |
+| ---------------- | --------------- | ----------------- |
+| memorizeGeometry | boolean         | true, false       |
 
-#### See also
+#### Voir également
 [**Save Value**](FormObjects/properties_Object.md#save-value)
 
 
@@ -153,9 +153,9 @@ You can use dynamic references to set the window titles for forms, *i.e.*:
 
 > The number of characters for a window title is limited to 31.
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name        | Type de données | Possible Values                                        |
+| Nom         | Type de données | Valeurs possibles                                      |
 | ----------- | --------------- | ------------------------------------------------------ |
 | windowTitle | string          | The name of the window as plain text or as a reference |
 
