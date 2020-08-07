@@ -338,35 +338,35 @@ $0:=This.height*This.width
 
 - コンストラクターコード 内において、 `Super` はスーパークラスのコンストラクターを呼び出すコマンドです。 コンストラクター内で使用する際には、`Super` コマンドは単独で使用され、また `This` キーワードよりも先に使用される必要があります。 
   
-      - 継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。 It's 4D developer to make sure calls are valid.
-    - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
-    - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.</li> </ul> 
+      - 継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。 呼び出しが有効であることを確認するのは、開発者の役目となります。
+    - スーパークラスがコンストラクトされるより先に、`This` コマンドを使った場合には、エラー -10743 が生成されます。
+    - `Super` を、オブジェクトのスコープ外で呼び出した場合、または、すでにスーパークラスがコンストラクトされたオブジェクトを対象に呼び出した場合には、エラー -10746 が生成されます。</li> </ul> 
 
 
 
 ```4d
-  // inside myClass constructor
+  // myClass コンストラクター
  C_TEXT($1;$2)
- Super($1) //calls superclass constructor with a text param
- This.param:=$2 // use second param
+ Super($1) // テキスト型引数をスーパークラスコンストラクターに渡します
+ This.param:=$2 // 2番目の引数を使用します
 ```
 
 
-- inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+- [クラスメンバーメソッド](#function) 内において、`Super` はスーパークラスのプロトタイプを指し、スーパークラス階層のメンバーメソッドを呼び出すために使用します。
 
 
 
 ```4d
- Super.doSomething(42) //calls "doSomething" function  
-    //declared in superclasses
+ Super.doSomething(42) // スーパークラスにて宣言されている
+    // "doSomething" メンバーメソッドを呼び出します
 ```
 
 
 
 
-#### Example 1
+#### 例題 1
 
-This example illustrates the use of `Super` in a class constructor. `Rectangle` と `Square` の共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。
+クラスコンストレクター内で `Super` を使う例です。 `Rectangle` と `Square` の共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。
 
 
 
@@ -412,12 +412,12 @@ This example illustrates the use of `Super` in a class constructor. `Rectangle` 
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
+クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します:
 
 
 
 ```4d
-  //Class: Rectangle
+  // クラス: Rectangle
 
  Function nbSides
  C_TEXT($0)
@@ -425,12 +425,12 @@ This example illustrates the use of `Super` in a class constructor. `Rectangle` 
 ```
 
 
-You also created the `Square` class with a function calling the superclass function:
+`Square` クラスには、スーパークラスメソッドを呼び出すメンバーメソッドを定義します:
 
 
 
 ```4d
-  //Class: Square
+  // クラス: Square
 
  Class extends Rectangle
 
@@ -440,7 +440,7 @@ You also created the `Square` class with a function calling the superclass funct
 ```
 
 
-Then you can write in a project method:
+すると、プロジェクトメソッド内には次のように書けます:
 
 
 
@@ -460,12 +460,12 @@ Then you can write in a project method:
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| 引数  | 型      |    | 説明         |
+| --- | ------ | -- | ---------- |
+| 戻り値 | object | <- | カレントオブジェクト |
 
 
-The `This` keyword returns a reference to the currently processed object. `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
