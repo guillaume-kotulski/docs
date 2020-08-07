@@ -1,20 +1,20 @@
 ---
 id: propertiesHeaders
-title: Headers
+title: En-têtes
 ---
 
 ---
-## Display Headers
+## Afficher en-têtes
 
 This property is used to display or hide [list box column headers](listbox_overview.md#list-box-headers). There is one header per column; each header is configured separately.
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| showHeaders | boolean   | true, false     |
+| Nom         | Type de données | Valeurs possibles |
+| ----------- | --------------- | ----------------- |
+| showHeaders | boolean         | true, false       |
 
-#### Objects Supported
+#### Objets pris en charge
 
 [List Box](listbox_overview.md)
 
@@ -40,7 +40,7 @@ Note that converting back and forth may lead to an end result that is different 
 
 *(font Arial 18)*: 52 pixels -> 2 lines -> 40 pixels *(font Arial 12)*: 3 pixels -> 0.4 line rounded up to 1 line -> 19 pixels
 
-#### JSON Example:
+#### Exemple JSON :
 
 ```
     "List Box": {
@@ -53,17 +53,17 @@ Note that converting back and forth may lead to an end result that is different 
 
 
 
-#### JSON Grammar
+#### Grammaire JSON
 
-| Name         | Data Type | Possible Values                 |
-| ------------ | --------- | ------------------------------- |
-| headerHeight | string    | positive decimal+px &#124; em ) |
+| Nom          | Type de données | Valeurs possibles               |
+| ------------ | --------------- | ------------------------------- |
+| headerHeight | string          | positive decimal+px &#124; em ) |
 
-#### Objects Supported
+#### Objets pris en charge
 
 [List Box](listbox_overview.md)
 
 
-#### See also
+#### Voir également
 
 [Footers](properties_Footers.md) - [List box headers](listbox_overview.md#list-box-headers)
