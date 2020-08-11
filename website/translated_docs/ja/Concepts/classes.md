@@ -1,6 +1,6 @@
 ---
 id: classes
-title: クラス
+title: Classes
 ---
 
 
@@ -112,7 +112,7 @@ $cName:=OB Class($o).name // "Empty"
 - データベースフォルダー
     + Project
         * Sources
-            - クラス
+            - Classes
                 + Polygon.4dm
 
 ### クラス名
@@ -239,7 +239,7 @@ $area:=$o.getArea(50;100) //5000
 ```
 
 
-### Class constructor
+### Class Constructor
 
 #### シンタックス
 
