@@ -25,16 +25,16 @@ Web やモバイル、デスクトップの運用形態に関わらず、デー�
 プロジェクトは **ローカル** または **リモート** で開くことができます:
 
 - **[ローカル](creating.md#ローカルプロジェクトを開く)** - プロジェクトファイルは使用するマシン内に保存されています。アプリケーションを開いて編集できるのは、そのマシンのみです。
-- **[リモート](creating.md#opening-a-remote-project)** - プロジェクトファイルは 4D Server を実行するマシン内に保存されています。クライアントとして 4D を使ってサーバーに接続し、プロジェクトを読み取り専用モードで開くことができます (おもにテスト目的)。 クライアントとサーバーの [両方が同一のマシン上で動いている](Project/developing.md#using-4d-developer-on-the-same-machine) 場合に限り、4D は 4D Server で実行されているプロジェクトを編集することができます。
+- **[リモート](creating.md#opening-a-remote-project)** - プロジェクトファイルは 4D Server を実行するマシン内に保存されています。4D を使って、クライアントとしてサーバーに接続し、プロジェクトを読み取り専用モードで開くことができます (おもにテスト目的)。 クライアントとサーバーの [両方が同一のマシン上で動いている](Project/developing.md#using-4d-developer-on-the-same-machine) 場合に限り、4D は 4D Server で実行されているプロジェクトを編集することができます。
 
 ![](assets/en/getStart/localremote.png)
 
-When you select the project to open, you also select the mode to be used.
+ローカルかリモートかは、実行するプロジェクトを選択する際に選択します。
 
 
-## Deployment
+## 運用
 
-Project files can be compiled and easily deployed for your web, mobile, or desktop (client-server or single-user) application.
+プロジェクトファイルをコンパイルし、Web、モバイル、またはデスクトップ (クライアントサーバーまたはシングルユーザー) で運用することができます。
 
 Final application deployment files are generated during the building process, using the [4D build manager](Admin/building.md). Applications can be opened by 4D Server, 4D, or merged with 4D Volume license.
 
