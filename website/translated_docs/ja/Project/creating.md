@@ -30,7 +30,7 @@ title: プロジェクトの作成・開始
 
 1. Welcome ウィザードにて **ローカルアプリケーションプロジェクトを開く** を選択します。 <p>OR<p> **ファイル** メニューより **開く ＞ ローカルプロジェクト...**を選択するか、**開く** ツールバーボタンより同様に選択します。<p> 標準のファイルを開くためのダイアログが表示されます。
 
-2. Select the project's `.4dproject` file and click **Open**.<p> By default, the project is opened with its current data file. Other file types are suggested:
+2. プロジェクトの `.4dproject` ファイルを選択し、**開く** をクリックします。<p> By default, the project is opened with its current data file. Other file types are suggested:
 
     - *Packed project files*: `.4dz` extension  - deployment projects
     - *Shortcut files*: `.4dlink` extension - store additional parameters needed for opening projects or applications (addresses, identifiers, etc.)
