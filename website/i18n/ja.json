@@ -33,7 +33,7 @@
         "title": "ループ構造"
       },
       "Concepts/classes": {
-        "title": "クラス"
+        "title": "Classes"
       },
       "Concepts/components": {
         "title": "コンポーネント"
@@ -69,7 +69,7 @@
         "title": "ポインター"
       },
       "Concepts/string": {
-        "title": "文字列"
+        "title": "String"
       },
       "Concepts/time": {
         "title": "時間"
@@ -415,7 +415,7 @@
         "title": "リストボックス"
       },
       "FormObjects/propertiesObject": {
-        "title": "Objects"
+        "title": "オブジェクト"
       },
       "FormObjects/propertiesPicture": {
         "title": "ピクチャー"
@@ -707,7 +707,7 @@
     "REST Server|no description given": "REST Server",
     "Maintenance and Security Center|no description given": "Maintenance ＆ Security Center",
     "Backup and Restore|no description given": "Backup and Restore",
-    "Language Reference (4D Doc Center)|no description given": "Language Reference (4D Doc Center)",
+    "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Users and Groups|no description given": "Users and Groups",
     "Getting started|no description given": "はじめに",
     "Developing a Desktop application|no description given": "デスクトップアプリの開発",
