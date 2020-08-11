@@ -77,13 +77,13 @@
 <li><p>プロパティリストの<a href="/docs/18/ja/FormObjects/propertiesDataSource.html">データソース</a>テーマにおいて、選択リストの項目で &quot;&lt;Static List&gt;&quot; を選び、デフォルト値のリストを入力します。 これらのデフォルト値は、配列へと自動的にロードされます。 オブジェクトに関連付けた変数名を使用して、この配列を参照することができます。</p></li>
 <li><p>オブジェクトが表示される前に、値を配列要素に代入するコードを実行します。 たとえば:</p></li>
 </ul>
-<pre><code class="hljs css language-4d"><span class="hljs-function">  ARRAY TEXT</span>(<span class="hljs-variable">$aCities</span>;<span class="hljs-number">6</span>)
-  <span class="hljs-variable">$aCities{1}</span>:=<span class="hljs-string">"Philadelphia"</span>
-  <span class="hljs-variable">$aCities{2}</span>:=<span class="hljs-string">"Pittsburg"</span>
-  <span class="hljs-variable">$aCities{3}</span>:=<span class="hljs-string">"Grand Blanc"</span>
-  <span class="hljs-variable">$aCities{4}</span>:=<span class="hljs-string">"Bad Axe"</span>
-  <span class="hljs-variable">$aCities{5}</span>:=<span class="hljs-string">"Frostbite Falls"</span>
-  <span class="hljs-variable">$aCities{6}</span>:=<span class="hljs-string">"Green Bay"</span>
+<pre><code class="hljs css language-4d"><span class="hljs-function">  ARRAY TEXT</span>(aCities;<span class="hljs-number">6</span>)
+  aCities{<span class="hljs-number">1</span>}:=<span class="hljs-string">"Philadelphia"</span>
+  aCities{<span class="hljs-number">2</span>}:=<span class="hljs-string">"Pittsburg"</span>
+  aCities{<span class="hljs-number">3</span>}:=<span class="hljs-string">"Grand Blanc"</span>
+  aCities{<span class="hljs-number">4</span>}:=<span class="hljs-string">"Bad Axe"</span>
+  aCities{<span class="hljs-number">5</span>}:=<span class="hljs-string">"Frostbite Falls"</span>
+  aCities{<span class="hljs-number">6</span>}:=<span class="hljs-string">"Green Bay"</span><span class="hljs-variable">$aCities</span>
 </code></pre>
 <p>この場合、フォームのオブジェクトに関連付けた変数名は <em>aCities</em> でなければなりません。 このコードをフォームメソッド内に置き、<code>On Load</code> フォームイベント発生時に実行されるようにします。</p>
 <ul>
