@@ -152,11 +152,11 @@ _italic_
 ```
 
 
-- The code block tag (\```4d ... ```) is supported with 4D code highlight:
+- La balise du bloc de code (\```4d ... ```) est supportée avec le surlignage du code 4D :
 
     \``` 4d  
-  C_TEXT($txt)  
-  $txt:="Hello world!"  
+C_TEXT($txt)  
+$txt:="Hello world!"  
   \` ``
 
 
@@ -201,9 +201,7 @@ The [documentation](https://doc.4d.com) of the command ....
 
 Dans le fichier `WP SwitchToolbar.md`, vous pouvez entrer le code suivant :
 
-```4d<!-- Cette méthode retourne un logo différent, en fonction du paramètre size -->GetLogo (size) -> logo
-
-
+```4d
 | Parameter | Type   | in/out | Description |
 | --------- | ------ | ------ | ----------- |
 | size      | Longint | in | Logo style selector (1 to 5)  |
