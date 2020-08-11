@@ -232,7 +232,7 @@ title: テキスト、ピクチャー
 
 それぞれのオプションにより、ボタンとポップアップメニューとの関係が指定されます:
 
-<li>When the pop-up menu is **separated**, clicking on the left part of the button directly executes the current action of the button; this action can be modified using the pop-up menu accessible in the right part of the button. <li>When the pop-up menu is **linked**, a simple click on the button only displays the pop-up menu. このポップアップメニュー上のアクションを選択しないと、実行はおこなわれません。
+<li>ポップアップメニューが **分離** している場合、ボタンの左部分をクリックするとボタンのカレントアクションが直接実行されます。このアクションは、ボタンの右側からアクセスできるポップアップメニューを使用して変更することができます。 <li>ポップアップメニューが **リンク** している場合、ボタンをクリックしてもポップアップメニューが表示されるだけです。 このポップアップメニュー上のアクションを選択しないと、実行はおこなわれません。
 
 
 ### ポップアップメニューの管理
