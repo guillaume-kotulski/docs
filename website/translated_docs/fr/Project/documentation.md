@@ -153,7 +153,7 @@ _italic_
 ```
 
 
-- The code block tag (\```4d ... ```) is supported with 4D code highlight:
+- La balise du bloc de code (\```4d ... ```) est supportée avec le surlignage du code 4D :
 
     \``` 4d  
 C_TEXT($txt)  
