@@ -11,36 +11,36 @@ Eine Methode ist in der Regel ein Stück Code, der eine oder mehrere Aktionen au
     - Methoden, die Collections oder native Objekten zugewiesen sind, wie z.B. `collection.orderBy()` oder `entity.save()`.
     - Befehle aus Plug-Ins oder Komponenten, die von 4D oder third-Party Entwicklern kommen, wie z. B. `SVG_New_arc`.
 
-    Built-in methods are detailed in the *4D Language reference* manual or dedicated manuals for plug-ins or components.
+    Weitere Informationen dazu finden Sie im Handbuch *4D Programmiersprache* oder spezifischen Handbüchern zu Plug-Ins oder Komponenten.
 
-- **project methods**, where you can write your own code to execute any custom actions. Once a project method is created, it becomes part of the language of the database in which you create it. A project method is composed of statements; each statement consists of one line in the method. A statement performs an action, and may be simple or complex. Although a statement is always one line, that one line can be as long as needed (up to 32,000 characters, which is probably enough for most tasks). The maximum size of a project method is limited to 2 GB of text or 32,000 lines of command.
+- **Projektmethoden**, wo Sie eigenen Code zum Ausführen beliebiger eigener Aktionen schreiben können. Eine einmal erstellte Projektmethode wird Teil der Programmierung der Anwendung, in der sie angelegt wurde. Eine Projektmethode besteht aus Anweisungen; jede Anweisung ist eine Zeile in der Methode. Eine Anweisung führt eine Aktion aus, die einfach oder komplex sein kann. Obwohl eine Anweisung immer in einer Zeile steht, kann diese Zeile so lang wie erforderlich sein (bis zu 32.000 Zeichen, was für die meisten Fälle ausreichen dürfte). Eine Projektmethode kann max. 2 GB groß sein oder bis zu 32.000 Code-Zeilen enthalten.
 
-**Note:** 4D also provides specific methods that are automatically executed depending on database or form events. See [Specialized methods](#specialized-methods).
+**Hinweis:** 4D bietet auch spezifische Methoden, die bei bestimmten Datenbank- oder Formularereignissen automatisch ausgeführt werden. Weitere Informationen dazu finden Sie unter[ Spezialisierte Methoden](#specialized-methods).
 
 
-## Calling Project Methods
+## Projektmethoden aufrufen
 
-A project method can have one of the following roles, depending on how it is executed and used:
+Eine Projektmethode kann je nach Ausführung und Verwendung folgende Rolle haben:
 
-- Subroutine and function
-- Method attached to object
-- Menu method
-- Process method
-- Event or Error catching method
+- Unterroutine und Funktion
+- An Objekt gebundene Methode
+- Menümethode
+- Prozessmethode
+- Auf Ereignis oder Fehler bezogene Methode
 
-### Subroutines and functions
-A subroutine is a project method that can be thought of as a servant. It performs those tasks that other methods request it to perform. A function is a subroutine that returns a value to the method that called it.
+### Unterroutine und Funktion
+Eine Unterroutine ist eine Projektmethode, die man sich als Diener vorstellen kann. Sie führt die Aufgaben (tasks) aus, deren Durchführung andere Methoden anfordern. Eine Funktion ist eine Unterroutine, die einen Wert an die Methode zurückgibt, die sie aufgerufen hat.
 
-When you create a project method, it becomes part of the language of the database in which you create it. You can then call the project method from other project methods, or from [predefined methods](#predefined-methods) in the same way that you call 4D’s built-in commands. A project method used in this way is called a subroutine.
+Eine einmal erstellte Projektmethode wird Teil der Programmierung der Anwendung, in der sie angelegt wurde. Sie können die Projektmethode dann in anderen Projektmethoden oder [vordefinierten Methoden](#predefined-methods) genauso wie einen in 4D integrierten Befehl aufrufen. Eine so verwendete Projektmethode heißt Unterroutine.
 
-You use subroutines to:
+Sie verwenden Unterroutinen, um:
 
-- Reduce repetitive coding
-- Clarify your methods
-- Facilitate changes to your methods
-- Modularize your code
+- Sich wiederholendes Programmieren zu reduzieren
+- Ihre Methoden klarer zu gliedern
+- Ihre Methoden schneller zu ändern
+- Ihren Code modular aufzuteilen
 
-For example, let’s say you have a database of customers. As you customize the database, you find that there are some tasks that you perform repeatedly, such as finding a customer and modifying his or her record. The code to do this might look like this:
+Wir gehen beispielsweise von einer Datenbank Kunden aus. Bei der individuellen Gestaltung stellen Sie fest, dass sich einige Vorgänge wiederholen, wie einen Kunden finden oder einen Datensatz ändern. Der Code dafür könnte folgendermaßen aussehen:
 
 ```4d
   // Look for a customer
@@ -51,20 +51,20 @@ For example, let’s say you have a database of customers. As you customize the 
  MODIFY RECORD([Customers])
 ```
 
-If you do not use subroutines, you will have to write the code each time you want to modify a customer’s record. If there are ten places in your custom database where you need to do this, you will have to write the code ten times. If you use subroutines, you will only have to write it once. This is the first advantage of subroutines—to reduce the amount of code.
+Arbeiten Sie ohne Unterroutinen, müssen Sie den Code jedes Mal schreiben, wenn Sie einen Kundendatensatz ändern wollen. Passiert das in Ihrer Anwendung an zehn Stellen, müssen Sie den Code zehnmal schreiben. Mit Unterroutinen schreiben Sie den Code nur einmal. Das ist der erste Vorteil von Unterroutinen - die Menge an Code reduzieren.
 
-If the previously described code was a method called `MODIFY CUSTOMER`, you would execute it simply by using the name of the method in another method. For example, to modify a customer’s record and then print the record, you would write this method:
+Wir legen den oben beschriebenen Code in einer Methode mit Namen `MODIFY CUSTOMER` an. Soll diese Methode in einer anderen Methode ausgeführt werden, müssen Sie nur den Namen einsetzen. Wollen Sie beispielsweise einen Kundendatensatz ändern und dann den Datensatz drucken, schreiben Sie folgende Methode:
 
 ```4d
  MODIFY CUSTOMER
  PRINT SELECTION([Customers])
 ```
 
-This capability simplifies your methods dramatically. In the example, you do not need to know how the `MODIFY CUSTOMER` method works, just what it does. This is the second reason for using subroutines—to clarify your methods. In this way, your methods become extensions to the 4D language.
+Das vereinfacht Ihre Methode drastisch. Im Beispiel müssen Sie nicht wissen, wie die Methode `MODIFY CUSTOMER` arbeitet, sondern nur was sie tut. Dies ist der zweite Vorteil von Unterroutinen - Ihre Methoden klarer gliedern. Sie erweitern sozusagen die 4D Programmiersprache.
 
-If you need to change your method of finding customers in this example database, you will need to change only one method, not ten. This is the next reason to use subroutines—to facilitate changes to your methods.
+Wollen Sie in dieser Beispielanwendung die Methode zum Auffinden von Kunden ändern, müssen Sie nur eine und nicht zehn Methoden ändern. Ein weiterer Vorteil von Unterroutinen - Methoden lassen sich schnell ändern.
 
-Using subroutines, you make your code modular. This simply means dividing your code into modules (subroutines), each of which performs a logical task. Consider the following code from a checking account database:
+Mit Unterroutinen machen Sie Ihren Code modular. Das bedeutet, Sie unterteilen Ihren Code in Module (Unterroutinen), die jeweils einen logischen Vorgang (task) ausführen. Betrachten Sie folgenden Code aus einer Anwendung für Kontoführung:
 
 ```4d
  FIND CLEARED CHECKS ` Find the cleared checks
@@ -72,13 +72,13 @@ Using subroutines, you make your code modular. This simply means dividing your c
  PRINT CHECK BOOK REPORT ` Print a checkbook report
 ```
 
-Even for someone who doesn’t know the database, it is clear what this code does. It is not necessary to examine each subroutine. Each subroutine might be many lines long and perform some complex operations, but here it is only important that it performs its task. We recommend that you divide your code into logical tasks, or modules, whenever possible.
+Auch für jemanden, der die Anwendung nicht kennt, ist klar, was der Code ausführt. Er muss nicht jede Unterroutine untersuchen, die evtl. aus vielen Zeilen besteht und komplexe Operationen ausführt. Wichtig ist, dass die Tasks ausgeführt werden. Wir empfehlen, den Code möglichst in logische Vorgänge oder Module aufzuteilen.
 
-### Methods attached to objects
+### An Objekt gebundene Methode
 
-You can encapsulate your project methods in **formula** objects and call them from your objects.
+Sie können Ihre Projektmethoden in **formula** Objekten einkapseln und von Ihren Objekten aus aufrufen.
 
-The `Formula` or `Formula from string` commands allow you to create native formula objects that you can encapsulate in object properties. It allows you to implement custom object methods.
+Mit der Methode `Formula` oder `Formula from string` können Sie native Formelobjekte erstellen, die Sie in Objekteigenschaften einbinden können. So können Sie eigene Objektmethoden einbinden.
 
 To execute a method stored in an object property, use the **( )** operator after the property name. Beispiel:
 
@@ -86,27 +86,27 @@ To execute a method stored in an object property, use the **( )** operator after
 //myAlert
 ALERT("Hello world!")
 ```
-Then `myAlert` can be encapsulated in any object and called:
+Dann lässt sich `myAlert` in jedes Objekt einbinden und aufrufen:
 ```4d
 C_OBJECT($o)
 $o:=New object("custom_Alert";Formula(myAlert))
 $o.custom_Alert() //displays "Hello world!"
 ```
 
-Syntax with brackets is also supported:
+Die Syntax mit Klammern wird auch unterstützt:
 
 ```4d
 $o["custom_Alert"]() //displays "Hello world!"
 ```
 
-You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… just like with 4D project methods:
+Sie können auch [Parameter](Concepts/parameters.md) in Ihrer Formel übergeben, wenn Sie diese, wie in 4D Projektmethoden, mit $1, $2… aufrufen:
 
 ```4d
 //fullName method
 C_TEXT($0;$1;$2)
 $0:=$1+" "+$2
 ```
-You can encapsulate `fullName` in an object:
+Sie können `fullName` in ein Objekt einbinden:
 ```4d
 C_OBJECT($o)
 $o:=New object("full_name";Formula(fullName))
@@ -114,14 +114,14 @@ $result:=$o.full_name("John";"Smith")
 //$result = "John Smith"
 // equivalent to $result:=fullName("param1";"param2")
 ```
-Combined with the `This`function, such object methods allow writing powerful generic code. Beispiel:
+In Kombination mit der Funktion `This` können Sie mit solchen Objektmethoden leistungsstarken generischen Code schreiben. Beispiel:
 
 ```4d
 //fullName2 method
 C_TEXT($0)
 $0:=This.firstName+" "+This.lastName
 ```
-Then the method acts like a new, calculated attribute that can be added to other attributes:
+Die Methode arbeitet dann wie ein neues berechnetes Attribut, dass sich in andere Attribute einfügen lässt:
 
 ```4d
 C_OBJECT($o)
@@ -134,18 +134,18 @@ $result:=$o.fullName()
 
 
 
-Note that, even if it does not have parameters, an object method to be executed must be called with ( ) parenthesis. Calling only the object property will return a new reference to the formula (and will not execute it):
+Beachten Sie, dass eine objektgebundene Methode, selbst wenn sie keine Parameter hat, zum Ausführen mit Klammern ( ) aufgerufen werden muss. Sonst wird nur die Objekteigenschaft aufgerufen und sie gibt eine neue Referenz zur Formel zurück (und führt sie nicht aus):
 
 ```4d
 $o:=$f.message //returns the formula object in $o
 ```
 
-### Menu Methods
-A menu method is invoked when you select the custom menu command to which it is attached. You assign the method to the menu command using the Menu editor or a command of the "Menus" theme. The method executes when the menu command is chosen. This process is one of the major aspects of customizing a database. By creating custom menus with menu methods that perform specific actions, you personalize your database.
+### Menümethode
+Eine Menümethode wird in der Anwendungsumgebung aufgerufen, wenn Sie den dazugehörigen eigenen Menübefehl auswählen. Sie weisen die Methode dem Menübefehl im Methodeneditor zu oder über einen Befehl aus dem Kapitel "Menüs". Die Methoden wird ausgeführt, wenn der Menübefehl ausgewählt wird. Dies ist einer der Hauptaspekte bei der eigenen Gestaltung von Anwendungen. Durch Einrichten eigener Menüs mit dazugehörigen Menümethoden, die bestimmte Aktionen ausführen, personalisieren Sie Ihre Anwendung.
 
-Custom menu commands can cause one or more activities to take place. For example, a menu command for entering records might call a method that performs two tasks: displaying the appropriate input form, and calling the `ADD RECORD` command until the user cancels the data entry activity.
+Mit eigenen Menübefehlen können eine oder mehrere Aktivitäten ausgelöst werden. Ein Menübefehl für die Eingabe von Datensätzen kann beispielsweise zwei Tasks ausführen: Das entsprechende Eingabeformular anzeigen und den Befehl `ADD RECORD` aufrufen, bis der Benutzer die Eingabe von Daten beendet.
 
-Automating sequences of activities is a very powerful capability of the programming language. Using custom menus, you can automate task sequences and thus provide more guidance to users of the database.
+Das automatisierte Ablaufen mehrerer Aktivitäten ist eine Leistungsstärke der Programmiersprache. Using custom menus, you can automate task sequences and thus provide more guidance to users of the database.
 
 
 ### Process Methods
