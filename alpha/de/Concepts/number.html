@@ -150,7 +150,7 @@
 <tr><th>Operation</th><th>Operator</th><th>Syntax</th><th>Ergibt</th></tr>
 </thead>
 <tbody>
-<tr><td>Bitweises AND</td><td>&amp;</td><td>Lang &amp; Lang</td><td>Lang</td></tr>
+<tr><td>Bitweises UND</td><td>&amp;</td><td>Lang &amp; Lang</td><td>Lang</td></tr>
 <tr><td>Bitweises ODER (inklusiv)</td><td>|</td><td>Lang | Lang</td><td>Lang</td></tr>
 <tr><td>Bitweises ODER (exklusiv)</td><td>^|</td><td>Lang ^| Lang</td><td>Lang</td></tr>
 <tr><td>Left Bit Shift</td><td>&lt;&lt;</td><td>Lang &lt;&lt; Lang</td><td>Lang (siehe Hinweis 1)</td></tr>
@@ -171,23 +171,23 @@
 <tr><th>Operation</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>Bitweises AND</td><td>Jedes resultierende Bit ist das logische UND der Bits in den beiden Operanden. <p>Hier ist die logische UND Tabelle:<li>1 &amp; 1 --&gt; 1<li>0 &amp; 1 --&gt; 0<li>1 &amp; 0 --&gt; 0<li>0 &amp; 0 --&gt; 0<p>Das resultierende Bit ist 1, wenn beide Bits der Operanden 1 sind; sonst ist das resultierende Bit 0.</td></tr>
+<tr><td>Bitweises UND</td><td>Jedes resultierende Bit ist das logische UND der Bits in den beiden Operanden. <p>Hier ist die logische UND Tabelle:<li>1 &amp; 1 --&gt; 1<li>0 &amp; 1 --&gt; 0<li>1 &amp; 0 --&gt; 0<li>0 &amp; 0 --&gt; 0<p>Das resultierende Bit ist 1, wenn beide Bits der Operanden 1 sind; sonst ist das resultierende Bit 0.</td></tr>
 <tr><td>Bitweises ODER (inklusiv)</td><td>Jedes resultierende Bit ist das logische ODER der Bits in den beiden Operanden.<p>Hier ist die logische ODER Tabelle:<li>1 | 1 --&gt; 1<li>0 | 1 --&gt; 1<li>1 | 0 --&gt; 1<li>0 | 0 --&gt; 0<p>Das resultierende Bit ist 1, wenn mindestens einer der Bit Operanden 1 ist; sonst ist das resultierende Bit 0.</td></tr>
-<tr><td>Bitweises ODER (exklusiv)</td><td>Jedes resultierende Bit ist das logische XODER der Bits in den beiden Operanden.<p>Hier ist die logische XODER Tabelle:<li>1 ^| 1 --&gt; 0<li>0 ^| 1 --&gt; 1<li>1 ^| 0 --&gt; 1<li>0 ^| 0 --&gt; 0<p>In other words, the resulting bit is 1 if only one of the two operand bits is 1; otherwise the resulting bit is 0.</td></tr>
-<tr><td>Left Bit Shift</td><td>The resulting value is set to the first operand value, then the resulting bits are shifted to the left by the number of positions indicated by the second operand. The bits on the left are lost and the new bits on the right are set to 0. <p><strong>Note:</strong> Taking into account only positive values, shifting to the left by N bits is the same as multiplying by 2^N.</td></tr>
-<tr><td>Right Bit Shift</td><td>The resulting value is set to the first operand value, then the resulting bits are shifted to the right by the number of position indicated by the second operand. The bits on the right are lost and the new bits on the left are set to 0.<p><strong>Note:</strong> Taking into account only positive values, shifting to the right by N bits is the same as dividing by 2^N.</td></tr>
-<tr><td>Bit setzen</td><td>The resulting value is set to the first operand value, then the resulting bit, whose number is indicated by the second operand, is set to 1. The other bits are left unchanged.</td></tr>
-<tr><td>Bit löschen</td><td>The resulting value is set to the first operand value, then the resulting bit, whose number is indicated by the second operand, is set to 0. The other bits are left unchanged.</td></tr>
-<tr><td>Bit Test</td><td>Returns True if, in the first operand, the bit whose number is indicated by the second operand is equal to 1. Returns False if, in the first operand, the bit whose number is indicated by the second operand is equal to 0.</td></tr>
+<tr><td>Bitweises ODER (exklusiv)</td><td>Jedes resultierende Bit ist das logische XODER der Bits in den beiden Operanden.<p>Hier ist die logische XODER Tabelle:<li>1 ^| 1 --&gt; 0<li>0 ^| 1 --&gt; 1<li>1 ^| 0 --&gt; 1<li>0 ^| 0 --&gt; 0<p>Das resultierende Bit ist 1, wenn mindestens einer der Bit Operanden 1 ist; sonst ist das resultierende Bit 0.</td></tr>
+<tr><td>Left Bit Shift</td><td>Der resultierende Wert wird auf den ersten Operanden gesetzt, dann werden die Bits um die im zweiten Operanden angegebenen Stellen nach links verschoben. Die Bits auf der linken Seite gehen verloren, die neuen Bits auf der rechten Seite werden auf 0 gesetzt. <p><strong>Hinweis:</strong> Werden nur die positiven Werte berücksichtigt, ist das Verschieben um N Bits nach links dasselbe wie das Multiplizieren mit 2^N.</td></tr>
+<tr><td>Right Bit Shift</td><td>Der resultierende Wert wird auf den ersten Operanden gesetzt, dann werden die Bits um die vom zweiten Operanden angegebenen Stellen nach rechts verschoben. Die Bits auf der rechten Seite gehen verloren, die neuen Bits auf der linken Seite werden auf 0 gesetzt.<p><strong>Hinweis:</strong> Werden nur die positiven Werte berücksichtigt, ist das Verschieben um N Bits nach rechts dasselbe wie das Dividieren durch 2^N.</td></tr>
+<tr><td>Bit setzen</td><td>Der resultierende Wert wird auf den ersten Operanden gesetzt, dann wird das Bit, dessen Stelle im zweiten Operanden angegeben ist, auf 1 gesetzt. Die anderen Bits bleiben unverändert.</td></tr>
+<tr><td>Bit löschen</td><td>Der resultierende Wert wird auf den ersten Operanden gesetzt, dann wird das Bit, dessen Stelle im zweiten Operanden angegeben ist, auf 0 gesetzt. Die anderen Bits bleiben unverändert.</td></tr>
+<tr><td>Bit Test</td><td>Ergibt wahr, wenn im ersten Operanden das Bit, dessen Stelle im zweiten Operanden angegeben ist, gleich 1 ist. Ergibt Falsch, wenn im ersten Operanden das Bit, dessen Stelle im zweiten Operanden angegeben ist, gleich 0 ist.</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="beispiele"></a><a href="#beispiele" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiele</h3>
 <table>
 <thead>
-<tr><th>Operation</th><th>Beispiel</th><th>Result</th></tr>
+<tr><th>Operation</th><th>Beispiel</th><th>Ergebnis</th></tr>
 </thead>
 <tbody>
-<tr><td>Bitweises AND</td><td>0x0000FFFF &amp; 0xFF00FF00</td><td>0x0000FF00</td></tr>
+<tr><td>Bitweises UND</td><td>0x0000FFFF &amp; 0xFF00FF00</td><td>0x0000FF00</td></tr>
 <tr><td>Bitweises ODER (inklusiv)</td><td>0x0000FFFF | 0xFF00FF00</td><td>0xFF00FFFF</td></tr>
 <tr><td>Bitweises ODER (exklusiv)</td><td>0x0000FFFF ^| 0xFF00FF00  0xFF0000FF</td><td></td></tr>
 <tr><td>Left Bit Shift</td><td>0x0000FFFF &lt;&lt; 8</td><td>0x00FFFF00</td></tr>
