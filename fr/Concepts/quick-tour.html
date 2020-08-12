@@ -146,7 +146,7 @@ End for</span>
 <p>De nombreux types de données peuvent être manipulés via le langage 4D. Il existe des types de données élémentaires (chaîne, numérique, date, heure, booléen, image, pointeur, tableau), ainsi que des types de données composites (BLOBs, objets, collections).</p>
 <p>A noter que les données de type chaîne et numérique peuvent être associées à plusieurs types de champ. Lorsque des données sont placées dans un champ, le langage les convertit automatiquement dans le type du champ. Par exemple, si un champ de type entier est utilisé, les valeurs qu’il contient sont automatiquement traitées en tant que numériques. En d’autres termes, vous n’avez pas à vous préoccuper du mélange de champs de types semblables lorsque vous programmez avec 4D ; le langage le gère pour vous.</p>
 <p>Cependant, il est important, lorsque vous utilisez le langage, de ne pas mélanger les différents types de données. Tout comme il est absurde de stocker la valeur “ABC” dans un champ de type Date, il est absurde de donner la valeur “ABC” à une variable utilisée pour des dates. Dans la plupart des cas, 4D est très tolérant et tentera d’utiliser de manière logique ce que vous faites. Par exemple, si vous additionnez un nombre x et une date, 4D déduira que vous voulez ajouter x jours à la date, mais si vous tentez d’ajouter une chaîne à une date, 4D vous préviendra que cette opération est impossible.</p>
-<p>Certains cas nécessitent que vous stockiez des données dans un type et que vous les utilisiez dans un autre. Le langage contient un ensemble complet de commandes vous permettant de convertir des types de données en d’autres types. Par exemple, si vous voulez créer un numéro de matricule commençant par des chiffres et se terminant par des lettres, telles que &quot;abc&quot;, vous pouvez écrire :</p>
+<p>Certains cas nécessitent que vous stockiez des données dans un type et que vous les utilisiez dans un autre. Le langage contient un ensemble complet de commandes vous permettant de convertir des types de données en d’autres types. Par exemple, si vous voulez créer un numéro de matricule commençant par des chiffres et se terminant par des lettres, telles que &quot;abc&quot;, vous pouvez écrire : vous pouvez écrire :</p>
 <pre><code class="hljs css language-4d">[Produits]Matricule:=<span class="hljs-function">String</span>(Numéro)+<span class="hljs-string">"abc"</span>
 </code></pre>
 <p>Si <em>Numéro</em> vaut 17, <em>[Produits]Matricule</em> prendra la valeur “17abc”.</p>
@@ -162,9 +162,10 @@ End for</span>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$vAge</span>:=employee.children[<span class="hljs-number">2</span>].age
 </code></pre>
 <p>A noter que si la valeur de la propriété de l'objet est un objet qui encapsule une méthode (une formule), vous devez ajouter des parenthèses () au nom de la propriété pour exécuter la méthode :</p>
-<pre><code class="hljs"><span class="hljs-built_in">$f</span>:=<span class="hljs-keyword">New</span> object
-<span class="hljs-built_in">$f</span>.message:=<span class="hljs-keyword">New</span> formula(ALERT(<span class="hljs-string">"Hello world!"</span>))
-<span class="hljs-built_in">$f</span>.message() <span class="hljs-comment">//affiche "Hello world!"</span>
+<pre><code class="hljs"><span class="hljs-variable">$f</span>:=New object
+<span class="hljs-variable">$f</span>.message:=<span class="hljs-function">New formula</span>(<span class="hljs-function">ALERT</span>(<span class="hljs-string">"Hello world!"</span>))
+<span class="hljs-variable">$f</span>.<span class="hljs-function">message</span>() <span class="hljs-comment">//affiche "Hello world!"</span>
+<span class="hljs-variable">$f</span>.<span class="hljs-function">message</span>() <span class="hljs-comment">//affiche "Hello world!"</span>
 </code></pre>
 <p>Pour accéder à un élément de collection, vous devez passer le numéro de l'élément situé entre crochets :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_COLLECTION</span>(myColl)
@@ -247,7 +248,7 @@ Class constructor</span>
 <li>Dans l’éditeur d’états semi-automatiques en tant que formule dans une colonne</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="types-dexpressions"></a><a href="#types-dexpressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types d’expressions</h3>
-<p>Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Le tableau suivant fournit des exemples de chaque type d'expression.</p>
+<p>Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant fournit des exemples de chaque type d'expression.</p>
 <table>
 <thead>
 <tr><th>Expression</th><th>Type</th><th>Description</th></tr>
