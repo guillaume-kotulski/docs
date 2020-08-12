@@ -165,8 +165,8 @@ Ce dossier contient des **fichiers de propriétés utilisateur pour fichier de d
 | Contenu             | Description                                                                                                                                                                                                                                                                                    | Format |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | Backup.4DSettings   | Paramètres de sauvegarde de la base de données, utilisés pour définir les [options de sauvegarde](Backup/settings.md)) lorsque la base est lancée avec ce fichier de données. Les clés concernant la configuration de la sauvegarde sont décrites dans le manuel *Sauvegarde des clés XML 4D*. | XML    |
-| settings.4DSettings | Propriétés de la base personnalisée pour ce fichier de données                                                                                                                                                                                                                                 | XML    |
-| directory.json      | Description of 4D groups, users, and their access rights when the database is run with this data file.                                                                                                                                                                                         | JSON   |
+| settings.4DSettings | Propriétés personnalisées de la base pour ce fichier de données                                                                                                                                                                                                                                | XML    |
+| directory.json      | Description des groupes et utilisateurs 4D et leurs droits d'accès lorsque la base est lancée avec un fichier de données.                                                                                                                                                                      | JSON   |
 
 
 
@@ -186,7 +186,7 @@ Le dossier Logs contient tous les fichiers journaux utilisés par le projet. Les
 
 Ce dossier contient des **fichiers de propriétés utilisateur** utilisés pour l'administration de la base de données. Les fichiers sont ajoutés au dossier si nécessaire.
 
-> If a data settings file exists in a Settings folder [in the data folder](#settings-folder), it takes priority over user settings file.
+> Si un fichier de propriétés de données existe dans un dossier Settings du [dossier Data](#settings-folder), il est prioritaire sur le fichier de propriétés utilisateur.
 
 | Contenu             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        | Format |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
