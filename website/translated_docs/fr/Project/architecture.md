@@ -3,9 +3,9 @@ id: architecture
 title: Architecture of a project
 ---
 
-A 4D project is made of several folders and files, stored within a single parent database folder (package folder). Par exemple:
+Un projet 4D est constitué de plusieurs fichiers et dossiers, stockés dans un seul dossier parent de la base (dossier package). Par exemple:
 
-- MyProject
+- MonProjet
     - Composants
     - Données
         - Logs
@@ -55,7 +55,7 @@ Le fichier de développement de projet, utilisé pour désigner et lancer le pro
 | Contenu                 | Description                                                                                                                                                                                                                                    | Format |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | catalog.4DCatalog       | Définit des tables et des champs                                                                                                                                                                                                               | XML    |
-| folders.json            | Explorer folder definitions                                                                                                                                                                                                                    | JSON   |
+| folders.json            | Définitions des dossiers de l'Explorateur                                                                                                                                                                                                      | JSON   |
 | menus.json              | Définit les menus                                                                                                                                                                                                                              | JSON   |
 | settings.4DSettings     | Propriétés de la base *Structure*. Si les *propriétés utilisateur* sont définis, ils auront la priorité sur ces propriétés. Si les *propriétés utilisateur pour fichier de données* sont définies, elles auront la priorité sur ces propriétés | XML    |
 | tips.json               | Définit les messages d'aide                                                                                                                                                                                                                    | JSON   |
@@ -80,9 +80,9 @@ Le fichier de développement de projet, utilisé pour désigner et lancer le pro
 
 #### Dossier Classes
 
-| Contenu         | Description                                                                                                                        | Format |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| *className*.4dm | User class definition method, allowing to instantiate specific objects. One file per class, the name of the file is the class name | Texte  |
+| Contenu         | Description                                                                                                                                                   | Format |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| *className*.4dm | Méthode de définition de classe utilisateur, permettant d'instancier des objets spécifiques. Un fichier par classe, le nom du fichier est le nom de la classe | Texte  |
 
 
 #### Dossier Forms
