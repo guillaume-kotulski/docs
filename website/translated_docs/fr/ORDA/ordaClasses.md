@@ -1,12 +1,11 @@
 ---
 id: ordaClasses
-title: Classes ORDA du modèle de données
+title: Classes du modèle de données
 ---
 
 ## Fonction d'aperçu
 
 > Les fonctions de classe ORDA du modèle de données sont fournies en tant que **fonctionnalité de prévisualisation** dans 4D v18 R4 : toutes les fonctions que vous créez sont exposées sans restrictions. Les futures versions octroieront plus de contrôle sur les fonctions, en particulier à partir des requêtes REST. Dans la prochaine version, **par défaut, toutes les fonctions de classe de votre modèle de données seront définies comme privées**. Vous devrez spécifier individuellement chaque fonction que vous souhaitez exposer.
-
 
 ## Aperçu
 
@@ -36,7 +35,6 @@ Grâce à cette fonctionnalité, toute la logique métier de votre application 4
 
 
 De plus, 4D Developer [crée préalablement et automatiquement](#creating-classes) les classes pour chaque objet de modèle de données disponible.
-
 
 ## Architecture
 
@@ -248,7 +246,7 @@ Lors de la création ou de la modification de classes de modèles de données, v
 
 - Lors de la définition d'une classe, assurez-vous que l'instruction [`Class extends`](Concepts/classes.md#class-extends-classnameclass) correspond exactement au nom de la classe parente (sensible à la casse). Par exemple, `Class extends EntitySelection` pour une classe de sélection d'entité.
 
-- Vous ne pouvez pas instancier un objet de classe de modèle de données avec le mot clé `new()` (une erreur est retournée). Vous devez utiliser une [méthode d'instanciation](#architecture) usuelle.
+- Vous ne pouvez pas instancier un objet de classe de modèle de données avec le mot clé `new()` (une erreur est retournée). You must use a regular method as listed in the [`Instantiated by` column of the ORDA class table](#architecture).
 
 - Vous ne pouvez pas remplacer une méthode de classe ORDA native du [class store](Concepts/classes.md#class-stores) **`4D`** par une fonction de classe utilisateur de modèle de données.
 
@@ -290,7 +288,7 @@ Pour ouvrir une classe ORDA définie dans l'éditeur de méthode 4D, sélectionn
 
 ![](assets/en/ORDA/classORDA4.png)
 
-Pour les classes ORDA basées sur le datastore local (ds), vous pouvez accéder directement au code de la classe depuis la fenêtre de 4D Structure :
+Pour les classes ORDA basées sur le datastore local (`ds`), vous pouvez accéder directement au code de la classe depuis la fenêtre de 4D Structure :
 
 ![](assets/en/ORDA/classORDA5.png)
 
