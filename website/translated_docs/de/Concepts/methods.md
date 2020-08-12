@@ -80,7 +80,7 @@ Sie können Ihre Projektmethoden in **formula** Objekten einkapseln und von Ihre
 
 Mit der Methode `Formula` oder `Formula from string` können Sie native Formelobjekte erstellen, die Sie in Objekteigenschaften einbinden können. So können Sie eigene Objektmethoden einbinden.
 
-To execute a method stored in an object property, use the **( )** operator after the property name. Beispiel:
+Zum Ausführen einer Methode, die in einer Objekteigenschaft gespeichert ist, setzen Sie nach dem Eigenschaftsnamen den Operator **( )**. Beispiel:
 
 ```4d
 //myAlert
@@ -231,12 +231,12 @@ Einige typische Verwendungen für Rekursion in 4D sind:
 - Datensätze in Tabellen bearbeiten, die wie im obigen Beispiel miteinander verknüpft sind.
 - Dokumente und Ordner auf Ihrer Festplatte mit den Befehlen `FOLDER LIST` und `DOCUMENT LIST` durchlaufen. Ein Ordner kann Ordner und Dokumente enthalten, die Unterordner selbst können Ordner und Dokumente enthalten, usw.
 
-**Important:** Recursive calls should always end at some point. In the example, the method `Genealogy of` stops calling itself when the query returns no records. Without this condition test, the method would call itself indefinitely; eventually, 4D would return a “Stack Full” error becuase it would no longer have space to “pile up” the calls (as well as parameters and local variables used in the method).
+**Wichtig:** Rekursive Abfragen sollten immer an einem bestimmten Punkt enden. Im Beispiel ruft sich die Methode `Genealogy of` nicht mehr selbst auf, wenn die Suche keinen Datensatz zurückgibt. Ohne Abfragen dieser Bedingung würde sich die Methode endlos aufrufen; 4D gibt dann evtl. eine Fehlermeldung “Speicher voll” zurück, da es keinen Platz mehr hat zum Stapeln der Aufrufe (so wie bei den in der Methode verwendeten Parametern und lokalen Variablen).
 
 
-## Specialized Methods
+## Spezialisierte Methoden
 
-In addition to generic **project methods**, 4D supports several specific method types, that are automatically called depending on events:
+4D unterstützt, zusätzlich zu generischen **Projektmethoden**, verschiedene spezialisierte Methodentypen, die bei bestimmten Ereignissen automatisch aufgerufen werden:
 
 | Typ                              | Calling context                                                                          | Accepts parameters | Beschreibung                                                                                                                                                         |
 | -------------------------------- | ---------------------------------------------------------------------------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
