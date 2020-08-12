@@ -6,7 +6,7 @@ title: Methoden
 
 ## Overview
 
-Eine Methode ist in der Regel ein Stück Code, der eine oder mehrere Aktionen ausführt. Eine Methode besteht aus Anweisungen; jede Anweisung ist eine Zeile in der Methode. A statement performs an action, and may be simple or complex. Although a statement is always one line, that one line can be as long as needed (up to 32,000 characters, which is probably enough for most tasks).
+Eine Methode ist in der Regel ein Stück Code, der eine oder mehrere Aktionen ausführt. Eine Methode besteht aus Anweisungen; jede Anweisung ist eine Zeile in der Methode. Eine Anweisung führt eine Aktion aus, die einfach oder komplex sein kann. Obwohl eine Anweisung immer in einer Zeile steht, kann diese Zeile so lang wie erforderlich sein (bis zu 32.000 Zeichen, was für die meisten Fälle ausreichen dürfte).
 
 The maximum size of a method is limited to 2 GB of text or 32,000 lines of code.
 
@@ -26,30 +26,30 @@ In the 4D Language, there are several categories of methods. The category depend
 > The 4D Language also supports **Class functions**, that can be called in the context of an object instance. Class functions can be built-in (*e.g.* `collection.orderBy()` or `entity.save()`), or [created by the 4D developer](classes.md#class-function).
 
 
-## Calling Project Methods
+## Projektmethoden aufrufen
 
-A project method can have one of the following roles, depending on how it is executed and used:
+Eine Projektmethode kann je nach Ausführung und Verwendung folgende Rolle haben:
 
 - Subroutine
 - Object formula
-- Menu method
-- Process method
-- Event or Error catching method
+- Menümethode
+- Prozessmethode
+- Auf Ereignis oder Fehler bezogene Methode
 
 ### Subroutines
 
-A subroutine is a project method that can be thought of as a servant. It performs those tasks that other methods request it to perform. A function is a subroutine that returns a value to the method that called it.
+Eine Unterroutine ist eine Projektmethode, die man sich als Diener vorstellen kann. Sie führt die Aufgaben (tasks) aus, deren Durchführung andere Methoden anfordern. Eine Funktion ist eine Unterroutine, die einen Wert an die Methode zurückgibt, die sie aufgerufen hat.
 
-When you create a project method, it becomes part of the language of the project in which you create it. You can then call the project method from another method (project method, object method...) in the same way that you call 4D’s built-in commands. A project method used in this way is called a subroutine.
+When you create a project method, it becomes part of the language of the project in which you create it. You can then call the project method from another method (project method, object method...) in the same way that you call 4D’s built-in commands. Eine so verwendete Projektmethode heißt Unterroutine.
 
-You use subroutines to:
+Sie verwenden Unterroutinen, um:
 
-- Reduce repetitive coding
-- Clarify your methods
-- Facilitate changes to your methods
-- Modularize your code
+- Sich wiederholendes Programmieren zu reduzieren
+- Ihre Methoden klarer zu gliedern
+- Ihre Methoden schneller zu ändern
+- Ihren Code modular aufzuteilen
 
-For example, let’s say you have a project of customers. As you customize the project, you find that there are some tasks that you perform repeatedly, such as finding a customer and modifying his or her record. The code to do this might look like this:
+For example, let’s say you have a project of customers. As you customize the project, you find that there are some tasks that you perform repeatedly, such as finding a customer and modifying his or her record. Der Code dafür könnte folgendermaßen aussehen:
 
 ```4d
   // Look for a customer
@@ -60,20 +60,20 @@ For example, let’s say you have a project of customers. As you customize the p
  MODIFY RECORD([Customers])
 ```
 
-If you do not use subroutines, you will have to write the code each time you want to modify a customer’s record. If there are ten places in your project where you need to do this, you will have to write the code ten times. If you use subroutines, you will only have to write it once. This is the first advantage of subroutines—to reduce the amount of code.
+Arbeiten Sie ohne Unterroutinen, müssen Sie den Code jedes Mal schreiben, wenn Sie einen Kundendatensatz ändern wollen. If there are ten places in your project where you need to do this, you will have to write the code ten times. Mit Unterroutinen schreiben Sie den Code nur einmal. Das ist der erste Vorteil von Unterroutinen - die Menge an Code reduzieren.
 
-If the previously described code was a method called `MODIFY_CUSTOMER`, you would execute it simply by using the name of the method in another method. For example, to modify a customer’s record and then print the record, you would write this method:
+If the previously described code was a method called `MODIFY_CUSTOMER`, you would execute it simply by using the name of the method in another method. Wollen Sie beispielsweise einen Kundendatensatz ändern und dann den Datensatz drucken, schreiben Sie folgende Methode:
 
 ```4d
  MODIFY_CUSTOMER
  PRINT SELECTION([Customers])
 ```
 
-This capability simplifies your methods dramatically. In the example, you do not need to know how the `MODIFY_CUSTOMER` method works, just what it does. This is the second reason for using subroutines—to clarify your methods. In this way, your methods become extensions to the 4D language.
+Das vereinfacht Ihre Methode drastisch. In the example, you do not need to know how the `MODIFY_CUSTOMER` method works, just what it does. Dies ist der zweite Vorteil von Unterroutinen - Ihre Methoden klarer gliedern. Sie erweitern sozusagen die 4D Programmiersprache.
 
-If you need to change your method of finding customers in this example project, you will need to change only one method, not ten. This is the next reason to use subroutines—to facilitate changes to your methods.
+If you need to change your method of finding customers in this example project, you will need to change only one method, not ten. Ein weiterer Vorteil von Unterroutinen - Methoden lassen sich schnell ändern.
 
-Using subroutines, you make your code modular. This simply means dividing your code into modules (subroutines), each of which performs a logical task. Consider the following code from a checking account project:
+Mit Unterroutinen machen Sie Ihren Code modular. Das bedeutet, Sie unterteilen Ihren Code in Module (Unterroutinen), die jeweils einen logischen Vorgang (task) ausführen. Consider the following code from a checking account project:
 
 ```4d
  FIND_CLEARED_CHECKS //Find the cleared checks
@@ -81,14 +81,14 @@ Using subroutines, you make your code modular. This simply means dividing your c
  PRINT_CHECK_BOOK_REPORT //Print a checkbook report
 ```
 
-Even for someone who doesn’t know the project, it is clear what this code does. It is not necessary to examine each subroutine. Each subroutine might be many lines long and perform some complex operations, but here it is only important that it performs its task. We recommend that you divide your code into logical tasks, or modules, whenever possible.
+Even for someone who doesn’t know the project, it is clear what this code does. Er muss nicht jede Unterroutine untersuchen, die evtl. aus vielen Zeilen besteht und komplexe Operationen ausführt. Wichtig ist, dass die Tasks ausgeführt werden. Wir empfehlen, den Code möglichst in logische Vorgänge oder Module aufzuteilen.
 
 
 ### Object formulas
 
 You can encapsulate your project methods in **formula** objects and call them from your objects.
 
-The `Formula` or `Formula from string` commands allow you to create native formula objects that you can encapsulate in object properties. It allows you to implement custom object methods.
+Mit der Methode `Formula` oder `Formula from string` können Sie native Formelobjekte erstellen, die Sie in Objekteigenschaften einbinden können. It allows you to implement custom object methods.
 
 To execute a method stored in an object property, use the **( )** operator after the property name. Beispiel:
 
