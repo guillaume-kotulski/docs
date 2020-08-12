@@ -17,7 +17,7 @@ Other than memory, there is no limit to the number of components and thus, of we
 
 Each 4D web server, including the main database's web server, is exposed as a specific **object**. Once instantiated, a web server object can be handled from the current database or from any component.
 
-> The legacy [WEB commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) of the 4D language are supported but cannot control the web server to which they apply (see below).
+> Les [commandes WEB](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) héritées du langage 4D sont prises en charge mais ne peuvent pas contrôler le serveur Web auquel elles s'appliquent (voir ci-dessous).
 
 Each web server (host database or component) can be used in its own separate context, including:
 - `On Web Authentication` and `On Web Connection` database method calls
