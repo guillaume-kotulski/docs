@@ -75,7 +75,7 @@
 <li>Les commandes issues de plug-ins ou de composants, fournies par 4D ou des développeurs tiers, telles que <code>SVG_New_arc</code>.</li>
 </ul>
 <p>Les méthodes intégrées sont détaillées dans le manuel <em>4D Langage</em> ou dans les manuels consacrés aux plug-ins et aux composants.</p></li>
-<li><p>Les <strong>méthodes projets</strong>, dans lesquelles vous pouvez écrire votre propre code pour exécuter des actions personnalisées. Une fois que votre méthode projet est créée, elle devient partie intégrante du langage de la base dans laquelle elle a été créée. Une méthode projet est composée de plusieurs lignes d’instructions. Une ligne d’instructions effectue une action. Cette ligne d’instruction peut être simple ou complexe. Cette ligne peut être aussi longue que vous voulez (elle peut comporter jusqu’à 32 000 caractères, ce qui est normalement suffisant pour la plupart des instructions). La taille maximale d’une méthode est limitée à 2 Go de texte ou 32 000 lignes d’instructions.</p></li>
+<li><p>Les <strong>méthodes projets</strong>, dans lesquelles vous pouvez écrire votre propre code pour exécuter des actions personnalisées. Une fois que votre méthode projet est créée, elle devient partie intégrante du langage de la base dans laquelle elle a été créée. Une méthode projet est composée de plusieurs lignes d’instructions. Une ligne d’instructions effectue une action. Une ligne d’instructions effectue une action. Cette ligne d’instruction peut être simple ou complexe. Cette ligne peut être aussi longue que vous voulez (elle peut comporter jusqu’à 32 000 caractères, ce qui est normalement suffisant pour la plupart des instructions). La taille maximale d’une méthode est limitée à 2 Go de texte ou 32 000 lignes d’instructions.</p></li>
 </ul>
 <p><strong>Note :</strong> 4D fournit également des méthodes spécifiques exécutées automatiquement en fonction de la base ou des événements formulaires. Voir <a href="#specialized-methods">Méthodes spécialisées</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="méthodes-projet"></a><a href="#méthodes-projet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Méthodes projet</h2>
@@ -177,7 +177,7 @@ PRINT CHECK BOOK REPORT <span class="hljs-comment">// Imprimer un relevé</span>
 <li>Une méthode peut s'appeler elle-même.</li>
 </ul>
 <p>Cela s'appelle la récursivité. Le langage de 4D supporte pleinement la récursivité.</p>
-<p>Examinons l'exemple suivant : vous disposez d'une table <code>[Amis et relations]</code> composée de l'ensemble de champs suivant (très simplifié) :</p>
+<p>Examinons l'exemple suivant : Examinons l'exemple suivant : vous disposez d'une table <code>[Amis et relations]</code> composée de l'ensemble de champs suivant (très simplifié) :</p>
 <ul>
 <li><code>[Amis et parents]Nom</code></li>
 <li><code>[Amis et parents]Enfant'Nom</code></li>
@@ -213,13 +213,15 @@ PRINT CHECK BOOK REPORT <span class="hljs-comment">// Imprimer un relevé</span>
     If</span>(<span class="hljs-function">Records in selection</span>([Amis et parents])&gt;<span class="hljs-number">0</span>)
 <span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Un de mes amis, "</span>+<span class="hljs-function">Généalogie de</span>(<span class="hljs-variable">$vsNom</span>)+<span class="hljs-string">", fait cela pour gagner sa vie !"</span>)<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
+ End if</span><span class="hljs-keyword">
+    End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
 <p>en utilisant la fonction récursive <code>Généalogie de</code> suivante :</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// Méthode projet Généalogie de</span>
   <span class="hljs-comment">// Généalogie de ( Chaîne ) -&gt; Texte</span>
   <span class="hljs-comment">// Généalogie de ( Nom ) -&gt; Partie de la phrase</span>
- 
+
  <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$1</span>
 <span class="hljs-function"> QUERY</span>([Amis et parents];[Amis et parents]Enfant'Nom=<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
 If</span>(<span class="hljs-function">Enregistrements trouves</span>([Amis et parents])&gt;<span class="hljs-number">0</span>)

@@ -100,6 +100,7 @@ End if</span>
 <span class="hljs-function">    QUERY</span>([People];[People]LastName=<span class="hljs-variable">$Find</span>)<span class="hljs-keyword">
  Else</span>
 <span class="hljs-function">    ALERT</span>(<span class="hljs-string">"You did not enter a name."</span>)<span class="hljs-keyword">
+ End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
 <p><strong>Astuce :</strong> Il n'est pas obligatoire que des instructions soient exécutées dans chaque branche de l'alternative. Lorsque vous développez un algorithme, ou lorsque vous poursuivez un but précis, rien ne vous empêche d'écrire :</p>
@@ -161,7 +162,8 @@ End if</span>
     :(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">//Tester si le chiffre est 3</span>
 <span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Three."</span>) <span class="hljs-comment">//Si le chiffre est 3, afficher une alerte</span><span class="hljs-keyword">
     Else</span> <span class="hljs-comment">//Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte</span>
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)<span class="hljs-keyword">
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)
+ <span class="hljs-comment">//déclaration(s)</span><span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>A titre de comparaison, voici la version avec <code>If...Else...End if</code> de la même méthode :</p>
@@ -182,25 +184,37 @@ End if</span>
 <p>Rappelez-vous qu’avec une structure de type <code>Case of...Else...End case</code>, seul le premier cas TRUE rencontré est exécuté. Même si d’autres cas sont TRUE, seules les instructions suivant le premier cas TRUE seront prises en compte.</p>
 <p>Par conséquent, lorsque vous testez dans la même méthode des cas simples et des cas complexes, vous devez placer les cas complexes avant les cas simples, sinon ils ne seront jamais exécutés. Par exemple, si vous souhaitez traiter le cas simple (vResult=1) et le cas complexe (vResult=1) &amp; (vCondition#2) et que vous structurez la méthode de la manière suivante :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
-    :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//déclaration(s)</span>
-    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">//ce cas ne sera jamais détecté</span>
-       ... <span class="hljs-comment">//déclaration(s)</span><span class="hljs-keyword">
+    :(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">//Tester si le chiffre est 1</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"One."</span>) <span class="hljs-comment">//Si le chiffre est 1, afficher une alerte</span>
+    :(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">//Tester si le chiffre est 2</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Two."</span>) <span class="hljs-comment">//Si le chiffre est 2, afficher une alerte</span>
+    :(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">//Tester si le chiffre est 3</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Three."</span>) <span class="hljs-comment">//Si le chiffre est 3, afficher une alerte</span><span class="hljs-keyword">
+    Else</span> <span class="hljs-comment">//Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)<span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>... les instructions associées au cas complexe ne seront jamais exécutées. En effet, pour que ce cas soit TRUE, ses deux conditions booléennes doivent l’être. Or, la première condition est celle du cas simple situé précédemment. Lorsqu'elle est TRUE, le cas simple est exécuté et 4D sort de la structure conditionnelle, sans évaluer le cas complexe. Pour que ce type de méthode fonctionne, vous devez écrire :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
-    :((vResult=<span class="hljs-number">1</span>) &amp; (vCondition#<span class="hljs-number">2</span>)) <span class="hljs-comment">//ce cas sera détecté en premier</span>
-       ... <span class="hljs-comment">//déclaration(s)</span>
-    :(vResult=<span class="hljs-number">1</span>)
-       ... <span class="hljs-comment">//déclaration(s)</span><span class="hljs-keyword">
- End case</span>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(vResult=<span class="hljs-number">1</span>) <span class="hljs-comment">//Tester si le chiffre est 1</span>
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"One."</span>) <span class="hljs-comment">//Si le chiffre est 1, afficher une alerte</span><span class="hljs-keyword">
+ Else</span><span class="hljs-keyword">
+    If</span>(vResult=<span class="hljs-number">2</span>) <span class="hljs-comment">//Tester si le chiffre est 2</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Two."</span>) <span class="hljs-comment">//Si le chiffre est 2, afficher une alerte</span><span class="hljs-keyword">
+    Else</span><span class="hljs-keyword">
+    If</span>(vResult=<span class="hljs-number">3</span>) <span class="hljs-comment">//Tester si le chiffre est 3</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Three."</span>) <span class="hljs-comment">//Si le chiffre est 3, afficher une alerte</span><span class="hljs-keyword">
+    Else</span> <span class="hljs-comment">//Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte</span>
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"It was not one, two, or three."</span>)<span class="hljs-keyword">
+       End if</span><span class="hljs-keyword">
+    End if</span><span class="hljs-keyword">
+ End if</span>
 </code></pre>
 <p><strong>Astuce :</strong> Il n'est pas obligatoire que des instructions soient exécutées dans toutes les alternatives. Lorsque vous développez un algorithme, ou lorsque vous poursuivez un but précis, rien ne vous empêche d'écrire :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Expression_booléenne)
     :(Expression_booléenne)
-      ...
+<span class="hljs-function">        instruction</span>(s)
+       ...
 
     :(Expression_booléenne)
 <span class="hljs-function">       instruction</span>(s)<span class="hljs-keyword">
@@ -212,12 +226,12 @@ End if</span>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Expression_booléenne)
     :(Expression_booléenne)
-<span class="hljs-function">        instruction</span>(s)
-       ...
+      ...
 
     :(Expression_booléenne)
-<span class="hljs-function">        instruction</span>(s)<span class="hljs-keyword">
-    Else</span><span class="hljs-keyword">
+<span class="hljs-function">       instruction</span>(s)<span class="hljs-keyword">
+    Else</span>
+<span class="hljs-function">       instruction</span>(s)<span class="hljs-keyword">
  End case</span>
 </code></pre>
 <p>ou :</p>

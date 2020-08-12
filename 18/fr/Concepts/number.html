@@ -150,14 +150,14 @@
 <tr><th>Opération</th><th>Opérateur</th><th>Syntaxe</th><th>Retourne</th></tr>
 </thead>
 <tbody>
-<tr><td>ET</td><td>&amp;</td><td>E. long &amp; E. long</td><td>E. long</td></tr>
-<tr><td>OU (inclusif)</td><td>|</td><td>E. long | E. long</td><td>E. long</td></tr>
-<tr><td>OU (exclusif)</td><td>^|</td><td>E. long ^| E. long</td><td>E. long</td></tr>
-<tr><td>Décaler bits à gauche</td><td>&lt;&lt;</td><td>E. Long &lt;&lt; E. Long</td><td>E. long (voir note n°1)</td></tr>
-<tr><td>Décaler bits à droite</td><td>&gt;&gt;</td><td>E. Long &gt;&gt; E. Long</td><td>E. long (voir note n°1)</td></tr>
-<tr><td>Mettre bit à 1</td><td>?+</td><td>E. long ?+ E. long</td><td>E. long (voir note n°2)</td></tr>
-<tr><td>Mettre bit à 0</td><td>?-</td><td>E. long ?- E. long</td><td>E. long (voir note n°2)</td></tr>
-<tr><td>Tester bit</td><td>??</td><td>E. long ?? E. long</td><td>Booléen (voir note n°2)</td></tr>
+<tr><td>ET</td><td>&amp;</td><td>long &amp; E. long</td><td>E. long</td></tr>
+<tr><td>OU (inclusif)</td><td>|</td><td>long | E. long</td><td>E. long</td></tr>
+<tr><td>OU (exclusif)</td><td>^|</td><td>long ^| E. long</td><td>E. long</td></tr>
+<tr><td>Décaler bits à gauche</td><td>&lt;&lt;</td><td>E. Long &lt;&lt; E. Long</td><td>long (voir note n°1)</td></tr>
+<tr><td>Décaler bits à droite</td><td>&gt;&gt;</td><td>E. Long &gt;&gt; E. Long</td><td>long (voir note n°1)</td></tr>
+<tr><td>Mettre bit à 1</td><td>?+</td><td>long ?+ E. long</td><td>long (voir note n°2)</td></tr>
+<tr><td>Mettre bit à 0</td><td>?-</td><td>long ??</td><td>long (voir note n°2)</td></tr>
+<tr><td>Tester bit</td><td>??</td><td>E. E. long</td><td>Booléen (voir note n°2)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="notes"></a><a href="#notes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notes</h4>
@@ -189,7 +189,7 @@
 <tbody>
 <tr><td>ET</td><td>0x0000FFFF &amp; 0xFF00FF00</td><td>0x0000FF00</td></tr>
 <tr><td>OU (inclusif)</td><td>0x0000FFFF | 0xFF00FF00</td><td>0xFF00FFFF</td></tr>
-<tr><td>OU (exclusif)</td><td>0x0000FFFF ^| 0xFF00FF00  0xFF0000FF</td><td></td></tr>
+<tr><td>OU (exclusif)</td><td>0x0000FFFF ^| 0xFF00FF00</td><td>0xFF0000FF</td></tr>
 <tr><td>Décaler bits à gauche</td><td>0x0000FFFF &lt;&lt; 8</td><td>0x00FFFF00</td></tr>
 <tr><td>Décaler bits à droite</td><td>0x0000FFFF &gt;&gt; 8</td><td>0x000000FF</td></tr>
 <tr><td>Mettre bit à 1</td><td>0x00000000 ?+ 16</td><td>0x00010000</td></tr>
