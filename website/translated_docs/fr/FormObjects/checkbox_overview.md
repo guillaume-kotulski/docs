@@ -376,8 +376,8 @@ In macOS and Windows, a check box with the "Disclosure" button style appears as 
 
 The Custom button style accepts a personalized background picture and allows managing specific properties:
 
--  [Background pathname](properties_TextAndPicture.md#backgroundPathname)
-- [Icon Offset](properties_TextAndPicture.md#icon-offset)
+-  [Chemin d'accès arrière-plan](properties_TextAndPicture.md#backgroundPathname)
+- [Décalage icône](properties_TextAndPicture.md#icon-offset)
 - [Marge horizontale](properties_TextAndPicture.md#horizontalMargin) and [Marge verticale](properties_TextAndPicture.md#verticalMargin)
 
 Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states), qui peut être utilisée conjointement avec une </a>image d'arrière-plan</a> [à 4 états](properties_TextAndPicture.md#number-of-states).
