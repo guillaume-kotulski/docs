@@ -90,7 +90,7 @@
         "title": "インタープリターモードとコンパイル済みモード"
       },
       "Concepts/methods": {
-        "title": "メソッド"
+        "title": "Methods"
       },
       "Concepts/parameters": {
         "title": "引数"
@@ -680,7 +680,7 @@
       "Getting Started": "はじめに",
       "4D Language Concepts": "ランゲージのコンセプト",
       "Project Databases": "プロジェクトデータベース",
-      "Forms": "フォーム",
+      "Forms": "Forms",
       "Form Properties": "Form Properties",
       "Form Objects": "フォームオブジェクト",
       "Form Object Properties": "Form Object Properties",
@@ -697,7 +697,7 @@
     "Installation and activation|in index page Getting started": "インストールとアクティベーション",
     "Language Concepts|in index page Getting started": "ランゲージのコンセプト",
     "Project databases|in index page Getting started": "プロジェクトデータベース",
-    "Forms|no description given": "フォーム",
+    "Forms|no description given": "Forms",
     "Form Properties|no description given": "Form Properties",
     "Form Events|no description given": "Form Events",
     "Form Objects|no description given": "フォームオブジェクト",
