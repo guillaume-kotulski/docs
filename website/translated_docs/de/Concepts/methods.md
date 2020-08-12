@@ -86,9 +86,9 @@ Even for someone who doesn’t know the project, it is clear what this code does
 
 ### Object formulas
 
-You can encapsulate your project methods in **formula** objects and call them from your objects.
+Sie können Ihre Projektmethoden in **formula** Objekten einkapseln und von Ihren Objekten aus aufrufen.
 
-Mit der Methode `Formula` oder `Formula from string` können Sie native Formelobjekte erstellen, die Sie in Objekteigenschaften einbinden können. It allows you to implement custom object methods.
+Mit der Methode `Formula` oder `Formula from string` können Sie native Formelobjekte erstellen, die Sie in Objekteigenschaften einbinden können. So können Sie eigene Objektmethoden einbinden.
 
 To execute a method stored in an object property, use the **( )** operator after the property name. Beispiel:
 
@@ -97,7 +97,7 @@ To execute a method stored in an object property, use the **( )** operator after
 ALERT("Hello world!")
 ```
 
-Then `myAlert` can be encapsulated in any object and called:
+Dann lässt sich `myAlert` in jedes Objekt einbinden und aufrufen:
 
 ```4d
 C_OBJECT($o)
@@ -105,13 +105,13 @@ $o:=New object("custom_Alert";Formula(myAlert))
 $o.custom_Alert() //displays "Hello world!"
 ```
 
-Syntax with brackets is also supported:
+Die Syntax mit Klammern wird auch unterstützt:
 
 ```4d
 $o["custom_Alert"]() //displays "Hello world!"
 ```
 
-You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… just like with 4D project methods:
+Sie können auch [Parameter](Concepts/parameters.md) in Ihrer Formel übergeben, wenn Sie diese, wie in 4D Projektmethoden, mit $1, $2… aufrufen:
 
 ```4d
 //fullName method
@@ -119,7 +119,7 @@ C_TEXT($0;$1;$2)
 $0:=$1+" "+$2
 ```
 
-You can encapsulate `fullName` in an object:
+Sie können `fullName` in ein Objekt einbinden:
 
 ```4d
 C_OBJECT($o)
@@ -129,7 +129,7 @@ $result:=$o.full_name("John";"Smith")
 // equivalent to $result:=fullName("param1";"param2")
 ```
 
-Combined with the `This`function, such object methods allow writing powerful generic code. Beispiel:
+In Kombination mit der Funktion `This` können Sie mit solchen Objektmethoden leistungsstarken generischen Code schreiben. Beispiel:
 
 ```4d
 //fullName2 method
@@ -137,7 +137,7 @@ C_TEXT($0)
 $0:=This.firstName+" "+This.lastName
 ```
 
-Then the method acts like a new, calculated attribute that can be added to other attributes:
+Die Methode arbeitet dann wie ein neues berechnetes Attribut, dass sich in andere Attribute einfügen lässt:
 
 ```4d
 C_OBJECT($o)
@@ -150,39 +150,39 @@ $result:=$o.fullName()
 
 
 
-Note that, even if it does not have parameters, an object method to be executed must be called with ( ) parenthesis. Calling only the object property will return a new reference to the formula (and will not execute it):
+Beachten Sie, dass eine objektgebundene Methode, selbst wenn sie keine Parameter hat, zum Ausführen mit Klammern ( ) aufgerufen werden muss. Sonst wird nur die Objekteigenschaft aufgerufen und sie gibt eine neue Referenz zur Formel zurück (und führt sie nicht aus):
 
 ```4d
 $o:=$f.message //returns the formula object in $o
 ```
 
-### Menu Methods
-A menu method is invoked when you select the custom menu command to which it is attached. You assign the method to the menu command using the Menu editor or a command of the "Menus" theme. The method executes when the menu command is chosen. By creating custom menus with menu methods that perform specific actions, you create custom interfaces for your desktop applications.
+### Menümethode
+Eine Menümethode wird in der Anwendungsumgebung aufgerufen, wenn Sie den dazugehörigen eigenen Menübefehl auswählen. Sie weisen die Methode dem Menübefehl im Methodeneditor zu oder über einen Befehl aus dem Kapitel "Menüs". Die Methoden wird ausgeführt, wenn der Menübefehl ausgewählt wird. By creating custom menus with menu methods that perform specific actions, you create custom interfaces for your desktop applications.
 
-Custom menu commands can cause one or more activities to take place. For example, a menu command for entering records might call a method that performs two tasks: displaying the appropriate input form, and calling the `ADD RECORD` command until the user cancels the data entry activity.
+Mit eigenen Menübefehlen können eine oder mehrere Aktivitäten ausgelöst werden. Ein Menübefehl für die Eingabe von Datensätzen kann beispielsweise zwei Tasks ausführen: Das entsprechende Eingabeformular anzeigen und den Befehl `ADD RECORD` aufrufen, bis der Benutzer die Eingabe von Daten beendet.
 
-Automating sequences of activities is a very powerful capability of the programming language. Using custom menus, you can automate task sequences and thus provide more guidance to users of the application.
+Das automatisierte Ablaufen mehrerer Aktivitäten ist eine Leistungsstärke der Programmiersprache. Using custom menus, you can automate task sequences and thus provide more guidance to users of the application.
 
 
-### Process Methods
+### Prozessmethode
 
-A **process method** is a project method that is called when a process is started. The process lasts only as long as the process method continues to execute, except if it is a Worker process. Note that a menu method attached to a menu command with *Start a New Process* property is also the process method for the newly started process.
+Eine **Prozessmethode** wird aufgerufen, wenn ein Prozess startet. Der Prozess dauert nur solange, wie die Prozessmethode ausgeführt wird, außer es ist ein Worker Prozess. Beachten Sie, dass eine Menümethode, die einem Menübefehl mit der Eigenschaft* Starte neuen Prozess* zugeordnet ist, gleichzeitig die Prozessmethode für den neu gestarteten Prozess ist.
 
-### Event and Error catching Methods
-An **event catching method** runs in a separate process as the process method for catching events. Usually, you let 4D do most of the event handling for you. For example, during data entry, 4D detects keystrokes and clicks, then calls the correct object and form methods so you can respond appropriately to the events from within these methods. For more information, see the description of the command `ON EVENT CALL`.
+### Auf Ereignis oder Fehler bezogene Methode
+Eine **ereignisbezogene Methode** läuft in einem eigenen Prozess, wie eine Prozessmethode, die Ereignisse abfängt. Normalerweise verwaltet 4D die meisten Ereignisse automatisch für Sie. Beispielsweise bei der Dateneingabe nimmt 4D Tastaturkürzel und Klicks wahr, ruft die entsprechenden Objekt- und Formularmethoden auf, so dass Sie von diesen Methoden aus auf die Ereignisse entsprechend antworten können. Weitere Informationen dazu finden Sie unter dem Befehl `ON EVENT CALL`.
 
-An **error catching method** is an interrupt-based project method. Each time an error or an exception occurs, it executes within the process in which it was installed. For more information, see the description of the command `ON ERR CALL`.
+Eine **fehlerbezogene Methode** ist eine unterbrechende Projektmethode. Immer wenn ein Fehler oder eine Ausnahme auftreten, läuft diese Methode in dem Prozess ab, in welchem sie installiert ist. Weitere Informationen dazu finden Sie unter dem Befehl `ON ERR CALL`.
 
-## Recursive Project Methods
+## Rekursive Projektmethoden
 
-Project methods can call themselves. Beispiel:
+Projektmethoden können sich auch selbst aufrufen. Beispiel:
 
-- The method A may call the method B which may call A, so A will call B again and so on.
-- A method can call itself.
+- Die Methode A ruft die Methode B auf, die A aufruft, so ruft A wieder B auf, usw.
+- Eine Methode kann sich selbst aufrufen.
 
-This is called recursion. The 4D language fully supports recursion.
+Das nennt man Rekursion. Die 4D Programmiersprache unterstützt Rekursivität.
 
-Here is an example. Let’s say you have a `[Friends and Relatives]` table composed of this extremely simplified set of fields:
+Hier ein Beispiel. Wir haben eine Tabelle `[Friends and Relatives]`, die extrem vereinfacht, so aussieht:
 - `[Friends and Relatives]Name`
 - `[Friends and Relatives]ChildrensName`
 
