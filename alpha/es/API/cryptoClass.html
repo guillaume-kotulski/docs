@@ -76,7 +76,7 @@
 <tr><th>Property</th><th>Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>type</td><td>text</td><td>Name of the key type. For example: &quot;ECDSA&quot; or &quot;RSA&quot;.</td></tr>
+<tr><td>type</td><td>text</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot; (see below)</td></tr>
 <tr><td>size</td><td>integer</td><td>Defined only for RSA keys: the size of the key in bits. Typically 2048</td></tr>
 <tr><td>curve</td><td>text</td><td>Defined only for ECDSA keys: the normalised curve name of the key. For example: &quot;prime256v1&quot;, &quot;secp384r1&quot; or &quot;secp521r1&quot;</td></tr>
 </tbody>
@@ -112,7 +112,7 @@
 </thead>
 <tbody>
 <tr><td>settings</td><td></td><td>object</td><td>-&gt;</td><td>Settings to generate or load a key pair</td></tr>
-<tr><td></td><td>type</td><td>text</td><td></td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot; (see below)</td></tr>
+<tr><td></td><td>type</td><td>text</td><td></td><td>Name of the key type. For example: &quot;ECDSA&quot; or &quot;RSA&quot;.</td></tr>
 <tr><td></td><td>size</td><td>integer</td><td></td><td>Size of RSA key in bits. 2048 by default</td></tr>
 <tr><td></td><td>curve</td><td>text</td><td></td><td>name of ECDSA curve. Usually &quot;prime256v1&quot; for ES256 (default), &quot;secp384r1&quot; for ES384, &quot;secp521r1&quot; for ES512</td></tr>
 <tr><td></td><td>pem</td><td>text</td><td></td><td>PEM definition of an encryption key to load. If the key is a private key, the RSA or ECDSA public key will be deduced from it.</td></tr>
@@ -191,9 +191,9 @@
 <tbody>
 <tr><td>message</td><td></td><td>text</td><td>-&gt;</td><td>Message string to sign</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Signing options</td></tr>
-<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
+<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
 <tr><td></td><td>pss</td><td>boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
-<tr><td></td><td>encoding</td><td>text</td><td></td><td>Representation to be used for result signature. Possible values: &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td></td><td>encoding</td><td>text</td><td></td><td>Representation of provided signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>signature</td><td></td><td>text</td><td>&lt;-</td><td>Resulting signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
 </tbody>
@@ -220,9 +220,9 @@
 <tr><td>message</td><td></td><td>text</td><td>-&gt;</td><td>Message string that was used to produce the signature</td></tr>
 <tr><td>signature</td><td></td><td>text</td><td>-&gt;</td><td>Signature to verify, in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Signing options</td></tr>
-<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
+<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
 <tr><td></td><td>pss</td><td>boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
-<tr><td></td><td>encoding</td><td>text</td><td></td><td>Representation of provided signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td></td><td>encoding</td><td>text</td><td></td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to decrypt. Can be &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>Result of the verification</td></tr>
 <tr><td></td><td>success</td><td>boolean</td><td></td><td>True if the signature matches the message</td></tr>
@@ -252,7 +252,7 @@
 <tbody>
 <tr><td>message</td><td></td><td>text</td><td>-&gt;</td><td>Message string to be encoded using options.encodingDecrypted and encrypted.</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Encoding options</td></tr>
-<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
+<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example:</td></tr>
 <tr><td></td><td>encodingEncrypted</td><td>text</td><td></td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td>encodingDecrypted</td><td>text</td><td></td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to encrypt. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
@@ -280,8 +280,8 @@
 <tbody>
 <tr><td>message</td><td></td><td>text</td><td>-&gt;</td><td>Message string to be decoded using options.encodingEncrypted and decrypted.</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Decoding options</td></tr>
-<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example: &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
-<tr><td></td><td>encodingEncrypted</td><td>text</td><td></td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to decrypt. Can be &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td></td><td>hash</td><td>text</td><td></td><td>Digest algorithm to use. For example:</td></tr>
+<tr><td></td><td>encodingEncrypted</td><td>text</td><td></td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td>encodingDecrypted</td><td>text</td><td></td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>Result</td></tr>

@@ -77,7 +77,7 @@
 </thead>
 <tbody>
 <tr><td>type</td><td>テキスト</td><td>キータイプの名称。 例: &quot;ECDSA&quot; または &quot;RSA&quot;。</td></tr>
-<tr><td>size</td><td>整数</td><td>RSA キーのみ: キーのサイズ (ビット単位) 例: 2048</td></tr>
+<tr><td>size</td><td>integer</td><td>RSA キーのみ: キーのサイズ (ビット単位) 例: 2048</td></tr>
 <tr><td>curve</td><td>テキスト</td><td>ECDSA キーのみ: キーの楕円曲線名。 例: &quot;prime256v1&quot;, &quot;secp384r1&quot;, &quot;secp521r1&quot;</td></tr>
 </tbody>
 </table>
@@ -113,7 +113,7 @@
 <tbody>
 <tr><td>settings</td><td></td><td>オブジェクト</td><td>-&gt;</td><td>キーペアを生成・ロードするための設定</td></tr>
 <tr><td></td><td>type</td><td>テキスト</td><td></td><td>キーのタイプ: &quot;RSA&quot;, &quot;ECDSA&quot;, &quot;PEM&quot; (後述参照)</td></tr>
-<tr><td></td><td>size</td><td>整数</td><td></td><td>RSA キーのサイズ (ビット単位)。 デフォルト値: 2048</td></tr>
+<tr><td></td><td>size</td><td>integer</td><td></td><td>RSA キーのサイズ (ビット単位)。 デフォルト値: 2048</td></tr>
 <tr><td></td><td>curve</td><td>テキスト</td><td></td><td>ECDSA 曲線名。 通常、ES256 (デフォルト) の場合は &quot;prime256v1&quot;, ES384 の場合は &quot;secp384r1&quot;, ES512 の場合は &quot;secp521r1&quot;</td></tr>
 <tr><td></td><td>pem</td><td>テキスト</td><td></td><td>ロードする PEM 形式の暗号化キー。 秘密鍵を渡した場合、RSA または ECDSA の公開鍵は秘密鍵から推定されます。</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
