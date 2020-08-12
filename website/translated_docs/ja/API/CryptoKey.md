@@ -54,7 +54,7 @@ ASSERT($status.success)
 |          | type  | text    |    | キーのタイプ: "RSA", "ECDSA", "PEM" (後述参照)                                                          |
 |          | size  | integer |    | RSA キーのサイズ (ビット単位)。 デフォルト値: 2048                                                              |
 |          | curve | text    |    | ECDSA 曲線名。 通常、ES256 (デフォルト) の場合は "prime256v1", ES384 の場合は "secp384r1", ES512 の場合は "secp521r1" |
-|          | pem   | text    |    | ロードする PEM 形式の暗号化キー。 秘密鍵を渡した場合、RSA または ECDSA の公開鍵は秘密鍵から推定されます。                                 |
+|          | pem   | text    |    | ロードする PEM 形式の暗号化キー。 秘密鍵を渡した場合、RSA または ECDSA の公開鍵は秘密鍵から推定されます。                                |
 |          |       |         |    |                                                                                               |
 | keyPair  |       | オブジェクト  | <- | 暗号化キーペアをカプセル化したオブジェクト                                                                         |
 
