@@ -3,7 +3,7 @@ id: variables
 title: Variablen
 ---
 
-Daten in 4D werden auf zwei ganz unterschiedliche Weisen gespeichert. **Fields** store data permanently on disk; **variables** store data temporarily in memory.
+Daten in 4D werden auf zwei ganz unterschiedliche Weisen gespeichert. **Felder** speichern Daten permanent auf der Festplatte, **Variablen** speichern Daten temporär im Speicher.
 
 Beim Einrichten Ihrer 4D Datenbank legen Sie die Namen und Typen Ihrer Datenfelder fest. Variablen sind ganz ähnlich—Sie geben diesen auch Namen und verschiedene Typen (siehe unter [Datentypen](Concepts/data-types.md)).
 
@@ -271,7 +271,7 @@ Hier sehen Sie einige grundlegende Variablendeklarationen:
 
 ## Daten zuweisen
 
-Daten lassen sich in Variablen und Arrays setzen und daraus kopieren. Putting data into a variable is called **assigning the data to the variable** and is done with the assignment operator (:=). Der Zuweisungsoperator wird auch verwendet, um Feldern Daten zuzuweisen.
+Daten lassen sich in Variablen und Arrays setzen und daraus kopieren. Daten in eine Variable setzen heißt, **der Variablen die Daten zuweisen**. Das geschieht über den Zuweisungsoperator (:=). Der Zuweisungsoperator wird auch verwendet, um Feldern Daten zuzuweisen.
 
 Der Zuweisungsoperator ist wesentlich, um eine Variable zu erstellen und Daten in sie einzusetzen. Sie schreiben den Namen der gewünschten Variablen auf die linke Seite des Zuweisungsoperators. Beispiel:
 
@@ -279,17 +279,17 @@ Der Zuweisungsoperator ist wesentlich, um eine Variable zu erstellen und Daten i
 MyNumber:=3
 ```
 
-creates the variable _MyNumber_ and puts the number 3 into it. Existiert MyNumber bereits, wird einfach die Zahl 3 eingesetzt.
+erstellt die Variable _ MyNumber_ und setzt die Zahl 3 ein. Existiert MyNumber bereits, wird einfach die Zahl 3 eingesetzt.
 
 > In der Regel wird davon abgeraten, Variablen [ohne Deklarieren eines Typs](#creating-variables) zu erstellen.
 
-Natürlich wären Variablen nicht sehr hilfreich, wenn Sie keine Daten daraus erhalten könnten. Sie verwenden wieder den Zuweisungsoperator. If you need to put the value of MyNumber in a field called [Products]Size, you would write _MyNumber_ on the right side of the assignment operator:
+Natürlich wären Variablen nicht sehr hilfreich, wenn Sie keine Daten daraus erhalten könnten. Sie verwenden wieder den Zuweisungsoperator. Wollen Sie den Wert von MyNumber z.B. in ein Feld mit Namen [Products]Size setzen, schreiben Sie _ MyNumber_ auf die rechte Seite des Zuweisungsoperators:
 
 ```4d
 [Products]Size:=MyNumber
 ```
 
-In this case, _[Products]Size_ would be equal to 3. Dieses Beispiel ist ganz einfach, aber es zeigt, wie Daten über Programmierung von einer Stelle an eine andere übertragen werden.
+In diesem Fall ist _[Products]Size_ gleich 3. Dieses Beispiel ist ganz einfach, aber es zeigt, wie Daten über Programmierung von einer Stelle an eine andere übertragen werden.
 
 Daten an Elemente eines Array weisen Sie über geschweifte Klammern zu, also {...}:
 
@@ -299,7 +299,7 @@ atNames{1}:="Richard"
 
 ## Lokale, Prozess- und Interprozessvariablen
 
-You can create three types of variables: **local**, **process**, and **interprocess**. Der Unterschied sind die jeweilige Reichweite oder die Objekte, für die sie verfügbar sind.
+Sie können drei Variablentypen erstellen: **lokal**, **Prozess** und **Interprozess**. Der Unterschied sind die jeweilige Reichweite oder die Objekte, für die sie verfügbar sind.
 
 ### Lokale Variable
 
