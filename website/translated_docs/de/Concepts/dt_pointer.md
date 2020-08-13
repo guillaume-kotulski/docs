@@ -198,7 +198,7 @@ Im folgenden werden die einzelnen Zeilen erläutert:
 - $PointerOne:=->$MyVar --> $PointerOne enthält nun den Zeiger auf $MyVar.
 - $PointerTwo:=->$PointerOne --> $PointerTwo (eine neue Variable) enthält einen Zeiger auf $PointerOne, der auf $MyVar zeigt.
 - ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> verweist auf den Inhalt von $PointerOne, der wiederum auf $MyVar verweist. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Beispiel ist also der Variablen $MyVar "Goodbye" zugewiesen.
-- ALERT (($PointerTwo->)->) --> Same thing: $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Fall zeigt die Meldung den Inhalt von $MyVar an.
+- ALERT (($PointerTwo->)->) --> Hier gilt das gleiche: $PointerTwo-> verweist auf den Inhalt von $PointerOne, der wiederum auf  $MyVar verweist. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Fall zeigt die Meldung den Inhalt von $MyVar an.
 
 Die folgende Zeile setzt "Hello" in $MyVar:
 ```4d
@@ -210,4 +210,4 @@ Die folgende Zeile nimmt "Hello" aus $MyVar und setzt es in $NewVar:
 $NewVar:=($PointerTwo->)->
 ```
 
-**Important:** Multiple dereferencing requires parentheses.
+**Wichtig:** Bei mehrfacher Dereferenzierung müssen Sie mit Klammern arbeiten.
