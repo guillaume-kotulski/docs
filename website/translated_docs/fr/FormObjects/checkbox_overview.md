@@ -138,7 +138,7 @@ The Toolbar Button check box button style is primarily intended for integration 
 
 The Toolbar Button check box button style has a transparent background with a title. Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states).
 
-Example with states unchecked / checked / highlighted:
+Exemples avec les états coché / non coché / surligné :
 
 ![](assets/en/FormObjects/checkbox_toolbar.png)
 
@@ -167,7 +167,7 @@ The Bevel check box button style combines the appearance of the [Regular](#regul
 
 The Bevel button style has a light gray background with a title. Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states).
 
-Example with states unchecked / checked / highlighted:
+Exemples avec les états coché / non coché / surligné :
 
 ![](assets/en/FormObjects/checkbox_bevel.png)
 
@@ -288,11 +288,11 @@ The Office XP button style combines the appearance of the [Regular](#regular) bu
 
 The colors (highlight and background) of a check box with the Office XP button style are based on the system colors. The appearance of the check box can be different when the cursor hovers over it, depending on the OS:
 
- - *Sous Windows* - son arrière-plan n'apparaît que lorsque la souris le survole. Example with states unchecked / checked / highlighted:
+ - *Sous Windows* - son arrière-plan n'apparaît que lorsque la souris le survole. Exemples avec les états coché / non coché / surligné :
 
   ![](assets/en/FormObjects/checkbox_officexp.png)
 
- - *Sous macOS* - son arrière-plan est toujours affiché. Example with states unchecked / checked:
+ - *Sous macOS* - son arrière-plan est toujours affiché. Exemples avec les états cochés / non cochés :
 
   ![](assets/en/FormObjects/checkbox_officexp_mac.png)
 
