@@ -215,9 +215,9 @@ DELETE DUPLICATED VALUES
 APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ```
 
-**Tip:** It is a good programming technique to adopt the same naming convention as the one used by 4D for built-in methods. Großschreibung für Prozeduren; Kleinschreibung mit großem Anfangsbuchstaben für Funktionen. Öffnen Sie dann eine Datenbank nach einigen Monaten für eine Wartung, erkennen Sie im Explorer Fenster bereits an der Schreibweise des Namens, ob die Methode ein Ergebnis zurückgibt.
+**Tipp:** Es ist eine gute Programmiertechnik, dieselbe Namenskonvention wie von 4D für integrierte Methoden zu verwenden. Großschreibung für Prozeduren; Kleinschreibung mit großem Anfangsbuchstaben für Funktionen. Öffnen Sie dann eine Datenbank nach einigen Monaten für eine Wartung, erkennen Sie im Explorer Fenster bereits an der Schreibweise des Namens, ob die Methode ein Ergebnis zurückgibt.
 
-**Note:** When you call a method, you just type its name. Einige in 4D integrierte Befehle wie z. B. `ON EVENT CALL`, sowie alle Plug-In Befehle erwarten dagegen den Namen der Methode als String, wenn ein Parameter für die Methode übergeben wurde. Beispiel:
+**Hinweis:** Zum Aufrufen einer Methode tippen Sie einfach ihren Namen ein. Einige in 4D integrierte Befehle wie z. B. `ON EVENT CALL`, sowie alle Plug-In Befehle erwarten dagegen den Namen der Methode als String, wenn ein Parameter für die Methode übergeben wurde. Beispiel:
 
 Beispiele:
 ```4d
@@ -284,7 +284,7 @@ Eine Prozessmenge kennzeichnen Sie durch einen String Ausdruck, der ihren Namen 
 ### Client-Mengen
 Der Name eines Client beginnt mit dem Dollarzeichen ($). Der Name der Client-Menge kann ohne das Dollarzeichen bis zu 255 Zeichen lang sein.
 
-**Note:** Sets are maintained on the Server machine. In bestimmten Fällen, wie mehr Effizienz oder für spezielle Zwecke, benötigen Sie Mengen lokal auf dem Client-Rechner. Dafür verwenden Sie Client-Mengen.
+**Hinweis:** Mengen werden auf dem Server-Rechner gehalten. In bestimmten Fällen, wie mehr Effizienz oder für spezielle Zwecke, benötigen Sie Mengen lokal auf dem Client-Rechner. Dafür verwenden Sie Client-Mengen.
 
 Beispiele:
 ```4d
@@ -371,7 +371,7 @@ Nachfolgende Tabelle zeigt die Übersicht der Namenskonventionen in 4D.
 | Globaler Prozess           | 255        | "*P_INVOICES_MODULE*"    |
 | Semaphore                  | 255        | "mysemaphore"              |
 
-**Note:** If non-Roman characters are used in the names of the identifiers, their maximum length may be smaller.
+**Hinweis:** Bei Verwenden nicht-romanischer Zeichen in Namen kann die max. Länge kürzer sein.
 
 ## Namenskonflikte lösen
 
@@ -386,5 +386,5 @@ Achten Sie darauf, dass die Namen für die verschiedenen Elemente in Ihrer Anwen
 5. Vordefinierte Konstanten
 6. Variablen
 
-Beispiel: In 4D gibt es den Befehl mit Namen `Date`. If you named a method *Date*, 4D would recognize it as the built-in `Date` command, and not as your method. Ihre Methode wird nicht aufgerufen. Haben Sie dagegen ein Datenfeld mit dem Namen “Date” angelegt, versucht 4D, dieses Datenfeld anstatt des Befehls `Date` zu benutzen.
+Beispiel: In 4D gibt es den Befehl mit Namen `Date`. Nennen Sie eine Methode *Date*, wertet 4D diese als den integrierten Befehl `Date` und nicht als Ihre Methode. Ihre Methode wird nicht aufgerufen. Haben Sie dagegen ein Datenfeld mit dem Namen “Date” angelegt, versucht 4D, dieses Datenfeld anstatt des Befehls `Date` zu benutzen.
 
