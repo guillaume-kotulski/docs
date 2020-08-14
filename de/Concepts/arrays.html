@@ -122,6 +122,7 @@
 <p>Jeder Befehl zum Erstellen von Arrays kann ein- oder zweidimensionale Arrays erstellen bzw. in der Größe anpassen. Beispiel:</p>
 <pre><code class="hljs css language-4d">
 
+
 <span class="hljs-function"> ARRAY TEXT</span>(atTopics;<span class="hljs-number">100</span>;<span class="hljs-number">50</span>) <span class="hljs-comment">// Creates a text array composed of 100 rows of 50 columns</span>
 </code></pre>
 <p>Zweidimensionale Arrays sind Objekte der Programmiersprache; von daher lassen sie sich weder anzeigen noch ausdrucken.</p>
@@ -178,7 +179,7 @@
 <ul>
 <li>Zum Verwalten der drei Informationstypen (Landeskennzahl, Postleitzahl, Stadt) müssten Sie drei umfangreiche Arrays im Speicher halten.</li>
 <li>Da ein Array immer vollständig im Speicher gehalten wird, müssten Sie alle Informationen dieser Arrays während der ganzen Arbeitssitzung im Speicher halten, auch wenn die Daten nicht ständig in Gebrauch sind.</li>
-<li>Diese Arrays müssten bei jedem Starten der Datenbank komplett geladen und dann beim Beenden auf der Festplatte gesichert werden, selbst wenn die Daten während der ganzen Arbeitssitzung weder benutzt noch verändert wurden.</li>
+<li>Again, because an array is always held in memory in its entirety, each time the application is started and then quit, the four arrays would have to be loaded and then saved on the disk, even though the data is not used or modified during the working session.</li>
 </ul>
 <p><strong>Fazit:</strong> In Arrays sollten überschaubare Datenmengen für eine kurze Zeitspanne gehalten werden. Andererseits sind Arrays, da sie im Hauptspeicher gehalten werden, sehr schnell und leicht zu verwalten.</p>
 <p>Unter bestimmten Umständen müssen Sie jedoch Arrays mit hunderten oder tausenden von Elementen einsetzen. Nachfolgende Tabelle zeigt die Formel zum Berechnen der Speicherbelegung für jeden Array-Typ:</p>

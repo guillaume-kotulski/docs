@@ -98,7 +98,7 @@ Class constructor</span>
 <span class="hljs-variable">$instance</span>:=<span class="hljs-function">OB Instance of</span>(<span class="hljs-variable">$poly</span>;cs.Polygon)  
  <span class="hljs-comment">// true</span>
 <span class="hljs-variable">$instance</span>:=<span class="hljs-function">OB Instance of</span>(<span class="hljs-variable">$poly</span>;4D.Object)
- <span class="hljs-comment">// true </span>
+ <span class="hljs-comment">// true</span>
 </code></pre>
 <p>オブジェクトのプロパティを列挙する際には、当該クラスのプロトタイプは列挙されません。 したがって、<code>For each</code> ステートメントや <code>JSON Stringify</code> コマンドは、クラスプロトタイプオブジェクトのプロパティを返しません。 クラスのプロトタイプオブジェクトプロパティは、内部的な隠れプロパティです。</p>
 <h3><a class="anchor" aria-hidden="true" id="クラス定義"></a><a href="#クラス定義" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラス定義</h3>
@@ -137,7 +137,7 @@ Class constructor</span>
 <p>4D においてユーザークラスとは、<code>/Project/Sources/Classes/</code> フォルダーに保存された専用のメソッドファイル (.4dm) によって定義されます。 ファイル名がクラス名になります。</p>
 <p>たとえば、&quot;Polygon&quot; という名前のクラスを定義するには、次のファイルを作成する必要があります:</p>
 <ul>
-<li>データベースフォルダー
+<li>Project フォルダー
 <ul>
 <li>Project
 <ul>
@@ -212,95 +212,96 @@ Function</span> getAge
 <span class="hljs-function">  C_LONGINT</span>(<span class="hljs-variable">$0</span>)
   <span class="hljs-variable">$0</span>:=(Current date-<span class="hljs-literal">This</span>.birthdate)/<span class="hljs-number">365.25</span>
 </code></pre>
-<p>クラスメソッドの場合には、<code>Current method name</code> コマンドは次を返します: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot; (例: &quot;MyClass.myMethod&quot;)。</p>
-<p>データベースのコード内では、クラスメソッドはオブジェクトインスタンスのメンバーメソッドとして呼び出され、引数を受け取ることができます。 次のシンタックスがサポートされています:</p>
+<p>For a class function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, for example &quot;MyClass.myMethod&quot;.</p>
+<p>In the application code, class functions are called as member methods of the object instance and can receive parameters if any. 次のシンタックスがサポートされています:</p>
 <ul>
-<li><code>()</code> 演算子の使用 例: <code>myObject.methodName(&quot;hello&quot;)</code>.</li>
-<li>&quot;Function&quot; クラスメンバーメソッドの使用
+<li><code>()</code> 演算子の使用 For example <code>myObject.methodName(&quot;hello&quot;)</code>.</li>
+<li>use of a &quot;Function&quot; class member methods
 <ul>
 <li><code>apply()</code></li>
 <li><code>call()</code></li>
 </ul></li>
 </ul>
 <blockquote>
-<p><strong>スレッドセーフに関する警告:</strong> クラスメソッドがスレッドセーフではなく、&quot;プリエンプティブプロセスで実行可能&quot; なメソッドから呼び出された場合:</p>
+<p><strong>Thread-safety warning:</strong> If a class function is not thread-safe and called by a method with the &quot;Can be run in preemptive process&quot; attribute:</p>
 <ul>
-<li>普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。 - ランタイムにおいてのみ、4D はエラーを生成します。</li>
+<li>the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.</li>
 </ul>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// クラス: Rectangle</span>
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Rectangle</span>
 Class Constructor
 <span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
     <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
     <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$1</span>
     <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$2</span>
 
-<span class="hljs-comment">// Function 定義</span><span class="hljs-keyword">
+<span class="hljs-comment">// Function definition</span><span class="hljs-keyword">
 Function</span> getArea
 <span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$0</span>)
     <span class="hljs-variable">$0</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
 
 </code></pre>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// プロジェクトメソッド</span>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)  
 <span class="hljs-function">C_REAL</span>(<span class="hljs-variable">$area</span>)
 
 <span class="hljs-variable">$o</span>:=cs.Rectangle.<span class="hljs-function">new</span>()  
 <span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//5000</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="class-constructor"></a><a href="#class-constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Constructor</h3>
-<h4><a class="anchor" aria-hidden="true" id="シンタックス-1"></a><a href="#シンタックス-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス</h4>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// クラス: MyClass</span>
+<h3><a class="anchor" aria-hidden="true" id="class-constructor"></a><a href="#class-constructor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class constructor</h3>
+<h4><a class="anchor" aria-hidden="true" id="syntax"></a><a href="#syntax" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h4>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Class: MyClass</span>
 Class Constructor
-<span class="hljs-comment">// コード</span>
+<span class="hljs-comment">// code</span>
 </code></pre>
-<p>クラスコンストラクター関数を使って、ユーザークラスを定義することができます。このコンストラクターは引数を受け取ることができます。</p>
-<p>クラスコンストラクターが定義されていると、<code>new()</code> クラスメンバーメソッドを呼び出したときに、当該コンストラクターが呼び出されます (引数を指定している場合は <code>new()</code> メソッドに渡します)。</p>
-<p>クラスコンストラクターメソッドの場合には、 <code>Current method name</code> コマンドは次を返します:  &quot;<em>&lt;ClassName&gt;.constructor</em>&quot; （例: &quot;MyClass.constructor&quot;.</p>
-<h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題:</h4>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// クラス: MyClass</span>
-<span class="hljs-comment">// MyClass のクラスコンストラクター</span>
+<p>A class constructor function, which can accept parameters, can be used to define a user class.</p>
+<p>In that case, when you call the <code>new()</code> class member method, the class constructor is called with the parameters optionally passed to the <code>new()</code> function.</p>
+<p>For a class constructor function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.constructor</em>&quot;, for example &quot;MyClass.constructor&quot;.</p>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: MyClass</span>
+<span class="hljs-comment">// Class constructor of MyClass</span>
 Class Constructor
 <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)
 <span class="hljs-literal">This</span>.name:=<span class="hljs-variable">$1</span>
 </code></pre>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// プロジェクトメソッド</span>
-<span class="hljs-comment">// オブジェクトをインスタンス化します</span>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span>
+<span class="hljs-comment">// You can instantiate an object</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$o</span>)
 <span class="hljs-variable">$o</span>:=cs.MyClass.<span class="hljs-function">new</span>(<span class="hljs-string">"HelloWorld"</span>)  
 <span class="hljs-comment">// $o = {"name":"HelloWorld"}</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="class-extends-classname"></a><a href="#class-extends-classname" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class extends &lt;ClassName&gt;</h3>
-<h4><a class="anchor" aria-hidden="true" id="シンタックス-2"></a><a href="#シンタックス-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス</h4>
-<pre><code class="hljs css language-js"><span class="hljs-comment">// クラス: ChildClass</span>
+<h4><a class="anchor" aria-hidden="true" id="syntax-1"></a><a href="#syntax-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax</h4>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// Class: ChildClass</span>
 Class extends &lt;ParentClass&gt;
 </code></pre>
-<p>クラス宣言において <code>Class extends</code> キーワードを使うと、別のユーザークラスの子ユーザークラスを作成することができます。 この子クラスは、親クラスのすべての機能を継承します。</p>
-<p>クラス継承は次のルールに沿っている必要があります:</p>
+<p>The <code>Class extends</code> keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.</p>
+<p>Class extension must respect the following rules:</p>
 <ul>
-<li>ユーザークラスはビルトインクラスを継承できません (例外は 4D.Object で、すべてのユーザークラスにデフォルトで継承されます)</li>
-<li>ユーザークラスは、別のデータベースやコンポーネントのユーザークラスを継承できません。</li>
-<li>ユーザークラスは、自身を継承することはできません。</li>
-<li>間接的にも、自身を継承することはできません (例: &quot;a&quot; extends &quot;b&quot; かつ &quot;b&quot; extends &quot;a&quot;)。</li>
+<li>A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)</li>
+<li>A user class cannot extend a user class from another project or component.</li>
+<li>A user class cannot extend itself.</li>
+<li>It is not possible to extend classes in a circular way (i.e. &quot;a&quot; extends &quot;b&quot; that extends &quot;a&quot;).</li>
 </ul>
-<p>コードエディターやインタープリターは、これらのルールが破られていても検知することはできません。コンパイラーおよび &quot;シンタックスチェック&quot; のみがエラーを生成します。</p>
-<p>子クラスは、<a href="#super"><code>Super</code></a> コマンドを使って親クラスのコンストラクターを呼び出すことができます。</p>
-<h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p><code>Polygon</code> クラスを継承した <code>Square</code> クラスを作成します。</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//クラス: Square</span>
-  <span class="hljs-comment">//パス: Classes/Square.4dm </span><span class="hljs-keyword">
+<p>Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and <code>check syntax</code> will throw an error in this case.</p>
+<p>An extended class can call the constructor of its parent class using the <a href="#super"><code>Super</code></a> command.</p>
+<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<p>This example creates a class called <code>Square</code> from a class called <code>Polygon</code>.</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: Square</span>
+  <span class="hljs-comment">//path: Classes/Square.4dm</span><span class="hljs-keyword">
 
  Class extends</span> Polygon<span class="hljs-keyword">
 
  Class constructor</span>
 <span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$1</span>)
 
-  <span class="hljs-comment">// 親クラスのコンストラクターを呼び出します</span>
-  <span class="hljs-comment">// 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します</span>
+  <span class="hljs-comment">// It calls the parent class's constructor with lengths</span>
+  <span class="hljs-comment">// provided for the Polygon's width and height</span>
 <span class="hljs-function">Super</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$1</span>)
-  <span class="hljs-comment">// 派生クラスにおいては、'This' を使用するより先に</span>
-  <span class="hljs-comment">// Super を呼び出しておく必要があります</span><span class="hljs-keyword">
+  <span class="hljs-comment">// In derived classes, Super must be called before you
+  // can use 'This'</span>
+ <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Square"</span><span class="hljs-keyword">
 
 Function</span> getArea
 <span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$0</span>)
@@ -310,22 +311,21 @@ Function</span> getArea
 <h4><a class="anchor" aria-hidden="true" id="super--paramparamn----object"></a><a href="#super--paramparamn----object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Super {( param{;...;paramN} )} {-&gt; Object}</h4>
 <table>
 <thead>
-<tr><th>引数</th><th>型</th><th></th><th>説明</th></tr>
+<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>param</td><td>混合</td><td>-&gt;</td><td>親コンストラクターに受け渡す引数</td></tr>
-<tr><td>戻り値</td><td>object</td><td>&lt;-</td><td>親オブジェクト</td></tr>
+<tr><td>param</td><td>mixed</td><td>-&gt;</td><td>Parameter(s) to pass to the parent constructor</td></tr>
+<tr><td>Result</td><td>object</td><td>&lt;-</td><td>Object's parent</td></tr>
 </tbody>
 </table>
-<p><code>Super</code> キーワードによってスーパークラス (親クラス) を呼び出すことができます。</p>
-<p><code>Super</code> は次の2つの目的のために使います:</p>
+<p>The <code>Super</code> keyword allows calls to the <code>superclass</code>, i.e. the parent class.</p>
+<p><code>Super</code> serves two different purposes:</p>
 <ul>
-<li><p>コンストラクターコード 内において、 <code>Super</code> はスーパークラスのコンストラクターを呼び出すコマンドです。 コンストラクター内で使用する際には、<code>Super</code> コマンドは単独で使用され、また <code>This</code> キーワードよりも先に使用される必要があります。</p>
-<pre><code class="hljs">- 継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。 呼び出しが有効であることを確認するのは、開発者の役目となります。
-</code></pre>
+<li>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. コンストラクター内で使用する際には、<code>Super</code> コマンドは単独で使用され、また <code>This</code> キーワードよりも先に使用される必要があります。
 <ul>
+<li>継承ツリーにおいて、すべてのクラスコンストラクターが正しく呼び出されていない場合には、エラー -10748 が生成されます。 呼び出しが有効であることを確認するのは、開発者の役目となります。</li>
 <li>スーパークラスがコンストラクトされるより先に、<code>This</code> コマンドを使った場合には、エラー -10743 が生成されます。</li>
-<li><code>Super</code> を、オブジェクトのスコープ外で呼び出した場合、または、すでにスーパークラスがコンストラクトされたオブジェクトを対象に呼び出した場合には、エラー -10746 が生成されます。</li> </ul></li>
+<li><code>Super</code> を、オブジェクトのスコープ外で呼び出した場合、または、すでにスーパークラスがコンストラクトされたオブジェクトを対象に呼び出した場合には、エラー -10746 が生成されます。</li>
 </ul></li>
 </ul>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// myClass コンストラクター</span>
@@ -339,7 +339,7 @@ Function</span> getArea
 <pre><code class="hljs css language-4d"> Super.<span class="hljs-function">doSomething</span>(<span class="hljs-number">42</span>) <span class="hljs-comment">// スーパークラスにて宣言されている</span>
     <span class="hljs-comment">// "doSomething" メンバーメソッドを呼び出します</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="例題-1-1"></a><a href="#例題-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <p>クラスコンストレクター内で <code>Super</code> を使う例です。 <code>Rectangle</code> と <code>Square</code> の共通要素がコンストラクター内で重複しないよう、このコマンドを呼び出します。</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// クラス: Rectangle</span><span class="hljs-keyword">
 
@@ -371,7 +371,7 @@ Function</span> getArea
   <span class="hljs-comment">// Super を呼び出しておく必要があります</span>
  <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Square"</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="例題-2-1"></a><a href="#例題-2-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
+<h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
 <p>クラスメンバーメソッド内で <code>Super</code> を使う例です。 メンバーメソッドを持つ <code>Rectangle</code> クラスを作成します:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// クラス: Rectangle</span><span class="hljs-keyword">
 
@@ -405,25 +405,25 @@ Function</span> getArea
 </tbody>
 </table>
 <p><code>This</code> キーワードは、現在処理中のオブジェクトへの参照を返します。 <code>This</code> は、4Dにおいて <a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html">様々なコンテキスト</a> で使用することができます。</p>
-<p><code>This</code> の値は、呼ばれ方によって決まります。 <code>This</code> の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。</p>
-<p>オブジェクトのメンバーメソッドとしてフォーミュラが呼び出された場合、<code>This</code> はメソッドの呼び出し元であるオブジェクトを指します。 たとえば:</p>
+<p><code>This</code> の値は、呼ばれ方によって決まります。 It can't be set by assignment during execution, and it may be different each time the function is called.</p>
+<p>When a formula is called as a member method of an object, its <code>This</code> is set to the object the method is called on. For example:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"prop"</span>;<span class="hljs-number">42</span>;<span class="hljs-string">"f"</span>;<span class="hljs-function">Formula</span>(<span class="hljs-literal">This</span>.prop))
 <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">//42</span>
 </code></pre>
-<p><a href="#class-constructor">クラスコンストラクター</a> メソッドが <code>new()</code> キーワードで使用された場合、その内部の <code>This</code> はインスタンス化される新規オブジェクトを指します。</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">// クラス: ob</span>
+<p>When a <a href="#class-constructor">class constructor</a> function is used (with the <code>new()</code> keyword), its <code>This</code> is bound to the new object being constructed.</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//Class: ob</span>
 
 Class Constructor  
-    <span class="hljs-comment">// This のプロパティを</span>
-    <span class="hljs-comment">// 代入によって作成します</span>
-    <span class="hljs-literal">This</span>.a:=<span class="hljs-number">42</span> 
+    <span class="hljs-comment">// Create properties on This as</span>
+    <span class="hljs-comment">// desired by assigning to them</span>
+    <span class="hljs-literal">This</span>.a:=<span class="hljs-number">42</span>
 </code></pre>
-<pre><code class="hljs css language-4d">    <span class="hljs-comment">// 4D メソッド</span>
+<pre><code class="hljs css language-4d">    <span class="hljs-comment">// in a 4D method  </span>
 <span class="hljs-variable">$o</span>:=cs.ob.<span class="hljs-function">new</span>()
 <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.a <span class="hljs-comment">//42</span>
 </code></pre>
 <blockquote>
-<p>コンストラクター内で <a href="#super">Super</a> キーワードを使ってスーパークラスのコンストラクターを呼び出す場合、必ず <code>This</code> よりも先にスーパークラスのコンストラクターを呼ぶ必要があることに留意してください。順番を違えるとエラーが生成されます。 <a href="#例題-1">こちらの例題</a> を参照ください。</p>
+<p>When calling the superclass constructor in a constructor using the <a href="#super">Super</a> keyword, keep in mind that <code>This</code> must not be called before the superclass constructor, otherwise an error is generated. <a href="#例題-1">こちらの例題</a> を参照ください。</p>
 </blockquote>
 <p>基本的に、<code>This</code> はメソッドの呼び出し元のオブジェクトを指します。</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-comment">// クラス: ob</span><span class="hljs-keyword">
@@ -437,16 +437,16 @@ Class Constructor
 <span class="hljs-variable">$o</span>.b:=<span class="hljs-number">3</span>
 <span class="hljs-variable">$val</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">//8</span>
 </code></pre>
-<p>この例では、変数 $o に代入されたオブジェクトは <em>f</em> プロパティを持たないため、これをクラスより継承します。 <em>f</em> は $o のメソッドとして呼び出されるため、メソッド内の <code>This</code> は $o を指します。</p>
-<h2><a class="anchor" aria-hidden="true" id="クラスコマンド"></a><a href="#クラスコマンド" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスコマンド</h2>
-<p>4D ランゲージには、クラス機能を扱う複数のコマンドがあります。</p>
+<p>この例では、変数 $o に代入されたオブジェクトは <em>f</em> プロパティを持たないため、これをクラスより継承します。 Since <em>f</em> is called as a method of $o, its <code>This</code> refers to $o.</p>
+<h2><a class="anchor" aria-hidden="true" id="class-commands"></a><a href="#class-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class commands</h2>
+<p>Several commands of the 4D language allows you to handle class features.</p>
 <h3><a class="anchor" aria-hidden="true" id="ob-class"></a><a href="#ob-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Class</h3>
 <h4><a class="anchor" aria-hidden="true" id="ob-class--object----object--null"></a><a href="#ob-class--object----object--null" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Class ( object ) -&gt; Object | Null</h4>
-<p><code>OB Class</code> は引数として渡したオブジェクトのクラスを返します。</p>
+<p><code>OB Class</code> returns the class of the object passed in parameter.</p>
 <h3><a class="anchor" aria-hidden="true" id="ob-instance-of"></a><a href="#ob-instance-of" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Instance of</h3>
 <h4><a class="anchor" aria-hidden="true" id="ob-instance-of--object--class----boolean"></a><a href="#ob-instance-of--object--class----boolean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Instance of ( object ; class ) -&gt; Boolean</h4>
-<p><code>object</code> が <code>class</code>、またはその子クラスに属していれば、<code>OB Instance of</code> は <code>true</code> を返します。それ以外の場合は <code>false</code> を返します。</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/shared.html"><span class="arrow-prev">← </span><span>共有オブジェクトと共有コレクション</span></a><a class="docs-next button" href="/docs/ja/Concepts/control-flow.html"><span>制御フロー</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概要">概要</a><ul class="toc-headings"><li><a href="#class-オブジェクト">Class オブジェクト</a></li><li><a href="#プロパティ検索とプロトタイプ">プロパティ検索とプロトタイプ</a></li><li><a href="#クラス定義">クラス定義</a></li></ul></li><li><a href="#クラスストア">クラスストア</a></li><li><a href="#ユーザークラス">ユーザークラス</a><ul class="toc-headings"><li><a href="#クラスファイル">クラスファイル</a></li><li><a href="#クラス名">クラス名</a></li><li><a href="#4d-開発インターフェース">4D 開発インターフェース</a></li><li><a href="#クラスの削除">クラスの削除</a></li></ul></li><li><a href="#クラスキーワード">クラスキーワード</a><ul class="toc-headings"><li><a href="#function">Function</a></li><li><a href="#class-constructor">Class Constructor</a></li><li><a href="#class-extends-classname">Class extends &lt;ClassName&gt;</a></li><li><a href="#super">Super</a></li><li><a href="#this">This</a></li></ul></li><li><a href="#クラスコマンド">クラスコマンド</a><ul class="toc-headings"><li><a href="#ob-class">OB Class</a></li><li><a href="#ob-instance-of">OB Instance of</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p><code>OB Instance of</code> returns <code>true</code> if <code>object</code> belongs to <code>class</code> or to one of its inherited classes, and <code>false</code> otherwise.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/shared.html"><span class="arrow-prev">← </span><span>共有オブジェクトと共有コレクション</span></a><a class="docs-next button" href="/docs/ja/Concepts/control-flow.html"><span>制御フロー</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#概要">概要</a><ul class="toc-headings"><li><a href="#class-オブジェクト">Class オブジェクト</a></li><li><a href="#プロパティ検索とプロトタイプ">プロパティ検索とプロトタイプ</a></li><li><a href="#クラス定義">クラス定義</a></li></ul></li><li><a href="#クラスストア">クラスストア</a></li><li><a href="#ユーザークラス">ユーザークラス</a><ul class="toc-headings"><li><a href="#クラスファイル">クラスファイル</a></li><li><a href="#クラス名">クラス名</a></li><li><a href="#4d-開発インターフェース">4D 開発インターフェース</a></li><li><a href="#クラスの削除">クラスの削除</a></li></ul></li><li><a href="#クラスキーワード">クラスキーワード</a><ul class="toc-headings"><li><a href="#function">Function</a></li><li><a href="#class-constructor">Class constructor</a></li><li><a href="#class-extends-classname">Class extends &lt;ClassName&gt;</a></li><li><a href="#super">Super</a></li><li><a href="#this">This</a></li></ul></li><li><a href="#class-commands">Class commands</a><ul class="toc-headings"><li><a href="#ob-class">OB Class</a></li><li><a href="#ob-instance-of">OB Instance of</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
