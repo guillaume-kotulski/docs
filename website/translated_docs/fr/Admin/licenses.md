@@ -13,7 +13,7 @@ Cependant, dans des cas spécifiques, vous pourriez avoir besoin d'activer vos l
 No activation is required for the following uses:
 
 - 4D used in remote mode (connection to a 4D Server)
-- 4D used in local mode with an interpreted database with no access to the Design environment.
+- 4D used in local mode with an interpreted application project with no access to the Design environment.
 
 
 ## Première activation
@@ -145,4 +145,4 @@ Pour la France :
 Pour le Royaume-Uni :
 
 - Web: [https://uk.4d.com/4d-technical-support](https://uk.4d.com/4d-technical-support)
--
+- Téléphone : 01625 536178
