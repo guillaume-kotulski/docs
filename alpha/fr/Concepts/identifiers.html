@@ -219,9 +219,8 @@ If</span>(<span class="hljs-variable">&lt;&gt;asMotsClés{1}</span>=<span class=
 DELETE DUPLICATED VALUES
 <span class="hljs-function">APPLY TO SELECTION</span>([Employés];AUGMENTER SALARIES)
 </code></pre>
-<p><strong>Conseil :</strong> Nous vous recommandons d'adopter, pour nommer vos méthodes, la même convention que celle utilisée dans le langage de 4D : écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. Ainsi, lorsque vous rouvrirez une base au bout de plusieurs mois, vous identifierez immédiatement si une méthode retourne ou non un résultat, en regardant son nom dans la fenêtre de l'Explorateur.</p>
-<p><strong>Note :</strong> Lorsque vous souhaitez appeler une méthode, vous saisissez simplement son nom. Toutefois, certaines commandes intégrées telles que <code>APPELER SUR EVENEMENT</code>, ainsi que les commandes des plug-ins, nécessitent que vous passiez le nom d'une méthode en tant que chaîne lorsqu'un paramètre de type méthode est requis. Exemple :</p>
-<p>Voici quelques exemples :</p>
+<p><strong>Conseil :</strong> Nous vous recommandons d'adopter, pour nommer vos méthodes, la même convention que celle utilisée dans le langage de 4D : écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. By doing so, when you reopen a project for maintenance after a few months, you will already know if a method returns a result by simply looking at its name in the Explorer window.</p>
+<p><strong>Note :</strong> Lorsque vous souhaitez appeler une méthode, vous saisissez simplement son nom. Toutefois, certaines commandes intégrées telles que <code>APPELER SUR EVENEMENT</code>, ainsi que les commandes des plug-ins, nécessitent que vous passiez le nom d'une méthode en tant que chaîne lorsqu'un paramètre de type méthode est requis. Voici quelques exemples :</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">// Cette commande attend une méthode (fonction) ou une formule</span>
 <span class="hljs-function"> QUERY BY FORMULA</span>([aTable];Recherche Spéciale)
   <span class="hljs-comment">// Cette commande attend une méthode (procédure) ou une formule</span>
@@ -349,7 +348,7 @@ DELETE DUPLICATED VALUES
 </table>
 <p><strong>Note :</strong> En cas d'utilisation de caractères non romans dans les noms des identifiants, leur taille maximum peut être inférieure.</p>
 <h2><a class="anchor" aria-hidden="true" id="résoudre-les-conflits-de-noms"></a><a href="#résoudre-les-conflits-de-noms" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Résoudre les conflits de noms</h2>
-<p>Veillez à utiliser des noms uniques pour les différents éléments de votre base. Si un identifiant d’un certain type a le même nom qu’un autre identifiant d’un autre type (par exemple, si un champ est baptisé Personnes et qu’une variable est également nommée Personnes), 4D utilise un système de priorité.</p>
+<p>Be sure to use unique names for the different elements in your project. If a particular element has the same name as another element of a different type (for example, if a field is named Person and a variable is also named Person), 4D uses a priority system.</p>
 <p>4D identifie les noms utilisés dans les méthodes en fonction de l’ordre de priorité suivant :</p>
 <ol>
 <li>Champs</li>
