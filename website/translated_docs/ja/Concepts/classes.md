@@ -198,9 +198,9 @@ Function getAge
   $0:=(Current date-This.birthdate)/365.25
 ```
 
-For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
+クラスメソッドの場合には、`Current method name` コマンドは次を返します: "*\<ClassName>.\<FunctionName>*" (例: "MyClass.myMethod")。
 
-In the application code, class functions are called as member methods of the object instance and can receive parameters if any. 次のシンタックスがサポートされています:
+アプリケーションのコード内では、クラスメソッドはオブジェクトインスタンスのメンバーメソッドとして呼び出され、引数を受け取ることができます。 次のシンタックスがサポートされています:
 
 - `()` 演算子の使用 For example `myObject.methodName("hello")`.
 - use of a "Function" class member methods
