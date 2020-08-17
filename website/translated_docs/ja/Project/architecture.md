@@ -3,7 +3,7 @@ id: architecture
 title: プロジェクトのアーキテクチャー
 ---
 
-A 4D project is made of several folders and files, stored within a single parent application folder (package folder). たとえば:
+4D プロジェクトは、一つの親アプリケーションフォルダー (パッケージフォルダー) に格納された、複数のファイルやフォルダーから構成されています。 たとえば:
 
 - MyProject
     - Components
@@ -28,7 +28,7 @@ A 4D project is made of several folders and files, stored within a single parent
 
 典型的な Project フォルダーの構造です:
 
-- *applicationName*.4DProject file
+- *applicationName*.4DProject ファイル
 - Sources
     + Classes
     + DatabaseMethods
@@ -40,14 +40,14 @@ A 4D project is made of several folders and files, stored within a single parent
 - Trash (あれば)
 
 
-### *applicationName*.4DProject file
+### *applicationName*.4DProject ファイル
 
 プロジェクトを定義し、起動するためのプロジェクト開発ファイルです。 このファイルを開くには次のいずれかが必要です:
 
 - 4D
 - 4D Server (デザインモードは読み取り専用；[プロジェクトの開発](developing.md) 参照)
 
-> In 4D projects, development is done with 4D and multi-user development is managed through source control tools. 4D Server は .4DProject ファイルを開くことができますが、クライアントからの開発はおこなえません。
+> 4D プロジェクトの開発は 4D によっておこない、マルチユーザー開発はソース管理ツールによって管理します。 4D Server は .4DProject ファイルを開くことができますが、クライアントからの開発はおこなえません。
 
 
 ### Sources フォルダー
@@ -68,15 +68,15 @@ A 4D project is made of several folders and files, stored within a single parent
 
 #### DatabaseMethods フォルダー
 
-| 内容                       | 説明                                                                | 形式   |
-| ------------------------ | ----------------------------------------------------------------- | ---- |
-| *databaseMethodName*.4dm | Database methods defined in the project. (1つのデータベースメソッドにつき1ファイル)。 | text |
+| 内容                       | 説明                                                 | 形式   |
+| ------------------------ | -------------------------------------------------- | ---- |
+| *databaseMethodName*.4dm | プロジェクト内で定義されているデータベースメソッド (1つのデータベースメソッドにつき1ファイル)。 | text |
 
 #### Methods フォルダー
 
-| 内容               | 説明                                                          | 形式   |
-| ---------------- | ----------------------------------------------------------- | ---- |
-| *methodName*.4dm | Project methods defined in the project.  (1つのメソッドにつき1ファイル)。 | text |
+| 内容               | 説明                                            | 形式   |
+| ---------------- | --------------------------------------------- | ---- |
+| *methodName*.4dm | プロジェクト内で定義されているプロジェクトメソッド  (1つのメソッドにつき1ファイル)。 | text |
 
 #### Classes フォルダー
 
@@ -109,9 +109,9 @@ A 4D project is made of several folders and files, stored within a single parent
 
 #### Triggers フォルダー
 
-| 内容            | 説明                                                                    | 形式   |
-| ------------- | --------------------------------------------------------------------- | ---- |
-| table_*n*.4dm | Trigger methods defined in the project.  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | text |
+| 内容            | 説明                                                    | 形式   |
+| ------------- | ----------------------------------------------------- | ---- |
+| table_*n*.4dm | プロジェクト内で定義されているトリガーメソッド  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | text |
 
 **注:** 拡張子 .4dm のファイルは、4D メソッドのコードをテキスト形式で格納しており、 ソース管理ツールに対応しています。
 
@@ -134,11 +134,11 @@ DerivedData フォルダーには、処理を最適化するため 4D が内部�
 
 ## Resources フォルダー
 
-The Resources folder contains any custom project resource files and folders. アプリケーションインターフェースの翻訳やカスタマイズに必要なファイルはすべてここに格納します (ピクチャー、テキスト、XLIFF ファイルなど)。 4D は自動のメカニズムによってフォルダー内のファイル (とくに XLIFF ファイルおよびスタティックピクチャー) を扱います。 リモートモードにおいては、サーバーとすべてのクライアントマシン間でファイルを共有することが Resources フォルダーによって可能です  (*4D Server リファレンスマニュアル* の [リソースフォルダの管理](https://doc.4d.com/4Dv18/4D/18/Managing-the-Resources-folder.300-4672420.ja.html) を参照ください)。
+Resources フォルダーには、追加のカスタムプロジェクトリソースファイルやフォルダーが格納されます。 アプリケーションインターフェースの翻訳やカスタマイズに必要なファイルはすべてここに格納します (ピクチャー、テキスト、XLIFF ファイルなど)。 4D は自動のメカニズムによってフォルダー内のファイル (とくに XLIFF ファイルおよびスタティックピクチャー) を扱います。 リモートモードにおいては、サーバーとすべてのクライアントマシン間でファイルを共有することが Resources フォルダーによって可能です  (*4D Server リファレンスマニュアル* の [リソースフォルダの管理](https://doc.4d.com/4Dv18/4D/18/Managing-the-Resources-folder.300-4672420.ja.html) を参照ください)。
 
 | 内容                    | 説明                                                                        | 形式    |
 | --------------------- | ------------------------------------------------------------------------- | ----- |
-| *item*                | Project resource files and folders                                        | 様々    |
+| *item*                | プロジェクトリソースファイルとフォルダー                                                      | 様々    |
 | Images/Library/*item* | ピクチャーライブラリの個別ピクチャーファイル(*)。 各アイテムの名称がファイル名となります。 名称が重複する場合には、名称に番号が追加されます。 | ピクチャー |
 
 (*) .4db バイナリデータベースから変換されたプロジェクトの場合のみ
@@ -158,7 +158,7 @@ Data フォルダーには、データファイルのほか、データに関わ
 
 ### Settings フォルダー
 
-This folder contains **user settings files for data** used for application administration.
+Settings フォルダーには、アプリケーションの管理に使用される **データファイル用のユーザー設定** ファイルが格納されます。
 
 > この設定は **[ユーザー設定](#settings-folder-1)** や **ストラクチャー設定** より優先されます。
 
@@ -166,7 +166,7 @@ This folder contains **user settings files for data** used for application admin
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
 | Backup.4DSettings   | このデータファイルを使ってデータベースが実行されている場合に使用する [バックアップオプション](Backup/settings.md) を定義したデータベースバックアップ設定です。 バックアップ設定に使われるキーについての説明は [バックアップ設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-Backup.100-4673706.ja.html) マニュアルを参照ください。 | XML  |
 | settings.4DSettings | データファイル用のカスタムデータベース設定                                                                                                                                                                                                   | XML  |
-| directory.json      | Description of 4D groups, users, and their access rights when the application is run with this data file.                                                                                                               | JSON |
+| directory.json      | このデータファイルを使ってアプリケーションが実行されている場合に使用する 4D グループとユーザー、およびアクセス権の定義                                                                                                                                                           | JSON |
 
 
 
