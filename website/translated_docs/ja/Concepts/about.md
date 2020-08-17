@@ -3,22 +3,22 @@ id: about
 title: 4D ランゲージについて
 ---
 
-The 4D built-in language, consisting of more than 1300 commands, makes 4D a powerful development tool for web, mobile, or desktop applications. 単純な計算から複雑なカスタムインターフェースの作成まで、4D 言語は様々なタスクに使用することができます。 たとえば、以下のようなことが可能です:
+4Dは独自のプログラミング言語を持っています。1300を超えるこのビルトインの言語により、4Dは Web、モバイル、およびデスクトップアプリケーションを作成する、パワフルな開発ツールとなっています。 単純な計算から複雑なカスタムインターフェースの作成まで、4D 言語は様々なタスクに使用することができます。 たとえば、以下のようなことが可能です:
 
 - クエリや並べ替えなどのレコード管理エディターにプログラムでアクセスする
 - データベースの情報をもとに複雑なレポートやラベルを作成・印刷する
 - 他のデバイスと通信する
 - メールを送信する
 - ドキュメントや Web サイトを管理する
-- Import and export data between 4D applications and other applications,
+- 4D アプリケーションと他のアプリケーションの間で、データの書き出しや読み込みをおこなう
 - 4D のプログラミング言語に、他の言語で書かれたプロシージャーを組み込む
 
-4D のプログラミング言語は柔軟性とパワーを備え、あらゆるレベルのユーザーやデベロッパーにとって多種多様な情報管理業務を達成するための理想的なツールです。 初心者のユーザーであっても、計算処理を手早く実行できます。 Experienced users without programming experience can customize their applications. Experienced developers can use this powerful programming language to add sophisticated features and capabilities to their applications, including file transfer, communications, monitoring. 他言語でプログラミング経験がある開発者は、独自のコマンドを 4D に追加することができます。
+4D のプログラミング言語は柔軟性とパワーを備え、あらゆるレベルのユーザーやデベロッパーにとって多種多様な情報管理業務を達成するための理想的なツールです。 初心者のユーザーであっても、計算処理を手早く実行できます。 ある程度コンピューターの知識を持っているユーザーであれば、プログラミング経験がなくてもアプリケーションをカスタマイズできます。 熟練したデベロッパーであれば、4D の強力なプログラミング言語を駆使して、ファイル転送や通信、モニタリングなどの高度な機能をアプリケーションに組み込むことができます。 他言語でプログラミング経験がある開発者は、独自のコマンドを 4D に追加することができます。
 
 
 ## 4D ランゲージとは
 
-4D ランゲージは、私たちが日ごろ話している言語とさして変わりありません。 アイデアの表現や、伝達、指示をおこなうためのコミュニケーションの一形態です。 Like a spoken language, 4D has its own vocabulary, grammar, and syntax; you use it to tell 4D how to manage your application and data.
+4D ランゲージは、私たちが日ごろ話している言語とさして変わりありません。 アイデアの表現や、伝達、指示をおこなうためのコミュニケーションの一形態です。 話し言葉と同様に、4D は独自の語彙・文法・構文を持っています。このランゲージを使用して、アプリケーションやデータをどのように扱うのかを 4D に伝えます。
 
 4D を効果的に使用する目的では、ランゲージのすべてを知っている必要はありません。 言葉を交わすために言語のすべてを知る必要がないのと同じです。実際、少ない語彙でも雄弁に語ることはできるものです。 4D ランゲージも、創造性を発揮するのに必要となるのはほんの一部で、残りは必要に応じて覚えればよいのです。
 
@@ -32,10 +32,10 @@ The 4D built-in language, consisting of more than 1300 commands, makes 4D a powe
 - ユーザーインタフェースのコントロール: ウィンドウおよびメニューの管理、フォームやインタフェースオブジェクトの制御ができます。
 - 高度なデータ管理: トランザクション処理、複雑なデータ検証、マルチユーザー管理、セットや命名セレクションの処理などが含まれます。
 - コンピューターのコントロール: シリアルポート通信やドキュメント管理、エラー管理が可能です。
-- Create applications: You can create easy-to-use, customized applications that run stand-alone.
+- アプリケーションの作成: ダブルクリックで起動する、カスタマイズされたアプリケーションをビルドできます。
 - ビルトイン 4D Web サーバーの利用: データを反映させた動的な Web ページをビルドし、更新できます。
 
-The language lets you take complete control over the design and operation of your application. 4D provides powerful “generic” editors, but the language lets you customize your application to whatever degree you require.
+ランゲージを使用すれば、アプリケーションのデザインや処理を完全に制御することができます。 4D provides powerful “generic” editors, but the language lets you customize your application to whatever degree you require.
 
 ## データ制御
 
