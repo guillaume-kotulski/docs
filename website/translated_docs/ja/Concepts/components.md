@@ -21,43 +21,43 @@ title: コンポーネント
 - **ホストプロジェクト**: コンポーネントがインストールされ、それを使用するアプリケーションプロジェクト。
 - **コンポーネント**: ホストアプリケーションによって使用される目的で、同アプリケーションの Components フォルダーにコピーされたマトリクスプロジェクト (コンパイル済みまたは非コンパイル)。
 
-It should be noted that a project can be both a “matrix” and a “host,” in other words, a matrix project can itself use one or more components. しかしコンポーネントが "サブコンポーネント" を使用することはできません。
+プロジェクトは "マトリクス" にも "ホスト" にもなりえます。言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが "サブコンポーネント" を使用することはできません。
 
 
 ### コンポーネントの保護: コンパイル
 
-By default, all the project methods of a matrix project installed as a component are potentially visible from the host project. 特に:
+コンポーネントとしてインストールされたマトリクスプロジェクトのプロジェクトメソッドは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:
 
-- The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをメソッドエディター上で開いたり編集したりすることはできません。
-- The other project methods of the matrix project do not appear in the Explorer but they too can be viewed in the debugger of the host project.
+- エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをメソッドエディター上で開いたり編集したりすることはできません。
+- マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。
 
-To protect the project methods of a component effectively, simply compile the matrix project and provide it in the form of a .4dz file. When a compiled matrix project is installed as a component:
+コンポーネントのプロジェクトメソッドを効果的に保護するには、マトリクスプロジェクトをコンパイルして、インタプリターコードを含まない .4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:
 
-- The shared project methods are shown on the Methods Page of the Explorer and can be called in the methods of the host project. しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
-- The other project methods of the matrix project will never appear.
+- エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
+- マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。
 
 
 ## プロジェクトメソッドの共有
-All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed by the component.
+マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。つまり、マトリクスプロジェクトをコンポーネント化しても、これらのプロジェクトメソッドは同コンポーネントにて呼び出して実行することができます。
 
-On the other hand, by default these project methods will not be visible, nor can they be called in the host projects. In the matrix project, you must explicitly designate the methods that you want to share with the host project. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host database). これらのメソッドはコンポーネントの **エントリーポイント** となります。
+他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 プロジェクトメソッドをホストプロジェクトと共有するには、 マトリクスプロジェクト側でそのメソッドをそのように明示的に設定しなければなりません。 設定することで、それらのプロジェクトメソッドはホストプロジェクトにて呼び出すことができるようになります (しかしホストプロジェクトのメソッドエディターで編集することはできません)。 これらのメソッドはコンポーネントの **エントリーポイント** となります。
 
-**Note:** Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate the project methods of the host project that you want to make accessible to the components.
+**注:** セキュリティのため、デフォルトでは、コンポーネントはホストプロジェクトのプロジェクトメソッドを実行することはできません。 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 そうするには、ホストプロジェクトのプロジェクトメソッド側で、コンポーネントからのアクセスを可能にするよう明示的に指定しなければなりません。
 
 ![](assets/en/Concepts/pict516563.en.png)
 
 ## 変数の渡し方
 
-The local, process and interprocess variables are not shared between components and host projects. The only way to access component variables from the host project and vice versa is using pointers.
+ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 ホストプロジェクトからコンポーネントの変数、またはその逆にアクセスする唯一の方法はポインターを使用することです。
 
 配列を使用した例:
 
 ```4d
-//In the host project:
+// ホストプロジェクト側:
      ARRAY INTEGER(MyArray;10)
      AMethod(->MyArray)
 
-//In the component, the AMethod project method contains:
+// コンポーネント側で AMethod プロジェクトメソッドは以下の通りです:
      APPEND TO ARRAY($1->;2)
 ```
 
@@ -71,9 +71,9 @@ The local, process and interprocess variables are not shared between components 
 ```
 
 
-When you use pointers to allow components and the host project to communicate, you need to take the following specificities into account:
+ホストプロジェクトとコンポーネント間でポインターを使用して通信をおこなうには、以下の点を考慮する必要があります:
 
-- The `Get pointer` command will not return a pointer to a variable of the host project if it is called from a component and vice versa.
+- `Get pointer` をコンポーネント内で使用した場合、このコマンドはホストプロジェクトの変数へのポインターを返しません。また逆にこのコマンドをホストプロジェクトで使用した場合も同様です。
 
 - The component architecture allows the coexistence, within the same interpreted project, of both interpreted and compiled components (conversely, only compiled components can be used in a compiled project). この場合、ポインターの利用は以下の原則を守らなければなりません: インタープリターモードでは、コンパイルモードにおいて作成されたポインターを解釈できます。逆にコンパイルモードでは、インタープリターモードにて作成されたポインターを解釈することはできません。 Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
  - コンポーネントC が定義する変数 `myCvar` があるとき、コンポーネントI はポインター `->myCvar` を使用して変数の値にアクセスすることができます。
