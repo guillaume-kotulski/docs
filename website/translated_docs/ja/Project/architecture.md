@@ -180,17 +180,17 @@ Logs フォルダーには、プロジェクトが使用するすべてのログ
 - コマンドデバッグ
 - 4D Serverリクエスト (クライアントマシンおよびサーバー上で生成)
 
-> An additional Logs folder is available in the system user preferences folder (active 4D folder, see [Get 4D folder](https://doc.4d.com/4Dv18R4/4D/18-R4/Get-4D-folder.301-4982857.en.html) command) for maintenance log files and in cases where data folder is read-only.
+> データフォルダーが読み取り専用モードの場合やメンテナンスログファイルの保存には、システムのユーザー設定フォルダー (Active 4D Folder のこと、詳しくは [Get 4D folder](https://doc.4d.com/4Dv18R4/4D/18-R4/Get-4D-folder.301-4982857.ja.html) コマンド参照) 内にある Logs フォルダーが利用されます。
 
 ## Settings フォルダー
 
-This folder contains **user settings files** used for application administration. Files are added to the folder when necessary.
+Settings フォルダーには、アプリケーションの管理に使用される **ユーザー設定** ファイルが格納されます。 必要に応じてこのフォルダーにファイルが追加されます。
 
 > [Data フォルダー](#settings-フォルダー)の Setting フォルダー内にデータファイル用のユーザー設定ファイルがある場合には、そちらが優先されます。
 
 | 内容                  | 説明                                                                                                                                                                                                                                                              | 形式   |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| directory.json      | Description of 4D groups and users for the application, as well as their access rights                                                                                                                                                                          | JSON |
+| directory.json      | 4D グループとユーザー、およびアクセス権の定義                                                                                                                                                                                                                                        | JSON |
 | BuildApp.4DSettings | アプリケーションビルダーのダイアログボックス、または `BUILD APPLICATION` コマンドを使ったときに自動的に作成されるビルド設定ファイル                                                                                                                                                                                    | XML  |
 | Backup.4DSettings   | バックアップ開始時に [バックアップオプション](Backup/settings.md) を指定するためのデータベースバックアップ設定です。 このファイルは、*バックアップジャーナル* に保存する情報量などの追加オプションの確認や設定にも使用することができます。 バックアップ設定に使われるキーについての説明は [バックアップ設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-Backup.100-4673706.ja.html) マニュアルを参照ください。 | XML  |
 
@@ -212,14 +212,14 @@ This folder contains **user settings files** used for application administration
 
 ## Components フォルダー
 
-This folder contains the components to be available in the application project only. このフォルダーは、Project フォルダーと同じ階層に置きます。
+アプリケーションプロジェクトが利用するコンポーネントを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
 
-> An application project can be used itself as a component: - for development: put an alias of the .4dproject file in the Components folder of the host project. - for deployment: build the component (see [Building a project package](building.md)) and put the resulting .4dz file in a .4dbase folder in the Components folder of the host application.
+> アプリケーションプロジェクトはコンポーネントとして利用することができます:<br /> - 開発においては、ホストプロジェクトの Components フォルダーに .4dproject ファイルのエイリアスを置きます。 - 運用時においては、コンポーネントをビルドし ([プロジェクトパッケージのビルド](building.md))、生成された .4dz ファイルを .4dbase フォルダーに格納し、それをホストアプリケーションの Components フォルダーに置きます。
 
 
 ## Plugins フォルダー
 
-This folder contains the plug-ins to be available in the application project only. このフォルダーは、Project フォルダーと同じ階層に置きます。
+アプリケーションプロジェクトが利用するプラグインを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
 
 
 ## Documentation フォルダー
