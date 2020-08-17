@@ -68,7 +68,7 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/variables.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">変数</h1></header><article><div><span><p>4D のデータは、根本的に異なっている 2つの方法で保持されます。 <strong>フィールド</strong> はディスクに永続的にデータを保存するのに対し、<strong>変数</strong> はメモリ上に一時的にデータを格納します。</p>
 <p>データベースを作成する際には、フィールドに名前とデータタイプを指定します。 同様に、変数にも名前と <a href="/docs/ja/Concepts/data-types.html">データタイプ</a> を指定します。</p>
-<p>Once created, you can use a variable wherever you need it in your application. たとえば、テキスト変数を同じタイプのフィールドに格納するには次のように書きます:</p>
+<p>いったん作成された変数は、アプリケーションで必要とされる場所に使用できます。 たとえば、テキスト変数を同じタイプのフィールドに格納するには次のように書きます:</p>
 <pre><code class="hljs css language-4d"> [MyTable]MyField:=MyText
 </code></pre>
 <p>変数はランゲージの要素です。画面上に表示されることのない、裏方に徹した変数を作成・利用することができます。 もちろん、フォーム上に変数の値を表示することもできます (ポインターやBLOBを除く)。また、変数に値を入力したり、変数の値をレポートに印刷したりすることも可能です。 このとき、入力可や入力不可の変数オブジェクトはフィールドオブジェクトと同様に振舞い、提供されるコントロールも類似しています。 フォーム上のボタン、リストボックス、スクロールエリア、ピクチャーボタンなどのオブジェクトも変数を使って制御することができるほか、保存不要な計算結果を表示させることもできます。</p>
@@ -308,8 +308,8 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 <li>プロセス変数の数を減らす。</li>
 </ul>
 <p>ローカル変数の名前は必ずドル記号 ($) で始め、この記号を除く31文字までの文字を指定できます。 これより長い名前を指定すると、4D は余分の32文字以降を切り捨てます。</p>
-<p>When you are working in an application project with many methods and variables, you often find that you need to use a variable only within the method on which you are working. この場合、同じ変数名が他で使用されていないかどうかを気にすることなくローカル変数を作成することができます。</p>
-<p>Frequently, in an application, small pieces of information are needed from the user. <code>Request</code> コマンドを使って、この情報を取得することができます。 このコマンドはデータ入力を求めるダイアログボックスを表示し、 ユーザーがデータを入力すると、その情報を戻り値として返します。 このようなデータは通常、メソッド内で長期間維持する必要はありません。 これは、ローカル変数を使用する典型的な例といえます。 次に例を示します:</p>
+<p>多くのメソッドや変数を持つアプリケーションプロジェクトで作業する場合、現在作業しているメソッドの範囲内で一時的に変数が必要となる場合がよくあります。 この場合、同じ変数名が他で使用されていないかどうかを気にすることなくローカル変数を作成することができます。</p>
+<p>アプリケーションではしばしば、ユーザーによる少量のデータ入力を必要とする場合があります。 <code>Request</code> コマンドを使って、この情報を取得することができます。 このコマンドはデータ入力を求めるダイアログボックスを表示し、 ユーザーがデータを入力すると、その情報を戻り値として返します。 このようなデータは通常、メソッド内で長期間維持する必要はありません。 これは、ローカル変数を使用する典型的な例といえます。 次に例を示します:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsID</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"ID を入力してください:"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
 <span class="hljs-function">    QUERY</span>([People];[People]ID =<span class="hljs-variable">$vsID</span>)<span class="hljs-keyword">
@@ -329,7 +329,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </ul>
 <p>詳細については <strong>プロセス</strong> の章と、各コマンドの説明を参照ください。</p>
 <h3><a class="anchor" aria-hidden="true" id="インタープロセス変数"></a><a href="#インタープロセス変数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>インタープロセス変数</h3>
-<p>Interprocess variables are available throughout the project and are shared across all cooperative processes. これらは主としてプロセス間で情報を共有するために使われます。</p>
+<p>インタープロセス変数はプロジェクト全体で使用することができ、すべてのコオペラティブプロセスで共有されます。 これらは主としてプロセス間で情報を共有するために使われます。</p>
 <blockquote>
 <p>プリエンプティブプロセスにおいては使用できないことと、コードの保守管理を煩雑にすることから、インタープロセス変数の使用は推奨されません。</p>
 </blockquote>
