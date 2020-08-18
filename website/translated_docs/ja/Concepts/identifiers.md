@@ -128,7 +128,7 @@ myObject.myAttribute:="10"
 $value:=$clientObj.data.address.city
 ```
 
-**注:** オブジェクト属性名にはさらにルールが適用されます (オブジェクト属性は ECMAScript の仕様に沿う必要があります)。 For more information, see \[additional rules above\](#additional-rules-for-object-property-and-ORDA names) and [Object property identifiers](Concepts/dt_object.md#object-property-identifiers).
+**注:** オブジェクト属性名にはさらにルールが適用されます (オブジェクト属性は ECMAScript の仕様に沿う必要があります)。 詳細については、\[上述の追加ルール\](#ORDA-に適用される追加ルール) および [オブジェクト記法の使用](Concepts/dt_object.md#オブジェクト記法の使用) を参照ください。
 
 
 ## プラグインコマンド
@@ -142,12 +142,12 @@ $error:=SMTP_From($smtp_id;"henry@gmail.com")
 
 ## プロセス
 
-A process name can contain up to 255 characters, not including scope character.
+ローカルプロセス名は、スコープ記号を除いて255文字以内で指定します。
 
-In the single-user version, or in Client/Server on the Client side, there are two process scopes: **global** or **local**.
+シングルユーザー版およびクライアント/サーバー版のクライアント側において、**グローバル** と **ローカル** という2種類のプロセススコープがあります。
 
-- You denote a **global** process by using a string expression that represents its name (which cannot start with the dollar sign $).
-- You denote a **local** process if the name of the process is preceded by a dollar ($) sign.
+- $記号以外から始まる文字列を使用して **グローバル** プロセスの名前を表します。
+- 名前の前にドル記号 ($) をつけて **ローカル** プロセスを表します。
 
 例:
 ```4d
@@ -209,19 +209,19 @@ vtClone:=Dump("is";"the";"it")
 
 ## セット
 
-A set name can contain up to 255 characters, not including scope character()s).
+セット名は、スコープ記号を除いて255文字以内で指定します。
 
-- You denote a **process** set by using a string expression that represents its name (which cannot start with the <> symbols or the dollar sign $).
-- You denote an **interprocess** set if the name of the set is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
-- On 4D Server, the name of a **client** set is preceded by the dollar sign ($). クライアントセット名は、ドル記号を除いて255文字以内で指定します。
+- セットの名前を表す文字列を使用して **プロセス** セットを表します (<>記号も$記号も名前の先頭につきません) 。
+- **インタープロセス** セットの名前は、先頭にインタープロセス記号 (<>) が付きます。
+- 4D サーバー上において **クライアント** セット名は、先頭にドル記号 ($) を指定します。 クライアントセット名は、ドル記号を除いて255文字以内で指定します。
 
-> Sets are maintained on the Server machine. 効率や特殊目的のために、クライアントマシン上でローカルにセットを使用したい場合があります。 To do so, you use client sets.
+> セットはサーバーマシン上で保守されます。 効率や特殊目的のために、クライアントマシン上でローカルにセットを使用したい場合があります。 このような場合にクライアントセットを使用します。
 
 例:
 ```4d
-CREATE SET([Customers];"Customer Orders")//Process set
-USE SET("<>Deleted Records") //Interprocess set
-If(Records in set("$Selection"+String($i))>0) //Client set
+CREATE SET([Customers];"Customer Orders")// プロセスセット
+USE SET("<>Deleted Records") // インタープロセスセット
+If(Records in set("$Selection"+String($i))>0) // クライアントセット
 ```
 
 
@@ -240,19 +240,19 @@ ADD RECORD([Letters])
 
 ## 変数
 
-The name of a variable can be up to 31 characters, not including the scope symbols.
+変数名は、スコープ記号を除いて最大31文字以内で指定することができます。
 
-- You designate a **local** variable by placing a dollar sign ($) before the variable name.
-- You designate a **process** variable by using its name (which cannot start with the <> symbols nor the dollar sign $)
-- You designate an **interprocess** variable by preceding the name of the variable with the symbols (<>) — a “less than” sign followed by a “greater than” sign.
+- ドル記号 ($) を名前の先頭につけて **ローカル** 変数を表します。
+- (<>記号や$記号から始まらない) 名前を使用して、**プロセス** 変数を表します。
+- 名前の先頭にインタープロセス記号 (<>) を付けることによって、**インタープロセス** 変数を表します。
 
 例:
 
 ```4d
-For($vlRecord;1;100) //local variable
-$vsMyString:="Hello there" //local variable
-If(bValidate=1) //process variable
-<>vlProcessID:=Current process //interprocess variable
+For($vlRecord;1;100) // ローカル変数
+$vsMyString:="Hello there" // ローカル変数
+If(bValidate=1) // プロセス変数
+<>vlProcessID:=Current process // インタープロセス変数
 ```
 
 
