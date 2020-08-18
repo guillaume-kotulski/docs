@@ -257,7 +257,7 @@ If(bValidate=1) // プロセス変数
 
 
 
-## Summary of Identifiers
+## 識別子の一覧
 
 次の表は、4Dの命名規則についてまとめています。
 
