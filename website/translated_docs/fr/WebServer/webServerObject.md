@@ -29,7 +29,7 @@ This feature allows you to develop independant components and features that come
 
 ## Instancier un objet serveur web
 
-The web server object of the host database (default web server) is automatically loaded by 4D at startup. Thus, if you write in a newly created database:
+L'objet serveur Web de la base de données hôte (serveur Web par défaut) est automatiquement chargé par 4D au démarrage. Ainsi, si vous écrivez dans une base de données nouvellement créée :
 
 ```4d
 $nbSrv:=WEB Server list.length   
