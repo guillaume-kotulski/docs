@@ -136,13 +136,13 @@ Sie können auch die Tastenkombination **Strg+Shift+Alt+k** verwenden.
 
 #### Explorer
 
-In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
+Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen** gruppiert.
 
 Um eine neue Klasse zu erstellen:
 
-- select the **Classes** category and click on the ![](assets/en/Users/PlussNew.png) button.
-- select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
-- select **New > Class...** from the contexual menu of the Explorer's Home page.
+- Wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche![](assets/en/Users/PlussNew.png).
+- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**.
 
 #### Unterstützung von Code für Klassen
 
@@ -151,8 +151,8 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 - Im Code-Editor gilt folgendes:
     - Es kann keine Klasse laufen
     - Eine Klassenfunktion ist ein Code Block
-    - **Goto definition** on an object member searches for class Function declarations; for example, "$o.f()" will find "Function f".
-    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
+    - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
+    - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
 - Im Runtime-Explorer und Debugger werden Class Functions mit dem Format \<ClassName> Constructor oder \.\ angezeigt.<ClassName> <FunctionName> format.
 
 
@@ -161,7 +161,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 Um eine vorhandene Klasse zu löschen, können Sie:
 
 - Auf Ihrer Festplatte im Ordner "Classes" die Klassendatei .4dm löschen,
-- in the Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
+- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben** wählen.
 
 
 ## Schlüsselwörter für Klassen
@@ -173,7 +173,7 @@ In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwe
 - `Class extends <ClassName>` zum Definieren der Vererbung.
 
 
-### Function der Klasse
+### Class Function
 
 #### Syntax
 
@@ -182,7 +182,7 @@ Function <name>
 // code
 ```
 
-Functions der Klasse sind Eigenschaften des Objekts prototye der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
+Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
 In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
@@ -198,11 +198,11 @@ Function getAge
   $0:=(Current date-This.birthdate)/365.25
 ```
 
-For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
+Der Befehl `Current method name` gibt für eine Class Function zurück: "*\<ClassName>.\<FunctionName>*", z.B. "MyClass.myMethod".
 
-In the application code, class functions are called as member methods of the object instance and can receive parameters if any. The following syntaxes are supported:
+Im Code der Anwendung werden Class Functions als Member Methods der Instanz des Objekts aufgerufen und können Parameter empfangen, falls vorhanden. Folgende Syntaxarten werden unterstützt
 
-- use of the `()` operator. For example `myObject.methodName("hello")`.
+- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
 - use of a "Function" class member methods
     - `apply()`
     - `call()`
