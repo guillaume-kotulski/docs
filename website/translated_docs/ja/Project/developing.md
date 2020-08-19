@@ -29,13 +29,13 @@ title: プロジェクトの開発
 
 - プロジェクト機能の作成・テスト・編集はローカルファイルを使い、4D でおこないます。 [4D Server と同じマシン上の 4D](#同じマシン上の-4D-を使う) を使えば、4D Server と直に作業することができます。
 
-> It is recommended to use a standard source control tool (e.g. Git) in order to work with branches, to save projects at different steps, and/or to revert changes if necessary.
+> ブランチでの開発や、開発途中のプロジェクトの保存、必要に応じたロールバックといった利便性のため、Git などの標準的なソース管理ツールの使用が推奨されます。
 
-- 4D Server can run the *.4DProject* project file (not compressed) in interpreted mode, so that remote 4D can connect and test the features. For this purpose, 4D Server automatically creates and sends the remote machines a [.4dz version](building.md#build-compiled-structure) of the project.
+- 4D Server は非圧縮の *.4DProject* プロジェクトファイルをインタープリターモードで実行することができ、リモート 4D はそれに接続して機能のテストをおこなえます。 その際に、4D Server はプロジェクトの [.4dz](building.md#コンパイル済みストラクチャーをビルド) ファイルを自動的に作成し、リモートマシンに送信します。
 
-- An updated .4dz version of the project is automatically produced when necessary, *i.e.* when the project has been modified and reloaded by 4D Server. The project is reloaded:
-    - automatically, when the 4D Server application window comes to the front of the OS or when the 4D application on the same machine saves a modification (see below).
-    - when the `RELOAD PROJECT` command is executed. Calling this command is necessary for example when you have pulled a new version of the project from the source control platform.
+- プロジェクトが編集され 4D Server にリロードされた場合など、必要に応じてプロジェクトの .4dzファイルは自動的に更新されます。 プロジェクトは次の場合にリロードされます:
+    - 4D Server アプリケーションウィンドウが OS の最前面に来たり、同じマシン上の 4D アプリケーションが編集を保存した場合 (後述参照) に自動でリロードされます。
+    - `RELOAD PROJECT` コマンドが実行されたときにリロードされます。 プロジェクトの新しいバージョンをソース管理システムよりプルしたときなどに、このコマンドを呼び出す必要があります。
 
 
 ### Updating project files on remote machines
