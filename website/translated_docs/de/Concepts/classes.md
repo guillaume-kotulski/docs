@@ -202,17 +202,17 @@ Der Befehl `Current method name` gibt für eine Class Function zurück: "*\<Clas
 
 Im Code der Anwendung werden Class Functions als Member Methods der Instanz des Objekts aufgerufen und können Parameter empfangen, falls vorhanden. Folgende Syntaxarten werden unterstützt
 
-- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
-- use of a "Function" class member methods
+- Verwendung des Operators `()` Zum Beispiel `myObject.methodName("hello")`.
+- Verwendung der Klasse "Function" als  Member Method
     - `apply()`
     - `call()`
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
-> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten"   
+> aufgerufen: - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden), - 4D gibt einen Fehler nur im laufenden Betrieb aus.
 
 
-#### Example
+#### Beispiel
 
 ```4d
 // Class: Rectangle
