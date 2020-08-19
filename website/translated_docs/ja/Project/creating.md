@@ -83,11 +83,11 @@ title: プロジェクトの作成・開始
 
 ## プロジェクトを開く (その他の方法)
 
-4D offers two ways to let you open projects directly and bypass the Open dialog:
+4D では、開くダイアログを経由しなくてもプロジェクトを開くことのできる方法が 2つあります:
 
-- via menu options:
-    -   *Menu bar* - **File** > **Open Recent Projects / {project name}**
-    -   *4D Tool bar* -  Select the project from the menu associated with the **Open** button
+- メニューを使用:
+    -   *メニューバー* - **ファイル** > **最近使用したデータベースを開く / {project name}**
+    -   *4D ツールバー* -  **開く** ボタンとそのサブメニューを使ってプロジェクトを選択します。
 
-- via preferences:
-    -   Set the **At startup** general preference to **Open last used project**. 
+- 4D 環境設定を使用:
+    -   4D 環境設定の **開始時** オプションに **最後に使用したデータベースを開く** を指定します。 
