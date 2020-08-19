@@ -152,7 +152,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
     - Es kann keine Klasse laufen
     - Eine Klassenfunktion ist ein Code Block
     - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
-    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
+    - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
 - Im Runtime-Explorer und Debugger werden Class Functions mit dem Format \<ClassName> Constructor oder \.\ angezeigt.<ClassName> <FunctionName> format.
 
 
@@ -161,7 +161,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 Um eine vorhandene Klasse zu löschen, können Sie:
 
 - Auf Ihrer Festplatte im Ordner "Classes" die Klassendatei .4dm löschen,
-- in the Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
+- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben** wählen.
 
 
 ## Schlüsselwörter für Klassen
@@ -173,7 +173,7 @@ In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwe
 - `Class extends <ClassName>` zum Definieren der Vererbung.
 
 
-### Function der Klasse
+### Class Function
 
 #### Syntax
 
@@ -182,7 +182,7 @@ Function <name>
 // code
 ```
 
-Functions der Klasse sind Eigenschaften des Objekts prototye der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
+Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
 In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
@@ -200,9 +200,9 @@ Function getAge
 
 For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
 
-In the database code, class functions are called as member methods of the object instance and can receive parameters if any. The following syntaxes are supported:
+In the database code, class functions are called as member methods of the object instance and can receive parameters if any. Folgende Syntaxarten werden unterstützt
 
-- use of the `()` operator. For example `myObject.methodName("hello")`.
+- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
 - use of a "Function" class member methods
     - `apply()`
     - `call()`
