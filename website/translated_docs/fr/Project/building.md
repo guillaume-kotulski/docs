@@ -120,13 +120,13 @@ The following elements are required for the build:
 
 On Windows, this feature creates an executable file (.exe).
 
-The following elements are required for the build:
-- 4D Volume Desktop (the 4D database engine),
-- an [appropriate license](#licenses)
+Les éléments suivants sont requis pour la génération :
+- 4D Volume Desktop (le moteur de base de données 4D),
+- une [licence appropriée](#licenses)
 
-On Windows, this feature creates an executable file (.exe). On macOS, it handles the creation of software packages.
+Sous Windows, cette fonctionnalité crée un fichier exécutable (.exe). Sous Mac Os, cette fonction génère des progiciels (packages).
 
-The principle consists of merging a compiled structure file with 4D Volume Desktop. Les fonctionnalités offertes par le fichier 4D Volume Desktop sont liées à l’offre commerciale à laquelle vous avez souscrite. For more information about this point, refer to the sales documentation and to the [4D Store](http://www.4d.com/).
+Le principe consiste à fusionner le fichier 4D Volume Desktop avec votre fichier de structure compilé. Les fonctionnalités offertes par le fichier 4D Volume Desktop sont liées à l’offre commerciale à laquelle vous avez souscrite. For more information about this point, refer to the sales documentation and to the [4D Store](http://www.4d.com/).
 
 You can define a default data file or allow users to create and use their own data file (see the [Data file management in final applications](https://doc.4d.com/4Dv17R6/4D/17-R6/Data-file-management-in-final-applications.300-4354729.en.html) section).
 
@@ -607,7 +607,7 @@ You can select the data linking mode during the build application process. You c
 
 ### Defining a default data folder
 
-4D allows you to define a default data file at the application building stage. Au premier lancement de l'application, en l'absence de fichier local (cf. [séquence de lancement décrite ci-dessus](#opening-the-data-file)), le fichier de données par défaut est automatiquement ouvert silencieusement en mode lecture seule par 4D. This gives you better control over data file creation and/or opening when launching a merged application for the first time. This gives you better control over data file creation and/or opening when launching a merged application for the first time.
+4D allows you to define a default data file at the application building stage. Au premier lancement de l'application, en l'absence de fichier local (cf. [séquence de lancement décrite ci-dessus](#opening-the-data-file)), le fichier de données par défaut est automatiquement ouvert silencieusement en mode lecture seule par 4D. Cela vous donne un meilleur contrôle sur la création et/ou l'ouverture des fichiers de données lors du premier lancement d'une application fusionnée. This gives you better control over data file creation and/or opening when launching a merged application for the first time.
 
 More specifically, the following cases are covered:
 
