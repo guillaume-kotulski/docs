@@ -263,15 +263,15 @@ Used to indicate the current version number for the application generated. Vous 
 
 This option lets you choose the linking mode between the merged application and the local data file.
 
-#### Data linking mode
+#### Mode de liaison des données
 
-This option lets you choose the linking mode between the merged application and the local data file. Two data linking modes are available:
+Cette option vous permet de choisir le mode de liaison entre l'application fusionnée et le fichier de données local. Two data linking modes are available:
 
 *   **By application name** (default) - The 4D application automatically opens the most recently opened data file corresponding to the structure file. Cela vous permet de déplacer librement le dossier de l'application sur le disque. This option should generally be used for merged applications, unless you specifically need to duplicate your application.
 
-*   **By application path** - The merged 4D application will parse the application's *lastDataPath.xml* file and try to open the data file with an "executablePath" attribute that matches the application's full path. Si cette clé est trouvée, son fichier de données correspondant (défini via son attribut "dataFilePath") est ouvert. Otherwise, the last opened data file is opened (default mode).
+*   **By application path** - The merged 4D application will parse the application's *lastDataPath.xml* file and try to open the data file with an "executablePath" attribute that matches the application's full path. Si cette clé est trouvée, son fichier de données correspondant (défini via son attribut "dataFilePath") est ouvert. Sinon, le dernier fichier de données est ouvert (mode par défaut).
 
-For more information about the data linking mode, refer to the [Last data file opened](#last-data-file-opened) section. The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).
+Pour plus d'informations sur le mode de liaison de données, reportez-vous à la section [Dernier fichier de données ouvert](#last-data-file-opened). The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).
 
 #### Data linking mode
 
@@ -294,7 +294,7 @@ You must designate the location on your disk of the 4D Volume Desktop applicatio
 
 #### 4D Volume Desktop
 
-You must designate the location on your disk of the 4D Volume Desktop application to be used. Ce 4D Volume Desktop doit correspondre à la plate-forme courante (qui sera également la plate-forme de l’application cliente). Si vous souhaitez générer une version de l’application cliente pour la plate-forme “concurrente”, vous devez répéter l'opération en utilisant une application 4D tournant sur cette plate-forme. Cette étape est nécessaire uniquement pour la version initiale de l'application cliente car les mises à jour suivantes pourront être gérées directement depuis une seule plate-forme via le mécanisme des mises à jour automatiques. For more information about this point, see [Customizing 4D Server and/or 4D Client folders](#customizing-4d-server-and-or-4d-client-folders).
+Vous devez désigner l'emplacement sur votre disque de l'application 4D Volume Desktop à utiliser. Ce 4D Volume Desktop doit correspondre à la plate-forme courante (qui sera également la plate-forme de l’application cliente). Si vous souhaitez générer une version de l’application cliente pour la plate-forme “concurrente”, vous devez répéter l'opération en utilisant une application 4D tournant sur cette plate-forme. Cette étape est nécessaire uniquement pour la version initiale de l'application cliente car les mises à jour suivantes pourront être gérées directement depuis une seule plate-forme via le mécanisme des mises à jour automatiques. For more information about this point, see [Customizing 4D Server and/or 4D Client folders](#customizing-4d-server-and-or-4d-client-folders).
 
 > The 4D Volume Desktop version number must match the 4D Developer Edition version number. For example, if you use 4D Developer v18, you must select a 4D Volume Desktop v18.
 
@@ -572,25 +572,25 @@ Thanks to this architecture, when you provide an update of your application, the
 
 This mechanism is usually suitable for standard deployments.
 
-The location of the application's user preferences folder corresponds to the path returned by the following statement:
+L'emplacement du dossier des préférences utilisateur de l'application correspond au chemin retourné par l'instruction suivante :
 
 ```4d
 userPrefs:=Get 4D folder(Active 4D Folder)
 ```
 
-The data file path is stored in a dedicated file, named *lastDataPath.xml*.
+Le chemin du fichier de données est stocké dans un fichier dédié, nommé *lastDataPath.xml*.
 
-Thanks to this architecture, when you provide an update of your application, the local user data file (last data file used) is opened automatically at first launch.
+Grâce à cette architecture, lorsque vous fournissez une mise à jour de votre application, le fichier de données utilisateur local (dernier fichier de données utilisé) s'ouvre automatiquement au premier lancement.
 
-This mechanism is usually suitable for standard deployments. However, for specific needs, for example if you duplicate your merged applications, you might want to change the way that the data file is linked to the application (described below).
+Ce mécanisme convient généralement aux déploiements standard. Cependant, dans des cas spécifiques, par exemple si vous dupliquez vos applications fusionnées, vous pouvez avoir besoin de modifier la manière dont le fichier de données est lié à l'application.
 
-#### Configuring the data linking mode
+#### Configurer le mode de liaison des données
 
-With your compiled applications, 4D automatically uses the last data file opened. By default, the path of the data file is stored in the application's user preferences folder and is linked to the **application name**.
+4D utilise automatiquement, avec vos applications compilées, le dernier fichier de données ouvert. Par défaut, lorsque la nouvelle architecture est activée, le chemin d'accès du fichier de données est stocké dans le dossier de préférences de l'utilisateur de l'application et est lié au **nom de l'application**.
 
-This may be unsuitable if you want to duplicate a merged application intended to use different data files. Duplicated applications actually share the application's user preferences folder and thus, always use the same data file -- even if the data file is renamed, because the last file used for the application is opened.
+Ce fonctionnement peut s'avérer inadapté si vous souhaitez dupliquer une application fusionnée destinée à utiliser différents fichiers de données. En effet, les applications dupliquées vont en fait partager le même dossier de préférences de l'utilisateur et donc, toujours utiliser le même fichier de données -- même si le fichier de données est renommé, car l'application utilisera toujours le dernier fichier de données ouvert par l'application.
 
-4D therefore lets you link the data file path to the application path. Dans ce cas, le fichier de données sera relié via un chemin spécifique et ne sera plus simplement le dernier fichier utilisé. You therefore link your data **by application path**. You therefore link your data **by application path**.
+4D vous permet donc de lier votre chemin de fichier de données au chemin de l'application. Dans ce cas, le fichier de données sera relié via un chemin spécifique et ne sera plus simplement le dernier fichier utilisé. You therefore link your data **by application path**. You therefore link your data **by application path**.
 
 This mode allows you to duplicate your merged applications without breaking the link to the data file. However, with this option, if the application package is moved on the disk, the user will be prompted for a data file, since the application path will no longer match the "executablePath" attribute (after a user has selected a data file, the *lastDataPath.xml* file is updated accordingly).
 
