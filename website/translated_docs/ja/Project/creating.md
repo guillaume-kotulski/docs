@@ -77,11 +77,11 @@ title: プロジェクトの作成・開始
 
 > データベースが暗号化されて公開されている場合、名前の前にキャレット (^) を置かなければなりません。そうでなければ接続は拒否されます。 詳細はクライアント/サーバー接続の暗号化を参照してください。
 
-Once a connection to the server has been established, the remote project will be listed on the **Recent** tab.
+サーバーとの接続が確立されると、そのリモートプロジェクトは **最近使用** タブのリストに加えられます。
 
 
 
-## Project opening shortcuts
+## プロジェクトを開く (その他の方法)
 
 4D offers two ways to let you open projects directly and bypass the Open dialog:
 
