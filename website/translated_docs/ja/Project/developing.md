@@ -27,7 +27,7 @@ title: プロジェクトの開発
 
 4D Server プロジェクトの開発は次の原則に基づきます:
 
-- プロジェクト機能の作成・テスト・編集はローカルファイルを使い、4D でおこないます。 [4D Server と同じマシン上の 4D](#同じマシン上の-4D-を使う) を使えば、4D Server と直に作業することができます。
+- プロジェクト機能の作成・テスト・編集はローカルファイルを使い、4D でおこないます。 [4D Server と同じマシン上の 4D](#同じマシン上での-4D-の使用) を使えば、4D Server と直に作業することができます。
 
 > ブランチでの開発や、開発途中のプロジェクトの保存、必要に応じたロールバックといった利便性のため、Git などの標準的なソース管理ツールの使用が推奨されます。
 
@@ -38,15 +38,15 @@ title: プロジェクトの開発
     - `RELOAD PROJECT` コマンドが実行されたときにリロードされます。 プロジェクトの新しいバージョンをソース管理システムよりプルしたときなどに、このコマンドを呼び出す必要があります。
 
 
-### Updating project files on remote machines
+### リモートマシンのプロジェクトファイルの更新
 
-When an updated .4dz version of the project has been produced on 4D Server, connected remote 4D machines must log out and reconnect to 4D Server in order to benefit from the updated version.
+4D Server 上で .4dz ファイルの更新版が生成された場合、その更新版を利用するには、接続中のリモート 4D マシンは一度ログアウトし、4D Server に再接続する必要があります。
 
 
 
-### 同じマシン上の 4D を使う
+### 同じマシン上での 4D の使用
 
-When 4D connects to a 4D Server on the same machine, the application behaves as 4D in single user mode and the design environment allows you to edit project files. Each time 4D performs a **Save all** action from the design environment (explicitly from **File** menu or implicitly by switching to application mode for example), 4D Server synchronously reloads project files. 4D waits for 4D Server to finish reloading the project files before it continues.
+同じマシン上で 4D が 4D Server に接続すると、アプリケーションはシングルユーザーモードの 4D のようにふるまい、デザイン環境にてプロジェクトファイルの編集が可能です。 Each time 4D performs a **Save all** action from the design environment (explicitly from **File** menu or implicitly by switching to application mode for example), 4D Server synchronously reloads project files. 4D waits for 4D Server to finish reloading the project files before it continues.
 
 However, you need to pay attention to the following behavior differences compared to [standard project architecture](architecture.md):
 
