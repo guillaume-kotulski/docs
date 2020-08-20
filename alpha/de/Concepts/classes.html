@@ -68,7 +68,7 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/classes.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Klassen</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
 <p>Die 4D Programmiersprache unterstützt das Konzept <strong>Klassen</strong>. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.</p>
-<p>Once a user class is defined, you can <strong>instantiate</strong> objects of this class anywhere in your code. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse <a href="#class-extends-classname">erweitern</a> und erbt dann von deren Funktionen.</p>
+<p>Ist eine Benutzerklasse definiert, können Sie Objekte dieser Klasse als <strong>Instanz</strong> überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse <a href="#class-extends-classname">erweitern</a> und erbt dann von deren Funktionen.</p>
 <blockquote>
 <p>Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf einer Kette von Prototypen.</p>
 </blockquote>
@@ -112,10 +112,10 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <p>Um eine vorhandene Klasse zu löschen, können Sie:</p>
 <ul>
 <li>Auf Ihrer Festplatte im Ordner &quot;Classes&quot; die Klassendatei .4dm löschen,</li>
-<li>in the 4D Explorer, select the class and click <img src="/docs/alpha/assets/en/Users/MinussNew.png" alt=""> or choose <strong>Move to Trash</strong> from the contextual menu.</li>
+<li>Die Klasse im Explorer auswählen und am unteren Rand auf das Icon <img src="/docs/alpha/assets/en/Users/MinussNew.png" alt=""> klicken oder im Kontextmenü den Eintrag <strong>In Papierkorb verschieben</strong> wählen.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="4d-oberfläche-verwenden"></a><a href="#4d-oberfläche-verwenden" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D Oberfläche verwenden</h3>
-<p>Class files are automatically stored at the appropriate location when created through the 4D interface, either via the <strong>File</strong> menu or the Explorer.</p>
+<p>Beim Erstellen auf der 4D Oberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü <strong>Datei/Ablage</strong> oder über den Explorer.</p>
 <h4><a class="anchor" aria-hidden="true" id="menü-dateiablage-und-werkzeugleiste"></a><a href="#menü-dateiablage-und-werkzeugleiste" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Menü Datei/Ablage und Werkzeugleiste</h4>
 <p>Sie erstellen eine Datei Klasse für das Projekt über den Eintrag <strong>Neu &gt; Klasse</strong> im Menü <strong>Datei/Ablage</strong> von 4D Developer oder über das <strong>Icon Neu</strong> in der Werkzeugleiste.</p>
 <p>Sie können auch die Tastenkombination <strong>Strg+Shift+Alt+k</strong> verwenden.</p>
@@ -124,7 +124,7 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <p>Um eine neue Klasse zu erstellen:</p>
 <ul>
 <li>Wählen Sie die Kategorie <strong>Klassen</strong> und klicken auf die Schaltfläche<img src="/docs/alpha/assets/en/Users/PlussNew.png" alt="">.</li>
-<li>Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag <strong>Neue Klasse</strong>. <img src="/docs/alpha/assets/en/Concepts/newClass.png" alt=""></li>
+<li>Wählen Sie den Eintrag <strong>Neue Klasse</strong> am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen. <img src="/docs/alpha/assets/en/Concepts/newClass.png" alt=""></li>
 <li>Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag <strong>Neu &gt; Klasse...</strong>.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="unterstützung-von-code-für-klassen"></a><a href="#unterstützung-von-code-für-klassen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unterstützung von Code für Klassen</h4>
@@ -140,10 +140,10 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <li>Im Runtime-Explorer und Debugger werden Class Functions mit dem Format &lt;ClassName&gt; Constructor oder .\ angezeigt.<ClassName> <FunctionName> format.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="stores-für-klassen"></a><a href="#stores-für-klassen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Stores für Klassen</h2>
-<p>Klassen sind über Stores für Klassen verfügbar. Two class stores are available:</p>
+<p>Klassen sind über Stores für Klassen verfügbar. Es gibt zwei Stores:</p>
 <ul>
-<li><code>cs</code> for user class store</li>
-<li><code>4D</code> for built-in class store</li>
+<li><code>cs</code> Store für Benutzerklassen</li>
+<li><code>4D</code> Store für vorgegebene Klassen</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="cs"></a><a href="#cs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cs</h3>
 <h4><a class="anchor" aria-hidden="true" id="cs---classstore"></a><a href="#cs---classstore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cs -&gt; classStore</h4>
@@ -152,12 +152,12 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <tr><th>Parameter</th><th>Typ</th><th></th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>classStore</td><td>object</td><td>&lt;-</td><td>User class store for the project or component</td></tr>
+<tr><td>classStore</td><td>object</td><td>&lt;-</td><td>Store der Benutzerklasse für Projekt oder Komponente</td></tr>
 </tbody>
 </table>
-<p>The <code>cs</code> command returns the user class store for the current project or component. It returns all user classes <a href="#class-definition">defined</a> in the opened project or component. By default, only project <a href="/docs/alpha/de/ORDA/ordaClasses.html">ORDA classes</a> are available.</p>
+<p>Der Befehl <code>cs</code> gibt den Store der Benutzerklassen für das aktuelle Projekt oder die Komponente zurück. Er gibt alle Benutzerklassen zurück, die im geöffneten Projekt bzw. der Komponente <a href="#class-definition">definiert</a> sind. Standardmäßig sind nur <a href="/docs/alpha/de/ORDA/ordaClasses.html">ORDA Klassen</a> des Projekts verfügbar.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
-<p>You want to create a new instance of an object of <code>myClass</code>:</p>
+<p>Eine neue Instanz eines Objekts von <code>myClass</code> erstellen:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$instance</span>:=cs.myClass.<span class="hljs-function">new</span>()
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="4d"></a><a href="#4d" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D</h3>
@@ -167,47 +167,48 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <tr><th>Parameter</th><th>Typ</th><th></th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>classStore</td><td>object</td><td>&lt;-</td><td>4D class store</td></tr>
+<tr><td>classStore</td><td>object</td><td>&lt;-</td><td>Store für 4D Klassen</td></tr>
 </tbody>
 </table>
-<p>The <code>4D</code> command returns the class store for available built-in 4D classes. It provides access to specific APIs such as <a href="/docs/alpha/de/API/cryptoClass.html">CryptoKey</a>.</p>
+<p>Der Befehl <code>4D</code> gibt den Store für in 4D vorgegebene Klassen zurück. Er bietet Zugriff auf spezifische APIs wie <a href="/docs/alpha/de/API/cryptoClass.html">CryptoKey</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-1"></a><a href="#beispiel-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
-<p>You want to create a new key in the <code>CryptoKey</code> class:</p>
+<p>Einen neuen Schlüssel in der Klasse <code>CryptoKey</code> erstellen:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$key</span>:=4D.CryptoKey.<span class="hljs-function">new</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"type"</span>;<span class="hljs-string">"ECDSA"</span>;<span class="hljs-string">"curve"</span>;<span class="hljs-string">"prime256v1"</span>))
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="using-classes-in-your-code"></a><a href="#using-classes-in-your-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using classes in your code</h2>
+<h2><a class="anchor" aria-hidden="true" id="klassen-in-ihrem-code-verwenden"></a><a href="#klassen-in-ihrem-code-verwenden" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Klassen in Ihrem Code verwenden</h2>
 <h3><a class="anchor" aria-hidden="true" id="objekt-klasse"></a><a href="#objekt-klasse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Objekt Klasse</h3>
-<p>When a class is <a href="#class-definition">defined</a> in the project, it is loaded in the 4D language environment. Die Klasse ist selbst ein Objekt vom Typ &quot;Klasse&quot;. Ein Objekt Klasse hat folgende Eigenschaften und Methoden:</p>
+<p>Ist in einem Projekt eine Klasse <a href="#class-definition">definiert</a>, wird sie in die 4D Programmiersprache Umgebung geladen. Die Klasse ist selbst ein Objekt vom Typ &quot;Klasse&quot;. Ein Objekt Klasse hat folgende Eigenschaften und Methoden:</p>
 <ul>
-<li><code>name</code> string</li>
+<li>String <code>name</code></li>
 <li>Objekt <code>superclass</code> (optional, null, wenn nicht vorhanden)</li>
 <li>Methode <code>new()</code>, um Instanzen der Objekte in einer Klasse zu setzen.</li>
 </ul>
 <p>Zusätzlich kann ein Objekt Klasse verweisen auf:</p>
 <ul>
-<li>a <a href="#class-constructor"><code>constructor</code></a> object (optional),</li>
-<li>a <code>prototype</code> object, containing named <a href="#function">function</a> objects (optional).</li>
+<li>Ein Objekt</li>
 </ul>
+<p>constructor`</a> (optional),</li></p>
+<li>Ein Objekt <code>prototype` mit Objektnamen [function](#function) (optional).</li> </ul> 
 <p>Ein Objekt Klasse ist ein shared Object, d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.</p>
-<h3><a class="anchor" aria-hidden="true" id="new-method"></a><a href="#new-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>new() method</h3>
+<h3><a class="anchor" aria-hidden="true" id="methode-new"></a><a href="#methode-new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methode new()</h3>
 <h4><a class="anchor" aria-hidden="true" id="csclassnamenew---classobject"></a><a href="#csclassnamenew---classobject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>cs.&lt;ClassName&gt;.new() -&gt; classObject</h4>
 <table>
 <thead>
 <tr><th>Parameter</th><th>Typ</th><th></th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>classObject</td><td>object</td><td>&lt;-</td><td>New object of the &lt;ClassName&gt; class</td></tr>
+<tr><td>classObject</td><td>object</td><td>&lt;-</td><td>Neues Objekt der &lt;ClassName&gt; class</td></tr>
 </tbody>
 </table>
-<p>The <code>new()</code> method creates and returns an object which is a new instance of the <code>&lt;ClassName&gt;</code> class on which it is called. It is automatically available on all classes from the <code>cs</code> <a href="#class-stores">class store</a>.</p>
-<p>If it is called on a non-existing class, an error is returned.</p>
+<p>Die Methode <code>new()</code> erstellt und gibt ein Objekt zurück, das eine neue Instanz der Klasse <code>&lt;ClassName&gt;</code> ist, in der es aufgerufen wird. Es ist automatisch in allen Klassen aus dem <a href="#class-stores">Store</a> <code>cs</code> verfügbar.</p>
+<p>Wird sie in einer nicht-vorhandenen Klasse aufgerufen, wird ein Fehler zurückgegeben.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-2"></a><a href="#beispiel-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
-<p>To create a new instance of the Person class:</p>
+<p>Eine neue Instanz der Klasse Person anlegen:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$person </span>: cs.Person <span class="hljs-comment">//for accurate autocompletion  </span>
 <span class="hljs-variable">$person</span>:=cs.Person.<span class="hljs-function">new</span>() <span class="hljs-comment">//create the new instance  </span>
 <span class="hljs-comment">//$Person contains functions of the class</span>
 </code></pre>
-<p>Note that you can instantiate empty objects. Legen Sie z.B. die Datei Klasse <code>Empty.4dm</code> wie folgt an:</p>
+<p>Beachten Sie, dass Sie auch Instanzen von leeren Objekten erstellen können. Legen Sie z.B. die Datei Klasse <code>Empty.4dm</code> wie folgt an:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Empty.4dm class file</span>
 <span class="hljs-comment">//Nothing</span>
 </code></pre>
@@ -246,14 +247,14 @@ Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <s
 <span class="hljs-comment">// code</span>
 </code></pre>
 <p>Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse &quot;Function&quot;.</p>
-<p>In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort <code>Function</code> und den Namen von Function. The function name must be compliant with <a href="/docs/alpha/de/Concepts/object.html#object-property-identifiers">property naming rules</a>.</p>
+<p>In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort <code>Function</code> und den Namen von Function. Der Function Name muss mit den <a href="/docs/alpha/de/Concepts/object.html#object-property-identifiers"> Schreibregeln für Eigenschaftsnamen</a> konform sein.</p>
 <blockquote>
-<p><strong>Tip:</strong> Starting the function name with an underscore character (&quot;_&quot;) will exclude the function from the autocompletion features in the 4D code editor. For example, if you declare <code>Function _myPrivateFunction</code> in <code>MyClass</code>, it will not be proposed in the code editor when you type in <code>&quot;cs.MyClass. &quot;</code>.</p>
+<p><strong>Tipp:</strong> Namen, die mit einem Unterstrich (_) beginnen, werden beim automatischen Vervollständigen (autocompletion) im Code-Editor nicht berücksichtigt. Schreiben Sie z.B. <code>Function _myPrivateFunction</code> in <code>MyClass</code>, wird das nicht im Code-Editor vorgeschlagen, wenn Sie <code>&quot;cs.MyClass</code> eingeben.</p>
 </blockquote>
-<p>Immediately following the function name, <a href="#parameters">parameters</a> for the function can be declared with an assigned name and data type, including the return parameter (optional). Beispiel:</p>
+<p>Direkt nach dem Namen von Function lassen sich passende <a href="#parameters">Parameter</a> angeben mit zugewiesenem Namen und Datentyp, inkl. Rückgabeparameter (optional). Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> computeArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt;<span class="hljs-variable">$area </span>: Integer
 </code></pre>
-<p>Within a class function, the <code>This</code> command is used as the object instance. Beispiel:</p>
+<p>Innerhalb einer Class Function wird der Befehl <code>This</code> als Instanz des Objekts verwendet. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> setFullname</span>(<span class="hljs-variable">$firstname </span>: Text; <span class="hljs-variable">$lastname </span>: Text)
     <span class="hljs-literal">This</span>.firstName:=<span class="hljs-variable">$firstname</span>
     <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$lastname</span><span class="hljs-keyword">
@@ -261,49 +262,44 @@ Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <s
 Function</span><span class="hljs-function"> getFullname</span>()-&gt;<span class="hljs-variable">$fullname </span>: Text
     <span class="hljs-variable">$fullname</span>:=<span class="hljs-literal">This</span>.firstName+<span class="hljs-string">" "</span>+<span class="hljs-function">Uppercase</span>(<span class="hljs-literal">This</span>.lastName)
 </code></pre>
-<p>For a class function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, for example &quot;MyClass.myMethod&quot;.</p>
-<p>In the application code, class functions are called as member methods of the object instance and can receive <a href="#class-function-parameters">parameters</a> if any. Folgende Syntaxarten werden unterstützt</p>
+<p>Der Befehl <code>Current method name</code> gibt für eine Class Function zurück: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, z.B. &quot;MyClass.myMethod&quot;.</p>
+<p>Im Code der Anwendung werden Class Functions als Member Methods der Instanz des Objekts aufgerufen und können <a href="#class-function-parameters">Parameter</a> empfangen, falls vorhanden. Folgende Syntaxarten werden unterstützt</p>
 <ul>
-<li>Verwendung des Operators <code>()</code> For example, <code>myObject.methodName(&quot;hello&quot;)</code></li>
-<li>use of a &quot;Function&quot; class member method:
+<li>Verwendung des Operators <code>()</code> Zum Beispiel, <code>myObject.methodName(&quot;hello&quot;)</code></li>
+<li>Verwendung einer Class Member Method &quot;Function&quot;:
+- <code>apply()</code>
 <ul>
-<li><code>apply()</code></li>
 <li><code>call()</code></li>
 </ul></li>
 </ul>
 <blockquote>
-<p><strong>Thread-safety warning:</strong> If a class function is not thread-safe and called by a method with the &quot;Can be run in preemptive process&quot; attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.</p>
+<p><strong>Thread-Safety Warning:</strong> Ist eine Class Function nicht thread-safe und wird mit einer Methode mit dem Attribut &quot;Can be run in preemptive process&quot; aufgerufen:</br> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden),</br> - Gibt 4D nur im laufenden Betrieb einen Fehler aus.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="parameters"></a><a href="#parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
-<p>Function parameters are declared using the parameter name and the parameter type, separated by a colon. The parameter name must be compliant with <a href="/docs/alpha/de/Concepts/object.html#object-property-identifiers">property naming rules</a>. Multiple parameters (and types) are separated by semicolons (;).</p>
+<h4><a class="anchor" aria-hidden="true" id="parameter"></a><a href="#parameter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter</h4>
+<p>Function Parameter werden mit Name und Typ des Parameters, getrennt durch Strichpunkt, deklariert. Der Parametername muss mit den Schreibregeln für Eigenschaftsnamen <a href="/docs/alpha/de/Concepts/object.html#object-property-identifiers"> konform sein</a>. Mehrere Parameter (und Typen) werden durch Strichpunkte (;) voneinander getrennt.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x</span>; <span class="hljs-variable">$y </span>: Variant; <span class="hljs-variable">$z </span>: Integer; <span class="hljs-variable">$xy </span>: Object)
 </code></pre>
 <blockquote>
-<p>If the type is not stated, the parameter will be defined as <code>Variant</code>.</p>
+<p>Ist kein Typ angegeben, wird der Parameter als <code>Variant</code> deklariert.</p>
 </blockquote>
-<p>You declare the return parameter (optional) by adding an arrow (-&gt;) and the return parameter definition after the input parameter(s) list. For example:</p>
+<p>Den Rückgabeparameter (optional) deklarieren Sie mit einem Pfeil (-&gt;) und der entsprechenden Definition nach der Liste der Eingabeparameter. Zum Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt;<span class="hljs-variable">$result </span>: Integer
 </code></pre>
-<p>You can also declare the return parameter only by adding <code>: type</code>, in which case it will automatically be available through $0. For example:</p>
+<p>Sie können den Rückgabeparameter auch nur durch Hinzufügen von <code>: type</code> deklarieren, dann ist er automatisch durch $0 verfügbar. Zum Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
     <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
 </code></pre>
 <blockquote>
-<p>The <a href="/docs/alpha/de/Concepts/parameters.html#sequential-parameters">classic 4D syntax</a> for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:</p>
-<pre><code class="hljs css language-4d"></code></pre>
+<p>Mit der <a href="/docs/alpha/de/Concepts/parameters.html#sequential-parameters">klassischen 4D Syntax</a> für Parameter von Methoden lassen sich Parameter von Class Function deklarieren. Beide Syntaxarten lassen sich miteinander mischen. Zum Beispiel:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Integer)<span class="hljs-keyword">
+  var</span> <span class="hljs-variable">$2</span>; <span class="hljs-variable">$value </span>: Integer<span class="hljs-keyword">
+  var</span> <span class="hljs-variable">$0 </span>: Text
+  <span class="hljs-variable">$value</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$2</span>
+  <span class="hljs-variable">$0</span>:=<span class="hljs-function">String</span>(<span class="hljs-variable">$value</span>)
+</code></pre>
 </blockquote>
-<p>Function add($x : Integer)
-var $2; $value : Integer
-var $0 : Text
-$value:=$x+$2
-$0:=String($value)</p>
-<pre><code class="hljs">
-
-<span class="4d">
-#### Example
-
-<span class="hljs-comment">```4d</span>
-<span class="hljs-comment">// Class: Rectangle</span><span class="hljs-keyword">
+<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Rectangle</span><span class="hljs-keyword">
 Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)
     <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
     <span class="hljs-literal">This</span>.height:=<span class="hljs-variable">$height</span>
@@ -312,7 +308,7 @@ Class constructor</span>(<span class="hljs-variable">$width </span>: Integer; <s
 <span class="hljs-comment">// Function definition</span><span class="hljs-keyword">
 Function</span><span class="hljs-function"> getArea</span>()-&gt;<span class="hljs-variable">$result </span>: Integer
     <span class="hljs-variable">$result</span>:=(<span class="hljs-literal">This</span>.height)*(<span class="hljs-literal">This</span>.width)
-</span></code></pre>
+</code></pre>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// In a project method</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$rect </span>: cs.Rectangle<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$area </span>: Real
@@ -329,7 +325,7 @@ var</span> <span class="hljs-variable">$area </span>: Real
 <p>A class constructor function, which can accept <a href="#parameters">parameters</a>, can be used to define a user class.</p>
 <p>In that case, when you call the <code>new()</code> class member method, the class constructor is called with the parameters optionally passed to the <code>new()</code> function.</p>
 <p>For a class constructor function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.constructor</em>&quot;, for example &quot;MyClass.constructor&quot;.</p>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: MyClass</span>
 <span class="hljs-comment">// Class constructor of MyClass</span>
 <span class="hljs-function">Class Constructor </span>(<span class="hljs-variable">$name </span>: Text)
@@ -356,7 +352,7 @@ Class extends</span> &lt;ParentClass&gt;
 </ul>
 <p>Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and <code>check syntax</code> will throw an error in this case.</p>
 <p>An extended class can call the constructor of its parent class using the <a href="#super"><code>Super</code></a> command.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>This example creates a class called <code>Square</code> from a class called <code>Polygon</code>.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Class: Square</span>
 <span class="hljs-comment">//path: Classes/Square.4dm </span><span class="hljs-keyword">
@@ -390,9 +386,10 @@ Class constructor</span> (<span class="hljs-variable">$side </span>: Integer)
 <p>The <code>Super</code> keyword allows calls to the <code>superclass</code>, i.e. the parent class.</p>
 <p><code>Super</code> serves two different purposes:</p>
 <ul>
-<li>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. When used in a constructor, the <code>Super</code> command appears alone and must be used before the <code>This</code> keyword is used.
+<li><p>inside a <a href="#class-constructor">constructor code</a>, <code>Super</code> is a command that allows to call the constructor of the superclass. When used in a constructor, the <code>Super</code> command appears alone and must be used before the <code>This</code> keyword is used.</p>
+<pre><code class="hljs">- If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
+</code></pre>
 <ul>
-<li><p>If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.</p></li>
 <li><p>If the <code>This</code> command is called on an object whose superclasses have not been constructed, error -10743 is generated.</p></li>
 <li><p>If <code>Super</code> is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.</p></li>
 </ul></li>
@@ -442,7 +439,7 @@ Function</span><span class="hljs-function"> getArea</span>()
 <span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$0</span>)
     <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.height*<span class="hljs-literal">This</span>.width
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 2</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-2-1"></a><a href="#example-2-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 2</h4>
 <p>This example illustrates the use of <code>Super</code> in a class member method. You created the <code>Rectangle</code> class with a function:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Class: Rectangle</span><span class="hljs-keyword">
 
@@ -518,7 +515,7 @@ Function</span> f()
 <h3><a class="anchor" aria-hidden="true" id="ob-instance-of"></a><a href="#ob-instance-of" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Instance of</h3>
 <h4><a class="anchor" aria-hidden="true" id="ob-instance-of--object--class----boolean"></a><a href="#ob-instance-of--object--class----boolean" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OB Instance of ( object ; class ) -&gt; Boolean</h4>
 <p><code>OB Instance of</code> returns <code>true</code> if <code>object</code> belongs to <code>class</code> or to one of its inherited classes, and <code>false</code> otherwise.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/de/Concepts/shared.html"><span class="arrow-prev">← </span><span>Shared objects and collections</span></a><a class="docs-next button" href="/docs/alpha/de/Concepts/control-flow.html"><span>Ablaufsteuerung Überblick</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#klassen-verwalten">Klassen verwalten</a><ul class="toc-headings"><li><a href="#definition-einer-klasse">Definition einer Klasse</a></li><li><a href="#eine-klasse-löschen">Eine Klasse löschen</a></li><li><a href="#4d-oberfläche-verwenden">4D Oberfläche verwenden</a></li></ul></li><li><a href="#stores-für-klassen">Stores für Klassen</a><ul class="toc-headings"><li><a href="#cs">cs</a></li><li><a href="#4d">4D</a></li></ul></li><li><a href="#using-classes-in-your-code">Using classes in your code</a><ul class="toc-headings"><li><a href="#objekt-klasse">Objekt Klasse</a></li><li><a href="#new-method">new() method</a></li><li><a href="#nach-eigenschaft-suchen-und-prototyp">Nach Eigenschaft suchen und Prototyp</a></li></ul></li><li><a href="#schlüsselwörter-für-klassen">Schlüsselwörter für Klassen</a><ul class="toc-headings"><li><a href="#function">Function</a></li><li><a href="#class-constructor">Class constructor</a></li><li><a href="#class-extends-classname">Class extends &lt;ClassName&gt;</a></li><li><a href="#super">Super</a></li><li><a href="#this">This</a></li></ul></li><li><a href="#class-commands">Class commands</a><ul class="toc-headings"><li><a href="#ob-class">OB Class</a></li><li><a href="#ob-instance-of">OB Instance of</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/de/Concepts/shared.html"><span class="arrow-prev">← </span><span>Shared objects and collections</span></a><a class="docs-next button" href="/docs/alpha/de/Concepts/control-flow.html"><span>Ablaufsteuerung Überblick</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#overview">Overview</a></li><li><a href="#klassen-verwalten">Klassen verwalten</a><ul class="toc-headings"><li><a href="#definition-einer-klasse">Definition einer Klasse</a></li><li><a href="#eine-klasse-löschen">Eine Klasse löschen</a></li><li><a href="#4d-oberfläche-verwenden">4D Oberfläche verwenden</a></li></ul></li><li><a href="#stores-für-klassen">Stores für Klassen</a><ul class="toc-headings"><li><a href="#cs">cs</a></li><li><a href="#4d">4D</a></li></ul></li><li><a href="#klassen-in-ihrem-code-verwenden">Klassen in Ihrem Code verwenden</a><ul class="toc-headings"><li><a href="#objekt-klasse">Objekt Klasse</a></li><li><a href="#methode-new">Methode new()</a></li><li><a href="#nach-eigenschaft-suchen-und-prototyp">Nach Eigenschaft suchen und Prototyp</a></li></ul></li><li><a href="#schlüsselwörter-für-klassen">Schlüsselwörter für Klassen</a><ul class="toc-headings"><li><a href="#function">Function</a></li><li><a href="#class-constructor">Class constructor</a></li><li><a href="#class-extends-classname">Class extends &lt;ClassName&gt;</a></li><li><a href="#super">Super</a></li><li><a href="#this">This</a></li></ul></li><li><a href="#class-commands">Class commands</a><ul class="toc-headings"><li><a href="#ob-class">OB Class</a></li><li><a href="#ob-instance-of">OB Instance of</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
