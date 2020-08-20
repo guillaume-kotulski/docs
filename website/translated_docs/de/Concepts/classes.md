@@ -6,9 +6,9 @@ title: Klassen
 
 ## Overview
 
-The 4D language supports the concept of **classes**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
+Die 4D Programmiersprache unterstützt das Konzept **Klassen**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
 
-Once a class is defined, you can **instantiate** objects of this class anywhere in your code. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse `erweitern` und erbt dann von deren Funktionen.
+Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** überall in Ihrem Code verwenden. Jedes Objekt ist eine Instanz seiner Klasse. Eine Klasse kann eine andere Klasse `erweitern` und erbt dann von deren Funktionen.
 
 Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf einer Kette von Prototypen.
 
@@ -98,7 +98,7 @@ Klassen sind über Stores für Klassen verfügbar. Es gibt folgende Stores für 
 - Ein Store für in 4D integrierte Klassen. Er wird über den Befehl `4D` zurückgegeben.
 - Ein Store für Klassen pro geöffneter Anwendung oder Komponente. Er wird über den Befehl `cs` zurückgegeben. Das sind "Benutzerklassen".
 
-For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
+Sie können z.B. für ein Objekt von myClass mit der Anweisung `cs.myClass.new()` eine neue Instanz erstellen (`cs` bedeutet *classtore*).
 
 
 ## Benutzerklassen verwalten
@@ -126,23 +126,23 @@ Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
 ### 4D Entwickleroberfläche
 
-Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
+Beim Erstellen auf der 4D Entwickleroberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü **Datei/Ablage** oder über den Explorer.
 
 #### Menü Datei/Ablage und Werkzeugleiste
 
-You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
+Sie erstellen eine Datei Klasse für das Projekt über den Eintrag **Neu > Klasse** im Menü **Datei/Ablage** von 4D Developer oder über das **Icon Neu** in der Werkzeugleiste.
 
-You can also use the **Ctrl+Shift+Alt+k** shortcut.
+Sie können auch die Tastenkombination **Strg+Shift+Alt+k** verwenden.
 
 #### Explorer
 
-In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
+Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen** gruppiert.
 
 Um eine neue Klasse zu erstellen:
 
-- select the **Classes** category and click on the ![](assets/en/Users/PlussNew.png) button.
-- select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
-- select **New > Class...** from the contexual menu of the Explorer's Home page.
+- Wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche![](assets/en/Users/PlussNew.png).
+- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**.
 
 #### Unterstützung von Code für Klassen
 
@@ -151,8 +151,8 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 - Im Code-Editor gilt folgendes:
     - Es kann keine Klasse laufen
     - Eine Klassenfunktion ist ein Code Block
-    - **Goto definition** on an object member searches for class Function declarations; for example, "$o.f()" will find "Function f".
-    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
+    - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
+    - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
 - Im Runtime-Explorer und Debugger werden Class Functions mit dem Format \<ClassName> Constructor oder \.\ angezeigt.<ClassName> <FunctionName> format.
 
 
@@ -161,7 +161,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 Um eine vorhandene Klasse zu löschen, können Sie:
 
 - Auf Ihrer Festplatte im Ordner "Classes" die Klassendatei .4dm löschen,
-- in the Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
+- Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben** wählen.
 
 
 ## Schlüsselwörter für Klassen
@@ -173,7 +173,7 @@ In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwe
 - `Class extends <ClassName>` zum Definieren der Vererbung.
 
 
-### Function der Klasse
+### Class Function
 
 #### Syntax
 
@@ -182,7 +182,7 @@ Function <name>
 // code
 ```
 
-Functions der Klasse sind Eigenschaften des Objekts prototye der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
+Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
 In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
@@ -200,9 +200,9 @@ Function getAge
 
 For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
 
-In the database code, class functions are called as member methods of the object instance and can receive parameters if any. The following syntaxes are supported:
+In the database code, class functions are called as member methods of the object instance and can receive parameters if any. Folgende Syntaxarten werden unterstützt
 
-- use of the `()` operator. For example `myObject.methodName("hello")`.
+- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
 - use of a "Function" class member methods
     - `apply()`
     - `call()`
