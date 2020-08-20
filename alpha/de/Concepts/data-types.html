@@ -67,7 +67,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/data-types.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Überblick über Datentypen</h1></header><article><div><span><p>In 4D werden Daten je nach Typ an zwei Stellen verwaltet: Datenfeld der Datenbank und 4D Programmiersprache.</p>
-<p>Auch wenn die Datentypen in der Regel gleich sind, sind bestimmte Typen auf Datenbankebene nicht direkt in der Programmiersprache verfügbar und werden automatisch konvertiert. Dagegen lassen sich bestimmte Datentypen nur über die Programmiersprache verwalten. Nachfolgende Übersicht zeigt alle verfügbaren Datentypen und wie sie unterstützt bwz. deklariert werden:</p>
+<p>Auch wenn die Datentypen in der Regel gleich sind, sind bestimmte Typen auf Datenbankebene nicht direkt in der Programmiersprache verfügbar und werden automatisch konvertiert. Dagegen lassen sich bestimmte Datentypen nur über die Programmiersprache verwalten. Nachfolgende Übersicht zeigt alle verfügbaren Datentypen und wie sie unterstützt bzw. deklariert werden:</p>
 <table>
 <thead>
 <tr><th>Datentypen</th><th>Datenbank Unterstützung (1)</th><th>Programmiersprache Unterstützung</th><th>Variable Deklaration</th></tr>
@@ -80,7 +80,7 @@
 <tr><td><a href="/docs/alpha/de/Concepts/boolean.html">Boolean</a></td><td>Ja</td><td>Ja</td><td><code>C_BOOLEAN</code>, <code>ARRAY BOOLEAN</code></td></tr>
 <tr><td><a href="/docs/alpha/de/Concepts/number.html">Ganzzahl</a></td><td>Ja</td><td>Konvertiert in Lange Ganzzahl</td><td><code>ARRAY INTEGER</code></td></tr>
 <tr><td><a href="/docs/alpha/de/Concepts/number.html">Lange Ganzzahl</a></td><td>Ja</td><td>Ja</td><td><code>C_LONGINT</code>, <code>ARRAY LONGINT</code></td></tr>
-<tr><td><a href="/docs/alpha/de/Concepts/number.html">lange Ganzzahl 64 bits</a></td><td>Ja (SQL)</td><td>Konvertiert in Zahl</td><td>-</td></tr>
+<tr><td><a href="/docs/alpha/de/Concepts/number.html">Lange Ganzzahl 64 bits</a></td><td>Ja (SQL)</td><td>Konvertiert in Zahl</td><td>-</td></tr>
 <tr><td><a href="/docs/alpha/de/Concepts/number.html">Zahl</a></td><td>Ja</td><td>Ja</td><td><code>C_REAL</code>, <code>ARRAY REAL</code></td></tr>
 <tr><td><a href="/docs/alpha/de/Concepts/null-undefined.html">Undefiniert</a></td><td>-</td><td>Ja</td><td>-</td></tr>
 <tr><td><a href="/docs/alpha/de/Concepts/null-undefined.html">Null</a></td><td>-</td><td>Ja</td><td>-</td></tr>
@@ -98,15 +98,15 @@
 <p>Werden Variablen über eine Compiler Direktive typisiert, empfangen sie einen Standardwert, den sie während der Arbeitssitzung beibehalten, solange sie nicht zugewiesen werden.</p>
 <p>Der Standardwert richtet sich nach Typ und Kategorie der Variablen, der Kontext seiner Ausführung (interpretiert oder kompiliert), sowie im kompilierten Modus die Optionen, die auf der Seite Compiler der Datenbank-Eigenschaften definiert wurden:</p>
 <ul>
-<li>Prozess- und Interprozessvariablen werden immer &quot;auf Null&quot; gesetzt, d.h. &quot;0&quot; ist je nach Fall ein leerer String, ein leeres BLOB, ein Zeiger Nil, ein leeres Datum (00-00-00), etc.</li>
+<li>Prozess- und Interprozessvariablen werden immer &quot;auf Leer&quot; gesetzt, d.h. je nach Fall ein leerer String, ein leeres BLOB, ein Zeiger Nil, ein leeres Datum (00-00-00), 0 für Zahl, etc.</li>
 <li>Lokale Variablen werden wie folgt gesetzt:
 <ul>
-<li>Im interpretierten Modus: auf Null (siehe oben)</li>
+<li>Im interpretierten Modus: auf Leer</li>
 <li>Im kompilierten Modus je nach der Option <strong>Lokale Variablen initialisieren</strong> auf der Seite Compiler der Einstellungen:
 <ul>
-<li>&quot;auf Null&quot;: auf Null (siehe oben)</li>
+<li>&quot;auf Leer&quot;: auf Leer (siehe oben)</li>
 <li>&quot; auf zufälligen Wert&quot;: 0x72677267 für Zahlen und Uhrzeiten, immer Wahr für Boolean, dasselbe wie &quot;auf Null&quot; für die anderen</li>
-<li>&quot;Nein&quot;: keine Initialisierung, d.h. das was in RAM ist, wird für die Variablen verwendet, analog zu Werten, die vor anderen Variablen verwendet werden. <strong>Hinweis:</strong> 4D empfiehlt, &quot; auf Null&quot; zu verwenden.</li>
+<li>&quot;Nein&quot;: keine Initialisierung, d.h. das was in RAM ist, wird für die Variablen verwendet, analog zu Werten, die vor anderen Variablen verwendet werden. <strong>Hinweis:</strong> 4D empfiehlt, &quot;auf Leer&quot; zu verwenden.</li>
 </ul></li>
 </ul></li>
 </ul>
