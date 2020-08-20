@@ -439,14 +439,14 @@ The `This` keyword returns a reference to the currently processed object. In 4D,
 
 In most cases, the value of `This` is determined by how a function is called. Er lässt sich während der Ausführung nicht per Zuweisung setzen und ist u. U. bei jedem Aufruf der Funktion anders.
 
-Wird eine Formel als Member Method eines Objekts aufgerufen, wird das dazugehörige `This` in das Objekt gesetzt, in dem die Methode aufgerufen wird. For example:
+Wird eine Formel als Member Method eines Objekts aufgerufen, wird das dazugehörige `This` in das Objekt gesetzt, in dem die Methode aufgerufen wird. Zum Beispiel:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-When a [class constructor](#class-constructor) function is used (with the `new()` keyword), its `This` is bound to the new object being constructed.
+Mit der Function [Class Constructor](#class-constructor) (mit der Methode `new()`) wird das dazugehörige `This` an das neue Objekt in Konstruktion gebunden.
 
 ```4d
   //Class: ob
@@ -463,7 +463,7 @@ $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. See [this example](#example-1).
+> Wird der Superclass Constructor in einem Constructor über das Schlüsselwort [Super](#super) aufgerufen, müssen Sie darauf achten, dass `This` nicht vor dem Superclass Constructor aufgerufen wird, sonst wird ein Fehler generiert. See [this example](#example-1).
 
 
 In any cases, `This` refers to the object the method was called on, as if the method were on the object.
