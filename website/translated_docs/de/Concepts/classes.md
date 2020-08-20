@@ -328,16 +328,16 @@ $0:=This.height*This.width
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                    |
-| --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| Parameter | Typ    |    | Beschreibung                                 |
+| --------- | ------ | -- | -------------------------------------------- |
+| param     | mixed  | -> | Parameter für den übergeordneten Constructor |
+| Ergebnis  | object | <- | Überordnung des Objekts                      |
 
-The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
+Mit dem Schlüsselwort `Super` lassen sich Aufrufe zur `Superklasse` machen, z.B. die übergeordnete Klasse.
 
-`Super` serves two different purposes:
+`Super` dient für zwei unterschiedliche Zwecke:
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
+- innerhalb des [Constructor Code](#class-constructor) ist `Super` ein Befehl zum Aufrufen des Constructor der Superklasse. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
     - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
     - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
     - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
@@ -437,9 +437,9 @@ Then you can write in a project method:
 
 The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.
+In most cases, the value of `This` is determined by how a function is called. Er lässt sich während der Ausführung nicht per Zuweisung setzen und ist u. U. bei jedem Aufruf der Funktion anders.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
+Wird eine Formel als Member Method eines Objekts aufgerufen, wird das dazugehörige `This` in das Objekt gesetzt, in dem die Methode aufgerufen wird. For example:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
