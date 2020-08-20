@@ -67,19 +67,19 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/WebServer/webServerObject.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Objet Serveur Web</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="aperçu"></a><a href="#aperçu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aperçu</h2>
-<p>A 4D project can start and monitor a web server for the main (host) database as well as each hosted component.</p>
-<p>For example, if you installed two components in your main database, you can start and monitor up to three independant web servers from your application:</p>
+<p>Un projet 4D peut démarrer et surveiller un serveur Web pour la base de données principale (hôte) ainsi que chaque composant hébergé.</p>
+<p>Par exemple, si vous avez installé deux composants dans votre base de données principale, vous pouvez démarrer et contrôler jusqu'à trois serveurs Web indépendants à partir de votre application :</p>
 <ul>
-<li>one web server for the host database,</li>
+<li>un serveur web pour la base hôte,</li>
 <li>one web server for the component #1,</li>
 <li>one web server for the component #2.</li>
 </ul>
-<p>Other than memory, there is no limit to the number of components and thus, of web servers, that can be attached to a single 4D database project.</p>
-<p>Each 4D web server, including the main database's web server, is exposed as a specific <strong>object</strong>. Once instantiated, a web server object can be handled from the current database or from any component.</p>
+<p>En dehors de la mémoire, il n'y a pas de limite au nombre de composants et donc, de serveurs Web, pouvant être rattachés à un seul projet de base de données 4D.</p>
+<p>Chaque serveur web 4D, y compris le serveur web de la base de données principale, est exposé comme un <strong>objet</strong> spécifique. Une fois instancié, un objet serveur Web peut être géré à partir de la base de données courante ou de n'importe quel composant.</p>
 <blockquote>
 <p>Les <a href="https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html">commandes WEB</a> héritées du langage 4D sont prises en charge mais ne peuvent pas contrôler le serveur Web auquel elles s'appliquent (voir ci-dessous).</p>
 </blockquote>
-<p>Each web server (host database or component) can be used in its own separate context, including:</p>
+<p>Chaque serveur web (base hôte ou composant) peut être utilisé dans son propre contexte, notamment :</p>
 <ul>
 <li><code>On Web Authentication</code> and <code>On Web Connection</code> database method calls</li>
 <li>4D tags processing and method calls,</li>
@@ -87,7 +87,7 @@
 </ul>
 <p>This feature allows you to develop independant components and features that come with their own web interfaces.</p>
 <h2><a class="anchor" aria-hidden="true" id="instancier-un-objet-serveur-web"></a><a href="#instancier-un-objet-serveur-web" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Instancier un objet serveur web</h2>
-<p>The web server object of the host database (default web server) is automatically loaded by 4D at startup. Thus, if you write in a newly created database:</p>
+<p>L'objet serveur Web de la base de données hôte (serveur Web par défaut) est automatiquement chargé par 4D au démarrage. Ainsi, si vous écrivez dans une base de données nouvellement créée :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$nbSrv</span>:=WEB Server list.length   
 <span class="hljs-comment">//$nbSrv value is 1</span>
 </code></pre>
@@ -163,7 +163,7 @@ webServer.<span class="hljs-function">start</span>(<span class="hljs-variable">$
 <tr><td>maxRequestSize</td><td>number</td><td>Maximum size (in bytes) of incoming HTTP requests (POST) that the Web server is allowed to process. Passing the maximum value (2147483648) means that, in practice, no limit is set. This limit is used to avoid web server saturation due to incoming requests that are too large. If a request reaches this limit, the web server rejects it. <p><p>Possible values: 500000 - 2147483648</td></tr>
 <tr><td>maxSessions</td><td>number</td><td>Maximum number of simultaneous sessions. When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (<code>maxConcurrentProcesses</code> property, 100 by default)</td></tr>
 <tr><td>minTLSVersion</td><td>number</td><td>Minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected. <p><p>Possible values:<li>1 = <code>TLSv1_0</code></li><li>2 = <code>TLSv1_1</code></li><li>3 = <code>TLSv1_2</code> (default)</li><p><p>If modified, the server must be restarted to use the new value.</td></tr>
-<tr><td><em>name</em></td><td>Texte</td><td>Name of the web server database</td></tr>
+<tr><td><em>name</em></td><td>Texte</td><td>Nom de la base du serveur Web</td></tr>
 <tr><td><em>openSSLVersion</em></td><td>Texte</td><td>Version of the OpenSSL library used</td></tr>
 <tr><td><em>perfectForwardSecrecy</em></td><td>boolean</td><td>PFS availability on the server</td></tr>
 <tr><td>rootFolder</td><td>Texte</td><td>Path of web server root folder. Format POSIX du chemin d'accès complet à l'aide de filesystem. Peut être passé comme objet <code>Folder</code> dans le paramètre <code>settings</code>.</td></tr>
@@ -176,8 +176,8 @@ webServer.<span class="hljs-function">start</span>(<span class="hljs-variable">$
 <p>These properties are defined:</p>
 <ol>
 <li>using the <code>settings</code> parameter of the <code>webServer.start( )</code> method (except for read-only properties, see below),</li>
-<li>if not used, using the <code>WEB SET OPTION</code> command (host databases only),</li>
-<li>if not used, in the database settings of the host database or the component.</li>
+<li>si elles ne sont pas utilisées, à l'aide de la commande <code>WEB SET OPTION</code> (bases de données hôtes uniquement),</li>
+<li>si elles ne sont pas utilisées, dans les paramètres de la base hôte ou du composant.</li>
 </ol>
 <ul>
 <li>If the web server is not started, the properties contain the values that will be used at the next web server startup.</li>
@@ -193,32 +193,32 @@ webServer.<span class="hljs-function">start</span>(<span class="hljs-variable">$
 <tr><th>Commande</th><th>Portée</th></tr>
 </thead>
 <tbody>
-<tr><td><code>SET DATABASE PARAMETER</code></td><td>Host database web server</td></tr>
+<tr><td><code>SET DATABASE PARAMETER</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB CLOSE SESSION</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB GET BODY PART</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB Get body part count</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB Get Current Session ID</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB GET HTTP BODY</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB GET HTTP HEADER</code></td><td>Web server that received the request</td></tr>
-<tr><td><code>WEB GET OPTION</code></td><td>Host database web server</td></tr>
-<tr><td><code>WEB Get server info</code></td><td>Host database web server</td></tr>
+<tr><td><code>WEB GET OPTION</code></td><td>Serveur Web de la base hôte</td></tr>
+<tr><td><code>WEB Get server info</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB GET SESSION EXPIRATION</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB Get session process count</code></td><td>Web server that received the request</td></tr>
-<tr><td><code>WEB GET STATISTICS</code></td><td>Host database web server</td></tr>
+<tr><td><code>WEB GET STATISTICS</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB GET VARIABLES</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB Is secured connection</code></td><td>Web server that received the request</td></tr>
-<tr><td><code>WEB Is server running</code></td><td>Host database web server</td></tr>
+<tr><td><code>WEB Is server running</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB SEND BLOB</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB SEND FILE</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB SEND HTTP REDIRECT</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB SEND RAW DATA</code></td><td>Web server that received the request</td></tr>
 <tr><td><code>WEB SEND TEXT</code></td><td>Web server that received the request</td></tr>
-<tr><td><code>WEB SET HOME PAGE</code></td><td>Host database web server</td></tr>
+<tr><td><code>WEB SET HOME PAGE</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB SET HTTP HEADER</code></td><td>Web server that received the request</td></tr>
-<tr><td><code>WEB SET OPTION</code></td><td>Host database web server</td></tr>
-<tr><td><code>WEB SET ROOT FOLDER</code></td><td>Host database web server</td></tr>
-<tr><td><code>WEB START SERVER</code></td><td>Host database web server</td></tr>
-<tr><td><code>WEB STOP SERVER</code></td><td>Host database web server</td></tr>
+<tr><td><code>WEB SET OPTION</code></td><td>Serveur Web de la base hôte</td></tr>
+<tr><td><code>WEB SET ROOT FOLDER</code></td><td>Serveur Web de la base hôte</td></tr>
+<tr><td><code>WEB START SERVER</code></td><td>Serveur Web de la base hôte</td></tr>
+<tr><td><code>WEB STOP SERVER</code></td><td>Serveur Web de la base hôte</td></tr>
 <tr><td><code>WEB Validate digest</code></td><td>Web server that received the request</td></tr>
 </tbody>
 </table>
