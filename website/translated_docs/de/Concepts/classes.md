@@ -141,7 +141,7 @@ Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen
 Um eine neue Klasse zu erstellen:
 
 - Wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche![](assets/en/Users/PlussNew.png).
-- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie den Eintrag **Neue Klasse** am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen. ![](assets/en/Concepts/newClass.png)
 - Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**.
 
 #### Unterstützung von Code für Klassen
@@ -208,8 +208,8 @@ Im Code der Anwendung werden Class Functions als Member Methods der Instanz des 
     - `call()`
 
 
-> **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten"   
-> aufgerufen: - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden), - 4D gibt einen Fehler nur im laufenden Betrieb aus.
+> **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten" aufgerufen:  
+> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden),</br> - 4D gibt einen Fehler nur im laufenden Betrieb aus.
 
 
 #### Beispiel
@@ -249,14 +249,14 @@ Class Constructor
 // code
 ```
 
-A class constructor function, which can accept parameters, can be used to define a user class.
+Mit einer Function Class Constructor, die Parameter zulässt, lässt sich eine Benutzerklasse definieren.
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
+Dann wird beim Aufrufen der Member Method `new()` der Klasse der Class Constructor mit den optional in `new()` übergebenen Parametern aufgerufen.
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+Für eine Function Class Constructor gibt der Befehl `Current method name` zurück: "*\<ClassName>.constructor*", for example "MyClass.constructor".
 
 
-#### Example:
+#### Beispiel:
 
 ```4d
 // Class: MyClass
@@ -286,7 +286,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
+Das Schlüsselwort`Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
 
 Für Erweiterungen einer Klasse gelten folgende Regeln:
 
