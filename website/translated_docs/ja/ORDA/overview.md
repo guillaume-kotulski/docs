@@ -26,7 +26,7 @@ ORDA のデータモデルでは、単一のデータクラスだけで旧来の
 
 ## ORDAの使い方
 
-原則として、ORDA はオブジェクト型を扱います。 ORDA では、データストア自身を含めすべての主要な概念は、オブジェクトを通して利用可能です。 The datastore is automatically [mapped upon the 4D structure](dsMapping.md).
+原則として、ORDA はオブジェクト型を扱います。 ORDA では、データストア自身を含めすべての主要な概念は、オブジェクトを通して利用可能です。 データストアは自動的に [4D ストラクチャーにマッピングされます](dsMapping.md)。
 
 ORDA objects can be handled like 4D standard objects, but they automatically benefit from specific properties and methods.
 
