@@ -60,43 +60,43 @@ ORDA は、下地である 4D ストラクチャーへの自動マッピング�
 
 ### Datastore
 
-データストアとは、データベースにアクセスするためのインターフェースオブジェクトで、 データベース全体をオブジェクトの形で表します。 データストアは **モデル** と **データ** から構成されています:
+データストアは、データベースへのインターフェースオブジェクトです。 データベース全体を反映したものをオブジェクトとしてビルドします。 データストアは **モデル** と **データ** から構成されています:
 
 - モデルにはデータストアを構成するすべてのデータクラスが格納され、その詳細な情報も含まれます。 これはその下地にあるデータベース自体からは独立した存在です。
 - データとは、そのモデル内で使用・保存される情報を指します。 たとえば、従業員の名前、住所、生年月日などはデータストア内で扱うことができるデータに含まれます。
 
-コード内で扱うにあたっては、データストアはオブジェクトであり、公開されている全ての [データクラス](#dataclass) をプロパティとして持ちます。
+コード内で扱うにあたっては、データストアはオブジェクトであり、公開されているすべての [データクラス](#dataclass) をプロパティとして持ちます。
 
 4D では次のデータストアを扱うことができます:
 
 - カレント 4D データベースに基づいた、ローカルデータストア。これは、`ds` コマンドで返されるメインデータストアです。
-- one or more remote datastore(s) exposed as REST resources in remote 4D databases, returned by the `Open datastore` command.
+- リモートデータベースによって REST リソースとして公開された、一つ以上のリモートデータストア。これらは、`Open datastore` コマンドで返されます。
 
-A datastore references only a single local or remote database.
+データストアは単一の、ローカルあるいはリモートのデータベースを参照します。
 
-The datastore object itself cannot be copied as an object:
+データストアオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 
 ```4d 
-$mydatastore:=OB Copy(ds) //returns null
+$mydatastore:=OB Copy(ds) // null を返します
 ```
 
 
-The datastore properties are however enumerable:
+しかしながらデータストアプロパティは取得可能です:
 
 
 ```4d 
  ARRAY TEXT($prop;0)
  OB GET PROPERTY NAMES(ds;$prop)
-  //$prop contains the names of all the dataclasses
+  // $prop にはすべてのデータクラスの名前が格納されます
 ```
 
 
 
-The main (default) datastore is always available through the `ds` command, but the `Open datastore` command allows referencing any remote datastore.
+メイン (デフォルト) のデータストアは `ds` コマンドを通して常に利用可能です。`Open datastore` コマンドを使えば、あらゆるリモートデータストアを参照することができます。
 
 ### Dataclass
 
-A dataclass is the equivalent of a table. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
+データクラスとは、テーブルに相当するものです。 It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
 
 All dataclasses in a 4D project are available as a property of the `ds` datastore. For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each exposed table that you want to be exposed as dataclass in the datastore.
 
