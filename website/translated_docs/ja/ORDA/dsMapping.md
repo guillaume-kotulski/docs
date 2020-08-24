@@ -56,9 +56,9 @@ ORDA は、下地である 4D ストラクチャーへの自動マッピング�
 *   `Open datastore` または [REST 呼び出し](REST/gettingStarted.md) を使用して開かれたリモートデータストア -- 新しいセッションを開く必要があります
 
 
-## Object definition
+## オブジェクトの定義
 
-### Datastore
+### データストア
 
 データストアは、データベースへのインターフェースオブジェクトです。 データベース全体を反映したものをオブジェクトとしてビルドします。 データストアは **モデル** と **データ** から構成されています:
 
@@ -94,7 +94,7 @@ $mydatastore:=OB Copy(ds) // null を返します
 
 メイン (デフォルト) のデータストアは `ds` コマンドを通して常に利用可能です。`Open datastore` コマンドを使えば、あらゆるリモートデータストアを参照することができます。
 
-### Dataclass
+### データクラス
 
 データクラスとは、テーブルに相当するものです。 オブジェクトモデルとして使用され、リレーショナル属性 (データクラス間のリレーションに基づいてビルドされた属性) を含めてすべてのフィールドを属性として参照します。 リレーショナル属性はクエリにおいて通常の属性のように使用することができます。
 
@@ -179,7 +179,7 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 
 エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 エンティティは、[データクラス](#データクラス) のインスタンスとも解釈可能なオブジェクトです。 同時にエンティティは、データストアがもとにしているデータベースに相関するデータも格納しています。
 
-The purpose of the entity is to manage data (create, update, delete). エンティティセレクションを用いてエンティティ参照を取得した場合、その参照にはエンティティセレクションについての情報も保持されるため、セレクションを走査することが可能です。
+エンティティの目的はデータの管理 (作成、更新、削除) です。 エンティティセレクションを用いてエンティティ参照を取得した場合、その参照にはエンティティセレクションについての情報も保持されるため、セレクションを走査することが可能です。
 
 エンティティオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 
@@ -236,12 +236,12 @@ $e:=ds.Employee.all() // 結果のエンティティセレクションへの参�
 
 順列なしのエンティティセレクションは以下のような場合に作成されます:
 
-*   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
-*   result of the `newSelection()` method without option,
-*   result of any of the comparison methods, whatever the input selection types: `or()`, `and()`, `minus()`.
-> The following entity selections are always **ordered**:
+*   セレクション (タイプを問わず) に対して、あるいはデータクラスに対して標準の `query( )` を使った場合の戻り値
+*   オプションなしで `newSelection( )` メソッドを使用した場合の戻り値
+*   任意の演算メソッド (or( ), and( ), minus( ) ) を使った場合の戻り値 (入力セレクションタイプは問いません)。
+> 次のエンティティセレクションは常に **順列あり** となります。
 > 
-> * entity selections returned by 4D Server to a remote client
-> * entity selections built upon remote datastores.
+> * 4D Server からリモートクライアントに返されるエンティティセレクション
+> * リモートデータストアにおいて作成されるエンティティセレクション
 
-Note that when an ordered entity selection becomes an unordered entity selection, any repeated entity references are removed.
+順列ありのエンティティセレクションが順列なしのエンティティセレクションになった場合、重複したエンティティ参照はすべて削除されます。
