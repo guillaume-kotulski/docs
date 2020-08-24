@@ -108,7 +108,7 @@ $mydatastore:=OB Copy(ds) // null を返します
 
 ```4d 
 var $compClass : cs.Company // Company クラスのオブジェクト変数として $compClass を宣言します
-$compClass:=ds.Company // Company データクラスの参照を $compClass に代入します
+$compClass:=ds.Company // Company データクラスへの参照を $compClass に代入します
 ```
 
 データクラスオブジェクトは以下のものを格納することができます:
@@ -116,33 +116,33 @@ $compClass:=ds.Company // Company データクラスの参照を $compClass に�
 *   attributes
 *   リレーション属性
 
-The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. A query is done from a single dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
+データクラスは実際のデータベースの概略を提供し、概念的なデータモデルの管理を可能にします。 データクラスはデータストアをクエリする唯一の方法です。 クエリは単一のデータクラスを通して実行されます。 クエリはデータクラスの属性およびリレーション属性名に基づいてビルドされます。 リレーション属性は、一つのクエリ内で複数のリンクされたテーブルを用いる手段です。
 
-The dataclass object itself cannot be copied as an object:
+データクラスオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 
 ```4d 
-$mydataclass:=OB Copy(ds.Employee) //returns null
+$mydataclass:=OB Copy(ds.Employee) // null を返します
 ```
 
-The dataclass properties are however enumerable:
+しかしながらデータクラスプロパティは取得可能です:
 
 ```code4d 
 ARRAY TEXT($prop;0)
 OB GET PROPERTY NAMES(ds.Employee;$prop)
-//$prop contains the names of all the dataclasse attributes
+// $prop にはすべてのデータクラス属性の名前が格納されます
 ```
 
 
 ### 属性
 
-Dataclass properties are attribute objects describing the underlying fields or relations. たとえば:
+データクラスプロパティは、下地にあるフィールドやリレーションを説明する属性オブジェクトです。 たとえば:
 
 ```4d 
- $nameAttribute:=ds.Company.name //reference to class attribute
- $revenuesAttribute:=ds.Company["revenues"] //alternate way
+ $nameAttribute:=ds.Company.name // クラス属性への参照
+ $revenuesAttribute:=ds.Company["revenues"] // 別の書き方
 ```
 
-This code assigns to `$nameAttribute` and `$revenuesAttribute` references to the name and revenues attributes of the `Company` class. This syntax does NOT return values held inside of the attribute, but instead returns references to the attributes themselves. To handle values, you need to go through [Entities](#entity).
+このコードは、`$nameAttribute` および `$revenuesAttribute` に、`Company` クラスの name および revenues 属性の参照をそれぞれ代入します。 This syntax does NOT return values held inside of the attribute, but instead returns references to the attributes themselves. To handle values, you need to go through [Entities](#entity).
 
 All eligible fieds in a table are available as attributes of their parent [dataclass](#dataclass). For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each field that you want to be exposed as a dataclass attribute.
 
