@@ -27,8 +27,8 @@ ORDA は、下地である 4D ストラクチャーへの自動マッピング�
     *   複合プライマリーキーを持つテーブル
 *   [BLOB](Concepts/dt_blob.md) 型の属性はデータストア内では管理されません。 BLOB 型属性はエンティティ内で Null として返され、割り当てることができません。
 
-> ORDA mapping does not take into account:  
-> - the "Invisible" option for tables or fields, - the virtual structure defined through `SET TABLE TITLES` or `SET FIELD TITLES`, - the "Manual" or "Automatic" property of relations.
+> ORDA のデータストアマッピングでは、次のものは考慮されません:  
+> - テーブルあるいはフィールドの"非表示"オプション<br /> - `SET TABLE TITLES` あるいは `SET FIELD TITLES` を通して定義されたバーチャルストラクチャー<br /> - リレーションの"手動"あるいは"自動"プロパティ
 
 
 ### リモートデータストアの利用
@@ -177,7 +177,7 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 
 ### エンティティ
 
-エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
+エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 エンティティは、[データクラス](#データクラス) のインスタンスとも解釈可能なオブジェクトです。 同時にエンティティは、データストアがもとにしているデータベースに相関するデータも格納しています。
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
