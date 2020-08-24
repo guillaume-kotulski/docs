@@ -179,26 +179,26 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 
 エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 エンティティは、[データクラス](#データクラス) のインスタンスとも解釈可能なオブジェクトです。 同時にエンティティは、データストアがもとにしているデータベースに相関するデータも格納しています。
 
-The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
+The purpose of the entity is to manage data (create, update, delete). エンティティセレクションを用いてエンティティ参照を取得した場合、その参照にはエンティティセレクションについての情報も保持されるため、セレクションを走査することが可能です。
 
-The entity object itself cannot be copied as an object:
+エンティティオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 
 ```4d
- $myentity:=OB Copy(ds.Employee.get(1)) //returns null
+ $myentity:=OB Copy(ds.Employee.get(1)) // null を返します
 ```
 
-The entity properties are however enumerable:
+しかしながらエンティティプロパティは取得可能です:
 
 ```4d
  ARRAY TEXT($prop;0)
  OB GET PROPERTY NAMES(ds.Employee.get(1);$prop)
-  //$prop contains the names of all the entity attributes
+  // $prop にはすべてのエンティティ属性の名前が格納されます
 ```
 
 
 ### エンティティセレクション
 
-An entity selection is an object containing one or more reference(s) to entities belonging to the same dataclass. It is usually created as a result of a query or returned from a relation attribute. An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass.
+エンティティセレクションとは、同じデータクラスに所属する一つ以上のエンティティへの参照を格納しているオブジェクトのことです。 通常、クエリの結果として、あるいはリレーション属性の戻り値として作成されます。 エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
 
 例:
 
