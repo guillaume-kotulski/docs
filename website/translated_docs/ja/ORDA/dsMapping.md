@@ -8,20 +8,20 @@ ORDA は、下地である 4D ストラクチャーへの自動マッピング�
 
 ## ストラクチャーマッピング
 
-When you call a datastore using the `ds` or the `Open datastore` command, 4D automatically references tables and fields of the corresponding 4D structure as properties of the returned [datastore](#datastore) object:
+`ds` および `Open datastore` コマンドを使ってデータストアを呼び出すと、戻り値の [データストア](#データストア) オブジェクトには、対応する 4D ストラクチャーのテーブルとフィールドへの参照が属性として格納されています:
 
-*   Tables are mapped to dataclasses.
-*   Fields are mapped to storage attributes.
-*   Relations are mapped to relation attributes - relation names, defined in the Structure editor, are used as relation attribute names.
+*   テーブルはデータクラスへとマップされます。
+*   フィールドはストレージ属性へとマップされます。
+*   リレーションはリレーション属性へとマップされます。ストラクチャーエディター内で定義されたリレーション名はリレーション属性名として使用されます。
 
 ![](assets/en/Orda/datastoreMapping.png)
 
 
-### General rules
+### 変換のルール
 
-The following rules are applied for any conversions:
+変換の際には以下のルールが適用されます:
 
-* Table, field, and relation names are mapped to object property names. Make sure that such names comply with general object naming rules, as explained in the [object naming conventions](Concepts/identifiers.md) section.
+* テーブル、フィールド、そしてリレーション名はオブジェクトプロパティ名へとマップされます。 Make sure that such names comply with general object naming rules, as explained in the [object naming conventions](Concepts/identifiers.md) section.
 *   A datastore only references tables with a single primary key. The following tables are not referenced:
     *   Tables without a primary key
     *   Tables with composite primary keys.
