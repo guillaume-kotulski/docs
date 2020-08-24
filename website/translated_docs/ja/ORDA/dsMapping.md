@@ -142,16 +142,16 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
  $revenuesAttribute:=ds.Company["revenues"] // 別の書き方
 ```
 
-このコードは、`$nameAttribute` および `$revenuesAttribute` に、`Company` クラスの name および revenues 属性の参照をそれぞれ代入します。 This syntax does NOT return values held inside of the attribute, but instead returns references to the attributes themselves. To handle values, you need to go through [Entities](#entity).
+このコードは、`$nameAttribute` および `$revenuesAttribute` に、`Company` クラスの name および revenues 属性の参照をそれぞれ代入します。 このシンタックスは属性内に保管されている値を返すのではありません。その代わりに、属性自身への参照を返します。 値を管理するためには、[エンティティ](#エンティティ) を使用する必要があります。
 
-All eligible fieds in a table are available as attributes of their parent [dataclass](#dataclass). For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each field that you want to be exposed as a dataclass attribute.
+テーブル内の適格なフィールドはすべて、親 [データクラス](#データクラス) の属性として利用可能です。 `Open datastore` コマンドまたは [REST リクエスト](REST/gettingStarted.md) によってアクセスするリモートデータストアの場合、データクラスの属性として公開したい各フィールドについて 4D ストラクチャーのレベルで **RESTリソースとして公開** プロパティを設定する必要があります。
 
 
-#### Storage and Relation attributes
+#### ストレージ属性とリレーション属性
 
-Dataclass attributes come in several kinds: storage, relatedEntity, and relatedEntities. Attributes that are scalar (*i.e.*, provide only a single value) support the standard 4D data type (integer, text, object, etc.).
+データクラス属性にはいくつかの種類があります。ストレージ、リレートエンティティ、リレートエンティティズです。 スカラーである属性 (単一の値のみを提供するもの) は標準の 4D データ型 (整数、テキスト、オブジェクトなど) をサポートします。
 
-*   A **storage attribute** is equivalent to a field in the 4D database and can be indexed. Values assigned to a storage attribute are stored as part of the entity when it is saved. When a storage attribute is accessed, its value comes directly from the datastore. Storage attributes are the most basic building block of an entity and are defined by name and data type.
+*   **ストレージ属性** は4D データベース内のフィールドに相当するもので、インデックスをつけることができます。 ストレージ属性に割り当てられた値は、保存時にエンティティの一部として保存されます。 When a storage attribute is accessed, its value comes directly from the datastore. Storage attributes are the most basic building block of an entity and are defined by name and data type.
 *   A **relation attribute** provides access to other entities. Relation attributes can result in either a single entity (or no entity) or an entity selection (0 to N entities). Relation attributes are built upon "classic" relations in the relational structure to provide direct access to related entity or related entities. Relation attributes are directy available in ORDA using their names.
 
 For example, consider the following partial database structure and the relation properties:
