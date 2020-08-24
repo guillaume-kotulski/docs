@@ -203,29 +203,29 @@ The purpose of the entity is to manage data (create, update, delete). エンテ�
 例:
 
 ```4d
-var $e : cs.EmployeeSelection //declares a $e object variable of the EmployeeSelection class type
-$e:=ds.Employee.all() //assigns the resulting entity selection reference to the $e variable
+var $e : cs.EmployeeSelection // EmployeeSelection クラスのオブジェクト変数として $e を宣言します
+$e:=ds.Employee.all() // 結果のエンティティセレクションへの参照を $e に代入します
 ```
 
-Entity selections can be "ordered" or "unordered" (this point is discussed in below).
+エンティティセレクションは "順列あり" あるいは "順列なし" 状態のどちらかです (この点については以下に説明があります)。
 
-The entity selection object itself cannot be copied as an object:
+エンティティセレクションオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 
 ```4d
- $myentitysel:=OB Copy(ds.Employee.all()) //returns null
+ $myentitysel:=OB Copy(ds.Employee.all()) // null を返します
 ```
 
-The entity selection properties are however enumerable:
+しかしながらエンティティセレクションプロパティは取得可能です:
 
 ```4d
  ARRAY TEXT($prop;0)
  OB GET PROPERTY NAMES(ds.Employee.all();$prop)
-  //$prop contains the names of the entity selection properties
-  //("length", 00", "01"...)
+  // $prop にはエンティティセレクションのプロパティ名が格納されます
+  // ("length", "00", "01"...)
 ```
 
 
-#### Ordered or unordered entity selection
+#### エンティティセレクションの順列あり/順列なし
 
 For optimization reasons, by default 4D ORDA usually creates unordered entity selections, except when you use the `orderBy( )` method or use specific options. In this documentation, unless specified, "entity selection" usually refers to an "unordered entity selection".
 
