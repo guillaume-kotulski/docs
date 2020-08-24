@@ -151,33 +151,33 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 
 データクラス属性にはいくつかの種類があります。ストレージ、リレートエンティティ、リレートエンティティズです。 スカラーである属性 (単一の値のみを提供するもの) は標準の 4D データ型 (整数、テキスト、オブジェクトなど) をサポートします。
 
-*   **ストレージ属性** は4D データベース内のフィールドに相当するもので、インデックスをつけることができます。 ストレージ属性に割り当てられた値は、保存時にエンティティの一部として保存されます。 When a storage attribute is accessed, its value comes directly from the datastore. Storage attributes are the most basic building block of an entity and are defined by name and data type.
-*   A **relation attribute** provides access to other entities. Relation attributes can result in either a single entity (or no entity) or an entity selection (0 to N entities). Relation attributes are built upon "classic" relations in the relational structure to provide direct access to related entity or related entities. Relation attributes are directy available in ORDA using their names.
+*   **ストレージ属性** は4D データベース内のフィールドに相当するもので、インデックスをつけることができます。 ストレージ属性に割り当てられた値は、保存時にエンティティの一部として保存されます。 ストレージ属性にアクセスしたとき、その値はデータストアから直接取り出されます。 ストレージ属性はエンティティを構成するもっとも基礎的な要素であり、名前とデータ型により定義されます。
+*   **リレーション属性** は他のエンティティへのアクセスを提供します。 リレーション属性は単一のエンティティ (あるいはエンティティなし) あるいはエンティティセレクション (0からNまでのエンティティ) のどちらかになります。 リレーション属性はリレーショナルストラクチャーの "クラシックな" リレーションに基づいており、リレートエンティティあるいはリレートエンティティズへの直接的なアクセスを提供します。 リレーション属性は、ORDA においては名前を使用することで直接的に利用可能です。
 
-For example, consider the following partial database structure and the relation properties:
+たとえば、以下の部分的なデータベースストラクチャーと、そのリレーションプロパティについて考えます:
 
 ![](assets/en/Orda/relationProperties.png)
 
-All storage attributes will be automatically available:
+すべてのストレージ属性は自動的に利用可能です:
 
-*   in the Project dataclass: "ID", "name", and "companyID"
-*   in the Company dataclass: "ID", "name", and "discount"
+*   Project データクラス内: "ID", "name", および "companyID"
+*   Company データクラス内: "ID", "name", および "discount"
 
-In addition, the following relation attributes will also be automatically available:
+これに加えて、以下のリレーション属性もまた自動的に利用可能になります:
 
-*   in the Project dataclass: **theClient** attribute, of the "relatedEntity" kind; there is at most one Company for each Project (the client)
-*   in the Company dataclass: **companyProjects** attribute, of the "relatedEntities" kind; for each Company there is any number of related Projects.
-> The Manual or Automatic property of a database relation has no effect in ORDA.
+*   Project データクラス内: "リレートエンティティ" 型の **theClient** 属性。各 Project (クライアント) に対して最大 1つの Companyが あります。
+*   Company データクラス内: "リレートエンティティズ" 型の**companyProjects** 属性。各 Company に対して不定数の Project があります。
+> データベースリレーションの手動あるいは自動プロパティは、ORDA においては何の効力も持ちません。
 
-All dataclass attributes are exposed as properties of the dataclass:
+すべてのデータクラス属性はデータクラスのプロパティとして公開されています:
 
 ![](assets/en/Orda/dataclassProperties.png)
 
-Keep in mind that these objects describe attributes, but do not give access to data. Reading or writing data is done through [entity objects](entities.md#using-entity-attributes).
+これらのオブジェクトは属性を表しますが、データへのアクセスは与えないという点に注意してください。 データの読み書きは [エンティティオブジェクト](entities.md#エンティティ属性の使用) を通しておこなわれます。
 
 ### エンティティ
 
-An entity is the equivalent of a record. It is actually an object that references a record in the database. It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
+エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
