@@ -135,10 +135,10 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 ![](assets/en/Orda/entityAttributes3.png)
 
-In this example, an entity in the "Employee" dataclass contains an object of type Entity in the "employer" attribute (or a null value). An entity in the "Company" dataclass contains an object of type EntitySelection in the "staff" attribute (or a null value).
-> In ORDA, the Automatic or Manual property of relations has no effect.
+この例では、"Employee" データクラスに属するエンティティの "employer" 属性には、エンティティ型のオブジェクト (あるいは null値) が格納されます。 "Company" データクラスに属するエンティティの "staff" 属性には、エンティティセレクション型のオブジェクト (あるいは null値) が格納されます。
+> ORDAでは、リレーションの自動あるいは手動プロパティは何の効力も持ちません。
 
-To assign a value directly to the "employer" attribute, you must pass an existing entity from the "Company" dataclass. たとえば:
+"employer" 属性に直接値を代入したい場合には、"Company" データクラスの既存エンティティを渡す必要があります。 たとえば:
 
 ```4d
  $emp:=ds.Employee.new() // create an employee
