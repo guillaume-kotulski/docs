@@ -160,15 +160,15 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 これはとくに、リレーショナルデータベースから大量のデータを読み込むときに有用です。 このような読み込みでは通常 "ID" カラムが含まれており、これはリレーション属性に直接割り当て可能なプライマリーキーを参照しています。
 
-これはまた、1 データストアクラス側で対応するエンティティを事前に作成することなく N エンティティ側のプライマリーキーを割り当てることができるということです。 If you assign a primary key that does not exist in the related datastore class, it is nevertheless stored and assigned by 4D as soon as this "1" entity is created.
+これはまた、1 データクラス側で対応するエンティティを事前に作成することなく N エンティティ側のプライマリーキーを割り当てることができるということです。 リレートされているデータクラスに存在しないプライマリーキーを割り当てた場合、それは保管され、"1" データクラス側でエンティティが作成されたときに 4D によって割り当てられます。
 
-You can assign or modify the value of a "1" related entity attribute from the "N" dataclass directly through the related attribute. For example, if you want to modify the name attribute of a related Company entity of an Employee entity, you can write:
+"N" データクラス側のリレーション属性を通して、"1" リレートエンティティの属性値を、直接代入・変更することができます。 たとえば、Employee エンティティにリレートされている Company エンティティの name 属性を変更したい場合、以下のように書くことができます:
 
 ```code4d
- $emp:=ds.Employee.get(2) // load the Employee entity with primary key 2
- $emp.employer.name:="4D, Inc." //modify the name attribute of the related Company
- $emp.employer.save() //save the related attribute
-  //the related entity is updated
+ $emp:=ds.Employee.get(2) // プライマリーキーが 2 の Employee エンティティを読み込みます
+ $emp.employer.name:="4D, Inc." // リレートされている Company の name 属性を変更します
+ $emp.employer.save() // リレーション属性の変更を保存します
+  // リレートされているエンティティも更新されます
 ```
 
 ## Creating an entity selection
