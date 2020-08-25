@@ -90,7 +90,7 @@ $myEntity.save() // エンティティを保存します
 
 ## エンティティ属性の使用
 
-Entity attributes store data and map corresponding fields in the corresponding table. Entity attributes of the storage kind can be set or get as simple properties of the entity object, while entity of the **relatedEntity** or **relatedEntities** kind will return an entity or an entity selection.
+エンティティ属性はデータを保存し、対応するテーブルの対応するフィールドをマップします。 ストレージ型のエンティティ属性はエンティティオブジェクトの単純なプロパティとして設定や取得ができますが、**リレートエンティティ (relatedEntity)** 型と **リレートエンティティズ (relatedEntities)** 型のエンティティ属性はエンティティあるいはエンティティセレクションを返します。
 > For more information on the attribute kind, please refer to the [Storage and Relation attributes](dsMapping.md#storage-and-relation-attributes) paragraph.
 
 For example, to set a storage attribute:
