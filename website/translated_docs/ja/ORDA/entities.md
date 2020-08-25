@@ -297,9 +297,9 @@ ORDA では、以下の二つのロックモードを提供しています:
 
 *   サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 たとえば、エンティティセレクション型のリストボックスにおいては、"学習" フェーズは最初の行を表示中におこなわれるため、次の行からは表示が最適化されています。
 
-*   既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [コンテキストプロパティの使用](#コンテキストプロパティの使用) を参照してください)。
+*   既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [contextプロパティの使用](#contextプロパティの使用) を参照してください)。
 
-The following methods automatically associate the optimization context of the source entity selection to the returned entity selection:
+以下のメソッドは、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
 
 *   `entitySelection.and()`
 *   `entitySelection.minus()`
@@ -311,29 +311,29 @@ The following methods automatically associate the optimization context of the so
 
 **例題**
 
-Given the following code:
+以下のようなコードがあるとき:
 
 ```4d
  $sel:=$ds.Employee.query("firstname = ab@")
  For each($e;$sel)
-    $s:=$e.firstname+" "+$e.lastname+" works for "+$e.employer.name // $e.employer refers to Company table
+    $s:=$e.firstname+" "+$e.lastname+" works for "+$e.employer.name // $e.employer は Company テーブルを参照します
  End for each
 ```
 
-Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* after a learning phase.
+最適化機構のおかげで、このリクエストは学習フェーズ以降は、*$sel* の中で実際に使用されている属性 (firstname, lastname, employer, employer.name) のデータのみを取得するようになります。
 
 
 
-### Using the context property
+### contextプロパティの使用
 
-You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA methods that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
+**context** プロパティを使用することで、最適化の利点をさらに増幅させることができます。 このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA メソッドに引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
 
-A same optimization context property can be passed to unlimited number of entity selections on the same dataclass. All ORDA methods that handle entity selections support the **context** property (for example `dataClass.query( )` or `dataClass.all( )` method). Keep in mind, however, that a context is automatically updated when new attributes are used in other parts of the code. Reusing the same context in different codes could result in overloading the context and then, reduce its efficiency.
-> A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the `dataClass.get( )` method).
+同じ最適化 context プロパティは、同じデータクラスのエンティティセレクションに対してであればどのエンティティセレクションにも渡すことができます。 エンティティセレクションを扱うすべての ORDAメソッドは、contextプロパティをサポートします (たとえば`dataClass.query( )` あるいは `dataClass.all( )` メソッドなど)。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
+> 同様の機構は読み込まれたエンティティにも実装されており、それによって使用した属性のみがリクエストされるようになります (`dataClass.get( )` メソッド参照)。
 
 
 
-**Example with `dataClass.query( )` method:**
+**`dataClass.query( )` メソッドを使用した例:**
 
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
