@@ -171,7 +171,7 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
   // リレートされているエンティティも更新されます
 ```
 
-## Creating an entity selection
+## エンティティセレクションの作成
 
 You can create an object of type entity selection as follows:
 
