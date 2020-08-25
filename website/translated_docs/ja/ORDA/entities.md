@@ -26,44 +26,44 @@ $myEntity.name:="Dupont" // 'Dupont' を 'name' 属性に代入します
 $myEntity.firstname:="John" // 'John' を 'firstname' 属性に代入します
 $myEntity.save() // エンティティを保存します
 ```
-> エンティティは、それが作成されたプロセス内でのみ定義されます。 You cannot, for example, store a reference to an entity in an interprocess variable and use it in another process.
+> エンティティは、それが作成されたプロセス内でのみ定義されます。 そのため、たとえばエンティティへの参照を、インタープロセス変数内に保存して他のプロセスで使用する、といったことはできません。
 
-## Entities and references
+## エンティティと参照
 
-An entity contains a reference to a 4D record. Different entities can reference the same 4D record. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
+エンティティには、4Dレコードへの参照が格納されています。 異なるエンティティが同じ 4Dレコードを参照することもあり得ます。 また、エンティティは 4Dオブジェクト変数に保存可能であることから、異なる変数が同じエンティティへの参照を格納していることもあり得ます。
 
-If you execute the following code:
+以下のコードを実行した場合:
 
 ```4d
  var $e1; $e2 : cs.EmployeeEntity
- $e1:=ds.Employee.get(1) //access the employee with ID 1
+ $e1:=ds.Employee.get(1) // ID 1をもつ社員にアクセスします
  $e2:=$e1
  $e1.name:="Hammer"
-  //both variables $e1 and $e2 share the reference to the same entity
-  //$e2.name contains "Hammer"
+  //$e1 も $e2 も、どちらも同じエンティティへの参照を共有します
+  //$e2.name の中身も "Hammer" です
 ```
 
-This is illustrated by the following graphic:
+これは以下のように図解することができます:
 
 ![](assets/en/Orda/entityRef1.png)
 
-Now if you execute:
+次に、以下のコードを実行した場合:
 
 ```4d
  var $e1; $e2 : cs.EmployeeEntity
  $e1:=ds.Employee.get(1)
  $e2:=ds.Employee.get(1)
  $e1.name:="Hammer"
-  //variable $e1 contains a reference to an entity
-  //variable $e2 contains another reference to another entity
-  //$e2.name contains "smith"
+  //変数 $e1 はエンティティへの参照を格納しています
+  //変数 $e2 は別のエンティティへの参照を格納しています
+  //$e2.name の中身は "smith" です
 ```
 
-This is illustrated by the following graphic:
+これは以下のように図解することができます:
 
 ![](assets/en/Orda/entityRef2.png)
 
-Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
+しかし、両方のエンティティが同じレコードを参照していることに注意してください。 どちらの場合でも、`entity.save( )` メソッドを呼び出した場合、レコードは更新されます (衝突が発生した場合を除きます。[エンティティロッキング](#エンティティロッキング) 参照)。
 
 In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. たとえば:
 
@@ -214,7 +214,7 @@ In addition to the variety of ways you can query, you can also use relation attr
 The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. When a relation attribute is used as a property of an entity selection and no entities are returned, the result is an empty entity selection, not null.
 
 
-## Entity Locking
+## エンティティロッキング
 
 You often need to manage possible conflicts that might arise when several users or processes load and attempt to modify the same entities at the same time. Record locking is a methodology used in relational databases to avoid inconsistent updates to data. The concept is to either lock a record upon read so that no other process can update it, or alternatively, to check when saving a record to verify that some other process hasn’t modified it since it was read. The former is referred to as **pessimistic record locking** and it ensures that a modified record can be written at the expense of locking records to other users. The latter is referred to as **optimistic record locking** and it trades the guarantee of write privileges to the record for the flexibility of deciding write privileges only if the record needs to be updated. In pessimistic record locking, the record is locked even if there is no need to update it. In optimistic record locking, the validity of a record’s modification is decided at update time.
 
