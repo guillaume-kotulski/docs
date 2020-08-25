@@ -342,35 +342,35 @@ ORDA では、以下の二つのロックモードを提供しています:
  $querysettings2:=New object("context";"longList")
 
  $sel1:=ds.Employee.query("lastname = S@";$querysettings)
- $data:=extractData($sel1) // In extractData method an optimization is triggered and associated to context "shortList"
+ $data:=extractData($sel1) // extractData メソッドにおいて、最適化はトリガーされており、"shortList" のコンテキストが割り当てられています。
 
  $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
- $data:=extractData($sel2) // In extractData method the optimization associated to context "shortList" is applied
+ $data:=extractData($sel2) // extractData メソッドにおいて、"shortList" のコンテキストに割り当てられている最適化が適用されます。
 
  $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
- $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization is triggered and associated to context "longList"
+ $data:=extractDetailedData($sel3) // extractDetailedData メソッドにおいて、最適化はトリガーされており、"longList" のコンテキストが割り当てられています。
 
  $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
- $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
+ $data:=extractDetailedData($sel4) // extractDetailedData メソッドにおいて、"longList" のコンテキストに割り当てられている最適化が適用されます。
 ```
 
-### Entity selection-based list box
+### エンティティセレクション型リストボックス
 
-Entity selection optimization is automatically applied to entity selection-based list boxes in client/server configurations, when displaying and scrolling a list box content: only the attributes displayed in the list box are requested from the server.
+クライアント/サーバー環境におけるエンティティセレクション型リストボックスにおいては、そのコンテンツを表示またはスクロールする際に、最適化が自動的に適用されます。つまり、リストボックスに表示されている属性のみがサーバーにリクエストされます。
 
-A specific "page mode" context is also provided when loading the current entity through the **Current item** property expression of the list box (see [Collection or entity selection type list boxes](FormObjects/listbox_overview.md#list-box-types)). This feature allows you to not overload the list box initial context in this case, especially if the "page" requests additional attributes. Note that only the use of **Current item** expression will create/use the page context (access through `entitySelection\[index]` will alter the entity selection context).
+また、リストボックスの **カレントの項目** プロパティ式 ([コレクション/エンティティセレクション型リストボックス](FormObjects/listbox_overview.md#リストボックスの型) 参照) を介してカレントエンティティをロードする場合には、専用の "ページモード" コンテキストが提供されます。 これによって、"ページ" が追加属性をリクエストしても、リストボックスのコンテキストのオーバーロードが避けられます。 なお、ページコンテキストの生成/使用は **カレントの項目** 式を使用した場合に限ります (たとえば、`entitySelection[index]` を介して同じエンティティにアクセスした場合は、エンティティセレクションコンテキストが変化します)。
 
-Subsequent requests to server sent by entity browsing methods will also support this optimization. The following methods automatically associate the optimization context of the source entity to the returned entity:
+その後、エンティティを走査するメソッドがサーバーに送信するリクエストにも、同じ最適化が適用されます。 以下のメソッドは、ソースエンティティの最適化コンテキストを、戻り値のエンティティに自動的に付与します:
 
 *   `entity.next( )`
 *   `entity.first( )`
 *   `entity.last( )`
 *   `entity.previous( )`
 
-For example, the following code loads the selected entity and allows browsing in the entity selection. Entities are loaded in a separate context and the list box initial context is left untouched:
+たとえば、次のコードは選択したエンティティをロードし、所属しているエンティティセレクションを走査します。 エンティティは独自のコンテキストにロードされ、リストボックスのコンテキストは影響されません:
 
 ```4d
- $myEntity:=Form.currentElement //current item expression
-  //... do something
- $myEntity:=$myEntity.next() //loads the next entity using the same context
+ $myEntity:=Form.currentElement // カレントの項目式
+  //... なんらかの処理
+ $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
