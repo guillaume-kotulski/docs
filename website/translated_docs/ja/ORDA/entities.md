@@ -65,7 +65,7 @@ $myEntity.save() // エンティティを保存します
 
 しかし、両方のエンティティが同じレコードを参照していることに注意してください。 どちらの場合でも、`entity.save( )` メソッドを呼び出した場合、レコードは更新されます (衝突が発生した場合を除きます。[エンティティロッキング](#エンティティロッキング) 参照)。
 
-In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. たとえば:
+実際には、`$e1` も `$e2` もエンティティそのものではなく、エンティティへの参照です。 これはつまり、どのような関数やメソッドにも直接受け渡すことができ、ポインターのように振る舞うということです。そしてこれは 4Dポインターよりもずっと高速です。 たとえば:
 
 ```4d
  For each($entity;$selection)
@@ -73,7 +73,7 @@ In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entit
  End for each
 ```
 
-And the method is:
+そして do_Capitalize メソッドが以下のような形であった場合:
 
 ```4d
  $entity:=$1
@@ -84,8 +84,8 @@ And the method is:
  $entity.lastname:=$name
 ```
 
-You can handle entities like any other object in 4D and pass their references directly as [parameters](Concepts/parameters.md).
-> With the entities, there is no concept of "current record" as in the classic 4D language. You can use as many entities as you need, at the same time. There is also no automatic lock on an entity (see [Entity locking](#entity-locking)). When an entity is loaded, it uses the [lazy loading](glossary.md#lazy-loading) mechanism, which means that only the needed information is loaded. Nevertheless, in client/server, the entity can be automatically loaded directly if necessary.
+他の 4D のオブジェクトと同様にエンティティを扱うことができ、[引数](Concepts/parameters.md) としてその参照を渡すことができます。
+> エンティティでは、クラシックな 4D言語のような "カレントレコード" という概念はありません。 エンティティは、いくつでも必要な数を同時に使用することができます。 また、エンティティには自動ロックの機構が備わっています ([エンティティロッキング](#エンティティロッキング) 参照)。 エンティティの読み込みには、[レイジーローディング](glossary.md#レイジーローディング) 機構が使用されます。これはつまり必要な分の情報だけが読み込まれるということです。 いずれにせよ、クライアント/サーバーでは必要であればエンティティを直接自動的に読み込むことも可能です。
 
 
 ## エンティティ属性の使用
