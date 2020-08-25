@@ -216,28 +216,28 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 ## エンティティロッキング
 
-You often need to manage possible conflicts that might arise when several users or processes load and attempt to modify the same entities at the same time. Record locking is a methodology used in relational databases to avoid inconsistent updates to data. The concept is to either lock a record upon read so that no other process can update it, or alternatively, to check when saving a record to verify that some other process hasn’t modified it since it was read. The former is referred to as **pessimistic record locking** and it ensures that a modified record can be written at the expense of locking records to other users. The latter is referred to as **optimistic record locking** and it trades the guarantee of write privileges to the record for the flexibility of deciding write privileges only if the record needs to be updated. In pessimistic record locking, the record is locked even if there is no need to update it. In optimistic record locking, the validity of a record’s modification is decided at update time.
+一般的に、複数のユーザーあるいはプロセスが同じエンティティを同時に読み込んで変更しようとした際にコンフリクトが発生する可能性を管理する必要があります。 レコードロックは、リレーショナルデータベースにおいてデータに矛盾した更新がなされないようにするための手段です。 読み込み時にレコードをロックして他のプロセスが更新できないようにする、あるいは逆に保存時に読み込んでからの間に他のプロセスがレコードを変更していないかどうかを検証する、というのが基本的な概念です。 前者は **ペシミスティック・レコードロック** と呼ばれ、他のユーザーに対してレコードをロックすることで、変更したいレコードを書き込むことができるようにするものです。 後者は **オプティミスティック・レコードロック** と呼ばれ、レコードが更新される必要がある場合にのみ書き込み権限を与えるという柔軟性があります。 ペシミスティック・レコードロックでは、更新される必要がないときでもレコードはロックされたままです。 オプティミスティック・レコードロックではレコードの書き込みの可能/不可能は更新時に判断されます。
 
-ORDA provides you with two entity locking modes:
+ORDA では、以下の二つのロックモードを提供しています:
 
-- an automatic "optimistic" mode, suitable for most applications,
-- a "pessimistic" mode allowing you to lock entities prior to their access.
+- 自動的な "オプティミスティック" モード。多くのアプリケーションに適しています。
+- "ペシミスティック" モード。エンティティをアクセスする前にロックすることができます。
 
-### Automatic optimistic lock
+### 自動オプティミスティック・ロック
 
-This automatic mechanism is based on the concept of "optimistic locking" which is particularly suited to the issues of web applications. This concept is characterized by the following operating principles:
+この自動機構は、"オプティミスティック・ロック" に基づいたもので、これは Webアプリケーションの場合にとくに適しています。 この概念は以下のような動作原理に基づいています:
 
-*   All entities can always be loaded in read-write; there is no *a priori* "locking" of entities.
-*   Each entity has an internal locking stamp that is incremented each time it is saved.
-*   When a user or process tries to save an entity using the `entity.save( )` method, 4D compares the stamp value of the entity to be saved with that of the entity found in the data (in the case of a modification):
-    *   When the values match, the entity is saved and the internal stamp value is incremented.
-    *   When the values do not match, it means that another user has modified this entity in the meantime. The save is not performed and an error is returned.
+*   すべてのエンティティは必ず読み書き可能な状態でロードされます。エンティティの *事前* ロックというのはありません。
+*   各エンティティには保存されるたびにインクリメントされる内部的なロックスタンプを持っています。
+*   プロセスあるいはユーザーが `entity.save( )` メソッドでエンティティを保存しようとした場合、4D は保存しようとしているエンティティのスタンプの値とデータ内にあるエンティティのスタンプの値を比較します (データ編集の場合):
+    *   値が合致している場合、エンティティは保存され、内部スタンプの値はインクリメントされます。
+    *   値が合致しない場合、読み込みから保存までの間に他のユーザーがエンティティを編集したことになります。 保存は実行されず、エラーが返されます。
 
-The following diagram illustrates optimistic locking:
+オプティミスティック・ロックの動作は以下ように図解することができます:
 
-1. Two processes load the same entity.<br><br>![](assets/en/Orda/optimisticLock1.png)
+1. 二つのプロセスが同じエンティティを読み込んだとします。<br><br>![](assets/en/Orda/optimisticLock1.png)
 
-2. The first process modifies the entity and validates the change. The `entity.save( )` method is called. The 4D engine automatically compares the internal stamp value of the modified entity with that of the entity stored in the data. Since they match, the entity is saved and its stamp value is incremented.<br><br>![](assets/en/Orda/optimisticLock2.png)
+2. 最初のプロセスがエンティティを編集し、それを保存しようとします。 The `entity.save( )` method is called. The 4D engine automatically compares the internal stamp value of the modified entity with that of the entity stored in the data. Since they match, the entity is saved and its stamp value is incremented.<br><br>![](assets/en/Orda/optimisticLock2.png)
 
 3. The second process also modifies the loaded entity and validates its changes. The `entity.save( )` method is called. Since the stamp value of the modified entity does not match the one of the entity stored in the data, the save is not performed and an error is returned.<br><br>![](assets/en/Orda/optimisticLock3.png)
 
