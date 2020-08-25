@@ -141,24 +141,24 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 "employer" 属性に直接値を代入したい場合には、"Company" データクラスの既存エンティティを渡す必要があります。 たとえば:
 
 ```4d
- $emp:=ds.Employee.new() // create an employee
- $emp.lastname:="Smith" // assign a value to an attribute
- $emp.employer:=ds.Company.query("name =:1";"4D")[0]  //assign a company entity
+ $emp:=ds.Employee.new() // 新規の社員エンティティを作成します
+ $emp.lastname:="Smith" // 属性に値を代入します
+ $emp.employer:=ds.Company.query("name =:1";"4D")[0]  // リレーション属性に会社エンティティを代入します
  $emp.save()
 ```
 
-4D provides an additional facility for entering a relation attribute for an N entity related to a "1" entity: you pass the primary key of the "1" entity directly when assigning a value to the relation attribute. For this to work, you pass data of type Number or Text (the primary key value) to the relation attribute. 4D then automatically takes care of searching for the corresponding entity in the dataclass. たとえば:
+4D では、"1" エンティティにリレートされている N エンティティ側のリレーション属性への入力を容易にするための追加の手段が提供されています: リレーション属性に代入する際に、"1" エンティティのプライマリーキーを直接渡す方法です。 これが動作するためには、数値あるいはテキスト型のデータ (プライマリーキー値) をリレーション属性に渡します。 すると 4D はデータクラス内の該当するエンティティを自動的に検索してくれます。 たとえば:
 
 ```4d
  $emp:=ds.Employee.new()
  $emp.lastname:="Wesson"
- $emp.employer:=2 // assign a primary key to the relation attribute
-  //4D looks for the company whose primary key (in this case, its ID) is 2
-  //and assigns it to the employee
+ $emp.employer:=2 // リレーション属性にプライマリーキーを代入します
+  // 4D はプライマリーキー (この場合、ID) の値が 2 である会社を検索し、
+  // それを社員に代入します
  $emp.save()
 ```
 
-This is particularly useful when you are importing large amounts of data from a relational database. This type of import usually contains an "ID" column, which references a primary key that you can then assign directly to a relation attribute.
+これはとくに、リレーショナルデータベースから大量のデータを読み込むときに有用です。 This type of import usually contains an "ID" column, which references a primary key that you can then assign directly to a relation attribute.
 
 This also means that you can assign primary keys in the N entities without corresponding entities having already been created in the 1 datastore class. If you assign a primary key that does not exist in the related datastore class, it is nevertheless stored and assigned by 4D as soon as this "1" entity is created.
 
