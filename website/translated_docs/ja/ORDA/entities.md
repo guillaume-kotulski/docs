@@ -237,29 +237,29 @@ ORDA では、以下の二つのロックモードを提供しています:
 
 1. 二つのプロセスが同じエンティティを読み込んだとします。<br><br>![](assets/en/Orda/optimisticLock1.png)
 
-2. 最初のプロセスがエンティティを編集し、それを保存しようとします。 The `entity.save( )` method is called. The 4D engine automatically compares the internal stamp value of the modified entity with that of the entity stored in the data. Since they match, the entity is saved and its stamp value is incremented.<br><br>![](assets/en/Orda/optimisticLock2.png)
+2. 最初のプロセスがエンティティを編集し、それを保存しようとします。 すると `entity.save( )` メソッドが呼び出されます。 4Dエンジンは、編集されたエンティティの内部スタンプ値とデータに保存されているエンティティの内部スタンプ値を自動的に比較します。 これは合致しますので、エンティティは保存され、その内部スタンプ値はインクリメントされます。<br><br>![](assets/en/Orda/optimisticLock2.png)
 
-3. The second process also modifies the loaded entity and validates its changes. The `entity.save( )` method is called. Since the stamp value of the modified entity does not match the one of the entity stored in the data, the save is not performed and an error is returned.<br><br>![](assets/en/Orda/optimisticLock3.png)
+3. 二つ目のプロセスも読み込んだエンティティを編集し、それを保存しようとします。 すると `entity.save( )` メソッドが呼び出されます。 編集されたエンティティの内部スタンプ値はデータに保存されているエンティティの内部スタンプ値と合致しないので、保存は実行されず、エラーが返されます。<br><br>![](assets/en/Orda/optimisticLock3.png)
 
 
-This can also be illustrated by the following code:
+この流れは以下のコードのように分解することもできます:
 
 ```4d
- $person1:=ds.Person.get(1) //Reference to entity
- $person2:=ds.Person.get(1) //Other reference to same entity
+ $person1:=ds.Person.get(1) // エンティティを参照
+ $person2:=ds.Person.get(1) // 同じエンティティへの別の参照
  $person1.name:="Bill"
- $result:=$person1.save() //$result.success=true, change saved
+ $result:=$person1.save() // $result.success=true, 変更は保存されます
  $person2.name:="William"
- $result:=$person2.save() //$result.success=false, change not saved
+ $result:=$person2.save() // $result.success=false, 変更は保存されません
 ```
 
-In this example, we assign to $person1 a reference to the person entity with a key of 1. Then, we assign another reference of the same entity to variable $person2. Using $person1, we change the first name of the person and save the entity. When we attempt to do the same thing with $person2, 4D checks to make sure the entity on disk is the same as when the reference in $person1 was first assigned. Since it isn't the same, it returns false in the success property and doesn’t save the second modification.
+この例では、$person1 に Person の、キーが 1 のエンティティを代入します。 次に、同じエンティティの別の参照を変数 $person2 に代入します。 $person1 を用いて、人物の名前を変更してエンティティを保存します。 同じことを $person2 を使用して実行しようとすると、4D はディスク上のエンティティをチェックし、変数 $person2 に代入されたものと同じかどうかを調べます。 結果としてこれは同じものでは無いので、success プロパティには false が返され、二つ目の変更は保存されません。
 
-When this situation occurs, you can, for example, reload the entity from the disk using the `entity.reload( )` method so that you can try to make the modification again. The `entity.save( )` method also proposes an "automerge" option to save the entity in case processes modified attributes that were not the same.
+こういった状況が発生した場合には、たとえば `entity.reload( )` メソッドを使用してディスクからエンティティを再読込し、変更をもう一度おこなうことができます。 また `entity.save( )` メソッドは、異なるプロセスがそれぞれ異なる属性を変更していた場合には保存を実行する "automerge" オプションも提供しています。
 
-### Pessimistic lock
+### ペシミスティック・ロック
 
-You can lock and unlock entities on demand when accessing data. When an entity is getting locked by a process, it is loaded in read/write in this process but it is locked for all other processes. The entity can only be loaded in read-only mode in these processes; its values cannot be edited or saved.
+エンティティは、データアクセス時に任意にロックおよびアンロックすることができます。 エンティティがプロセスからロックされている場合、そのエンティティはプロセスに読み書き可能モードで読み込まれていますが、他のすべてのプロセスに対してロックされています。 ロックされたエンティティは、他のプロセスからは読み込みモードでのみ読み込むことができます。つまり、その値を編集・保存することはできません。
 
 This feature is based upon two methods of the `Entity` class:
 
