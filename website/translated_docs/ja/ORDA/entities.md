@@ -158,7 +158,7 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
  $emp.save()
 ```
 
-これはとくに、リレーショナルデータベースから大量のデータを読み込むときに有用です。 This type of import usually contains an "ID" column, which references a primary key that you can then assign directly to a relation attribute.
+これはとくに、リレーショナルデータベースから大量のデータを読み込むときに有用です。 このような読み込みでは通常 "ID" カラムが含まれており、これはリレーション属性に直接割り当て可能なプライマリーキーを参照しています。
 
 This also means that you can assign primary keys in the N entities without corresponding entities having already been created in the 1 datastore class. If you assign a primary key that does not exist in the related datastore class, it is nevertheless stored and assigned by 4D as soon as this "1" entity is created.
 
