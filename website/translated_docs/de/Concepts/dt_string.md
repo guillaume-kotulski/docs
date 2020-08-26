@@ -139,12 +139,12 @@ Unlike other string comparisons, searching by keywords looks for "words" in "tex
 ```
 > **Notes:** - 4D uses the ICU library for comparing strings (using <>=# operators) and detecting keywords. For more information about the rules implemented, please refer to the following address: http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries. - In the Japanese version, instead of ICU, 4D uses Mecab by default for detecting keywords.
 
-## Character Reference Symbols
-The character reference symbols: [[...]]
+## Symbole für direkten Zeichenzugriff
+Mit den Symbolen [[...]]
 
-These symbols are used to refer to a single character within a string. This syntax allows you to individually address the characters of a text variable, string variable, or field.
+können Sie sich auf ein einzelnes Zeichen innerhalb einer Zeichenkette beziehen. This syntax allows you to individually address the characters of a text variable, string variable, or field.
 
-If the character reference symbols appear on the left side of the assignment operator (:=), a character is assigned to the referenced position in the string. For example, if vsName is not an empty string, the following line sets the first character of vsName to uppercase:
+Diese Syntax auf der linken Seite des Zuweisungsoperators (:=) weist an der angegebenen Position im String ein Zeichen zu. Beispiel: Ist vsName kein leerer String, setzt folgender Code das erste Zeichen von vsName in Großbuchstaben:
 
 ```4d
 If(vsName#"")
