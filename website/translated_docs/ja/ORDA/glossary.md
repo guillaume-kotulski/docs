@@ -83,21 +83,21 @@ Function of an ORDA data model class.
 
 エンティティとは、データクラスモデルに対応するオブジェクトです。 エンンティティには、データクラスと同じ属性が格納されます。
 
-An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. However, an entity also contains related data. エンティティの目的はデータの管理 (作成、更新、削除) です。
+エンティティは、データクラスのインスタンスとも解釈可能なオブジェクトです。 しかしながら、エンティティはリレートされたデータも格納しています。 エンティティの目的はデータの管理 (作成、更新、削除) です。
 
-For more information, see Entities.
+詳細な情報については、[エンティティ](entities.md) を参照してください。
 
 ## エンティティセレクション
 
-An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
+エンティティセレクションは、一つのオブジェクトです。 データストアをクエリすると、エンティティセレクションが返されます。 エンティティセレクションとは、同じデータクラスに所属するエンティティへの参照のセットのことです。
 
-An entity selection contains:
+エンティティセレクションは以下を格納します:
 
-*   a set of 0 to X entity references,
-*   a length property (always),
-*   queryPlan and queryPath properties (if asked while querying).
+*   0 から X までのエンティティ参照のセット
+*   length プロパティ(常に存在します)
+*   queryPlan および queryPath プロパティ (クエリ時に要求した場合に存在します)
 
-An entity selection can also be empty.
+エンティティセレクションは空であることもあります。
 
 
 ## Generic class
@@ -105,13 +105,13 @@ An entity selection can also be empty.
 Built-in class for ORDA objects such as entities, or dataclasses. Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
 
 
-## Lazy loading
+## レイジーローディング
 
-Since entities are managed as references, data is loaded only when necessary, i.e. when accessing it in the code or through interface widgets. This optimization principle is called lazy loading.
+エンティティは参照として管理されているため、データは必要なときにのみロードされます。つまりコードや、インターフェースウィジェットを通してアクセスしたときなどです。 この最適化原理は、レイジーローディングと呼ばれています。
 
-## Main datastore
+## メインデータストア
 
-The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
+開かれている 4Dデータベース (シングルユーザーまたはクライアント/サーバー) に対応するデータストアオブジェクト。 The main datastore is returned by the ds command.
 
 ## メソッド
 
