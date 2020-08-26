@@ -13,39 +13,39 @@ title: リモートデータストアの利用
 `Open datastore` コマンドによって参照されるリモートデータストアの場合、リクエスト元プロセスとリモートデータストア間の接続はセッションにより管理されます。
 
 
-## Opening sessions
+## セッションの開始
 
-When a 4D application (*i.e.* a process) opens an external datastore using the `Open datastore` command, a session in created on the remote datastore to handle the connection. This session is identified using a internal session ID which is associated to the `localID` on the 4D application. This session automatically manages access to data, entity selections, or entities.
+4Dアプリケーション (のプロセス) が `Open datastore` コマンドを使って外部のデータストアを開くと、この接続を管理するためにリモートデータストアではセッションが開始されます。 このセッションは内部的にセッションID によって識別され、4Dアプリケーション上では ` localID` と紐づいています。 データ、エンティティセレクション、エンティティへのアクセスはこのセッションによって自動的に管理されます。
 
-The `localID` is local to the machine that connects to the remote datastore, which means:
+`localID` はリモートデータストアに接続しているマシンにおけるローカルな識別IDです:
 
-*   If other processes of the same application need to access the same remote datastore, they can use the same `localID` and thus, share the same session.
-*   If another process of the same application opens the same remote datastore but with another `localID`, it will create a new session on the remote datastore.
-*   If another machine connects to the same remote datastore with the same `localID`, it will create another session with another cookie.
+*   同じアプリケーションの別プロセスが同じリモートデータストアに接続する場合、`localID` とセッションは共有することができます。
+*   同じアプリケーションの別プロセスが別の `localID` を使って同じデータストアに接続した場合、リモートデータストアでは新しいセッションが開始されます。
+*   他のマシンが同じ `localID` を使って同じデータストアに接続した場合、新しいセッションが新しい cookie で開始されます。
 
-These principles are illustrated in the following graphics:
+これらの原則を下図に示します:
 
 ![](assets/en/Orda/sessions.png)
 
-> For sessions opened by REST requests, please refer to [Users and sessions](REST/authUsers.md).
+> REST リクエストによって開かれたセッションについては、[ユーザーとセッション](REST/authUsers.md) を参照ください。
 
-## Viewing sessions
+## セッションの監視
 
-Processes that manage sessions for datastore access are shown in the 4D Server administration window:
+データストアアクセスを管理しているセッションは 4D Server の管理画面に表示されます:
 
-*   name: "REST Handler: \<process name>"
-*   type: HTTP Server Worker type
-*   session: session name is the user name passed to the Open datastore command.
+*   プロセス名: "REST Handler: \<process name>"
+*   タイプ: HTTP Server Worker
+*   セッション: `Open datastore` コマンドに渡されたユーザー名
 
-In the following example, two processes are running for the same session:
+次の例では、1つのセッション上で 2つのプロセスが実行中です:
 
 ![](assets/en/Orda/sessionAdmin.png)
 
-## Locking and transactions
+## ロッキングとトランザクション
 
-ORDA features related to entity locking and transaction are managed at process level in remote datastores, just like in ORDA client/server mode:
+エンティティロッキングやトランザクションに関連した ORDA 機能は、ORDA のクライアント / サーバーモードと同様に、リモートデータストアにおいてもプロセスレベルで管理されます:
 
-*   If a process locks an entity from a remote datastore, the entity is locked for all other processes, even when these processes share the same session (see [Entity locking](entities.md#entity-locking)). If several entities pointing to a same record have been locked in a process, they must be all unlocked in the process to remove the lock. If a lock has been put on an entity, the lock is removed when there is no more reference to this entity in memory.
+*   あるプロセスがリモートデータストアのエンティティをロックした場合、セッションの共有如何に関わらず、他のすべてのプロセスに対してそのエンティティはロックされた状態です ([エンティティロッキング](entities.md#エンティティロッキング) 参照)。 If several entities pointing to a same record have been locked in a process, they must be all unlocked in the process to remove the lock. If a lock has been put on an entity, the lock is removed when there is no more reference to this entity in memory.
 *   Transactions can be started, validated or cancelled separately on each remote datastore using the `dataStore.startTransaction()`, `dataStore.cancelTransaction()`, and `dataStore.validateTransaction()` functions. They do not impact other datastores.
 *   Classic 4D language commands (`START TRANSACTION`, `VALIDATE TRANSACTION`, `CANCEL TRANSACTION`) only apply to the main datastore (returned by `ds`). If an entity from a remote datastore is hold by a transaction in a process, other processes cannot update it, even if these processes share the same session.
 *   Locks on entities are removed and transactions are rollbacked:
