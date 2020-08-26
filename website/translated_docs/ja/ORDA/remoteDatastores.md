@@ -5,12 +5,12 @@ title: リモートデータストアの利用
 
 4D アプリケーション上で公開された [データストア](dsMapping.md#データストア) は、異なるクライアントにより同時にアクセスすることができます:
 
-- 4D リモートアプリケーションは ORDA を使っていれば、`ds` コマンドでメインデータストアにアクセスできます。 Note that the 4D remote application can still access the database in classic mode. These accesses are handled by the **4D application server**.
-- Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the `Open datastore` command. These accesses are handled by the **HTTP REST server**.
-- 4D for iOS queries for updating iOS applications. These accesses are handled by the **HTTP server**.
+- 4D リモートアプリケーションは ORDA を使っていれば、`ds` コマンドでメインデータストアにアクセスできます。 この 4D リモートアプリケーションは従来のモードでもデータベースにアクセスできます。 これらのアクセスを処理するのは **4Dアプリケーションサーバー** です。
+- 他の 4Dアプリケーション (4Dリモート、4D Server) は、`Open datastore` コマンドを使ってリモートデータストアのセッションを開始できます。 アクセスを処理するのは **HTTP REST サーバー** です。
+- iOS アプリケーションを更新するため、4D for iOS のクエリでアクセスできます。 アクセスを処理するのは **HTTP サーバー** です。
 
 
-When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
+`Open datastore` コマンドによって参照されるリモートデータストアの場合、リクエスト元プロセスとリモートデータストア間の接続はセッションにより管理されます。
 
 
 ## Opening sessions
