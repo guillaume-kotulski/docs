@@ -1,9 +1,9 @@
 ---
 id: glossary
-title: Glossary
+title: 用語集
 ---
 
-## Main concepts at a glance
+## 主なコンセプトの概要
 
 ![](assets/en/Orda/mainConcepts.png)
 
@@ -11,20 +11,20 @@ title: Glossary
 
 ## 属性
 
-An attribute is the smallest storage cell in a relational database (see also [Relation attribute](#relation-attribute)). Do not confuse dataclass attributes and entity attributes:
+属性とは、リレーショナルデータベース内における最小の保存セルです ([リレーション属性](#リレーション属性) も参照してください)。 データクラス属性とエンティティ属性を混同しないようにしてください:
 
-*   In a dataclass object, each property is a dataclass attribute that maps to a corresponding field in the corresponding table (same name and type).
-*   In an entity object, entity attributes are properties that contain values for the corresponding datastore attributes.
-> *Attributes* and *properties* are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
+*   データクラスオブジェクトにおける各プロパティは、対応するテーブルの対応するフィールドへとマップするデータクラス属性です (同じ名前と型)。
+*   エンティティオブジェクトにおけるエンティティ属性は、対応するデータストア属性の値を格納するプロパティです。
+> *属性* と *プロパティ* は似た概念です。 "属性" はデータを保存するデータクラスプロパティを指定するのに使われるのに対し、"プロパティ"はより一般的な概念でオブジェクト内で保存されるデータを定義します。
 
-## AttributePath
+## 属性パス
 
-An attributePath is the path of an attribute inside a given dataclass or entity. See also [PropertyPath](#propertyPath).
+属性パスとは、あるデータクラスあるいはエンティティ内の属性へのパスです。 [プロパティパス](#プロパティパス) も参照してください。
 
 
-## Class code
+## クラスコード
 
-Code for the user class function(s).
+ユーザークラス関数のコード。
 
 ## Data model class
 
@@ -40,14 +40,14 @@ Function of an ORDA data model class.
 
 ## データクラス
 
-A dataclass is an object model that describes the data. Tables in the database provided by the datastore are handled through dataclasses. Each table in the database provided by the datastore has a corresponding dataclass with the same name. Each field of the table is an attribute of the dataclass.
+データクラスとは、データを記述するオブジェクトモデルです。 データストアによって提供されるデータベースのテーブルは、データクラスを通して管理されます。 データストアから提供されたデータベースの各テーブルは、対応する同名のデータクラスを持ちます。 テーブルの各フィールドは、データクラスの属性です。
 
-A dataclass is related to a single datastore.
+データクラスは単一のデータストアにリレートされています。
 
 
-## DataClass class
+## DataClass クラス
 
-Class for specific dataclass objects, in which you can add custom functions.
+カスタム関数を追加することのできる、特定のデータクラスオブジェクト用のクラス。
 
 ## データストア
 
@@ -149,7 +149,7 @@ A "pessimistic lock" means that an entity is locked prior to its being accessed,
 ## プロパティ
 
 See [Attribute](#attribute).
-> Attributes and properties are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
+> Attributes and properties are similar concepts. "属性" はデータを保存するデータクラスプロパティを指定するのに使われるのに対し、"プロパティ"はより一般的な概念でオブジェクト内で保存されるデータを定義します。
 
 ## PropertyPath
 
