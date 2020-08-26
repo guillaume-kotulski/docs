@@ -69,19 +69,19 @@ Function of an ORDA data model class.
 
 ## DataStoreImplementation
 
-Internal name of the generic DataStore class in the `4D` class store.
+`4D` クラスストア内の DataStore クラスの内部的な名称。
 
-## Deep copy
+## ディープコピー
 
-A deep copy duplicates an object and all the references it contains. After a deep copy, a copied collection contains duplicated elements and thus, new references, of all of the orginal elements. See also Shallow copy.
+ディープコピーは、あるオブジェクトとそこに格納されているすべての参照を複製します。 ディープコピーのあと、コピーされたコレクションには、すべてのオリジナル要素の複製 (つまり新規参照) が格納されています。 [シャロウコピー](#シャロウコピー) も合わせて参照してください。
 
 ## ds
 
-`ds` is the 4D language command that returns a [datastore](dsMapping.md#datastore) object reference. It matches the datastore available upon the 4D main database.
+`ds` は、[データストア](dsMapping.md#データストア) のオブジェクト参照を返す 4Dランゲージコマンドです。 この参照は 4D のメインデータベースが提供するデータストアに合致します。
 
 ## エンティティ
 
-An entity is an object that corresponds to a dataclass model. An entity contains the same attributes as the dataclass.
+エンティティとは、データクラスモデルに対応するオブジェクトです。 エンンティティには、データクラスと同じ属性が格納されます。
 
 An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. However, an entity also contains related data. エンティティの目的はデータの管理 (作成、更新、削除) です。
 
