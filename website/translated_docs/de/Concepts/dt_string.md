@@ -152,7 +152,7 @@ If(vsName#"")
 End if
 ```
 
-Otherwise, if the character reference symbols appear within an expression, they return the character (to which they refer) as a 1-character string. Beispiel:
+Diese Syntax mit dem gewünschten Zeichen innerhalb eines Ausdrucks gibt es als String mit einem Zeichen zurück. Beispiel:
 
 ```4d
 //The following example tests if the last character of vtText is an At sign "@"
@@ -170,9 +170,9 @@ Otherwise, if the character reference symbols appear within an expression, they 
  End if
 ```
 
-### Advanced note about invalid character reference
+### Bemerkung zu ungültigem Zeichenzugriff
 
-When you use the character reference symbols, you must address existing characters in the string in the same way you address existing elements of an array. For example if you address the 20th character of a string variable, this variable MUST contain at least 20 characters.
+Beim Einsatz der Symbole für direkten Zeichenzugriff müssen Sie vorhandene Zeichen im String auf dieselbe Weise wie vorhandene Elemente in einem Array ansprechen. Sprechen Sie beispielsweise das 20. Zeichen einer Textvariablen an, muss diese Variable auch mindestens 20 Zeichen enthalten.
 
 - Failing to do so, in interpreted mode, does not cause a syntax error.
 - Failing to do so, in compiled mode (with no options), may lead to memory corruption, if, for instance, you write a character beyond the end of a string or a text.
