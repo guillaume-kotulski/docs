@@ -51,20 +51,20 @@ Function of an ORDA data model class.
 
 ## データストア
 
-A datastore is the interface object provided by ORDA to reference a structure and access its data. The main database, returned by the `ds` command, is available as a datastore (the main datastore).
+データストアとは、ORDA によって提供されるインターフェースオブジェクトです。データストアはストラクチャーを参照し、データへのアクセスを提供します。 `ds` コマンドによって返されるメインデータベースは、データストア (メインデータストア) として利用可能です。
 
-A datastore provides:
+データストアは以下のものを提供します:
 
-*   a connection to the 4D database
-*   a set of dataclasses to work with the database
+*   4Dデータベースへの接続
+*   データベースを扱うためのデータクラスのセット
 
-The database can be a 4D local database (the Main datastore), or a 4D Server database exposed as REST resource (a Remote datastore).
+利用できるデータベースは、スタンダロンまたはクライアント/サーバーで開いているメインの 4D データベース (メインデータストア)、および REST リソースとして公開された 4D Server データベースです (リモートデータストア)。
 
-A datastore references only a single database. It is, however, possible to open several datastores to access several databases.
+データストアは単一のデータベースのみを参照しますが、 複数のデータベースをアクセスするために複数のデータストアを開くことも可能です。
 
-## DataStore class
+## DataStore クラス
 
-Class for datastore objects, in which you can add custom functions.
+カスタム関数を追加することのできる、データストアオブジェクト用のクラス。
 
 
 ## DataStoreImplementation
