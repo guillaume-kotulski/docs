@@ -48,9 +48,9 @@ Eine Leerzeit wird als ?00:00:00? angegeben.
 |                         |              |         | ?01:02:03? > ?01:02:03? | Falsch     |
 | Kleiner als             | Zeit < Zeit  | Boolean | ?01:02:03? < ?01:02:04? | Wahr       |
 |                         |              |         | ?01:02:03? < ?01:02:03? | Falsch     |
-| Größer als oder gleich  | Time >= Time | Boolean | ?01:02:03? >=?01:02:03? | Wahr       |
+| Größer als oder gleich  | Zeit >= Zeit | Boolean | ?01:02:03? >=?01:02:03? | Wahr       |
 |                         |              |         | ?01:02:03? >=?01:02:04? | Falsch     |
-| Kleiner als oder gleich | Time <= Time | Boolean | ?01:02:03? <=?01:02:03? | Wahr       |
+| Kleiner als oder gleich | Zeit <= Zeit | Boolean | ?01:02:03? <=?01:02:03? | Wahr       |
 |                         |              |         | ?01:02:04? <=?01:02:03? | Falsch     |
 
 ### Beispiel 1
