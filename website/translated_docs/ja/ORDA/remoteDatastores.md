@@ -1,11 +1,11 @@
 ---
 id: datastores
-title: Using a remote datastore
+title: リモートデータストアの利用
 ---
 
-A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accessed simultaneously through different clients:
+4D アプリケーション上で公開された [データストア](dsMapping.md#データストア) は、異なるクライアントにより同時にアクセスすることができます:
 
-- 4D remote applications using ORDA to access the main datastore with the `ds` command. Note that the 4D remote application can still access the database in classic mode. These accesses are handled by the **4D application server**.
+- 4D リモートアプリケーションは ORDA を使っていれば、`ds` コマンドでメインデータストアにアクセスできます。 Note that the 4D remote application can still access the database in classic mode. These accesses are handled by the **4D application server**.
 - Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the `Open datastore` command. These accesses are handled by the **HTTP REST server**.
 - 4D for iOS queries for updating iOS applications. These accesses are handled by the **HTTP server**.
 
