@@ -167,12 +167,12 @@ User class not related to an ORDA object.
 
 リレーション属性は、データクラス間のリレーション (1対N および N対1) を概念化するものです。
 
-*   Many-to-one relation (dataclassA references an occurrence of dataclassB): a relation attribute is available in dataclassA and references one instance of dataclassB.
-*   One-to-many relation (an occurence of dataclassB references several occurrences of dataclassA): a relation attribute is available in dataclassB and references several instances of dataclassA.
+*   N対1リレーション (データクラスA はデータクラスB のオカレンスを参照します): リレーション属性はデータクラスA 内で利用可能で、データクラスB の一つのインスタンスを参照します。
+*   1対Nリレーション (データクラスB のオカレンスがデータクラスA の複数のオカレンスを参照します): リレーション属性はデータクラスB 内で利用可能で、データクラスA の複数のインスタンスを参照します。
 
-A dataclass can have recursive relation attributes.
+データクラスは再帰的なリレーション属性を持つことができます。
 
-In an entity, the value of a relation attribute can be an entity or an entity selection.
+エンティティ内では、リレーション属性の値はエンティティあるいはエンティティセレクションとなります。
 
 ## Related entities
 
