@@ -111,7 +111,7 @@ Built-in class for ORDA objects such as entities, or dataclasses. Functions and 
 
 ## メインデータストア
 
-開かれている 4Dデータベース (シングルユーザーまたはクライアント/サーバー) に対応するデータストアオブジェクト。 The main datastore is returned by the ds command.
+開かれている 4Dデータベース (シングルユーザーまたはクライアント/サーバー) に対応するデータストアオブジェクト。 メインデータストアは `ds` コマンドによって返されます。
 
 ## メソッド
 
@@ -123,9 +123,9 @@ For example, the `query()` method is a dataclass member function. If you have st
 $myClass.query("name = smith")
 ```
 
-## Mixed data type
+## ミックスデータ型
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. :
+このドキュメントでは、データクラス属性に保存可能な値の様々な型を指定するために、"ミックス" データ型が使用されます。 :
 
 *   number
 *   text
@@ -134,13 +134,13 @@ In this documentation, "Mixed" data type is used to designate the various type o
 *   date
 *   オブジェクト
 *   コレクション
-*   picture(\*)
+*   ピクチャー (\*)
 
-*(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
+*(\*) ピクチャー型は* `entitySelection.max( )` *などの統計型メソッドではサポートされていません。*
 
-## Optimistic Lock
+## オプティミスティック・ロック
 
-In "optimistic lock" mode, entities are not locked explicitly before updating them. Each entity has an internal stamp that is automatically incremented each time the entity is saved on disk. The entity.save( ) or entity.drop( ) methods will return an error if the stamp of the loaded entity (in memory) and the stamp of the entity on disk do not match, or if the entity has been dropped. Optimistic locking is only available in ORDA implementation. See also "Pessimistic lock".
+"オプティミスティック・ロック" モードでは、エンティティは更新されるまでは明示的にはロックされていません。 各エンティティは、そのエンティティがディスクに保存されるたびに自動でインクリメントされる内部スタンプを持っています。 `entity.save( )` および `entity.drop( )` メソッドは(メモリ内に) ロードされたスタンプと、ディスク上のエンティティのスタンプが合致しない場合、あるいはエンティティがドロップされている場合にはエラーを返します。 オプティミスティック・ロックは ORDA 実装内でのみ使用可能です。 See also "Pessimistic lock".
 
 ## Pessimistic Lock
 
