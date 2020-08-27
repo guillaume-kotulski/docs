@@ -174,9 +174,9 @@ User class not related to an ORDA object.
 
 エンティティ内では、リレーション属性の値はエンティティあるいはエンティティセレクションとなります。
 
-## Related entities
+## リレートエンティティ
 
-A related entity can be seen as the instance of a relation attribute in a dataclass.
+リレートエンティティはデータクラス内のリレーション属性のインスタンスとしてみることができます。
 
 Entity selections may refer to related entities according to the relation attributes defined in the corresponding dataclasses.
 
