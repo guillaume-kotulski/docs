@@ -128,7 +128,7 @@ myObject.myAttribute:="10"
 $value:=$clientObj.data.address.city
 ```
 
-**Hinweis:** Für Namen von Objektattributen gelten zusätzliche Regeln (sie müssen konform zur ECMAScript Spezifikation sein). For more information, see \[additional rules above\](#additional-rules-for-object-property-and-ORDA names) and [Object property identifiers](Concepts/dt_object.md#object-property-identifiers).
+**Hinweis:** Für Namen von Objektattributen gelten zusätzliche Regeln (sie müssen konform zur ECMAScript Spezifikation sein). Weitere Informationen dazu finden Sie oben unter (#zusätzliche-Regeln-für-Namen-von-Objekteigenschaften-und-ORDA) und [Object property identifiers](Concepts/dt_object.md#object-property-identifiers).
 
 
 ## Plug-In Befehle
@@ -142,9 +142,9 @@ $error:=SMTP_From($smtp_id;"henry@gmail.com")
 
 ## Prozesse
 
-A process name can contain up to 255 characters, not including scope character.
+Der Name des Prozesses kann ohne Symbol für Reichweite bis zu 255 Zeichen lang sein.
 
-In the single-user version, or in Client/Server on the Client side, there are two process scopes: **global** or **local**.
+In der Einzelplatzversion oder auf der Client-Seite in einer Client/Server-Umgebung gibt es zwei Reichweiten für Prozesse: **global** oder **lokal**.
 
 - You denote a **global** process by using a string expression that represents its name (which cannot start with the dollar sign $).
 - You denote a **local** process if the name of the process is preceded by a dollar ($) sign.
