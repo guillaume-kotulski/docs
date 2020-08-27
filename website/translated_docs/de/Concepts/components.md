@@ -250,11 +250,11 @@ Daten aus der externen Datenbank auslesen:
 
 ## Ressourcen verwenden
 
-Komponenten können Ressourcen verwenden. In conformity with the resource management principle, if the component is of the .4dbase architecture (recommended architecture), the Resources folder must be placed inside this folder.
+Komponenten können Ressourcen verwenden. Gemäß den Vorgaben zur Ressourcen-Verwaltung muss der Ordner Resources bei einer Komponente mit der Struktur von .4dbase (empfohlene Struktur) in diesen Ordner gelegt werden.
 
-Automatic mechanisms are operational: the XLIFF files found in the Resources folder of a component will be loaded by this component.
+Automatische Mechanismen greifen. So lädt die Komponente die XLIFF-Dateien, die in ihrem Ressourcen-Ordner gefunden werden.
 
-In a host database containing one or more components, each component as well as the host databases has its own “resources string.” Resources are partitioned between the different databases: it is not possible to access the resources of component A from component B or the host database.
+In einem Host Projekt mit einer oder mehreren Komponenten haben jede Komponente sowie die Host Projekte ihren eigenen "Ressourcen String.” Ressourcen sind auf die verschiedenen Projekte verteilt: Sie können nicht von Komponente B oder dem Host Projekt aus auf die Ressourcen von Komponente A zugreifen.
 
 ## On-line help for components
 A specific mechanism has been implemented in order to allow developers to add on-line help to their components. The principle is the same as that provided for 4D databases:
