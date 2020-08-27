@@ -102,7 +102,7 @@ ORDA データモデルクラスの関数。
 
 ## 汎用クラス
 
-エンティティやデータクラスなどの ORDA オブジェクト用のビルトインクラス。 Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
+エンティティやデータクラスなどの ORDA オブジェクト用のビルトインクラス。 汎用クラスのプロパティや関数は、ユーザー拡張クラス (例: `EmployeeEntity`) において自動で利用可能です。
 
 
 ## レイジーローディング
@@ -115,9 +115,9 @@ ORDA データモデルクラスの関数。
 
 ## メソッド
 
-データストア、データクラス、エンティティセレクション、エンティティなどの ORDA オブジェクトは、オブジェクトのクラスを定義します。 They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
+データストア、データクラス、エンティティセレクション、エンティティなどの ORDA オブジェクトは、オブジェクトのクラスを定義します。 これらのクラスには、オブジェクトを直接操作するための専用のメソッドが提供されています。 これらのメソッドはメンバー関数とも呼ばれます。 このメソッドを使用するには、オブジェクトのインスタンスに対して呼び出します。
 
-For example, the `query()` method is a dataclass member function. `$myClass` 変数にデータクラスオブジェクトを格納している場合、次のように書くことができます:
+たとえば、`query()` メソッドはデータクラスのメンバー関数です。 `$myClass` 変数にデータクラスオブジェクトを格納している場合、次のように書くことができます:
 
 ```code4d
 $myClass.query("name = smith")
