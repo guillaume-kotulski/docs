@@ -117,7 +117,7 @@ ORDA データモデルクラスの関数。
 
 データストア、データクラス、エンティティセレクション、エンティティなどの ORDA オブジェクトは、オブジェクトのクラスを定義します。 They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
-For example, the `query()` method is a dataclass member function. If you have stored a dataclass object in the `$myClass` variable, you can write:
+For example, the `query()` method is a dataclass member function. `$myClass` 変数にデータクラスオブジェクトを格納している場合、次のように書くことができます:
 
 ```code4d
 $myClass.query("name = smith")
