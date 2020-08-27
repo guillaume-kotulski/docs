@@ -26,17 +26,17 @@ title: 用語集
 
 ユーザークラス関数のコード。
 
-## Data model class
+## データモデルクラス
 
-Extended class available for a data model object.
+データモデルオブジェクトに関連して提供される拡張クラス。
 
-## Data model object
+## データモデルオブジェクト
 
-Database objects available through the ORDA concept, i.e. datastore, dataclasses, entities and entity selections.
+ORDA を通して提供されているデータベースオブジェクト (データストア、データクラス、エンティティ、エンティティセレクション)。
 
-## Data model function
+## データモデル関数
 
-Function of an ORDA data model class.
+ORDA データモデルクラスの関数。
 
 ## データクラス
 
@@ -100,9 +100,9 @@ Function of an ORDA data model class.
 エンティティセレクションは空であることもあります。
 
 
-## Generic class
+## 汎用クラス
 
-Built-in class for ORDA objects such as entities, or dataclasses. Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
+エンティティやデータクラスなどの ORDA オブジェクト用のビルトインクラス。 Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
 
 
 ## レイジーローディング
@@ -115,7 +115,7 @@ Built-in class for ORDA objects such as entities, or dataclasses. Functions and 
 
 ## メソッド
 
-ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
+データストア、データクラス、エンティティセレクション、エンティティなどの ORDA オブジェクトは、オブジェクトのクラスを定義します。 They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
 For example, the `query()` method is a dataclass member function. If you have stored a dataclass object in the `$myClass` variable, you can write:
 
@@ -155,9 +155,9 @@ $myClass.query("name = smith")
 
 プロパティパスとは、あるオブジェクトのプロパティへのパスです。 プロパティが複数の階層にネストされている場合、各階層はドット (".") によって区切られます。
 
-## Regular class
+## 通常クラス
 
-User class not related to an ORDA object.
+ORDA オブジェクトとは関わりのないユーザークラス。
 
 ## リレートされたデータクラス
 
@@ -194,8 +194,8 @@ User class not related to an ORDA object.
 
 ## シャロウコピー
 
-シャロウコピーは、要素の構造のみを複製し、同じ内部参照を保持します。 シャロウコピーのあと、二つのコレクションに格納された個々の要素は同じものが共有されています。 See also Deep copy.
+シャロウコピーは、要素の構造のみを複製し、同じ内部参照を保持します。 シャロウコピーのあと、二つのコレクションに格納された個々の要素は同じものが共有されています。 [ディープコピー](#ディープコピー) も合わせて参照してください。
 
 ## Stamp
 
-Used in "optimistic" locking technology. All entities have an internal counter, the stamp, which is incremented each time the entity is saved. By automatically comparing stamps between an entity being saved and its version stored on disk, 4D can prevent concurrent modifications on the same entities.
+"オプティミステック" ロックテクノロジーにおいて使用されるものです。 すべてのエンティティにはスタンプと呼ばれる内部カウンターがあり、エンティティが保存されるたびにインクリメントされていきます。 エンティティ内のスタンプとディスク上に保存されているエンティティのスタンプを自動的に比較することで、4D は同じエンティティへの書き込みの衝突を防いでいます。
