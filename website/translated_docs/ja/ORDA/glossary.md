@@ -178,23 +178,23 @@ User class not related to an ORDA object.
 
 リレートエンティティはデータクラス内のリレーション属性のインスタンスとしてみることができます。
 
-Entity selections may refer to related entities according to the relation attributes defined in the corresponding dataclasses.
+エンティティセレクションは、対応するデータクラス内で定義されたリレーション属性に応じて、複数のリレートエンティティを参照することもあります。
 
-## Remote datastore
+## リモートデータストア
 
-A 4D database opened on a 4D or 4D Server (available through HTTP) and exposed as a REST resource. This database can be referenced locally as a Datastore from other workstations, where it is assigned a locaID. The remote datastore can be used through ORDA concepts (datastore, dataclass, entity selection...). This use is submitted to a licencing system.
+4D または (HTTP経由で利用可能な) 4D Server 上で開かれている、REST リソースとして公開された 4Dデータベース。 このデータベースは他のマシンにおいてデータストアとしてローカルに参照することができ、その際には割り当てられた locaID で識別されます。 リモートデータストアは ORDA の概念 (データストア、データクラス、エンティティセレクション等) を使って利用できます。 利用にあたってはライセンスが消費されます。
 
-## Session
+## セッション
 
-When the 4D application connects to a Remote datastore, a session is created on the 4D Server (HTTP). A session cookie is generated and associated to the local datastore id.
+4Dアプリケーションがリモートデータストアに接続すると、4D Server (HTTP) 上では セッション が作成されます。 セッション cookie が生成され、ローカルデータストア ID と紐づけられます。
 
-Each time a new session is opened, a license is used. Each time a session is closed, the license is freed.
+新規セッションが開始されるごとに、ライセンスが消費されます。 セッションが閉じられると、ライセンスは解放されます。
 
-Inactive sessions are automatically closed after a timeout. The default timeout is 48 hours, it can be set by the developer (it must be >= 60 minutes).
+アクティビティのないセッションはタイムアウト後に自動的に終了します。 デフォルトのタイムアウトは 48時間で、任意に設定することができます (最少時間は 60分)。
 
-## Shallow copy
+## シャロウコピー
 
-A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
+シャロウコピーは、要素の構造のみを複製し、同じ内部参照を保持します。 シャロウコピーのあと、二つのコレクションに格納された個々の要素は同じものが共有されています。 See also Deep copy.
 
 ## Stamp
 
