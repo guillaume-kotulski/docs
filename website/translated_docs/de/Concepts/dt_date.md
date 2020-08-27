@@ -4,7 +4,7 @@ title: Datum
 ---
 
 - Datenfelder, Variablen oder Ausdrücke vom Typ Datum umfassen den Bereich 1.1.100 bis 31.12.32767. Das Datum wird in der deutschen Version von 4D im Format Tag/Monat/Jahr dargestellt, in der internationalen Version im Format Monat/Tag/Jahr.
-- Auch wenn die Datumsdarstellung über C_DATE bis zum Jahr 32 767 funktioniert, können über das Betriebssystem laufende Operationen eine niedrigere Grenze vorschreiben.
+- Auch wenn die Datumsdarstellung über C_DATE bis zum Jahr 32767 funktioniert, können über das Betriebssystem laufende Operationen eine niedrigere Grenze vorschreiben.
 
 **Hinweis:** Bei der Beschreibung von Befehlen im Handbuch 4D Programmiersprache werden Datumsparameter als Datum bezeichnet, wenn nichts anderes angegeben ist.
 
@@ -18,9 +18,9 @@ Das Datumsformat in der Programmiersprache und das bei Eingabe durch den Endanwe
 !2015-12-31!
 ```
 
-Ein Nulldatum wird als _!00-00-00!_ angegeben.
+Ein Leerdatum wird als _!00-00-00!_ angegeben.
 
-**Tipp:** Der Methodeneditor enthält ein Tastenkürzel für Nulldatum. Tippen Sie einfach das Ausrufezeichen (!) und drücken die Enter-Taste.
+**Tipp:** Der Methodeneditor enthält ein Tastenkürzel für Leerdatum. Tippen Sie einfach das Ausrufezeichen (!) und drücken die Enter-Taste.
 
 **Hinweise:**
 
