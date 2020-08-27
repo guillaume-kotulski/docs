@@ -42,13 +42,13 @@ Per Definition werden alle Projektmethoden in die Komponente integriert (das Pro
 
 Andererseits sind diese Projektmethoden standardmäßig nicht sichtbar und lassen sich in Host Projekten auch nicht aufrufen. Im Matrix Projekt müssen Sie die Methoden, die Sie mit dem Host Projekt teilen wollen, explizit angeben. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host database). These methods form **entry points** in the component.
 
-**Note:** Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate the project methods of the host project that you want to make accessible to the components.
+**Hinweis:** Aus Sicherheitsgründen kann die Komponente standardmäßig keine Projektmethoden ausführen, die zum Host Projekt gehören. In manchen Fällen müssen Sie jedoch zulassen, dass eine Komponente auf die Projektmethoden Ihres Host Projekts zugreifen kann. Dazu müssen Sie die Projektmethode explizit dem Host Projekt zuweisen, das Sie für die Komponenten zugänglich machen wollen.
 
 ![](assets/en/Concepts/pict516563.en.png)
 
 ## Variablen übergeben
 
-The local, process and interprocess variables are not shared between components and host projects. The only way to access component variables from the host project and vice versa is using pointers.
+Lokale, Prozess- und Interprozess Variablen werden nicht von Komponenten und Host Projekten gemeinsam genutzt. Die einzige Möglichkeit, aus dem Host Projekt auf Variablen von Komponenten zuzugreifen und umgekehrt, sind Zeiger.
 
 Beispiel mit Array:
 
@@ -71,11 +71,11 @@ Beispiele mit Variablen:
 ```
 
 
-When you use pointers to allow components and the host project to communicate, you need to take the following specificities into account:
+Über Zeiger können Komponenten und Host Projekt miteinander kommunizieren. Dabei müssen Sie folgendes berücksichtigen:
 
-- The `Get pointer` command will not return a pointer to a variable of the host project if it is called from a component and vice versa.
+- Der 4D Befehl `Get pointer` gibt keinen Zeiger auf eine Variable des Host Projekts zurück, wenn sie von einer Komponenten aus aufgerufen wird und umgekehrt.
 
-- The component architecture allows the coexistence, within the same interpreted project, of both interpreted and compiled components (conversely, only compiled components can be used in a compiled project). Für diesen Fall gilt folgende Regelung für Zeiger: Der Interpreter kann einen im kompilierten Modus erstellten Zeiger auflösen. Er kann jedoch im kompilierten Modus keinen Zeiger auflösen, der im interpretierten Modus erstellt wurde. Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
+- Die Architektur für Komponenten lässt zu, dass dasselbe interpretierte Projekt sowohl interpretierte als auch kompilierte Komponenten enthalten kann. In einem kompilierten Projekt können dagegen nur kompilierte Komponenten verwendet werden. Für diesen Fall gilt folgende Regelung für Zeiger: Der Interpreter kann einen im kompilierten Modus erstellten Zeiger auflösen. Er kann jedoch im kompilierten Modus keinen Zeiger auflösen, der im interpretierten Modus erstellt wurde. Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
  - Definiert Komponente C die Variable `myCvar`,  kann Komponente I über den Zeiger `->myCvar` auf diese Variable zugreifen.
  - Definiert Komponente I die Variable `myIvar` variable, kann Komponente C über den Zeiger` ->myIvar` nicht auf diese Variable zugreifen. Diese Syntax verursacht einen Ausführungsfehler.
 
