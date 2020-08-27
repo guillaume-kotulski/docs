@@ -35,10 +35,10 @@ Die folgenden Regeln gelten für alle 4D Frameworks.
 
 ## Arrays
 
-Ein Array kennzeichnen Sie durch seinen Namen. Das ist der Name, den Sie beim Erstellen des Array übergeben haben, z. B. ARRAY LONGINT. Arrays are variables, and like variables, the name of an array can be up to 31 characters, not including the scope symbols, and there are three different types of arrays:
+Ein Array kennzeichnen Sie durch seinen Namen. Das ist der Name, den Sie beim Erstellen des Array übergeben haben, z. B. ARRAY LONGINT. Arrays sind Variablen. Der Name eines Array kann, wie bei Variablen, bis zu 31 Zeichen lang sein, ohne die Symbole für Reichweite. Es gibt drei Arten von Arrays:
 
-- The name of a **local** array is preceded by the dollar sign ($).
-- The name of a **process** array cannot start with the <> symbols nor the dollar sign $).
+- Der Name eines **lokalen** Array beginnt mit dem Dollarzeichen ($)
+- Der Name eines **Prozess** Array darf weder mit den Symbolen <> noch mit dem Dollarzeichen ($) starten.
 - The name of an **interprocess** array is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
 
 Beispiele:
