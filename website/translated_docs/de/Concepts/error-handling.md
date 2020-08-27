@@ -21,9 +21,9 @@ Andere Fehler, wie Fehler beim Schreiben auf die Festplatte, Netzwerkfehler oder
 
 ## Fehlerverwaltungsmethode installieren
 
-In 4D, all errors can be catched and handled in a specific project method, the **error-handling** (or **error-catching**) method.
+In 4D werden alle Fehler über eine spezifische Projektmethode ausfindig gemacht und verwaltet. Das ist die **Fehlerverwaltungs- oder Fehlerauffindmethode**.
 
-Diese Projektmethode wird für den aktuellen Prozess installiert und automatisch für jeden Fehler aufgerufen, der im Prozess auftritt, sei es im interpretierten oder im kompilierten Modus. To *install* this project method, you just need to call the `ON ERR CALL` command with the project method name as parameter. Beispiel:
+Diese Projektmethode wird für den aktuellen Prozess installiert und automatisch für jeden Fehler aufgerufen, der im Prozess auftritt, sei es im interpretierten oder im kompilierten Modus. Um sie zu *installieren*, rufen Sie den Befehl `ON ERR CALL` auf und setzen den Namen der Projektmethode als Parameter. Beispiel:
 
 ```4d
 ON ERR CALL("IO_ERRORS") //Installs the error-handling method
@@ -64,7 +64,7 @@ In einer eigenen Fehlermethode erhalten Sie verschiedene Angaben, die zum Identi
   - `Error line` (Lange Ganzzahl): Zeilennummer in der Methode, die den Fehler ausgelöst hat.
   - `Error formula` (Text): Formel des 4D Code (Rohtext), der den Fehler verursacht hat.
 
-(*) 4D automatically maintains a number of variables called **system variables**, meeting different needs. Weitere Informationen dazu finden Sie im Handbuch 4D Programmiersprache*.
+(*) *4D unterhält automatisch eine Reihe von Variablen, genannt **Systemvariablen**, die verschiedene Zwecke erfüllen.* Weitere Informationen dazu finden Sie im Handbuch 4D Programmiersprache*.</p>
 
 - Der Befehl `GET LAST ERROR STACK` gibt Informationen über den aktuellen Fehlerstapel der 4D Anwendung zurück.
 
