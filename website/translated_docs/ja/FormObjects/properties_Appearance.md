@@ -276,17 +276,17 @@ HTML WYSIWYG ビューを有効/無効にします。このビューでは、�
 ---
 ## 参照を表示
 
-ドキュメントに *参照* として挿入された 4D式をすべて表示します。 このオプションが無効になっていると、4D Write Pro は挿入された 4D式をカレント値で評価して、その*値* を表示します。 By default when you insert a 4D field or expression, 4D Write Pro computes and displays its current value. もとのフィールドや式を確認したいときには、このオプションを有効にします。 すると、これらの参照は灰色の背景色とともにドキュメント内に表示されます。
+ドキュメントに *参照* として挿入された 4D式をすべて表示します。 このオプションが無効になっていると、4D Write Pro は挿入された 4D式をカレント値で評価して、その*値* を表示します。 4Dフィールドまたは式を挿入すると、4D Write Pro はデフォルトでそのカレント値を表示します。 もとのフィールドや式を確認したいときには、このオプションを有効にします。 すると、これらの参照は灰色の背景色とともにドキュメント内に表示されます。
 
 たとえば、フォーマットを指定したカレント日付を挿入していると、デフォルトでは次の表示になります:
 
 ![](assets/en/FormObjects/writePro1.png)
 
-With the Show references property on, the reference is displayed:
+参照を表示オプションを有効にすると、代わりにもとの参照が表示されます:
 
 ![](assets/en/FormObjects/writeProExpr.png)
 
-> 4D expressions can be inserted using the `ST INSERT EXPRESSION` command.
+> 4D 式を挿入するには、`ST INSERT EXPRESSION` コマンドを使います。
 
 
 #### JSON 文法
@@ -294,7 +294,7 @@ With the Show references property on, the reference is displayed:
 | 名 | データタイプ | とりうる値 |
 | - | ------ | ----- |
 |   |        |       |
- showReferences|boolean|true, false (default)|
+ showReferences|boolean|true, false (デフォルト)|
 
 #### 対象オブジェクト
 
@@ -303,7 +303,7 @@ With the Show references property on, the reference is displayed:
 ---
 ## 垂直ルーラーを表示
 
-Displays/hides the vertical ruler when the document view is in [Page mode](#view-mode).
+ドキュメントビューが [ページモード](#ビューモード) の場合に、垂直ルーラーを表示/非表示にします。
 
 
 #### JSON 文法
@@ -311,7 +311,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 | 名 | データタイプ | とりうる値 |
 | - | ------ | ----- |
 |   |        |       |
- showVerticalRuler|boolean|true (default), false|
+ showVerticalRuler|boolean|true (デフォルト), false|
 
 #### 対象オブジェクト
 
@@ -321,9 +321,9 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 ---
 ## タブコントロールの位置
 
-You can set the direction of tab controls in your forms. This property is available on all the platforms but can only be displayed in macOS. You can choose to place the tab controls on top (standard) or on the bottom.
+フォーム上のタブコントロールの位置を指定することができます。 このプロパティにはすべてのプラットフォームからアクセスできますが、macOS 上でのみ動作します。 タブコントロールは上 (標準)、または下に配置することができます。
 
-When tab controls with a custom direction are displayed under Windows, they automatically return to the standard direction (top).
+位置がカスタマイズされたタブコントロールを Windows で表示すると、自動的に標準の位置 (上) に戻されます。
 
 #### JSON 文法
 
@@ -334,20 +334,20 @@ When tab controls with a custom direction are displayed under Windows, they auto
 
 #### 対象オブジェクト
 
-[Tab Control](tabControl.md)
+[タブコントロール](tabControl.md)
 
 
 ---
 ## ユーザーインターフェース
 
-You can add an interface to 4D View Pro areas to allow end users to perform basic modifications and data manipulations. 4D View Pro offers two optional interfaces to choose from, **Ribbon** and **Toolbar**.
+4D View Pro エリアにインターフェースを追加することで、エンドユーザーが基本的な編集とデータ操作をおこなえるようになります。 4D では 2種類のインターフェース (**リボン** と **ツールバー**) を提供しており、そのどちらかを選ぶことができます。
 
 #### JSON 文法
 
 | 名 | データタイプ | とりうる値 |
 | - | ------ | ----- |
 |   |        |       |
- userInterface|text|"none" (default), "ribbon", "toolbar" |
+ userInterface|text|"none" (デフォルト), "ribbon", "toolbar" |
 
 #### 対象オブジェクト
 
@@ -356,25 +356,25 @@ You can add an interface to 4D View Pro areas to allow end users to perform basi
 
 #### 参照
 
-[4D View Pro reference guide](https://doc.4d.com/4Dv18/4D/18/4D-View-Pro-Reference.100-4522233.en.html)
+[4D View Pro リファレンスガイド](https://doc.4d.com/4Dv18/4D/18/4D-View-Pro-Reference.100-4522233.en.html)
 
 ---
 ## 縦スクロールバー
 
-An interface tool allowing the user to move the viewing area up and down.
+表示エリアを上下に移動できるようにするインターフェースツールです。
 
 使用可能な値:
 
-| プロパティリスト | JSON 値      | 説明                                                                                                                                              |
-| -------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| ◯        | "visible"   | スクロールバーは必要のない場合でも常に表示されます。つまり、オブジェクトのコンテンツのサイズがフレームのサイズより小さい場合でも表示されます。                                                                         |
-| ×        | "hidden"    | スクロールバーは表示されません。                                                                                                                                |
-| 自動       | "automatic" | The scrollbar appears automatically whenever necessary (in other words, when the size of the object contents is greater than that of the frame) |
+| プロパティリスト | JSON 値      | 説明                                                                      |
+| -------- | ----------- | ----------------------------------------------------------------------- |
+| ◯        | "visible"   | スクロールバーは必要のない場合でも常に表示されます。つまり、オブジェクトのコンテンツのサイズがフレームのサイズより小さい場合でも表示されます。 |
+| ×        | "hidden"    | スクロールバーは表示されません。                                                        |
+| 自動       | "automatic" | スクロールバーは必要なときに表示されます。つまり、オブジェクトのコンテンツのサイズがフレームのサイズより大きい場合には表示されます。      |
 
 > ピクチャー型のオブジェクトは、表示フォーマットが "トランケート (中央合わせなし)" に設定されているときに、スクロールバーを持つことができます。
 
 
-> If a text input object does not have a scroll bar, the user can scroll the information using the arrow keys.
+> テキスト入力オブジェクトにスクロールバーがない場合、矢印キーを使用してスクロールできます。
 
 
 #### JSON 文法
