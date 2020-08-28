@@ -22,9 +22,9 @@ title: 背景色と境界線
 ---
 ## 背景色/塗りカラー
 
-Defines the background color of an object.
+オブジェクトの背景色を設定します。
 
-In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
+リストボックスの場合にはデフォルトで、*自動* が選択されており、リストボックスレベルで設定されている背景色を列も使用します。
 
 #### JSON 文法
 
@@ -35,7 +35,7 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 #### 対象オブジェクト
 
-[Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
+[階層リスト](list_overview.md) - [リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [楕円](shapes_overview.md#楕円) - [四角](shapes_overview.md#四角) - [テキストエリア](text.md)
 
 #### 参照
 [透過](#transparent)
