@@ -389,18 +389,18 @@ HTML WYSIWYG ビューを有効/無効にします。このビューでは、�
 
 #### 参照
 
-[Horizontal scroll bar](#horizontal-scroll-bar)
+[横スクロールバー](#horizontal-scroll-bar)
 
 ---
 ## ビューモード
 
-Sets the mode for displaying the 4D Write Pro document in the form area. Three values are available:
+フォームエリア内の 4D Write Pro ドキュメントの表示モードを設定します。 次の値が提供されています:
 
-- **Page**: the most complete view mode, which includes page outlines, orientation, margins, page breaks, headers and footers, etc.
-- **Draft**: draft mode with basic document properties
-- **Embedded**: view mode suitable for embedded areas; it does not display margins, footers, headers, page frames, etc. This mode can also be used to produce a web-like view output (if you also select the [96 dpi resolution](#resolution) and the [Show HTML WYSIWYG](#show-html-wysiwyg) properties).
+- **ページ**: もっとも完全といえるビューモードで、ページの枠、余白、改ページ、ヘッダー & フッターなどを含みます。
+- **下書き**: 基本のドキュメントプロパティを含む下書きモードです。
+- **埋め込み**: 埋め込みエリアに適切なビューモードです。余白や、ヘッダー & フッター、ページフレームなどは表示されません。 このモードは Web に似た出力をするのに使用することもできます (この場合には、[解像度を 96dpi](#解像度) に設定のうえ、[HTML WYSIWYG 表示](#HTML-WYSIWYG-表示) オプションを有効にします)。
 
-> The View mode property is only used for onscreen rendering. Regarding printing settings, specific rendering rules are automatically used.
+> ビューモードプロパティは画面上のレンダリングにのみ使用されます。 印刷設定については、専用のレンダリングルールが自動的に適用されます。
 
 
 
@@ -418,7 +418,7 @@ Sets the mode for displaying the 4D Write Pro document in the form area. Three v
 ---
 ## 拡大
 
-Sets the zoom percentage for displaying 4D Write Pro area contents.
+4D Write Pro エリアのコンテンツ表示に使用するズーム率を設定します。
 
 
 #### JSON 文法
