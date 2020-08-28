@@ -164,15 +164,15 @@ OBJECT SET RGB COLORS** コマンドによって設定することができま�
 
 ## 線幅
 
-Designates the thickness of a line.
+線の幅を指定します。
 
 
 
 #### JSON 文法
 
-| 名           | データタイプ | とりうる値                                                             |
-| ----------- | ------ | ----------------------------------------------------------------- |
-| strokeWidth | number | 0 for smallest width on a printed form, or any integer value < 20 |
+| 名           | データタイプ | とりうる値                             |
+| ----------- | ------ | --------------------------------- |
+| strokeWidth | number | 印刷されるフォームにおける最小幅 0 から、整数値 < 20 まで |
 
 
 
@@ -196,9 +196,9 @@ Designates the thickness of a line.
 
 `配列型リストボックス`
 
-The name of an array to apply a custom background color to each row of the list box or column.
+リストボックスまたはリストボックス列の各行にカスタムの背景色を適用するのに使用する配列名です。
 
-The name of a Longint array must be entered. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html) theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
+倍長整数型の配列の名前を入力しなければなりません。 Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html) theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
 
 For example, given a list box where the rows have an alternating gray/light gray color, defined in the properties of the list box. A background color array has also been set for the list box in order to switch the color of rows where at least one value is negative to light orange:
 
