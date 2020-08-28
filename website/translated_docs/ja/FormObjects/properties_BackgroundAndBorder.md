@@ -46,16 +46,16 @@ title: 背景色と境界線
 
 `セレクションとコレクション型リストボックス`
 
-リストボックスの各行にカスタムの背景色を指定するための式または変数 (配列変数は使用不可)。 The expression or variable will be evaluated for each row displayed and must return a RGB color value. For more information, refer to the description of the `OBJECT SET RGB COLORS` command in the *4D Language Reference manual*.
+リストボックスの各行にカスタムの背景色を指定するための式または変数 (配列変数は使用不可)。 式または変数は表示行ごとに評価され、RGB値を返さなくてはなりません。 詳細については、*4Dランゲージリファレンス* マニュアルの [`OBJECT SET RGB COLORS`](https://livedoc.4d.com/--18/-/OBJECT-SET-RGB-COLORS.301-4505456.ja.html) コマンドの説明を参照ください。
 
-You can also set this property using the `LISTBOX SET PROPERTY` command with `lk background color expression` constant.
-> With collection or entity selection type list boxes, this property can also be set using a [Meta Info Expression](properties_Text.md#meta-info-expression).
+また、このプロパティは `LISTBOX SET PROPERTY` コマンドに `lk background color expression` 定数を指定して設定することもできます。
+> コレクション/エンティティセレクション型リストボックスでは、このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
 #### JSON 文法
 
-| 名             | データタイプ | とりうる値                                     |
-| ------------- | ------ | ----------------------------------------- |
-| rowFillSource | string | An expression returning a RGB color value |
+| 名             | データタイプ | とりうる値       |
+| ------------- | ------ | ----------- |
+| rowFillSource | string | RGBカラー値を返す式 |
 
 #### 対象オブジェクト
 [リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
@@ -68,7 +68,7 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 ---
 ## 境界線スタイル
 
-Allows setting a standard style for the object border.
+リストボックスの境界線のスタイルを設定します。
 
 #### JSON 文法
 
