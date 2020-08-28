@@ -97,16 +97,16 @@ title: 動作
 
 - 拡張子を省いた既存のプロジェクトメソッド名: `myMethod`。この場合、フォームオブジェクトに対して操作がおこなわれても、4D はそれらの変更を自動反映しません。
 
-- a custom method file path including the .4dm extension, e.g.:  
-  `ObjectMethods/objectName.4dm` You can also use a filesystem:  
-  `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
+- .4dm 拡張子を含むカスタムのメソッドファイルパス:   
+  `ObjectMethods/objectName.4dm`。 ファイルシステムも使用できます:  
+  `/RESOURCES/Buttons/bOK.4dm`。 この場合、フォームオブジェクトに対して操作がおこなわれても、4D はそれらの変更を自動反映しません。
 
 
 #### JSON 文法
 
-| 名      | データタイプ | とりうる値                                                              |
-| ------ | ------ | ------------------------------------------------------------------ |
-| method | text   | Object method standard or custom file path, or project method name |
+| 名      | データタイプ | とりうる値                                      |
+| ------ | ------ | ------------------------------------------ |
+| method | text   | オブジェクトメソッドの標準またはカスタムのファイルパス、またはプロジェクトメソッド名 |
 
 
 #### 対象オブジェクト
@@ -118,7 +118,7 @@ title: 動作
 
 ---
 ## 行の移動可
-`Array type list boxes`
+`配列型リストボックス`
 
 Authorizes the movement of rows during execution. This option is selected by default. It is not available for [selection type list boxes](listbox_overview.md#selection-list-boxes) nor for [list boxes in hierarchical mode](properties_Hierarchy.md#hierarchical-list-box).
 
