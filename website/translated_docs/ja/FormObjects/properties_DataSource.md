@@ -15,10 +15,10 @@ title: データソース
 
 ![](assets/en/FormObjects/comboBox_AutomaticInsertion_example.png)
 
-Naturally, the value entered must not belong to the list of [excluded values](properties_RangeOfValues.md#excluded-list) associated with the object, if one has been set.
-> If the list was created from a list defined in Design mode, the original list is not modified.
+当然のことながら、オブジェクトに [除外リスト](properties_RangeOfValues.md#除外リスト) が設定されていた場合には、そのリストに含まれる値を入力することはできません。
+> デザインモードで定義されたリストが関連付けられている場合、自動挿入によって、その元のリストが変更されることはありません。
 
-When the **automatic insertion** option is not selected (default), the value entered is stored in the object but not in the list in memory.
+**自動挿入** のオプションがチェックされていない場合、入力された値はオブジェクトの中には保存されますが、メモリー内のリストには入力されません。
 
 #### JSON 文法
 
@@ -28,7 +28,7 @@ When the **automatic insertion** option is not selected (default), the value ent
 
 #### 対象オブジェクト
 
-[Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[コンボボックス](comboBox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
 
 
 
@@ -36,14 +36,14 @@ When the **automatic insertion** option is not selected (default), the value ent
 ---
 ## 選択リスト
 
-Associates a choice list with an object. It can be a choice list name (a list reference) or a collection of default values.
+選択リストをフォームオブジェクトに関連づけます。 指定できるのは選択リスト名 (リストの参照) またはデフォルト値のコレクションです。
 
 #### JSON 文法
 
-| 名          | データタイプ           | とりうる値                                               |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | A list of possible values                           |
-| list       | list, collection | A list of possible values (hierarchical lists only) |
+| 名          | データタイプ     | とりうる値                |
+| ---------- | ---------- | -------------------- |
+| choiceList | リスト、コレクション | 選択可能な値のリスト           |
+| list       | リスト、コレクション | 選択可能な値のリスト (階層リストのみ) |
 
 
 #### 対象オブジェクト
@@ -55,13 +55,13 @@ Associates a choice list with an object. It can be a choice list name (a list re
 ---
 ## 選択リスト (静的リスト)
 
-List of static values to use as labels for the tab control object.
+タブコントロールオブジェクトのラベルとして使用する静的な値のリスト。
 
 #### JSON 文法
 
-| 名      | データタイプ           | とりうる値                                    |
-| ------ | ---------------- | ---------------------------------------- |
-| labels | list, collection | A list of values to fill the tab control |
+| 名      | データタイプ     | とりうる値                  |
+| ------ | ---------- | ---------------------- |
+| labels | リスト、コレクション | タブコントロールラベルに使用する値のリスト。 |
 
 #### 対象オブジェクト
 
@@ -70,9 +70,9 @@ List of static values to use as labels for the tab control object.
 
 ---
 ## カレントの項目
-`Collection or entity selection list boxes`
+`コレクションまたはエンティティセレクションリストボックス`
 
-Specifies a variable or expression that will be assigned the collection element/entity selected by the user. You must use an object variable or an assignable expression that accepts objects. If the user does not select anything or if you used a collection of scalar values, the Null value is assigned.
+ユーザーによって選択されたコレクション要素/エンティティに割り当てる変数あるいは式を指定します。 オブジェクト変数あるいはオブジェクトを受け入れる割り当て可能な式を使用する必要があります。 ユーザーが何も選択しなかった場合、あるいはスカラー値のコレクションを使用した場合、Null 値が割り当てられます。
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
 #### JSON 文法
@@ -90,7 +90,7 @@ Specifies a variable or expression that will be assigned the collection element/
 ---
 
 ## カレントの項目の位置
-`Collection or entity selection list boxes`
+`コレクションまたはエンティティセレクションリストボックス`
 
 Specifies a variable or expression that will be assigned a longint indicating the position of the collection element/entity selected by the user.
 
@@ -258,12 +258,12 @@ Using this property requires compliance with the following principles:
 
 ---
 ## 選択された項目
-`Collection or entity selection list boxes`
+`コレクションまたはエンティティセレクションリストボックス`
 
 Specifies a variable or expression that will be assigned the elements or entities selected by the user.
 
 *   for a collection list box, you must use a collection variable or an assignable expression that accepts collections,
-*   for an entity selection list box, an entity selection object is built. You must use an object variable or an assignable expression that accepts objects.
+*   for an entity selection list box, an entity selection object is built. オブジェクト変数あるいはオブジェクトを受け入れる割り当て可能な式を使用する必要があります。
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
 #### JSON 文法
