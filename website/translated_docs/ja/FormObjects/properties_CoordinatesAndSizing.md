@@ -227,14 +227,14 @@ title: 座標とサイズ
 ## 行の高さ
 
 
-Sets the height of list box rows (excluding headers and footers). By default, the row height is set according to the platform and the font size.
+リストボックス行の高さを設定します (ヘッダーおよびフッターは除きます)。 デフォルトで、行の高さはプラットフォームとフォントサイズに基づき設定されます。
 
 
 #### JSON 文法
 
-| 名         | データタイプ | とりうる値                                    |
-| --------- | ------ | ---------------------------------------- |
-| rowHeight | string | css value in unit "em" or "px" (default) |
+| 名         | データタイプ | とりうる値                           |
+| --------- | ------ | ------------------------------- |
+| rowHeight | string | "em" または "px" (デフォルト) 単位の css 値 |
 
 #### 対象オブジェクト
 
@@ -250,7 +250,7 @@ Sets the height of list box rows (excluding headers and footers). By default, th
 ## 行高さ配列
 `4D View Pro のみ: この機能には 4D View Pro ライセンスが必要です。`
 
-This property is used to specify the name of a row height array that you want to associate with the list box. A row height array must be of the numeric type (longint by default).
+このプロパティは、リストボックスに関連付けたい行高さ配列の名前を指定するのに使用します。 行高さ配列は数値型である必要があります (デフォルトは倍長整数)。
 
 When a row height array is defined, each of its elements whose value is different from 0 (zero) is taken into account to determine the height of the corresponding row in the list box, based on the current Row Height unit.
 
