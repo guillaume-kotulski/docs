@@ -183,7 +183,7 @@ title: 座標とサイズ
 ---
 ## 最大幅
 
-The maximum width of the column (in pixels). The width of the column cannot be increased beyond this value when resizing the column or form.
+列の最大幅 (ピクセル単位)。 列やフォームをサイズ変更する際、このサイズよりも列幅を大きくすることはできません。
 > リストボックスの [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) プロパティに "拡大" を設定している場合にフォームをリサイズすると、一番右のカラムの幅は必要に応じて最大幅を超えて拡大されます。
 
 
@@ -201,7 +201,7 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 ---
 ## 最小幅
 
-The minimum width of the column (in pixels). The width of the column cannot be reduced below this value when resizing the column or form.
+列の最小幅 (ピクセル単位)。 列やフォームをサイズ変更する際、このサイズよりも列幅を小さくすることはできません。
 > リストボックスの [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) プロパティに "拡大" を設定している場合にフォームをリサイズすると、一番右のカラムの幅は必要に応じて最大幅を超えて拡大されます。
 
 
@@ -226,14 +226,14 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 ## 行の高さ
 
 
-Sets the height of list box rows (excluding headers and footers). By default, the row height is set according to the platform and the font size.
+リストボックス行の高さを設定します (ヘッダーおよびフッターは除きます)。 デフォルトで、行の高さはプラットフォームとフォントサイズに基づき設定されます。
 
 
 #### JSON 文法
 
-| 名         | データタイプ | とりうる値                                    |
-| --------- | ------ | ---------------------------------------- |
-| rowHeight | string | css value in unit "em" or "px" (default) |
+| 名         | データタイプ | とりうる値                           |
+| --------- | ------ | ------------------------------- |
+| rowHeight | string | "em" または "px" (デフォルト) 単位の css 値 |
 
 #### 対象オブジェクト
 
