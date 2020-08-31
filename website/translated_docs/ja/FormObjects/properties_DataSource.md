@@ -72,14 +72,14 @@ title: データソース
 ## カレントの項目
 `コレクションまたはエンティティセレクションリストボックス`
 
-ユーザーによって選択されたコレクション要素/エンティティに割り当てる変数あるいは式を指定します。 オブジェクト変数あるいはオブジェクトを受け入れる割り当て可能な式を使用する必要があります。 ユーザーが何も選択しなかった場合、あるいはスカラー値のコレクションを使用した場合、Null 値が割り当てられます。
-> This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
+ユーザーによって選択されたコレクション要素/エンティティが割り当てられる変数あるいは式を指定します。 オブジェクト変数あるいはオブジェクトを受け入れる割り当て可能な式を使用する必要があります。 ユーザーが何も選択しなかった場合、あるいはスカラー値のコレクションを使用した場合、Null 値が割り当てられます。
+> このプロパティは「読み取り専用」であり、リストボックスにおけるユーザーアクションに基づいて自動的に更新されます。 この値を編集してリストボックスの選択状態を変更することはできません。
 
 #### JSON 文法
 
-| 名                 | データタイプ | とりうる値             |
-| ----------------- | ------ | ----------------- |
-| currentItemSource | string | Object expression |
+| 名                 | データタイプ | とりうる値     |
+| ----------------- | ------ | --------- |
+| currentItemSource | string | オブジェクト型の式 |
 
 #### 対象オブジェクト
 [リストボックス ](listbox_overview.md#overview)
@@ -92,18 +92,18 @@ title: データソース
 ## カレントの項目の位置
 `コレクションまたはエンティティセレクションリストボックス`
 
-Specifies a variable or expression that will be assigned a longint indicating the position of the collection element/entity selected by the user.
+ユーザーによって選択されたコレクション要素/エンティティの位置を表す倍長整数が割り当てられる変数あるいは式を指定します。
 
-*   if no element/entity is selected, the variable or expression receives zero,
-*   if a single element/entity is selected, the variable or expression receives its location,
-*   if multiple elements/entities are selected, the variable or expression receives the position of element/entity that was last selected.
-> This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
+*   要素/エンティティが選択されていない場合、変数あるいは式は 0 を受け取ります。
+*   単一の要素/エンティティが選択されている場合、変数あるいは式はその位置を受け取ります。
+*   複数の要素/エンティティが選択されている場合、変数あるいは式は最後に選択された要素/エンティティの位置を受け取ります。
+> このプロパティは「読み取り専用」であり、リストボックスにおけるユーザーアクションに基づいて自動的に更新されます。 この値を編集してリストボックスの選択状態を変更することはできません。
 
 #### JSON 文法
 
-| 名                         | データタイプ | とりうる値             |
-| ------------------------- | ------ | ----------------- |
-| currentItemPositionSource | string | Number expression |
+| 名                         | データタイプ | とりうる値 |
+| ------------------------- | ------ | ----- |
+| currentItemPositionSource | string | 数値型の式 |
 
 #### 対象オブジェクト
 [リストボックス ](listbox_overview.md)
@@ -115,7 +115,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 ---
 ## データタイプ
 
-Please refer to [Expression Type](properties_Object.md#expression-type) section.
+[式タイプ](properties_Object.md#式タイプ) を参照ください。
 
 #### 対象オブジェクト
 
@@ -130,7 +130,7 @@ Please refer to [Expression Type](properties_Object.md#expression-type) section.
 
 ## デフォルト値
 
-List of values that will be used as default values for the list box column (array type only). These values are automatically available in the [array variable](properties_Object.md#variable-or-expression) associated with this column when the form is executed. Using the language, you can manage the object by referring to this array.
+配列型リストボックスにおいて、リストボックス列のデフォルト値として使用される値のリストです。 These values are automatically available in the [array variable](properties_Object.md#variable-or-expression) associated with this column when the form is executed. Using the language, you can manage the object by referring to this array.
 
 > Do not make confusion between this property and the "[default value](properties_RangeOfValues.md#default-list-of-values)" property that allows to define a field value in new records.
 
@@ -264,7 +264,7 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 *   for a collection list box, you must use a collection variable or an assignable expression that accepts collections,
 *   for an entity selection list box, an entity selection object is built. オブジェクト変数あるいはオブジェクトを受け入れる割り当て可能な式を使用する必要があります。
-> This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
+> このプロパティは「読み取り専用」であり、リストボックスにおけるユーザーアクションに基づいて自動的に更新されます。 この値を編集してリストボックスの選択状態を変更することはできません。
 
 #### JSON 文法
 
