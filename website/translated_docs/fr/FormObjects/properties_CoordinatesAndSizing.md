@@ -6,7 +6,7 @@ title: Coordonnées & dimensions
 ---
 ## Hauteur de ligne automatique
 
-This property is only available for array-based, non-hierarchical list boxes. The property is not selected by default.
+Cette propriété n'est disponible que pour les list box de type tableau, non hiérarchiques. Par défaut, cette option n'est pas sélectionnée.
 
 When used, the height of every row in the column will automatically be calculated by 4D, and the column contents will be taken into account. Note that only columns with the option selected will be taken into account to calculate the row height.
 > When resizing the form, if the "Grow" [horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
@@ -113,7 +113,7 @@ Top coordinate of the object in the form.
 
 
 ---
-## Corner Radius
+## Rayon d'arrondi
 
 Defines the corner roundness (in pixels) of objects of the [rectangle](shapes_overview.md#rectangle) type. By default, the radius value for rectangles is 0 pixels. You can change this property to draw rounded rectangles with custom shapes:
 
@@ -181,7 +181,7 @@ This property designates an object's horizontal size.
 
 
 ---
-## Maximum Width
+## Largeur maxi
 
 The maximum width of the column (in pixels). The width of the column cannot be increased beyond this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
@@ -199,7 +199,7 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 
 
 ---
-## Minimum Width
+## Largeur mini
 
 The minimum width of the column (in pixels). The width of the column cannot be reduced below this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
@@ -231,9 +231,9 @@ Sets the height of list box rows (excluding headers and footers). By default, th
 
 #### Grammaire JSON
 
-| Nom       | Type de données | Valeurs possibles                        |
-| --------- | --------------- | ---------------------------------------- |
-| rowHeight | string          | css value in unit "em" or "px" (default) |
+| Nom       | Type de données | Valeurs possibles                                 |
+| --------- | --------------- | ------------------------------------------------- |
+| rowHeight | string          | valeur css dans l'unité "em" ou "px" (par défaut) |
 
 #### Objets pris en charge
 
@@ -265,9 +265,9 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 
 #### Grammaire JSON
 
-| Nom             | Type de données | Valeurs possibles            |
-| --------------- | --------------- | ---------------------------- |
-| rowHeightSource | string          | Name of a 4D array variable. |
+| Nom             | Type de données | Valeurs possibles              |
+| --------------- | --------------- | ------------------------------ |
+| rowHeightSource | string          | Nom d'une variable tableau 4D. |
 
 #### Objets pris en charge
 
