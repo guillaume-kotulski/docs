@@ -232,23 +232,23 @@ title: 入力
 #### ×
 
 - 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
-- 改行はおこなわれません。テキストは常に一行で表示されます。 If the Alpha or Text field or variable contains carriage returns, the text located after the first carriage return is removed as soon as the area is modified:  
+- 改行はおこなわれません。テキストは常に一行で表示されます。 文字やテキストのフィールドまたは変数が改行文字を含んでいる場合、エリアが更新されるとすぐに最初のキャリッジリターンより後のテキストが取り除かれます:  
   ![](assets/en/FormObjects/multilineNo.png)
 
 
 
 #### ◯
 
-When this value is selected, the property is managed by the [Wordwrap](properties_Display.md#wordwrap) option.
+この値を選択すると、追加の [ワードラップ](properties_Display.md#ワードラップ) オプションが表示されます。
 
 
 
 
 #### JSON 文法
 
-| 名         | データタイプ | とりうる値                                             |
-| --------- | ------ | ------------------------------------------------- |
-| multiline | text   | "yes", "no", "automatic" (default if not defined) |
+| 名         | データタイプ | とりうる値                                       |
+| --------- | ------ | ------------------------------------------- |
+| multiline | text   | "yes", "no", "automatic" (定義されていない場合のデフォルト) |
 
 
 
@@ -267,50 +267,50 @@ When this value is selected, the property is managed by the [Wordwrap](propertie
 
 ## プレースホルダー
 
-4D can display placeholder text in the fields of your forms. 
+4D では、フォームのフィールド内にプレースホルダーテキストを表示することができます。 
 
-Placeholder text appears as watermark text in a field, supplying a help tip, indication or example for the data to be entered. This text disappears as soon as the user enters a character in the area:
+このテキストはフィールド内で半透明のテキストとして表示され、入力されるデータに関するヘルプ、指示、具体例などを表示します。 このテキストは、ユーザーが文字をエリアに入力した瞬間に表示されなくなります:
 
 ![](assets/en/FormObjects/property_placeholder.png)
 
-The placeholder text is displayed again if the contents of the field is erased. 
+プレースホルダーテキストは、フィールドの中身が消去されると再び表示されます。 
 
-A placeholder can be displayed for the following types of data:
+プレースホルダーとして表示できるデータの型は以下の通りです:
 
-- string (text or alpha)
-- date and time when the **Blank if null** property is enabled.
+- 文字列 (テキストまたは文字)
+- 日付または時刻 (**ヌルのときブランクにする** のプロパティがチェックされている場合に限ります)
 
-You can use an XLIFF reference in the ":xliff:resname" form as a placeholder, for example: 
+xliff 参照を ":xliff:resname" の形でプレースホルダーとして使用することもできます。たとえば: 
 
     :xliff:PH_Lastname
     
 
-You only pass the reference in the "Placeholder" field; it is not possible to combine a reference with static text. 
+この場合、"プレースホルダー" のフィールドには参照のみを渡します。参照と静的なテキストを組み合わせることはできません。 
 
 
-> You can also set and get the placeholder text by programming using the [OBJECT SET PLACEHOLDER](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-PLACEHOLDER.301-4128243.en.html) and [OBJECT Get placeholder](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-Get-placeholder.301-4128249.en.html) commands.
+> プレースホルダーのテキストは、[OBJECT SET PLACEHOLDER](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-PLACEHOLDER.301-4505467.ja.html) と [OBJECT Get placeholder](https://doc.4d.com/4Dv18/4D/18/OBJECT-Get-placeholder.301-4505473.ja.html) コマンドを使って、プログラミングによって設定したり取得したりすることができます。
 
 
 
 #### JSON 文法
 
-| 名           | データタイプ | とりうる値                                                                        |
-| ----------- | ------ | ---------------------------------------------------------------------------- |
-| placeholder | string | Text to be displayed (grayed out) when the object does not contain any value |
+| 名           | データタイプ | とりうる値                            |
+| ----------- | ------ | -------------------------------- |
+| placeholder | string | オブジェクトに値が格納されていない場合に表示する半透明のテキスト |
 
 
 
 
 #### 対象オブジェクト
 
-[Combo Box](comboBox_overview.md) - [Input](input_overview.md)
+[コンボボックス](comboBox_overview.md) - [入力](input_overview.md)
 
 
 
 
 #### 参照
 
-[Help tip](properties_Help.md)
+[ヘルプTips](properties_Help.md)
 
 
 
