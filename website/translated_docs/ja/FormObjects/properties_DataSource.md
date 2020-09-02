@@ -241,8 +241,8 @@ title: データソース
 リスト項目の参照番号の使用の際には、以下の点に注意する必要があります:
 
 - 参照を保存するには、データソースのフィールドまたは変数は、数値型である必要があります (リスト内に表示されている値の型とは関係ありません)。
-- Valid and unique references must be associated with list items.
-- If you use this property for a [drop-down list](dropdownList_Overview.md), it must be associated with a field.
+- リストの項目には有効かつ固有の参照が関連付けられている必要があります。
+- [ドロップダウンリスト](dropdownList_Overview.md) においてこのプロパティを使用する場合、ドロップダウンリストフィールドまたは変数と関連付けられている必要があります。
 
 
 #### JSON 文法
@@ -252,7 +252,7 @@ title: データソース
 | saveAs | string | "value", "reference" |
 
 #### 対象オブジェクト
-[Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[ドロップダウンリスト](dropdownList_Overview.md) - [入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
 
 
 
