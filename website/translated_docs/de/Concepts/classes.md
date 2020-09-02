@@ -286,22 +286,22 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-Das Schlüsselwort  `Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. The child class inherits all functions of the parent class.
+Das Schlüsselwort  `Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
 
-Class extension must respect the following rules:
+Für Erweiterungen einer Klasse gelten folgende Regeln:
 
-- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
-- A user class cannot extend a user class from another database or component.
-- A user class cannot extend itself.
-- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
+- Eine Benutzerklasse kann keine vorgegebene Klasse erweitern (außer 4D.Object, die standardmäßig für Benutzerklassen erweitert wird.)
+- Eine Benutzerklasse kann keine Benutzerklasse aus einem anderen Projekt bzw. einer Komponente erweitern. .
+- Eine Benutzerklasse kann sich nicht selbst erweitern.
+- Klassen lassen sich nicht kreisförmig erweitern (z.B. "a" erweitert "b", das wieder "a" erweitert).
 
-Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
+Ein Verstoß gegen eine dieser Regeln wird weder vom Code-Editor noch vom Interpreter erkannt, in diesem Fall lösen nur der Compiler und `Syntaxprüfung` einen Fehler aus.
 
-An extended class can call the constructor of its parent class using the [`Super`](#super) command.
+Eine erweiterte Klasse kann den Constructor seiner übergeordneten Klasse über den Befehl [`Super`](#super) aufrufen.
 
-#### Example
+#### Beispiel
 
-This example creates a class called `Square` from a class called `Polygon`.
+Dieses Beispiel erstellt eine Klasse mit Namen `Square` aus einer Klasse mit Namen `Polygon`.
 
 ```4d
   //Class: Square
@@ -328,16 +328,16 @@ $0:=This.height*This.width
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                    |
-| --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| Parameter | Typ    |    | Beschreibung                                 |
+| --------- | ------ | -- | -------------------------------------------- |
+| param     | mixed  | -> | Parameter für den übergeordneten Constructor |
+| Ergebnis  | object | <- | Überordnung des Objekts                      |
 
-The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
+Mit dem Schlüsselwort  `Super` lassen sich Aufrufe zur  `superclass`, z.B. die übergeordnete Klasse.
 
-`Super` serves two different purposes:
+`Super` dient für zwei unterschiedliche Zwecke:
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
+- innerhalb des [Constructor Code](#class-constructor) ist `Super` ein Befehl zum Aufrufen des Constructor der Superklasse. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
     - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
     - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
     - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
