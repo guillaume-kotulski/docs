@@ -217,38 +217,38 @@ title: 入力
 
 ## 複数行
 
-This property is available for [inputs objects](input_overview.md) containing expressions of the Text type and fields of the Alpha and Text type. It can have three different values: Yes, No, Automatic (default).
+このプロパティは、テキストタイプの式や、文字およびテキストタイプのフィールドが割り当てられている [入力オブジェクト](input_overview.md) で使用できます。 値は、あり・なし・自動 (デフォルト) が選択できます。
 
 
 
 #### 自動
 
-- In single-line inputs, words located at the end of lines are truncated and there are no line returns.
-- In multiline inputs, 4D carries out automatic line returns:  
+- 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
+- 複数行の入力オブジェクトの場合、4D は自動で改行します:  
   ![](assets/en/FormObjects/multilineAuto.png)
 
 
 
 #### ×
 
-- In single-line inputs, words located at the end of lines are truncated and there are no line returns.
-- There are never line returns: the text is always displayed on a single row. If the Alpha or Text field or variable contains carriage returns, the text located after the first carriage return is removed as soon as the area is modified:  
+- 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
+- 改行はおこなわれません。テキストは常に一行で表示されます。 文字やテキストのフィールドまたは変数が改行文字を含んでいる場合、エリアが更新されるとすぐに最初のキャリッジリターンより後のテキストが取り除かれます:  
   ![](assets/en/FormObjects/multilineNo.png)
 
 
 
 #### ◯
 
-When this value is selected, the property is managed by the [Wordwrap](properties_Display.md#wordwrap) option.
+この値を選択すると、追加の [ワードラップ](properties_Display.md#ワードラップ) オプションが表示されます。
 
 
 
 
 #### JSON 文法
 
-| 名         | データタイプ | とりうる値                                             |
-| --------- | ------ | ------------------------------------------------- |
-| multiline | text   | "yes", "no", "automatic" (default if not defined) |
+| 名         | データタイプ | とりうる値                                       |
+| --------- | ------ | ------------------------------------------- |
+| multiline | text   | "yes", "no", "automatic" (定義されていない場合のデフォルト) |
 
 
 
@@ -267,9 +267,9 @@ When this value is selected, the property is managed by the [Wordwrap](propertie
 
 ## プレースホルダー
 
-4D can display placeholder text in the fields of your forms. 
+4D では、フォームのフィールド内にプレースホルダーテキストを表示することができます。 
 
-Placeholder text appears as watermark text in a field, supplying a help tip, indication or example for the data to be entered. This text disappears as soon as the user enters a character in the area:
+このテキストはフィールド内で半透明のテキストとして表示され、入力されるデータに関するヘルプ、指示、具体例などを表示します。 This text disappears as soon as the user enters a character in the area:
 
 ![](assets/en/FormObjects/property_placeholder.png)
 
