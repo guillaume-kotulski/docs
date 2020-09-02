@@ -239,7 +239,7 @@ $area:=$o.getArea(50;100) //5000
 ```
 
 
-### Class constructor
+### Class Constructor
 
 #### Syntax
 
