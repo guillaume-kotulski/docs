@@ -59,7 +59,7 @@ In Strings lassen sich folgende Escape Sequenzen verwenden:
 
 ## String Vergleiche
 
-- Strings werden Zeichen für Zeichen miteinander verglichen (außer bei Suchen nach   href="dt_string.md#keywords">Schlüsselwort</a>, siehe unten).
+- Strings werden Zeichen für Zeichen miteinander verglichen (außer bei Suchen nach [Schlüsselwörter](dt_string.md#keywords), siehe unten).
 - Bei String Vergleichen wird die Groß- und Kleinschreibung ignoriert, so gibt "a"="A" `TRUE` zurück. Wollen Sie die Schreibweise von zwei Zeichen überprüfen, vergleichen Sie deren Zeichen Codes. So ergibt z. B. folgender Ausdruck `FALSE`:
 
 ```4d
