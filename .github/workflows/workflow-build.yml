@@ -10,6 +10,10 @@ jobs:
         language: ["en", "fr", "es", "ja", "pt"]
     runs-on: ubuntu-latest
     steps:
+      - name: Set directory
+        env:
+          LANGUAGE: ${{ matrix.language }}
+        run: echo "DEST_FOLDER=./build/$LANGUAGE" >> $GITHUB_ENV
       - name: Get disk space
         run: |
           df -h /
@@ -56,16 +60,36 @@ jobs:
         with:
           path: ./build
           name: build-locale-${{ matrix.language }}
+      - uses: actions/upload-artifact@v4
+        if: matrix.language == 'en'
+        with:
+          path: ./build/assets
+          name: assets-locale-${{ matrix.language }}
+      - uses: actions/upload-artifact@v4
+        if: matrix.language != 'en'
+        with:
+          path: ./build/${{ matrix.language }}/assets
+          name: assets-locale-${{ matrix.language }}
 
   merge:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download artifact
+    - name: Download assets
       uses: actions/download-artifact@v4
       with:
-        pattern: build-locale-*
-        merge-multiple: true
-        path: ./build
-    - name: "Verif"
-      run: "find ./build -maxdepth 3"
+        pattern: assets-locale-*
+        merge-multiple: false
+        path: ./assets_locale
+    - name: Locate assets
+      run: "find ./assets_locale -maxdepth 3"
+    - name: "Merge assets"
+      run: |
+        mkdir assets
+        cp ./assets_locale/*/** assets/
+        cp ./assets_locale/assets-locale-en/** assets/
+    - name: Upload assets
+      uses: actions/upload-artifact@v4
+      with:
+        path: ./assets
+        name: assets-merged
