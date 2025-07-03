@@ -85,7 +85,7 @@ jobs:
       run: "find ./assets_locale -maxdepth 3"
     - name: "Merge assets"
       run: |
-        mkdir assets
+        mkdir -p assets/js
         cp -r ./assets_locale/*/js/* assets/js/
         cp -r ./assets_locale/assets-locale-en/** assets/
     - name: Upload assets
