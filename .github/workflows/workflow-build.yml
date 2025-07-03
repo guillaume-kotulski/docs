@@ -86,8 +86,8 @@ jobs:
     - name: "Merge assets"
       run: |
         mkdir -p assets/js
-        cp -r ./assets_locale/*/js/* assets/js/
-        cp -r ./assets_locale/assets-locale-en/** assets/
+        cp -f ./assets_locale/*/js/* assets/js/
+        cp -rf ./assets_locale/assets-locale-en/** assets/
     - name: Upload assets
       uses: actions/upload-artifact@v4
       with:
