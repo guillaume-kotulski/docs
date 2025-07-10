@@ -8,9 +8,9 @@ const isProduction = process.env.GITHUB_REPOSITORY_OWNER === '4d';
 const router = process.env.DOCUSAURUS_ROUTER
 const isStatic = process.env.DOCUSAURUS_ROUTER === "hash"
 const language = process.env.DOCUSAURUS_LANGUAGE ?? "en"
-const is_CI = process.env.GITHUB_ACTIONS === "true"
-const BASE_URL_LANGUAGE = language !== "en" ? "fr/" : "";
-
+const LANGUAGE_TO_BUILD = process.env.LANGUAGE_TO_BUILD ?? "en"
+const BASE_URL_LANGUAGE = LANGUAGE_TO_BUILD !== "en" ? `${LANGUAGE_TO_BUILD}/` : "";
+console.log("Language ", BASE_URL_LANGUAGE)
 
 const locales = isStatic ? [language] : ["en", "fr", "es", "ja", "pt"]
 const localeConfigs = isStatic ? {} : {
