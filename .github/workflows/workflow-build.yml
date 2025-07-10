@@ -45,10 +45,10 @@ jobs:
           else
           npm i
           fi
-          if [ "$LANGUAGE" = 'en' ]; then
-            npm run build -- --locale $LANGUAGE
+          if [ "$LANGUAGE_TO_BUILD" = 'en' ]; then
+            npm run build -- --locale $LANGUAGE_TO_BUILD
           else
-            npm run build -- --locale $LANGUAGE --out-dir ./build/$LANGUAGE
+            npm run build -- --locale $LANGUAGE_TO_BUILD --out-dir ./build/$LANGUAGE_TO_BUILD
           fi
       - name: Google verification
         if: matrix.language == 'en'
