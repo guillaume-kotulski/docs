@@ -21,8 +21,17 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         pattern: build-locale-*
-        merge-multiple: true
-        path: ./build
+        merge-multiple: false
+    - name: merge
+      run: |
+        mkdir -p build
+        mv build-locale-en/* build/
+
+        for locale in es pt ja fr; do
+          mkdir -p "build/$locale"
+          mv "build-locale-$locale"/* "build/$locale/"
+        done
+
     - name: Publish
       uses: peaceiris/actions-gh-pages@v4
       with:
