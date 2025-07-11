@@ -89,6 +89,7 @@ module.exports = {
           },
           includeCurrentVersion: isProduction ? false : true, // false for prod only
         },
+        blog: false,
         theme: {
           customCss: [require.resolve('./src/css/customTheme.css')],
         },
